@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Management Dashboard</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="login.js"></script>
+    <style>
+        body { background: url('http://www.tdascreative.com/uiguide/images/bg.png'); }
+    </style>
+</head>
+<body>
+    <div id="loginbox" class="login-form"> 
+            <img src="https://admin.tritondigital.com/dashboard/css/images/loginlogo.png">
+            <div class="form">
+                <div id="errorMessage" class="message error" style="display:none"></div>
+                <div id="loginform">
+                    <div class="input-container text">
+                        <span class="login-label">username</span>
+                        <input name="loginId" type="text" id="loginId" tabindex="1">
+                        <span id="UserNameRequired" title="User Name is required." style="color:Red;display:none;"></span>
+                    </div>
+                    <div class="input-container text">
+                        <span id="Label9" class="login-label">password</span>
+                        <input name="pwd" type="password" id="pwd" tabindex="2">
+                        <span id="PasswordRequired" title="Password is required." style="color:Red;display:none;"></span>
+                    </div>
+                    <div class="input-container clearfix">
+                        <button class="button-highlight button-large floatright" id="LoginBtn">Login</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

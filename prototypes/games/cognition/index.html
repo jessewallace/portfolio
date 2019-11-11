@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="cognition.css" />
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="cognition.js"></script>
+</head>
+<body>
+<div class="see-widget-cognition" >
+    <div style="display: block" class="see-cognition-start">
+        <div class="see-cognition-logo"></div>
+        <button class="see-cognition-button see-cognition-start-button">Play Now</button>
+        <div class="see-cognition-loader">
+            <span class="loader-text">Get Ready</span>
+            <span class="see-cognition-loader-piece">
+                <span class="piece4"></span>
+            </span>
+            <span class="see-cognition-loader-piece">
+                <span class="piece1"></span>
+            </span>
+            <span class="see-cognition-loader-piece">
+                <span class="piece3"></span>
+            </span>
+            <span class="see-cognition-loader-piece">
+                <span class="piece2"></span>
+            </span>
+        </div>
+        <div class="see-cognition-score-wrapper">
+            <div class="see-cognition-score-timer-wrapper"></div>
+            <div class="see-cognition-score-counter"><span class="points">0</span>points</div>
+            <div class="see-cognition-score-highscore">High Score: 0</div>
+        </div>
+    </div>
+    <div class="see-cognition-gameplay" style="display: none">
+    <div class="see-cognition-logo"></div>
+    <div class="see-cognition-question-wrapper hide-question">
+        <span class="cognition-question">Lady Gaga's first album came out in what year?</span>
+        <div class="cognition-answers ">
+            <button data-answer="1" class="see-cognition-button cognition-answer">2005</button>
+            <button data-answer="2" class="see-cognition-button cognition-answer">2007</button>
+            <button data-answer="3" class="see-cognition-button cognition-answer">2008</button>
+            <button data-answer="4" class="see-cognition-button cognition-answer">2009</button>
+        </div>
+    </div>
+    <div class="see-cognition-score-wrapper">
+        <div id="score-timer" class="see-cognition-score-timer-wrapper"></div>
+        <div class="see-cognition-score-counter"><span class="points">0</span>points</div>
+        <div class="see-cognition-score-highscore">High Score: 0</div>
+    </div>
+</div>
+    <div class="see-cognition-end" style="display: none">
+        <div class="see-cognition-logo"></div>
+        <div class="see-cognition-records see-cognition-records-hidden">
+            <img src="img/black-record.png" class="see-cognition-record-1" />
+            <img src="img/gold-record.png" class="see-cognition-record-2" />
+            <img src="img/platinum-record.png" class="see-cognition-record-3" />
+        </div>
+        <div class="see-cognition-final-score">SCORE
+            <span class="see-cognition-final-score">200</span>
+            <span class="see-cognition-final-score-divider"></span>
+        </div>
+        <div class="see-cognition-play-again">
+            <button class="see-cognition-button see-cognition-play-again">Play Again</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

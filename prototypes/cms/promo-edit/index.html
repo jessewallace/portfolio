@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US">
+
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Wordpress Admin</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	    
+	    <!-- Required css -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>	    <link rel='stylesheet' href='css/core/dashicons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/admin-bar.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/wp-admin.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/buttons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/jquery.qtip.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/admin.css' type='text/css' media='all' />
+
+	    <!-- Custom/project css -->
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+
+	    <!-- Required js -->
+	    <script type='text/javascript' src='js/core/jquery.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-migrate.min.js'></script>
+	    <script type='text/javascript' src='js/core/core.min.js'></script>
+	    <script type='text/javascript' src='js/core/widget.min.js'></script>
+	    <script type='text/javascript' src='js/core/mouse.min.js'></script>
+	    <script type='text/javascript' src='js/core/resizable.min.js'></script>
+	    <script type='text/javascript' src='js/core/draggable.min.js'></script>
+	    <script type='text/javascript' src='js/core/button.min.js?'></script>
+	    <script type='text/javascript' src='js/core/position.min.js'></script>
+	    <script type='text/javascript' src='js/core/dialog.min.js'></script>
+	    <script type='text/javascript' src='js/core/sortable.min.js'></script>
+	    <script type='text/javascript' src='js/core/datepicker.min.js'></script>
+	    <script type='text/javascript' src='js/core/slider.min.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-ui-timepicker-addon.js'></script>
+
+	    <!-- Allow includes -->
+	    <script type='text/javascript' src='http://www.w3schools.com/lib/w3data.js'></script> 
+
+	    <!-- Custom/project js -->
+	    <script type='text/javascript' src='js/scripts.js'></script> 
+
+	</head>
+
+	<body class="wp-admin wp-core-ui no-js auto-fold admin-bar admin-color-fresh locale-en-us multisite no-customize-support no-svg">
+	    <div id="wpwrap">
+	    	<div w3-include-html="adminmenu.html"></div> 
+	        <div id="wpcontent">
+	        	<div w3-include-html="wpadminbar.html"></div> 
+	            <div id="wpbody" role="main">
+	                <div id="wpbody-content" aria-label="Main content" tabindex="0">
+	                    
+	                    <!-- Project starts here -->
+	                    <div class="wrap">
+	                        <h1>New Promo Reel</h1>
+	                    </div>
+	                    <form>
+					        <input type="hidden" id="reelId" value="6">
+					        <input type="hidden" name="action" value="doUpdate">
+					        <table class="form-table">
+					            <tbody>
+						            <tr class="form-field form-required">
+						                <th scope="row"><label>Promo reel title</label></th>
+						                <td>
+						                    <input type="text">
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required">
+						                <th scope="row">Number of slots</th>
+						                <td>
+						                    <select>
+						                    	<option>1</option>
+						                    	<option>2</option>
+						                    	<option>3</option>
+						                    	<option>4</option>
+						                    	<option>5</option>
+						                    	<option>6</option>
+						                    	<option>7</option>
+						                    	<option>8</option>
+						                    	<option>9</option>
+						                    	<option>10</option>						                    	
+						                    </select>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required">
+						                <th scope="row">Rotation frequency</th>
+						                <td>
+						                    <select>
+						                    	<option>3 seconds</option>
+						                    	<option>5 seconds</option>
+						                    	<option>7 seconds</option>
+						                    	<option>10 seconds</option>					                    	
+						                    </select>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required">
+						                <th scope="row">Navigation display type</th>
+						                <td class="thumb-type">
+						                    <label><div class="thumb-ex sidebar"></div><input type="radio" name="thumb-type" value="sidebar" checked> Sidebar</label>
+						                    <label><div class="thumb-ex thumb"></div><input type="radio" name="thumb-type" value="thumb"> Thumbnails</label>
+						                    <label><div class="thumb-ex none"></div><input type="radio" name="thumb-type" value="none"> No navigation</label>            
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required sidebar-position">
+						                <th scope="row">Sidebar position</th>
+						                <td>
+						                    <label><input type="radio" name="sidebar-position" checked> Right</label>
+						                    <label><input type="radio" name="sidebar-position"> Left</label>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required thumb-position" style="display:none;">
+						                <th scope="row">Thumbnail position</th>
+						                <td>
+						                    <label><input type="radio" name="thumb-position" checked> Right</label>
+						                    <label><input type="radio" name="thumb-position"> Left</label>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required thumb-shape" style="display:none;">
+						                <th scope="row">Thumbnail shape</th>
+						                <td>
+						                    <label><input type="radio" name="thumb-shape" checked> Square</label>
+						                    <label><input type="radio" name="thumb-shape"> Circle</label>
+						                    <label><input type="radio" name="thumb-shape"> Rectangle</label>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required">
+						                <th scope="row">Teaser text</th>
+						                <td>
+						                    <label><input type="checkbox"> Display teaser text</label>
+						                </td>
+						            </tr>
+						            <tr class="form-field form-required">
+						                <th scope="row">Navigation arrows</th>
+						                <td>
+						                    <label><input type="checkbox"> Display promo reel arrows</label>
+						                </td>
+						            </tr>
+					            </tbody>
+					        </table>
+					        <p class="submit">
+					            <!-- a class="button" id="previewPromoReelBtn">Preview</a -->
+					            <input type="submit" name="submit" class="button button-primary submit" value="Save Changes">
+					        </p>
+					    </form>
+
+	                </div>
+	            </div>
+	        </div>
+	        <div id="wpfooter" role="contentinfo">
+	            <p id="footer-left" class="alignleft">
+	                <span id="footer-thankyou">Thank you for creating with <a href="https://wordpress.org/">WordPress</a>.</span> </p>
+	            <p id="footer-upgrade" class="alignright">
+	                <strong><a href="http://jesse.qa.tritondigitalcms.com/wp-admin/network/update-core.php">Get Version 4.5.1</a></strong> </p>
+	            <div class="clear"></div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
+
+    <script>
+		w3IncludeHTML();
+	</script>
+
+	</body>
+
+</html>

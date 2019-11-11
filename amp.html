@@ -1,0 +1,256 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>A little internet nook for Jesse Wallace</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="images/favicon.png">
+</head>
+
+<body class="page">
+
+	<header data-headroom>
+		<nav class="nav-collapse">
+          <ul class="cf">
+            <li><a href="index.html#top" class="nav-top">Home</a></li>
+            <li><a href="index.html#code" class="nav-code">Projects</a></li>
+            <li class="logo">
+              <span>JW</span>
+            </li>
+            <li><a href="index.html#design" class="nav-design">Dribbble</a></li>
+            <li><a href="index.html#contact" class="nav-contact">Contact</a></li>
+          </ul>
+        </nav>
+	</header>
+
+<section class="intro">
+	<h1>AMP Platform Redesign</h1>
+	<p>The AMP Platform by Triton Digital is a set of connected products and services that engage the audience of digital audio providers. The product line includes tools such as contesting and survey engines, email, promotions management, user analytics and other tools for engagement.</p>
+
+</section>
+<section class="study">
+
+		<article>
+			<h2>Project deliverables</h2>
+			<ul>
+				<li><i class="fa fa-caret-right"></i> Consolidate and unify UI of four disparate products</li>
+				<li><i class="fa fa-caret-right"></i> Reduce unique components and user flows where possible</li>
+				<li><i class="fa fa-caret-right"></i> Create framework of reusable UI components</li>
+				<li><i class="fa fa-caret-right"></i> Catalog UI standards and common UX practices</li>
+				<li><i class="fa fa-caret-right"></i> Increase usability of products with simple markup changes</li>
+			</ul>
+		</article>
+		
+		<article>
+			<h2>Overview</h2>
+			<p>Triton products were developer-designed and utilitarian as I started to emerge in the company. Design culture didn't exist, user experience wasn't in the vocabulary, and every product had a separate developer using boxed components to cobble together the interfaces and functionality. As we entered into an era where users were expecting better designed, easier to use products, we were at a crossroads: rest on our laurels until something more modern came along and took our business, or commit to producing a stronger, better design and more connected set of products.</p>
+			<p>And so begun one of the main initiatives of my time with the Triton Digital team was transforming our old, dated products into new ones with modern, fresh interfaces and experiences. With a team of talented designers and developers, we embarked on what turned out to be a multi-year project by the time it was done, yet one with lasting impact on the products and culture at the company in respect to design.</p>
+		</article>
+
+
+		<article>
+			<h2>Challenge</h2>
+
+			<p>The main challenge was that we had multiple products on different technologies and code-bases - ASP Classic, .NET, Flash/Flex, PHP...you name it, we had it. On top of that, nearly all of the products had different UI components and look/feels because of using whatever off-the-shelf libraries and frameworks.  There was no semblance of unity, no cross pollination between products, nothing that the users could expect to anchor to from product to product.  Different colors, different typography, different calls to action, etc. We had quite a task set before us.</p>
+		</article>
+		<div class="media nowrap">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/oldamp-1.jpg">
+					<img src="img/amp/oldamp-1.jpg" />
+				</a>
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/oldamp-2.jpg">
+					<img src="img/amp/oldamp-2.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="500ms">
+				<a href="img/amp/oldamp-3.jpg">
+					<img src="img/amp/oldamp-3.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="750ms">
+				<a href="img/amp/oldamp-4.jpg">
+					<img src="img/amp/oldamp-4.jpg" />
+				</a>	
+			</div>
+		</div>
+
+		<article>
+			<h2>Approach</h2>
+			<p>As the product strategy started to come together, we decided that we would attack the need by breaking this into manageable milestones:</p>
+			<ol>
+				<li>Create and establish a common UI framework and style guide</li>
+				<li>Write and manage a repository of reusable HTML, CSS and javascript components</li>
+				<li>Overhaul our largest product to provide the vast majority of coverage for converting the other products</li>
+			</ol>
+			<p>Once we completed one large, flagship product, we would be positioned to more rapidly approach the redesign of the rest of the products, as well as having a good bedrock for new products.</p>
+		</article>
+
+		<article>
+			<h2>Style guide and UI framework</h2>
+			<p>First, we started with defining a style guide. We established the base aesthetic, typography, colors, grid system and more. We documented these and made them gospel.</p>
+			<p>Secondly, we defined a base system of markup that would be used going forward. We created and documented everything from base shell containers up through details like alert messages. We also unified and documented the use of javascript components. All of the examples had code snippets for easy developer handoff.</p>
+			<p>Lastly, we also documented common UX practices that were shared between products, more for our benefit to recall than for design > dev usage.</p>
+			<a class="button" href="http://www.tdascreative.com/uiguide" target="_blank">View UI Guide</a>
+		</article>
+		<div class="media">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/styleguide-1.jpg">
+					<img src="img/amp/styleguide-1.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/styleguide-2.jpg">
+					<img src="img/amp/styleguide-2.jpg" />
+				</a>			
+			</div>
+		</div>
+
+		<article>
+			<h2>Contesting Redesign</h2>
+			<p>We started our platform redesign by focusing in on our flagship product, our Contest Engine. This was by far our most complex product, but we knew it would give us the best basis as we redesigned other portions of the software. The previous software was built on Flex, had a completely different aesthetic than the other products, and was very quirky to use.</p>
+			<p>We spent a hefty amount of time documenting and detailing the different UI components, and making sure we could set ourselves up for reuse wherever possible. The image with the Nissan Cube above was our <a data-lity href="img/amp/oldamp-2.jpg">old contesting engine</a> (click to refer). You can see the redesign efforts below.</p>
+		</article>
+		<div class="media nowrap">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/contest-1.jpg">
+					<img src="img/amp/contest-1.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/contest-2.jpg">
+					<img src="img/amp/contest-2.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="500ms">
+				<a href="img/amp/contest-3.jpg">
+					<img src="img/amp/contest-3.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="750ms">
+				<a href="img/amp/contest-4.jpg">
+					<img src="img/amp/contest-4.jpg" />
+				</a>			
+			</div>									
+		</div>
+
+		<article>
+			<h2>Tackling Other Products</h2>
+			<p>After the successful conversion and redesign of the contesting engine, we methodically approached each product and started the redesign process with it. We went through the same iterative design cycle of making sure we were paring down to required functionality, using common components and only developing new designs when necessary.</p>
+		</article>
+		<div class="media nowrap">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/other-1.jpg">
+					<img src="img/amp/other-1.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/other-2.jpg">
+					<img src="img/amp/other-2.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="500ms">
+				<a href="img/amp/other-3.jpg">
+					<img src="img/amp/other-3.jpg" />
+				</a>			
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="750ms">
+				<a href="img/amp/other-4.jpg">
+					<img src="img/amp/other-4.jpg" />
+				</a>			
+			</div>									
+		</div>
+
+		<article>
+			<h2>Promotions Management</h2>
+			<p>Promotions Management was one of the first new products we had built since we created our style guide and frameworks. We had since transformed a few different products, and with Promo, we took those learnings and utilized them as well as creating some fresh interfaces that would benefit the target users. With this product, we had to create more baroque UI pieces than we did with any of our other redesign efforts, but the entire time we kept the framework close at hand, and introduced some of the components we made for Promo as reusable pieces in our other products.</p>
+		</article>
+		<div class="media nowrap">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/promo-1.jpg">
+					<img src="img/amp/promo-1.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/promo-2.jpg">
+					<img src="img/amp/promo-2.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="500ms">
+				<a href="img/amp/promo-3.jpg">
+					<img src="img/amp/promo-3.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="750ms">
+				<a href="img/amp/promo-4.jpg">
+					<img src="img/amp/promo-4.jpg" />
+				</a>	
+			</div>
+		</div>
+
+		<article>
+			<h2>AMP CMS</h2>
+			<p>When Triton decided to rearchitect it's CMS platform and base it off of Wordpress, we also decided we'd like to skin the Wordpress admin to make it look and feel like you were still in the Triton Digital ecosystem. We took a meticulous comb through the CSS and replicated the vast majority of our brand on the Wordpress platform. We also designed each custom plugin to use our user experience and usability standards, which resulted in a disconnected product having a connected feel.</p>
+		</article>
+		<div class="media">
+			<div class="image wow fadeInUp">
+				<a href="img/amp/cms-1.jpg">
+					<img src="img/amp/cms-1.jpg" />
+				</a>	
+			</div>
+			<div class="image wow fadeInUp" data-wow-delay="250ms">
+				<a href="img/amp/cms-2.jpg">
+					<img src="img/amp/cms-2.jpg" />
+				</a>	
+			</div>
+		</div>		
+
+		<article>
+			<h2>Key Takeways</h2>
+			<p>It was a challenging, frustrating, fulfilling and long process with lots of learnings along the way.</p>
+			<p>I learned how incredibly important a well-documented UI guide is, how much it streamlines the process and clears communication between design and dev.</p>
+			<p>I learned how much ground you can cover when you can reliably skip the Photoshop phase and hop right into code prototypes</p>
+			<p>I learned how difficult, but still yet possible it is to unify style over different code bases. Thank the lord for SASS.</p>
+			<p>I learned how to manage deviation requests, both when to allow and when to deny. When to allow wasn't very often :)</p>
+			<p>I learned this and so much more, but hopefully proof is in the detail gone into here - it was definitely an achievement and major work completed at Triton Digital.</p>
+		</article>
+
+</section>
+
+	<footer>
+		<div class="container">
+			<div class="copy">&copy; <?php date_default_timezone_set('America/New_York') ?><?php echo date("Y"); ?> Copyright Jesse Wallace</div>
+			<div class="social">					
+				<a href="https://dribbble.com/jessewallace" target="_blank"><i class="fa fa-dribbble"></i></a>
+				<a href="https://twitter.com/jesse_wallace" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/in/jessebwallace/" target="_blank"><i class="fa fa-linkedin"></i></a>
+				<a href="https://medium.com/@jesse_wallace" target="_blank"><i class="fa fa-medium"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lity/2.2.2/lity.min.js"></script>
+	<script src="//unpkg.com/headroom.js@0.9.3"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.39/responsive-nav.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98702200-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</body>
+
+</html>

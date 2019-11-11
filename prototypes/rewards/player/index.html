@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet"href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/testfile.js"></script>
+
+        <!-- Removed mobile slider functions only -->
+        <script src="js/jquery.mobile.custom.min.js"></script>
+        
+        <!-- // <script id="tpp" data-target="http://tdascreative.com/scott/v1player/tdas-popup-player.html" src="js/tdas-popup-player.js"></script> -->
+    </head>
+    <body>
+
+        <!-- V1PLAYER CODE -->
+
+        <div class="v1player">
+            <div class="player-content-wrapper">
+                <div class="v1player-history-wrapper">
+
+                    <!-- Mobile triggers to openFully Song List-->
+                    <div class="v1player-mobile-history-open"></div>
+                    <div class="v1player-mobile-favorites-open"></div>
+
+                    <div id="tabs">
+                        <ul>
+                            <li>
+                                <a href="#tabs-1">
+                                    <!-- History Tab Control -->
+                                    <div class="v1player-history-title" id="history-tab-ctrl">
+                                        <i class="fa fa-history"></i>
+                                        Song History
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabs-2">
+                                    <!-- Favorites Tab Control -->
+                                    <div class="v1player-favorites-title" id="favorites-tab-ctrl">
+                                        <i class="fa fa-heart"></i>
+                                        My Favorites
+                                        <span class="v1player-favorites-total">(7)</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                        <!-- Box Shadows for Content Wrapper -->
+                        <div class="v1player-history-top-shadow"></div>
+                        <div class="v1player-history-bottom-shadow"></div>
+
+                        <!-- jQuery Tabs-1 -->
+                        <div id="tabs-1">
+                            <div class="v1player-history-contents v1player-tab v1player-active" id="history-tab">
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history1.png">
+                                        Dearly Departed
+                                        <span class="v1player-history-artist">Shakey Graves</span>
+                                        <span class="v1player-history-album">Shakey Graves Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>2m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history2.png">
+                                        Forest on the Hill
+                                        <span class="v1player-history-artist">Hunter and the Bear</span>
+                                        <span class="v1player-history-album">Hunter and the Bear Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>5m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history3.png">
+                                        White Noise
+                                        <span class="v1player-history-artist">Trampled by Turtles</span>
+                                        <span class="v1player-history-album">Trampled by Turtles Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>8m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history4.png">
+                                        Hold You in My Arms
+                                        <span class="v1player-history-artist">Ray LaMontagne</span>
+                                        <span class="v1player-history-album">Ray LaMontagn Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>11m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history5.png">
+                                        Stranger
+                                        <span class="v1player-history-artist">The Devil Makes Three</span>
+                                        <span class="v1player-history-album">The Devil Makes Three Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>14m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                                <div class="fav-target-row">
+                                    <div class="v1player-history-row">
+                                        <img src="img/history5.png">
+                                        EXTRA ROW FOR SCROLL TESTING
+                                        <span class="v1player-history-artist">The Devil Makes Three</span>
+                                        <span class="v1player-history-album">The Devil Makes Three Album</span>
+                                        <span class="v1player-history-time"><i class="fa fa-history"></i>14m</span>
+                                        <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                        <span class="v1player-history-favorites"><i class="fa fa-heart-o"></i></span>
+                                        <span class="v1player-history-bars"><i class="fa fa-bars mobile-bars"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- jQuery Tabs-2 -->
+                        <div id="tabs-2">
+                            <div class="v1player-favorites-contents v1player-tab" id="favorites-tab">
+                                <div class="v1player-favorites-login">
+                                    <span class="v1player-favorites-login-text">To add favorites to your list please sign up to create an account or sign in</span>
+                                    <div class="v1player-favorites-login-icons">
+                                        <i class="fa fa-heart"></i>
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="v1player-favorites-login-controls">
+                                        <span class="v1player-favorites-login-control favorites-login">Log In</span>
+                                        <span class="v1player-favorites-login-control favorites-signup">Sign Up</span>
+                                    </div>
+                                </div>
+                                <div class="v1player-favorites-empty">
+                                    <span>Your favorites list is empty</span>
+                                    <br>
+                                    <span>Click the heart to add a song to you playlist</span>
+                                    <div class="v1player-favorites-empty-icons">
+                                        <i class="fa fa-heart-o"></i>
+                                        <i class="fa fa-hand-o-up"></i>
+                                    </div>
+                                </div>
+                                <div class="v1player-favorites-content-wpr">
+                                    <div class="v1player-clear-all-wpr">
+                                        <span class="v1player-clear-all">Clear All<i class="fa fa-times-circle"></i></span>
+                                        <div class="v1player-clear-all-confirm">
+                                            <div class="fa fa-sort-asc"></div>
+                                            <span class="v1player-confirm-text">Are you sure you want to clear out all your favorites?</span>
+                                            <br>
+                                            <span class="v1player-favorites-cancel-control">Cancel</span>
+                                            <span class="v1player-favorites-clear-control">Yes</span>
+                                        </div>
+                                    </div>
+                                    <div class="v1player-favorites-list">
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="Test Panel 2">
+                                                <img src="img/history1.png">
+                                                TEST PANEL 2
+                                                <span class="v1player-history-artist">Shakey Graves</span>
+                                                <span class="v1player-history-album">Shakey Graves Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="Forest on the Hill">
+                                                <img src="img/history2.png">
+                                                Forest on the Hill
+                                                <span class="v1player-history-artist">Hunter and the Bear</span>
+                                                <span class="v1player-history-album">Hunter and the Bear Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="White Noise">
+                                                <img src="img/history3.png">
+                                                White Noise
+                                                <span class="v1player-history-artist">Trampled by Turtles</span>
+                                                <span class="v1player-history-album">Trampled by Turtles Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="Hold You in My Arms">
+                                                <img src="img/history4.png">
+                                                Hold You in My Arms
+                                                <span class="v1player-history-artist">Ray LaMontagne</span>
+                                                <span class="v1player-history-album">Ray LaMontagne Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="Stranger">
+                                                <img src="img/history5.png">
+                                                Stranger
+                                                <span class="v1player-history-artist">The Devil Makes Three</span>
+                                                <span class="v1player-history-album">The Devil Makes Three Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="fav-target-row">
+                                            <div class="v1player-history-row" data-songname="Stranger">
+                                                <img src="img/history5.png">
+                                                EXTRA ROW ON TAB 2
+                                                <span class="v1player-history-artist">The Devil Makes Three</span>
+                                                <span class="v1player-history-album">The Devil Makes Three Album</span>
+                                                <a href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                                                <span class="v1player-favorites-control"><i class="fa fa-trash"></i></span>
+                                                <span class="v1player-favorites-bars"><i class="fa fa-bars"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Prev and Next triggers -->
+                    <div class="v1player-history-page-button-wpr">
+                        <div class="v1player-history-page-button page-prev disabled"><i class="fa fa-chevron-left"></i> PREV</div>
+                        <div class="v1player-history-page-button page-next">NEXT <i class="fa fa-chevron-right"></i></div>
+                    </div>
+
+                </div>
+
+                <!-- Song Informtion / Buy and Favorite links -->
+                <div class="v1player-mobile-overlay-open"></div>
+
+                <div class="v1player-song-info">
+                    <img class="v1player-album-art" src="img/album-art.png"/>
+                    <span class="v1player-track">The Ballad of Love and Hate
+                        <a class="v1player-buy-song-icon" href="/#" title="Buy this song"><i class="fa fa-shopping-cart"></i></a>
+                    </span>
+                    <i class="mobile-favorites-ctrl fa fa-heart-o"></i>
+                    <span class="v1player-artist">The Avett Brothers</span>
+                </div>
+                <!-- Login / Signup -->
+                <div class="v1player-controls v1player-login-controls-wpr">
+                    <div class="v1player-vr"></div>
+                    <div class="v1player-login-controls">
+                        <span class="v1player-login-ctrl login-ctrl">Log In</span>
+                        <span class="v1player-login-ctrl">or</span>
+                        <span class="v1player-login-ctrl signup-ctrl">Sign Up</span>
+                    </div>
+                    <!-- Profile Icon -->
+                    <div class="v1player-profile-wpr">
+                        <span class="v1player-profile-icon-wpr">
+                            <img class="v1player-profile-icon" src="img/profile-icon.png">
+                        </span>
+                        <div class="v1player-profile-controls">
+                            <span class="v1player-username">User Name Here</span>
+                            <span class="v1player-profile-ctrl v1player-my-profile">My Profile</span>
+                            <span class="v1player-profile-ctrl v1player-logout">Log Out</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player Controls -->
+                <div class="v1player-controls">
+                    <div class="v1player-control control-history">
+                        <i class="fa fa-music"></i>
+                    </div>
+                    <div class="v1player-control control-volume">
+                        <i id="fa-vol" class="icon icon-volume-high"></i>
+
+                        <div class="v1player-control-volume-slider">
+                            <div id="slider-vertical" style="height:158px;"></div>
+                            <span class="control-volume-handle"></span>
+                        </div>
+                    </div>
+                    <div class="v1player-control v1player-control-playstop">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle-o fa-stack-2x"></i>
+                            <i class="fa fa-play fa-stack-1x"></i>
+                            <i class="fa fa-stop fa-stack-1x"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Mobile Login / Signup -->
+                <div class="v1player-mobile-login-wpr expanded-login">
+                    <div class="v1player-mobile-ctrl-open-wpr">
+                        <div class="v1player-mobile-profile-wpr">
+                            <img src="img/profile-icon.png">
+                            <span class="v1player-mobile-user-username">User Name Here</span>
+                            <br>
+                            <span class="v1player-mobile-user-email">longemailaddresswillgohere@gmail.com</span>
+                            <br>
+                            <span class="v1player-mobile-ctrl mobile-profile-ctrl mobile-ctrl-open">My Profile</span>
+                            <span class="v1player-mobile-ctrl mobile-logout-ctrl mobile-ctrl-open">Log Out</span>
+                        </div>
+                        <div class="v1player-mobile-auth-wpr">
+                            <span class="v1player-mobile-auth-title">Love what you're Hearing</span>
+                            <span class="v1player-mobile-auth-subtitle">Sign up now for unlimited, free access to our stream.</span>
+                            <br>
+                            <span class="v1player-mobile-ctrl auth-ctrl mobile-login-ctrl">Log In</span>
+                            <span class="v1player-mobile-ctrl auth-ctrl mobile-signup-ctrl">Sign Up</span>
+                        </div>
+                        <span class="v1player-mobile-ctrl-open"><i class="v1p-closed fa fa-bars"></i></span>
+                    </div>
+                </div>
+
+                <!-- Collapsed Login -->
+                <div class="collapsed-login">
+                    <div class="v1player-mobile-ctrl-open-wpr">
+                        <div class="v1player-mobile-profile-wpr">
+                            <img src="img/profile-icon.png">
+                            <span class="v1player-mobile-user-username">User Name Here</span>
+                            <br>
+                            <span class="v1player-mobile-user-email">longemailaddresswillgohere@gmail.com</span>
+                            <br>
+                            <span class="v1player-mobile-ctrl mobile-profile-ctrl mobile-ctrl-closed"><i class="fa fa-gear"></i></span>
+                            <span class="v1player-mobile-ctrl mobile-logout-ctrl mobile-ctrl-closed"><i class="fa fa-power-off"></i></span>
+                        </div>
+                        <div class="collapsed-mobile-auth-wpr">
+                            <span class="v1player-mobile-ctrl auth-ctrl mobile-login-ctrl"><i class="fa fa-arrow-right"></i>Log In</span>
+                            <span class="v1player-mobile-ctrl auth-ctrl mobile-signup-ctrl"><i class="fa fa-user"></i>Sign Up</span>
+                        </div>
+                        <span class="collapsed-bar-ctrl"><i class="v1p-closed fa fa-bars"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Overlay Exit -->
+            <div class="v1player-overlay-exit"></div>
+
+        </div>
+
+        <!-- End of V1Player Code -->
+
+        <div class="background-container"></div>
+
+    </body>
+</html>

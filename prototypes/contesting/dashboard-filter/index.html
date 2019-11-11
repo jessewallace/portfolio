@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Triton Digital</title>
+    <link href="http://www.tdascreative.com/uiguide/style.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="dashboard.css"/>
+    <link rel="stylesheet" href="inbox.css"/>
+
+
+   <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+
+    <!-- Accordion plugin -->
+    <script>
+        $(document).ready(function () {
+            var allPanels = $('.contest-details').hide();
+            var head = $('.contest-list-item');
+            var header = $('.contest-name, .contest-date, .contest-users');
+
+            header.click(function() {
+                allPanels.slideUp();
+                head.removeClass('is-opened');
+
+                if ($(this).parent().next().is(":visible")) {
+                    $(this).parent().next().slideUp();
+                    $(this).closest('.contest-list-item').removeClass('is-opened');
+                }
+                else {
+                    $(this).parent().next().slideDown();
+                    $(this).closest('.contest-list-item').addClass('is-opened');
+                }
+                return false;
+            });
+
+            $('.js-search').on('click', function() {
+                $('.dashboard-slider').addClass('is-slid');
+            });
+
+            $('.js-close-search').on('click', function() {
+                $('.dashboard-slider').removeClass('is-slid');
+            });
+
+            $( ".create-contest" ).dialog({
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 525,
+                buttons: [
+                    {
+                        text: "Cancel",
+                        click: function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                ]
+            });
+
+            $( "#createcontest" ).click(function() {
+                $( ".create-contest" ).dialog( "open" );
+            });
+
+//            $('#contestFilter').on('click', '.filter-contests', function() {
+//                $('#contestOptions').toggleClass('is-opened');
+//            })
+
+
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+        $('.dropdown-toggle').dropdown();
+    </script>
+
+    <style>
+        body {
+            background-image: url("http://www.tdascreative.com/uiguide/images/bg.png");
+            background-repeat: repeat;
+        }
+        .app-container {
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="products-nav">
+    <div class="page-container">
+        <div class="product-controls">
+            <img class="logo" src="http://promoapp.tritondigital.dev/css/images/tdlogo.png">
+            <div class="product-menu-toggle"></div>
+        </div>
+            <span class="user-controls">
+            <span data-bind="text: welcomeLabel">Administering:</span><span data-bind="text: fullName"> AAA</span>
+                <a href="http://www.tdascreative.com/wiki" class="separated-link">The Chief
+                <i class="icon-caret-down"></i></a>
+            </span>
+    </div>
+</div>
+        <div id="userbar">
+    <div id="menucontainer">
+        <ul id="menu">
+            <li class="dropheader"><a href="" class="selected">Dashboard</a></li>
+            <li class="dropheader"><a href="">Syndicated Contest</a></li>
+            <li class="dropheader"><a href="">Moderate</a></li>
+            <li class="dropheader"><a href="">Report</a></li>
+            <li class="dropheader"><a href="">Administration</a></li>
+            <li class="dropheader"><a href="">Help &amp; Support</a></li>
+        </ul>
+    </div>
+    <span class="clear"></span>
+</div>
+    </header>
+
+    <section class="page-container">
+        <div class="app-container">
+            
+            <div id="contestingDashboard" class="dashboard-container">
+                <div class="dashboard-slider clearfix">
+                    <div class="pull-left width-1-2">
+                        <div class="container-sectioned nopadding">
+                            <h1 class="pull-left">Dashboard</h1>
+                            <button name="Create Contest" class="button-positive pull-right" id="createcontest"><i class="fa fa-plus"></i> Create New Contest</button>
+                        </div>
+                        
+                        
+<script>
+    $(document).ready(function () {
+
+        $('.filter-radio').first().prop('checked', true);
+
+        $('#contestFilter').on('click', '.filter-contests, #filterToggle', function() {
+            $('#contestOptions').toggleClass('is-opened');
+        });
+
+
+
+        $('#applyFilters').on('click', function () {
+            if ($('.filter-checkbox:checked').length == $('.filter-checkbox').length) {
+                $('#filterToggle').prop('checked', false);
+            } else {
+                $('#filterToggle').prop('checked', true);
+            }
+
+            $('#contestOptions').removeClass('is-opened');
+        });
+
+        $('#resetFilters').on('click', function () {
+            $('.filter-checkbox').prop('checked', false);
+            $('.filter-radio').first().prop('checked', true);
+            $('#filterToggle').prop('checked', false);
+
+            $('#contestOptions').removeClass('is-opened');
+        });
+    });
+</script>
+<div class="container" id="contestlist">
+    <div class="toolbar toolbar--flex nopadding" style="position: relative">
+        <div class="contest-searching">
+            <h2 class="pull-left">Contests</h2>
+            <div class="insert-into">
+                <i class="icon-search"></i>
+                <input placeholder="Contest Name or Short ID" class="search search-input" type="text">
+            </div>
+            <div id="contestSearchBarContainer" class="pmg-search">
+                <div class="input-container">
+                    <input class="width-1-4 pmg-search-input" type="text" placeholder="PMG Quick Look Up"/>
+                    <button class="pmg-search-button js-search">search</button>
+                </div>
+            </div>
+        </div>
+        <div id="contestFilter" class="contest-filter">
+            <div id="contestOptions" class="contest-list-options">
+                <span class="filter-contests">Filtering Options <i class="icon-caret-down"></i></span>
+                <div class="filters">
+    <section class="filters-body">
+        <header class="filters-head">
+            <h2 class="filters-header nomargin">Filtering Options</h2>
+        </header>
+        <h3>Contest Types</h3>
+        <div class="grid">
+            <div class="col-1-3 has-vert-divider">
+                <label>User Generated Contest</label>
+                <div class="input-container checkbox">
+                    
+                    <label for="User Generated - Photo" class="filter">
+                        <input id="User Generated - Photo" type="checkbox" class="filter-checkbox">
+                        User Generated - Photo
+                    </label>
+                    
+                    <label for="User Generated - Video" class="filter">
+                        <input id="User Generated - Video" type="checkbox" class="filter-checkbox">
+                        User Generated - Video
+                    </label>
+                    
+                    <label for="User Generated - Text" class="filter">
+                        <input id="User Generated - Text" type="checkbox" class="filter-checkbox">
+                        User Generated - Text
+                    </label>
+                    
+                    <label for="User Generated - Audio" class="filter">
+                        <input id="User Generated - Audio" type="checkbox" class="filter-checkbox">
+                        User Generated - Audio
+                    </label>
+                    
+                    <label for="User Generated - Mixed" class="filter">
+                        <input id="User Generated - Mixed" type="checkbox" class="filter-checkbox">
+                        User Generated - Mixed
+                    </label>
+                    
+                    <label for="Photo Caption" class="filter">
+                        <input id="Photo Caption" type="checkbox" class="filter-checkbox">
+                        Photo Caption
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="col-1-3 has-vert-divider">
+                <label>Sweepstakes</label>
+                <div class="input-container checkbox">
+                    
+                    <label for="Click to Enter" class="filter">
+                        <input id="Click to Enter" type="checkbox" class="filter-checkbox">
+                        Click to Enter
+                    </label>
+                    
+                    <label for="Points" class="filter">
+                        <input id="Points" type="checkbox" class="filter-checkbox">
+                        Points
+                    </label>
+                    
+                </div>
+
+            </div>
+            <div class="col-1-3">
+                <label>Brackets</label>
+                <div class="input-container checkbox">
+                    
+                    <label for="March Brackets" class="filter">
+                        <input id="March Brackets" type="checkbox" class="filter-checkbox">
+                        March Brackets
+                    </label>
+                    
+                    <label for="Predicitve Brackets" class="filter">
+                        <input id="Predicitve Brackets" type="checkbox" class="filter-checkbox">
+                        Predicitve Brackets
+                    </label>
+                    
+                    <label for="Voting Brackets" class="filter">
+                        <input id="Voting Brackets" type="checkbox" class="filter-checkbox">
+                        Voting Brackets
+                    </label>
+                    
+                </div>
+            </div>
+        </div>
+        <h3>Other Options</h3>
+        <div class="grid">
+            <div class="col-1-3 zerolist">
+                <label for="syndicated" class="filter"><input id="syndicated" type="checkbox" class="filter-checkbox"> Syndicated Contests</label>
+            </div>
+            <div class="col-2-3">
+                <label>Contest Status</label>
+                <div class="input-container radio radio-inline">
+                    
+                    <label for="statusAll"><input id="statusAll" name="status" type="radio" class="filter-radio">All</label>
+                    
+                    <label for="statusActive"><input id="statusActive" name="status" type="radio" class="filter-radio">Active</label>
+                    
+                    <label for="statusInactive"><input id="statusInactive" name="status" type="radio" class="filter-radio">Inactive</label>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="button-container filters-footer">
+        <button class="button filter-button" id="resetFilters">Reset</button>
+        <button class="button-highlight filter-button" id="applyFilters">Apply Filter(s)</button>
+    </section>
+</div>
+
+            </div>
+            <div class="toggle">
+                <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="filterToggle" disabled>
+                <label class="toggle-container" for="filterToggle">
+                    <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                    <span class="toggle-handle"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="contest-list" data-theme="none">
+    <div class="contest-list-header table-header">
+        <span class="table-header-item contest-type is-sortable">Type</span>
+        <span class="table-header-item contest-name is-sortable">Contest Name</span>
+        <span class="table-header-item contest-date is-sortable is-sorted-desc">Start Date</span>
+        <span class="table-header-item contest-users"># Registered</span>
+    </div>
+    
+    <div class="list contest-list-item is-active is-syndicated ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" td-icon-basketball "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">2014 March Basketball Challenge</span>
+                    <a class="contest-id" href="#" target="__blank">ID: 1ADXTN</a>
+                </span>
+                <span class="contest-date">3/3/2014</span>
+                <span class="contest-users">2354</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Creating Org:</strong>
+                <span class="contest-detail-item col-1-2">DEV-4SANBA</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Created By:</strong>
+                <span class="contest-detail-item col-1-2">TheCheif</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">3/3/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">basketball</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">1ADXTN</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">2354</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/1ADXTN" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/1ADXTN"&gt;http://digitalivy.dev/1ADXTN&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-inactive ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" fa fa-photo "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">The Cutest Baby Photo Contest</span>
+                    <a class="contest-id" href="#" target="__blank">ID: 32Atyd</a>
+                </span>
+                <span class="contest-date">3/2/2014</span>
+                <span class="contest-users">35</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2">Inactive</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">3/2/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">photo</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">32Atyd</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">35</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/32Atyd" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/32Atyd"&gt;http://digitalivy.dev/32Atyd&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-active ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" fa fa-microphone "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">Apple iPod Touch 32GB</span>
+                    <a class="contest-id" href="#" target="__blank">ID: FY08PK</a>
+                </span>
+                <span class="contest-date">3/1/2014</span>
+                <span class="contest-users">200</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">Awaiting Moderation</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">3/1/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">audio</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">FY08PK</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">200</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/FY08PK" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/FY08PK"&gt;http://digitalivy.dev/FY08PK&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-active ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" td-icon-bracket "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">The Greatest Rock Band</span>
+                    <a class="contest-id" href="#" target="__blank">ID: 2DATHM</a>
+                </span>
+                <span class="contest-date">3/1/2014</span>
+                <span class="contest-users">200</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">3/1/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">bracket</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">2DATHM</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">200</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/2DATHM" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/2DATHM"&gt;http://digitalivy.dev/2DATHM&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-active ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" fa fa-film "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">America's Funniest Work Video</span>
+                    <a class="contest-id" href="#" target="__blank">ID: 4DAS82</a>
+                </span>
+                <span class="contest-date">2/25/2014</span>
+                <span class="contest-users">64</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">Waiting Approval</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">2/25/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">video</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">4DAS82</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">64</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/4DAS82" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/4DAS82"&gt;http://digitalivy.dev/4DAS82&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-canceled ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" fa fa-film "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">Best Sports Moment Caught Live</span>
+                    <a class="contest-id" href="#" target="__blank">ID: YUM98S</a>
+                </span>
+                <span class="contest-date">2/23/2014</span>
+                <span class="contest-users">2354</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 negative ">Canceled</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">2/23/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">video</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">YUM98S</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">2354</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/YUM98S" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/YUM98S"&gt;http://digitalivy.dev/YUM98S&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-canceled is-syndicated ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" td-icon-click "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">Jamaican Island Getaway</span>
+                    <a class="contest-id" href="#" target="__blank">ID: PDA892</a>
+                </span>
+                <span class="contest-date">2/13/2014</span>
+                <span class="contest-users">99</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 negative ">Canceled</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Creating Org:</strong>
+                <span class="contest-detail-item col-1-2">DEV-4SANBA</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Created By:</strong>
+                <span class="contest-detail-item col-1-2">TheCheif</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">2/13/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">cte</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">PDA892</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">99</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/PDA892" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/PDA892"&gt;http://digitalivy.dev/PDA892&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-inactive ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" fa fa-font "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">The Worst I am Sick Excuse</span>
+                    <a class="contest-id" href="#" target="__blank">ID: 2SJU89</a>
+                </span>
+                <span class="contest-date">2/1/2014</span>
+                <span class="contest-users">874</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2">Inactive</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">2/1/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">text</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">2SJU89</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">874</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/2SJU89" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/2SJU89"&gt;http://digitalivy.dev/2SJU89&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-active ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" td-icon-points "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">Win a 42 inch Samsung Television</span>
+                    <a class="contest-id" href="#" target="__blank">ID: XSDLO9</a>
+                </span>
+                <span class="contest-date">1/23/2014</span>
+                <span class="contest-users">394</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">1/23/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">points</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">XSDLO9</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">394</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/XSDLO9" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/XSDLO9"&gt;http://digitalivy.dev/XSDLO9&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+    <div class="list contest-list-item is-active ">
+        <div class="contest-info">
+
+                <span class="contest-type"><i class=" td-icon-click "></i></span>
+                <span class="contest-name">
+                    <span class="contest-title">MacBook Pro Giveaway</span>
+                    <a class="contest-id" href="#" target="__blank">ID: NUAM09</a>
+                </span>
+                <span class="contest-date">1/3/2014</span>
+                <span class="contest-users">91000</span>
+
+            <div class="dropdown">
+                <a class="fa fa-cog quick-actions-icon dropdown-toggle" data-toggle="dropdown"></a>
+                <ul class="dropdown-menu quick-actions" role="menu">
+                    <li class="quick-action"><a href="#">Cancel Contest</a></li>
+                    <li class="quick-action"><a href="#">Pause Contest</a></li>
+                    <li class="quick-action"><a href="#">Edit Contest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contest-details panel-collapse collapse">
+    <div class="contest-actions container-sectioned">
+        <a class="contest-action" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="contest-action" href="#"><i class="fa fa-files-o"></i> Clone</a>
+        <a class="contest-action" href="#"><i class="fa fa-bar-chart-o"></i> Reports</a>
+        <a class="contest-action" href="#"><i class="fa fa-trophy"></i> Select Winners</a>
+        
+        <a class="contest-action" href="#"><i class="fa fa-pause"></i> Pause Contest</a>
+        
+        <span class="dropdown">
+            <a class="contest-action dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-ellipsis-h"></i> More Actions</a>
+            <ul class="dropdown-menu quick-actions" role="menu">
+                <li class="quick-action"><a href="#"><i class="fa fa-envelope-o"></i> Email Blast</a></li>
+                <li class="quick-action"><a href="#" class="negative"><i class="fa fa-times"></i> Cancel Contest</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="grid container-sectioned">
+        <div class="col-1-2 has-vert-divider">
+            <h3 class="contest-detail-header">Contest Info</h3>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Status:</strong>
+                <span class="contest-detail-item col-1-2 positive ">Active</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Action Required:</strong>
+                <span class="contest-detail-item col-1-2">None</span>
+                
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Start Date:</strong>
+                <span class="contest-detail-item col-1-2">1/3/2014 10:00 AM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">End Date:</strong>
+                <span class="contest-detail-item col-1-2">3/20/2014 12:00 PM</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest Type:</strong>
+                <span class="contest-detail-item col-1-2">cte</span>
+            </div>
+            <div class="contest-detail">
+                <strong class="contest-detail-item col-1-2">Contest ID:</strong>
+                <span class="contest-detail-item col-1-2">NUAM09</span>
+            </div>
+        </div>
+        <div class="col-1-2">
+            <h3 class="contest-detail-header">Contest Stats</h3>
+            <div class="contest-stats">
+                <div class="contest-stat">
+                    <span class="contest-stat-value">91000</span>
+                    <span class="contest-stat-label">Registered</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">287</span>
+                    <span class="contest-stat-label">Submissions</span>
+                </div>
+                <div class="contest-stat">
+                    <span class="contest-stat-value">83.1%</span>
+                    <span class="contest-stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="name">
+        <b style="font-size: 11px;">Use the following snippet to embed into an existing site</b>
+<pre class="code prettyprint html" style="font-size: 11px;">
+&lt;iframe&nbsp;src="http://digitalivy.dev/NUAM09" width="100%" height="300"&gt;
+    &lt;p&gt;Your browser does not support iframes. Please visit &lt;a href="http://digitalivy.dev/NUAM09"&gt;http://digitalivy.dev/NUAM09&lt;/a&gt;.&lt;/p&gt;
+&lt;/iframe&gt;
+</pre>
+    </div>
+</div>
+    </div>
+    
+</div>
+    <div class="pagination">
+    <div class="pagination-controls">
+        <a class="pagination-control fa fa-angle-double-left" href="#"></a>
+        <a class="pagination-control fa fa-angle-left" href="#"></a>
+        <span>
+            Page
+            <input class="one-eighth" type="text" value="1"/>
+            of 11
+        </span>
+        <a class="pagination-control fa fa-angle-right" href="#"></a>
+        <a class="pagination-control fa fa-angle-double-right" href="#"></a>
+    </div>
+</div>
+
+</div>
+<div class="grid">
+    <div class="col-1-1">
+        <div class="grid">
+    <div class="col-1-2">
+        <h2>AMP Contesting Blog</h2>
+        <div class="module contrast">
+            <ul class="rss-items zerolist">
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="col-1-2">
+        <h2>Need to Know Blog</h2>
+        <div class="module contrast">
+            <ul class="rss-items zerolist">
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="rss-item">
+                    <ul class="rss-item-list zerolist">
+                        <li class="rss-title">
+                            <a class="rss-link" href="">New Year, New Mega Contest</a>
+                        </li>
+                        <li class="rss-date">12/8/2014, 10:36:22 AM</li>
+                        <li class="rss-categories">
+                            
+                            <span class="rss-category">Contest & Stuff To Promote NOW!</span>
+                            
+                            <span class="rss-category">Digital Ivy</span>
+                            
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+                    </div>
+                    <div class="pull-left width-1-2">
+                        <div class="container-sectioned">
+    <h2 class="is-clickable header--contrast js-close-search"><i class="fa fa-chevron-circle-left"></i> back to dashboard</h2>
+</div>
+<div class="grid">
+    <div class="col-1-3">
+        <h2>Contest Info</h2>
+        <div class="grid">
+            <strong class="col-1-2">Contest Name</strong>
+            <div class="col-1-2">Win a Delorean</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Short ID</strong>
+            <div class="col-1-2">1Akfl5</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Type of Contest</strong>
+            <div class="col-1-2">UGC - Custom</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Start Date</strong>
+            <div class="col-1-2">12/1/2014 12:00am</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">End Date</strong>
+            <div class="col-1-2">12/31/2014 11:59am</div>
+        </div>
+    </div>
+    <div class="col-1-3">
+        <h2>Org Structure</h2>
+        <div class="grid">
+            <strong class="col-1-2">Org Name</strong>
+            <div class="col-1-2">Doc Brown</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Org Call Letters</strong>
+            <div class="col-1-2">OUTATIME</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Market</strong>
+            <div class="col-1-2">Atlanta</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Broadcaster</strong>
+            <div class="col-1-2">CBS</div>
+        </div>
+        <div class="grid">
+            <strong class="col-1-2">Parent Short ID</strong>
+            <div class="col-1-2">EGPNBR</div>
+        </div>
+    </div>
+    <div class="col-1-3 button-list">
+        <h2>Action (on Org)</h2>
+        <button class="full-width button-list-item">Edit this contest</button>
+        <button class="full-width button-list-item">Edit this contest's parent</button>
+        <button class="full-width button-list-item">Run a custom report</button>
+        <button class="full-width button-list-item">Select Winners</button>
+    </div>
+</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="modal" class="create-contest" title="Create New Contest">
+    <div class="create-contest-container">
+        <a class="create-button" href="#2">
+            <i class="create-button-icon td-icon-tickets icon--xxl"></i>
+            <span class="create-button-type">Sweepstakes</span>
+            <p class="create-button-desc">Click to enter points or no points contest</p>
+        </a>
+        <a class="create-button" href="#2">
+            <i class="create-button-icon td-icon-media icon--xxl"></i>
+            <span class="create-button-type">User Generated Contests</span>
+            <p class="create-button-desc">Photo, video, text, or audio contest</p>
+        </a>
+        <a class="create-button" href="#2">
+            <i class="create-button-icon td-icon-bracket icon--xxl"></i>
+            <span class="create-button-type">Brackets</span>
+            <p class="create-button-desc">Round based single elimination contest</p>
+        </a>
+    </div>
+</div>
+    </section>
+
+    <footer class="page-container" style="padding: 0 15px">
+
+        
+    </footer>
+</div>
+<script src="//localhost:35729/livereload.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js" />
+<script>
+    var options = {
+        valueNames: [ 'contest-title' ]
+    };
+    var userList = new List('contestlist', options);
+</script>
+</body>
+</html>

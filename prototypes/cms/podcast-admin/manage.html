@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US">
+
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Wordpress Admin</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	    
+	    <!-- Required css -->
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	    
+	    <link rel='stylesheet' href='css/core/admin-bar.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/wp-admin.min.css' type='text/css' media='all' />
+	    
+	    <link rel='stylesheet' href='css/core/about.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/buttons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/common.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/dashicons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/edit.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/editor.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/forms.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/jquery.qtip.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/list-tables.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/media.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/nav-menus.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/site-icon.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/themes.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/widgets.min.css' type='text/css' media='all' />
+
+	    <link rel='stylesheet' href='css/core/admin.css' type='text/css' media='all' />
+
+	    <!-- Custom/project css -->
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+
+	    <!-- Required js -->
+	    <script type='text/javascript' src='js/core/jquery.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-migrate.min.js'></script>
+	    <script type='text/javascript' src='js/core/core.min.js'></script>
+	    <script type='text/javascript' src='js/core/widget.min.js'></script>
+	    <script type='text/javascript' src='js/core/mouse.min.js'></script>
+	    <script type='text/javascript' src='js/core/resizable.min.js'></script>
+	    <script type='text/javascript' src='js/core/draggable.min.js'></script>
+	    <script type='text/javascript' src='js/core/button.min.js?'></script>
+	    <script type='text/javascript' src='js/core/position.min.js'></script>
+	    <script type='text/javascript' src='js/core/dialog.min.js'></script>
+	    <script type='text/javascript' src='js/core/sortable.min.js'></script>
+	    <script type='text/javascript' src='js/core/datepicker.min.js'></script>
+	    <script type='text/javascript' src='js/core/slider.min.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-ui-timepicker-addon.js'></script>
+
+	    <!-- Allow includes -->
+	    <script type='text/javascript' src='http://www.w3schools.com/lib/w3data.js'></script> 
+
+	    <!-- Custom/project js -->
+	    <script type='text/javascript' src='js/scripts.js'></script> 
+
+	</head>
+
+	<body class="wp-admin wp-core-ui no-js auto-fold admin-bar admin-color-fresh locale-en-us multisite no-customize-support no-svg">
+	    <div id="wpwrap">
+	    	<div w3-include-html="adminmenu.html"></div> 
+	        <div id="wpcontent">
+	        	<div w3-include-html="wpadminbar.html"></div> 
+	            <div id="wpbody" role="main">
+	                <div id="wpbody-content" aria-label="Main content" tabindex="0">
+	                    
+	                    <!-- Project starts here -->
+
+						<div class="wrap">
+
+							<h1>Manage Podcasts</h1>
+							
+							<div class="wp-clearfix" id="col-container">
+								<div id="col-left">
+									<div class="col-wrap">
+										<div class="form-wrap">
+											<h2>Add New Category</h2>
+
+
+											<form action="edit-tags.php" class="validate" id="addtag" method="post" name="addtag">
+	
+												<div class="form-field form-required term-name-wrap">
+													<label for="tag-name">Name</label> <input aria-required="true" id="tag-name" name="tag-name" size="40" type="text" value="">
+												</div>
+
+															<div class="left itunes-metabox">
+																<input name="itunes-metabox" type="hidden" value="1">
+
+																<fieldset>
+																	<div class="form-field">
+																		<label for="rss-link">Link</label> <input id="rss-link" name="rss-link" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="feedconfig=language">Language</label> <select id="rss-language" name="rss-language">
+																			<option value="1">Country 1</option>
+																			<option value="2">Country 2</option>
+																			<option value="3">Country 3</option>
+																			<option value="4">Country 4</option>
+																			<option value="5">Country 5</option>
+																		</select>
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="rss-copyright">Copyright</label> <input id="rss-copyright" name="rss-copyright" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="itunes-subtitle">Subtitle</label> <input id="itunes-subtitle" name="itunes-subtitle" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="itunes-author">Author</label> <input id="itunes-author" name="itunes-author" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="itunes-summary">Summary</label> 
+
+																		<textarea id="itunes-summary" name="itunes-summary" rows="4" style="width: 98%;"></textarea>
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="itunes-owner-name">Owner Name</label> <input id="itunes-owner-name" name="itunes-owner-name" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<label for="itunes-owner-email">Owner Email</label> <input id="itunes-owner-email" name="itunes-owner-email" type="text" value="">
+																	</div>
+
+
+																	<div class="form-field">
+																		<br>
+																		<input name="itunes-explicit" type="checkbox" value="1"> Contains explicit material 
+																	</div>
+
+
+																	<div class="form-field">
+																		<br>
+																		<input name="show-download" type="checkbox" value="1"> Show download links
+																	</div>
+
+																</fieldset>
+															</div>
+
+															<div class="categorydiv" id="taxonomy-podcast_itunes">
+																<label>iTunes categories</label>
+																	<div class="tabs-panel" id="podcast_itunes-all">
+																		<input name="tax_input[podcast_itunes][]" type="hidden" value="0">
+
+																		<ul class="categorychecklist form-no-clear" data-wp-lists="list:podcast_itunes" id="podcast_ituneschecklist">
+																			<li id="podcast_itunes-18">
+																				<label class="selectit"><input id="in-podcast_itunes-18" name="tax_input[podcast_itunes][]" type="checkbox" value="18"> Arts</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-19"><label class="selectit"><input id="in-podcast_itunes-19" name="tax_input[podcast_itunes][]" type="checkbox" value="19"> Design</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-20"><label class="selectit"><input id="in-podcast_itunes-20" name="tax_input[podcast_itunes][]" type="checkbox" value="20"> Fashion &amp; Beauty</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-21"><label class="selectit"><input id="in-podcast_itunes-21" name="tax_input[podcast_itunes][]" type="checkbox" value="21"> Food</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-22"><label class="selectit"><input id="in-podcast_itunes-22" name="tax_input[podcast_itunes][]" type="checkbox" value="22"> Literature</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-23"><label class="selectit"><input id="in-podcast_itunes-23" name="tax_input[podcast_itunes][]" type="checkbox" value="23"> Performing Arts</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-24"><label class="selectit"><input id="in-podcast_itunes-24" name="tax_input[podcast_itunes][]" type="checkbox" value="24"> Visual Arts</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-25">
+																				<label class="selectit"><input id="in-podcast_itunes-25" name="tax_input[podcast_itunes][]" type="checkbox" value="25"> Business</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-26"><label class="selectit"><input id="in-podcast_itunes-26" name="tax_input[podcast_itunes][]" type="checkbox" value="26"> Business News</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-27"><label class="selectit"><input id="in-podcast_itunes-27" name="tax_input[podcast_itunes][]" type="checkbox" value="27"> Careers</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-28"><label class="selectit"><input id="in-podcast_itunes-28" name="tax_input[podcast_itunes][]" type="checkbox" value="28"> Investing</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-29"><label class="selectit"><input id="in-podcast_itunes-29" name="tax_input[podcast_itunes][]" type="checkbox" value="29"> Management &amp; Marketing</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-30"><label class="selectit"><input id="in-podcast_itunes-30" name="tax_input[podcast_itunes][]" type="checkbox" value="30"> Shopping</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-31">
+																				<label class="selectit"><input id="in-podcast_itunes-31" name="tax_input[podcast_itunes][]" type="checkbox" value="31"> Comedy</label>
+
+																				<ul class="children">
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-32">
+																				<label class="selectit"><input id="in-podcast_itunes-32" name="tax_input[podcast_itunes][]" type="checkbox" value="32"> Education</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-33"><label class="selectit"><input id="in-podcast_itunes-33" name="tax_input[podcast_itunes][]" type="checkbox" value="33"> Education</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-34"><label class="selectit"><input id="in-podcast_itunes-34" name="tax_input[podcast_itunes][]" type="checkbox" value="34"> Education Technology</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-35"><label class="selectit"><input id="in-podcast_itunes-35" name="tax_input[podcast_itunes][]" type="checkbox" value="35"> Higher Education</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-36"><label class="selectit"><input id="in-podcast_itunes-36" name="tax_input[podcast_itunes][]" type="checkbox" value="36"> K-12</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-37"><label class="selectit"><input id="in-podcast_itunes-37" name="tax_input[podcast_itunes][]" type="checkbox" value="37"> Language Courses</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-38"><label class="selectit"><input id="in-podcast_itunes-38" name="tax_input[podcast_itunes][]" type="checkbox" value="38"> Training</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-39">
+																				<label class="selectit"><input id="in-podcast_itunes-39" name="tax_input[podcast_itunes][]" type="checkbox" value="39"> Games &amp; Hobbies</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-40"><label class="selectit"><input id="in-podcast_itunes-40" name="tax_input[podcast_itunes][]" type="checkbox" value="40"> Automotive</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-41"><label class="selectit"><input id="in-podcast_itunes-41" name="tax_input[podcast_itunes][]" type="checkbox" value="41"> Aviation</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-42"><label class="selectit"><input id="in-podcast_itunes-42" name="tax_input[podcast_itunes][]" type="checkbox" value="42"> Hobbies</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-43"><label class="selectit"><input id="in-podcast_itunes-43" name="tax_input[podcast_itunes][]" type="checkbox" value="43"> Other Games</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-44"><label class="selectit"><input id="in-podcast_itunes-44" name="tax_input[podcast_itunes][]" type="checkbox" value="44"> Video Games</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-45">
+																				<label class="selectit"><input id="in-podcast_itunes-45" name="tax_input[podcast_itunes][]" type="checkbox" value="45"> Government &amp; Organizations</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-46"><label class="selectit"><input id="in-podcast_itunes-46" name="tax_input[podcast_itunes][]" type="checkbox" value="46"> Local</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-47"><label class="selectit"><input id="in-podcast_itunes-47" name="tax_input[podcast_itunes][]" type="checkbox" value="47"> National</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-48"><label class="selectit"><input id="in-podcast_itunes-48" name="tax_input[podcast_itunes][]" type="checkbox" value="48"> Non-Profit</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-49"><label class="selectit"><input id="in-podcast_itunes-49" name="tax_input[podcast_itunes][]" type="checkbox" value="49"> Regional</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-50">
+																				<label class="selectit"><input id="in-podcast_itunes-50" name="tax_input[podcast_itunes][]" type="checkbox" value="50"> Health</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-51"><label class="selectit"><input id="in-podcast_itunes-51" name="tax_input[podcast_itunes][]" type="checkbox" value="51"> Alternative Health</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-52"><label class="selectit"><input id="in-podcast_itunes-52" name="tax_input[podcast_itunes][]" type="checkbox" value="52"> Fitness &amp; Nutrition</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-53"><label class="selectit"><input id="in-podcast_itunes-53" name="tax_input[podcast_itunes][]" type="checkbox" value="53"> Self-Help</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-54"><label class="selectit"><input id="in-podcast_itunes-54" name="tax_input[podcast_itunes][]" type="checkbox" value="54"> Sexuality</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-55">
+																				<label class="selectit"><input id="in-podcast_itunes-55" name="tax_input[podcast_itunes][]" type="checkbox" value="55"> Kids &amp; Family</label>
+
+																				<ul class="children">
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-56">
+																				<label class="selectit"><input id="in-podcast_itunes-56" name="tax_input[podcast_itunes][]" type="checkbox" value="56"> Music</label>
+
+																				<ul class="children">
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-57">
+																				<label class="selectit"><input id="in-podcast_itunes-57" name="tax_input[podcast_itunes][]" type="checkbox" value="57"> News &amp; Politics</label>
+
+																				<ul class="children">
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-58">
+																				<label class="selectit"><input id="in-podcast_itunes-58" name="tax_input[podcast_itunes][]" type="checkbox" value="58"> Religion &amp; Spirituality</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-59"><label class="selectit"><input id="in-podcast_itunes-59" name="tax_input[podcast_itunes][]" type="checkbox" value="59"> Buddhism</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-60"><label class="selectit"><input id="in-podcast_itunes-60" name="tax_input[podcast_itunes][]" type="checkbox" value="60"> Christianity</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-61"><label class="selectit"><input id="in-podcast_itunes-61" name="tax_input[podcast_itunes][]" type="checkbox" value="61"> Hinduism</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-62"><label class="selectit"><input id="in-podcast_itunes-62" name="tax_input[podcast_itunes][]" type="checkbox" value="62"> Islam</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-63"><label class="selectit"><input id="in-podcast_itunes-63" name="tax_input[podcast_itunes][]" type="checkbox" value="63"> Judaism</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-64"><label class="selectit"><input id="in-podcast_itunes-64" name="tax_input[podcast_itunes][]" type="checkbox" value="64"> Other</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-65"><label class="selectit"><input id="in-podcast_itunes-65" name="tax_input[podcast_itunes][]" type="checkbox" value="65"> Spirituality</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-66">
+																				<label class="selectit"><input id="in-podcast_itunes-66" name="tax_input[podcast_itunes][]" type="checkbox" value="66"> Science &amp; Medicine</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-67"><label class="selectit"><input id="in-podcast_itunes-67" name="tax_input[podcast_itunes][]" type="checkbox" value="67"> Medicine</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-68"><label class="selectit"><input id="in-podcast_itunes-68" name="tax_input[podcast_itunes][]" type="checkbox" value="68"> Natural Sciences</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-69"><label class="selectit"><input id="in-podcast_itunes-69" name="tax_input[podcast_itunes][]" type="checkbox" value="69"> Social Sciences</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-70">
+																				<label class="selectit"><input id="in-podcast_itunes-70" name="tax_input[podcast_itunes][]" type="checkbox" value="70"> Society &amp; Culture</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-71"><label class="selectit"><input id="in-podcast_itunes-71" name="tax_input[podcast_itunes][]" type="checkbox" value="71"> History</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-72"><label class="selectit"><input id="in-podcast_itunes-72" name="tax_input[podcast_itunes][]" type="checkbox" value="72"> Personal Journals</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-73"><label class="selectit"><input id="in-podcast_itunes-73" name="tax_input[podcast_itunes][]" type="checkbox" value="73"> Philosophy</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-74"><label class="selectit"><input id="in-podcast_itunes-74" name="tax_input[podcast_itunes][]" type="checkbox" value="74"> Places &amp; Travel</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-75">
+																				<label class="selectit"><input id="in-podcast_itunes-75" name="tax_input[podcast_itunes][]" type="checkbox" value="75"> Sports &amp; Recreation</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-76"><label class="selectit"><input id="in-podcast_itunes-76" name="tax_input[podcast_itunes][]" type="checkbox" value="76"> Amateur</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-77"><label class="selectit"><input id="in-podcast_itunes-77" name="tax_input[podcast_itunes][]" type="checkbox" value="77"> College &amp; High School</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-78"><label class="selectit"><input id="in-podcast_itunes-78" name="tax_input[podcast_itunes][]" type="checkbox" value="78"> Outdoor</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-79"><label class="selectit"><input id="in-podcast_itunes-79" name="tax_input[podcast_itunes][]" type="checkbox" value="79"> Professional</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-80">
+																				<label class="selectit"><input id="in-podcast_itunes-80" name="tax_input[podcast_itunes][]" type="checkbox" value="80"> Technology</label>
+
+																				<ul class="children">
+																					<li id="podcast_itunes-81"><label class="selectit"><input id="in-podcast_itunes-81" name="tax_input[podcast_itunes][]" type="checkbox" value="81"> Gadgets</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-83"><label class="selectit"><input id="in-podcast_itunes-83" name="tax_input[podcast_itunes][]" type="checkbox" value="83"> Podcasting</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-84"><label class="selectit"><input id="in-podcast_itunes-84" name="tax_input[podcast_itunes][]" type="checkbox" value="84"> Software How-To</label>
+																					</li>
+
+
+																					<li id="podcast_itunes-82"><label class="selectit"><input id="in-podcast_itunes-82" name="tax_input[podcast_itunes][]" type="checkbox" value="82"> Tech News</label>
+																					</li>
+																				</ul>
+																			</li>
+
+
+																			<li id="podcast_itunes-85">
+																				<label class="selectit"><input id="in-podcast_itunes-85" name="tax_input[podcast_itunes][]" type="checkbox" value="85"> TV &amp; Film</label>
+
+																				<ul class="children">
+																				</ul>
+																			</li>
+																		</ul>
+																	</div>
+
+
+																	<p><a class="js-qtip-rightside" data-hasqtip="0" href="#tooltip" title="">iTunes Support</a>
+																	</p>
+																</div>
+												<div><br><hr><br></div>
+												<p class="submit"><input class="button button-primary" id="submit" name="submit" type="submit" value="Add New Podcast">
+												</p>
+
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- /col-left -->
+
+
+								<div id="col-right">
+									<div class="col-wrap">
+										<form id="posts-filter" method="post" name="posts-filter">
+											<input name="taxonomy" type="hidden" value="category"> <input name="post_type" type="hidden" value="post"> <input id="_wpnonce" name="_wpnonce" type="hidden" value="079b8b3208"><input name="_wp_http_referer" type="hidden" value="/jessestest/wp-admin/edit-tags.php?taxonomy=category">
+
+											<div class="tablenav top">
+												<div class="alignleft actions bulkactions">
+													<label class="screen-reader-text" for="bulk-action-selector-top">Select bulk action</label><select id="bulk-action-selector-top" name="action">
+														<option value="-1">
+															Bulk Actions
+														</option>
+
+														<option value="delete">
+															Delete
+														</option>
+													</select> <input class="button action" id="doaction" type="submit" value="Apply">
+												</div>
+
+
+												<div class="tablenav-pages one-page">
+													<span class="displaying-num">1 item</span> <span class="pagination-links"><span aria-hidden="true" class="tablenav-pages-navspan">«</span> <span aria-hidden="true" class="tablenav-pages-navspan">‹</span> <span class="paging-input"><label class="screen-reader-text" for="current-page-selector">Current Page</label><input aria-describedby="table-paging" class="current-page" id="current-page-selector" name="paged" size="1" type="text" value="1"> <span class="tablenav-paging-text">of <span class="total-pages">1</span></span></span> <span aria-hidden="true" class="tablenav-pages-navspan">›</span> <span aria-hidden="true" class="tablenav-pages-navspan">»</span></span>
+												</div>
+												<br class="clear">
+											</div>
+
+
+											<h2 class="screen-reader-text">Categories list</h2>
+
+
+											<table class="wp-list-table widefat fixed striped tags">
+												<thead>
+													<tr>
+														<td class="manage-column column-cb check-column" id="cb"><label class="screen-reader-text" for="cb-select-all-1">Select All</label><input id="cb-select-all-1" type="checkbox">
+														</td>
+
+														<th class="manage-column column-name column-primary sortable desc" id="name" scope="col">
+															<a href="#""><span>Name</span><span class="sorting-indicator"></span></a>
+														</th>
+
+														<th class="manage-column column-description sortable desc" id="episode-count" scope="col" style="width:100px;">
+															<a href="#"><span>Episodes</span><span class="sorting-indicator"></span></a>
+														</th>
+													</tr>
+												</thead>
+
+
+												<tbody data-wp-lists="list:tag" id="the-list">
+													<tr id="tag-1">
+														<th class="check-column" scope="row">&nbsp;</th>
+
+														<td class="name column-name has-row-actions column-primary" data-colname="Name">
+															<strong><a aria-label="“Uncategorized” (Edit)" class="row-title" href="edit.html">My Cool Podcast</a></strong><br>
+
+															<div class="row-actions">
+																<span class="edit"><a aria-label="Edit “Uncategorized”" href="#">Edit</a></span>
+															</div>
+															<button class="toggle-row" type="button"><span class="screen-reader-text">Show more details</span></button>
+														</td>
+
+														<td class="posts column-posts" data-colname="Count">
+															<a href="#">1</a>
+														</td>
+													</tr>
+												</tbody>
+
+
+												<tfoot>
+													<tr>
+														<td class="manage-column column-cb check-column" id="cb"><label class="screen-reader-text" for="cb-select-all-1">Select All</label><input id="cb-select-all-1" type="checkbox">
+														</td>
+
+														<th class="manage-column column-name column-primary sortable desc" id="name" scope="col">
+															<a href="#""><span>Name</span><span class="sorting-indicator"></span></a>
+														</th>
+
+														<th class="manage-column column-description sortable desc" id="episode-count" scope="col">
+															<a href="#"><span>Episodes</span><span class="sorting-indicator"></span></a>
+														</th>
+													</tr>
+												</tfoot>
+											</table>
+
+
+											<div class="tablenav bottom">
+												<div class="alignleft actions bulkactions">
+													<label class="screen-reader-text" for="bulk-action-selector-bottom">Select bulk action</label><select id="bulk-action-selector-bottom" name="action2">
+														<option value="-1">
+															Bulk Actions
+														</option>
+
+														<option value="delete">
+															Delete
+														</option>
+													</select> <input class="button action" id="doaction2" type="submit" value="Apply">
+												</div>
+
+
+												<div class="tablenav-pages one-page">
+													<span class="displaying-num">1 item</span> 
+												</div>
+												<br class="clear">
+											</div>
+										</form>
+
+									</div>
+								</div>
+								<!-- /col-right -->
+							</div>							
+
+						</div>
+	                
+						<!-- Project ends here -->
+
+	                </div>
+	            </div>
+	        </div>
+	        <div id="wpfooter" role="contentinfo">
+	            <p id="footer-left" class="alignleft">
+	                <span id="footer-thankyou">Thank you for creating with <a href="#">WordPress</a>.</span> </p>
+	            <p id="footer-upgrade" class="alignright">
+	                <strong><a href="#">Get Version XXX</a></strong> </p>
+	            <div class="clear"></div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
+
+    <script>
+		w3IncludeHTML();
+	</script>
+
+	</body>
+
+</html>

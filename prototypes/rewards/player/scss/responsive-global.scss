@@ -1,0 +1,204 @@
+
+@media screen and (max-width: 620px) {
+
+    .v1player {
+        position: fixed;
+        bottom: 0;
+
+        height: 64px;
+
+        transition: 0.5s ease all;
+        -webkit-user-select: none;
+        -webkit-overflow-scrolling: touch;
+
+        .player-content-wrapper {
+            width: 100%;
+            padding: 0 0 0 10px;
+
+            .v1player-history-wrapper {
+                right: 0;
+                z-index: 1000;
+                width: 100%;
+            }
+
+            div.show-history {
+                z-index: 1000;
+
+                border-top-style: solid !important;
+
+            }
+
+            .v1player-mobile-overlay-open {
+                position: absolute;
+                left:22px;
+                z-index: 2001;
+
+                height: 65px;
+                width:80%;
+            }
+
+            .v1player-song-info {
+                z-index: 2000 !important;
+
+                width: 85%;
+                padding: 17px 0 0 85px;
+                font-size: 0.8em;
+                background: $main-color;
+
+                transition: none !important;
+
+
+                .v1player-album-art {
+                    top: 13px;
+                    left:36px;
+
+                    height: 40px;
+                    width: 40px;
+                }
+
+                a {
+                    display: none;
+                }
+
+                .v1player-track {
+                    text-overflow: ellipsis;
+                    padding-right: 30px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            .v1player-controls {
+                z-index: 2000;
+
+                width: 15%;
+                height: 100%;
+                padding:5px 10px 0;
+
+                background: $main-color;
+
+                .v1player-control:hover {
+                    background: none;
+                }
+
+                .v1player-control:not(:last-child) {
+                    display: none;
+                }
+
+                .v1player-control:last-child {
+                    padding: 0;
+                }
+
+                .v1player-control-playstop {
+                    margin-top: 3px;
+                }
+
+                .v1player-sprite-play,
+                .v1player-sprite-stop {
+                    margin-top: 0px;
+                }
+
+                &.v1player-login-controls-wpr {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+	
+    .pull-left { float:left; }
+
+    div.background-container {
+        top: 0;
+    }
+
+    .v1player-history-bars,
+    .v1player-favorites-bars {
+        display:block;
+
+        .fa-bars {
+            color:$black;
+        }
+    }
+
+    .v1player-song-info .mobile-favorites-ctrl {
+        display: none;
+
+        &.active {
+            color: $button-color !important;
+        }
+    }
+
+    .v1player-mobile-history-open,
+    .v1player-mobile-favorites-open {
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index: 3;
+
+        height: 36px;
+        width:50%;
+
+        display:none;
+    }
+
+    .v1player-mobile-buy-favorites-wpr {
+        height: 75px;
+        text-align:center;
+
+
+        .v1player-mobile-buy-ctrl-wpr,
+        .v1player-mobile-favorites-ctrl-wpr,
+        .v1player-mobile-favorites-remove-wpr {
+            height:100%;
+            width:50%;
+
+            padding-top:27.5px;
+            font-size: 22px;
+
+            cursor: pointer;
+
+            .v1player-mobile-history-bars {
+                float:left;
+            }
+
+            i {
+                margin-left:10px;
+
+                &:hover {
+                    color:$white;
+                }
+            }
+        }
+
+        .v1player-mobile-buy-ctrl-wpr {
+            float:left;
+            color: $green-text;
+            background-color:$green;
+        }
+
+        .v1player-mobile-favorites-ctrl-wpr {
+            float:right;
+            background-color:$button-color;
+            color:$button-color-text;
+        }
+
+        .v1player-mobile-favorites-remove-wpr {
+            float:right;
+            background-color:$remove-red;
+            color:$white;
+        }
+    }
+
+
+
+    .v1player-mobile-favorites-open {
+        left:160px;
+    }
+
+    .fav-target-row {
+        position: relative;
+    }
+
+}

@@ -1,0 +1,417 @@
+.blur {
+    @include blur(5px);
+}
+
+.controls-onboarding-overlay {
+    position:absolute;
+    left: 0;
+    top: 0;
+
+    height: 606px;
+    width: 506px;
+
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+    z-index: 65;
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        width: 175px;
+
+        margin: 0;
+        padding-bottom: 25px;
+
+        font-size: 14px;
+    }
+
+    .inline {
+        display: inline-block;
+    }
+
+    #close-onboarding-overlay {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+
+        color: #fbcd00;
+        cursor: pointer;
+        font-size: 32px;
+    }
+
+    .onboarding--hit {
+        position: absolute;
+        top: 55px;
+
+        h3, p {
+            margin-left: 15px;
+        }
+    }
+
+    .onboarding--doubleDown {
+        position: absolute;
+        top: 215px;
+        left: 140px;
+    }
+
+    .onboarding--stand {
+        position: absolute;
+        top: 270px;
+        left: 85px;
+    }
+
+    .onboarding--split {
+        position: absolute;
+        top: 310px;
+        left: 85px;
+
+        h3 {
+            margin-top: 40px;
+        }
+    }
+
+    .onboarding--bank {
+        position: absolute;
+        top: 560px;
+        left: 160px;
+
+        p {
+            width: 200px;
+        }
+    }
+
+    .onboarding-arrow--down {
+        @include transform(rotate(270deg));
+    }
+
+    .onboarding-arrow--left {
+        display: inline-block;
+
+        &#split-arrow {
+            vertical-align: top;
+            margin-top: 45px;
+        }
+    }
+}
+
+.gametype-instructions-overlay {
+    position:absolute;
+    left: 0;
+    top: 0;
+
+    height: 606px;
+    width: 506px;
+
+    background-color: rgba(0,0,0,0.7);
+    z-index: 100;
+
+    h1 {
+        margin: 0;
+        padding: 15px 0;
+
+        border-bottom: 1px solid #fbcd00;
+        color: #fbcd00;
+        font-family: 'Rokkitt';
+        font-weight: normal;
+        text-align: center;
+    }
+
+    p {
+        padding: 5px 20px;
+    }
+
+    ul {
+        padding: 0 20px 0 35px;
+    }
+
+    #close-instructions-overlay {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+
+        color: #fbcd00;
+        cursor: pointer;
+        font-size: 32px;
+    }
+
+    .gametype-instructions-content {
+        height: 440px;
+        margin: 90px 60px;
+
+        border: 1px solid #fbcd00;
+        color: #fff;
+        font-family: 'Arial';
+        font-size: 14px;
+    }
+}
+
+.confirm-quit-overlay {
+    position:absolute;
+    left: 0;
+    top: 0;
+
+    height: 606px;
+    width: 506px;
+
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    z-index: 100;
+
+    p {
+        margin-bottom: 0px;
+        padding: 5px 20px;
+
+        &.subtext {
+            margin: 0;
+
+            font-size: 21px;
+        }
+    }
+
+    #close-quit-overlay {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+
+        color: #fbcd00;
+        cursor: pointer;
+        font-size: 32px;
+    }
+
+    .confirm-quit-content {
+        height: 190px;
+        margin: 205px 60px;
+
+        border: 1px solid #fbcd00;
+        color: #fff;
+        font-family: 'Arial';
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .confirm-quit-button-wrapper {
+        margin-top: 30px;
+
+        border-top: 1px solid #fbcd00;
+
+        button {
+            margin: 15px 10px;
+        }
+
+        #cancel {
+            @include button(#f0f0f0, #d9d9d9, 110px, 35px);
+        }
+
+        #quit-game {
+            color: #fff;
+
+            @include button(#d2342b, #cb1d2b, 110px, 35px);
+        }
+    }
+}
+
+.game-complete-overlay {
+    position:absolute;
+    left: 0;
+    top: 0;
+
+    height: 606px;
+    width: 506px;
+
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    z-index: 100;
+
+    .game-complete-logo {
+        position: absolute;
+        left: 108px;
+        top: 15px;
+
+        height: 150px;
+        width: 284px;
+
+        background-image: image-url('Logo_FULL.png');
+        background-size: 284px 150px;
+    }
+
+    .game-complete-title {
+        position: absolute;
+        top: 143px;
+        left: 56px;
+
+        height: 75px;
+        width: 388px;
+        box-sizing: border-box;
+
+        color: #fbcd00;
+        background-color: rgba(0,0,0,0.9);
+        background-image: image-url('Complete_Symbols.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid #fbcd00;
+        border-bottom: none;
+        font-size: 32px;
+        line-height: 75px;
+    }
+
+    .game-complete-content {
+        position: absolute;
+        top: 218px;
+        left: 40px;
+
+        height: 227px;
+        width: 420px;
+        box-sizing: border-box;
+
+        color: #fbcd00;
+        background-color: rgba(0,0,0,0.9);
+        border: 1px solid #fbcd00;
+    }
+
+    .game-complete-content--top {
+        height: 129px;
+
+        background-image: image-url('Complete_BG.jpg');
+        color: #fff;
+        font-size: 12px;
+
+        @include text-shadow(-3px 3px rgba(0,0,0,0.3));
+
+        p {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .game-complete-hands-played {
+            position: absolute;
+            left: 0;
+            top: 20px;
+
+            width: 209px;
+
+            p {
+                margin-bottom: 7px;
+            }
+
+            .game-complete-deck {
+                position: absolute;
+                top: 70px;
+                left: 26px;
+            }
+        }
+
+        .game-complete-biggest-pot {
+            position: absolute;
+            left: 209px;
+            top: 8px;
+
+            width: 209px;
+
+            .game-complete-chips {
+                position: absolute;
+                top: 82px;
+                left: 36px;
+            }
+        }
+
+        .highest-chip-count, .hands-played-amount, .chip-count-currency {
+            font-size: 40px;
+        }
+    }
+
+    .biggest-win {
+        position: absolute;
+        left: 0;
+
+        height: 98px;
+        width: 209px;
+        box-sizing: border-box;
+        padding-top: 10px;
+
+        background-color: #fff;
+        border-top: 1px solid #d3d3d3;
+        border-right: 1px solid #d3d3d3;
+        border-bottom: 1px solid #fbcd00;
+        border-left: 1px solid #fbcd00;
+        color: #16630f;
+        font-family: 'Rokkitt';
+        font-size: 19px;
+        line-height: 38px;
+
+        i {
+            padding-right: 3px;
+            vertical-align: top;
+        }
+
+        i:before {
+            font-size: 26px;
+            vertical-align: middle;
+        }
+    }
+
+    .biggest-loss {
+        position: absolute;
+        left: 209px;
+
+        height: 98px;
+        width: 209px;
+        box-sizing: border-box;
+        padding-top: 10px;
+
+        background-color: #fff;
+        border-top: 1px solid #d3d3d3;
+        border-right: 1px solid #fbcd00;
+        border-bottom: 1px solid #fbcd00;
+        color: #cc1616;
+        font-family: 'Rokkitt';
+        font-size: 19px;
+        line-height: 38px;
+
+        i {
+            padding-right: 3px;
+            vertical-align: top;
+        }
+
+        i:before {
+            font-size: 26px;
+            vertical-align: middle;
+        }
+    }
+
+    .biggest-win-amount, .biggest-loss-amount, .game-complete-currency {
+        font-size: 34px;
+    }
+
+    .game-complete-tip {
+        position: absolute;
+        top: 480px;
+        left: 0;
+
+        width: 100%;
+
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+
+        i {
+            padding-right: 5px;
+        }
+
+        .game-complete-accent {
+            color: #1abb0c;
+            text-decoration: underline;
+        }
+    }
+
+    #play-again {
+        position: absolute;
+        top: 525px;
+        left: 155px;
+
+        color: #fff;
+
+        @include button(#34980b, #2d810b, 190px, 45px);
+    }
+}

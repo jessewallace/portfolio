@@ -1,0 +1,372 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Rewards Site Configuration</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-dropdown.css" />
+
+  </head>
+  <body style="background:url(https://admin.tritondigital.com/dashboard/CSS/images/bg.png); padding:50px 0 0 0;">
+
+	<!-- Main Content for Stand Alone -->
+	<!-- survey Admin -->
+	<div class="app-container nopadding">
+		<header class="app-header">
+            <h1 class="nomargin">Registration Configuration</h2>
+            <div class="button-container">
+                <button class="button">Cancel</button>
+                <button class="button button-positive">Save Updates</button>
+            </div>
+        </header>
+		<div class="flex-container" style="min-height:1000px;">
+			<div class="main col-3-4">
+				<div class="reg-form">
+
+					<h3 class="nomargin">Sign Up Form</h3>
+					<span class="helper-text">Fields shown below will appear in your registration form</span>
+
+					<div id="fieldlist-container" class="registration-fields">
+
+						<div id="addFieldDropDown" class="dropdown add-field-dropdown" data-toggle="dropdown">
+						    <button id="addFieldTrigger" class="actionbtn dropdown-toggle button-positive" data-toggle="dropdown"><span class="fa fa-plus icon-plus add"></span> Add a Field</button>
+						    <ul class="dropdown-menu" role="menu" aria-labelledby="addFieldTrigger">
+				                <li class="add-reg-text">Text</li>
+				                <li class="add-reg-paragraph">Paragraph</li>
+				                <li class="add-reg-dropdown">Dropdown</li>
+				                <li class="add-reg-multiple">Multiple Choice</li>
+						    </ul>
+						</div>
+
+						<ul class="fieldpicker-root sortable ui-accordion ui-helper-reset ui-sortable">
+						    
+						    <!-- Email -->
+						    <li class="reg-type-email no-options"> 
+						        <div class="reg-fields">
+							        <span class="reg-label">Email</span>
+							        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+							        <span class="reg-controls">
+								        <label>
+								        	<input type="checkbox" checked disabled="disabled">Required 
+								        </label>
+								        <a class="fa fa-times-circle icon-remove-sign deny disabled ui-state-disabled" style="display: none;"></a>
+							        </span>
+						        </div>
+						    </li>
+
+						    <!-- Password -->
+						    <li class="reg-type-password">
+						        <div class="reg-fields">
+							        <span class="reg-label">Password</span>
+							        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+							        <span class="reg-controls">
+								        <label>
+								        	<input type="checkbox" checked disabled="disabled">Required 
+								        </label>
+								        <a class="fa fa-times-circle icon-remove-sign deny disabled ui-state-disabled" style="display: none;"></a>
+							        </span>
+						        </div>
+						        <div class="config-group">
+						            <div class="ui-controls">
+						                <label>
+						                    <input type="checkbox">Require user to enter password twice</label>
+						            </div>
+						            <div class="close-panel"><a class="button button-highlight config-done">Done</a>
+						            </div>
+						        </div>
+						    </li>
+
+						    <!-- Display Name -->
+						    <li class="reg-type-name no-options"> 
+						        <div class="reg-fields">
+							        <span class="reg-label">Display Name</span>
+							        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+							        <span class="reg-controls">
+								        <label>
+								        	<input type="checkbox" checked disabled="disabled">Required 
+								        </label>
+								        <a class="fa fa-times-circle icon-remove-sign deny disabled ui-state-disabled" style="display: none;"></a>
+							        </span>
+						        </div>
+						    </li>
+
+						    <!-- Zip -->
+						    <li class="reg-type-zip no-options"> 
+						        <div class="reg-fields">
+							        <span class="reg-label">Zip</span>
+							        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+							        <span class="reg-controls">
+								        <label>
+								        	<input type="checkbox" checked disabled="disabled">Required 
+								        </label>
+								        <a class="fa fa-times-circle icon-remove-sign deny disabled ui-state-disabled" style="display: none;"></a>
+							        </span>
+						        </div>
+						    </li>
+
+						    <!-- Date of Birth -->
+						    <li class="reg-type-dob no-options"> 
+						        <div class="reg-fields">
+							        <span class="reg-label">Date of Birth</span>
+							        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+							        <span class="reg-controls">
+								        <label>
+								        	<input type="checkbox" checked disabled="disabled">Required 
+								        </label>
+								        <a class="fa fa-times-circle icon-remove-sign deny disabled ui-state-disabled" style="display: none;"></a>
+							        </span>
+						        </div>
+						    </li>
+
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="sidebar col-1-4">
+				<h3>Settings</h3>
+				<label>Minimum age</label>
+				<div class="input-container loffb">
+					<input type="number" maxlength="2" max="99" min="13" value="13" style="width:50px; text-align:center;" />
+				</div>
+				<label>Email opt-in</label>
+				<div class="input-container checkbox loffb">
+					<label>
+						<input type="checkbox" /> Pre-check email opt-in
+					</label>
+				</div>
+				<label>Security</label>
+				<div class="input-container checkbox loffb">
+					<label>
+						<input type="checkbox"> Enable CAPTCHA
+					</label>
+				</div>
+				<h3>Form Duplication</h3>
+				<button class="form-dupe button button-highlight">Choose sites</button>
+				<p class="helper-text">Use form duplication to push this forms fields and settings to other sites</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Onboarding Modal -->
+    <div id="first-time" style="display:none;">
+    </div>
+
+    <!-- Delete Form Field -->
+    <div id="delete-dialog" title="Delete form field?" style="display:none;">
+        <p>Are you sure you would like to delete the selected form field?  This action is irrevsible and you will lose all existing data on the form field.</p>
+    </div>
+
+    <!-- Form Duplication Modal -->
+    <div id="form-dupe" title="Duplicate form" style="display:none;">
+    	<p>This will copy ALL of the registration fields from this tenant to the chosen tenant(s). If a registration field currently exists in the site it will be replaced, otherwise it will be created.</p>
+    	<select multiple style="width:100%; height:200px;">
+    		<option>WARX</option>
+    		<option>WXYZ</option>
+    		<option>CASL</option>
+    		<option>CYST</option>
+    		<option>FRAK</option>
+    		<option>JNKD</option>
+    		<option>ZYXW</option>
+    		<option>ABCD</option>
+    		<option>SHTT</option>
+    		<option>CNOR</option>
+    		<option>WASH</option>
+    		<option>DRMPH</option>
+    		<option>LUCK</option>
+    	</select>
+    </div>
+
+
+    <!-- Reg Form Field Templates -->
+
+	<!-- Text -->
+    <li class="reg-type-text ui-sortable-handle template" style="display:none;"> 
+        <div class="reg-fields">
+	        <span class="reg-label">Text</span>
+	        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+	        <span class="customfieldtypecontainer"><span class="customfieldtype">Text</span></span>
+	        <span class="reg-controls">
+		        <label>
+		        	<input type="checkbox" value="required">Required 
+		        </label>
+		        <a class="fa fa-times-circle icon-remove-sign deny" style="display: none;"></a>
+	        </span>
+        </div>
+        <div class="config-group">
+            <div class="ui-controls">
+                <h3>Custom Text</h3>
+                <hr>
+                <div class="input-container">
+                	<label>Field Name:</label>
+                	<input type="text" class="customfieldnameinput">
+            	</div>
+            	<div class="input-container number-input">
+            		<label>Character Limit:</label>
+            		<input type="text">
+            		<p class="helper-text">System Maximum Characters: 2000</p>
+        		</div>
+        		<div class="input-container">
+        			<label>Placeholder:</label>
+        			<input type="text">
+    			</div>
+            </div>
+            <div class="close-panel">
+            	<a class="button button-highlight config-done">Done</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Paragraph -->
+    <li class="reg-type-paragraph ui-sortable-handle template" style="display:none;"> 
+        <div class="reg-fields">
+	        <span class="reg-label">Paragraph</span>
+	        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+	        <span class="customfieldtypecontainer"><span class="customfieldtype">Paragraph</span></span>
+	        <span class="reg-controls">
+		        <label>
+		        	<input type="checkbox" value="required">Required 
+		        </label>
+		        <a class="fa fa-times-circle icon-remove-sign deny" style="display: none;"></a>
+	        </span>
+        </div>
+        <div class="config-group">
+            <div class="ui-controls">
+                <h3>Custom Text</h3>
+                <hr>
+                <div class="input-container">
+                	<label>Field Name:</label>
+                	<input type="text" class="customfieldnameinput">
+            	</div>
+            	<div class="input-container number-input">
+            		<label>Character Limit:</label>
+            		<input type="text">
+            		<p class="helper-text">System Maximum Characters: 2000</p>
+        		</div>
+        		<div class="input-container">
+        			<label>Placeholder:</label>
+        			<input type="text">
+    			</div>
+            </div>
+            <div class="close-panel">
+            	<a class="button button-highlight config-done">Done</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="reg-type-dropdown ui-sortable-handle template" style="display:none;"> 
+        <div class="reg-fields">
+	        <span class="reg-label">Dropdown</span>
+	        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+	        <span class="customfieldtypecontainer"><span class="customfieldtype">Dropdown</span></span>
+	        <span class="reg-controls">
+		        <label>
+		        	<input type="checkbox" value="required">Required 
+		        </label>
+		        <a class="fa fa-times-circle icon-remove-sign deny" style="display: none;"></a>
+	        </span>
+        </div>
+        <div class="config-group">
+            <div class="ui-controls">
+            	<h3>Custom Dropdown</h3>
+            	<hr>
+            	<div class="input-container">
+            		<label>Field Name:</label>
+            		<input type="text" class="customfieldnameinput">
+        		</div>
+        		<ol class="ui-list ui-list--overflow">
+        			<li class="option-row">
+        				<input class="option" type="text" value="">
+        				<a class="icon-remove-sign fa fa-times-circle deny"></a>
+    				</li>
+    				<li class="option-row">
+    					<input class="option" type="text" value="">
+    					<a class="icon-remove-sign fa fa-times-circle deny"></a>
+					</li>
+				</ol>
+			<div>
+				<a class="button-positive multiAddOption">
+					<span class="fa fa-plus icon-plus add"></span> Add option</a>
+				</div>
+			</div>
+            <div class="close-panel">
+            	<a class="button button-highlight config-done">Done</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Multiple Choice -->
+    <li class="reg-type-multiple ui-sortable-handle template" style="display:none;"> 
+        <div class="reg-fields">
+	        <span class="reg-label">Multiple Choice</span>
+	        <span class="sortable-handle fa fa-bars" title="Click and drag to sort"></span>
+	        <span class="customfieldtypecontainer"><span class="customfieldtype">Multiple Choice</span></span>
+	        <span class="reg-controls">
+		        <label>
+		        	<input type="checkbox" value="required">Required 
+		        </label>
+		        <a class="fa fa-times-circle icon-remove-sign deny" style="display: none;"></a>
+	        </span>
+        </div>
+        <div class="config-group">
+            <div class="ui-controls">
+			    <h3>Custom Multiple Choice</h3>
+			    <hr>
+			    <div class="input-container">
+			        <label>Field Name:</label>
+			        <input type="text" class="customfieldnameinput">
+			    </div>
+			    <div class="clearfix">
+			        <div class="input-container-inline">
+			            <div class="input-container">
+			                <label>Min Selected:</label>
+			                <input type="number" min="0">
+			            </div>
+			        </div>
+			        <div class="input-container-inline">
+			            <div class="input-container">
+			               	<label>Max Selected:</label>
+			                <input type="number" min="0">
+			                </span>
+			            </div>
+			        </div>
+			    </div>
+			    <ol class="ui-list ui-list--overflow">
+			        <li class="option-row">
+			            <input class="option" type="text" value="">
+			            <a class="icon-remove-sign fa fa-times-circle deny"></a>
+			        </li>
+			        <li class="option-row">
+			            <input class="option" type="text" value="">
+			            <a class="icon-remove-sign fa fa-times-circle deny"></a>
+			        </li>
+			    </ol>
+			    <div>
+			    	<a class="button-positive multiAddOption">
+			    		<span class="fa fa-plus icon-plus add"></span> Add option
+		    		</a>
+			    </div>
+			</div>
+			<div class="close-panel">
+            	<a class="button button-highlight config-done">Done</a>
+            </div>
+        </div>
+    </li>
+
+
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+  </body>
+</html>

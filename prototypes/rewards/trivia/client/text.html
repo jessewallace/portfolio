@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Widget</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link rel="stylesheet" href="trivia.css"/>
+</head>
+<body>
+    
+<div class="themes">
+    <div id="themeColors" class="theme__colors td-u-display-flex"></div>
+    <div id="themePatterns" class="theme__textures td-u-display-flex"></div>
+</div>
+    <div class="td-trivia td-trivia--blue">
+        <div class="td-trivia-header td-has-image td-u-display-flex td-u-flex-centered">
+            <span class="td-trivia-header__result"></span>
+            <div class="td-trivia-header__bg" style="background-image: url(img/pattern-1.png)"></div>
+            <div class="td-trivia-question fadeInUp">
+                <div class="td-trivia-question__count"><b>Question 2 out of 4</b></div>
+                <div class="td-trivia-question__question td-u-mb-10"><b>In the opening credits, what does the cash register say when Maggie is scanned?</b></div>
+                <img class="td-trivia-question__image" src="http://rack.1.mshcdn.com/media/ZgkyMDE0LzA4LzIxL2VhL21hZ2dpZXNpbXBzLmM5Njg2LnBuZwpwCXRodW1iCTEyMDB4OTYwMD4/d21219a4/a03/maggie-simpson-847.63.png" alt=""/>
+                
+            </div>
+            <span class="td-ribbon" data-label="Trivia"></span>
+            <span class="td-trivia-share td-button td-button--ghost td-u-pos__tr"><b>Share Trivia</b></span>
+            <span class="td-pill td-u-pos__br td-trivia-points"><i class="td-trivia-points__icn fa fa-database"></i> For 500pts</span>
+        </div>
+        <div class="td-trivia-body td-trivia-slider td-u-display-flex td-width-2-1 js-triviaBody">
+            
+            <div class="td-trivia-answers td-grid td-grid--stacked  td-width-1-2">
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-correct">
+                    <span class="td-trivia-answer__text">NRA 4EVA</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">This item is not in the database</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">$39.99</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">Please try to rescan this item</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+            </div>
+            
+
+            <div class="td-trivia-stats td-width-1-2">
+                <div class="td-trivia-slider td-u-display-flex td-width-2-1">
+                    <div class="td-trivia-results td-width-1-2">
+                        <div class="td-u-group td-u-mb-25">
+                            <div class="td-header-2 td-trivia-results__header"><b>Trivia Results</b></div>
+                        </div>
+                        <div class="td-u-display-flex td-u-flex-centered">
+                            
+                            <div class="td-progress-circle td-progress-circle--positive">
+                                <span class="td-progress-circle__box td-u-mb-10">
+                                    <b class="td-progress-circle__percent js-count" data-value="55"></b>
+                                    <svg class="td-progress-circle__svg td-progress-circle__svg--1" viewBox="-10 -10 220 220">
+                                        <g class="td-progress-circle__svg-group">
+                                            <path class="td-progress-circle__svg-path" d="M 0,-100 A 100,100 0 0,1 0, 100"/>
+                                            <path class="td-progress-circle__svg-path" d="M 0,100 A 100,100 0 0,1 0, -100"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="td-progress-circle__svg td-progress-circle__svg--2" viewBox="-10 -10 220 220">
+                                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="157.25"></path>
+                                    </svg>
+                                </span>
+                                <div class="td-trivia-label"><b>Got it!</b></div>
+                            </div>
+                            <div class="td-progress-circle td-progress-circle--negative">
+                                <span class="td-progress-circle__box td-u-mb-10">
+                                    <b class="td-progress-circle__percent js-count" data-value="45"></b>
+                                    <svg class="td-progress-circle__svg td-progress-circle__svg--1" viewBox="-10 -10 220 220">
+                                        <g class="td-progress-circle__svg-group">
+                                            <path class="td-progress-circle__svg-path" d="M 0,-100 A 100,100 0 0,1 0, 100"/>
+                                            <path class="td-progress-circle__svg-path" d="M 0,100 A 100,100 0 0,1 0, -100"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="td-progress-circle__svg td-progress-circle__svg--2" viewBox="-10 -10 220 220">
+                                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="471.75"></path>
+                                    </svg>
+                                </span>
+                                <div class="td-trivia-label"><b>Missed it!</b></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="td-trivia-footer td-u-display-flex td-u-flex-centered">
+                    <span class="td-button td-button--large td-trivia-footer__button td-has-count" data-amount-remaining="2" onclick="location.href = './question3.html'"><b>Next Question</b> <i class="fa fa-chevron-circle-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="script.js"></script>
+<script src="themeselector.js"></script>
+</html>

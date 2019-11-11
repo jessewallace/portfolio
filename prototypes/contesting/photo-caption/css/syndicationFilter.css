@@ -1,0 +1,114 @@
+
+
+/* ======== NAP Filter Site list Modal =========== */
+#filter-modal { width:676px; padding: 15px 0; font-family:Arial, Helvetica, sans-serif; display:none; }
+#filter-modal .content { width:644px; margin: 0 auto; background: #ececec; position:relative; -webkit-box-shadow: 0px 0px 20px 0px #000000;-moz-box-shadow: 0px 0px 20px 0px #000000;box-shadow: 0px 0px 20px 0px #000000; }
+#filter-modal h2 { height: 42px; line-height: 42px; color:#efefef; text-shadow:0 -1px #000000; margin: 0; padding: 0 15px; background: #545454; /* Old browsers */
+    background: -moz-linear-gradient(top,  #545454 0%, #141414 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#141414)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #545454 0%,#141414 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #545454 0%,#141414 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #545454 0%,#141414 100%); /* IE10+ */
+    background: linear-gradient(top,  #545454 0%,#141414 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#141414',GradientType=0 ); /* IE6-9 */
+}
+button.filter-close {background:url(../images/filter-close.png) no-repeat; width:17px; height:17px; overflow:visible; text-indent:-5000px; float:right; position:absolute; top:14px; right:5px; border:none; padding:0; display:block; box-shadow:none;}
+button.filter-close:hover {border:none; text-shadow:none; box-shadow:none;}
+
+
+
+/* --- Tabs ---- */
+#filter-modal ul.tabs { float:left; width: 114px; list-style:none; padding: 0; margin: 0; }
+#filter-modal .tabs li a { display:block;  width: 114px;  color:#666; text-shadow: 0 1px 0px #dddddd; text-decoration:none; font-weight: bold; outline: none;
+    background: #d0d0d0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d0d0d0 0%, #bbbbbb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0d0d0), color-stop(100%,#bbbbbb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d0d0d0 0%,#bbbbbb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d0d0d0 0%,#bbbbbb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d0d0d0 0%,#bbbbbb 100%); /* IE10+ */
+    background: linear-gradient(top,  #d0d0d0 0%,#bbbbbb 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0d0d0', endColorstr='#bbbbbb',GradientType=0 ); /* IE6-9 */
+}
+#filter-modal .tabs li a:hover {color:#333;}
+#filter-modal .tabs li.ui-tabs-active a {background:url(../images/active-tab-bg.png) no-repeat; filter: none; position:relative; height:34px;  width:115px; padding-left:18px; color:#0069AC; text-shadow: none;}
+#tab-content { float:left; width:530px; background: #fefefe; min-height: 380px;}
+#filter-modal #tab-content div {}
+#filter-modal #tab-content div .item { background: #f2f2f2; padding: 10px 5px; } /* check box block item */
+
+.filter-content-container {padding-top:10px;padding-bottom:55px; height:348px;}
+
+.filter-content-top {padding:10px 12px 15px 15px; overflow:scroll; overflow-x:hidden; height:333px;}
+.filter-content-header {margin:0 0 5px 0;}
+.filter-content-header .search-container {background:url(../images/filter-search-bg.png) no-repeat; width:227px; height:24px; float:left;}
+.filter-content-header input[type="text"] {background:none; border:0; box-shadow: none; outline: none; width:206px; height: auto;  margin:0 auto; display:block; padding:4px 10px 0 10px; font-size:12px; color:#999; font-style:italic;}
+.filter-content-header input[type="text"]:focus {background:none; box-shadow:none;}
+.filter-content-header a, .filter-content-header a:visited {color:#C00; float:right; font-size:12px; font-weight:bold; margin: 0 5px; }
+.filter-content {}
+ul.filter-option-list {padding:0; margin:0; list-style:none;}
+ul.filter-option-list li {padding:6px; margin:2px 4px 2px 0; list-style-type:none; background:#f2f2f2; font-size:12px; color:#666;}
+ul.filter-option-list li.checked, ul.filter-option-list li.checked:hover { background: #d8ecf7; }
+ul.filter-option-list li:hover {background:#e9e9e9;}
+ul.filter-option-list li input[type="checkbox"] {margin-right:6px;position:relative; top:2px; padding:0; border-radius: 0; }
+
+.filter-content-bottom {position:absolute; right:-13px; bottom:0;}
+.filter-content-bottom input {padding:7px 12px 5px 12px; vertical-align:text-top; float: left;}
+/*--- for chrome --- */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    /*.filter-content-bottom input { padding: 8px 12px 9px 12px; }*/
+}
+
+
+body .filter-content-bottom input.apply {
+    width:140px;
+    height:41px;
+    text-align:left;
+    border:none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow:none;
+    background:transparent url(../images/button_nextmodal.png) no-repeat 0 top;
+    padding:8px 0 23px 12px;
+    margin:0 0 3px 5px;
+}
+
+/*#filter-button { clear:right; float:right; width: 144px; text-align:center; text-decoration:none; padding:8px 12px; border-color:#888; font-size:13px; }*/
+
+.dynatree-checkbox {
+    margin-top: 2px;
+    margin-left: 0;
+}
+
+.checkdrop-container, .disabledcheckdrop-container {
+    background-color:#EEE;
+    margin-right: 5px;
+}
+
+/*.checkdrop {*/
+    /*background:url(../images/bullet_arrow_down.png) no-repeat;*/
+    /*width:16px; height:16px;*/
+    /*padding: 0 10px 0 5px;*/
+/*}*/
+
+.disabledcheckdrop{
+    width:16px; height:16px;
+    padding: 0 10px 0 5px;
+}
+
+
+
+#top-checkdropselection-container, #broadcaster-checkdropselection-container, #market-checkdropselection-container{
+    background-color:red;
+    border: 1px solid #CCC; border-radius: 4px;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+#top-checkdropselection-container a, #broadcaster-checkdropselection-container a, #market-checkdropselection-container a {
+    padding: 3px 20px;
+    color: #666;
+    display: block;
+}
+#top-checkdropselection-container a:hover, #broadcaster-checkdropselection-container a:hover, #market-checkdropselection-container a:hover {
+    background: #0069AC;
+    color: #ffffff;
+}

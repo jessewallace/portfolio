@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Widget</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link rel="stylesheet" href="//s3.amazonaws.com/icomoon.io/74065/TDASRewardWidgetIcons/style.css?q6x51x">
+    <link rel="stylesheet" href="trivia.css"/>
+    <link rel="stylesheet" href="themeselector.css"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+
+<body class=" see-widget">
+    <div id="see-overlay" style="display: none; z-index: 2000006; top: 0%;">
+    <div class="see-wrapper"><span class="see-x fa fa-times" style="padding-top: 183px;"></span>
+
+        <div class="see-clearfix"></div>
+        <div id="see-overlay-modal" class="regui" style="z-index: 2000007;">
+            <div class="see-header">
+                <i class="fa fa-sign-in"></i> Login
+                <p>
+                    Don't have an account? <a class="see-register">Sign up now.</a>
+                </p>
+            </div>
+            <form class="see-form">
+                <div class="see-message"></div>
+                <div class="see-input-group">
+                    <label for="email">Email Address</label>
+                    <input class="see-input" type="text" name="email">
+                </div>
+                <div class="see-input-group">
+                    <label for="pwd">Password</label>
+                    <input class="see-input" type="password" name="pwd">
+                </div>
+                <div class="see-button see-submit">
+                    Log In
+                    <i class="fa fa-chevron-circle-right"></i>
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <a class="see-forgotpassword">Forgot Password?</a>
+                <input type="submit" style="display:none">
+            </form>
+            <div class="see-sidebar">
+                <div class="see-divider-wrapper">
+                    <div class="see-divider">OR</div>
+                </div>
+                <div class="see-buttons">
+                    Sign in with
+                    <div class="see-button see-facebook">Facebook <i class="fa fa-refresh fa-spin"></i></div>
+                    <div class="see-button see-google">Google + <i class="fa fa-refresh fa-spin"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="themes">
+    <div id="themeColors" class="theme__colors td-u-display-flex"></div>
+    <div id="themePatterns" class="theme__textures td-u-display-flex"></div>
+</div>
+    <div class="td-trivia td-trivia--blue td-trivia-has-input  td-has-did-you-know ">
+        <div class="td-u-display-flex td-u-flex-centered--v td-u-flex-column td-trivia-wrapper td-trivia-prompt js-prompt">
+    <div class="td-u-display-flex td-u-flex-column td-u-flex-centered">
+        <div class="td-trivia-logo td-trivia-logo--scaled">Trivia
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--1" src="img/qmark1.png" alt="question mark"/>
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--2" src="img/qmark2.png" alt="question mark"/>
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--3" src="img/qmark3.png" alt="question mark"/>
+        </div>
+        <span class="td-trivia-prompt__label">Log in to continue and earn Points!</span>
+    </div>
+    <div class="td-u-display-flex td-u-flex--bottom td-u-flex-column td-u-flex-centered">
+        <div class="td-button td-button--large td-u-mb-10 td-trivia-prompt__button js-signInBtn"><span class="td-icon td-icon-clipboard"></span> Sign Up</div>
+        <div class="td-button td-button--large td-button--ghost td-u-mb-10 td-trivia-prompt__button js-signInBtn"><span class="td-icon td-icon-sign-in"></span> Log In</div>
+        <div class="td-is-clickable js-cancelPrompt">Cancel</div>
+    </div>
+</div>
+        <div class="td-trivia-header td-u-display-flex td-u-flex-centered">
+    <div class="td-trivia-header__result"></div> 
+    <div class="td-trivia-header__bg" style="background-image: url(img/pattern-1.png)"></div>
+    <div class="td-trivia-question fadeIn">
+        <div class="td-trivia-question__count"><b>Question 6 out of 6</b></div>
+        <div class="td-trivia-question__question td-u-mb-10"><b>Finish the lyric. What's with these _______ , dissing my girl?</b></div>
+        
+    </div>
+    <span class="td-ribbon" data-label="Trivia"></span>
+    <span class="td-trivia-share td-button td-button--ghost td-u-pos__tr"><b>Share Trivia</b></span>
+    <span class="td-pill td-u-pos__br td-trivia-points"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 1500pts</span>
+</div>
+
+        <div class="td-trivia-body td-trivia-slider td-u-display-flex td-width-2-1 js-triviaBody">
+            
+            <div class="td-width-1-2">
+                <div class="td-trivia-body__container td-trivia-form td-u-display-flex td-u-flex-column">
+                    <b class="td-u-mb-10 td-trivia-label td-trivia-label--accent td-trivia-form__label">Your Answer</b>
+                    <div class="td-trivia-input td-u-mb-15">
+                        <input class="td-trivia-input__field js-triviaInput" type="text" placeholder="Enter Answer Here" data-answer="homies"autofocus/>
+                    </div>
+                </div>
+                <div class="td-trivia-footer td-u-display-flex td-u-flex-centered">
+                    <span class="td-button td-button--large td-is-disabled td-trivia-footer__button js-triviaSubmit"><b>Submit Answer</b> <i class="fa fa-chevron-circle-right"></i></span>
+                    <b class="td-trivia-footer__link td-trivia-link" onclick="location.href = './complete.html'">Skip This</b>
+                </div>
+            </div>
+
+            
+
+            <div class="td-trivia-stats td-width-1-2">
+                <div class="td-trivia-body__container td-trivia-slider td-u-display-flex td-width-2-1">
+                    <div class="td-trivia-dyk td-u-display-flex td-u-flex-column td-u-flex-centered td-width-1-2">
+    <div class="td-header-2 td-u-mb-20"><b>Did You Know?</b></div>
+    <div class="td-u-mb-15 td-u-p">After their first album, Cuomo enrolled at Harvard. He left still needing two semesters to graduate and finally finished his bachelor's degree in English in 2006. Five days later, on his 36th birthday, he married Kyoko Ito.</div>
+    
+</div>
+                    
+
+                    
+
+                </div>
+                <div class="td-trivia-footer td-u-display-flex td-u-flex-centered">
+                    <div class="td-trivia-footer__button-container">
+                        <span class="td-button td-button--large td-trivia-footer__button td-has-count" data-amount-remaining="0" onclick="location.href = './complete.html'"><b>Next Question</b> <i class="td-icon td-icon-chevron-circle-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="script.js"></script>
+<script src="themeselector.js"></script>
+</html>

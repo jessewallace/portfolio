@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Widget Test Pages</title>
+    <style>
+        body {
+            padding: 60px 0;  /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+        .pane {
+            margin: 20px;
+            border: 5px solid #888;
+            width: 500px;
+        }
+    </style>
+    <script type="text/javascript" src="http://10.1.4.108/widget/see_6000/see.js"></script>
+    <script type="text/javascript">
+        
+        _See.bindEvent('_See.Widgets.Ready', function () { 
+            // CHANGE THE JS LOCATION BELOW TO YOUR LOCAL VERSION OF SLIDEPUZZLE
+            _See.loadScript('http://192.168.56.1:7774/slidepuzzle.js');
+        });
+        
+    </script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+    <body>
+        
+        <!-- SlidePuzzle -->
+        <div class="see-widget" data-see-type="Slidepuzzle"></div>
+        
+        
+    </body>    <link rel="stylesheet" type="text/css" href="slidepuzzle.css" />
+
+</html>
+

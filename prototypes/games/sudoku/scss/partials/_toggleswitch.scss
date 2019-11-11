@@ -1,0 +1,282 @@
+//==========================================================
+//These files should be edited by the TDAS design team only!
+//==========================================================
+
+/* === TOGGLE SWITCH CONTROL ===  */
+select.ui-toggle-switch {
+    display: none;
+}
+.ui-toggle-switch,
+.ui-toggle-switch .ui-slider,
+.ui-toggle-switch label {
+    display: inline-block;
+    *display: inline; zoom: 1;
+}
+.ui-toggle-switch {
+    label {
+        @include opacity(0.5);
+
+        margin: 0 8px 0 5px;
+        border: 0;
+
+        background: none;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:first-child {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &.ui-state-active {
+            @include opacity(1);
+
+            border: 0;
+
+            background: none;
+        }
+    }
+    .ui-slider {
+        margin: 0 12px;
+
+        border-radius: 10px;
+    }
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+    @include box-shadow(0 1px 2px rgba(0,0,0,0.5) inset);
+
+    right: -10px;
+
+    border-radius: 10px;
+    background: #65ac09;
+}
+
+.ui-slider {
+    @include box-shadow(0 1px 2px rgba(0,0,0,0.5) inset);
+    position: relative;
+    z-index: 1;
+
+    text-align: left;
+    background: #d7d7d7;
+    .ui-slider-handle {
+        @include box-shadow(none);
+
+        position: absolute;
+        z-index: 2;
+
+        border: none;
+        width: 23px;
+        height: 23px;
+
+        cursor: pointer;
+        background: url(../images/togglebtn.png) 0px -7px no-repeat;
+        outline: none;
+    }
+}
+
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+// *************************************
+//
+//   Toggle Switch
+//   Checkbox toggle switch
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Dimensions ----- //
+
+$toggle-height: 30px;
+$toggle-width: 70px;
+
+// ----- Sizes ----- //
+
+$toggle-width-medium: $toggle-width + 10px;
+$toggle-width-large: $toggle-width + 25px;
+
+// ----- Switch Dimension and Positioning ----- //
+
+$toggle-handle-dim: $toggle-height / 1.5;
+$toggle-handle-offset: $toggle-handle-dim + 10px;
+
+@mixin toggle($class-name: toggle) {
+    .#{$class-name} {
+        // float: left;
+        position: relative;
+
+        width: $toggle-width;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+
+        // -------------------------------------
+        //   Submodules
+        // -------------------------------------
+
+        // ----- Toggle Switch Checkbox ----- //
+
+        &-checkbox {
+            display: none;
+
+            // Move the inner content margin left 0 when the checkbox is checked.
+            &:checked + .#{$class-name}-container .#{$class-name}-label {
+                margin-left: -100%;
+            }
+
+            // Move the toggle handle to the right when the checkbox is checked. "On" position
+            &:checked + .#{$class-name}-container .#{$class-name}-handle {
+                left: 10px;
+
+                background: $dark-purple;
+
+                &:before {
+                    color: $purple;
+                }
+
+            }
+        }
+
+        // ----- Toggle Switch Container ----- //
+
+        &-container {
+            display: block;
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-radius: 20px;
+
+            text-align: right;
+            cursor: pointer;
+        }
+
+
+        // ----- Toggle Switch Inner Content ----- //
+
+        // Inner content base styling extend
+        @at-root {
+            %inner-handle {
+                float: left;
+                width: 50%;
+                height: $toggle-height;
+                padding: 0;
+                box-sizing: border-box;
+
+                line-height: $toggle-height;
+                color: white;
+                font-size: 9px;
+                font-family: Trebuchet, Arial, sans-serif;
+                font-weight: bold;
+
+                // flaticon styles
+                font-family: 'Flaticons Stroke';
+                speak: none;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 30px;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+
+        // Inner switch container which hides the toggle options
+        &-label {
+            width: 200%;
+            display: block;
+            margin-left: 0;
+
+            transition: all 0.3s ease-in 0s;
+            box-sizing: border-box;
+
+            // Styling for when the toggle is turned "on"
+            &:before {
+                @extend %inner-handle !optional;
+
+                content: '\e48f';
+                padding-left: 12px;
+
+                background-color: $dark-blue;
+                text-align: left;
+            }
+
+            // Styling for when the toggle is turned "off"
+            &:after {
+                @extend %inner-handle !optional;
+
+                content: '\e48f';
+                padding-right: 12px;
+
+                background-color: $purple;
+            }
+        }
+
+        // ----- Toggle Switch Handle ----- //
+
+        &-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: $toggle-width - $toggle-handle-offset;
+
+            height: $toggle-handle-dim;
+            width: $toggle-handle-dim;
+            margin: auto;
+
+            border-radius: 50%;
+            background: $blue;
+
+            transition: all 0.3s ease-in 0s;
+
+            &:before {
+                // flaticon styles
+                position: absolute;
+                top: 4px;
+                left: 3px;
+
+                font-family: 'Flaticons Stroke';
+                speak: none;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: normal;
+                color: $dark-blue;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+
+                content: "\e53d";
+
+                -moz-transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+
+                transition: all 0.3s ease-in 0s;
+            }
+        }
+
+        // -------------------------------------
+        //   Modifiers
+        // -------------------------------------
+
+        // ----- Sizes ----- //
+
+        &--medium {
+            width: $toggle-width-medium;
+
+            .#{$class-name}-handle {
+                right: $toggle-width-medium - $toggle-handle-offset;
+            }
+        }
+
+        &--large {
+            width: $toggle-width-large;
+
+            .#{$class-name}-handle {
+                right: $toggle-width-large - $toggle-handle-offset;
+            }
+        }
+    }
+}

@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+
+
+/**********************************************************************
+**********************************************************************
+**********************************************************************
+							  FOUNDATION
+					This is mostly the structure
+					of your site. You shouldn't
+					make changes here. It might break
+					your site.
+**********************************************************************
+**********************************************************************
+**********************************************************************
+
+Body Styling
+**********************************/
+
+/* Contest Types */
+body#photo {  } /* defines a photo UGC contest */
+body#video {  } /* defines a video UGC contest */
+body#audio {  } /* defines a audio UGC contest */
+body#text {  } /* defines a text UGC contest */
+body#mixed {  } /* defines a mixed UGC contest */
+
+/* Individual Page Styles */
+body.home {  } /* override for home/welcome/landing page */
+body.registration {} /* override for registration page */
+body.submissions {  } /* override for submission page */
+body.submissions-detail {  } /* override for submission detail page */
+body.prize {  } /* override for prize page */
+body.winners {  } /* override for winner page */
+body.signin {  } /* override for sign in page */
+body.misc {  } /* override for all additional pages */
+
+/* Page and Module Containers */
+#container-bg { } /* Additional background container, for more complex, double layer backgrounds */
+#container-contest {width:800px; } /* Main contest container - tinkering can prove fatal */
+#container-header {} /* Header and Nav container */
+#container-contentbg {width:800px;}
+#container-content {
+  padding:20px 10px 40px;
+  margin:0 auto; 
+  width:650px;
+} /* Content container */
+#container-footer {
+  width:800px; 
+  height:101px; 
+  margin:0 auto; 
+  padding:16px 0 0 0; 
+  font-size:12px; 
+} /* Footer container */
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+body #container-footer {width:auto;} /* Footer container */
+}
+
+#container-gallery {} /* Gallery module container */
+.container-vote {  } /* Submission voting container */
+
+/**********************************
+Global Modules
+**********************************/
+
+/* Header */
+#header {overflow:hidden;} /* Header, containers logo/branding which is uploaded in the backend.  May have a background image set for transaparent png purposes */
+#header img {width:100%;} /* Properties for image-photod contest title */
+#header h1 {margin:0; position:relative;} /* Text-photod contest title properties */
+
+/* Navigation Bar */
+#navigation {} /* Main navigation bar */
+#navigation ul {} /* Careful... */
+#navigation ul li {} /* Seriously, careful... */
+#navigation ul li.last {} /* I'm only going to say it one more time...careful... */
+#navigation ul li a, #navigation ul li a:hover {} /* Navbar link styling */
+#navigation ul li a:hover {  } /* Navbar hover link state styling */
+#navigation ul li a.home {  } /* Home navbar link */
+#navigation ul li a.register {  } /* Registration navbar link */
+#navigation ul li a.submit {  } /* Submission navbar link */
+#navigation ul li a.gallery {  } /* Gallery navbar link */
+#navigation ul li a.prize.winner {  } /* Prize and Winner navbar link */
+#navigation ul li.last a.signin {  } /* Sign in navbar link */
+
+/* Typography */
+h1.pagetitle, #gallery-header h1 {margin:0 auto; font-weight:400;} /* Title of page as defined in backend */
+p.textblock { } /* Text/description as defined in backend */
+ 
+/* Buttons */
+.di-uix-button {overflow:visible; display:block; text-decoration:none; border:0; height:31px;}
+
+/**********************************
+Homepage Modules
+**********************************/
+
+/* Contest Date and Time Table */
+table.dates {} /* Main table container */
+table.dates tr {} /* Table row styling */
+table.dates tr th, table.dates tr td {text-align:center;}
+table.dates tr th.first {} /* Styling for top-left table header */
+table.dates tr th {} /* Table headers styling */
+table.dates tr td.first {} /* Styling for leftmost row header */
+table.dates tr td {} /* Table data cells */
+
+/**********************************
+Registration Modules
+**********************************/
+input.smalltext, textarea.largetext, select, input[type=file] {border:none; padding:.4em; font-size:1.2em;} /* Properties for form elements */
+input.smalltext:focus, textarea.largetext:focus, select:focus, input[type=file]:focus {} /* Form element hover properties */
+.inputcontainer {width:95%;} /* Sets size for form element containers */
+body input[type="submit"], #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit form input[type="submit"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm {padding:0px 15px;} /* Properties and image for submit buttons */
+#container-contactus input[type="submit"]:hover ,#container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover {}/* Properties and image for submit button hover */
+
+/**********************************
+Submission Modules
+**********************************/
+#submissionconfirm {}
+
+/**********************************
+Gallery Modules
+**********************************/
+#gallery-header {line-height:25px;} /* Clearing container for header elements */
+#gallery-header h1 {} /* Unique styling for Recent Submissions header */
+#gallery-header a {vertical-align:photoline;line-height:3em;display:block;padding:0px 10px;text-decoration:none;  } /* View Submissions/Search link */
+#gallery-header a:hover {} /* View Submissions/Search link hover styles */
+
+.gallery {padding:17px 0 0;} /* Main unordered list for gallery */
+.gallery li.galleryrow {margin:0 auto; width:93%;} /* Individual rows for gallery */
+.gallery li.galleryrow ul {margin:0 auto;} /* Child lists for gallery rows */
+.gallery li.galleryrow ul li {padding:5px 5px;text-align:center;} /* Individual submission items */
+.gallery li.galleryrow ul li:last-child, .gallery li.galleryrow ul li.last {} /* Last item in gallery list */
+.gallery li.galleryrow ul li h1 {line-height:1.1em;margin:0;color:#222;} /* Submission Name */
+.gallery li.galleryrow ul li h2 {line-height:1.2vem;margin:0;color:#666;} /* Submitter's Name */
+.gallery li.galleryrow ul li div.flagcontainer {} /* Link container for submission item, covers IMG */
+
+
+/* Gallery nav */
+.gallery-nav {} /* Gallery nav width */
+.gallery-nav-back, .gallery-nav-more {} /* Gallery nav properties */
+.gallery-nav-back {} /* Gallery back button */
+.gallery-nav-back:hover {} /* Gallery back hover button */
+.gallery-nav-more {} /* Gallery more button */
+.gallery-nav-more:hover {} /* Gallery more hover button */
+.gallery-nav-back.disabled, .gallery-nav-back:hover.disabled {} /* Gallery back disabled button */
+.gallery-nav-more.disabled, .gallery-nav-more:hover.disabled {} /* Gallery more disabled button */
+.gallery-nav span {display:none;} /* Gallery nav seperator */
+
+/* Submission item actions */
+
+/* Submission branding */
+.gallery li.galleryrow ul li.featured div.badge {} /* Promoted submission */
+.gallery li.galleryrow ul li.winner div.badge {} /* Unranked winner branding */
+.gallery li.galleryrow ul li.winner.first div.badge {} /* 1st place winner branding */
+.gallery li.galleryrow ul li.winner.second div.badge {} /* 2nd place winner branding */
+.gallery li.galleryrow ul li.winner.third div.badge {} /* 3rd place winner branding */
+
+/**********************************
+Gallery Detail Modules
+**********************************/
+h1.submission-title {font-size:3.5em; font-weight:700;} /* Main submission title header */
+p.submission-description {margin:0 0 1em; font-weight:bold; color:#333;} /* Submission description */
+img.submission-large {} /* Properties for large submission image */
+.submission-controls {} /* Properties for bottom submission controls */
+#detailView .container-vote {} /* Vote controls container */
+#detailView .container-vote a.vote {} /* Control to cast vote */
+#detailView .container-vote a.vote:hover {} /* Cast vote hover */
+#detailView .container-vote p {font-size:1.4em; line-height:2em;} /* Display of current votes */
+#detailView .container-vote p span {font-size:1.8em; color:#F60; font-weight:bold; display:inline !important;} /* Display of current votes */
+.submission-controls .container-social {} /* Social controls container */
+.submission-controls .container-social ul.social-controls {} /* Social grouping */
+.submission-controls .container-social ul.social-controls li {} /* Social list items */
+.submission-controls .container-social ul.social-controls li a {} /* Properties for social links */
+.submission-controls .container-social ul.social-controls li a:hover {} /* Properties for social link hovers */
+.submission-controls .container-social ul.social-controls li a.facebook {} /* Image for facebook share */
+.submission-controls .container-social ul.social-controls li a.twitter {} /* Image for twitter share */
+.submission-controls .container-social ul.social-controls li a.email {} /* Image for email share */
+
+/**********************************
+Sign In Modules
+**********************************/
+#container-signin .inputcontainer.twocol .coltwo {min-height:auto; width:47%; padding:0 0 0 1.5em;} /* Set layout properties for signin structure */
+
+
+/*********************************************************************
+**********************************************************************
+**********************************************************************
+       
+					  CUSTOMIZE HERE !!
+				
+				The vast majority of any changes
+				you'll do will be here.  Colors,
+				backgrounds, font styles, can be
+				changed from here.  Have fun! 
+
+**********************************************************************
+**********************************************************************
+*********************************************************************/
+
+/* Background color, font style and color for entire page */
+body {background-color:#393427;}
+
+/* Link color */
+a,a:link,a:active,a:visited {color:#00009f;}
+
+/* Link hover color */
+a:hover {color:#00003c;}
+
+/* Large heading color/styles */
+h1.pagetitle,#gallery-header h1 {color:#000000;}
+
+/***********************************
+Header Customization Below
+***********************************/
+
+/* Background color for header box */
+#header {background-color:#000;}
+
+/* Color and/or font for main contest title */
+#header h1 {color:#FFFFFF;}
+
+/***********************************
+Navigation Customization Below
+***********************************/
+
+/* Menu bar background */
+#navigation {
+background-color:#8b4004;
+color:#999999;
+}
+
+/* Menu link color/styles */
+#navigation ul li a,#navigation ul li a:hover {color:#FFFFFF;}
+
+/* Menu link hover color/styles  */
+#navigation ul li a:hover {
+background-color:#333333;
+color:#FFFFFF;
+}
+
+/***********************************
+Content/Middle Section Customization Below
+***********************************/
+
+/* Background color for content */
+#container-contentbg,#container-footer {background-color:#EEEEEE;}
+
+/* Border seperating main content from footer */
+#container-content {border-color:#EEEEEE;}
+
+/***********************************
+Form Fields Customization Below
+***********************************/
+
+/* Form field background and font colors */
+input.smalltext,textarea.largetext,select,input[type=file] {
+background-color:#CCCCCC;
+color:#FFFFFF;
+}
+
+/* Clicked-on form field focus background color */
+input.smalltext:focus,textarea.largetext:focus,select:focus,input[type=file]:focus {background-color:#666666;}
+
+/***********************************
+Table and Date Customization Below
+***********************************/
+
+/* Border/spacing for date table */
+table.dates tr th,table.dates tr td {border-color:#CCCCCC;}
+
+/* Styling for date table headers */
+table.dates tr th {
+background-color:#999999;
+color:#FFFFFF;
+}
+
+/* Styling for leftmost row header */
+table.dates tr td.first {
+background-color:#333333;
+color:#FFFFFF;
+}
+
+/* Styling for regular date table cells */
+table.dates tr td {
+background-color:#666666;
+color:#FFFFFF;
+}
+
+/***********************************
+Gallery Customization Below
+***********************************/
+
+/* Gallery background and border color */
+.gallery {
+background-color:#CCCCCC;
+border-color:#CCCCCC;
+}
+
+/* View Submissions/Search link hover */
+#gallery-header a:hover {
+background-color:#666666;
+color:#FFFFFF;
+}
+
+/* View Submissions/Search link */
+#gallery-header a {
+background-color:#333333;
+color:#FFFFFF;
+}
+
+/* Middle border/divider on Register and Submit pages*/
+#container-submit .inputcontainer.twocol .coltwo,#container-signin .inputcontainer.twocol .coltwo {border-color:#999999;}
+
+/***********************************
+Button Customization Below
+***********************************/
+
+/*Text Custominzation - Button Text Color*/
+.di-uix-button, a.di-uix-button, #detailView .container-vote a.vote, body input[type="submit"], a.gallery-nav-back, a.gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm {
+  color:#FFFFFF;}
+
+/*Button Normal State - Button Background and Border Color */
+.di-uix-button, #detailView .container-vote a.vote, #container-content input.ui-button, body input[type="submit"], #container-content input.ui-button, .gallery-nav-back, .gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], #container-submit form input[type="submit"], #container-submit form input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm{
+  background-color:#c62d2d;
+  border-color:#000000;
+}
+
+/*Button Hover State - Button Background and Border Color on hover*/
+.di-uix-button:hover, #detailView .container-vote a.vote:hover, #container-content input.ui-button:hover, body input[type="submit"]:hover, #container-submit input[type="button"]:hover, #container-content input.ui-button:hover, .gallery-nav-back:hover, .gallery-nav-more:hover, #detailView .container-vote a.vote:hover, #container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover {
+  background-color:#3a8cb2;
+  border-color:#000000;
+}
+
+/*Button Disabled State - Button Background disabled */
+.di-uix-button.disabled,.di-uix-button:hover.disabled, .gallery-nav-back.disabled, .gallery-nav-back:hover.disabled, .gallery-nav-more.disabled, .gallery-nav-more:hover.disabled {
+	background-color:#d9dada;}

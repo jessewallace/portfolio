@@ -1,0 +1,1143 @@
+<!doctype html> <html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Poll Creation Admin</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+<!--     <link href="assets/css/style.min.css" rel="stylesheet">
+ -->    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/ajaxToolboxStyles.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/admin.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/lightwindow.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/notificationBox.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+
+    <script src="js/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Main Content for Stand Alone -->
+    <!-- Polls Admin -->
+    <div class="app-container">
+      <div id="pollsDashboard" class="dashboard-container">
+
+        <!-- Polls Dashboard Header -->
+        <div id="createNewPoll" class="container-sectioned no-padding">
+          <h1 class="pull-left">Polls</h1>
+          <div id="pollHeaderButtons" class="pull-right">
+            <button name="Get Poll Widget Embed Code" class="button">
+              Get Poll Widget Embed Code
+            </button>
+            <button name="Create New Poll" id="createPoll-modal" class="button-positive">
+              <i class="fa fa-plus"></i>
+              Create New Poll 
+            </button>
+
+            <!-- Poll-type Modal -->
+            <div id="createPoll-dialog" title="Create a New Poll">
+              <div class="create-poll-modal-container">
+
+                <!-- Poll Type One -->
+                <a class="create-button" href="poll-creation_text.html">
+                  <i class="fa fa-font"></i>
+                  <p class="poll-type center">Text Only</p>
+                  <p class="description">This poll type will only allow for text answers.</p>
+                </a>
+
+                <!-- Poll Type One -->
+                <a class="create-button" href="poll-creation_image.html">
+                  <i class="fa fa-picture-o"></i>
+                  <p class="poll-type center">Image Only</p>
+                  <p class="description">This poll type will allow only allow for image answers.</p>
+                </a>
+
+                <!-- Poll Type One -->
+                <a class="create-button" href="poll-creation_textandimg.html">
+                  <i class="fa fa-font"></i>
+                  <i class="fa fa-picture-o"></i>
+                  <p class="poll-type center">Text & Image</p>
+                  <p class="description">This poll type will only allow for text answers.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delete Poll -->
+        <div id="deletePoll-dialog" title="Delete Poll?">
+          <div class="delete-poll-container">
+            <p>Are you sure you would like to delete this poll? This is a permanent action and you won't be able to get your poll back.</p>
+          </div>
+        </div>
+        <!-- End Polls Dashboard Header -->
+
+        <!-- Polls Dashboard Polls List -->
+        <div class="grid">
+          <div class="pollsListTable full-width">
+            <div id="polls-dashboard">
+
+              <!-- Polls List Header -->
+              <div class="toolbar nopadding">
+
+                <!-- Search Field -->
+                <div class="insert-into pull-left">
+                  <i class="fa fa-search"></i>
+                  <input class="search" type="text" placeholder="Search for Polls" />
+                </div>
+                <!-- End Search Field -->
+
+                <!-- Filter Toggle -->
+                <div class="polls-list-filter pull-right">
+
+                  <!-- Filter Toggle Switch -->
+                  <div class="toggle">
+                    <input id="toggle-pollsFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+                    <label class="toggle-container" for="toggle-pollsFilter">
+                      <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                      <span class="toggle-handle"></span>
+                    </label>
+                  </div>
+                  <!-- End Filter Toggle Switch -->
+
+                  <a href="#" class="filter-polls">
+                    Filter Options
+                    <i class="fa fa-caret-down"></i>
+                  </a>
+
+                  <!-- Filter Section -->
+                  <form class="filters">
+                    <div class="filters-heading">
+                      <!-- Filter Toggle | THIS STILL NEEDS DESIGN-->
+                      <h3 class="filters-header nomargin">Filter Options</h3>
+                    </div>
+                    <h4 class="filter-heading">Poll Types</h4>
+                    <div class="input-container checkbox">
+                      <label><input type="checkbox">Type Only Choices</label>
+                      <label><input type="checkbox">Photo Only Choices</label>
+                      <label><input type="checkbox">Type and Photo Choices</label>
+                    </div>
+                    <h4 class="filter-heading">Other Options</h4>
+                    <div class="input-container checkbox">
+                      <label><input type="checkbox">Syndicated Polls</label>
+                    </div>
+                    <label>Poll Status</label>
+                    <div class="poll-status-filter input-container radio radio-inline">
+                      <label><input name="poll-status-filter" type="radio">All</label>
+                      <label><input name="poll-status-filter" type="radio">Active</label>
+                      <label><input name="poll-status-filter" type="radio">Inactive</label>
+                    </div>
+
+                    <div class="button-container">
+                        <input class="button" type="reset" value="Reset Filters">
+                        <button type="button" class="button-highlight">Filter</button>
+                    </div>
+
+                  </form>
+                  <!-- End Filter Section -->
+                </div>
+                <!-- End Filter Toggle -->
+              </div>
+              <!-- End Poll List Header -->
+
+               <!-- Polls List Table -->
+              <div class="table polls-table full-width">
+                <div class="table-header">
+                  
+                  <!-- Table Header -->
+                  
+                    <!-- Priority -->
+                    <span class="table-header-item poll-priority th is-sortable">Priority <i class="fa fa-sort"></i></span>
+
+                    <!-- Poll Type -->
+                    <span class="table-header-item poll-type th is-sortable">Poll Type <i class="fa fa-sort"></i></span>
+
+                    <!-- Poll Title -->
+                    <span class="table-header-item poll-title th is-sortable">Poll Title <i class="fa fa-sort"></i></span>
+
+                    <!-- Start Date -->
+                    <span class="table-header-item poll-start th is-sortable">Start Date <i class="fa fa-sort"></i></span>
+
+                    <!-- End Date -->
+                    <span class="table-header-item poll-end th is-sortable">End Date <i class="fa fa-sort"></i></span>
+
+                    <!-- View Report -->
+                    <!-- <span class="table-header-item poll-report th"></span> -->
+                  
+                </div>
+                <!-- End Table Header -->
+
+                <div id="sortable">
+                  
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">1</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>New Kids on Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-poll animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Poll</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Poll</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-stealth">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">2</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">3</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          
+                          <div class="meter">
+                            <p>New Kids on the Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">4</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>New Kids on Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                   <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">5</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">6</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          
+                          <div class="meter">
+                            <p>New Kids on the Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-stealth">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">7</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>New Kids on Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                   <div class="list-item ui-state-default">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">8</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          <div class="meter">
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">9</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          
+                          <div class="meter">
+                            <p>New Kids on the Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="poll-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">10</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="poll-type">
+                      <i class="fa fa-font"></i>
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="poll-title">
+                      <p>Poll Title</p>
+                      <p class="poll-id">BVMXXI</p>
+                    </div>
+
+                    <div class="poll-start">
+                      <p>05/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-end">
+                      <p>06/08/2015</p>
+                      <p class="poll-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="poll-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-poll-report">
+                      <div class="report">
+                        <p class="view-report--question">Who is your favorite all time boy band?</p>
+                        <div class="view-report--choice">
+                          <img src="assets/img/beatles.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Beatles</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar winner" data-vote-count="88"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">328<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/newkids.jpg" />
+                          
+                          <div class="meter">
+                            <p>New Kids on the Block</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.3"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">5<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/boyz2men.jpg" />
+                          
+                          <div class="meter">
+                            <p>Boyz 2 Men</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="7.5"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">28<span>votes</span></div>
+                        </div>
+                        <div class="view-report--choice">
+                          <img src="assets/img/hanson.jpg" />
+                          
+                          <div class="meter">
+                            <p>The Hanson Brothers</p>
+                            <div class="meter-bar-bg"></div>
+                            <div class="meter-bar" data-vote-count="1.9"></div>
+                          </div>
+                          <div class="votes animated bounceInRight">7<span>votes</span></div>
+                        </div>
+                        <div class="total-count animated bounceInUp">
+                          <p>Total Votes <span>367</span></p>
+                        </div>
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-poll animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Poll</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a name="Delete Poll" class="delete-poll animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Poll</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- End Polls Admin -->
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+    <script type="text/javascript" src="https://admin.tritondigital.com/dashboard/Javascript/jquery.hoverIntent.js"></script>
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>

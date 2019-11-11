@@ -1,0 +1,10 @@
+@font-face {
+		font-family: 'Suit-Regular';
+		src: url('fonts/card-suits/suit-regular.eot');
+		src: url('fonts/card-suits/suit-regular.eot?#iefix') format('embedded-opentype'),
+				 url('fonts/card-suits/suit-regular.woff') format('woff'),
+				 url('fonts/card-suits/suit-regular.ttf') format('truetype'),
+				 url('fonts/card-suits/suit-regular.svg#suit-regular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}

@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Org Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="perfect-scrollbar.jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="page-container">
+            <div class="app-container">
+                <div class="container u-display-flex u-display-flex--vcentered">
+                    <h1 class="nomargin">Org Management</h1>
+                    <div class="button-container u-flex-right">
+                        <button class="button"><i class="fa fa-excel-o"></i> Export</button>
+                        <button class="button button-positive" onclick="location.href='create.html'"><i class="fa fa-plus"></i> Create New Site</button>
+                    </div>
+                </div>
+                <div class="container u-display-flex u-display-flex--vcentered">
+                    <div class="u-display-flex u-flex-wrap width-7-8 filter-dropdowns">
+                        <div class="dropdown-select js-dropdownMenu" id="productFilter">
+    <div class="dropdown-select__button noselect">Product Type <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+<div class="dropdown-select js-dropdownMenu" id="ownerFilter">
+    <div class="dropdown-select__button noselect">Owner <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+<div class="dropdown-select js-dropdownMenu" id="marketFilter">
+    <div class="dropdown-select__button noselect">Market <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+<div class="dropdown-select js-dropdownMenu" id="formatFilter" style="display: none">
+    <div class="dropdown-select__button noselect">Format <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+<div class="dropdown-select js-dropdownMenu" id="prizeFilter" style="display: none">
+    <div class="dropdown-select__button noselect">Prize Closet <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+<div class="dropdown-select js-dropdownMenu" id="napFilter" style="display: none">
+    <div class="dropdown-select__button noselect">Prize Closet <span class="dropdown-select__quantity">Any</span></div>
+    <i class="dropdown-select__icon fa fa-filter"></i>
+    <div class="dropdown-select__options">
+        <label class="dropdown-select__item u-display-flex u-display-flex--vcentered u-mb10"><input type="checkbox" name="All" id="select-all"> Select All</label>
+        <ul class="dropdown-select__list zerolist">
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Rewards</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Promotions</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> CMS</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Contesting</li>
+            <li class="dropdown-select__item"><label for=""><input type="checkbox"></label> Research</li>
+        </ul>
+    </div>
+</div>
+
+
+                    </div>
+                    <div class="dropdown dropdown--filter u-flex-right is-clickable width-1-8" style="text-align: right">
+                        <span class="dropdown__trigger dropdown-toggle" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus"></i> Add Filters</span>
+                        <ul class="dropdown__menu dropdown-menu quick-actions__menu zerolist" aria-labelledby="dropdownMenu1">
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="productCheck" type="checkbox" checked></label> Product</li>
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="ownerCheck" type="checkbox" checked></label> Owner</li>
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="marketCheck" type="checkbox" checked></label> Market</li>
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="formatCheck" type="checkbox"></label> Format</li>
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="prizeCheck" type="checkbox"></label> Prize Closet</li>
+                            <li class="dropdown-select__item"><label for=""><input class="js-filterCheck" id="napCheck" type="checkbox"></label> NAP</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid main">
+                    <div class="col-2-5">
+                        <div class="u-pos-relative insert search-box">
+                            <i class="fa fa-search insert__icon"></i>
+                            <input class="width-1-1 insert__input search" autofocus="autofocus" type="text" placeholder="Search For Site">
+                        </div>
+
+
+                        <div class="list-container">
+                            <div class="list">
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Talk" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">AMS-NET</b>
+                                    <small class="js-siteID stack__meta">3732</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">America's Morning Show</b>
+                                    <small class="js-siteOwner stack__meta">Cumulus</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Miscellaneous" data-market="Hartford">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CBSHART</b>
+                                    <small class="js-siteID stack__meta">1848</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CBS Connecticut</b>
+                                    <small class="js-siteOwner stack__meta">CBS Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Excluded" data-market="Terrace BC">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CFNR-FM</b>
+                                    <small class="js-siteID stack__meta">562</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CFNR Rock 'N Roll Access Club</b>
+                                    <small class="js-siteOwner stack__meta">North Native Broadcasting</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Adult Hits" data-market="Kelowna, BC">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CJUI-FM</b>
+                                    <small class="js-siteID stack__meta">1425</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Friends with Benefits Club</b>
+                                    <small class="js-siteOwner stack__meta">Vista Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Talk" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KAIM-FM</b>
+                                    <small class="js-siteID stack__meta">3377</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">The Fish Fan Club</b>
+                                    <small class="js-siteOwner stack__meta">Salem Communications</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Classic Hits" data-market="Spokane">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KEYF-FM</b>
+                                    <small class="js-siteID stack__meta">2793</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Rock 'n' Roll's Greatest Listener Club</b>
+                                    <small class="js-siteOwner stack__meta">Mapleton Communications</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Excluded" data-market="Dallas/Ft. Worth">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KHKS-FM</b>
+                                    <small class="js-siteID stack__meta">231</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">KISS Extra</b>
+                                    <small class="js-siteOwner stack__meta">iHeartMedia</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Classic Hits" data-market="Joplin">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KJMK-FM</b>
+                                    <small class="js-siteID stack__meta">2795</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Classic Hits 93.9 Loyal Listener Club</b>
+                                    <small class="js-siteOwner stack__meta">Zimmer Radio, Inc.</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="News Radio" data-market="Edmonton AB">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CHED-AM</b>
+                                    <small class="js-siteID stack__meta">572</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Insider Rewards Program</b>
+                                    <small class="js-siteOwner stack__meta">Corus Entertainment</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="News Radio" data-market="Las Vegas">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KXNT-FM</b>
+                                    <small class="js-siteID stack__meta">1125</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CBS Las Vegas - News Radio 100</b>
+                                    <small class="js-siteOwner stack__meta">CBS Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Radio" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">YOLAADAMS</b>
+                                    <small class="js-siteID stack__meta">1830</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Yolanda Adams Morning Show Good News</b>
+                                    <small class="js-siteOwner stack__meta">Radio One</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Country" data-market="Chicago">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">R2R</b>
+                                    <small class="js-siteID stack__meta">271</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Illinois Lottery Million Dollar Sum</b>
+                                    <small class="js-siteOwner stack__meta">Illinois Lottery</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Talk" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">AMS-NET</b>
+                                    <small class="js-siteID stack__meta">3732</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">America's Morning Show</b>
+                                    <small class="js-siteOwner stack__meta">Cumulus</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Miscellaneous" data-market="Hartford">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CBSHART</b>
+                                    <small class="js-siteID stack__meta">1848</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CBS Connecticut</b>
+                                    <small class="js-siteOwner stack__meta">CBS Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Excluded" data-market="Terrace BC">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CFNR-FM</b>
+                                    <small class="js-siteID stack__meta">562</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CFNR Rock 'N Roll Access Club</b>
+                                    <small class="js-siteOwner stack__meta">North Native Broadcasting</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Adult Hits" data-market="Kelowna, BC">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CJUI-FM</b>
+                                    <small class="js-siteID stack__meta">1425</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Friends with Benefits Club</b>
+                                    <small class="js-siteOwner stack__meta">Vista Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Talk" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KAIM-FM</b>
+                                    <small class="js-siteID stack__meta">3377</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">The Fish Fan Club</b>
+                                    <small class="js-siteOwner stack__meta">Salem Communications</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Classic Hits" data-market="Spokane">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KEYF-FM</b>
+                                    <small class="js-siteID stack__meta">2793</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Rock 'n' Roll's Greatest Listener Club</b>
+                                    <small class="js-siteOwner stack__meta">Mapleton Communications</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Excluded" data-market="Dallas/Ft. Worth">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KHKS-FM</b>
+                                    <small class="js-siteID stack__meta">231</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">KISS Extra</b>
+                                    <small class="js-siteOwner stack__meta">iHeartMedia</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Classic Hits" data-market="Joplin">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KJMK-FM</b>
+                                    <small class="js-siteID stack__meta">2795</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Classic Hits 93.9 Loyal Listener Club</b>
+                                    <small class="js-siteOwner stack__meta">Zimmer Radio, Inc.</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="News Radio" data-market="Edmonton AB">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">CHED-AM</b>
+                                    <small class="js-siteID stack__meta">572</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Insider Rewards Program</b>
+                                    <small class="js-siteOwner stack__meta">Corus Entertainment</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="News Radio" data-market="Las Vegas">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">KXNT-FM</b>
+                                    <small class="js-siteID stack__meta">1125</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">CBS Las Vegas - News Radio 100</b>
+                                    <small class="js-siteOwner stack__meta">CBS Radio</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Radio" data-market="National">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">YOLAADAMS</b>
+                                    <small class="js-siteID stack__meta">1830</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Yolanda Adams Morning Show Good News</b>
+                                    <small class="js-siteOwner stack__meta">Radio One</small>
+                                </div>
+                            </div>
+                            
+                            <div class="js-siteRecord list__item nomargin u-display-flex u-display-flex--vcentered" data-format="Country" data-market="Chicago">
+                                <div class="width-1-4 stack">
+                                    <b class="js-callLetters stack__header">R2R</b>
+                                    <small class="js-siteID stack__meta">271</small>
+                                </div>
+                                <div class="width-3-4 stack">
+                                    <b class="js-siteName stack__header">Illinois Lottery Million Dollar Sum</b>
+                                    <small class="js-siteOwner stack__meta">Illinois Lottery</small>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                        <!-- <div class="toggle-tab u-display-flex">
+                            <div class="width-1-2 toggle-tab__btn is-active js-tab"><i class="fa fa-sort-alpha-asc"></i> Alphabetical</div>
+                            <div class="width-1-2 toggle-tab__btn js-tab"><i class="fa fa-clock-o"></i> Most Recent</div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-3-5 snapshot">
+                        <div id="loadingIndicator" class="overlay overlay--absolute u-display-flex u-display-flex--centered" style="display: none">
+                            <div class="loader" data-loading-message=""></div>
+                        </div>
+                        <div id="emptyView" class="u-display-flex u-display-flex--centered u-flex-column snapshot__empty">
+                            <i class="fa fa-camera fa-4x snapshot__empty-icon"></i>
+                            <div class="snapshot__empty-header">Select a site to view a snapshot</div>
+                        </div>
+                        <div id="snapShot" class="cards snapshot__cards" style="display: none">
+                            <div class="f10 card__timestamp">Last Edit: 12/23/15 by tritonadmin@tritondigital.com</div>
+                            <div id="cardMain" class="card">
+                                <div class="card__header">
+                                    <legend id="siteName" class="card__legend card__legend--centered" contenteditable>Rock 'n' Roll's Greatest Listener Club</legend>
+                                    <div class="grid nomargin">
+                                        <div class="stack stack--alternate col-2-8">
+                                            <small class="stack__header">Call Letters</small>
+                                            <div id="siteCall">CFNR-FM</div>
+                                        </div>
+                                        <div class="stack stack--alternate col-4-8">
+                                            <small class="stack__header">Org and Market</small>
+                                            <div><span id="siteOwner">Northern Native Broadcasting</span> > <span id="siteMarket">Terrace BC</span></div>
+                                        </div>
+                                        <div class="stack stack--alternate col-2-8 ">
+                                            <small class="stack__header">Format</small>
+                                            <div id="siteFormat">Excluded</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__body">
+                                    <div class="grid nomargin">
+                                        <div class="col-1-5">
+                                            <div class="container stack">
+                                                <b>Zip Code</b>
+                                                <div>30331</div>
+                                            </div>
+                                            <div class="container stack">
+                                                <b>Products</b>
+                                                <ul class="zerolist">
+                                                    <li>CMS</li>
+                                                    <li>Rewards</li>
+                                                    <li>Contesting</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-3-5 stack">
+                                            <div class="container">
+                                                <b>Site URL</b>
+                                                <a class="stack__link" href="http://www.americasmorningshow.com" target="_blank">http.//www.americasmorningshow.com</a>
+                                            </div>
+                                            <div class="container stack">
+                                                <b>Login</b>
+                                                <a class="stack__link" href="http://access.mycfnr" target="_blank">access.mycfnr</a>
+                                            </div>
+                                            <div class="container stack">
+                                                <b>Allowable States</b>
+                                                <div>All states are allowed</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-1-5">
+                                            <div class="container stack">
+                                                <b>Skin Path</b>
+                                                <div>mycfnr</div>
+                                            </div>
+                                            <div class="container stack">
+                                                <b>NAP Status</b>
+                                                <div>Fixed</div>
+                                            </div>
+                                            <div class="container stack">
+                                                <b>Prize Closets</b>
+                                                <div>1,2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__footer u-display-flex u-display-flex--centered">
+                                    <a href="">View/Edit All Details</a>
+                                </div>
+                            </div>
+                            <div id="cardContacts" class="card">
+                                <div class="card__header">
+                                    <legend class="card__legend card__legend--secondary">Email Contacts</legend>
+                                    <input class="card__search width-1-1" type="search" placeholder="Find or Add Email">
+                                </div>
+                                <div class="card__body u-display-flex">
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="j">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">jthoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="s">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">sthoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="b">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">bhoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="m">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">mthoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="w">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">wthoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="stack stack--email container width-1-2" data-firsLetter="i">
+                                        <div class="is-editable" title="Click to Edit">
+                                            <b class="stack__header">ithoward09@gmail.com</b>
+                                            <div class="u-display-flex" style="white-space: nowrap">
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Notification</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Status</small>
+                                            
+                                                <small class="stack__meta u-display-flex u-display-flex--vcentered"><input class="stack__meta-checkbox" type="checkbox" checked/>Station Support</small>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

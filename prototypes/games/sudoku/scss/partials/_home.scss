@@ -1,0 +1,240 @@
+// *************************************
+//
+//   Home Screen Styles
+//   For Zen Sudoku
+//
+// *************************************
+
+// -------------------------------------
+//   Background Logo
+// -------------------------------------
+.sudoku-zen-logo {
+    height: 78px;
+    width: 298px;
+
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    margin-left: -149px;
+
+    background-image: url(../images/sudoku_logo.png);
+    background-size: contain;
+
+    // -webkit-animation: scaleIn 0.75s ease-in-out;
+    // animation: scaleIn 0.75s ease-in-out;
+
+    &-background {
+        height: 178px;
+        width: 174px;
+
+        margin: 65px auto 0;
+
+        background-image: url(../images/blue_symbol_bg_small.png);
+        background-size: contain;
+
+        // -webkit-animation: scaleInRotate 0.75s ease-in-out;
+        // animation: scaleInRotate 0.75s ease-in-out;
+    }
+}
+
+// -------------------------------------
+//   Lanterns
+// -------------------------------------
+.lantern {
+    height: 226px;
+    width: 160px;
+
+    position: absolute;
+
+    background-image: url(../images/lantern.png);
+    background-size: contain;
+
+    // -webkit-animation: lanternSlideIn 1s ease-in-out, sway 3.5s infinite ease-in-out;
+    // -webkit-transform-origin: top;
+    // -webkit-animation-delay: 0s, 1s;
+    // animation: lanternSlideIn 1s ease-in-out, sway 3.5s infinite ease-in-out;
+    // transform-origin: top;
+    // animation-delay: 0s, 1s;
+
+    &--one {
+        height: 175px;
+        width: 124px;
+
+        top: -62px;
+        left: -35px;
+    }
+
+    &--two {
+        height: 175px;
+        width: 124px;
+
+        top: -50px;
+        right: 33px;
+
+        // -webkit-animation: lanternSlideInInverse 1s ease-in-out, swayInverse 3.5s infinite ease-in-out;
+        // -webkit-transform-origin: top;
+        // -webkit-animation-delay: 0s, 1s;
+        // animation: lanternSlideInInverse 1s ease-in-out, swayInverse 3.5s infinite ease-in-out;
+        // transform-origin: top;
+        // animation-delay: 0s, 1s;
+    }
+
+    &--three {
+        height: 215px;
+        width: 152px;
+
+        top: -63px;
+        right: -45px;
+    }
+}
+
+// -------------------------------------
+//   Gametype Select
+// -------------------------------------
+.sudoku-gametype-select-text {
+    width: 100%;
+    position: absolute;
+    top: 205px;
+
+    font-size: 17px;
+    text-align: center;
+
+    // -webkit-animation: fadeIn 0.75s ease-in-out;
+    // animation: fadeIn 0.75s ease-in-out;
+}
+
+.sudoku-gametype {
+    display: inline-block;
+    width: 159px;
+    height: 201px;
+
+    margin: 5px 8px;
+    padding: 12px 10px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &-wrapper {
+        position: absolute;
+        width: 100%;
+
+        text-align: center;
+        z-index: 500;
+
+        // -webkit-animation: fadeIn 0.75s ease-in-out;
+        // animation: fadeIn 0.75s ease-in-out;
+    }
+
+    &--express {
+        background-image: url(../images/sudoku_express_select_area.png);
+    }
+
+    &--normal {
+        background-image: url(../images/sudoku_normal_select_area.png);
+    }
+
+    &--express-selected {
+        width: 181px;
+        height: 221px;
+        padding: 23px 8px 19px 18px;
+
+        position: absolute;
+        top: -9px;
+        right: 65px;
+
+        background-image: url(../images/sudoku_express_select.png);
+        cursor: default;
+    }
+
+    &--normal-selected {
+        width: 181px;
+        height: 221px;
+        padding: 23px 18px 19px 8px;
+
+        position: absolute;
+        top: -9px;
+        right: 240px;
+
+        background-image: url(../images/sudoku_normal_select.png);
+        cursor: default;
+    }
+}
+
+.deselect-gametype {
+    height: 32px;
+    position: absolute;
+    top: 6px;
+
+    color: $light-blue;
+    cursor: pointer;
+    font-size: 32px;
+    overflow: hidden;
+
+    // -webkit-animation: fadeIn 0.5s ease-in-out;
+    // animation: fadeIn 0.5s ease-in-out;
+
+    &.sudoku-deselect-express {
+        right: 6px
+    }
+
+    &.sudoku-deselect-normal {
+        left: 6px
+    }
+}
+
+.sudoku-difficulty {
+    margin: 8px 20px;
+    padding: 9px;
+
+    border-radius: 8px;
+    color: $purple;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 15px;
+
+    &:hover, &.selected {
+        background-color: $purple;
+        color: #fff;
+
+        h4 {
+            color: $light-purple;
+        }
+    }
+
+    h4 {
+        margin: 0;
+
+        color: $dark-purple;
+        font-size: 17px;
+    }
+}
+
+.sudoku-gametype-inner {
+    &--express {
+        width: 79px;
+        height: 88px;
+
+        margin-top: 42px;
+        margin-left: 30px;
+
+        background-image: url(../images/sudoku_board_express.png);
+    }
+
+    &--normal {
+        width: 90px;
+        height: 91px;
+
+        margin-top: 41.5px;
+        margin-left: 24.5px;
+
+        background-image: url(../images/sudoku_board_normal.png);
+    }
+}
+
+.sudoku-board-size {
+    background: $dark-blue;
+    color: $blue;
+
+    padding: 1px 2px 3px;
+    margin-left: 5px;
+}

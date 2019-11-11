@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contest Reporting</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body { background: url('http://www.tdascreative.com/uiguide/images/bg.png'); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section class="page-container">
+
+            <div class="app-container">
+                <div class="u-display-flex u-display-flex--vcentered container container-sectioned">
+                    <h2 class="nomargin"><i class="fa fa-chevron-circle-left"></i> $4000 Stocking Stuffer Sweepstakes</h2>
+                    <button class="button button-highlight u-flex-right">Download Contest Recap</button>
+                </div>
+                <div class="container">
+                    <div class="instance-list-filter pull-right u-display-flex u-display-flex--centered">
+
+        <span class="is-clickable js-filterDrop"><span class="js-filterDropText">All Traffic</span> <i class="fa fa-caret-down"></i></span>
+        <!-- Filter Toggle Switch -->
+        <div class="toggle">
+            <input id="toggle-surveyFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked="">
+            <label class="toggle-container" for="toggle-surveyFilter">
+                <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                <span class="toggle-handle"></span>
+            </label>
+        </div>
+        <!-- End Filter Toggle Switch -->
+
+        <!-- Filter Section -->
+        <form class="filters js-filterDropDown" style="display: none;">
+            <div class="filters-heading">
+                <!-- Filter Toggle | THIS STILL NEEDS DESIGN-->
+                <h3 class="filters-header">Traffic From</h3>
+            </div>
+            <div class="input-container checkbox">
+                <label class="js-checkbox is-clickable"><input type="checkbox">Twitter</label>
+                <label class="js-checkbox is-clickable"><input type="checkbox">Facebook</label>
+                <label class="js-checkbox is-clickable"><input type="checkbox">Microsite</label>
+                <label class="js-checkbox is-clickable"><input type="checkbox">Rewards</label>
+            </div>
+        </form>
+        <!-- End Filter Section -->
+    </div>
+
+                </div>
+                <div>
+                    <h3>Entries By Day</h3>
+                    <div class="module">
+                        <canvas id="dayChart" width="100" height="25"></canvas>
+                    </div>
+                </div>
+                <div class="u-display-flex u-justify-between">
+                    <div class="report-block">
+                        <h3>Traffic Breakdown</h3>
+                        <div class="module is-labeled module--a" data-label="Traffic Breakdwon">
+                            <div class="u-display-flex u-display-flex--vcentered grid">
+                                <div class="report__data">
+                                    <div class="container has-horz-divider">
+                                        <h1 class="f48 nomargin report__data-value js-reportValue" data-total="2345">2345</h1>
+                                        <span>Sessions</span>
+                                    </div>
+                                    <div class="u-display-flex grid">
+                                        <div class="col-1-2 has-vert-divider u-pr10">
+                                            <h2 class="nomargin report__data-value">75%</h2>
+                                            <span class="f12 report__data-label report__data-label--small">Bounce Rate</span>
+                                        </div>
+                                        <div class="col-1-2 u-pl10">
+                                            <h2 class="nomargin report__data-value">25%</h2>
+                                            <span class="f12 report__data-label report__data-label--small">Conversion Rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="report__chart">
+                                    <canvas id="myChart" width="100" height="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-block">
+                        <h3>Registration Breakdown</h3>
+                        <div class="module is-labeled module--a" data-label="User Breakdwon">
+                            <div class="u-display-flex u-display-flex--vcentered grid">
+                                <div class="report__data">
+                                    <div class="container has-horz-divider">
+                                        <h1 class="f48 nomargin report__data-value js-reportValue" data-total="1203">1203</h1>
+                                        <span>Registered</span>
+                                    </div>
+                                    <div class="u-display-flex grid">
+                                        <div class="col-1-2 has-vert-divider u-pr10">
+                                            <h2 class="nomargin report__data-value">45%</h2>
+                                            <span class="f12 report__data-label report__data-label--small">New</span>
+                                        </div>
+                                        <div class="col-1-2 u-pl10">
+                                            <h2 class="nomargin report__data-value">55%</h2>
+                                            <span class="f12 report__data-label report__data-label--small">Exisiting</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="report__chart">
+                                    <canvas id="entryChart" width="100" height="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Site Breakdown</h3>
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th>Org Name</th>
+                                <th>Entries</th>
+                                <th>New Registraitons</th>
+                                <th>Exisiting User Registraitons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Atlanta</td>
+                                <td>750</td>
+                                <td>15</td>
+                                <td>735</td>
+                            </tr>
+                            <tr>
+                                <td>WWWQ</td>
+                                <td>300</td>
+                                <td>12</td>
+                                <td>288</td>
+                            </tr>
+                            <tr>
+                                <td>WKHX</td>
+                                <td>450</td>
+                                <td>3</td>
+                                <td>447</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

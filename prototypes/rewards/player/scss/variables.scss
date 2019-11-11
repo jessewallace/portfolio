@@ -1,0 +1,18 @@
+
+$main-color: #525252;
+$button-color: #f9611e;
+$button-color-text: #782c06;
+$white: #ffffff;
+$grey: #666666;
+$black: #000000;
+$l-black: #790808;
+$overlay-black: rgba(0,0,0, .95);
+$red: #ff1e1e;
+$remove-red: #ec2520;
+$blue: #0066cc;
+$green: #3eff1e;
+$green-text: #1d6e0f;
+
+$highlight-color: scale_color($main-color, $lightness: -15%);
+$highlight-hover: #242424;
+$button-hover: scale_color($button-color, $lightness: 30%);

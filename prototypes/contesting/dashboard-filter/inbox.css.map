@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAiBA,WAAY,GACR,GAAG,EAAE,CAAC,EACN,IAAI,EAAE,KAAK",
+"sources": ["../inbox.scss"],
+"names": [],
+"file": "inbox.css"
+}

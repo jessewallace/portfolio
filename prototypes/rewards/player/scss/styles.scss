@@ -1,0 +1,37 @@
+
+// Imports all Sass files one css file - (root)/style.css
+
+// Variables
+@import "variables.scss";
+
+// Global Stlyes
+@import "globals.scss";
+@import "keyframes.scss";
+
+// General Styles
+@import "play-button.scss";
+@import "player-main.scss";
+@import "history-favorites-titles.scss";
+@import "login-profile-desktop.scss";
+@import "player-controls.scss";
+@import "song-info.scss";
+@import "history-favorites-row.scss";
+@import "favorites-contents-login.scss";
+@import "favorites-contents-empty.scss";
+@import "favorites-contents.scss";
+@import "pagination-buttons.scss";
+
+// Responsive
+@import "responsive-global.scss";
+@import "responsive-collapsed-player.scss";
+@import "responsive-collapsed-login.scss";
+@import "responsive-expanded-player.scss";
+@import "responsive-expanded-login.scss";
+
+
+
+// For Testing Only -- Remove before delivery
+@import "testingonly.scss";
+
+// Fonts
+@import "fonts.scss";

@@ -1,0 +1,101 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Codystar|Revalia|Atomic+Age|Quantico|VT323|Wallpoet);
+
+.countdown-container {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 0px 5px -5px black;
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: 0;
+    z-index: 99;
+    margin: auto;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    text-align: center;
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
+}
+
+.countdown-message {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-family: "Quantico", cursive;
+    color: orange;
+}
+
+.countdown-wrapper {
+    margin: 0 auto;
+    display: table;
+}
+
+.countdown {
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.transition {
+    -webkit-transition: top 300ms ease-in-out;
+    transition: top 300ms ease-in-out;
+}
+
+.timeTo {
+    font-size: 10px;
+    line-height: 108%;
+}
+
+.timeTo span {
+    vertical-align: top;
+}
+
+.timeTo div {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
+    background: -webkit-linear-gradient(#333333, #111111);
+    background: linear-gradient(#333333, #111111);
+    border: 1px solid #111;
+    color: orange;
+    font-family: "Quantico", cursive;
+    text-align: center;
+}
+
+.timeTo figure {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    max-width: 50px !important;
+}
+
+.timeTo figcaption {
+    color: #CCC;
+    font-weight: normal;
+    line-height: 80%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.timeTo div {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.timeTo ul {
+    position: absolute;
+    left: 3px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeTo ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,780 @@
+
+// Stuff hidden at desktop
+.v1player-mobile-login-wpr,
+.collapsed-login {
+    display: none;
+}
+
+.v1player-history-bars,
+.v1player-favorites-bars {
+    display:none;
+}
+
+.v1player-song-info .mobile-favorites-ctrl {
+    display:none;
+}
+
+@media screen and (max-width: 620px) {
+
+    // Prevents the resize issues from accurring. (Elastic Scrolling iOS) - NEVER FOREGET THIS... EVER.
+    .v1player {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pull-left { float:left; }
+
+    div.background-container {
+        top: 0;
+    }
+
+    .v1player-history-bars,
+    .v1player-favorites-bars {
+        display:block;
+
+        .fa-bars {
+            color:$black;
+        }
+    }
+
+    // Collapsed Styles
+    .collapsed-login {
+        position: absolute;
+        left:-238px;
+        z-index: 2005;
+
+        display: block;
+        width:288px;
+        height: 100%;
+        margin-left:-20px;
+        font-family: 'Arial';
+        color:$white;
+        background-color:$button-color;
+
+        transition: left 300ms ease-in-out;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top:0px;
+            right:-60px;
+            width:60px;
+            height: 100%;
+            background-color:transparent;
+        }
+
+        &.is-opened { 
+            left: 0;
+        }
+
+
+        .v1player-mobile-profile-wpr {
+            display: none;
+        }
+
+        .v1player-mobile-ctrl-open-wpr {
+           position: relative; 
+        }
+
+        img {
+            @extend .pull-left;
+
+            height:50px;
+            width:50px;
+            margin:8px 10px 0px 20px; 
+        }
+
+        .v1player-mobile-user-username {
+            @extend .pull-left;
+
+            display: block;
+
+            margin:18px 0 0;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 17.68px;
+        }
+
+        .v1player-mobile-user-email {
+            display: block;
+
+            margin:20px 0 0;
+            font-size: 10px;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width:30%;
+        }
+
+        .collapsed-bar-ctrl {
+            float:right;
+
+            &:hover {
+                color: initial;
+            }
+
+            .fa-bars {
+                position: absolute;
+                top:26px;
+                right:8px;
+
+                color: $black;
+
+            }
+        }
+
+        .v1player-mobile-ctrl {
+            @extend .pull-left;
+
+            display: inline-block;
+            padding: 8px 10px;
+            margin:-15px 0 0 8px;
+
+            font-size: 14px;
+            text-align: center;
+            background-color:black;
+
+            &:hover {
+                color: $button-color;
+            }
+
+            &.mobile-ctrl-closed {
+                float:right;
+                padding:4px 8px;
+                margin:-55px 0px 0 8px;
+
+                i {
+                    font-size: 1.5em;
+                }
+
+                &.mobile-logout-ctrl {
+                    margin-right: 32px;
+                }
+
+                &.mobile-profile-ctrl {
+                    margin-right: 70px;
+                    margin-left: 60px; 
+                }
+            }
+            
+
+
+            &.auth-ctrl {
+                margin-top: -8px;
+            }
+        }
+
+        .collapsed-mobile-auth-wpr {
+            padding:25px 50px;
+            text-align: center;
+
+            i {
+                padding-right: 5px;
+            }
+        }
+    }
+
+    // Expanded Styles
+    div.v1player-mobile-expanded .v1player-mobile-login-wpr.expanded-login {
+        display: none;
+        position: absolute;
+        left:-288px;
+        z-index: 2005;
+        width:338px;
+        height: 100%;
+        margin-left:-20px;
+        background-color:$button-color;
+        font-family: 'Arial';
+        color:$white;
+
+        transition: left 300ms ease-in-out;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top:0px;
+            right:-40px;
+            width:40px;
+            height: 100%;
+            background-color:transparent;
+        }
+
+        &.is-opened { 
+            left: 0;
+        }
+
+        .v1player-mobile-ctrl-open-wpr {
+           position: relative;
+        
+        }
+
+        .v1player-mobile-profile-wpr {
+            display: none;
+        }
+
+        img {
+            @extend .pull-left;
+
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            height:64px;
+            width:64px;
+        }
+
+        .v1player-mobile-user-username {
+            @extend .pull-left;
+
+            display: inline-block;
+
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 17.68px;
+            margin-top: 30px;
+            margin-left: -14px;
+        }
+
+        .v1player-mobile-user-email {
+            @extend .pull-left;
+
+            font-size: 10px;
+            margin-left: 100px;
+            margin-top: -50px;
+
+            width:60%;
+
+        }
+
+        .v1player-mobile-ctrl-open {
+            float: right;
+
+            &:hover {
+                color: initial;
+            }
+
+            .fa-bars {
+                float:right;
+
+                position: absolute;
+                top:58px;
+                right:8px;
+                color: $black;
+
+                // &.expanded {
+                //     top:58px;
+                // }
+            }
+        }
+
+        .v1player-mobile-ctrl {
+            @extend .pull-left;
+
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            padding: 8px 24px;
+            margin-top: -15px;
+            margin-left: 8px;
+            background-color:black;
+
+            &:hover {
+                color: $button-color;
+            }
+
+            &.mobile-profile-ctrl {
+                margin-left: 60px; 
+            }
+
+            &.auth-ctrl {
+                margin-top: 13px;
+            }
+        }
+
+        .v1player-mobile-auth-wpr {
+            padding:18px 50px;
+            text-align: center;
+
+            .v1player-mobile-auth-title {
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            .v1player-mobile-auth-subtitle {
+                display:inline-block;
+                font-size: 10px;
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .v1player-song-info .mobile-favorites-ctrl {
+        display: none;
+
+        &.active {
+            color: $button-color !important;
+        }
+    }
+
+    div.v1player-mobile-expanded {
+        height: 130px;
+        transition: 0.5s ease all;
+
+        .player-content-wrapper {
+            padding: 0;
+
+            .v1player-history-wrapper {
+                top: initial;
+                bottom: 80px;
+                right: 0;
+                z-index: 1000;
+                
+                display: block;
+                overflow: hidden;
+                max-height: 390px;
+
+                box-shadow: 0 -3px 2px rgba(0, 0, 0, .5);
+                border-bottom: solid 1px darken($highlight-color, 5);
+                transition: bottom 500ms ease-in-out;
+
+                &.is-opened-1 {
+                    bottom:-223px;
+                }
+
+                &.is-opened-2 {
+                    bottom:100px;
+                }
+
+                .page-next,
+                .page-prev {
+                    display: none;
+                }
+
+                .v1player-history-title {
+                    background: $highlight-hover;
+                    z-index: 2;
+                    cursor: pointer;
+
+                    i:hover {
+                        color: inherit;
+                    }
+
+                    &.active {
+                        background-color:$main-color;
+                        color: $button-color;
+                    }
+
+                    .v1player-history-caret {
+                        position: absolute;
+                        top: 8px;
+                        right: 5%;
+
+                        display: block;
+                        font-size: 1.5em;
+
+                        cursor: pointer;
+                    }
+                }
+
+                .v1player-favorites-title {
+                    background:$highlight-hover;
+
+                    i:hover {
+                        color: inherit;
+                    }
+                }
+
+                .v1player-history-top-shadow {
+                    position: absolute;
+                    top: 35;
+                    left: -25%;
+                    z-index: 10;
+
+                    display: none;
+                    width: 150%;
+                    height: 10px;
+
+                    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, .3);
+                }
+
+                .v1player-history-bottom-shadow {
+                    position: absolute;
+                    bottom: 0;
+                    left: -25%;
+                    z-index: 10;
+
+                    width: 150%;
+                    height: 10px;
+
+                    box-shadow: inset 0px -4px 6px rgba(0, 0, 0, .3);
+                }
+
+                .v1player-history-contents,
+                .v1player-favorites-contents {
+                    position: absolute;
+                    top: 0;
+                    z-index: -1;
+
+                    overflow: auto;
+
+                    height: 100%;
+                    width: 100%;
+                    padding-top: 35px;
+
+                }
+
+                .v1player-clear-all-wpr {
+                    display: none;
+                }
+
+                .v1player-history-row {
+
+                    &:nth-child(n+6) {
+                        display: block;
+                    }
+
+                    &.fav{
+                        color:$button-color;
+
+                        .v1player-history-bars .mobile-bars {
+                            color:$button-color;
+                        }
+                    }
+
+                    .v1player-history-time,
+                    .v1player-history-time ~ a,
+                    .v1player-history-favorites,
+                    .v1player-history-album ~ a,
+                    .v1player-favorites-control {
+                        display: none;
+                    }
+                }
+            }
+
+            .v1player-favorites-login {
+
+                span {
+                    position: absolute;
+                    top:180px;
+                    left:10px;
+                    z-index: 2000;
+
+                    padding:0px 20px;
+                    font-size: 1.7em !important;
+                    line-height: 30px;
+                }
+
+                .v1player-favorites-login-icons {
+
+                    .fa-heart {
+                        font-size: 182.06px;
+                        margin:-30px 0 0;
+                    }
+
+                    .fa-user {
+                        left:100px;
+                        top:25px;
+
+                        font-size: 63.32px;
+                    }
+                }
+
+                .v1player-favorites-login-controls {
+                    display: none;
+                }
+            }            
+
+            .v1player-favorites-empty {
+
+                span {
+                    position: absolute;
+                    top:225px;
+                    z-index: 2000;
+
+                    font-size: 1.5em;
+                }
+
+                span:first-of-type {
+                    left:32px;
+                }
+
+                span:last-of-type {
+                    top:240px;
+                    left:10px;
+
+                    line-height: 30px;
+                }
+
+                .v1player-favorites-empty-icons {
+                    margin-top: -40px;
+                }
+            }
+
+            .v1player-song-info {
+                position: absolute;
+                bottom: 0;
+                z-index: 0;
+
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                text-align: center;
+
+                -webkit-animation: mobile-song-info .5s ease;
+
+                .v1player-album-art {
+                    position: relative;
+
+                    display: inline-block;
+                    float: none;
+                    width: 75px;
+                    height: 75px;
+                    margin-bottom: 15px;
+                }
+
+                .v1player-track {
+                    text-overflow: none;
+                    padding-right: 0px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .v1player-track a,
+                .mobile-favorites-ctrl {
+                    position: absolute;
+                    bottom: 60px;
+                    left: -20%;
+
+                    display: block;
+                    font-size: 3em;
+                    color: $white;
+
+                    -webkit-animation: mobile-cart-button .5s .2s ease forwards;
+
+                    &:hover {
+                        color: $button-color;
+                    }
+
+                    &.v1player-buy-song-icon {
+                        margin-left: 20px;
+                    }
+
+                }
+
+                .mobile-favorites-ctrl {
+                    left:-65%;
+
+                    margin-left: 75px;
+
+                    cursor: pointer;
+                }
+            }
+
+
+            .v1player-controls {
+                height: 60px;
+                top: 20px;
+
+                width: auto;
+                padding-right: 5%;
+
+                .v1player-control {
+                    padding: 0;
+
+                    &:hover {
+                        background: initial;
+                    }
+
+                    .fa-stack {
+                        -webkit-animation: mobile-play-button .5s .2s ease forwards;
+                        right: -200%;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    .v1player {
+        position: fixed;
+        bottom: 0;
+
+        height: 64px;
+
+        transition: 0.5s ease all;
+        -webkit-user-select: none;
+
+        .player-content-wrapper {
+            width: 100%;
+            padding: 0 0 0 10px;
+
+            .v1player-history-wrapper {
+                right: 0;
+                z-index: 1000;
+
+            }
+
+            div.show-history {
+                z-index: 1000;
+
+                border-top-style: solid !important;
+
+            }
+
+            .v1player-mobile-overlay-open {
+                position: absolute;
+                left:22px;
+                z-index: 2001;
+
+                height: 65px;
+                width:80%;
+            }
+
+            .v1player-song-info {
+                z-index: 2000 !important;
+
+                width: 85%;
+                padding: 17px 0 0 85px;
+                font-size: 0.8em;
+                background: $main-color;
+
+                transition: none !important;
+
+
+                .v1player-album-art {
+                    top: 13px;
+                    left:36px;
+
+                    height: 40px;
+                    width: 40px;
+                }
+
+                a {
+                    display: none;
+                }
+
+                .v1player-track {
+                    text-overflow: ellipsis;
+                    padding-right: 30px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            .v1player-controls {
+                z-index: 2000;
+
+                width: 15%;
+                height: 100%;
+                padding:5px 10px 0;
+
+                background: $main-color;
+
+                .v1player-control:hover {
+                    background: none;
+                }
+
+                .v1player-control:not(:last-child) {
+                    display: none;
+                }
+
+                .v1player-control:last-child {
+                    padding: 0;
+                }
+
+                .v1player-control-playstop {
+                    margin-top: 3px;
+                }
+
+                .v1player-sprite-play,
+                .v1player-sprite-stop {
+                    margin-top: 0px;
+                }
+
+                &.v1player-login-controls-wpr {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    .v1player-mobile-buy-favorites-wpr {
+        height: 75px;
+        text-align:center;
+
+
+        .v1player-mobile-buy-ctrl-wpr,
+        .v1player-mobile-favorites-ctrl-wpr,
+        .v1player-mobile-favorites-remove-wpr {
+            height:100%;
+            width:50%;
+
+            padding-top:27.5px;
+            font-size: 22px;
+
+            cursor: pointer;
+
+            .v1player-mobile-history-bars {
+                float:left;
+            }
+
+            i {
+                margin-left:10px;
+
+                &:hover {
+                    color:inherit;
+                }
+            }
+        }
+
+        .v1player-mobile-buy-ctrl-wpr {
+            float:left;
+            color: $green-text;
+            background-color:$green;
+        }
+
+        .v1player-mobile-favorites-ctrl-wpr {
+            float:right;
+            background-color:$button-color;
+            color:$button-color-text;
+        }
+
+        .v1player-mobile-favorites-remove-wpr {
+            float:right;
+            background-color:$remove-red;
+            color:$white;
+        }
+    }
+
+    .v1player-mobile-history-open,
+    .v1player-mobile-favorites-open {
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index: 3;
+
+        height: 36px;
+        width:50%;
+
+        display:none;
+    }
+
+    .v1player-mobile-favorites-open {
+        // left:200px;
+        left:160px;
+    }
+
+    .fav-target-row {
+        position: relative;
+    }
+}
+
+// @media screen and (max-height: 321px) {
+
+//     .v1player .player-content-wrapper .v1player-history-wrapper {
+//         height: 390px;
+//     }
+
+// }

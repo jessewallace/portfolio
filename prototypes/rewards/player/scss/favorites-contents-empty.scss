@@ -1,0 +1,34 @@
+
+.v1player-favorites-empty {
+    height: 450px;
+    background-color:$main-color;
+    padding-top: 80px;
+    font-size: 15px;
+    font-family: 'Arial';
+    text-align: center;
+
+    span:last-of-type {
+        display: block;
+        padding-top:15px;
+    }
+
+    .v1player-favorites-empty-icons {
+        position: relative;
+
+        margin-top: 40px;
+
+        i:first-of-type {
+            color:$grey;
+            font-size: 127.67px;
+        }
+
+        i:last-of-type {
+            position: absolute;
+            top:55px;
+            left:180px;
+            
+            color: $button-color;
+            font-size: 91.12px;
+        }
+    }
+}

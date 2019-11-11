@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Admin | Admin Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: url('http://www.tdascreative.com/uiguide/images/bg.png'); }
+    </style>
+</head>
+<body>
+<div id="userbar">
+    <div id="menucontainer">
+        <ul id="menu">
+            <li class="dropheader">
+                <a href="index.html">Admin Management</a>
+            </li>
+        </ul>
+    </div>
+</div>
+ 
+<div class="app-container">
+    <div class="admin-container">
+        <div class="container u-display-flex u-display-flex--vcentered ">
+            <h1><i class="is-clickable js-cancel fa fa-chevron-circle-left" data-cancel="index_cbs.html"></i> Create New Admin(s)</h1>
+            
+        </div>
+        <div class="js-statusMessage status-message error is-hidden"></div>
+        
+
+<div class="container-sectioned">
+    <ul id="breadCrumbs" class="zerolist u-display-flex breadcrumbs">
+    <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-active">Account Info</a></li>
+    <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-disabled" title="You must add an email and select an admin type and owner before proceeding">Select Org(s) and Assign Roles</a></li>
+</ul>
+
+</div>
+<div id="createdAdmins" class="is-hidden u-mb20 f13">
+    <b>Admin(s) Being Created:</b>
+    <div class="u-display-flex">
+        <ul id="createdAdminList" class="u-display-flex list list--overflow f12 has-overflow">
+            <span class="f12 js-showMore link link--show is-hidden">Show more</span>
+        </ul>
+
+    </div>
+</div>
+<div class="slider-container">
+    <div id="slider" class="slider slider--tall has-3-cols u-display-flex">
+        <div class="js-sliderSection slider__col is-active">
+            <div class="container">
+    <div id="adminOptions" class="input-container radio radio-inline">
+        <label class="is-clickable" for="singleUser"><input class="js-radioBtn" id="singleUser" type="radio" name="user" checked> Single User</label>
+        <label class="is-clickable" for="multipleUser"><input class="js-radioBtn" id="multipleUser" type="radio" name="user"> Multiple User(s)</label>
+    </div>
+</div>
+<div class="container">
+<div class="input-container">
+    <label for="" class="is-required">User Email</label>
+    <input type="text" class="js-tagit-email width-1-2">
+</div>
+<div id="singleUserInfo" class="container nomargin">
+    <div class="u-display-flex">
+        <div class="input-container width-1-4 u-pr10">
+            <label for="">First Name</label>
+            <input class="width-1-1" type="text">
+        </div>
+        <div class="input-container width-1-4 u-pl10">
+            <label for="">Last Name</label>
+            <input class="width-1-1" type="text">
+        </div>
+    </div>
+    <div class="input-container width-1-4">
+        <label for="">Time Zone</label>
+        <select class="js-chosen width-1-1" data-placeholder="Select Time Zone">
+            <option value=""></option>
+            <option value="AL">Alaska</option>
+            <option value="AT">Atlantic Time</option>
+            <option value="ACS">Australian Central</option>
+            <option value="AES">Australian Eastern</option>
+            <option value="AWS">Australian Western Standard</option>
+            <option value="CT">Central Time</option>
+            <option value="EET">Eastern European Time</option>
+            <option value="ET">Eastern Time</option>
+            <option value="HI">Hawaii</option>
+            <option value="MT">Mountain Time</option>
+            <option value="PT">Pacific Time</option>
+            <option value="PET">Peru Time</option>
+        </select>
+    </div>
+</div>
+<div id="selectAdmin" class="input-container width-1-4">
+    <label for="" class="is-required">Admin Type</label>
+    <select class="js-chosen js-chosen--required js-chosenAdmin width-1-1" data-placeholder="Select Admin Type">
+        <option value=""></option>
+        
+        <option value="5">Client Admin</option>
+        <option value="6">Client User</option>
+        
+    </select>
+</div>
+<div id="selectOwner" class="input-container width-1-4">
+    <label for="" class="is-required">Owner</label>
+    <select class="js-chosen js-chosen--required js-chosenOwner width-1-1" data-placeholder="Select Owner"  disabled >
+        
+        <option value="2">CBS Radio</option>
+        
+    </select>
+</div>
+</div>
+        </div>
+        <div class="js-sliderSection slider__col">
+            <h2>Org Selection</h2>
+<div id="emptyPermissionGroups" class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa fa-list-alt fa-5x"></i>
+    <b class="empty-state__header">Create your first Permission Group</b>
+    <p class="empty-state__tagline">Select a group of orgs or select a single org</p>
+    <button class="button-positive js-createGroup"><i class="fa fa-plus"></i> Create Group</button>
+</div>
+<div id="superAdminPermissionGroups" class="u-display-flex u-display-flex--centered u-flex-column empty-state empty-state--dark is-hidden">
+    <i class="fa fa-check fa-5x" style="color: green"></i>
+    <b class="empty-state__header">All orgs are selected for user(s)</b>
+    <p class="empty-state__tagline">User will have access to all orgs. Proceed to next step</p>
+</div>
+<div id="permissionGroups" class="u-display-flex cards is-hidden">
+    <div class="u-display-flex u-display-flex--centered u-flex-column module contrast card card--permission">
+    <div class="u-display-flex card__controls">
+        <span class="card__control"><i class="fa fa-pencil"></i> Edit</span>
+        <span class="card__control card__control--negative js-deletePermission"><i class="fa fa-trash"></i> Delete</span>
+    </div>
+    <div class="u-display-flex card__controls card__controls--left">
+        <span class="card__control js-viewOrgs is-clickable"><i class="fa fa-eye"></i> View Org(s)</span>
+    </div>
+    <div class="card__flipper">
+        <div class="card__front">
+            <h3 class="nomargin" title="Atlanta, CBSCHI - CBS Chicago">Atlanta, CBSCHI - CBS Chicago</h3>
+            <small>6 orgs</small>
+        </div>
+        <div class="card__back js-perfectScroll">
+            <ul class="card__list list list--bulleted">
+                <li>CBS Radio - Atlanta</li>
+                <li>CBSATLAN - CBS Atlanta Rewards</li>
+                <li>WAOK-FM - WAOK Rewards</li>
+                <li>WUPA-TV - CW Atlanta Rewards</li>
+                <li>WVEE-FM - V103 Loyal Listener Club</li>
+                <li>WZGC-FM - 92.9 The Game</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+    <div class="u-display-flex u-display-flex--centered u-flex-column module card card--create js-createGroup" style="height: 200px">
+        <i class="card--create__icon fa fa-plus fa-2x"></i>
+        <b class="card--create__header nomargin">Add New Group</b>
+    </div>
+</div>
+        </div>
+        <div class="js-sliderSection slider__col">
+            <h2>Role Selection</h2>
+<div id="roles" class="u-is-visually-hidden">
+    <h4 id="roleSelectionHeader" class="nomargin">Atlanta, CBSCHI - CBS Chicago</h4>
+    <div class="u-display-flex cards">
+        <div id="card1" class="card u-display-flex u-flex-column">
+    <div class="card__body module contrast nomargin u-display-flex u-display-flex--centered u-flex-column">
+        <span class="card__icon--large fa fa-trophy"></span>
+        <div class="card__content">
+            <i class="card__icon fa fa-trophy fa-3x"></i>
+            <h3 class="card__header">Contesting</h3>
+        </div>
+    </div>
+    <div class="card__footer module">
+        <div class="input-container">
+            <label for="">Select Role(s)</label>
+            <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+                <option value></option>
+                
+                <option value="contest1">Create</option>
+                <option value="contest2">Edit</option>
+                <option value="contest3">View</option>
+                <option value="contest4">Approve</option>
+                <option value="contest5">All</option>
+                
+            </select>
+        </div>
+    </div>
+</div>
+        <div id="card2" class="card u-display-flex u-flex-column">
+    <div class="card__body module contrast nomargin u-display-flex u-display-flex--centered u-flex-column">
+        <span class="card__icon--large fa fa-gears"></span>
+        <div class="card__content">
+            <i class="card__icon fa fa-gears fa-3x"></i>
+            <h3 class="card__header">Widgets</h3>
+        </div>
+    </div>
+    <div class="card__footer module">
+        <div class="input-container">
+            <label for="">Select Role(s)</label>
+            <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+                <option value></option>
+                
+                <option value="rewardActive">Active</option>
+                <option value="rewardNone">None</option>
+                
+            </select>
+        </div>
+    </div>
+</div>
+        <div id="card3" class="card u-display-flex u-flex-column">
+    <div class="card__body module contrast nomargin u-display-flex u-display-flex--centered u-flex-column">
+        <span class="card__icon--large fa fa-users"></span>
+        <div class="card__content">
+            <i class="card__icon fa fa-users fa-3x"></i>
+            <h3 class="card__header">Admin Management</h3>
+        </div>
+    </div>
+    <div class="card__footer module">
+        <div class="input-container">
+            <label for="">Select Role(s)</label>
+            <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+                <option value></option>
+                
+                <option value="admin1">Create</option>
+                <option value="admin2">Edit</option>
+                <option value="admin3">View</option>
+                <option value="admin4">Impersonate</option>
+                
+            </select>
+        </div>
+    </div>
+</div>
+        <div id="card4" class="card u-display-flex u-flex-column">
+    <div class="card__body module contrast nomargin u-display-flex u-display-flex--centered u-flex-column">
+        <span class="card__icon--large fa fa-sitemap"></span>
+        <div class="card__content">
+            <i class="card__icon fa fa-sitemap fa-3x"></i>
+            <h3 class="card__header">Org Management</h3>
+        </div>
+    </div>
+    <div class="card__footer module">
+        <div class="input-container">
+            <label for="">Select Role(s)</label>
+            <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+                <option value></option>
+                
+                <option value="admin1">Create</option>
+                <option value="admin2">Edit</option>
+                <option value="admin3">View</option>
+                
+            </select>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<div id="superAdminRoles" class="u-display-flex u-display-flex--centered u-flex-column empty-state empty-state--medium">
+    <i class="fa fa-ban fa-5x"></i>
+    <b class="empty-state__header">No permissions Groups Created</b>
+    <p class="empty-state__tagline">To assign roles a permission group must be created. Go back a step</p>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div class="u-display-flex">
+    <button class="button js-cancel" data-button="Cancel" data-cancel="index_cbs.html">Cancel</button>
+    <div class="u-flex-right">
+        <button class="button-highlight js-buttonShift is-hidden" data-button="Previous"><i class="fa fa-chevron-left"></i> Previous Step</button>
+        <button class="button-highlight js-buttonShift" data-button="Next" disabled>Next Step <i class="fa fa-chevron-right"></i></button>
+        <button class="button-positive is-hidden js-buttonShift" data-button="Save" onclick="location.href='index_cbs.html'" disabled>Save and Exit</button>
+    </div>
+</div>
+
+
+<div id="loadingIndicator" class="overlay overlay--absolute u-display-flex u-display-flex--centered is-hidden">
+    <div class="loader" data-loading-message="Saving and Creating user(s)"></div>
+</div>
+
+
+    </div>
+</div><div title="Assign Org(s)" id="createPermission" style="display: none">
+    <div class="slider-container">
+        <div id="sliderTags" class="slider has-2-cols u-display-flex">
+            <div id="sliderTagsCreator" class="slider__col is-active">
+                <div id="permissionContainer" class="input-container">
+                    <label for="">Add Org(s)</label>
+                    <select data-placeholder="Select a tag or single org" multiple class="js-chosen-dynamic width-1-1">
+                        <option value><!-- Empty option goes here. --></option>
+                        <option value="6 orgs">Atlanta</option>
+                        <option value="(CBS | CBS Radio - Chicago)">CBS Radio - Atlanta</option>
+                        <option value="(CBS | CBS Radio - Chicago)">CBSATLAN - CBS Atlanta Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WAOK-FM WAOK Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WUPA-TV CW Atlanta Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WVEE-FM - V103 Loyal Listener Club</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WZGC-FM - 92.9 The Game</option>
+                    </select>
+                </div>
+                <div id="orgList" style="height: 250px">
+                    <div id="emptyStateOrgs" class="u-display-flex u-display-flex--centered u-flex-column empty-state empty-state--small empty-state--medium">
+                        <i class="fa fa-sitemap fa-3x"></i>
+                        <b class="empty-state__header">Currently there are no org(s) selected</b>
+                        <span class="empty-state__tagline nomargin">Use search box above to start selecting org(s)</span>
+                    </div>
+                    <div id="selectedOrgs" class="js-perfectScroll is-hidden" style="max-height: 270px; position: relative">
+
+                    </div>
+                </div>
+            </div>
+            <div id="sliderTagSites" class="slider__col">
+                <div class="container container-sectioned">
+                    <h2 class="nomargin"><i class="is-clickable js-goBack fa fa-chevron-circle-left"></i> Atlanta</h2>
+                </div>
+                <ul class="list list--bulleted">
+                    <li>CBS Radio - Atlanta</li>
+                    <li>CBSATLAN - CBS Atlanta Rewards</li>
+                    <li>WAOK-FM - WAOK Rewards</li>
+                    <li>WUPA-TV - CW Atlanta Rewards</li>
+                    <li>WVEE-FM - V103 Loyal Listener Club</li>
+                    <li>WZGC-FM - 92.9 The Game</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div title="Cancel Progress" id="cancelWorkDialog" style="display: none">
+    If you cancel all of your changes will be lost. Are you sure you want to cancel?
+</div>
+<div title="Delete Permission Group" id="deleteGroupDialog" style="display: none">
+    Are you sure you want to delete this permission group?
+</div>
+<div title="Change Account Type?" id="changeAccount" style="display: none">
+    Changing the account type will remove all created permission groups and remove all selected roles. Are you sure you want to change?
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<script src="perfect-scrollbar.jquery.js"></script>
+<script src="chosen.jquery.min.js"></script>
+<script src="tag-it.min.js"></script>
+<script src="create.js"></script>
+
+</body>
+</html>

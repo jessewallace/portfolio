@@ -1,0 +1,60 @@
+.centerme { margin: 0 auto; }
+
+.pull-right, #di-bracket .column2, #di-bracket .column2 ul, #di-bracket .matches a .record-score { float: right; }
+
+.pull-left, #di-bracket .rounds, #di-bracket .round1, #di-bracket .round2, #di-bracket .round3, #di-bracket .round4, #di-bracket .column1 { float: left; }
+
+.clearfix, #di-bracket .region { *zoom: 1; }
+.clearfix:after, #di-bracket .region:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+
+ul { list-style-type: none; margin: 0; padding: 0; }
+
+li { list-style-type: none; }
+
+#di-bracket { width: 650px; margin: 0 auto; font-family: arial, helvetica, sans-serif; zoom: 1; }
+#di-bracket * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#di-bracket .brackets { position: absolute; z-index: -1; border: 1px solid #CCC; height: 46px; width: 98px; }
+#di-bracket .bracket1, #di-bracket .bracket8, #di-bracket .bracket9, #di-bracket .bracket10, #di-bracket .bracket11 { top: 36px; }
+#di-bracket .bracket2, #di-bracket .bracket9 { top: 136px; }
+#di-bracket .bracket3, #di-bracket .bracket10 { top: 236px; }
+#di-bracket .bracket4, #di-bracket .bracket11 { top: 336px; }
+#di-bracket .bracket8, #di-bracket .bracket9, #di-bracket .bracket10, #di-bracket .bracket11 { right: 0; }
+#di-bracket .bracket5, #di-bracket .bracket6, #di-bracket .bracket13, #di-bracket .bracket12 { top: 60px; height: 101px; width: 87px; right: 123px; }
+#di-bracket .bracket6, #di-bracket .bracket13 { top: 260px; }
+#di-bracket .bracket12, #di-bracket .bracket13 { left: 123px; }
+#di-bracket .bracket7, #di-bracket .bracket14 { top: 111px; height: 201px; right: 0; }
+#di-bracket .bracket14 { left: 0; }
+#di-bracket .rounds, #di-bracket .round1, #di-bracket .round2, #di-bracket .round3, #di-bracket .round4 { position: relative; z-index: 1; width: 87px; padding: 0; }
+#di-bracket .round2 li { margin: 39px 0 60px; }
+#di-bracket .round3 li { margin: 90px 0 160px; }
+#di-bracket .round4 { margin-left: -60px; margin-right: 0; }
+#di-bracket .round4 li { margin: 183px 0 0; }
+#di-bracket .column1 { position: relative; }
+#di-bracket .column1 .brackets { border-width: 1px 1px 1px 0px; }
+#di-bracket .column1 .rounds, #di-bracket .column1 .round1, #di-bracket .column1 .round2, #di-bracket .column1 .round3, #di-bracket .column1 .round4 { margin-right: 10px; }
+#di-bracket .column1 .round4 { margin-right: 0; }
+#di-bracket .column2 { position: relative; }
+#di-bracket .column2 .brackets { border-width: 1px 0px 1px 1px; right: 0; }
+#di-bracket .column2 .rounds, #di-bracket .column2 .round1, #di-bracket .column2 .round2, #di-bracket .column2 .round3, #di-bracket .column2 .round4 { margin-left: 10px; }
+#di-bracket .column2 .round4 { margin-left: 0; margin-right: -60px; }
+#di-bracket .matches { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #f7f7f7; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF7F7F7', endColorstr='#FFE7E7E7'); background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U3ZTdlNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #e7e7e7)); background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -moz-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -o-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); position: relative; white-space: nowrap; margin-bottom: 5px; height: 40px; font-size: 10px; border: 1px solid #CCC; }
+#di-bracket .matches.odd { margin: 15px 0 5px; }
+#di-bracket .matches a { -webkit-transition: all 300ms; -moz-transition: all 300ms; -o-transition: all 300ms; transition: all 300ms; position: relative; z-index: 5; display: block; height: 20px; line-height: 20px; text-decoration: none; color: black; white-space: normal; border-top: 1px solid #CCC; }
+#di-bracket .matches a:first-child { border-top: none; }
+#di-bracket .matches a:hover { background: #CCC; border-color: #CCC; }
+#di-bracket .matches a.winner { font-weight: bold; color: green; }
+#di-bracket .matches a.loser { font-weight: bold; color: red; text-decoration: line-through; }
+#di-bracket .matches a .rank { display: inline-block; min-width: 15px; text-align: center; margin-right: 3px; }
+#di-bracket .matches a .record-score { margin-right: 3px; }
+#di-bracket .correct-team { position: absolute; width: 100%; padding: 3px; visibility: hidden; }
+#di-bracket .correct-team.top { top: -16px; }
+#di-bracket .correct-team.bottom { top: 34px; }
+#di-bracket #final4 { margin: 0 auto; width: 422px; padding: 10px 0; }
+#di-bracket .final-round { margin: 0; padding: 0; }
+#di-bracket .final-round li { display: inline-block; }
+#di-bracket .semi-final { width: 125px; }
+#di-bracket .championship { width: 162px; }
+#di-bracket .tie-breaker { text-align: center; font-size: 12px; display: block !important; }
+#di-bracket .tie-breaker span { display: block; }
+#di-bracket .tie-breaker input { width: 35px; padding: 3px; }
+#di-bracket.bracket_32 .round1, #di-bracket.bracket_32 .bracket1, #di-bracket.bracket_32 .bracket8, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket2, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket3, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket4, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket8, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11 { display: none; }

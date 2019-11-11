@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Widget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/tdas-modals.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/tdas-modal-registration-widget.js"></script>
+    <script type="text/javascript" src="js/tdas-modal-listening-appts.js"></script>
+    <script type="text/javascript" src="js/tdas-modal-registraton-gating.js"></script>
+    <script type="text/javascript" src="js/tdas-modal-support-widget.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <img src="images/site-background.jpg" />
+        <div class="registration-widget-menu" style="display:block;">
+            <div class="registration-widget-menu-not-logged-in">Hey, stranger! <div class="registration-widget-menu-divider">|</div> <div class="registration-widget-link" id="registration-widget-sign-in"><i class="fa fa-sign-in registration-widget-icon-menu"></i>Sign up or Log In</div></div>
+            <div class="registration-widget-menu-logged-in" style="display:none;"><img class="registration-widget-menu-profile-picture" src="images/120x120.jpg" /> <div class="registration-widget-menu-edit-profile">emailaddress@gmail.com</div><div class="registration-widget-menu-divider">|</div> <div class="registration-widget-link" id="registration-widget-sign-out"><i class="fa fa-sign-out registration-widget-icon-menu"></i>Sign Out</div></div>
+            <span class="registration-widget-menu-divider"> | </span><div class="registration-widget-menu-listening-appts"><i class="fa fa-headphones registration-widget-icon-menu"></i> <a class="registration-widget-link" href="#">Listening Appointments</a></div>
+            <span class="registration-widget-menu-divider"> | </span><div class="registration-widget-link" data-context="la-widget" id="tdas-member-support"><i class="fa fa-question-circle registration-widget-icon-menu"></i><a class="registration-widget-link" href="#">Need Help?</a></div>
+        </div>
+    </div>
+
+    <div class="registration-widget-overlay">
+        <div class="registration-widget-overlay-wrapper">
+            <i class="fa fa-times" id="close-registration-overlay"></i>
+            <div class="clearfix"></div>
+
+            <!-- Login -->
+            <div class="registration-widget-overlay-login">
+
+                <!-- Login Header -->
+                <div class="registration-widget-overlay-login-header" style="display: none;">
+                    <i class="fa fa-sign-in registration-widget-overlay-icon registration-widget-overlay-icon-header"></i> Login
+                    <div class="registration-widget-overlay-login-header-signup">Don't have an account? <div class="registration-widget-overlay-no-account">Sign up now.</div></div>
+                </div>
+
+                <!-- Create Account Header -->
+                <div class="registration-widget-overlay-signup-header" style="display:none;">
+                    <i class="fa fa-user registration-widget-overlay-icon registration-widget-overlay-icon-header"></i>
+                    <i class="fa fa-plus-square registration-widget-overlay-icon-header registration-widget-overlay-icon-overlay"></i>
+                    Create Account
+                    <div class="registration-widget-overlay-signup-header-signin">Already have an account? <div class="registration-widget-overlay-have-account">Sign in.</div></div>
+                </div>
+
+                <!-- Edit Profile Header -->
+                <div class="registration-widget-overlay-edit-profile-header" style="display: none;">
+                    <i class="fa fa-user registration-widget-overlay-icon registration-widget-overlay-icon-header"></i>
+                    <i class="fa fa-pencil-square registration-widget-overlay-icon-overlay"></i>
+                    Edit Profile
+                </div>
+
+                <!-- Change Password Header -->
+                <div class="registration-widget-overlay-reset-password-header" style="display: none">
+                    <i class="fa fa-lock registration-widget-overlay-icon registration-widget-overlay-icon-header"></i>
+                    Reset Your Password
+                </div>
+
+                <!-- Modal Header -->
+                <div class="registration-widget-overlay-modal-header">
+                    <i class="fa fa-user registration-widget-overlay-icon registration-widget-overlay-icon-header"></i> Register
+                    <div class="registration-widget-overlay-signup-header-signin">Already have an account? <div class="registration-widget-overlay-signin-from-modal" id="sign-in-from-modal">Sign in.</div></div>
+                </div>
+
+                <!-- LA Header -->
+                <div class="registration-widget-overlay-la-header" style="display: none">
+                    <i class="fa fa-headphones registration-widget-overlay-icon registration-widget-overlay-icon-header"></i> Listen &amp; Win
+                    <div class="registration-widget-overlay-signup-header-signin"><span class="registration-widget-link" id="la-rewards-link">View on Rewards Club</span> <i class="fa fa-external-link"></i></div>
+                </div>
+
+                <!-- Member Support Header -->
+                <div id="tdas-member-support-header" class="registration-widget-overlay-modal-header">
+                    <i class="fa fa-question-circle registration-widget-overlay-icon registration-widget-overlay-icon-header"></i> Need Help?
+                </div>
+
+                <!-- Reg Modal -->
+                <div class="registration-widget-overlay-modal-content">
+                    <h2>Love what you're hearing?</h2>
+                    <h3>Sign in now for unlimited, free access to our stream!</h3>
+                    <p>Thanks for listening! Register now to avoid interruption and get access to exclusive member benefits!</p>
+                    <div class="registration-widget-overlay-modal-content-button-container">
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-modal-register">Register <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                        <span class="registration-widget-overlay-button-link registration-widget-overlay-no-thanks-link">Not right now, thanks</span>
+                    </div>
+                    <div class="registration-widget-overlay-modal-content-footer-container">
+                        <p class="registration-widget-overlay-modal-content-attention">You'll be able to listen for <b>X more songs</b> before you must register to continue listening.</p>
+                    </div>
+                 </div>
+
+                <!-- Member Support Content -->
+                <div class="registration-widget-overlay-support-content" style="display: none">
+                    <h3 id="tdas-member-support-headline">
+                        <span id="headline-text">What do you need help with or would like to leave feedback about?</span>
+
+                    </h3>
+                    <form id="tdas-member-support-form">
+                        <label id="tdas-member-support-product"> Product
+                            <select name="product">
+                            </select>
+                        </label>
+
+                        <label id="tdas-member-support-issue">Issue
+                            <select name="issue-cat">
+                                <!-- dynamically filled -->
+                            </select>
+                        </label>
+
+                        <label id="tdas-member-support-email"> Email
+                            <input required="required" name="email" type="email" />
+                        </label>
+
+                        <label> Subject
+                            <input required="required" name="subject" type="text" />
+                        </label>
+
+                        <label> Comments
+                            <textarea id="tdas-member-support-comments" required="required" rows="4" name="comment"></textarea>
+                            <span id="tdas-member-support-characters">
+                                <span>0 / 0 Characters</span>
+                                <div>You've reached the character limit</div>
+                            </span>
+                        </label>
+
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="tdas-member-support-submit">Submit <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i><i style="display: none" class="registration-widget-overlay-icon registration-widget-overlay-icon-button fa fa-refresh fa-spin"></i></button>
+                    </form>
+                    <div class="tdas-member-support-confirmation">
+                        <span class="fa-stack fa-lg">
+                            <i id="cir1" class="fa fa-circle fa-stack-2x"></i>
+                            <i id="cir2" class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i id="check" class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                        <p>Your ticket has been submitted to our Help Desk!</p>
+                        <p>We will reply as quickly as possible to <strong id="tdas-confirm-email"></strong>.<br/>Replies are typically sent within 48 hours (excluding weekends and holidays).</p>
+
+                        <button tabindex="-1" class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="tdas-member-support-close">Close</button>
+
+                    </div>
+                </div>
+
+                <!-- Listening Appointments -->
+                <div class="registration-widget-overlay-listening-appts" style="display: none">
+                   <ul class="registration-widget-overlay-listening-appts-item-list" style="display: none">
+                       <li class="registration-widget-overlay-listening-appts-item-list-item"><span >Artist of the Day</span><span class="registration-widget-overlay-listening-appts-item-list-score">2,500 points</span></li>
+                       <li class="registration-widget-overlay-listening-appts-item-list-item"><span >Wendy's All-Request Lunch Hour</span><span class="registration-widget-overlay-listening-appts-item-list-score">2,500 points</span></li>
+                       <li class="registration-widget-overlay-listening-appts-item-list-item"><span >10 AM Word of the Day</span><span class="registration-widget-overlay-listening-appts-item-list-score">2,500 points</span></li>
+                       <li class="registration-widget-overlay-listening-appts-item-list-item"><span >5th Song of the Drive @ Five</span><span class="registration-widget-overlay-listening-appts-item-list-score">2,500 points</span></li>
+                       <li class="registration-widget-overlay-listening-appts-item-list-item"><span >Battle of the Sexes</span><span class="registration-widget-overlay-listening-appts-item-list-score">2,500 points</span></li>
+                   </ul>
+                   <div class="registration-widget-overlay-listening-appts-list-empty">
+                       <strong>Sorry but there are no listening appointments available</strong>
+                       <br/><br/>
+                       <span>Please check back later.</span>
+                   </div>
+
+
+                    <div class="registration-widget-overlay-modal-content-button-container-bordered">
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit registration-widget-overlay-button-back" id="la-button-back">Back</button>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit registration-widget-overlay-button-fwd" id="la-button-next">Next</button>
+                    </div>
+
+                    <div class="registration-widget-overlay-listening-appts-content" style="display: none">
+                        <div class="registration-widget-overlay-listening-appts-content-header">
+                            <span class="la-content-title"><i id="la-back-to-list" class="fa fa-arrow-circle-left"></i> Artist of the Day </span><span class="la-content-score">2,500 points</span>
+                        </div>
+                        <img class="registration-widget-overlay-listening-appts-content-img" src="images/lw-img.png" />
+                        <span>Listen every day at 6am and 9am to hear us announce the artist of the day. Enter the artist's name below to earn your points!</span>
+                        <form id="la-answer-form">
+                            <label class="registration-widget-overlay-listening-appts-content-input">
+                                <input type="text" placeholder="Enter your answer"/>
+                            </label>
+                            <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="la-answer-submit">Submit <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                        </form>
+                        <form id="la-guest-form">
+                            <h3>You must be logged in to complete this.</h3>
+                            <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="la-guest-login"><i class="fa fa-sign-in registration-widget-overlay-icon registration-widget-overlay-icon-button"></i> Login</button>
+                            <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="la-guest-register"><i class="fa fa-user registration-widget-overlay-icon registration-widget-overlay-icon-button"></i> Register</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="registration-widget-overlay-login-form" style="display: none;">
+                    <div class="registration-widget-overlay-input-container">
+                        <label class="registration-widget-overlay-label">Email Address</label>
+                        <input class="registration-widget-overlay-input" type="text" />
+                    </div>
+                    <div class="registration-widget-overlay-input-container">
+                        <label class="registration-widget-overlay-label">Password</label>
+                        <input class="registration-widget-overlay-input" type="text" />
+                    </div>
+                    <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-login-submit">Submit <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    <div class="registration-widget-overlay-button-link registration-widget-overlay-forgot-password-link">Forgot Password?</div>
+                </div>
+
+                <!-- Create Account -->
+                <div class="registration-widget-overlay-create-account" style="display: none;">
+                    <div class="registration-widget-overlay-create-account-form">
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">Email Address</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">Password</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container registration-widget-overlay-input-container-inline">
+                            <label class="registration-widget-overlay-label">Zip Code</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container registration-widget-overlay-input-container-inline">
+                            <label class="registration-widget-overlay-label">Date of Birth</label>
+                            <input class="registration-widget-overlay-input registration-widget-overlay-input-date" type="text" /> <i class="fa fa-calendar registration-widget-overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="registration-widget-overlay-button-group">
+                        <label class="registration-widget-overlay-label">Gender</label>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-selected"><i class="registration-widget-overlay-icon registration-widget-overlay-icon-gender fa fa-male"></i> Male</button>
+                        <button class="registration-widget-overlay-button"><i class="registration-widget-overlay-icon registration-widget-overlay-icon-gender fa fa-female"></i> Female</button>
+                    </div>
+                    <div class="registration-widget-overlay-email-updates">
+                        <label class="registration-widget-overlay-label"><input type="checkbox" checked /> Receive email updates and news from us</label>
+                    </div>
+                    <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-register-submit">Register <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                </div>
+
+                <!-- Edit Profile -->
+                <div class="registration-widget-overlay-edit-profile" style="display: none;">
+                    <div class="registration-widget-overlay-edit-profile-sidebar">
+                        Your profile photo
+                        <img class="registration-widget-overlay-edit-profile-picture" src="images/120x120.jpg" />
+                        Connect a social account
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-social registration-widget-overlay-button-facebook-inverse registration-widget-overlay-button-facebook-inverse-connected" id="registration-widget-login-facebook">Facebook</button>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-social registration-widget-overlay-button-google-inverse" id="registration-widget-login-google">Google +</button>
+                    </div>
+                    <div class="registration-widget-overlay-edit-profile-form">
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">Email Address</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container registration-widget-overlay-input-container-inline">
+                            <label class="registration-widget-overlay-label">Zip Code</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container registration-widget-overlay-input-container-inline">
+                            <label class="registration-widget-overlay-label">Date of Birth</label>
+                            <input class="registration-widget-overlay-input registration-widget-overlay-input-date" type="text" /> <i class="fa fa-calendar"></i>
+                        </div>
+                        <div class="registration-widget-overlay-button-group">
+                            <label class="registration-widget-overlay-label">Gender</label>
+                            <button class="registration-widget-overlay-button registration-widget-overlay-button-selected"><i class="registration-widget-overlay-icon registration-widget-overlay-icon-gender fa fa-male"></i> Male</button>
+                            <button class="registration-widget-overlay-button"><i class="registration-widget-overlay-icon registration-widget-overlay-icon-gender fa fa-female"></i> Female</button>
+                        </div>
+                        <div class="registration-widget-overlay-email-updates">
+                            <label class="registration-widget-overlay-label"><input type="checkbox" checked /> Receive email updates and news from us</label>
+                        </div>
+                        <div class="registration-widget-overlay-input-container registration-widget-overlay-edit-profile-password">
+                            <label class="registration-widget-overlay-label">Update Password</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                    </div>
+                    <div class="registration-widget-overlay-edit-profile-footer">
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-save-changes">Save Changes <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    </div>
+                </div>
+
+                <!-- Social Login -->
+                <div class="registration-widget-overlay-social-wrapper" style="display: none;">
+                    <div class="registration-widget-overlay-or-divider-wrapper">
+                        <div class="registration-widget-overlay-or-divider">OR</div>
+                    </div>
+                    <div class="registration-widget-overlay-social-login">
+                        Sign in with
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-social registration-widget-overlay-button-facebook" id="registration-widget-login-facebook">Facebook</button>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-social registration-widget-overlay-button-google" id="registration-widget-login-google">Google +</button>
+                    </div>
+                </div>
+
+                <!-- Need DOB -->
+                <div class="registration-widget-overlay-need-birthdate" style="display: none;">
+                    <div class="registration-widget-overlay-prompt">
+                        You're almost ready to go! We couldn't get your date of birth, so just enter it below to finish registering.
+                    </div>
+                    <div class="registration-widget-overlay-input-container registration-widget-overlay-input-container-inline">
+                        <label class="registration-widget-overlay-label">Date of Birth</label>
+                        <input class="registration-widget-overlay-input registration-widget-overlay-input-date" type="text" style="max-width: 80px;" /> <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="registration-widget-overlay-email-updates">
+                        <label class="registration-widget-overlay-label"><input type="checkbox" checked /> Receive email updates and news from us</label>
+                    </div>
+                    <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-finish-registration">Finish Registration <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                </div>
+
+                <!-- Thanks for registering -->
+                <div class="registration-widget-overlay-thanks-message" style="display:none;">
+                    <div class="registration-widget-overlay-thanks-message-wrapper">
+                        <div class="registration-widget-overlay-thanks-message-heading">Thanks for registering!</div>
+                        <div class="registration-widget-overlay-thanks-message-content">You have successfully registered and we've already logged you in. We'll send you an email to confirm your account, so be on the lookout.</div>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-register-get-started">Get Started <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    </div>
+                    <i class="fa fa-thumbs-up registration-widget-overlay-icon registration-widget-overlay-icon-thanks-message"></i>
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="registration-widget-overlay-forgot-password" style="display:none;">
+                    <div class="registration-widget-overlay-forgot-password-send-email">
+                        <div class="registration-widget-overlay-prompt">
+                            Forgot your password? No problem - just enter your email address below and we'll send you an email with a link to reset your password.
+                        </div>
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">Email Address</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-forgot-password-submit">Submit <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                        <div class="registration-widget-overlay-button-link" id="registration-widget-login-return">Nevermind, go back</div>
+                    </div>
+                    <div class="registration-widget-overlay-forgot-password-email-sent" style="display: none;">
+                        <div class="registration-widget-overlay-prompt">
+                            <i class="fa fa-check-circle registration-widget-overlay-icon registration-widget-overlay-icon-email-success"></i> Thanks! We will send you an email to reset your password shortly.
+                        </div>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-return-to-site">Return to Site <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    </div>
+                </div>
+
+                <!-- Password Reset -->
+                <div class="registration-widget-overlay-reset-password" style="display: none">
+                    <div class="registration-widget-overlay-reset-password-wrapper">
+                        <div class="registration-widget-overlay-prompt">
+                            Reset your password by entering a new one below. Once you reset your password, you'll immediately be able to log back in.
+                        </div>
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">New Password</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <div class="registration-widget-overlay-input-container">
+                            <label class="registration-widget-overlay-label">Confirm Password</label>
+                            <input class="registration-widget-overlay-input" type="text" />
+                        </div>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-reset-password">Submit <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    </div>
+                    <div class="registration-widget-overlay-reset-password-submitted" style="display: none;">
+                        <div class="registration-widget-overlay-prompt">
+                            <i class="fa fa-check-circle registration-widget-overlay-icon registration-widget-overlay-icon-email-success"></i> Your password was successfully reset! You can now use your new password to log into the system. Thanks for being a member!
+                        </div>
+                        <button class="registration-widget-overlay-button registration-widget-overlay-button-submit" id="registration-widget-reset-password-login">Log in now <i class="fa fa-chevron-circle-right registration-widget-overlay-icon registration-widget-overlay-icon-button"></i></button>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="registration-widget-overlay-footer" style="display:none;">
+                    Registering acknowledges you agree to our <a href="#" class="registration-widget-overlay-tos-link">terms of service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

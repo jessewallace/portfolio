@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="tour.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<script src="tour.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+	<!--dummy header -->
+	<div class="Container-Header">
+			<div id="userbar">
+				<div id="see_profile_menu">
+					Hello, Scott!
+					<span class="opensee">View profile</span>
+					<img class="opensee" style="top:4px;" src="http://www.tritonloyalty.com/resources/see/seedown.png" />
+				</div>
+				<div id="menucontainer">
+					<div class="dropheader getpoints">Get Points</div>
+					<div class="dropheader winprizes">Win Prizes</div>
+				</div>
+				<div id="logincontrol">
+					<div class="button">Logout</div>
+					<div id="aMyAcct" class="button">My Account</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="bg-container"></div>
+	<div class="tour-mask"></div>
+		<div class="tour-modal-wrapper">
+			<div class="tour-modal-container">
+				<div class="modal-avatar-wrapper">
+					<div alt="avatar" class="modal-avatar" ><i class="fa fa-thumbs-up fa-5x"></i></div>
+					
+				</div>
+				<button class="btn-back">Back</button>
+				<button class="btn-next btn-close">Next</button>
+				<div class="modal-content-wrapper">
+					<div class="modal-content-container">
+						<div class="modal-content-pane">
+							<div class="modal-headline">Welcome to the club!</div>
+							<p>Glad you made it! Let's take a short tour that will show you how to use the site and make the most out of your membership. Don't worry, you'll be earning points and spending them on cool prizes in no time.<br/></p>
+							<button class="button-lg" id="start-tour">Start Tour</button>
+							<a class="skip-tour" href="#">No thanks, I'll just jump right in</a>
+						</div>
+						<div class="modal-content-pane">
+							<div class="block-text-l">
+								<div class="modal-headline-l">Do stuff. <br/>Get points.</div>
+								Answer trivia, play games, and participate in surveys to earn points. There is no limit to the points you can earn!</div>
+							<img src="img/getpoints.png" class="img-r" />
+						</div>
+						<div class="modal-content-pane">
+							<div class="block-text-r">
+								<div class="modal-headline-r">Spend points on prizes.</div>
+								Use the points you've earned on entries for prizes, or to get cool stuff directly from the club!</div>
+							<img src="img/usepoints.png" class="img-l" />
+						</div>
+						<div class="modal-content-pane">
+							<div class="block-text-l">
+								<div class="modal-headline-l">Track your activity.</div>
+								Your points balance is always <br />up-to-date and just a click away - check it anytime by clicking here!</div>
+							<img src="img/trackpoints.png" class="img-r" />
+						</div>
+						<div class="modal-content-pane">
+							<div class="block-text-r">
+								<div class="modal-headline-r">Let's get you some points.</div>
+								<span style="float:right;display:block; width:80%">Take 30 seconds and fill out your profile for a cool 2500 points. Super easy!</span>
+							</div>
+							<img src="img/editprofile.png" class="img-l" />
+							<button class="button-lg" id="go-profile">Go to profile</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US">
+
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Wordpress Admin</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	    
+	    <!-- Required css -->
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	    <link rel='stylesheet' href='css/core/dashicons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/admin-bar.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/wp-admin.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/buttons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/jquery.qtip.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/admin.css' type='text/css' media='all' />
+
+	    <!-- Custom/project css -->
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+
+	    <!-- Required js -->
+	    <script type='text/javascript' src='js/core/jquery.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-migrate.min.js'></script>
+	    <script type='text/javascript' src='js/core/core.min.js'></script>
+	    <script type='text/javascript' src='js/core/widget.min.js'></script>
+	    <script type='text/javascript' src='js/core/mouse.min.js'></script>
+	    <script type='text/javascript' src='js/core/resizable.min.js'></script>
+	    <script type='text/javascript' src='js/core/draggable.min.js'></script>
+	    <script type='text/javascript' src='js/core/button.min.js?'></script>
+	    <script type='text/javascript' src='js/core/position.min.js'></script>
+	    <script type='text/javascript' src='js/core/dialog.min.js'></script>
+	    <script type='text/javascript' src='js/core/sortable.min.js'></script>
+	    <script type='text/javascript' src='js/core/datepicker.min.js'></script>
+	    <script type='text/javascript' src='js/core/slider.min.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-ui-timepicker-addon.js'></script>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js'></script>
+	    
+
+	    <!-- Allow includes -->
+	    <script type='text/javascript' src='http://www.w3schools.com/lib/w3data.js'></script> 
+
+	    <!-- Custom/project js -->
+	    <script type='text/javascript' src='js/scripts.js'></script> 
+
+	</head>
+
+	<body class="wp-admin wp-core-ui no-js auto-fold admin-bar admin-color-fresh locale-en-us multisite no-customize-support no-svg">
+	    <div id="wpwrap">
+	    	<div w3-include-html="adminmenu.html"></div> 
+	        <div id="wpcontent">
+	        	<div w3-include-html="wpadminbar.html"></div> 
+	            <div id="wpbody" role="main">
+	                <div id="wpbody-content" aria-label="Main content" tabindex="0">
+	                    
+	                    <!-- Project starts here -->
+	                    <div class="wrap">
+							
+							<h1>Widgets</h1>
+							
+							<div class="widget-liquid-left">
+							    <div class="" id="widgets-left">
+							        <div class="widgets-holder-wrap ui-droppable" id="available-widgets">
+							            <div class="sidebar-name">
+							                <div class="sidebar-name-arrow">
+							                    <br>
+							                </div>
+							                <h3>Available Widgets <span id="removing-widget">Deactivate
+							                <span></span></span></h3>
+							            </div>
+							            <div class="widget-holder">
+							                <div class="sidebar-description">
+							                    <p class="description">To activate a widget drag it to a
+							                    sidebar or click on it. To deactivate a widget and delete
+							                    its settings, drag it back.</p>
+							                </div>
+							                <div id="widget-list">
+							                    <div class="widget ui-draggable" id="widget-1">
+							                        <div class="widget-top">
+							                            <div class="widget-title-action">
+							                                <a class="widget-action hide-if-no-js" href=
+							                                "#"></a> <a class=
+							                                "widget-control-edit hide-if-js" href=
+							                                "#"><span class="edit">Edit</span> <span class=
+							                                "add">Add</span> <span class=
+							                                "screen-reader-text">Example Widget</span></a>
+							                            </div>
+							                            <div class="widget-title ui-draggable-handle">
+							                                <h4>Example Widget<span class=
+							                                "in-widget-title"></span></h4>
+							                            </div>
+							                        </div>
+							                        <div class="widget-description">
+							                            A description of the example widget.
+							                        </div>
+							                    </div>
+							                    <div class="widget ui-draggable" id="widget-2">
+							                        <div class="widget-top">
+							                            <div class="widget-title-action">
+							                                <a class="widget-action hide-if-no-js" href=
+							                                "#"></a> <a class=
+							                                "widget-control-edit hide-if-js" href=
+							                                "#"><span class="edit">Edit</span> <span class=
+							                                "add">Add</span> <span class=
+							                                "screen-reader-text">Example Widget</span></a>
+							                            </div>
+							                            <div class="widget-title ui-draggable-handle">
+							                                <h4>Example Widget<span class=
+							                                "in-widget-title"></span></h4>
+							                            </div>
+							                        </div>
+							                        <div class="widget-description">
+							                            A description of the example widget.
+							                        </div>
+							                    </div>
+							                    <div class="widget ui-draggable" id="widget-3">
+							                        <div class="widget-top">
+							                            <div class="widget-title-action">
+							                                <a class="widget-action hide-if-no-js" href=
+							                                "#"></a> <a class=
+							                                "widget-control-edit hide-if-js" href=
+							                                "#"><span class="edit">Edit</span> <span class=
+							                                "add">Add</span> <span class=
+							                                "screen-reader-text">Example Widget</span></a>
+							                            </div>
+							                            <div class="widget-title ui-draggable-handle">
+							                                <h4>Example Widget<span class=
+							                                "in-widget-title"></span></h4>
+							                            </div>
+							                        </div>
+							                        <div class="widget-description">
+							                            A description of the example widget.
+							                        </div>
+							                    </div>
+							                    <div class="widget ui-draggable" id="widget-4">
+							                        <div class="widget-top">
+							                            <div class="widget-title-action">
+							                                <a class="widget-action hide-if-no-js" href=
+							                                "#"></a> <a class=
+							                                "widget-control-edit hide-if-js" href=
+							                                "#"><span class="edit">Edit</span> <span class=
+							                                "add">Add</span> <span class=
+							                                "screen-reader-text">Example Widget</span></a>
+							                            </div>
+							                            <div class="widget-title ui-draggable-handle">
+							                                <h4>Example Widget<span class=
+							                                "in-widget-title"></span></h4>
+							                            </div>
+							                        </div>
+							                        <div class="widget-description">
+							                            A description of the example widget.
+							                        </div>
+							                    </div>
+							                </div>
+							                <div class="clear"></div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+
+							<div class="widget-liquid-right">
+							    <div class="single-sidebar" id="widgets-right">
+							        <div class="sidebars-column-1">
+							            <div class="widgets-holder-wrap">
+							                <div class="widgets-sortables ui-droppable ui-sortable" id="widget-area-XXX">
+							                    <div class="sidebar-name">
+							                        <div class="sidebar-name-arrow">
+							                            <br>
+							                        </div>
+							                        <h3>Widget Area — Layout: Blog Index <span class="spinner"></span></h3>
+							                    </div>
+							                    <div class="sidebar-description"></div>
+							                    <div class="widget open" id="widget-example">
+							                        
+							                        <div class="widget-top">
+							                            <div class="widget-title-action">
+							                                <a class="widget-action hide-if-no-js" href="#"></a>
+							                                <a class="widget-control-edit hide-if-js" href="#">
+								                                <span class="edit">Edit</span>
+								                                <span class="add">Add</span>
+								                                <span class="screen-reader-text">On-Air</span>
+							                                </a>
+							                            </div>
+							                            <div class="widget-title ui-sortable-handle">
+							                                <h4>On-Air<span class="in-widget-title"></span></h4>
+							                            </div>
+							                        </div>
+
+							                        <div class="widget-inside" style="display: block;">
+							                            <form method="post">
+							                                
+							                                <div class="widget-content">
+							                                    <div class="feeds-widget-form">
+							                                    	<p>
+							                                    		<label for="XXX">Type:</label>
+							                                    		<select class="onair-type">
+							                                    			<option value="now-playing">Now Playing</option>
+							                                    			<option value="upcoming">Upcoming</option>
+							                                    			<option value="combined">Combined</option>
+							                                    		</select>
+							                                    	</p>
+							                                        <p>
+							                                        	<div class="single-title">
+							                                        		<label for="XXX">Title</label>
+							                                        		<input class="widefat" id="XXX" name="XXX" type="text" value="">
+							                                        	</div>
+							                                        	<div class="grid combined-title" style="display:none;">
+							                                        		<div class="col-1-2">
+									                                        	<label for="XXX">Now Playing title</label>
+									                                        	<input class="widefat" id="XXX" name="XXX" type="text" value="">
+							                                        		</div>
+							                                        		<div class="col-1-2">
+									                                        	<label for="XXX">Upcoming title</label>
+									                                        	<input class="widefat" id="XXX" name="XXX" type="text" value="">
+							                                        		</div>
+							                                        	</div>
+							                                        </p>
+							                                        <div class="onair-toggle" style="display:none;">
+								                                        <p>
+								                                        	<label>
+								                                        		Toggle between widgets every
+								                                        		<select>
+									                                    			<option>5</option>
+									                                    			<option>7</option>
+									                                    			<option>10</option>
+								                                    			</select>
+								                                    			seconds
+							                                    			</label>
+						                                    			</p>
+					                                    			</div>
+							                                        <div class="onair-autoupnext">
+								                                        <p>
+								                                        	<label>
+								                                        		<input type="checkbox" />
+								                                        		Change to "Up Next"
+								                                        		<select>
+									                                    			<option>5</option>
+									                                    			<option>7</option>
+									                                    			<option>10</option>
+								                                    			</select>
+								                                    			minutes before show
+							                                    			</label>
+						                                    			</p>
+					                                    			</div>
+					                                    			<p>
+					                                    				<div>Display</div>
+					                                    				<div class="grid">
+						                                    				<div class="col-1-2">
+						                                    					<label><input type="checkbox" /> Show image</label><br>
+						                                    					<label><input type="checkbox" /> Show timeslot</label><br>
+						                                    					<label><input type="checkbox" /> Show excerpt</label>
+						                                    				</div>
+						                                    				<div class="col-1-2">
+						                                    					<label><input type="checkbox" /> Show link</label><br>
+						                                    					<label><input type="checkbox" /> Personalities</label>
+						                                    				</div>
+					                                    				</div>
+					                                    			</p>
+							                                    </div>
+							                                </div>
+
+							                                <div class="widget-control-actions">
+							                                    <div class="alignleft">
+							                                        <a class="widget-control-remove" href="#remove">Delete</a> 
+							                                        | 
+							                                        <a class="widget-control-close" href="#close">Close</a>
+							                                    </div>
+							                                    <div class="alignright">
+							                                        <input class="button button-primary widget-control-save right" id="widget-amp_onair_widget-2-savewidget" name="savewidget" type="submit" value="Save">
+							                                        <span class="spinner"></span>
+							                                    </div>
+							                                    <br class="clear">
+							                                </div>
+							                            </form>
+							                        </div>
+							                        <div class="widget-description">
+							                            Display information for the show that is currently on the air.
+							                        </div>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+
+						</div>
+	                
+	                </div>
+	            </div>
+	        </div>
+	        <div id="wpfooter" role="contentinfo">
+	            <p id="footer-left" class="alignleft">
+	                <span id="footer-thankyou">Thank you for creating with <a href="https://wordpress.org/">WordPress</a>.</span> </p>
+	            <p id="footer-upgrade" class="alignright">
+	                <strong><a href="http://jesse.qa.tritondigitalcms.com/wp-admin/network/update-core.php">Get Version 4.5.1</a></strong> </p>
+	            <div class="clear"></div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
+
+    <script>
+		w3IncludeHTML();
+	</script>
+
+	</body>
+
+</html>

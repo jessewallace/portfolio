@@ -1,0 +1,94 @@
+
+.v1player-login-controls-wpr {
+
+    .v1player-login-controls { 
+        height: 38px;
+        padding-left: 20px;
+        margin: 15px 0 0 5px;
+    }
+
+
+    .v1player-login-ctrl {
+        display: inline-block;
+        margin-top: 10px;
+        color: $white;
+        font-size: 15px;
+        text-decoration: underline;
+        padding-right:10px;
+
+        &:nth-of-type(2) {
+            text-decoration: none;
+        }
+    }
+
+    .v1player-profile-wpr {
+        position: relative;
+
+        display: none;
+        width:88px;
+        
+        .v1player-profile-icon-wpr {
+            position: absolute;
+            z-index: 2002;
+
+            float: right;
+            display: inline-block;
+            height: 70px;
+            width:67px;
+            padding:14px 12px 9px 12px;
+
+            // &:hover,
+            &.v1player-active {
+                display: inline-block !important;
+                background-color: $highlight-hover;
+            }
+
+            .v1player-profile-icon {
+                position:absolute;
+                z-index: 2002;
+
+                height: 43px;
+                border: 2px solid $button-color;
+            }
+        } 
+
+        .v1player-profile-controls {
+            position: absolute;
+            top:70px;
+            right:0px;
+            z-index: 2002;
+
+            display: none;
+            width:190px;
+            height:190px;
+            background-color: $highlight-hover;
+            padding-top: 20px;
+            color:$white;
+            text-align:center;
+
+
+            .v1player-username {
+                display: block;
+                margin-bottom: 30px;
+            }
+
+            .v1player-profile-ctrl {
+                display: block;
+                height:38px;
+                width:128px;
+                padding-top:10px;
+                margin:20px auto 0 auto;
+                background-color:$button-color;
+
+                &:hover {
+                    color:$black;
+                    cursor: pointer;
+                }
+
+                &:nth-of-type(1) {
+                    background-color:$main-color;
+                }
+            }
+        }
+    }
+}

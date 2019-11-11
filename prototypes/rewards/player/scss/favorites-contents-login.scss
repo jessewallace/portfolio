@@ -1,0 +1,59 @@
+
+.v1player-favorites-login {
+    position: relative;
+
+    height:450px;
+    background-color:$main-color;
+    padding:85px 35px;
+    text-align: center;
+
+    .v1player-favorites-login-text {
+        font-size: 0.875em;
+    }
+
+    .v1player-favorites-login-icons {
+        position: relative;
+
+        font-size: 170px;
+        color:$main-color;
+
+        i:first-of-type {
+            color:$grey;
+            margin:20px 150px 0 0;
+        }
+
+        i ~ i {
+            position: absolute;
+            top:70px;
+            left:62px;
+            
+            color: $highlight-hover;
+            font-size: 60px;
+        }
+    }
+
+    .v1player-favorites-login-controls {
+        position: absolute;
+        top:170px;
+        left:190px;
+
+        .v1player-favorites-login-control {
+            display: block;
+            padding:8px 32px;
+            margin-top:12px;
+            background-color:$button-color;
+
+            &.favorites-login,
+            &.favorites-signup {
+                color: $white;
+                font-size: 15px;
+                font-family: 'Arial';
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+
+    }
+}

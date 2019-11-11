@@ -1,0 +1,20 @@
+//==========================================================
+//These files should be edited by the TDAS design team only!
+//==========================================================
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changes will be overridden! */
+/* =============================================================== */
+
+// Variables
+
+$td-polls-primary-color: #8c1264; /*purple*/
+$td-polls-secondary-color: #abdf0d; /*lime green*/
+$td-polls-tertiary-color: #029AFF; /*blue*/
+$td-polls-text-on-color: #ffffff; /*white*/
+
+$td-polls-results-primary-color: #17a640; /*green*/
+$td-polls-results-orange: #fa9607; /*orange*/
+
+// Imports
+@import "polls";

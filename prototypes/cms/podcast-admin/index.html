@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US">
+
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Wordpress Admin</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	    
+	    <!-- Required css -->
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	    
+	    <link rel='stylesheet' href='css/core/admin-bar.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/wp-admin.min.css' type='text/css' media='all' />
+	    
+	    <link rel='stylesheet' href='css/core/about.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/buttons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/common.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/dashicons.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/edit.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/editor.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/forms.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/jquery.qtip.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/list-tables.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/media.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/nav-menus.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/site-icon.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/themes.min.css' type='text/css' media='all' />
+	    <link rel='stylesheet' href='css/core/widgets.min.css' type='text/css' media='all' />
+
+	    <link rel='stylesheet' href='css/core/admin.css' type='text/css' media='all' />
+
+	    <!-- Custom/project css -->
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+
+	    <!-- Required js -->
+	    <script type='text/javascript' src='js/core/jquery.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-migrate.min.js'></script>
+	    <script type='text/javascript' src='js/core/core.min.js'></script>
+	    <script type='text/javascript' src='js/core/widget.min.js'></script>
+	    <script type='text/javascript' src='js/core/mouse.min.js'></script>
+	    <script type='text/javascript' src='js/core/resizable.min.js'></script>
+	    <script type='text/javascript' src='js/core/draggable.min.js'></script>
+	    <script type='text/javascript' src='js/core/button.min.js?'></script>
+	    <script type='text/javascript' src='js/core/position.min.js'></script>
+	    <script type='text/javascript' src='js/core/dialog.min.js'></script>
+	    <script type='text/javascript' src='js/core/sortable.min.js'></script>
+	    <script type='text/javascript' src='js/core/datepicker.min.js'></script>
+	    <script type='text/javascript' src='js/core/slider.min.js'></script>
+	    <script type='text/javascript' src='js/core/jquery-ui-timepicker-addon.js'></script>
+
+	    <!-- Allow includes -->
+	    <script type='text/javascript' src='http://www.w3schools.com/lib/w3data.js'></script> 
+
+	    <!-- Custom/project js -->
+	    <script type='text/javascript' src='js/scripts.js'></script> 
+
+	</head>
+
+	<body class="wp-admin wp-core-ui no-js auto-fold admin-bar admin-color-fresh locale-en-us multisite no-customize-support no-svg">
+	    <div id="wpwrap">
+	    	<div w3-include-html="adminmenu.html"></div> 
+	        <div id="wpcontent">
+	        	<div w3-include-html="wpadminbar.html"></div> 
+	            <div id="wpbody" role="main">
+	                <div id="wpbody-content" aria-label="Main content" tabindex="0">
+	                    
+	                    <!-- Project starts here -->
+
+						<div class="wrap">
+							
+							<h1>Podcast Episodes <a class="page-title-action" href="create.html">Add New</a></h1>
+
+							<form id="posts-filter" method="get" name="posts-filter">
+								
+								<p class="search-box">
+									<input id="post-search-input" name="s" type="search" value="">
+									<input class="button" id="search-submit" type="submit" value="Search Episodes">
+								</p>
+								
+								<div class="tablenav top">
+									
+									<div class="alignleft actions bulkactions">
+										<select id="bulk-action-selector-top" name="action">
+											<option>Bulk Actions</option>
+											<option>Edit</option>
+											<option>Move to Trash</option>
+										</select>
+										<input class="button action" type="submit" value="Apply">
+									</div>
+									
+									<div class="alignleft actions">
+										<select class="postform">
+											<option>All podcasts</option>
+											<option>Podcast #1</option>
+											<option>Podcast #2</option>
+											<option>Podcast #3</option>
+											<option>Podcast #4</option>
+										</select>
+										<input class="button" type="submit" value="Filter">
+									</div>
+
+									<div class="tablenav-pages one-page">
+										<span class="displaying-num">5 items</span>
+									</div><br class="clear">
+								</div>
+
+								<table class="wp-list-table widefat fixed striped podcasts">
+									
+									<thead>
+										<tr>
+											<td class="manage-column column-cb check-column" id="cb"><input id="cb-select-all-1" type="checkbox"></td>
+											<th class="manage-column column-title column-primary sortable desc" id="title" scope="col">
+												<a href="#"><span>Title</span><span class="sorting-indicator"></span></a>
+											</th>
+											<th class="manage-column column-podcast" id="podcast" scope="col">Podcast</th>
+											<th class="manage-column column-status" id="status" scope="col">Status</th>
+											<th class="manage-column column-date sortable asc" id="date" scope="col">
+												<a href="#"><span>Date modified</span><span class="sorting-indicator"></span></a>
+											</th>
+										</tr>
+									</thead>
+
+									<tbody id="the-list" w3-include-html="tableitems.html">										
+									</tbody>
+									
+									<tfoot>
+										<tr>
+											<td class="manage-column column-cb check-column" id="cb"><input id="cb-select-all-1" type="checkbox"></td>
+											<th class="manage-column column-title column-primary sortable desc" id="title" scope="col">
+												<a href="#"><span>Title</span><span class="sorting-indicator"></span></a>
+											</th>
+											<th class="manage-column column-podcast" id="podcast" scope="col">Podcast</th>
+											<th class="manage-column column-status" id="status" scope="col">Status</th>
+											<th class="manage-column column-date sortable asc" id="date" scope="col">
+												<a href="#"><span>Date modified</span><span class="sorting-indicator"></span></a>
+											</th>
+										</tr>
+									</tfoot>
+
+								</table>
+
+								<div class="tablenav bottom">
+									<div class="alignleft actions bulkactions">
+										<label class="screen-reader-text" for="bulk-action-selector-bottom">Select bulk action</label><select id="bulk-action-selector-bottom" name="action2">
+											<option value="-1">
+												Bulk Actions
+											</option>
+											<option class="hide-if-no-js" value="edit">
+												Edit
+											</option>
+											<option value="trash">
+												Move to Trash
+											</option>
+										</select> <input class="button action" id="doaction2" type="submit" value="Apply">
+									</div>
+									<div class="alignleft actions"></div>
+									<div class="tablenav-pages one-page">
+										<span class="displaying-num">5 items</span>
+									</div><br class="clear">
+								</div>
+							</form>
+						</div>
+	                
+						<!-- Project ends here -->
+
+	                </div>
+	            </div>
+	        </div>
+	        <div id="wpfooter" role="contentinfo">
+	            <p id="footer-left" class="alignleft">
+	                <span id="footer-thankyou">Thank you for creating with <a href="#">WordPress</a>.</span> </p>
+	            <p id="footer-upgrade" class="alignright">
+	                <strong><a href="#">Get Version XXX</a></strong> </p>
+	            <div class="clear"></div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
+
+    <script>
+		w3IncludeHTML();
+	</script>
+
+	</body>
+
+</html>

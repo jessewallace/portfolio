@@ -1,0 +1,27 @@
+
+@-webkit-keyframes mobile-song-info {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+@-webkit-keyframes mobile-cart-button {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 10%;
+    }
+}
+
+@-webkit-keyframes mobile-play-button {
+    0% {
+        right: -200%;
+    }
+    100% {
+        right: 0;
+    }
+}

@@ -1,0 +1,156 @@
+/* Clears, Fixes, Hacks and other things */
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1023px) {
+}
+
+/*Facebook iframe size*/
+@media only screen and (min-width:700px) and (max-width:799px) {
+body #container-contest, body #container-footer, body #container-header, body #container-contentbg {width:auto;}
+body #navigation ul {width:100%;}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 694px) {
+body .gallery li.galleryrow {width:95%;} /* Individual rows for gallery */
+body .gallery li.galleryrow ul li {margin: 0 10px 20px 10px;}
+}
+
+/* -- Mobile: iPhone, Android -- */
+@media only screen and (min-width: 1px) and (max-width: 480px) 
+{
+#navigation li span { display:none; }
+#navigation li.nav-username { display:none; }
+body #container-success {width:auto;}
+body #container-success .submission-controls .container-social {width:141px;}
+body h1.pagetitle { clear:right; float:none !important; width:100% !important; }
+body #container-signin .inputcontainer.twocol .coltwo, body #container-submit .inputcontainer.twocol .coltwo { border:none; }
+
+/* Force table to not be like tables anymore */
+body table.dates, body table.dates thead, body table.dates tbody, body table.dates th, body table.dates td, body table.dates tr {display: block;}
+/* Hide table headers (but not display: none;, for accessibility) */
+body table.dates thead tr {visibility: hidden;height: 0;}
+body table.dates tr { border: 1px solid #ccc; }
+body table.dates td {
+/* Behave  like a "row" */
+border: none;
+border-bottom: 1px solid #eee;
+position: relative;
+padding-left: 37%;
+}
+body table.dates td:before {
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: 6px;
+width: 35%;
+padding-right: 10px;
+}
+
+/*
+Label the data
+*/
+
+body input.smalltext, body textarea.largetext, body select, body input[type="file"] { font-size: .9em; }
+body input.smalltext { padding: .5em; }
+table.dates td:nth-of-type(1):before {}
+body table.dates td:nth-of-type(1):after { content: "Date/Time"; }
+body table.dates td:nth-of-type(2):before { content: "Submission Period"; }
+body table.dates td:nth-of-type(3):before { content: "Voting Period"; }
+body table.dates td:nth-of-type(4):before { content: "Winner Chosen"; }
+
+body #navigation li.userdrop-open { padding-bottom: 12px; }
+
+
+/*Additional info & Multifile */
+body #contest-summary a.moreInfo {position:static; margin-bottom:10px;}
+body #contest-summary ul li {width:90%;}
+body #contest-summary #summary-content ul {width:55%;}
+/* -- end max-width: 480px -- */
+
+/* jplayer */
+div.jp-controls-holder {width:150px !important; top:-2px !important;}
+}
+
+@media only screen and (min-width:1px) and (max-width: 534px) {
+body #contestSubmissionDiv {margin-bottom:10px;}
+body .multiple-submissions .imgwrapper{width:95%; display:block; margin:0 auto; min-height:0; padding:3px 0; background:none;}
+body .multiple-submissions .submission-thumbs ul {float:none;}
+body .multiple-submissions .submission-thumbs ul li {height:auto; border:none; background:none; width:auto;}
+body .multiple-submissions .submission-thumbs ul li img{display:none;}
+body .multiple-submissions .submission-thumbs ul li p {display:block; text-align:center; margin:0; line-height:30px;}
+body .multiple-submissions .submission-thumbs ul li a {text-decoration:none; margin:0 auto; width:90%; font-weight:bold;}
+body .multiple-submissions .submission-thumbs ul li div.multifile-icon, .submission-thumbs ul li div.multifile-viewing  {display:none;}
+body .multiple-submissions .imgwrapper .text-wrapper {min-height:0;}
+body .imgwrapper {min-height:0;}
+body .gallery-nav {width:280px !important;}
+body #detailView .gallery-nav-back, body #detailView .gallery-nav-more {position:static; margin-top:10px;}
+}
+
+@media only screen and (min-width: 1px) and (max-width: 320px) {
+body .gallery li.galleryrow {width:95%;} /* Individual rows for gallery. */
+}
+
+@media only screen and (min-width: 1px) and (max-width: 650px) {
+body .sweeps-container {width:auto;}
+/*.multiplier ul li:first-child {float: none;width: 100%;margin-bottom:10px;}*/
+body .multiplier ul li, body .multiplier ul.low-balance li, body .multiplier ul.low-balance li:first-child, body .multiplier ul li:first-child  {margin-bottom:20px;float: none;width: 100%;border: none;}
+body .throttle-message.two-column span {width: auto;border:none;}
+body .club-title .club-name, body .club-title .user-entries {display:block; text-align:center; float:none;}
+body .contest-list li a:hover {padding-left: 5px;} /* Contest List on Submission Links */
+body .contest-list li a:hover:after, body .contest-list li a:hover:before {content: '';}
+}
+
+@media only screen and (min-width: 1px) and (max-width: 694px) {
+body #container-bg {padding:0 10px;}
+body #header img {width:100%;}
+body #container-contest {width:auto;}
+body #container-content, body #container-contentbg {width:auto; padding-bottom:0;}
+body #container-footer {height:auto; padding-bottom:10px;}
+body #container-footer p {margin-bottom:0;}
+body #navigation {height:100%;}
+body #navigation ul {width:100%;}
+body #navigation ul li {width:33%; height:auto; font-size:1.0em; text-align:center;}
+body #navigation ul li.nav-home {display:none;} /* Home navbar link */
+body #navigation ul li.nav-register {display:none;} /* Registration navbar link */
+body #navigation ul li.nav-signin.last {display:none;} /* Sign in navbar link */
+body #container-registration form select, body .inputcontainer.twocol .colone, body .inputcontainer.twocol .coltwo,  body .inputcontainer.radio, body .inputcontainer.checkbox {float:none; display:block; width:95% !important;}
+body #container-registration form input#submitbutton { min-width: 127px; } /* keep submit button same width for mobile */
+body .inputcontainer.threecol .colone, body .inputcontainer.threecol .coltwo, body .inputcontainer.threecol .colthree {margin:0 .4em 0 0;}
+body input.smalltext, body textarea.largetext, select {min-width:95%;}
+body #container-registration form textarea {width:90%}
+body #container-registration form input[type=submit] {overflow:hidden; background-position:top center;}
+body #container-signin .inputcontainer.twocol .coltwo {float:none; padding:20px 0 0 0; margin:20px 0 0 0; border:none; background:none; }
+body #container-submit .inputcontainer.twocol .colone {float:none; width:100%;}
+body #container-submit .inputcontainer.twocol .coltwo {float:none; padding:20px 0 0 0; margin:20px 0 0 0; border-top:1px solid #999; background:none; width:100%; }
+body #container-submit .inputcontainer.twocol .coltwo, body #container-signin .inputcontainer.twocol .coltwo {border-left: none; min-height:150px;}
+select.reg-month {}
+select.reg-day {}
+body input.reg-year {text-align:center;}
+body .inputcontainer.submission {background:none;}
+body #submissionconfirm {width:100%; padding:0; height:100%;}
+body .field.error {min-width:90%; max-width:90%;}
+body .fancypopup {width:90%;}
+body .registerlink {margin-bottom:1em;}
+body #detailView .audio-frame, body .audio-frame {margin:10px auto !important;}
+body #divSignin * {float: none !important;}
+body #divSignin #loginorlabel {width: 100%; position:relative;margin: 10px 0;}
+body #divSignin #loginorlabel:before {width: 100%; position:absolute; border: 1px solid rgba(204, 204, 204, 0.5);display: block;content: "";width: 40%;top: 50%;left: 0;}
+body #divSignin #loginorlabel:after {width: 100%; position:absolute; border: 1px solid rgba(204, 204, 204, 0.5);display: block;content: "";width: 40%;top: 50%;right: 0;}
+body #divSignin #socialconnect {padding:0;}
+body .video-iframe { height: 300px !important;}
+}
+
+@media only screen and (min-width: 535px) and (max-width: 799px) {
+body .multiple-submissions .imgwrapper{width:80%; display:inline-block; margin:0 auto; min-height:0; padding:3px 0;}
+body .multiple-submissions .submission-thumbs ul li img{display:block;}
+body #detailView .audio-frame, body .audio-frame {margin:10px auto !important;}
+}
+
+.test { }

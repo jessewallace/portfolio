@@ -1,0 +1,542 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Survey Creation Admin</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+ 	<link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+
+  </head>
+  <body>
+
+	<!-- Main Content for Stand Alone -->
+	<!-- survey Admin -->
+	<div class="app-container">
+	  <div id="surveyAdmin" class="admin-container">
+
+		<!-- survey Creation Header -->
+	  	<h1>Create New Survey</h1>
+
+		<!-- survey Creation Main Contact -->
+		<div class="grid">
+			<div class="col-1-2 widget-leftside survey-leftside">
+
+				<!-- Breadcrumb Navigation -->
+				<div class="breadcrumbs container-sectioned">
+					<ul class="crumbs">
+						<li class="setup"><a href="#" class="active">Setup</a></li>
+						<li class="question"><a href="#">Questions</a></li>
+						<li class="options"><a href="#">Theme</a></li>
+						<li class="syndication"><a href="#">Syndication</a></li>
+						<li class="publish"><a href="#">Publish</a></li>
+					</ul>
+				</div>
+
+				
+				<div class="widget-creation survey-creation">
+
+
+					<!-- Setup -->
+					<div class="widget-setup survey-setup">
+
+						<!-- survey Title -->
+						<div class="input-container widget-title survey-title">
+							<label class="is-required widget-input-title survey-input-title">Survey Title</label>
+						    <input type="text" />
+						</div>
+
+						<!-- survey Date and Time -->
+						<div class="widget-date-time survey-date-time">
+							<div class="start-end">
+								<!-- survey Start Date -->
+								<div class="input-container col-1-2">
+								    <label class="widget-input-title survey-input-title" for="#survey-startTime">Survey Start Time</label>
+								    <input type="text" id="survey-startTime">
+								</div>
+
+								<!-- survey End Date -->
+								<div class="input-container col-1-2">
+								    <label class="widget-input-title survey-input-title" for="survey-endTime">Survey End Time</label>
+								    <input type="text" id="survey-endTime">
+								</div>
+							</div>
+						</div>
+
+   						<div class="round-input stealth">
+				    		<input type="checkbox" id="stealth" name="stealth">
+							<label for="stealth">
+								<div class="input-label">Make this survey stealth?</div>
+							</label>
+						</div>
+
+						<div class="widget-buttons survey-buttons clearfix">
+							<button class="widget-next survey-next gotoQuestion button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					
+
+
+					<!-- survey Questions -->
+					<div class="widget-question survey-question">
+
+						<div class="widget-question-holder">
+												
+							<!-- Single choice survey question -->
+							<div class="survey-question-type multiple-choice template" style="display:none;">
+								<!-- survey Question -->
+								<div class="panel" >
+								    <div class="panel-header">
+							        	<i class="fa fa-bars ui-sortable-handle"></i>
+								        <span class="panel-title">New multiple choice question</span>
+							        	<div class="pull-right">
+							        		<i class="fa fa-expand collapse-question"></i>
+							        		<i class="fa fa-cog question-settings ui-popover" data-html="true" data-toggle="popover" data-trigger="click" data-placement="bottom" data-content="<div class='question-settings-option deactivate-question'></div><div class='question-settings-option delete-question'>Delete</div>"></i>
+							        	</div>
+								    </div>
+								    <div class="panel-body contrast">
+								        <div class="panel-content">
+										    <div class="input-container widget-question-input survey-question-input">
+												<label class="is-required widget-input-title survey-input-title">Question</label>
+												<input class="mirror-field" type="text" placeholder="" />
+												<button class="question-image-uploader">Upload Image<i class="fa fa-camera"></i><input type="file" id="survey-question-image" class="widget-question-image" /></button>
+											</div>
+										    <div class="input-container checkbox lofft">
+										    	<label><input type="checkbox"> Allow users to select multiple answers</label>
+										    </div>
+											<div class="widget-choices survey-choices">
+												<div class="input-container">
+												    <label class="widget-input-title survey-input-title">Choices</label>
+												    <div id="sortable" class="sortable-choices sortable-choices-text">
+												    	<div class='sortable-choice'>
+													    	<i class="fa fa-bars"></i><input class="choices" type="text" />
+													    	<i class="fa fa-times-circle"></i>
+													    	<a class="ui-popover add-logic button" role="button" tabindex="1"><i class="fa fa-plus"></i> Logic</a>
+												    	</div>
+												    	<div class='sortable-choice'>
+													    	<i class="fa fa-bars"></i><input class="choices" type="text" />
+													    	<i class="fa fa-times-circle"></i>
+													    	<a class="ui-popover add-logic button" role="button" tabindex="2"><i class="fa fa-plus"></i> Logic</a>
+												    	</div>
+													</div>
+											    </div>
+										    	<button class="button pull-right add-choice"><i class="fa fa-plus"></i>Add Another Answer</button>
+											</div>
+								        </div>
+								    </div>
+								    <div class="panel-footer">
+										<div class="survey-targeting-container">
+											<div class="survey-targeting-toggle">
+												<div class="toggle">
+													<input id="toggle-surveyFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+													<label class="toggle-container" for="toggle-surveyFilter">
+														<span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+														<span class="toggle-handle"></span>
+													</label>
+												</div>
+												<span>Save targeting data</span>
+											</div>
+											<div class="survey-targeting-column">
+												<span>Data Field:</span>
+												<a class="survey-column-trigger" href="#">Choose...</a>
+											</div>
+										</div>
+								    </div>
+								</div>
+							</div>
+
+							<!-- Yes / No survey question -->
+							<div class="survey-question-type yesno template" style="display:none;">
+								<div class="panel" >
+								    <div class="panel-header">
+								        <i class="fa fa-bars ui-sortable-handle"></i>
+								        <span class="panel-title">New Yes or No question</span>
+							        	<div class="pull-right">
+							        		<i class="fa fa-expand collapse-question"></i>
+							        		<i class="fa fa-cog question-settings ui-popover" data-html="true" data-toggle="popover" data-trigger="click" data-placement="bottom" data-content="<div class='question-settings-option deactivate-question'></div><div class='question-settings-option delete-question'>Delete</div>"></i>
+							        	</div>
+								    </div>
+								    <div class="panel-body contrast">
+								        <div class="panel-content">
+											<div class="input-container widget-question-input survey-question-input">
+												<label class="is-required widget-input-title survey-input-title">Question</label>
+											  <input class="mirror-field" type="text" placeholder="" />
+											  <button class="question-image-uploader">Upload Image<i class="fa fa-camera"></i><input type="file" id="survey-question-image" class="widget-question-image" /></button>
+										  	</div>
+										  	<div class="input-container checkbox">
+										  		<label><input type="checkbox"> End survey if user selects   
+													<select id="yes-no-logic" style="min-width:70px;">
+														<option value="yes">Yes</option>
+														<option value="no">No</option>
+													</select>
+												</label>
+										  	</div>
+										  	<div class="input-container checkbox">
+												<label>Attach opt-ins to  
+													<select id="silverpop-sub">
+														<option value="no">No subscription</option>
+														<option value="other">Example subscription 1</option>
+														<option value="other">Example subscription 2</option>
+														<option value="other">Example subscription 3</option>
+														<option value="other">Example subscription 4</option>
+													</select>in AMP Email
+												</label>
+											</div>	
+											<div class="input-container checkbox">	
+												<label class="vendor-message disabled">
+													<input type="checkbox" name="" disabled="disabled"> Display outside vendor message <i class="fa fa-info-circle ui-tooltip-icon" title="In accordance with our Privacy Policy, let your members know that by answering this question they agree to be contacted by outside vendors"></i>
+												</label>
+											</div>
+										</div>
+								    </div>
+								    <div class="panel-footer">
+										<div class="survey-targeting-container">
+											<div class="survey-targeting-toggle">
+												<div class="toggle">
+													<input id="toggle-surveyFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+													<label class="toggle-container" for="toggle-surveyFilter">
+														<span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+														<span class="toggle-handle"></span>
+													</label>
+												</div>
+												<span>Save targeting data</span>
+											</div>
+											<div class="survey-targeting-column">
+												<span>Data Field:</span>
+												<a class="survey-column-trigger" href="#">Choose...</a>
+											</div>
+										</div>
+								    </div>
+								</div>
+							</div>
+
+							<!-- Text entry survey question -->
+							<div class="survey-question-type text-entry template" style="display:none;">
+								<div class="panel" >
+								    <div class="panel-header">
+								        <i class="fa fa-bars ui-sortable-handle"></i>
+								        <span class="panel-title">New Text Entry question</span>
+							        	<div class="pull-right">
+							        		<i class="fa fa-expand collapse-question"></i>
+							        		<i class="fa fa-cog question-settings ui-popover" data-html="true" data-toggle="popover" data-trigger="click" data-placement="bottom" data-content="<div class='question-settings-option deactivate-question'></div><div class='question-settings-option delete-question'>Delete</div>"></i>
+							        	</div>
+								    </div>
+								    <div class="panel-body contrast">
+								        <div class="panel-content">
+											<div class="input-container widget-question-input survey-question-input">
+												<label class="is-required widget-input-title survey-input-title">Question</label>
+											  <input class="mirror-field" type="text" placeholder="" />
+											  <button class="question-image-uploader">Upload Image<i class="fa fa-camera"></i><input type="file" id="survey-question-image" class="widget-question-image" /></button>
+											</div>
+											<div class="grid">
+												<div class="col-1-4">
+													<label>Character limit</label>
+													<input class="center-text" type="text" value="50" size="5" />
+												</div>
+												<div class="col-3-4">
+													<label>Entry input type</label>
+													<div class="input-container radio radio-inline offt">
+														<label><input type="radio" name="entry-type" checked value="single" /> Single line input</label>
+														<label><input type="radio" name="entry-type" value="multi" /> Multi-row text box</label>
+													</div>
+												</div>
+											</div>
+										</div>
+								    </div>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Add new question -->
+						<div class="survey-add-question">
+							<h3 class="text-center">Add a new question:</h3>
+
+							<a class="create-button add-multiple-choice" href="#">
+			                  <p class="center"><i class="fa fa-list-ul"></i> Multiple choice</p>
+			                  <p class="description">Multiple choices and a single answer.</p>
+			                </a>
+
+			                <a class="create-button add-yesno" href="#">
+			                  <p class="center"><i class="fa fa-check-circle-o"></i> <i class="fa fa-circle-o"></i> Yes/No</p>
+			                  <p class="description">Yes or No as the only available answers.</p>
+			                </a>
+
+			                <a class="create-button add-text" href="#">
+			                  <p class="center"><i class="fa fa-edit"></i> Text entry</p>
+			                  <p class="description">User types in their answer.</p>
+			                </a>
+
+			                <a class="create-button add-profile" href="#">
+			                  <p class="center"><i class="fa fa-edit"></i> User profile fields</p>
+			                  <p class="description">Displays profile fields the user can update.</p>
+			                </a>
+						</div>
+
+						<!-- Targeting Selector Dialog -->
+					        <div id="targeting-selector-dialog" title="Choose targeting data field" style="display:none;">
+					          	<div class="container">
+				                    <div class="input-container">
+				                    	<label>Create a new custom data field</label>
+				                    	<input class="full-width" type="text" placeholder="type field name" />
+				                	</div>
+				                    <div class="has-text-divider">or</div>
+				                    <div class="input-container">
+				                    	<label>Choose an existing field</label>
+					                    <select class="full-width">
+					                    	<option>--- select one ---</option>
+					                    	<option>Choice one</option>
+					                    	<option>Choice one</option>
+					                    	<option>Choice one</option>
+					                    	<option>Choice one</option>
+					                    </select>
+				                	</div>
+		               			</div>
+					        </div>
+
+						<div class="widget-buttons survey-buttons clearfix">
+							<button class="widget-back survey-back gotoSetup button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+							<button class="widget-next survey-next gotoOptions button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+
+					</div>
+
+
+
+					<!-- survey Options -->
+					<div class="widget-options survey-options">
+
+						<!-- Theme Colors -->
+						<div class="input-container widget-colors survey-colors">
+							<label class="widget-input-title survey-input-title">Theme Colors</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="blue-theme round-input">
+						    	<input type="radio" value="10" id="blue-theme" name="colors" checked />
+									<label for="blue-theme">
+										<div class="input-label">Blue Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+
+								<div class="gray-theme round-input">
+						    	<input type="radio" value="10" id="gray-theme" name="colors">
+									<label for="gray-theme">
+										<div class="input-label">Gray Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="green-theme round-input">
+						    	<input type="radio" value="10" id="green-theme" name="colors">
+									<label for="green-theme">
+										<div class="input-label">Green Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="orange-theme round-input">
+						    	<input type="radio" value="10" id="orange-theme" name="colors">
+									<label for="orange-theme">
+										<div class="input-label">Orange Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+						    <div class="purple-theme round-input">
+						    	<input type="radio" value="10" id="purple-theme" name="colors">
+									<label for="purple-theme">
+										<div class="input-label">Purple Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="red-theme round-input">
+						    	<input type="radio" value="10" id="red-theme" name="colors">
+									<label for="red-theme">
+										<div class="input-label">Red Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+						</div>
+
+						<!-- Theme Textures -->
+						<div class="input-container widget-textures survey-textures">
+							<label class="widget-input-title survey-input-title">Theme Textures</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="scallop round-input">
+						    	<input type="radio" value="10" id="scallop" name="textures" checked />
+									<label for="scallop">
+										<div class="input-label">Scallop</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+
+								<div class="burst round-input">
+						    	<input type="radio" value="10" id="burst" name="textures">
+									<label for="burst">
+										<div class="input-label">Burst</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="retro round-input">
+						    	<input type="radio" value="10" id="retro" name="textures">
+									<label for="retro">
+										<div class="input-label">Retro</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="edgy round-input">
+						    	<input type="radio" value="10" id="edgy" name="textures">
+									<label for="edgy">
+										<div class="input-label">Edgy</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+						    <div class="modern round-input">
+						    	<input type="radio" value="10" id="modern" name="textures">
+									<label for="modern">
+										<div class="input-label">Modern</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="rough round-input">
+						    	<input type="radio" value="10" id="rough" name="textures">
+									<label for="rough">
+										<div class="input-label">Rough</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>      
+
+						</div>
+
+						<!-- survey Creation Buttons -->
+						<div class="widget-buttons survey-buttons clearfix">
+							<button class="widget-back survey-back gotoQuestion button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="widget-next survey-next gotoSyndication button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- survey Syndication -->
+					<div class="widget-syndication survey-syndication">
+						<div class="grid">
+							
+							<div class="col-1-1">
+								<img src="img/org-selector.png" />
+
+								<div class="round-input">
+						    	<input type="checkbox" id="childCustom" name="childCustom">
+									<label for="childCustom">
+										<div class="input-label">Allow Theme Customization on Children</div>
+									</label>
+								</div>
+
+							</div>
+
+						</div>
+
+        				<!-- survey Creation Buttons -->
+						<div class="widget-buttons survey-buttons clearfix">
+							<button class="widget-back survey-back gotoOptions button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="widget-next survey-next gotoPublish button-highlight pull-right">Publish<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- survey Publish -->
+					<div class="widget-publish survey-publish">
+
+						<div class="publish active visible">
+							<div class="published-message message attention">
+								<i class="fa fa-exclamation-circle"></i>
+								<p class="published-message-text">Your almost done.  Please review your completed survey in the Live Preview to your left before publishing.  If you do miss something, you will always be able to update in the future.</p>
+							</div>
+						</div>
+
+						<!-- survey Published -->
+						<div class="published">
+							<div class="published-message">
+								<i class="fa fa-check-circle"></i>
+								<p class="published-message-text">Great Job, your survey is published! Your survey has been added to you widget.  We have provided you an embed code below for you to put your survey on any webpage you would like too.</p>
+							</div>
+							<a href="#" class="embed-widget-link embed-survey-link pull-right">Go to embedded survey widget<i class="fa fa-arrow-circle-right"></i></a>
+
+							<!-- Embed Code -->
+							<div class="widget-embed-code survey-embed-code">
+								<label class="widget-input-title survey-input-title">Embed Code</label><button class="button"><i class="fa fa-files-o"></i></button>
+
+								<div class="module">
+									<code class="prettyprint prettyprinted">
+										&lt;iframe src='http://digitalivy.com/FUTACS' width='100%' height='300'&gt;&lt;p&gt;Your browser does not support iframes. Please visit &lt;a href='http://digitalivy.com/FUTACS'&gt;http://digitalivy.com/FUTACS&lt;/a&gt;.&lt;/p&gt;&lt;/iframe&gt;
+									</code>
+								</div>
+							</div>
+						</div>
+						
+						<div class="widget-buttons survey-buttons clearfix">
+							<button class="widget-back survey-back gotoSyndication button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="publishButton button-highlight pull-right">Publish<i class="fa fa-cloud-upload"></i></button>
+						</div>
+
+						
+					</div>
+
+
+
+				</div>
+			</div>
+
+			<!-- Live Preview | Right Side -->
+			<div class="col-1-2 live-preview">
+				<label>Live Preview</label>
+				<div class="live-preview-area">
+					<p class="generation-text">Live Preview will generate when you add a question and choices.</p>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<!-- End survey Admin -->
+
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+  </body>
+</html>

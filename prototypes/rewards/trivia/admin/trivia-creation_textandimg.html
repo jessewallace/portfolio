@@ -1,0 +1,454 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Trivia Creation Admin</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+<!--     <link href="assets/css/style.min.css" rel="stylesheet">
+ -->    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/ajaxToolboxStyles.css" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/admin.css" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/lightwindow.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/notificationBox.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.prefixed.css" />
+
+	<script src="assets/components/modernizr.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+
+
+  </head>
+  <body>
+
+	<!-- Main Content for Stand Alone -->
+	<!-- Trivia Admin -->
+	<div class="app-container">
+	  <div id="triviaAdmin" class="admin-container">
+
+		<!-- Trivia Creation Header -->
+		<div class="trivia-creation-header">
+		  <h1>Create New Trivia</h1>
+		  <p>Text and Image Choices</p>
+		</div>
+
+		<!-- Trivia Creation Main Contact -->
+		<div class="grid">
+			<div class="col-1-2 trivia-leftside">
+
+				<!-- Breadcrumb Navigation -->
+				<div class="breadcrumbs container-sectioned">
+					<ul class="crumbs">
+						<li class="setup"><a href="#" class="active">Setup</a></li>
+						<li class="question"><a href="#">Question</a></li>
+						<li class="options"><a href="#">Options</a></li>
+						<li class="syndication"><a href="#">Syndication</a></li>
+						<li class="publish"><a href="#">Publish</a></li>
+					</ul>
+				</div>
+
+				
+				<div class="trivia-creation">
+
+
+					<!-- Setup -->
+					<div class="trivia-setup">
+
+						<!-- Trivia Title -->
+						<div class="input-container trivia-title">
+							<label class="is-required trivia-input-title">Trivia Title</label>
+						    <input type="text" />
+						</div>
+
+						<!-- Trivia Date and Time -->
+						<div class="trivia-date-time">
+							<div class="start-end">
+								<!-- Trivia Start Date -->
+								<div class="input-container col-1-2">
+								    <label class="trivia-input-title"  for="#trivia-startTime">Trivia Start Time</label>
+								    <input type="text" id="trivia-startTime">
+								</div>
+
+								<!-- Trivia End Date -->
+								<div class="input-container col-1-2">
+								    <label class="trivia-input-title"  for="trivia-endTime">Trivia End Time</label>
+								    <input type="text" id="trivia-endTime">
+								</div>
+							</div>
+						</div>
+
+						<!-- Trivia Points -->
+						<div class="input-container trivia-points">
+							<label><input type="checkbox" />Award points for correct answer</label>
+							<input class="disabled" type="text" /><p class="disabled">points</p>
+						</div>
+
+						<div class="trivia-buttons clearfix">
+							<button class="trivia-next gotoQuestion button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+
+<!-- Trivia Questions -->
+					<div class="trivia-question">
+
+						<!-- Trivia Question -->
+						<div class="input-container trivia-question-input">
+							<label class="is-required trivia-input-title">Question</label>
+						  <input type="text" placeholder="Text and/or Image" />
+						  <input type="file" id="trivia-question-image" />
+						  <i class="fa fa-camera"></i>
+						</div>
+
+						<!-- Trivia Choices -->
+						<div class="trivia-choices-image trivia-choices-textandimg">
+							
+								<div class="input-container">
+								    <label class="trivia-input-title">Choices<span> (expecterd image types: .jpg, .jpeg, .png)</span></label>
+								    <ul id="sortable" class="sortable-choices-imageText clearfix">
+
+								    	<!-- nth-child(1) -->
+								    	<li class='sortable-choice'>
+									    	<i class="fa fa-bars"></i>
+									    	<div class="trivia-choices-image-uploader">
+													<div class="trivia-choices-image-uploader-text">
+														<p>Drop Image Here</p>
+														<p>or</p>
+														<p>Click to Browse</p>
+														<i class="fa fa-cloud-upload"></i>
+													</div>
+													<div class="image-uploaded-options">
+															<i class="fa fa-trash-o"></i>
+													</div>
+													<div class='clickableDropzoneArea'></div>
+									    	</div>
+									    	<input class="choices" type="text" placeholder="Choice Text" />
+								    	</li>
+
+								    	<!-- nth-child(2) -->
+								    	<li class='sortable-choice'>
+									    	<i class="fa fa-bars"></i>
+									    	<div class="trivia-choices-image-uploader">
+													<div class="trivia-choices-image-uploader-text">
+														<p>Drop Image Here</p>
+														<p>or</p>
+														<p>Click to Browse</p>
+														<i class="fa fa-cloud-upload"></i>
+													</div>
+													<div class="image-uploaded-options">
+															<i class="fa fa-trash-o"></i>
+													</div>
+													<div class='clickableDropzoneArea'></div>
+									    	</div>
+									    	<input class="choices" type="text" placeholder="Choice Text" />
+								    	</li>
+
+											<!-- nth-child(3) -->
+								    	<li class='sortable-choice'>
+									    	<i class="fa fa-bars"></i>
+									    	<div class="trivia-choices-image-uploader">
+													<div class="trivia-choices-image-uploader-text">
+														<p>Drop Image Here</p>
+														<p>or</p>
+														<p>Click to Browse</p>
+														<i class="fa fa-cloud-upload"></i>
+													</div>
+													<div class="image-uploaded-options">
+															<i class="fa fa-trash-o"></i>
+													</div>
+													<div class='clickableDropzoneArea'></div>
+									    	</div>
+									    	<input class="choices" type="text" placeholder="Choice Text" />
+								    	</li>
+
+											<!-- nth-child(4) -->
+								    	<li class='sortable-choice'>
+									    	<i class="fa fa-bars"></i>
+									    	<div class="trivia-choices-image-uploader">
+													<div class="trivia-choices-image-uploader-text">
+														<p>Drop Image Here</p>
+														<p>or</p>
+														<p>Click to Browser</p>
+														<i class="fa fa-cloud-upload"></i>
+													</div>
+													<div class="image-uploaded-options">
+															<i class="fa fa-trash-o"></i>
+													</div>
+													<div class='clickableDropzoneArea'></div>
+									    	</div>
+									    	<input class="choices" type="text" placeholder="Choice Text" />
+								    	</li>
+
+								    </ul>
+								</div>
+
+						</div>
+						<div class="trivia-buttons clearfix">
+							<button class="trivia-back gotoSetup button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="trivia-next gotoOptions button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- Trivia Options -->
+					<div class="trivia-options">
+
+						<!-- Theme Colors -->
+						<div class="input-container trivia-colors">
+							<label class="trivia-input-title">Theme Colors</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="blue-theme round-input">
+						    	<input type="radio" value="10" id="blue-theme" name="colors" checked />
+									<label for="blue-theme">
+										<div class="input-label">Blue Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+
+								<div class="gray-theme round-input">
+						    	<input type="radio" value="10" id="gray-theme" name="colors">
+									<label for="gray-theme">
+										<div class="input-label">Gray Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="green-theme round-input">
+						    	<input type="radio" value="10" id="green-theme" name="colors">
+									<label for="green-theme">
+										<div class="input-label">Green Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="orange-theme round-input">
+						    	<input type="radio" value="10" id="orange-theme" name="colors">
+									<label for="orange-theme">
+										<div class="input-label">Orange Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+						    <div class="purple-theme round-input">
+						    	<input type="radio" value="10" id="purple-theme" name="colors">
+									<label for="purple-theme">
+										<div class="input-label">Purple Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="red-theme round-input">
+						    	<input type="radio" value="10" id="red-theme" name="colors">
+									<label for="red-theme">
+										<div class="input-label">Red Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+						</div>
+
+						<!-- Theme Textures -->
+						<div class="input-container trivia-textures">
+							<label class="trivia-input-title">Theme Textures</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="scallop round-input">
+						    	<input type="radio" value="10" id="scallop" name="textures" checked />
+									<label for="scallop">
+										<div class="input-label">Scallop</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+
+								<div class="burst round-input">
+						    	<input type="radio" value="10" id="burst" name="textures">
+									<label for="burst">
+										<div class="input-label">Burst</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="retro round-input">
+						    	<input type="radio" value="10" id="retro" name="textures">
+									<label for="retro">
+										<div class="input-label">Retro</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="edgy round-input">
+						    	<input type="radio" value="10" id="edgy" name="textures">
+									<label for="edgy">
+										<div class="input-label">Edgy</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+						    <div class="modern round-input">
+						    	<input type="radio" value="10" id="modern" name="textures">
+									<label for="modern">
+										<div class="input-label">Modern</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="rough round-input">
+						    	<input type="radio" value="10" id="rough" name="textures">
+									<label for="rough">
+										<div class="input-label">Rough</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+						</div>
+						
+						<!-- Trivia Creation Buttons -->
+						<div class="trivia-buttons clearfix">
+							<button class=" trivia-back gotoQuestion button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="trivia-next gotoSyndication button-highlight pull-right">Next Step<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- Trivia Syndication -->
+					<div class="trivia-syndication">
+						<div class="grid">
+							
+							<div class="col-1-1">
+								<img src="assets/img/org-selector.png" />
+							</div>
+
+
+							<!-- <div class="col-2-5">
+								<h3>Available Items</h3>
+								<select class="full-width transfer-list" name="" id="availableOrgs" multiple="">
+								<option value="6">Bugs Bunny</option><option value="4">Chuck Norris</option><option value="3">Curly</option><option value="7">George Jefferson</option><option value="1">Larry</option><option value="5">Micheal Jordan</option><option value="2">Moe</option></select>
+							</div>
+							<div class="col-1-5 transfer-buttons">
+								<button class="fa fa-angle-left transfer-button js-move-left" type="button"></button>
+								<button class="fa fa-angle-right transfer-button js-move-right" type="button"></button>
+								
+								<button class="fa fa-angle-double-left transfer-button js-move-all-left" type="button"></button>
+								<button class="fa fa-angle-double-right transfer-button js-move-all-right" type="button"></button>
+							</div>
+							<div class="col-2-5 nopadding">
+								<h3>Selected Items</h3>
+								<select class="full-width transfer-list" name="" id="selectedOrgs" multiple=""></select>
+							</div> -->
+						</div>
+
+
+        <!-- Trivia Creation Buttons -->
+						<div class="trivia-buttons clearfix">
+							<button class=" trivia-back gotoOptions button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="trivia-next gotoPublish button-highlight pull-right">Publish<i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- Trivia Publish -->
+					<div class="trivia-publish">
+
+						<div class="publish active visible">
+							<div class="published-message message attention">
+								<i class="fa fa-exclamation-circle"></i>
+								<p class="published-message-text">Your almost done.  Please review your completed trivia in the Live Preview to your left before publishing.  If you do miss something, you will always be able to update in the future.</p>
+							</div>
+						</div>
+
+						<!-- Trivia Published -->
+						<div class="published">
+							<div class="published-message">
+								<i class="fa fa-check-circle"></i>
+								<p class="published-message-text">Great Job, your trivia is published! Your trivia has been added to you widget.  We have provided you an embed code below for you to put your trivia on any webpage you would like too.</p>
+							</div>
+							<a href="#" class="embed-trivia-link pull-right">Go to embedded trivia widget<i class="fa fa-arrow-circle-right"></i></a>
+
+							<!-- Embed Code -->
+							<div class="trivia-embed-code">
+								<label class="trivia-input-title">Embed Code</label><button class="button"><i class="fa fa-files-o"></i></button>
+
+								<div class="module">
+									<code class="prettyprint prettyprinted">
+										&lt;iframe src='http://digitalivy.com/FUTACS' width='100%' height='300'&gt;&lt;p&gt;Your browser does not support iframes. Please visit &lt;a href='http://digitalivy.com/FUTACS'&gt;http://digitalivy.com/FUTACS&lt;/a&gt;.&lt;/p&gt;&lt;/iframe&gt;
+									</code>
+								</div>
+							</div>
+						</div>
+						
+						<div class="trivia-buttons clearfix">
+							<button class=" trivia-back gotoSyndication button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="publishButton button-highlight pull-right">Publish<i class="fa fa-cloud-upload"></i></button>
+						</div>
+
+						
+					</div>
+
+
+
+				</div>
+			</div>
+
+			<!-- Live Preview | Right Side -->
+			<div class="col-1-2 live-preview">
+				<label>Live Preview</label>
+				<div class="live-preview-area">
+					<p class="generation-text">Live Preview will generate when you add a question and choices.</p>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<!-- End Trivia Admin -->
+
+
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+
+	<script type="text/javascript" src="https://admin.tritondigital.com/dashboard/Javascript/jquery.hoverIntent.js"></script>
+	<script src="assets/js/scripts.min.js"></script>
+
+	<script>
+	(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+	(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+	l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXX-XX');
+	ga('send', 'pageview');
+	</script>
+
+  </body>
+</html>

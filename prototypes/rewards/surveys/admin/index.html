@@ -1,0 +1,623 @@
+<!doctype html> <html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Creation Admin</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+
+    <script src="js/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Main Content for Stand Alone -->
+    <!-- survey Admin -->
+    <div class="app-container">
+      <div id="surveyDashboard" class="dashboard-container">
+
+        <!-- survey Dashboard Header -->
+        <div id="createNewsurvey" class="container-sectioned no-padding">
+          <h1 class="pull-left">Surveys</h1>
+          <div id="surveyHeaderButtons" class="pull-right">
+            <!-- <button name="Get survey Widget Embed Code" class="button">
+              Get Survey Widget Embed Code
+            </button> -->
+            <a href="survey-creation.html" name="Create New survey" id="createsurvey-modal" class="button button-positive">
+              <i class="fa fa-plus"></i>
+              Create New Survey 
+            </a>
+          </div>
+        </div>
+
+        <!-- Delete survey -->
+        <div id="deleteinstance-dialog" title="Delete survey?" style="display:none;">
+          <div class="delete-instance-container">
+            <p>Are you sure you would like to delete this survey? This is a permanent action and you won't be able to get your survey back.</p>
+          </div>
+        </div>
+        <!-- End survey Dashboard Header -->
+
+        <!-- survey Dashboard survey List -->
+        <div class="grid">
+          <div class="surveyListTable full-width">
+            <div id="survey-dashboard">
+
+              <!-- survey List Header -->
+              <div class="toolbar nopadding">
+
+                <!-- Search Field -->
+                <div class="insert-into pull-left">
+                  <i class="fa fa-search"></i>
+                  <input class="search" type="text" placeholder="Search for survey" />
+                </div>
+                <!-- End Search Field -->
+
+                <!-- Filter Toggle -->
+                <div class="instance-list-filter survey-list-filter pull-right">
+
+                  <!-- Filter Toggle Switch -->
+                  <div class="toggle">
+                    <input id="toggle-surveyFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+                    <label class="toggle-container" for="toggle-surveyFilter">
+                      <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                      <span class="toggle-handle"></span>
+                    </label>
+                  </div>
+                  <!-- End Filter Toggle Switch -->
+
+                  <a href="#" class="filter-instance filter-survey ">
+                    Filter Options
+                    <i class="fa fa-caret-down"></i>
+                  </a>
+
+                  <!-- Filter Section -->
+                  <form class="filters">
+                    <div class="filters-heading">
+                      <!-- Filter Toggle | THIS STILL NEEDS DESIGN-->
+                      <h3 class="filters-header nomargin">Filter Options</h3>
+                    </div>
+                    <h4 class="filter-heading"Ssurvey Types</h4>
+                    <div class="input-container checkbox">
+                      <label><input type="checkbox">Syndicated survey</label>
+                    </div>
+                    <label>Survey Status</label>
+                    <div class="instance-status-filter survey-status-filter  input-container radio radio-inline">
+                      <label><input name="survey-status-filter" type="radio">All</label>
+                      <label><input name="survey-status-filter" type="radio">Active</label>
+                      <label><input name="survey-status-filter" type="radio">Inactive</label>
+                    </div>
+
+                    <div class="button-container">
+                        <input class="button" type="reset" value="Reset Filters">
+                        <button type="button" class="button-highlight">Filter</button>
+                    </div>
+
+                  </form>
+                  <!-- End Filter Section -->
+                </div>
+                <!-- End Filter Toggle -->
+              </div>
+              <!-- End survey List Header -->
+
+               <!-- survey List Table -->
+              <div class="table instance-table survey-table full-width">
+                <div class="table-header">
+                  
+                  <!-- Table Header -->
+                  
+                    <!-- Priority -->
+                    <span class="table-header-item instance-priority survey-priority th is-sortable">Priority <i class="fa fa-sort"></i></span>
+
+                    <!-- survey Title -->
+                    <span class="table-header-item instance-title survey-title th is-sortable">Survey Title <i class="fa fa-sort"></i></span>
+
+                    <!-- Start Date -->
+                    <span class="table-header-item instance-start survey-start th is-sortable">Start Date <i class="fa fa-sort"></i></span>
+
+                    <!-- End Date -->
+                    <span class="table-header-item instance-end survey-end th is-sortable">End Date <i class="fa fa-sort"></i></span>
+
+                    <!-- View Report -->
+                    <!-- <span class="table-header-item survey-report th"></span> -->
+                  
+                </div>
+                <!-- End Table Header -->
+
+                <div id="sortable">
+                  
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">1</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">2</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">3</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">4</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">5</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">6</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default is-syndicated is-stealth">
+                    
+                    <div class="instance-priority survey-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">7</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="instance-title survey-title">
+                      <p>survey Title</p>
+                      <p class="survey-id">BVMXXI</p>
+                    </div>
+
+                    <div class="instance-start survey-start">
+                      <p>05/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-end survey-end">
+                      <p>06/08/2015</p>
+                      <p class="survey-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="instance-report survey-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-instance-report view-survey-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-instance animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Survey</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-instance animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Survey</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- End survey Admin -->
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://admin.tritondigital.com/dashboard/Javascript/jquery.hoverIntent.js"></script>
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>

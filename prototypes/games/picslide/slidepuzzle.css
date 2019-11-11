@@ -1,0 +1,490 @@
+.see-widget-slidepuzzle {
+  height: 565px;
+  width: 500px;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif; }
+  .see-widget-slidepuzzle div {
+    box-sizing: border-box; }
+  .see-widget-slidepuzzle p, .see-widget-slidepuzzle h1, .see-widget-slidepuzzle h2, .see-widget-slidepuzzle h3, .see-widget-slidepuzzle li {
+    font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif; }
+  .see-widget-slidepuzzle .see-status {
+    height: 20px; }
+  .see-widget-slidepuzzle .see-video-ad {
+    width: 500px;
+    height: 540px;
+    background: rgba(0, 0, 0, 0.4); }
+  .see-widget-slidepuzzle .see-board {
+    width: 500px;
+    height: 565px;
+    clear: both;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #FFF; }
+  .see-widget-slidepuzzle .see-footer {
+    color: #FFFFFF;
+    display: none;
+    height: 65px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    display: none;
+    top: initial;
+    background: #df6d2a; }
+    .see-widget-slidepuzzle .see-footer .see-newgame-wrapper {
+      position: relative;
+      float: left;
+      padding: 5px 20px;
+      margin: 10px 0px;
+      border-right: solid 1px #ba561c; }
+      .see-widget-slidepuzzle .see-footer .see-newgame-wrapper img {
+        margin-top: 4px;
+        cursor: pointer; }
+    .see-widget-slidepuzzle .see-footer .see-howto-wrapper {
+      position: relative;
+      float: left;
+      padding: 5px 20px;
+      margin: 10px 0px; }
+      .see-widget-slidepuzzle .see-footer .see-howto-wrapper img {
+        margin-top: 4px;
+        cursor: pointer; }
+    .see-widget-slidepuzzle .see-footer .see-moves-wrapper {
+      position: relative;
+      float: right;
+      padding: 3px 13px 6px 13px;
+      background-color: #ad501a;
+      text-align: center;
+      font-size: 0.9em; }
+      .see-widget-slidepuzzle .see-footer .see-moves-wrapper .see-moves-digit {
+        position: relative;
+        display: block;
+        float: left;
+        background-color: #803c13;
+        width: 30px;
+        height: 34px;
+        text-align: center;
+        margin-left: 1px;
+        margin-top: 5px;
+        overflow: hidden;
+        line-height: 34px; }
+        .see-widget-slidepuzzle .see-footer .see-moves-wrapper .see-moves-digit .see-moves-digit-1,
+        .see-widget-slidepuzzle .see-footer .see-moves-wrapper .see-moves-digit .see-moves-digit-2,
+        .see-widget-slidepuzzle .see-footer .see-moves-wrapper .see-moves-digit .see-moves-digit-3 {
+          position: relative;
+          top: 0px;
+          color: white;
+          font-size: 2em;
+          font-weight: bold; }
+    .see-widget-slidepuzzle .see-footer button {
+      margin: 13px;
+      padding: 0px 10px 0px 40px;
+      border: 0;
+      width: initial;
+      height: inital;
+      float: left;
+      text-align: center;
+      line-height: 40px;
+      font-size: 15px;
+      display: block;
+      color: white;
+      font-weight: normal;
+      position: relative;
+      top: 0px;
+      cursor: pointer;
+      outline: none;
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      background-color: #ad501a;
+      border-radius: 6px; }
+      .see-widget-slidepuzzle .see-footer button:hover {
+        background-color: #eeb390;
+        color: white; }
+      .see-widget-slidepuzzle .see-footer button:active {
+        background-color: #eeb390;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        color: white; }
+    .see-widget-slidepuzzle .see-footer button.see-shuffle {
+      background-image: url("img/history-1.png"); }
+    .see-widget-slidepuzzle .see-footer button.see-help {
+      background-image: url("img/binoculars-1.png");
+      left: 0px;
+      border: none; }
+    .see-widget-slidepuzzle .see-footer button.see-howto {
+      width: 166px;
+      left: 334px; }
+  .see-widget-slidepuzzle .see-piece {
+    position: absolute;
+    text-indent: 0px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    line-height: 100px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer; }
+    .see-widget-slidepuzzle .see-piece .see-piece-hint {
+      display: none; }
+  .see-widget-slidepuzzle .see-piece-hole {
+    display: none; }
+  .see-widget-slidepuzzle .see-piece.see-first {
+    clear: both; }
+  .see-widget-slidepuzzle .see-modal {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 500px;
+    height: 565px;
+    background: linear-gradient(to bottom, rgba(142, 66, 21, 0.9), rgba(75, 35, 11, 0.9)); }
+    .see-widget-slidepuzzle .see-modal h3 {
+      color: #eeb390;
+      font-size: 1.9em;
+      padding: 0;
+      margin: 0; }
+    .see-widget-slidepuzzle .see-modal p {
+      margin: 0;
+      padding: 0;
+      font-size: 1.3em;
+      color: white; }
+    .see-widget-slidepuzzle .see-modal .see-newgame {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+      .see-widget-slidepuzzle .see-modal .see-newgame .see-logo {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        margin: 20px auto;
+        width: 100%;
+        background: none;
+        color: white;
+        font-family: "Arial Rounded MT Bold";
+        font-size: 4.5em;
+        text-align: center;
+        text-shadow: -4px 4px rgba(0, 0, 0, 0.2); }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-logo .blue {
+          color: #eeb390; }
+      .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper {
+        position: relative;
+        height: 300px;
+        margin: 0px 20px;
+        width: 460px;
+        background: white;
+        border-radius: 6px;
+        box-shadow: -5px 5px rgba(0, 0, 0, 0.2); }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-start {
+          position: relative;
+          left: 20px;
+          border-bottom: 1px solid #eeb390;
+          color: #eeb390;
+          font-size: 30px;
+          height: 60px;
+          line-height: 60px;
+          position: absolute;
+          text-align: center;
+          top: 0px;
+          width: 420px; }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button {
+          background-position: center 18px;
+          background-repeat: no-repeat;
+          color: black;
+          display: block;
+          height: 200px;
+          padding: 130px 18px 18px 18px;
+          position: absolute;
+          text-align: center;
+          top: 80px;
+          width: 143px;
+          cursor: pointer;
+          border-radius: 6px; }
+          .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button .see-points-value {
+            border-radius: 6px;
+            display: block;
+            margin: 10px auto;
+            padding: 3px 0px;
+            width: 85px;
+            color: white;
+            font-size: 1.1em; }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button:hover, .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button:active {
+          background-color: #f6d7c5;
+          color: black; }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.easy {
+          left: 20px;
+          background-image: url("http://10.1.4.108/app/public/images/puzzles/diff-easy.png"); }
+          .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.easy .see-points-value {
+            background: #64c623; }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.medium {
+          left: 159px;
+          background-image: url("http://10.1.4.108/app/public/images/puzzles/diff-med.png"); }
+          .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.medium .see-points-value {
+            background: #f1890c; }
+        .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.hard {
+          left: 298px;
+          background-image: url("http://10.1.4.108/app/public/images/puzzles/diff-hard.png"); }
+          .see-widget-slidepuzzle .see-modal .see-newgame .see-start-wrapper .see-button.hard .see-points-value {
+            background: #f21d0b; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-logo {
+      position: relative;
+      left: 0px;
+      top: 0px;
+      margin: 20px auto;
+      width: 65%;
+      background: none;
+      color: white;
+      font-family: "Arial Rounded MT Bold";
+      font-size: 3.5em;
+      text-align: center;
+      text-shadow: -4px 4px rgba(0, 0, 0, 0.2);
+      border-bottom: solid 1px #eeb390; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-logo .blue {
+        color: #eeb390; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-solved {
+      position: relative;
+      width: 100%;
+      top: 0px;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      color: white;
+      font-size: 3em;
+      font-weight: bold; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-solved img {
+        bottom: -5px;
+        position: relative;
+        margin-right: 11px; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-results {
+      background: #ad501a;
+      color: #FFFFFF;
+      font-size: 80px;
+      height: 150px;
+      left: 0px;
+      letter-spacing: initial;
+      line-height: initial;
+      position: relative;
+      text-align: center;
+      top: 0px;
+      width: 80%;
+      border-radius: 6px;
+      margin: 10px auto;
+      box-shadow: -5px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper {
+        position: relative;
+        float: left;
+        padding: 8px 13px 7px 13px;
+        text-align: center;
+        font-size: .25em;
+        width: 50%;
+        height: 100%;
+        border-right: solid 1px #d96521; }
+        .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper .see-moves-digit {
+          position: relative;
+          display: block;
+          float: left;
+          background-color: #803c13;
+          width: 56px;
+          height: 70px;
+          text-align: center;
+          margin-left: 1px;
+          margin-top: 8px;
+          overflow: hidden; }
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper .see-moves-digit .see-moves-digit-1,
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper .see-moves-digit .see-moves-digit-2,
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper .see-moves-digit .see-moves-digit-3 {
+            position: relative;
+            top: 0px;
+            color: white;
+            font-size: 2.7em;
+            font-weight: bold;
+            line-height: 70px; }
+        .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-moves-wrapper .see-completion-time {
+          display: block;
+          color: #eeb390;
+          font-size: 0.9em;
+          margin-top: 8px;
+          float: left;
+          width: 100%; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level {
+        position: relative;
+        float: right;
+        width: 50%;
+        height: 100%;
+        border-left: solid 1px #803c13;
+        font-size: .18em; }
+        .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level .see-results-stars {
+          position: relative;
+          width: 100%;
+          height: 50px;
+          font-size: initial;
+          top: 30px; }
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level .see-results-stars span {
+            margin: 0px 5px;
+            background: url("img/star-2b.png");
+            width: 42px;
+            height: 40px;
+            display: inline-block; }
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level .see-results-stars .filled {
+            background: url("img/star-2.png"); }
+        .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level .see-results-text {
+          position: relative;
+          width: 100%;
+          height: 50px;
+          top: 40px; }
+          .see-widget-slidepuzzle .see-modal .see-complete .see-results .see-results-level .see-results-text span {
+            display: inline-block;
+            color: #FEF900;
+            text-transform: uppercase;
+            font-size: 1.2em; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-options button {
+      margin: 20px auto;
+      padding: 15px 20px 15px 50px;
+      border: 0;
+      text-align: center;
+      font-size: 1.3em;
+      display: block;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-position: 20px center;
+      background-color: #ad501a;
+      border-radius: 6px;
+      box-shadow: -5px 5px rgba(0, 0, 0, 0.2); }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-options button:hover {
+        color: white; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-options button:active {
+        background-color: #eeb390;
+        background-repeat: no-repeat;
+        background-position: 20px center;
+        color: white; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-options button.see-play-again {
+      background-image: url("img/history-1.png");
+      background-color: #64c623; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-options button.see-choose-difficulty {
+      background-image: url("img/window-1.png");
+      background-color: #eeb390; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-button.playagain {
+      top: 440px; }
+    .see-widget-slidepuzzle .see-modal .see-complete .see-button.see-share {
+      top: 390px;
+      background: #f6d7c5; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-button.see-share .see-icon {
+        color: #FFFFFF;
+        font-family: 'FontAwesome';
+        font-size: 25px;
+        position: absolute;
+        right: 25px;
+        top: 0; }
+      .see-widget-slidepuzzle .see-modal .see-complete .see-button.see-share .see-icon:before {
+        content: "\f082"; }
+    .see-widget-slidepuzzle .see-modal .see-howto {
+      position: relative;
+      padding: 30px;
+      font-size: 1em; }
+      .see-widget-slidepuzzle .see-modal .see-howto span.see-close {
+        position: relative;
+        color: #eeb390;
+        font-size: 2em;
+        font-family: 'FontAwesome';
+        cursor: pointer;
+        float: right; }
+      .see-widget-slidepuzzle .see-modal .see-howto .see-howto-wrapper {
+        position: relative;
+        padding: 20px;
+        width: 100%;
+        border: solid 1px #eeb390;
+        font-size: 0.8em;
+        top: 60px; }
+        .see-widget-slidepuzzle .see-modal .see-howto .see-howto-wrapper h3 {
+          color: #eeb390;
+          font-weight: bold;
+          padding-top: 0px;
+          text-align: left;
+          font-size: 3em; }
+        .see-widget-slidepuzzle .see-modal .see-howto .see-howto-wrapper p {
+          color: white; }
+      .see-widget-slidepuzzle .see-modal .see-howto span.see-close:before {
+        content: "\f057"; }
+    .see-widget-slidepuzzle .see-modal .see-messagemodal {
+      text-align: center; }
+      .see-widget-slidepuzzle .see-modal .see-messagemodal h3 {
+        margin: 150px 0 10px;
+        font-size: 3em;
+        font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif; }
+      .see-widget-slidepuzzle .see-modal .see-messagemodal a {
+        color: #f6d7c5;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: bold; }
+  .see-widget-slidepuzzle .see-login {
+    display: none;
+    position: absolute;
+    top: 575px;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 500px;
+    color: #656565;
+    background: #D5F1FF; }
+    .see-widget-slidepuzzle .see-login a {
+      color: #f6d7c5;
+      text-decoration: underline;
+      cursor: pointer; }
+
+.see-widget-slidepuzzle.see-needtologin {
+  height: 625px; }
+  .see-widget-slidepuzzle.see-needtologin .see-login {
+    display: block; }
+
+.see-widget-slidepuzzle.modal .piece {
+  -webkit-filter: blur(9px);
+  -moz-filter: blur(9px);
+  -o-filter: blur(9px);
+  -ms-filter: blur(9px);
+  filter: blur(9px); }
+
+.see-widget-slidepuzzle.see-solved .piece,
+.see-widget-slidepuzzle.see-solved .board.help .piece {
+  text-indent: 200px; }
+
+.see-widget-slidepuzzle.size-3 .see-board {
+  width: 498px;
+  height: 498px;
+  margin: 0px 1px 1px 0px; }
+.see-widget-slidepuzzle.size-3 .see-piece {
+  width: 166px;
+  height: 166px;
+  line-height: 166px;
+  font-size: 60px; }
+
+.see-widget-slidepuzzle.size-4 .see-piece {
+  width: 125px;
+  height: 125px;
+  line-height: 125px;
+  font-size: 50px; }
+
+.see-widget-slidepuzzle.size-5 .see-piece {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px; }
+
+.see-widget-slidepuzzle.see-help .see-piece .see-piece-hint {
+  background-color: rgba(51, 146, 224, 0.9);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .6em;
+  text-shadow: none;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  line-height: 50px; }
+.see-widget-slidepuzzle.see-help .see-footer button.see-help {
+  background-color: #3392e0; }

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listen and Win Widget Admin</title>
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/campaign.css">
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/list.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="app-container">
+    <div class="admin-container">
+        
+        <div class="container">
+            <h1 class="nomargin"><i onclick="location.href='./index.html'" class="is-clickable fa fa-chevron-circle-left"></i> Create New Listen and Win</h1>
+            <div class="creation-type"><i>Single Instance</i></div>
+        </div>
+        
+
+        
+<div class="container-sectioned">
+    <ul id="breadCrumbs" class="zerolist u-display-flex breadcrumbs">
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-active">Setup</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Schedule & Answer(s)</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Publish</a></li>
+    </ul>
+</div>
+
+<div class="grid grid--fixed">
+    <div class="col-1-2" style="overflow: hidden">
+        <div class="u-display-flex sections" id="campaignSections">
+            <div id="setupSection" class="js-subSection section is-active"><div class="input-container widget-title">
+    <label class="is-required width-1-1">Listen and Win Name</label>
+    <input id="titleEntry" class="width-1-1" type="text" autofocus/>
+</div>
+<div class="input-container widget-description">
+    <label class="width-1-1">Listen and Win Description</label>
+    <textarea id="descpritionEntry" class="width-1-1" name="" cols="30" rows="6"></textarea>
+</div>
+
+<div class="input-container widget-points">
+    <label class="is-required width-1-1">Points</label>
+    <input id="pointAmount" class="width-1-3" type="number" autofocus/>
+</div>
+
+<div class="input-container widget-category">
+    <label class="is-required width-1-1">Category</label>
+    <select name="" id="">
+        <option value="">--Select Category--</option>
+        <option value="">On Air</option>
+        <option value="">Artist of the Day</option>
+        <option value="">Bonus Code</option>
+        <option value="">Read and Win</option>
+        <option value="">Song of the Day</option>
+        <option value="">Watch Click & Win</option>
+        <option value="">Word of the Day</option>
+        <option value="">Word that Wins</option>
+        <option value="">Word on the Street</option>
+    </select>
+</div>
+
+<div class="input-container checkbox">
+    <label><input type="checkbox"> Stealth? Hide Listen and Win in List?</label>
+</div>
+
+<div class="container">
+    <label>Image</label>
+    <div style="font-size: 11px"><i>(Recommended Image Size is X x X)</i></div>
+
+    <div id="brandLogo" class="input-container">
+        <div id="dropZoneLogo" class="js-dropZone dz-clickable upload upload--drop" data-message="Drag and Drop, or click to upload image">
+            <div class="upload__remove">
+                <i class="upload__remove-icon fa fa-trash-o fa-4x" data-target="logo"></i>
+            </div>
+        </div>
+    </div>
+    <div id="brandText" class="input-container" style="display: none">
+        <label class="is-required">Brand Name</label>
+        <input id="brandEntry" placeholder="Enter Brand's Name" class=" width-4-5" type="text">
+    </div>
+</div>
+
+            </div>
+            <div id="moduleSection" class="js-subSection section"><div class="grid">
+    <div class="input-container col-1-2">
+        <label class="is-required">Start Time</label>
+        <input class="js-datePicker width-4-5" type="text">
+    </div>
+
+    <div class="input-container col-1-2">
+        <label class="is-required">End Time</label>
+        <input class="js-datePicker width-4-5" type="text">
+    </div>
+</div>
+
+<div class="grid">
+    <div class="input-container col-1-2">
+        <label for="" class="is-required">Answer</label>
+        <input class="width-4-5" type="text">
+    </div>
+    <div class="input-container col-1-2">
+        <label for="" class="is-required">Match String [1-3 Characters]</label>
+        <input class="width-1-3" type="text">
+    </div>
+</div>
+
+            </div>
+            <div id="designSection" class="js-subSection section"><div id="prePublishContainer" class="published-message message attention">
+	<i class="published-message-icon fa fa-exclamation-circle fa-4x"></i>
+	<p class="published-message-text">Your almost done.  Please review your completed poll in the Live Preview to your left before publishing.  If you do miss something, you will always be able to update in the future.</p>
+</div>
+
+<div id="publishedContainer" class="published u-is-hidden">
+	<div class="published-message">
+		<i class="published-message-icon fa fa-check-circle fa-4x animated bounceInLeft positive"></i>
+		<p class="published-message-text">Great Job, your listen and win is published! Your listen and win has been added to your widget.  We have provided you a direct link below for you to put your listen and win on any webpage you would like too.</p>
+	</div>
+
+    <div>
+        <div class="u-display-flex u-display-flex--vcentered u-mb10">
+            <label class="u-mr5" for="">Embed Code</label>
+            <button class="button button-small"><i class="fa fa-copy"></i></button>
+        </div>
+    	<div class="module">
+    		<code class="prettyprint prettyprinted prettyprint--blank">&lt;div class="see-widget" data-see-type="listeningappointment" data-see-listenid="593eaa189ed2267a0a8b4569"&gt;&lt;/div&gt;</code>
+    	</div>
+    </div>
+    <div>
+        <div class="u-display-flex u-display-flex--vcentered u-mb10">
+            <label class="u-mr5" for="">View Listen and Win on Engagement Site</label>
+        </div>
+    	<div class="module">
+			<a href="http://atlantasrock2.listenernetwork.com/asp2/CodeDetail.aspx?type=2&Code" target="_blank">http://atlantasrock2.listenernetwork.com/asp2/CodeDetail.aspx?type=2&Code</a>
+    	</div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="u-display-flex">
+            <button class="button-highlight js-buttonShift" data-button="Previous">Previous Step</button>
+            <button class="u-flex-right button-highlight js-buttonShift" data-button="Next">Next Step</button>
+            <button class="u-flex-right u-is-hidden button-highlight js-buttonPublish" data-button="Publish">Publish</button>
+        </div>
+    </div>
+    <div class="col-1-2">
+        <label>Live Preview</label>
+        <div id="livePreview" class="widget-preview" data-empty="Live Preview will generate when you add a title.">
+
+        </div>
+    </div>
+</div><div id="createNew" title="Create New Listen and Win" style="display:none;">
+    <div class="u-display-flex u-space-around">
+        <a class="create-button" href="./create.html">
+          <i class="u-mb10 create-button__icon fa fa-calendar"></i>
+          <span class="create-button__title">Single Instance</span>
+          <p class="create-button__desc">For one off listen and win modules</p>
+        </a>
+        <a class="create-button" href="./create_recurring.html">
+          <i class="u-mb10 create-button__icon fa fa-refresh"></i>
+          <span class="create-button__title">Recurring Set</span>
+          <p class="create-button__desc">Extends across a number of days or weeks</p>
+        </a>
+    </div>
+</div>
+
+<div id="changeAnswer" title="Change Answer" style="display:none;">
+    <div class="grid">
+        <div class="input-container col-1-2">
+            <label class="is-required" for="Answer">Answer</label>
+            <input class="js-answerInput width-1-1" type="text">
+        </div>
+        <div class="input-container col-1-2">
+            <label class="is-required" for="Match">Match String[1-3 Characters]</label>
+            <input class="js-matchInput width-2-5" type="text" maxlength="3">
+        </div>
+    </div>
+</div>
+<div id="deactivateRecurring" title="Deactivate Set?" class="u-overflow-hidden" style="display:none;">
+    <div class="container">
+        <p>You currently have future answers scheduled for this recurring set. Are you sure you want to deactivate?</p>
+        <label for="">Warning: this cannot be undone</label>
+        <small><i>Please check the boxes to verify the ramifications of deactivating this set</i></small>
+    </div>
+    <div class="message error js-errorMessage u-is-hidden">Please check the boxes below to confirm</div>
+    <div class="input-container checkbox">
+        <label class="is-clickable"><input class="js-verifyCheck" type="checkbox" name="deleteInstance"> All future answers will be deleted</label>
+        <label class="is-clickable"><input class="js-verifyCheck" type="checkbox" name="deleteInstance"> You will not be able to edit this set</label>
+        <label class="is-clickable"><input class="js-verifyCheck" type="checkbox" name="deleteInstance"> Answer slots will stop being created</label>
+    </div>
+</div>
+<div id="deleteSingle" title="Delete Instance?" style="display:none;" class="u-overflow-hidden">
+    <div>
+        <p>Are you sure you want to delete this instance? The delete action can’t be undone and all your listen and win content will be permanently gone.</p>
+    </div>
+</div>
+
+<div id="recreateDates" title="Confirm Date Change" style="display:none;" class="u-overflow-hidden">
+    <div>
+        <p>By removing this date, your answers will shift to new dates based on the remaining days you have selected. Your answers and match strings will not be removed</p>
+        <table class="width-1-1 table--change">
+            <thead>
+                <tr>
+                    <th>Original Date</th>
+                    <th>New Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell has-arrow">6/1/2017 Thu</i></td>
+                    <td>6/19/2017 Mon</td>
+                </tr>
+                <tr>
+                    <td class="cell has-arrow">6/8/2017 Thu</td>
+                    <td>6/20/2017 Tue</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+    <div class="js-statusMessage status-message u-is-hidden"></div>
+    <div class="js-loader overlay overlay--flex u-is-hidden">
+        <div class="loader" data-loading-message=""></div>
+    </div>
+</div>
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script src="dropzone.js"></script>
+<script src="jquery.datetimepicker.full.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

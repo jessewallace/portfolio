@@ -1,0 +1,358 @@
+// *************************************
+//
+//   Sudoku Boards
+//   Styles for Normal and Express
+//
+// *************************************
+
+// -------------------------------------
+//   Universal Board Styles
+// -------------------------------------
+.sudoku-board {
+	width: 406px;
+	margin: 15px auto 0;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sudoku-board-symbol {
+	width: 60px;
+	height: 111px;
+
+	position: absolute;
+	top: 175px;
+
+	background-image: url(../images/board_symbol_left_and_right.png);
+	z-index: 0;
+
+	&--left {
+		left: -15px;
+	}
+
+	&--right {
+		right: -15px;
+	}
+}
+
+.sudoku-tile {
+	display: inline-block;
+	position: relative;
+	margin: 1.5px;
+
+	background: #fff;
+	border-radius: 8px;
+	box-sizing: border-box;
+	color: $board-text-blue;
+	cursor: pointer;
+	vertical-align: top;
+	overflow: hidden;
+
+	&--normal {
+		width: 42px;
+		height: 42px;
+
+		padding-top: 4px;
+
+		font-size: 30px;
+		line-height: 30px;
+		text-align: center;
+
+		&.sudoku-tile--targeted, &.sudoku-tile--targeted-note {
+			padding-top: 6px;
+		}
+
+		&.sudoku-tile-value {
+			line-height: 30px;
+		}
+	}
+
+	&--express {
+		width: 64px;
+		height: 64px;
+
+		padding-top: 6px;
+
+		font-size: 45px;
+		line-height: 45px;
+		text-align: center;
+
+		&.sudoku-tile--targeted, &.sudoku-tile--targeted-note {
+			padding-top: 9.5px;
+		}
+
+		&.sudoku-tile-value {
+			line-height: 45px;
+		}
+	}
+
+	&--targeted {
+		vertical-align: middle;
+
+		&:not(.sudoku-tile--selected):after {
+			font-family: 'Flaticons Stroke';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+
+			content: '\e5a0';
+		}
+
+		&-note {
+			color: $dark-purple;
+			vertical-align: middle;
+
+			&:not(.sudoku-tile--selected-note):after {
+				font-family: 'Flaticons Stroke';
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+
+				content: '\e5a0';
+			}
+		}
+	}
+
+	&--selected {
+		border: 3px solid $purple;
+
+		&.sudoku-tile--normal {
+			padding-top: 1px;
+		}
+
+		&.sudoku-tile--express {
+			padding-top: 2px;
+		}
+
+		&-note {
+			border: 3px solid $button-blue;
+
+			&.sudoku-tile--normal {
+				padding-top: 1px;
+			}
+
+			&.sudoku-tile--express {
+				padding-top: 2px;
+			}
+		}
+	}
+
+	&--accent {
+		background: $board-blue;
+
+		// &.sudoku-tile--crosshair {
+		// 	background: darken($board-highlight-blue, 10%);
+
+		// 	&-note {
+		// 		background: darken($board-purple, 8%);
+		// 	}
+		// }
+	}
+
+	&--crosshair {
+		background: $board-highlight-blue;
+
+		&-note {
+			background: $board-purple;
+		}
+	}
+
+	&--highlight, &--highlight.sudoku-tile--crosshair, &--highlight.sudoku-tile--crosshair-note {
+		background: $yellow;
+	}
+
+	&--error, &--error.sudoku-tile--crosshair, &--error.sudoku-tile--crosshair-note {
+		background: $error;
+
+		.sudoku-tile-clear-number {
+			color: darken($error, 25%);
+		}
+	}
+}
+
+.sudoku-tile-clear-number {
+	position: absolute;
+	top: -3px;
+	right: -3px;
+
+	color: $error;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.sudoku-controls-divider {
+	width: 452px;
+	height: 13px;
+	margin: 6px auto 6px;
+
+	background-image: url(../images/bamboo_seperator_blue.png);
+
+	&--note-mode {
+		background-image: url(../images/bamboo_seperator_purple.png);
+	}
+
+	// -webkit-animation: slideInUp 1s ease-in-out;
+	// animation: slideInUp 1s ease-in-out;
+}
+
+.sudoku-number-buttons {
+	height: 43px;
+	margin: 10px 0;
+
+	line-height: 43px;
+	text-align: center;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // -webkit-animation: slideInUp 1s ease-in-out;
+    // animation: slideInUp 1s ease-in-out;
+}
+
+.sudoku-controls {
+	text-align: center;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // -webkit-animation: slideInUp 1s ease-in-out;
+    // animation: slideInUp 1s ease-in-out;
+}
+
+.sudoku-control {
+	display: inline-block;
+	vertical-align: middle;
+
+	&--icon {
+		width: 33px;
+		height: 24px;
+
+		margin: 0 20px;
+
+		background-image: url(../images/board_control_symbol.png);
+	}
+
+	&--timer {
+		color: $dark-blue;
+		font-size: 21px;
+		font-weight: bold;
+
+		i {
+			margin-right: 3px;
+			vertical-align: middle;
+		}
+	}
+
+	&--hints {
+		width: 120px;
+		height: 30px;
+
+		padding: 0 15px;
+
+		background-color: $dark-blue;
+		border-radius: 20px;
+		box-sizing: border-box;
+		cursor: pointer;
+		line-height: 33px;
+	}
+}
+
+.sudoku-hint {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+
+	margin-left: 3px;
+
+	background: $blue;
+	border-radius: 50%;
+	transition: all 0.3s ease-in 0s;
+
+	&--hint-1 {
+		margin-left: 8px;
+	}
+
+	&--used {
+		background: lighten($dark-blue, 9%); 
+	}
+}
+
+.sudoku-timer {
+	display: inline-block;
+	width: 51px;
+}
+
+.sudoku-time-penalty {
+	padding: 4px 6px 3px;
+
+	position: absolute;
+	bottom: 44px;
+	left: 52px;
+
+	background-color: $error;
+	border-radius: 20px;
+	font-family: sans-serif;
+	font-size: 13px;
+
+	i {
+
+		color: darken($error, 25%);
+		font-size: 15px;
+		vertical-align: middle;
+	}
+
+	.sudoku-arrow-down {
+		position: absolute;
+		left: 50%;
+		margin-top: 2px;
+		margin-left: -7px;
+
+		width: 0; 
+		height: 0; 
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		
+		border-top: 7px solid $error;
+	}
+}
+
+.sudoku-notes {
+	// margin-left: 4px;
+
+	line-height: 12px;
+	text-align: left;
+}
+
+.sudoku-note {
+	display: inline-block;
+	padding: 1px 0 1px 6.5px;
+	margin-top: -1.25px;
+
+	color: $board-highlight-purple;
+	font-size: 10px;
+	line-height: 10px;
+	vertical-align: top;
+
+	.sudoku-tile--selected &, .sudoku-tile--selected-note & {
+		padding: 1px 0 1px 5px;
+	}
+}
+
+
+

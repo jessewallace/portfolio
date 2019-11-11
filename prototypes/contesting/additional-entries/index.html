@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>DI-4963 Additional Entries</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="DI-4963 Additional Entries"/>
+    <meta name="keywords" content="Sweeps, Sweepstakes, Enter to Win, Win, Prize"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+    <meta property='fb:app_id' content='202863983093862'/>
+    <meta property='og:image' content='//library.listenernetwork.com/digitalivy/UGC_Client_Prod_99/Content/Images/default_thumb.png'/>
+    <meta property='og:description' content='Check out this sweepstakes contest!'/>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="//library.listenernetwork.com/digitalivy/UGC_Client_Prod_127/Content/css/global.min.css" useProxy="true"/>
+    <link id="theme-style" rel="stylesheet" type="text/css" media="screen" href="//library.listenernetwork.com/digitalivy/UGC_Client_Prod_99/Content/themes/base/style.css"/>
+    <link rel="stylesheet" type="text/css"  href="style.css" />
+    <script>
+        $(document).ready(function() {
+            var entryblocks = $('.entryblock').length;
+            var completedBlocks = 0;
+
+            var videoThumb = $('.js-video');
+            var videoWidth = videoThumb.outerWidth();
+            var numberOfVideos = videoThumb.length;
+            var gallery = $('.td-widget-videos');
+            var galleryWidth = gallery.width();
+            var maxShift = galleryWidth - videoWidth * 4;
+            var modalClose = $('.js-modalClose');
+
+            var amount = 0;
+
+            function move(selector, amount) {
+                $(selector).css({"-webkit-transform":"translateX(-" + amount + "px)"});
+            }
+
+            $('.td-widget-gallery__control').on('click',  function() {
+                var constant = videoWidth;
+
+                if($(this).hasClass('js-moveForward')){
+                    if(amount < maxShift) {
+                        amount = amount + constant;
+                        move('.td-widget-videos', amount);
+                    }
+                } else {
+                    if(amount > 0) {
+                        amount = amount - constant;
+                        move('.td-widget-videos', amount);
+                    }
+                }
+            });
+
+            videoThumb.on('click', function() {
+                $(this).parent().find( '.td-is-viewing' ).removeClass( 'td-is-viewing' );
+                $(this).find('.js-videoThumb').addClass('td-is-viewing');
+            });
+
+            $('.entryblock').click(function() {
+                var videoBlock = $(this).hasClass('entryblock--video')
+                var blockButton = $(this).find('.entryblock__button');
+
+                if (videoBlock) {
+                    $(this).toggleClass('is-active');
+                    $(this).next().toggleClass('is-opened')
+
+                    blockButton.html(blockButton.html() == 'Close' ? 'Watch' : 'Close');
+                } else {
+                    completedBlocks ++;
+
+                    var progressWidth = completedBlocks / entryblocks * 100 + '%';
+                    $(this).addClass('is-completed');
+
+                    if(completedBlocks <= entryblocks) {
+                        $('.js-progressCount').text(completedBlocks);
+                        $('.js-progressBar').css('width', progressWidth);
+                    }
+                }
+
+            });
+
+            $('.js-showPlaylist').click(function() {
+                $('.td-widget-gallery').toggleClass('is-opened');
+
+                $(this).html($(this).html() == 'Show Less <i class="fa fa-caret-up"></i>' ? 'Show Playlist (5) <i class="fa fa-caret-down"></i>' : 'Show Less <i class="fa fa-caret-up"></i>');
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//launch.newsinc.com/js/embed.js" id="_nw2e-js"></script>
+    <script type="text/javascript">
+        var _ndnq = _ndnq || [];
+
+    </script>
+</head>
+
+<body id="photo" class="home english contest-sweeps">
+    <div id="container-bg">
+        <div id="container-contest" class="clearfix">
+            <div id="container-header">
+                <div id="header">
+                    
+                    <h1><a href="">DI-4963 Additional Entries</a></h1>
+                    
+                </div>
+                <div id="navigation" class="sweeps"></div>
+            </div>
+
+            <div id="container-contentbg">
+                <div id="container-content">
+                    <div class="sweeps">
+                        <div class="pagetitle-container clearfix">
+                            <div class="share-widget ng-scope" ng-controller="SocialShareWidgetController">
+    <socialsharewidget>
+        <script type="text/javascript" src=""></script>
+        <div class="submission-controls clearfix" id="socialShareControlParentContainer">
+            <div class="container-social">
+                <button type="button" class="di-uix-button share-button ng-binding" ng-class="{'is-open': isSharePanelOpened}" ng-click="openSharePanel()">Share<i class="share-button__icn share-button__icn--share fa fa-share"></i></button>
+            </div>
+        </div>
+    </socialsharewidget>
+</div>
+
+                            <h1 class="pagetitle sweeps">Entry Confirmed!</h1>
+                        </div>
+                        <div class="contentblock clear">
+                            <p></p>
+                            <img src="">
+                        </div>
+                        <div class="contentblock">
+                            <p>Ready to achieve a healthier, happier lifestyle? Enter to win today!</p>
+                        </div>
+                        <div class="contentblock clear">
+                            <div class="panel"></div>
+                            <header class="panel-header is-padded">
+                                <h3 class="panel-title">Earn Additional Entries</h3>
+                                <div class="entry-progress">
+                                    <div class="progress__label"><span class="js-progressCount">0</span>/11 Additional Entries Claimed</div>
+                                    <div class="progress">
+                                        <span class="progress__bar js-progressBar"></span>
+                                    </div>
+                                </div>
+
+                            </header>
+                            <div class="panel-content">
+                                <div class="entryblocks">
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--video  ">
+        <div class="entryblock__title" data-instructions="1 additional entry per each video">Watch a series of videos</div>
+        <a class="entryblock__button">Watch</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+    <div class="entryblock__panel">
+        <div class="entryblock__panel-content">
+            <div class="ndn_embed" style="width:100%;" data-config-widget-id="2" data-config-type="VideoPlayer/Single" data-config-tracking-group="91206" data-config-playlist-id="507" data-config-video-id="29868153" data-config-site-section="ampcms"></div>
+            <div class="td-widget-gallery">
+                <div class="td-widget-gallery__control"><i class="fa fa-chevron-left"></i></div>
+                <div class="td-widget-video-container">
+                    <div class="td-widget-videos">
+                        
+                        <div class="td-widget-video js-video" data-video-id="29868343">
+                            <div class="td-widget-video__thumb js-videoThumb  td-has-viewed" data-viewing="Viewing" data-watch="Watched" style="background-image: url('http://thumbnail.newsinc.com/29868343.jpg')"></div>
+                            <div class="td-widget-video__info">
+                                <b class="td-widget-video__title">Clinton: 'Not Running for My Husband's 3rd Term'</b>
+                                <div class="td-widget-video__duration">3:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="td-widget-video js-video" data-video-id="29868153">
+                            <div class="td-widget-video__thumb js-videoThumb td-is-viewing " data-viewing="Viewing" data-watch="Watched" style="background-image: url('http://thumbnail.newsinc.com/29868153.jpg')"></div>
+                            <div class="td-widget-video__info">
+                                <b class="td-widget-video__title">Chris Young talks to Erin Andrews after the 14-inning win</b>
+                                <div class="td-widget-video__duration">1:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="td-widget-video js-video" data-video-id="29867166">
+                            <div class="td-widget-video__thumb js-videoThumb  " data-viewing="Viewing" data-watch="Watched" style="background-image: url('http://thumbnail.newsinc.com/29867166.jpg')"></div>
+                            <div class="td-widget-video__info">
+                                <b class="td-widget-video__title">It's Really Over for Emma Stone and Andrew Garfield</b>
+                                <div class="td-widget-video__duration">3:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="td-widget-video js-video" data-video-id="29864017">
+                            <div class="td-widget-video__thumb js-videoThumb  " data-viewing="Viewing" data-watch="Watched" style="background-image: url('http://thumbnail.newsinc.com/29864017.jpg')"></div>
+                            <div class="td-widget-video__info">
+                                <b class="td-widget-video__title">Jimmy Fallon Recreates His Gruesome Fall</b>
+                                <div class="td-widget-video__duration">3:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="td-widget-video js-video" data-video-id="29860602">
+                            <div class="td-widget-video__thumb js-videoThumb  " data-viewing="Viewing" data-watch="Watched" style="background-image: url('http://thumbnail.newsinc.com/29860602.jpg')"></div>
+                            <div class="td-widget-video__info">
+                                <b class="td-widget-video__title">TV presenter abandons program as Afghan earthquake hits</b>
+                                <div class="td-widget-video__duration">3:00</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="td-widget-gallery__control js-moveForward"><i class="fa fa-chevron-right"></i></div>
+            </div>
+            <button class="js-showPlaylist td-widget-gallery__button di-uix-button">Show Playlist (5) <i class="fa fa-caret-down"></i></button>
+        </div>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--pinterest  ">
+        <div class="entryblock__title" data-instructions="">Follow @atlantasrock on Pinterest</div>
+        <a class="entryblock__button">Follow</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--facebook  ">
+        <div class="entryblock__title" data-instructions="">Visit Atlanta's Rock Fanpage</div>
+        <a class="entryblock__button">Visit</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--twitter  ">
+        <div class="entryblock__title" data-instructions="">Follow @atlantasrock on Twitter</div>
+        <a class="entryblock__button">Follow</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--instagram  ">
+        <div class="entryblock__title" data-instructions="">Follow @atlantasrock on Instagram</div>
+        <a class="entryblock__button">Follow</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--youtube  ">
+        <div class="entryblock__title" data-instructions="">Watch a video on Youtube </div>
+        <a class="entryblock__button">Watch</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                    
+<div style="margin-bottom: 10px;">
+    <div class="entryblock entryblock--link  ">
+        <div class="entryblock__title" data-instructions="">Visit atlantasrock.com </div>
+        <a class="entryblock__button">Visit</a>
+        <i class="entryblock__check fa fa-check"></i>
+    </div>
+    
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="container-footer">
+                <p id="fancy-p-container">
+                    <div>DI-4963 Additional Entries</div>
+                    <a target='_blank' href=''>Terms of Service</a>
+                    | <a target='_blank' href=''>Privacy Policy</a>
+                    | <a id="fancyrules" class="fb-fancybox" href="#popup-rules">Official Contest Rules</a>
+                    | <a href="/AECSOV/Common/ContactUs?override_socialsite_disable=True">Contact Us</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

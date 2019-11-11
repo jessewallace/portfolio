@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Additional Entries Admin</title>
+    <link rel="stylesheet" href="http://admin.listenernetwork.dev/Contest/Content/PoisonIvy/css/digitalivy.css?cb=20161201_055626">
+    <link rel="stylesheet" href="http://admin.listenernetwork.dev/Contest/Content/PoisonIvy/css/bootstrap-dropdown.css?v=20161201_055626">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wizardBarItem { margin: 0 }
+    </style>
+</head>
+<body>
+    <div id="container" class="container">
+    <nav id="di-secondary">
+    <div class="wizardBarItem header clearfix" id="cc-header"><input type="button" id="navStartOver" class="button" value="Start Over" style="display:none">
+        <h1 class="name" id="contest-title-main">Additional Entries Admin</h1>
+        <div class="contest-indicator">
+            <i id="contest-type-main" class="contest-indicator-icon td-icon-click contest-indicator-icon--small"></i>
+            <span id="contest-type-title" class="contest-indicator-title">Sweeps - Click to Enter</span>
+        </div>
+        <div class="navigation-container">
+            <ul class="nav-horizontal nav centerme clearfix" id="cc-primary-nav">
+                <li class="nav-item nav-item--flow flowbtn prev">
+                    <a class="nav-link" href="#contestcreator/brackets/customvoting/1771972e-f57b-4900-a6ca-33a2f628b174/prev" id="prevStepNav"><i class="fa fa-chevron-left"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-nav" href="#contestcreator/brackets/customvoting/basicsettings/1771972e-f57b-4900-a6ca-33a2f628b174">Basic Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-nav" href="#contestcreator/brackets/customvoting/brackets/1771972e-f57b-4900-a6ca-33a2f628b174">Bracket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-nav" href="#contestcreator/brackets/customvoting/registration/1771972e-f57b-4900-a6ca-33a2f628b174">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-nav" href="#contestcreator/brackets/customvoting/designer/1771972e-f57b-4900-a6ca-33a2f628b174">Designer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-nav is-selected" href="#contestcreator/brackets/customvoting/othersettings/1771972e-f57b-4900-a6ca-33a2f628b174">Other Settings</a>
+                </li>
+                <li class="nav-item nav-item--action hover-parent" id="navPublishButtonContainer">
+                    <a class="nav-link nav-link--positive nav-link--toggle js-nav" href="#contestcreator/brackets/customvoting/publish/1771972e-f57b-4900-a6ca-33a2f628b174">Review &amp; Publish</a>
+                    <ul class="nav-dropdown list" id="navPublishDropMenu" role="menu" aria-labelledby="addFieldTrigger">
+                        <li class="list-item nav-dropdown-item">
+                            <a class="nav-dropdown-link" id="aDiscard"><i class="nav-dropdown-icn fa fa-times"></i> Discard Changes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item--flow flowbtn next" id="cc-topnav-next">
+                    <a class="nav-link flow next" href="#contestcreator/brackets/customvoting/1771972e-f57b-4900-a6ca-33a2f628b174/next" id="nextStepNav"><i class="fa fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div id="navSaveButtonContainer" class="container-group" style="display: none;">
+            <button type="button" id="navSaveButton" class="button-positive main-button">Save</button>
+            <button type="button" id="navSaveDrop" class="button-positive drop-button last" data-toggle="dropdown"><i class="fa fa-caret-down"></i></button>
+            <ul id="navSaveDropMenu" class="dropdown-menu pull-right" role="menu" aria-labelledby="addFieldTrigger">
+                <li>
+                    <a id="aSaveAndExit">Save &amp; Exit</a>
+                </li>
+                <li>
+                    <a id="aReviewAndPublish">Review &amp; Publish</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <div class="wrapper">
+            
+<ul class="tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+    <li class="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="othersettings-tabs-1" aria-labelledby="ui-id-1" aria-selected="false">
+        <a href="#othersettings-tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Email</a>
+    </li>
+    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="othersettings-tabs-2" aria-labelledby="ui-id-2" aria-selected="false">
+        <a href="#othersettings-tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Rules</a>
+    </li>
+    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="othersettings-tabs-3" aria-labelledby="ui-id-3" aria-selected="false">
+        <a href="#othersettings-tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Syndication</a>
+    </li>
+    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="othersettings-tabs-4" aria-labelledby="ui-id-4" aria-selected="false">
+        <a href="#othersettings-tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">Facebook</a>
+    </li>
+    <li optional-tab="twitter" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="othersettings-tabs-5" aria-labelledby="ui-id-5" aria-selected="false">
+        <a href="#othersettings-tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">Twitter<span class="pill tab-pill">BETA</span></a>
+    </li>
+    <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="othersettings-tabs-6" aria-labelledby="ui-id-6" aria-selected="true">
+        <a href="#othersettings-tabs-6" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6">Social Entries</a>
+    </li>
+    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="othersettings-tabs-7" aria-labelledby="ui-id-7" aria-selected="false">
+        <a href="#othersettings-tabs-7" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7">Expert Options</a>
+    </li>
+</ul>
+
+<div class="grid">
+    <div class="col-1-1">
+        <div class="u-display-flex u-display-flex--vcentered container">
+            <h3 class="nomargin">Social Entries</h3>
+            <div class="u-flex-right dropdown">
+                <button id="addButton" class="button-positive dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i> Add New Social Entry</button>
+                <ul class="dropdown-menu dropdown-menu--social">
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-facebook-square"></i> <span class="js-menuOption">Visit Facebook Fanpage</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-twitter"></i> <span class="js-menuOption">Follow Twitter Account</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-instagram"></i> <span class="js-menuOption">Follow Instagram Account</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-pinterest"></i> <span class="js-menuOption">Follow Pinterest Account</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-youtube"></i> <span class="js-menuOption">Watch Youtube Video</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-film"></i> <span class="js-menuOption">Watch Video Playlist</span></li>
+                    
+                    <li class="js-addButton"><i class="dropdown-menu__icon fa fa-link"></i> <span class="js-menuOption">Visit Website</span></li>
+                    
+                </ul>
+          </div>
+        </div>
+        <div id="socialContainer" class="container container--social is-empty">
+            <div id="emptyState" class="empty-state u-display-flex u-flex-column u-display-flex--vcentered">
+                <img class="empty-state__graphic u-mb20" src="http://tdascreative.com/playground/james/additionalentries/admin/images/AdditionalEntries_Graphic.png" alt="AdditionalEntries">
+                <h3 class="empty-state__headline">Create your first Social Entry</h3>
+                <span class="empty-state__tagline">To add your first social entry click the 'Add New' button above</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+        </div>
+    <div id="deleteDialog" title="Delete Module?" style="display:none;">
+    <p>Are you sure you would like to delete the selected module?</p>
+</div>
+<div id="first-time" style="display:none;">
+    <h2 class="center-text">Additional Social Entries</h2>
+    <p class="center-text">Promote sponsors or get more pageviews through social entry points. Adding a new entry method is easy as pie. Simply follow the steps below to start crafting the perfect content for your campaign.</p>
+    <hr>
+    <div class="onboarding">
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--a" style="background-image: url('https://admin.tritondigital.com/resources/contestfiles/onboarding/onboarding_img_social.png')"></div>
+            <p>Add a social entry by simply clicking the green "Add New Social Entry" button. You can add up to  'number amount' modules per contest.</p>
+        </div>
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--b" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img2.png')"></div>
+            <p>Simply add your content to your newly inserted module by using the input fields. Each module can be reordered or deleted.</p>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

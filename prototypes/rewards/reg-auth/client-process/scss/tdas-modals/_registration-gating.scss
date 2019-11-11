@@ -1,0 +1,69 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+
+// -------------------------------------
+//   Registration Gating
+// -------------------------------------
+
+.registration-widget-overlay {
+
+    &-modal-content {
+        width: 100%;
+        color: $primary-color;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        &-button-container {
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+
+            &-bordered {
+                border-top: 1px solid $divider-color;
+                height: 20px;
+                padding: 20px 0;
+            }
+        }
+
+        &-footer-container {
+            border-top: 1px solid $divider-color;
+            margin-top: 20px;
+            padding: 10px 0px;
+            width: 100%;
+        }
+
+        &-attention {
+            width: 100%;
+            text-align: center;
+
+            &::before {
+                position: relative;
+                top: 4px;
+
+                color: $attention-color;
+                content: '\f071  ';
+                font-family: FontAwesome;
+                font-size: 20px;
+            }
+
+            b {
+                color: $attention-color;
+            }
+        }
+    }
+}

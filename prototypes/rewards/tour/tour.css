@@ -1,0 +1,292 @@
+body {
+  margin: 0px;
+  background-image: url("img/bg-body.jpg");
+  overflow: hidden; }
+
+@-moz-document url-prefix() {
+  body{
+    background:lime;
+  }
+}
+
+button {
+  display: block;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  cursor: pointer;
+  z-index: 200; }
+
+p {
+  font-size: 1em;
+  margin: 0px; }
+
+.bg-container {
+  position: relative;
+  background-image: url("img/bg.png");
+  width: 1000px;
+  height: 1080px;
+  margin: 0px auto 0px auto; }
+
+.tour-mask {
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.8;
+  z-index: 100; }
+
+.tour-modal-wrapper {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 400px;
+  margin: 0px auto 0px auto;
+  z-index: 200; }
+
+.tour-modal-container {
+  top: 600px;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  position: relative;
+  margin: 0px auto 0px auto;
+  width: 410px;
+  height: inherit;
+  background: white;
+  padding: 70px;
+  border-color: #454545;
+  box-shadow: 0px 0px 20px; }
+
+.modal-avatar-wrapper {
+  position: absolute;
+  left: 0px;
+  top: -75px;
+  width: 100%;
+  height: 150px; }
+  .modal-avatar-wrapper .modal-avatar {
+    position: relative;
+    display: block;
+    height: 110px;
+    width: 130px;
+    margin: 0px auto 0px auto;
+    border-color: white;
+    border-width: 10px;
+    border-style: solid;
+    border-top-right-radius: 75px;
+    border-top-left-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-bottom-left-radius: 75px;
+    background: #ff6600;
+    color: white;
+    padding-top: 20px;
+    text-align: center; }
+
+.btn-back, .btn-next, .btn-close {
+  display: none;
+  position: absolute;
+  padding: 9px 30px 7px 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  top: 300px;
+  left: -15px;
+  width: 105px;
+  background: #999999;
+  border: none 1px #666666;
+  border-bottom: solid 4px gray;
+  color: white; }
+  .btn-back:hover, .btn-next:hover, .btn-close:hover {
+    background: gray;
+    border-bottom-color: #666666; }
+
+.btn-next {
+  display: none;
+  left: 460px;
+  background: #ff6600;
+  border: solid 1px #cc5200;
+  border-bottom: solid 4px #cc5200; }
+  .btn-next:hover {
+    background: #cc5200;
+    border-bottom-color: #993d00; }
+
+.btn-close {
+  color: black;
+  left: 460px;
+  background: #999999;
+  border: none 1px #666666;
+  border-bottom: solid 4px gray;
+  color: white; }
+  .btn-close:hover {
+    background: gray;
+    border-bottom-color: #666666; }
+
+.modal-headline, .modal-headline-r, .modal-headline-l {
+  position: relative;
+  color: #ff6600;
+  top: 10px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 1px #c0c0c0;
+  padding-bottom: 20px; }
+
+.modal-headline-r {
+  text-align: right;
+  top: 0px; }
+
+.modal-headline-l {
+  text-align: left;
+  top: 0px; }
+
+.modal-content-wrapper {
+  position: relative;
+  height: 310px;
+  overflow: hidden; }
+  .modal-content-wrapper .modal-content-container {
+    position: absolute;
+    left: 0px;
+    width: 2400px;
+    height: 100%; }
+  .modal-content-wrapper .modal-content-pane {
+    width: 410px;
+    float: left;
+    margin-right: 40px;
+    height: 100%;
+    position: relative; }
+  .modal-content-wrapper .button-lg {
+    position: relative;
+    display: block;
+    margin: 40px auto 20px auto;
+    padding: 17px 15px 13px 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1em;
+    width: 250px;
+    background: #ff6600;
+    border: solid 1px #cc5200;
+    border-bottom: solid 4px #cc5200; }
+    .modal-content-wrapper .button-lg:hover {
+      background: #cc5200;
+      border-bottom-color: #993d00; }
+  .modal-content-wrapper #go-profile {
+    display: none;
+    position: absolute;
+    clear: both;
+    bottom: -16px;
+    left: 80px; }
+  .modal-content-wrapper .skip-tour {
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #0066cc; }
+  .modal-content-wrapper .block-text-l, .modal-content-wrapper .block-text-r {
+    margin-top: 8px;
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: left;
+    font-size: 1em; }
+  .modal-content-wrapper .block-text-r {
+    float: right;
+    text-align: right; }
+  .modal-content-wrapper .img-r, .modal-content-wrapper .img-l {
+    height: 190px;
+    width: 190px;
+    float: right; }
+  .modal-content-wrapper .img-l {
+    float: left; }
+
+.arrow {
+  position: absolute;
+  z-index: 101; }
+
+#arrow-getpoints {
+  width: 64px;
+  height: 76px;
+  top: 40px;
+  left: -80px; }
+
+#arrow-usepoints {
+  width: 59px;
+  height: 76px;
+  top: 40px;
+  right: -80px; }
+
+#arrow-profile {
+  width: 76px;
+  height: 62px;
+  top: 55px;
+  left: 30px; }
+
+#arrow-myaccount {
+  width: 75px;
+  height: 62px;
+  top: 60px;
+  left: -30px; }
+
+.Container-Header {
+  position: relative;
+  width: 1000px;
+  height: 232px;
+  background: url("img/station-header.jpg");
+  margin: 0px auto 0px auto; }
+
+#userbar {
+  position: absolute;
+  bottom: 0px;
+  font-size: 14px;
+  width: 1000px;
+  display: block;
+  height: 40px;
+  color: white;
+  font-family: arial; }
+  #userbar #see_profile_menu {
+    z-index: 1;
+    position: absolute;
+    width: 315px;
+    display: block;
+    height: 20px;
+    top: 10px;
+    left: 10px; }
+
+.opensee {
+  text-decoration: underline;
+  margin: 0 0 0 7px;
+  cursor: pointer;
+  position: relative;
+  display: inline; }
+
+#menucontainer {
+  float: left;
+  height: inherit;
+  position: absolute;
+  left: 380px; }
+
+.dropheader {
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 15px 0 0;
+  text-align: center;
+  position: relative;
+  display: inline;
+  height: 20px;
+  padding: 12px 14px 8px 14px;
+  background: red;
+  cursor: pointer; }
+
+#logincontrol {
+  float: right;
+  position: relative;
+  right: 10px; }
+  #logincontrol .button {
+    position: relative;
+    z-index: 1;
+    padding: 6px;
+    background-color: red;
+    top: 7px;
+    float: right;
+    margin-left: 10px;
+    cursor: pointer; }

@@ -1,0 +1,22 @@
+.v1player-playing {
+    .player-content-wrapper {
+
+        .v1player-controls .v1player-control-playstop {
+            .fa-stop {
+                transform: rotateY(0deg);
+                -webkit-transform: rotateY(0deg);
+                transition: .4s .3s linear transform;
+                transition: .4s .3s linear -webkit-transform;
+
+            }
+
+            .fa-play {
+                transform: rotateY(90deg);
+                -webkit-transform: rotateY(90deg);
+                transition: .4s linear transform;
+                transition: .4s linear -webkit-transform;
+            }
+
+        }
+    }
+}

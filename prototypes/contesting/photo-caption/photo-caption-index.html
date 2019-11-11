@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Academy Awards Prediction</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Play our sweepstake for a chance to win!" />
+    <meta name="keywords" content="Sweeps, Sweepstakes, Enter to Win, Win, Prize" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- fix for IE9 rendering-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <script src="//library.listenernetwork.com/digitalivy/UGC_Client_Prod_2015-01-05_17-17-15/Scripts/global/header.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="//library.listenernetwork.dev/digitalivy/latest/Content/css/global.min.css" useproxy="true">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bracket-voting.css" useproxy="true">
+    
+    <link id="theme-style" useProxy="true" rel="stylesheet" type="text/css"  href="css/themes/academy/style.css" />
+    
+
+    
+<script>
+    $(document).ready(function() {
+        var contestTime = $('.contest-ends-block').text();
+        var pageTitle = $('.pagetitle').text();
+        var navigationHeight = $('#navigation').height();
+
+        $('#enterToWin').append('<h1 class="pagetitle">' + pageTitle + '</h1><span>' + contestTime + '</span>');
+
+
+        if(navigationHeight == 0) {
+            console.log('Hello');
+        } else {
+            $('.contentblock-main').css({'transform': 'none'})
+        }
+    });
+</script>
+
+</head>
+<body id="photo" class="home english contest-sweeps">
+
+<div id="container-bg">
+    <div id="container-contest" class="clearfix">
+    <div id="container-header">
+        <div id="header">
+            
+<a href="/Contest/CILBER">
+    <img src="http://tdascreative.com/james/images/academy/oscar_header.jpg" alt=""/>
+</a>
+
+        </div>
+        <div id="navigation" class="sweeps">
+        </div>
+    </div>
+    <div id="container-contentbg">
+        <div id="container-content"><div class="bracket-container bracket-layout-4 has-drawer" style="position: relative">
+    <div class="contest-views">
+        <div style="display: none">
+            <h1 class="pagetitle ng-binding">Welcome</h1>
+            <div class="textblock contentblock">
+                <div class="contentblock">Join our brackets challenge to compete against your friends for a chance to win!  Just sign in or register, select your teams before the tournament starts, and watch the games!</div>
+                <div>Check back after each round to see how your picks did and compare your standing on the leaderboard with other competitors!</div><!-- end ngIf: welcome.instructiontype -->
+            </div>
+        </div>
+    </div>
+    <div class="toolbar">
+        <div class="switch">
+            <input id="showPercentage" class="switch__input" type="checkbox" checked>
+            <label class="switch__toggle" for="showPercentage"></label>
+            <span class="switch__label">Show Vote Percentages</span>
+        </div>
+        <div class="user-help">
+            <span class="user-help__icn is-clicakble fa fa-question-circle fa-2x"></span>
+        </div>
+    </div>
+    <div id="emailVerification" class="message message--attention account-verification">
+        <div class="container--flexed">
+            <i class="fa fa-exclamation-triangle account-verification__icn"></i>
+            <span class="account-verification__message">Thank you for registering! Before you can vote you will need to verify your email address. <span id="toggleInfo" class="account-verification__link">More <i class="fa fa-caret-down"></i></span></span>
+        </div>
+        <span class="tooltip">
+            <i class="tooltip-icn fa fa-question-circle"></i>
+            <span id="verificationMore" class="tooltip-message">This will need some text that tells the user why we have to use email verification</span>
+        </span>
+        <button class="message-button">Resend Email</button>
+    </div>
+    <div class="bracket__wrapper">
+        <bracket>
+            <div class="bracket--one-column bracket--two-column">
+                <ul class=" bracket__col bracket__col3 is-active inview-left">
+                    <ol class="bracket__section  left">
+                        <li class="bracket__round">Round 1</li>
+                        <li class="bracket__cell">
+                            <span class="bracket__match" data-vs="vs" data-toggle="modal" data-target="#mymodal">
+                                <a title="Atlanta Hawks" class="bracket__cell-item pull-left">
+                                    <span class="bracket__cell-image" style="background-image: url(http://admin.listenernetwork.dev/uploads/2015_2_2/66bc1b6b-17b4-4412-838d-b337b74bfbea.jpg);"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket" style="display: none;">
+                                        <canvas class="bracket__percentage-canvas" width="150"></canvas>
+                                    </div>
+                                </a>
+                                <a title="Brooklyn Nets" class="bracket__cell-item   pull-right">
+                                    <span class="bracket__cell-image"   style="background-image: url(http://admin.listenernetwork.dev/uploads/2015_2_2/7224e90d-2e16-4a74-b549-2fd3f1ab764d.jpg);"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;">
+                                        <canvas class="bracket__percentage-canvas" width="150"></canvas>
+                                    </div>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                    <ol class="bracket__section right">
+                        <li class="bracket__round">Round 1</li>
+                        <li class="bracket__cell">
+                            <span class="bracket__match" data-vs="vs">
+                                <a title="Boston Celtics" class="bracket__cell-item   pull-left">
+                                    <span class="bracket__cell-image" style="background-image: url(http://admin.listenernetwork.dev/uploads/2015_2_2/3c11f6b5-8074-4b41-8691-f1f7bdfe422e.jpg);"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;">
+                                        <canvas class="bracket__percentage-canvas" width="150"></canvas>
+                                    </div>
+                                </a>
+                                <a title="Charlotte Hornets" class="bracket__cell-item   pull-right">
+                                    <span class="bracket__cell-image" style="background-image: url(http://admin.listenernetwork.dev/uploads/2015_2_2/ad88a4ba-0800-43c5-b51d-d51058353b02.jpg);"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;">
+                                        <canvas class="bracket__percentage-canvas" width="150"></canvas>
+                                    </div>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                </ul>
+                <ul class="bracket__col bracket__col2 is-active inview-right">
+                    <ol class="bracket__section left">
+                        <li class="bracket__round">Final</li>
+                        <li class="bracket__cell">
+                            <span class="bracket__match" data-vs="vs">
+                                <a title="Hawks" class="bracket__cell-item">
+                                    <span class="bracket__cell-image"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;"><canvas class="bracket__percentage-canvas" width="150"></canvas></div>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                    <ol class="bracket__section right">
+                        <li class="bracket__round">Final</li>
+                        <li class="bracket__cell">
+                            <span class="bracket__match" data-vs="vs">
+                                <a title="Hornets" class="bracket__cell-item">
+                                    <span class="bracket__cell-image"></span>
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;"><canvas class="bracket__percentage-canvas" width="150"></canvas></div>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                </ul>
+                <ul class="bracket__col bracket__col1">
+                    <ol class="bracket__section center">
+                        <li class="bracket__round">Champion</li>
+                        <li class="bracket__cell">
+                            <span class="bracket__match" data-vs="vs">
+                                <a title="" class="bracket__cell-item">
+                                    <div class="bracket__percentage bracket__percentage--bracket ng-isolate-scope" style="display: none;">
+                                        <canvas class="bracket__percentage-canvas" width="150"></canvas>
+                                    </div>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                </ul>
+                <a class="fa mobile-previous" data-mobile-prev="Previous Round" ng-click="showPrevColumn($event)"></a>
+                <a class="fa mobile-next" data-mobile-next="Next Round" ng-click="showNextColumn($event)"></a>
+            </div>
+        </bracket>
+        <div class="user-controls">
+            <div class="user-container">
+                <button class="account-verification__button" id="verificationEmail">Account Verification Needed <i class="fa fa-caret-up account-verification__button-icn"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <div id="container-footer">
+        <p id="fancy-p-container">
+            <div>Academy Awards Prediction</div>
+            <a target='_blank' href='http://dev4sanban.listenernetwork.dev/LegalTermsJumpPage.aspx?LegalTypeCode=TOS'>Terms of Service</a>
+            | <a target='_blank' href='http://dev4sanban.listenernetwork.dev/LegalTermsJumpPage.aspx?LegalTypeCode=PP'>Privacy Policy</a>
+
+            | <a id="fancyrules" class="fb-fancybox" href="#popup-rules">Official Contest Rules</a>
+            | <a href="/Contest/2JKIGO/Common/ContactUs?override_socialsite_disable=True">Contact Us</a>
+        </p>
+    </div><div class="modal fade modal--voting" role="dialog" id="votingModal" style="display: none;">
+    <div class="modal-dialog" style="z-index: 1051">
+        <div class="modal-content">
+            <div class="group container">
+                <span class=""></span>
+                <i class="fa fa-times fa-2x modal-close pull-right" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+
+            <div class="competitors container group">
+                <div class="competitor" id="competitorLeft">
+                    <div class="competitor__overlay"></div>
+                    <div class="competitor__img"></div>
+                    <div class="competitor__controls group">
+                        <span class="competitor__name"></span>
+                        <input class="competitor__button pull-right" value="Info" type="button"/>
+                    </div>
+                    <div class="bracket__percentage competitor__percentages"></div>
+                    <div class="competitor__desc">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="competitor" id="competitorRight">
+                    <div class="competitor__overlay"></div>
+                    <div class="competitor__img"></div>
+                    <div class="competitor__controls group">
+                        <span class="competitor__name"></span>
+                        <input class="competitor__button pull-right" value="Info" type="button"/>
+                    </div>
+                    <div class="bracket__percentage competitor__percentages"></div>
+                    <div class="competitor__desc">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <!--body end-->
+
+            <!--foot begin-->
+            <div class="group">
+                <button class="di-uix-button pull-left" type="button" id="back"><i class="fa fa-chevron-left"> Back</i></button>
+                <button class="di-uix-button pull-right" type="button" id="next">Next <i class="fa fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!--foot end-->
+</div>
+
+
+<!-- For Fancybox Contest Rules Display -->
+<div style="display: none;">
+    <div id="popup-terms" class="fancypopup">
+        term of service (english)
+    </div>
+</div>
+<div style="display: none;">
+    <div id="popup-privacy" class="fancypopup">
+
+        <div>
+            <p align="center">          Privacy Statement for DEV-4SANBAN      </p>
+
+            <p>
+                dev-4sanba and Triton Loyalty (collectively, 'us', 'we', 'Operators') have created this privacy statement in order to demonstrate our firm commitment to privacy. The following discloses our information gathering and dissemination practices for the DEV-4SANBAN website ('Site').      </p>   <p>          Your privacy is very important to us. Because we gather certain types of personally identifiable information ("Personal Information") from users of our website and for various business activities, operational and business purposes, we feel you should know how we collect, use, disclose, manage, and store the Personal Information that you may voluntarily provide us and the Personal Information that is collected passively through the use of cookies  or image tags on our website. This Privacy Policy is a part of the Site's Terms and Conditions, which is binding on all Site users. This Policy applies only to the Personal Information collected by the Operators and does not cover any such information collected by its corporate parent(s), affiliates, or any other company, unless specifically stated.
+        </p>
+
+            <p>
+                <strong>If you do not agree with this Privacy Policy, please do not participate in the DEV-4SANBAN's online or off-line activities and services that require you to provide your Personal Information. (The type of Personal Information collected is listed below.)</strong>  This Policy provides information regarding your choices to either Opt-out or Opt-in when your Personal Information is used for various promotional and marketing purposes by the Operators, Site, its corporate affiliates, and/or our generous advertisers, sponsors, or promotional partners (collectively, "Advertisers"). For example, for the Operators, Site or our corporate affiliates use of your Personal Information for marketing and promotional purposes, we provide you with the right to Opt-out. However, the choice for sharing your Personal Information with Advertisers may be different. Please see details in the "Disclosure to Advertisers" section below.
+            </p>
+
+            <p>
+                GENERAL PRIVACY GUIDELINES
+            </p>
+
+            <p>
+                We use your Personal Information to provide you with the features, services, or goods you request and to respond to billing and/or other such questions related to the Operators or Site. We will also use your Personal Information to notify you about updates, new features, programming and activities on behalf of the Operators, Site, or our Advertisers that may be of interest to you. (We explain below in the next section what our policy is for the collection, use and disclosure of Personal Information to Advertisers.)
+            </p>
+
+            <p>
+                We may also use your information for hiring, operational and business purposes, or to find out how we can improve our Site via surveys or online tracking mechanisms. We use aggregate Personal Information to help us to evaluate and modify existing services and features. We also use your Personal Information to develop new services and features that may be of interest to you.
+            </p>
+
+            <p>
+                We will not sell, exchange, rent, lease or otherwise disclose your Personal Information or Sensitive Personal Information to other third party marketers or any such persons that are not associated with the Operators as Advertisers unless it is necessary to: 1) conform to regulatory and legal requirements or to comply with legal process; 2) to protect the safety and security of our users, employees, or property; 3) to defend the rights of the Site or the Operators; or 4) to enforce the Terms and Conditions of the Site.
+            </p>
+
+            <p>
+                It is also necessary that we share your Personal Information and Sensitive Personal Information with our operational service providers, the specialists that provide internal support to the Operators operations and activities and/or for Site design, development, hosting and operations including maintenance, management, storage and/or fulfillment of our membership and e-mail clubs, various contests, sweepstakes, services, events and online stores. We use operational service providers to efficiently provide the full range of content, activities and membership services we bring to you and we request that our operational service providers also protect your privacy and not disclose your Personal Information or Sensitive Personal Information to third party marketers that are not associated with the Operators or website.  Additionally, such providers are not to use your Personal Information for their own marketing or promotional purposes.
+            </p>
+
+            <p>
+                In the event that the assets or stock of the Operators, their corporate licensees or parent company(s) are sold or transferred, merged with a different company or entity, restructured, or subject to other fundamental corporate changes, we reserve the right to disclose any and all databases compiled from Personal Information or Sensitive Personal Information collected by the Operators to such successor. We will seek to obligate the Operators' successor to agree to the terms of the Privacy Policy, as it may hereafter be modified, but cannot guarantee that we will be able to do so or that the successor company will comply with this obligation.
+            </p>
+
+            <p>
+                We reserve the right to collect Personal Information using any new technology yet to be developed and to use such technology to provide new services and features to you, as well as for marketing and promotional purposes. Specific information regarding your choice to Opt-in or to Opt-out to such use, or for sharing your Personal Information with Advertisers, will be provided once the new technology, service, or feature is introduced.
+            </p>
+
+            <p>
+                WEBSITE COLLECTION, USE, AND DISCLOSURE OF PERSONAL INFORMATION
+            </p>
+
+            <p>
+                Your IP address is used to gather broad demographic information. We use cookies to deliver content specific to your interests, to save your password so you don't have to re-enter it each time you visit our site, and for other purposes.
+            </p>
+
+            <p>
+                Our Site's registration form requires users to give us contact information (like their first and last name, mailing address, phone number, and email address) and demographic information (like their zip code, age, or gender).  We use customer contact information from the registration form to send the user information about the rewards service, and to notify and ship prizes to the winners of auctions, sweepstakes, or contests as well as mail checks for cash earned on purchases made through the rewards service.  The customer's contact information is also used to contact the visitor when necessary.  We give users the option to remove their information from our database, to not receive future communications, or to no longer receive our service, by submitting your request to Member Support.  Demographic and profile data is also collected at our site. We use this data to tailor the visitor's experience at our site, showing them content that we think they might be interested in, and displaying the content according to their preferences. This information is shared with advertisers and other third parties on an aggregate basis.
+            </p>
+
+            <p>
+                Unless stated otherwise, we do not request contact information for a mobile phone, text messaging or any wireless device that includes a domain name address (such as ".net" or ".com") as part of the contact information. Federal law prohibits the sending of commercial email messages directly to a wireless device that uses a domain name, unless you have first given your affirmative consent.  We may inadvertently collect a wireless device number  that includes a domain name when you send us an inquiry or register for a contest or membership club. However, we will not knowingly use that contact information for sending commercial email. We reserve the right to respond to user inquiries or requests sent via a wireless device that uses a domain name as such messages are not deemed to be commercial email and therefore, are not regulated by Federal law.  <strong>However, when "computer to phone" commercial emails are prohibited by law, we may reject your wireless device contact information when such information is submitted for certain Site features or services. We will attempt to notify you if we will need new contact information.</strong>
+            </p>
+
+            <p>
+                For specific purposes (such as the purchase of goods and services) we may request a type of confidential personally identifiable information which shall be called "Sensitive Personal Information" and is defined as any individual's: (1) social security number; (2) driver's license number or state identification card number; or (3) account number, credit or debit card number, in combination with any required security code, access code or password that would permit access to an individual's financial account. This Sensitive Personal Information will only be used to implement the specific activity or event it was submitted for. We will not share your Sensitive Personal Information with Advertisers.
+            </p>
+
+            <p>
+                However, more general Personal Information will be used to implement the specific activity or event and will also be used for the marketing of additional events, services and merchandising for this Site and the Operators.
+            </p>
+
+            <p>
+                EMAIL
+            </p>
+
+            <p>If you sign up for an email newsletter or alert, we will use your email address to deliver the newsletter or alert requested. To opt-out of any  newsletter or alert, click the unsubscribe link at the bottom of the email or alert you received or go to Subscriptions and uncheck the box or boxes for the newsletters or alerts you wish to opt-out of.
+            </p>
+
+            <p>
+                DISCLOSURE TO ADVERTISERS
+            </p>
+
+            <p>
+                Advertising support allows us to offer, free of charge, many great activities and services to our users such as contests, sweepstakes and special events. Therefore, we may also use your Personal Information for the marketing of events, products or services of our generous Advertisers. There are two ways users may receive such information from Advertisers, either indirectly via newsletters, email or direct mail from the Site, or directly from the Advertiser. We may use one or both methods depending on the activity and the Advertiser.
+            </p>
+
+            <p>
+                Our opt-in program allows you the opportunity to request to be contacted with additional information, to receive special offers and/or to receive materials from Advertisers. If you elect to opt-in to receive information, materials or special offers from these third parties, you give the Operators permission to transfer your personal information to our partners so they can fulfill your request. We will only share your information with those Advertisers or category of Advertisers you specifically opt-in to. Our third party partners have separate privacy and data collection practices; the Operators have no responsibility or liability for these independent policies.
+            </p>
+
+            <p>
+                If you do not want your personal information shared with Advertisers, please select the option to not participate in our opt-in program.
+            </p>
+
+            <p>
+                You have the option of completing online surveys as a part of the rewards service. Among other things, our surveys ask for demographic information (like income level). The information collected through these surveys is used to tailor our visitors' experience at our site and may be shared with advertisers and other third parties on an aggregate basis.
+            </p>
+
+            <p>
+                Our Site also provides users the opportunity to opt-out of receiving communications from us and our Advertisers at the point where we request information about the visitor.
+            </p>
+
+            <p>
+                We give users the option to remove their information from our database, to not receive future communications, or to no longer receive our service, by submitting your request to Member Support.
+            </p>
+
+            <p>
+                SECURITY MEASURES
+            </p>
+
+            <p>
+                We conduct the collection, management, maintenance and storage of website user information in a secure and commercially reasonable manner using acceptable industry standards of security technology and practices (such as electronic security systems and password protections) to protect against the loss, misuse or alteration of Personal Information. We also request that our operational service providers take such precautions. The Operator databases are accessible only by authorized personnel.
+            </p>
+
+            <p>
+                However, please note that when users transmit Personal Information over an unsecured Internet connection, the Site is not responsible for the security of that information during the transmission stage as your email or registration could be copied or intercepted by unknown third parties. We use a secured connection only for the collection of Sensitive Personal Information, which is necessary for the purchase of goods or services, but we do not use a secured connection for other types of activities. Therefore, you understand, acknowledge, and agree that you transmit certain Personal Information over this Site at your own risk.
+            </p>
+
+            <p>
+                CHILDREN'S PRIVACY POLICY
+            </p>
+
+            <p>
+                Although persons of all ages may visit our Site and participate in activities that do not require the collection of Personal Information or Sensitive Personal Information, we do not knowingly or intentionally collect Personal Information or Sensitive Personal Information from children under the age of 13. Except for the limited circumstances listed below, we will automatically reject and delete the registration or entry of any person we believe in good faith to be underage. Any false or fraudulent registration or entry from a minor will be deemed to be ineligible and will disqualify the minor from the receipt of a prize, benefit, or other participation.
+            </p>
+
+            <p>
+                Except to meet Federal Communications Commission ("FCC"), or other regulatory and legal purposes, we will not use, store, or disclose any child's Personal Information to a third party without prior parental consent.
+            </p>
+
+            <p>
+                This Site may have contests and prizes that could appeal to children. However, we do not knowingly or intentionally collect personal Information from children. If we unintentionally receive Personal Information from children under the age of 13 in relation to this activity, we will comply with the Children's Online Privacy Protection Act of 1998 ("COPPA") and reject and destroy such correspondence upon knowledge of such collection, except for the  limited circumstances above. For more information about COPPA, please see the Federal Trade Commission's website: <a href="http://www.ftc.gov/">www.ftc.gov</a>.
+            </p>
+
+            <p>
+                Your California Privacy Rights
+            </p>
+
+            <p>
+                Residents of the State of California, under a new provision of the California Civil Code, have the right to request from companies conducting business in California a list of all third parties to which the company has disclosed Personal Information during the preceding year for direct marketing purposes. Alternatively, the law provides that if the company has a privacy policy that gives either an Opt-out or Opt-in choice for use of your Personal Information by third parties (such as advertisers or affiliated companies) for marketing purposes, the company may instead provide you with information on how to exercise your disclosure choice options.
+            </p>
+
+            <p>
+                The Operators of Atlanta's Rock Rewards qualifies for the alternative option; it has a comprehensive privacy policy and provides you with details on how you may Opt-out or Opt-in to the use of your Personal Information by third parties for direct marketing purposes. Therefore, we are not required to maintain or disclose a list of the third parties that received your Personal Information during the preceding year for marketing purposes.
+            </p>
+
+            <p>
+                If you are a California resident and request information about how to exercise your third party disclosure choices you must send a request to the following address with a preference on how our response to your request should be sent (email or postal mail). You may contact us in two ways. Send email to Privacy Administrator at<strong> the email address listed in the Contact Us section below. Alternatively, you may contact the Operators at the physical address listed below in the Contact Us section of this privacy statement.</strong>
+            </p>
+
+            <p>
+                <strong> For requests sent via email, you must put the statement "Your California Privacy Rights" in the subject field of your email. All requests sent via postal mail must be labeled "Your California Privacy Rights" on the envelope or post card and clearly stated on the actual request. </strong> For all requests, please include your name, street address, city, state, and zip code. (Your street address is optional if you wish to receive a  response to your request via email. Please include your zip code for our own recordkeeping.) <strong><u>We will not accept requests via the telephone or by facsimile.</u></strong> We are not responsible for notices that are not labeled or sent properly, or do not have complete information.
+            </p>
+
+            <p>
+                To all other users of this Site, if you have other questions about this Privacy Policy, please contact our Privacy Administrator at the email address or physical address listed below in the Contact Us section of this privacy statement.
+            </p>
+
+            <p>
+                Unless specified otherwise on the Site, all users must be at least 13 years of age and a legal resident of the United States to participate in any activity that requires the submission of Personal Information. This Site is designed and targeted to United States (U.S.) audiences and is governed by and operated in accordance with the laws of the United States. We make no representation that this Site is operated in accordance with the laws or governed by other nations. By your participation in our Site activities, you certify that you are at least 13 years of age and located in the U.S. If you are located in the European Union or elsewhere outside of the U.S. and you participate in activities on this Site contrary to our policy that only U.S. residents are eligible for certain activities, you do so at your own risk and initiative, and are responsible for compliance with any applicable local laws. Please be aware that any Personal Information you transfer to us will be transferred to the U.S and subject to U.S. law. By using this Site, participating in any Site activities, and/or providing us with your Personal Information, you consent to this transfer of Personal Information to the U.S., and waive any claims that may arise under your own national laws. All users of the Site are required to provide true, current, complete and accurate Personal Information when prompted and we will reject and delete any entry that we believe in good faith to be false, fraudulent, or inconsistent with this Privacy Policy.
+            </p>
+
+            <p>
+                Your continued participation on this Site indicates your acceptance of this Privacy Policy and of the collection, use, disclosure, management and storage of your Personal Information as described below. We may from time to time, transfer or merge any Personal Information collected off-line to our online databases or store off-line information in an electronic format. We may also combine Personal Information we collect online with information available from other sources, including information received from Advertisers, or marketing companies. This Privacy Policy covers all such Personal Information and will remain in full force and effect as long as you are a user of the Site or a participant in Operators activities. <strong> We reserve the right to revise this policy at any time by updating this posting without advance notice to you. Such revisions shall be effective to you immediately upon posting. Therefore, we encourage you to check this Privacy Policy often. </strong>
+            </p>
+
+            <p>
+                Cookies/Image Tags
+            </p>
+
+            <p>
+                The use of cookies is an industry standard and they are currently used on most websites, including this Site. Cookies are a small text file containing a unique identification number that is transferred from a website to the hard drive of a user's computer so that the website administrator or a third party operational service provider may identify the computer and passively track the user's activities on the website. Image tags work in conjunction with cookies and are small image files that may be located on select pages of our Site, or with-in web-based email newsletters that we may send. (Image tags are also called web beacons, web bugs, clear GIFs or single-pixel GIFs.) Tracking is important because we can better understand what parts of our website are used the most, when to launch new services and how to enhance current offerings. We may share the information we receive from cookies and image tags with third-parties and our Advertisers in aggregate form, which means that such information does not contain specific Personal Information or Sensitive Personal Information about any one visitor.
+            </p>
+
+            <p>
+                In short, cookies and image tags collect a user's Internet protocols and server information. Such data files allow our Site to remember your web browser when you visit our Site and are necessary tools for quick and efficient access to the Site. A cookie will not allow the Site to learn any Personal Information (such as your real name and email address) or Sensitive Personal Information that you have not otherwise disclosed. Cookies and image tags allow the Site to remember important information that will make the Site easier for you to use and helpful in our administration of various activities. We do not use cookies or image tags to collect other Personal Information or Sensitive Personal Information unless you give us permission to do so.
+            </p>
+
+            <p>
+                You can choose to have your computer warn you each time a cookie or image tag is being sent, or efficient and enjoyable - like the features mentioned above - and some of our other services will not function properly.
+            </p>
+
+            <p>
+                ADVERTISING AND OTHER THIRD PARTY CONTENT
+            </p>
+
+            <p>
+                This Privacy Policy does not cover third party advertising or third party content that may be present on the Site. This Site may provide banner and general advertising, in addition to other content provided by our Advertisers or operational service providers. Users may from time to time purchase goods or services offered through, or otherwise participate in or send messages concerning such advertising, promotions or third party content offered through the Site. Such correspondence, transactions and agreements are solely between the user and the Advertiser or the third party content provider and do not involve the Site. Also, Advertisers and such third party content providers may not have the same privacy policies that we do and you are encouraged to read their privacy policy first.
+            </p>
+
+            <p>
+                HYPER LINKS TO OTHER WEBSITES
+            </p>
+
+            <p>
+                This Site often provides links to third party websites that could be of interest to our users, including the websites of our Advertisers. The Operators do not own or control these websites and therefore, are not responsible for the content, business practices, nor operations of such websites. Third party websites linked on this Site may have different privacy policies and business practices than we do. The presence of a link to a third party website does not constitute or imply our endorsement, recommendation, or sponsorship of the third party content, goods, or services available through, or contained on, the Site. By use of this Site, you have agreed that you will use the hyperlinks to third party sites at your own risk.
+            </p>
+
+            <p>
+                Correct/Update
+            </p>
+
+            <p>
+                We give users the option to change and modify information previously provided, by visiting the "My Account" section of the website or by submitting your request to Member Support.
+            </p>
+
+            <p>
+                Contact Us
+            </p>
+
+            <p>  For communications related to Your California Privacy Rights, contact us at the address below. <strong>For requests sent via email, you must put the statement "Your California Privacy Rights" in the subject field of your email.</strong>
+            </p>
+
+            <p>
+                Triton Loyalty <br/>
+                attn: Your California Privacy Rights <br/>
+                500 Chastain Center Blvd. <br/>
+                Suite 595 <br/>
+                Kennesaw, GA 30144 <br/>
+            </p>
+            <p>
+                If you have any other questions about this privacy statement, the practices of this Site, or your dealings with this Site, you contact us at the address below. <strong>For requests sent via email, you must put the statement "Privacy" in the subject field of your email.</strong>
+            </p>
+
+            <p>
+                Triton Loyalty <br/>
+                500 Chastain Center Blvd. <br/>
+                Suite 595 <br/>
+                Kennesaw, GA 30144 <br/>
+            </p>
+        </div>
+
+
+    </div>
+</div>
+<div style="display: none;">
+    <div id="popup-rules" class="fancypopup">
+
+        <div id="contest-summary">
+            <h3></h3>
+            <div id="summary-content">
+                <p>
+                    <strong>
+                        This sweepstakes will begin on <span id='displayStartDate' class='displayStartDate'>1/8/2015 5:33 PM ET</span> and all entries must be received by <span id='displayStartDate' class='displayStartDate'>5/31/2015 5:32 PM ET</span>.  You currently have 0 entries.
+                    </strong>
+                </p>
+                <ul>
+                    <li>
+                        <label>Points Required for Entry:</label>
+                        <span class="summary-value">450</span>
+                    </li>
+                    <li>
+                        <label>Approximate Retail Value of Prize Awarded:</label>
+                        <span class="summary-value">$45</span>
+                    </li>
+                    <li>
+                        <label>Sweepstakes Item ID:</label>
+                        <span class="summary-value">2JKIGO</span>
+                    </li>
+                    <li>
+                        <label>Reward type:</label>
+                        <span class="summary-value">L</span>
+                    </li>
+                    <li>
+                        <label># of Winners Selected for this Sweepstakes:</label>
+                        <span class="summary-value">2</span>
+                    </li>
+                    <li>
+                        <label>How will Winner Receive Prize?:</label>
+                        <span class="summary-value">You pick it up</span>
+                    </li>
+                </ul>
+            </div><!-- end summary-content -->
+        </div>
+
+
+
+
+        <div><p><strong><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; color:#333333">Official Contest Rules</span></strong><b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"><br>   <br> <strong><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Sweepstakes that uses Points</span></strong></span></b>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Terms and Conditions of Entry:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">NO PURCHASE IS NECESSARY TO ENTER OR TO WIN.   VOID WHERE PROHIBITED BY LAW.   A PURCHASE WILL NOT INCREASE YOUR ODDS OF WINNING.   ALL FEDERAL, STATE AND LOCAL LAWS, RULES AND REGULATIONS APPLY.   This sweepstakes ("Sweepstakes") is operated by DEV-4SANBAN ("Operator").   The Sweepstakes is subject to these Official Sweepstakes Rules, which shall be deemed to include the specific information outlined at the top of this page and that can be found on the sweepstakes information page (the "Sweepstakes Information Page").   The Sweepstakes Information Pages is available at http://dev4sanban.listenernetwork.dev/Contest/2JKIGO.   To enter the Sweepstakes you must complete the online entry form on the Sweepstake Information Page, and if [Points] are required for entry, you must submit the required number of [Points] for an entry specified at the top of this page, at which time the [Points] will be deducted from your account.   The maximum number of entries allowed for this Sweepstakes (and the frequency with which you can enter, if multiple entries are permitted) is specified at the top of this page.   An entry will not be valid unless all of the required fields of the online entry form are completed and the information is valid.   Once submitted, an entry cannot be deleted, canceled or modified, except by the Operator.   In the event of a dispute as to entries submitted by multiple individuals using the same computer, an entry will be deemed to have been submitted by the owner of the ISP account from which they were sent.   For these purposes, an ISP account holder shall mean the natural person assigned to such ISP account by the Internet access provide, online service provider or other organization responsible for assigning email addresses for the domain associated with such account.   Any questions regarding the number of entries submitted or the owner of an ISP account shall be determined by Sponsor in its sole discretion, and Sponsor reserves the right to disqualify any entries by persons determined to be tampering with or abusing any aspect of the Sweepstakes.   You may also participate in a Sweepstakes through an offline entry.   No [Points] are required for an offline entry.   To enter offline, you must mail a 3" x 5" card to Triton Digital, 500 Chastain Center Blvd., Suite 595, Kennesaw, GA 30144.   You may enter offline as often as you wish, but limit one card per outer postmarked envelope.   The card must include the following information in legible, hand-printed or typed English: your full legal name, complete home postal address, home telephone number with area code, the user name and email address you entered when you registered for the Service, your age, gender and the name and Item ID number of the Sweepstakes (located at the top of this page).   All offline entries must be received on or before the entry deadline, except that if a sweepstakes entry deadline is on a Saturday, Sunday or holiday, your offline entries must be received by the immediately preceding business day.   If you are concerned about your mail-in entry being received by the entry deadline, then during the three business days immediately preceding the drawing date of a Sweepstakes you may fax in a photocopy of your offline entry card for that Sweepstakes.   Limit one card per facsimile.   The facsimile must contain a photocopy of the card with the full information listed above and must be received by the entry deadline.   After faxing a copy of your entry card, you must still mail in your original entry card for your facsimile entry to be valid.   Your original entry card must be postmarked prior to the entry deadline and must be received no later than 4 days after the drawing date.   If your original entry card is not received by mail within 4 days after the drawing date, your facsimile entry will be void and you will forfeit any and all interest in the prize(s).   Send all facsimiles to (678) 999-4934.   Operator is not responsible for any incomplete, late, lost, misappropriated, illegible, damaged, postage-due or misdirected mail-in entries, or for failure to receive online entries due to transmission failures or technical failures of any kind, including, without limitation, malfunctioning or unavailability of any network, hardware or software, whether originating with sender or Operator.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Eligibility:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Sweepstakes are open natural persons and legal residents of the United States.   You must be at least 13 years of age to enter unless a different age eligibility requirement is specified on the Sweepstakes Information Page.   You must have a valid street address in the United States.   (a P.O.   Box address will not suffice).   Certain Sweepstakes may be offered only to particular segments of the applicable Service.   Employees or agents of dev-4sanba, other radio stations in [insert metro area], Triton Digital, and each of their respective affiliates, subsidiaries, and parent companies and the immediate family members of and persons domiciled with such persons are not eligible to participate.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Prizes:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Prizes for Sweepstakes include only those items expressly listed on the Sweepstakes Information Page for the corresponding Sweepstakes.   Any other costs associated with the use or ownership of the prize is the sole responsibility of the winner.   The Approximate Retail Value of each prize is specified at the top of this page.   One or more winners, as specified at the top of this page, will be selected in by a random drawing from among all eligible entries received during the Sweepstakes Period.   Winners will be notified by email.   In the event the winner cannot be reached within 14 days following attempted notification, or if the prize or prize notification is returned as unclaimed or undeliverable, the prize will be forfeited and an alternate winner may be selected.   No substitution of any prizes except by Operator.   No prize transfer permitted.   No prizes will be refunded or exchanged for cash.   If a prize is unavailable, Operator reserves the sole right to substitute a prize of equal or greater value.   All taxes, fees, and surcharges on prizes are the sole responsibility of the winner.   Operator will not ship any prizes to an address outside the United States.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Odds of Winning:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">The odds of winning a prize depend on the number of eligible entries received for each drawing.   Sweepstakes may be offered in multiple presentations conducted regionally or nationally in multiple cities and through other websites, and odds of winning may depend on number of eligible entries received through such other presentations.   Sweepstakes that are promoted and accessible only to users eligible to participate in this Service are noted as such by the display of the reward type 'L' at the top of this page.   Sweepstakes promoted and accessible in multiple markets to users of this Service and other services are noted as such by display of the reward type 'MM' at the top of this page.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Affidavits and Releases:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Winners may be required to sign and return an Affidavit of Eligibility and Release of Publicity and Liability within 14 days of notification of winning.   Failure to sign and return the affidavit and release within such period or to comply with any term or condition of these Official Rules may result in disqualification and forfeiture of any interest in a prize.   By participating and accepting a prize, winner agrees to provide his/her name, address, voice, photograph, videotape and any other likeness as requested by Operator for advertising or publicity purposes and to the use of such material and statements made by or attributed to him/her relating to Operator or the Sweepstakes, and releases any and all rights to said use in any and all media without further compensation except where prohibited.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Limitation on Liability:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">By entering, all entrants release Operator and their respective affiliates, subsidiaries, parent companies, officers, directors, agents, promotional partners and employees from any and all liability with respect to or in any way arising from this Sweepstakes and/or acceptance or use of the prizes, including liability for personal injury, death, damages, or loss.   Operator is not responsible for prize quality or utility.   Operator is not responsible for any incorrect or inaccurate information, whether caused by website users or by any of the equipment or programming associated with or utilized in the Sweepstakes or by any technical or human error which may occur in the processing of submissions in the Sweepstakes.   Operator assumes no responsibility for any error, omission, interruption, deletion, defect, delay in operation or transmission, communications line failure, theft or destruction or unauthorized access to, or alteration of entries.   Operator is not responsible for any problems or technical malfunction of any telephone network or lines, computer on-line-systems, servers or providers, computer equipment, software, failure of email or players on account of technical problems or traffic congestion on the Internet or at any website or combination thereof, including injury or damage to participants or to any person's computer or data related to or resulting from participating or downloading materials in this Web site or Sweepstakes.   Operator is not responsible for cheating or fraud by any entrants.   Any activities intended to disrupt or interfere with the proper play of the Sweepstakes, or to defraud the Sponsor in any way, may be prosecuted to the fullest extent of the law.   Participants engaging in any of the foregoing activities will be disqualified and will forfeit any prizes won.   If, for any reason, the Sweepstakes is not capable of operating as planned, including, without limitation, as a result of infection by computer virus, bugs, tampering, unauthorized intervention, fraud, technical failures, or any other causes beyond the reasonable control of Operator which corrupt or affect the administration, security, fairness, integrity or proper conduct of this Sweepstakes, Operator reserves the right at their sole discretion to cancel, terminate, modify or suspend the Sweepstakes and award prizes among eligible entries received.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Sweepstakes Disputes:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">As a condition of participating in this Sweepstakes, participant agrees to be bound by these Official Rules and that any and all disputes which cannot be resolved between the parties, and any causes of action arising out of or connected with the Sweepstakes, shall be resolved individually, without resort to any form of class action.   Participants consent to the exclusive jurisdiction of the courts located in Cobb County, Georgia, and agree that all matters pertaining to these Official Rules and disputes arising hereunder shall be governed by and interpreted in accordance with the laws of the State of Georgia, without regard to any conflicts or choice of law rules or provisions (whether of Georgia or any other jurisdiction).   Further, notwithstanding the Terms, in any such dispute, under no circumstances will participant be permitted to obtain awards for, and participant hereby waives all rights to claim, punitive, incidental or consequential damages, including attorneys' fees, other than participant's actual out-of-pocket expenses (i.e., his or her costs associated with entering this Sweepstakes), and participant further waives all rights to have damages multiplied or increased.   The invalidity or unenforceability of any provision of these Official Rules shall not affect the validity or enforceability of any other provision.   In the event that any provision of these Official Rules is found to be invalid or unenforceable, these Official Rules shall be construed in accordance with their terms as if the invalid or unenforceable provision was not contained therein.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Winner's List:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">For a Winner's List, available thirty (30) days following the end of the Sweepstakes Period, send a self-addressed, stamped envelope to: Triton Digital Sweepstakes Winner's List, 500 Chastain Center Blvd., Suite 595, Kennesaw, GA 30144.   Please indicate which month's winner's list you would like to receive.</span></p> <p><b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Operators:</span></b> <span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">This Sweepstakes is operated by DEV-4SANBAN.   To contact the Operators, write to Triton Digital, 500 Chastain Center Blvd., Suite 595, Kennesaw, GA 30144.</span>  </p>  <p> <b><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">This Promotion is in no way sponsored, endorsed or administered by, or associated with, Facebook.</span></b></p><p></p></div>
+        <div></div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<!-- Javscript Below Here -->
+<script src="//library.listenernetwork.dev/digitalivy/latest/Scripts/global/body.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

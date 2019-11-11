@@ -1,0 +1,88 @@
+@import "compass";
+@import "compass/css3";
+
+
+//----------------------------------*\
+// Triton Kitchen Sink Header
+//----------------------------------*/
+
+@import "CommonStyles/_kitchensinkheader.scss";
+
+// //----------------------------------*\
+// // CONFIG MODULES
+// //----------------------------------*/
+
+// // Config modules
+@import "modules/themes/_blue.scss";
+@import "modules/themes/_gray.scss";
+@import "modules/themes/_green.scss";
+@import "modules/themes/_orange.scss";
+@import "modules/themes/_purple.scss";
+@import "modules/themes/_red.scss";
+
+// //----------------------------------*\
+// // PARTIALS
+// //----------------------------------*/
+
+@import "CommonStyles/_adminwidget.scss";
+@import "Applications/RewardsWidgets/partials/_trivia.scss";
+
+// //----------------------------------*\
+// // OBJECTS & MODULES
+// //----------------------------------*/
+@import "CommonStyles/_round-radio.scss";
+
+// // Enhancement modules
+@import "CommonStyles/_toggleswitch.scss";
+
+// //----------------------------------*\
+// // VENDOR
+// //----------------------------------*/
+@import "CommonStyles/vendor/_animate.scss";
+
+// //----------------------------------*\
+// // Triton Kitchen Sink Footer
+// //----------------------------------*/
+
+@import "CommonStyles/_kitchensinkfooter.scss";
+@import "CommonStyles/_utilities.scss";
+
+.select-list {
+    border: 1px solid #dedede;
+    border-top: 0;
+
+    &__list {
+        min-height: 260px;
+        max-height: 260px;
+        overflow: scroll;
+
+        &:first-child {
+            box-shadow: inset 1px 1px 0px #cccccc;
+            background-color: #fbfbfb;
+            border-right: 1px solid #dedede;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        padding: 5px 10px;
+
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $highlight-color;
+            color: #fff;
+        }
+
+        &.is-selected:after {
+            position: absolute;
+            right: 10px;
+
+            content: "\f00d";
+
+            font-family: FontAwesome;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+html {
+	padding:0px;
+	margin:0px;
+}
+
+body {
+	padding:0px;
+	margin:0px;
+}
+
+* {
+	box-sizing:border-box;
+}
+
+a, button {
+	&:hover {
+		cursor: pointer;
+	}
+}

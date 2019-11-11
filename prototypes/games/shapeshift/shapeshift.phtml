@@ -1,0 +1,241 @@
+<?
+    /**
+     * Shapeshift game templates
+     */
+
+    // First, include common templates
+    $this->partial('gamecore.phtml');
+
+// Main widget dom structure
+?>
+
+<script type="text/template" data-template="main">
+
+<div class="see-widget-shapeshift see-shapeshift-day">
+    <i class="flaticon solid info-2"></i>
+    <i class="flaticon solid speaker-1"></i>
+    <!--<i class="flaticon solid x-2"></i>-->
+
+    <div class="see-shapeshift-start">
+        <img class="see-logo" src="img/Shape_shift_logo.png" />
+        <div class="see-start-panel">
+            Arcade
+            <img src="img/arcade_select.png">
+            <div id="play" class="see-shapeshift-button see-shapeshift-button-start">Play!</div>
+        </div>
+    </div>
+
+    <div class="see-shapeshift-signin">
+        <h2>Sign In</h2>
+        <p>You must be signed in to continue playing.</p>
+        <p><a href="#">Log in</a> or <a href="#">Sign up</a> to continue.</p>
+    </div>
+
+</div>
+</script>
+
+<?
+    // Powerup selection
+?>
+
+<script type="text/template" data-template="powerups">
+
+    <div class="see-shapeshift-powerups">
+        <i class="flaticon solid house-2"></i>
+        <div class="powerup-panel">
+            <h2>Choose your Power Up!</h2>
+            <h4>Power Ups are activated once <br/> you fill up your score meter</h4>
+            <hr>
+            <div class="powerup-selection-panel">
+                <img src="img/powerup_random_color.png">
+                Random Color Destroy
+            </div>
+            <div class="powerup-selection-panel">
+                <img src="img/powerup_board_shuffle.png">
+                Board Shuffle
+            </div>
+            <div class="powerup-selection-panel">
+                <img src="img/powerup_board_bomb.png">
+                Board Bomb
+            </div>
+            <div id="start" class="see-shapeshift-button see-shapeshift-button-start">Start!</div>
+        </div>
+    </div>
+</script>
+
+<?
+    // Gameboard
+?>
+
+<script type="text/template" data-template="play">
+
+
+    <div class="see-shapeshift-board">
+        <i class="flaticon solid house-2"></i>
+        <!-- Background pieces -->
+        <div class="see-shapeshift-bg bg-primary"></div>
+        <div class="see-shapeshift-bg bg-sub1"></div>
+        <div class="see-shapeshift-bg bg-sub2"></div>
+        <div class="see-shapeshift-bg bg-sub3"></div>
+        <div class="see-shapeshift-bg bg-sub4"></div>
+        <div class="see-shapeshift-bg bg-sub5"></div>
+        <div class="see-shapeshift-bg bg-sub6"></div>
+
+        <div class="shapeshift-board-container">
+            <div class="board-column" data-col="1">
+                <div class="board-piece-container" data-order="0" data-piece="green"></div>
+                <div class="board-piece-container" data-order="1" data-piece="red"></div>
+                <div class="board-piece-container" data-order="2" data-piece="yellow"></div>
+                <div class="board-piece-container" data-order="3" data-piece="green"></div>
+                <div class="board-piece-container" data-order="4" data-piece="purple"></div>
+                <div class="board-piece-container" data-order="5" data-piece="blue"></div>
+                <div class="board-piece-container" data-order="6" data-piece="red"></div>
+            </div>
+            <div class="board-column" data-col="2">
+            <div class="board-piece-container" data-order="7" data-piece="green"></div>
+            <div class="board-piece-container" data-order="8" data-piece="red"></div>
+            <div class="board-piece-container" data-order="9" data-piece="red"></div>
+            <div class="board-piece-container" data-order="10" data-piece="yellow"></div>
+            <div class="board-piece-container" data-order="11" data-piece="purple"></div>
+            <div class="board-piece-container" data-order="12" data-piece="blue"></div>
+            <div class="board-piece-container" data-order="13" data-piece="green"></div>
+
+            </div>
+            <div class="board-column" data-col="3">
+                <div class="board-piece-container" data-order="14" data-piece="red"></div>
+                <div class="board-piece-container" data-order="15" data-piece="green"></div>
+                <div class="board-piece-container" data-order="16" data-piece="purple"></div>
+                <div class="board-piece-container" data-order="17" data-piece="blue"></div>
+                <div class="board-piece-container" data-order="18" data-piece="green"></div>
+                <div class="board-piece-container" data-order="19" data-piece="yellow"></div>
+                <div class="board-piece-container" data-order="20" data-piece="red"></div>
+            </div>
+            <div class="board-column" data-col="4">
+                <div class="board-piece-container" data-order="21" data-piece="red"></div>
+                <div class="board-piece-container" data-order="22" data-piece="blue"></div>
+                <div class="board-piece-container" data-order="23" data-piece="green"></div>
+                <div class="board-piece-container" data-order="24" data-piece="purple"></div>
+                <div class="board-piece-container" data-order="25" data-piece="red"></div>
+                <div class="board-piece-container" data-order="26" data-piece="yellow"></div>
+                <div class="board-piece-container" data-order="27" data-piece="green"></div>
+            </div>
+            <div class="board-column" data-col="5">
+                <div class="board-piece-container" data-order="28" data-piece="blue"></div>
+                <div class="board-piece-container" data-order="29" data-piece="red"></div>
+                <div class="board-piece-container" data-order="30" data-piece="purple"></div>
+                <div class="board-piece-container" data-order="31" data-piece="green"></div>
+                <div class="board-piece-container" data-order="32" data-piece="red"></div>
+                <div class="board-piece-container" data-order="33" data-piece="green"></div>
+                <div class="board-piece-container" data-order="34" data-piece="yellow"></div>
+            </div>
+            <div class="board-column" data-col="6">
+                <div class="board-piece-container" data-order="35" data-piece="blue"></div>
+                <div class="board-piece-container" data-order="36" data-piece="yellow"></div>
+                <div class="board-piece-container" data-order="37" data-piece="green"></div>
+                <div class="board-piece-container" data-order="38" data-piece="red"></div>
+                <div class="board-piece-container" data-order="39" data-piece="green"></div>
+                <div class="board-piece-container" data-order="40" data-piece="purple"></div>
+                <div class="board-piece-container" data-order="41" data-piece="red"></div>
+            </div>
+        </div>
+
+        <div class="shapeshift-time-added">
+            <h3 class="time-added-text">+10</h3>
+            secs
+         </div>
+        <div class="shapeshift-score-container">
+
+            <div class="game-timer">
+                <h3 class="game-time">2:00</h3>
+            </div>
+            <div class="game-score-bar">
+                <div class="points-fill"></div>
+                <div class="points-fill"></div>
+                <img class="points-reflection" src="img/score-reflection.png" />
+                <h3 class="game-points">120000</h3>
+            </div>
+            <div class="game-powerup-container powerup-inactive">
+                <div class="game-powerup-icon">
+                    <img src="img/powerup_board_bomb.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<?
+    // Help screen
+?>
+
+<script type="text/template" data-template="help">
+
+
+    <div class="see-shapeshift-help">
+        <i class="flaticon solid x-2"></i>
+        <h2>How to play Shape Shift</h2>
+        <div class="help-pieces">
+            <div class="help-pieces-text-1">Click a piece to select it then click a tile to switch<i class="fa fa-arrow-right"></i></div>
+            <div class="help-pieces-text-2">Match 3 or more of the same shape to clear them and increase your score<i class="fa fa-arrow-left"></i></div>
+        </div>
+
+        <div class="help-timer">
+            <div class="help-timer-text-1">The timer counts down until the game is over. More points = more time<i class="fa fa-arrow-down"></i></div>
+            <h2 class="help-timer-text-2">- 2:00</h2>
+        </div>
+
+        <div class="help-meter">
+            <div class="help-meter-text-1">Fill up the point meter to activate powerups<i class="fa fa-arrow-down"></i></div>
+            <div class="help-meter-text-2">The powerup is available once its highlighted like so<i class="fa fa-arrow-right"></i></div>
+        </div>
+    </div>
+
+</script>
+
+<?
+    // Quit modal
+?>
+
+<script type="text/template" data-template="quit">
+
+    <div class="see-shapeshift-quit">
+        <div class="quit-panel">
+            <h3>Are you sure you want to quit?</h3>
+            <h4>[All your progress will be lost]</h4>
+            <hr>
+            <div class="see-shapeshift-button see-shapeshift-button-grey">Cancel</div>
+            <div class="see-shapeshift-button see-shapeshift-button-red">Quit</div>
+        </div>
+    </div>
+</script>
+
+<?
+    // Complete Game Modal
+?>
+
+<script type="text/template" data-template="complete">
+
+    <div class="see-shapeshift-complete">
+        <img class="completion-logo" src="img/Shape_shift_logo.png" />
+        <div class="complete-panel">
+            <div class="complete-callout"><h3>Complete!</h3></div>
+            <h4>Final Score</h4>
+            <h2 id="final-score">120,000 pts</h2>
+            <hr>
+            <div class="complete-combos">
+                <h4>Total Combos</h4>
+                <h2 id="total-combos">17</h2>
+            </div>
+            <div class="complete-time">
+                <h4>Time Played</h4>
+                <h2 id="completion-time">4:50</h2>
+            </div>
+            <hr>
+            <div class="complete-powerups">
+                <h4>Powerups Used</h4>
+                <h2 id="powerups-used">5</h2>
+            </div>
+            <div class="see-shapeshift-button see-shapeshift-button-start"><i class="fa fa-repeat"></i> Play Again!</div>
+        </div>
+    </div>
+</script>

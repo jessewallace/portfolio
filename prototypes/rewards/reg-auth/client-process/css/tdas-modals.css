@@ -1,0 +1,234 @@
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+body { margin: 0; }
+body.overlay-open { overflow: hidden; }
+
+.container { width: 100%; -webkit-transition: -webkit-transform 0.5s; transition: transform 0.5s; }
+.container.overlay-open { -webkit-transform: scale(0.8); transform: scale(0.8); }
+
+.clearfix:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+
+.clearfix { display: inline-block; }
+
+.clearfix { display: block; }
+
+.registration-widget-menu { position: absolute; top: 145px; left: 780px; font-family: sans-serif; font-size: 12px; }
+@media (max-width: 930px) { .registration-widget-menu { top: 15px; left: 15px; } }
+.registration-widget-menu-logged-in { margin-top: -9px; display: inline-block; }
+.registration-widget-menu-not-logged-in { display: inline-block; }
+.registration-widget-menu-listening-appts { display: inline-block; }
+.registration-widget-menu-profile-picture { height: 35px; width: 35px; margin-right: 5px; vertical-align: middle; }
+.registration-widget-menu-edit-profile { display: inline; color: #4F646E; cursor: pointer; text-decoration: underline; }
+.registration-widget-menu-divider { display: inline; padding: 0 5px; font-size: 16px; vertical-align: middle; }
+.registration-widget-link { display: inline; color: #4F646E; cursor: pointer; text-decoration: underline; }
+.registration-widget-icon-menu { padding-right: 5px; font-size: 18px; vertical-align: middle; }
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+.registration-widget-overlay-modal-content { width: 100%; color: #4F646E; }
+.registration-widget-overlay-modal-content h2 { margin-bottom: 10px; }
+.registration-widget-overlay-modal-content h3 { margin: 0; }
+.registration-widget-overlay-modal-content p { font-size: 12px; }
+.registration-widget-overlay-modal-content-button-container { padding: 10px 0; width: 100%; text-align: center; }
+.registration-widget-overlay-modal-content-button-container-bordered { border-top: 1px solid #9D9D9D; height: 20px; padding: 20px 0; }
+.registration-widget-overlay-modal-content-footer-container { border-top: 1px solid #9D9D9D; margin-top: 20px; padding: 10px 0px; width: 100%; }
+.registration-widget-overlay-modal-content-attention { width: 100%; text-align: center; }
+.registration-widget-overlay-modal-content-attention::before { position: relative; top: 4px; color: #e06e2f; content: '\f071  '; font-family: FontAwesome; font-size: 20px; }
+.registration-widget-overlay-modal-content-attention b { color: #e06e2f; }
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+.registration-widget-overlay-listening-appts { width: 100%; }
+.registration-widget-overlay-listening-appts-item-list { padding-left: 0; color: #4F646E; list-style-type: none; line-height: 4em; }
+.registration-widget-overlay-listening-appts-item-list li { position: relative; width: 100%; transition: 0.5s all ease; }
+.registration-widget-overlay-listening-appts-item-list li:hover { padding-left: 10px; width: 98%; background: #BEBEBE; }
+.registration-widget-overlay-listening-appts-item-list li:hover .registration-widget-overlay-listening-appts-item-list-score { right: 10px; }
+.registration-widget-overlay-listening-appts-item-list-item { color: black; font-size: 1.2em; }
+.registration-widget-overlay-listening-appts-item-list-item:hover { text-decoration: underline; cursor: pointer; }
+.registration-widget-overlay-listening-appts-item-list-score { right: 0; position: absolute; top: 0; color: #4F646E; font-size: 0.8em; transition: 0.5s all ease; }
+.registration-widget-overlay-listening-appts-item-list .item-completed span:last-child::before { font-family: FontAwesome; content: '\f058 '; color: #02A650; font-size: 1.8em; position: relative; top: 5px; right: 10px; }
+.registration-widget-overlay-listening-appts-content { width: 100%; clear: both; }
+.registration-widget-overlay-listening-appts-content-header { padding: 15px 10px 20px 10px; background: #BEBEBE; }
+.registration-widget-overlay-listening-appts-content .la-content-title { font-size: 1.2em; display: inline; color: black; }
+.registration-widget-overlay-listening-appts-content .la-content-title #la-back-to-list { position: relative; top: 4px; margin-right: 5px; color: #9D9D9D; cursor: pointer; font-size: 1.6em; }
+.registration-widget-overlay-listening-appts-content .la-content-score { display: inline; color: #4F646E; }
+.registration-widget-overlay-listening-appts-content-img { margin: 0 0 20px 0; width: 100%; }
+.registration-widget-overlay-listening-appts-content form { position: relative; display: block; margin: 40px auto 0 auto; width: 330px; text-align: center; }
+.registration-widget-overlay-listening-appts-content-input { position: relative; border: #eeeeee; background: #ffffff; display: inline-block; height: 36px; margin-left: 0; margin-top: 10px; padding: 8px; width: 210px; box-sizing: border-box; overflow: hidden; }
+.registration-widget-overlay-listening-appts-content-input input { border: none; width: 100%; }
+.registration-widget-overlay-listening-appts-content-input::after { position: absolute; right: 5px; top: 33px; content: ''; font-family: FontAwesome; font-size: 2em; transition: 0.3s all ease; }
+.registration-widget-overlay-listening-appts-content .la-answer-correct { box-shadow: 0 0 5px rgba(0, 255, 0, 0.8); }
+.registration-widget-overlay-listening-appts-content .la-answer-correct::after { position: absolute; right: 5px; top: 3px; color: rgba(0, 255, 0, 0.8); content: '\f058'; font-family: FontAwesome; font-size: 2em; }
+.registration-widget-overlay-listening-appts-content .la-answer-incorrect { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
+.registration-widget-overlay-listening-appts-content .la-answer-incorrect::after { position: absolute; right: 5px; top: 3px; color: rgba(255, 0, 0, 0.8); content: '\f057'; font-family: FontAwesome; font-size: 2em; }
+.registration-widget-overlay-listening-appts-content #la-answer-submit { float: right; margin-top: 7px; }
+.registration-widget-overlay-listening-appts-content #la-answer-submit .fa { position: relative; top: 0; left: 0; padding-left: 5px; font-size: 18px; }
+.registration-widget-overlay-listening-appts-content-button-container { width: 100%; clear: both; margin-top: 20px; }
+.registration-widget-overlay-listening-appts-content #la-guest-form { width: 380px; }
+.registration-widget-overlay-listening-appts-content #la-guest-form h3 { color: #4F646E; }
+.registration-widget-overlay-listening-appts-content #la-guest-form button { margin: 0 10px; font-size: 1em; }
+.registration-widget-overlay-listening-appts-list-empty { position: relative; padding: 30px 40px 40px 40px; color: #4F646E; font-size: 1.5em; line-height: 1.5em; text-align: center; }
+.registration-widget-overlay-listening-appts-list-empty::before { left: 0; position: absolute; top: 90px; content: '\f025'; font-family: FontAwesome; font-size: 8em; opacity: 0.2; }
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+.registration-widget-overlay-button { padding: 10px 20px; font-size: 12px; }
+.registration-widget-overlay-button:hover { cursor: pointer; }
+.registration-widget-overlay-button-group { margin-top: 20px; }
+.registration-widget-overlay-button-group .registration-widget-overlay-label { display: block; font-size: 12px; font-weight: bold; }
+.registration-widget-overlay-button-group .registration-widget-overlay-button { width: 100px; margin: 0 0 0 -5px; padding: 10px; border: none; background: #fff; color: #666; font-weight: bold; }
+.registration-widget-overlay-button-group .registration-widget-overlay-button:hover { color: #2ABB47; }
+.registration-widget-overlay-button-group .registration-widget-overlay-button-selected { background: #2ABB47; color: #fff; }
+.registration-widget-overlay-button-group .registration-widget-overlay-button-selected:hover { color: #fff; }
+.registration-widget-overlay-button-group .registration-widget-overlay-button:first-of-type { margin: 0; }
+.registration-widget-overlay-button-submit { background: #4F646E; border: 1px solid #4F646E; color: #acbcc3; }
+.registration-widget-overlay-button-submit:hover { background: #acbcc3; color: #4F646E; }
+.registration-widget-overlay-button-social { height: 40px; width: 150px; margin-top: 20px; border: none; box-sizing: border-box; color: #fff; }
+@media (max-width: 530px) { .registration-widget-overlay-button-social { display: block; width: 230px; height: 50px; margin: 20px auto 0; } }
+.registration-widget-overlay-button-facebook { background: #3C5A95; }
+.registration-widget-overlay-button-facebook:hover { background: #2d4471; }
+.registration-widget-overlay-button-google { background: #DC4C3F; }
+.registration-widget-overlay-button-google:hover { background: #c43124; }
+.registration-widget-overlay-button-facebook-inverse { margin: 15px 0 0; background: transparent; border: 1px solid #3C5A95; color: #3C5A95; }
+.registration-widget-overlay-button-facebook-inverse:hover { background: transparent; border: 1px solid #2d4471; color: #2d4471; }
+.registration-widget-overlay-button-facebook-inverse-connected { border: none; background: #3C5A95; color: #fff; }
+.registration-widget-overlay-button-facebook-inverse-connected:hover { background: #2d4471; border: none; color: #fff; }
+.registration-widget-overlay-button-google-inverse { margin: 15px 0 0; background: transparent; border: 1px solid #DC4C3F; color: #DC4C3F; }
+.registration-widget-overlay-button-google-inverse:hover { background: transparent; border: 1px solid #c43124; color: #c43124; }
+.registration-widget-overlay-button-google-inverse-connected { border: none; background: #DC4C3F; color: #fff; }
+.registration-widget-overlay-button-google-inverse-connected:hover { background: #c43124; border: none; color: #fff; }
+.registration-widget-overlay-button-fwd { float: right; }
+.registration-widget-overlay-button-fwd::after { font-family: FontAwesome; content: '  \f054'; }
+.registration-widget-overlay-button-back { float: left; }
+.registration-widget-overlay-button-back::before { font-family: FontAwesome; content: '\f053  '; }
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+.registration-widget-overlay { position: fixed; bottom: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; background: rgba(204, 204, 204, 0.97); font-family: sans-serif; z-index: 1001; visibility: hidden; -webkit-transform: translateY(100%); transform: translateY(100%); -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s; transition: transform 0.5s, visibility 0s 0.5s; }
+.registration-widget-overlay-open { visibility: visible; -webkit-transform: translateY(0%); transform: translateY(0%); -webkit-transition: -webkit-transform 0.5s; transition: transform 0.5s; }
+.registration-widget-overlay-wrapper { max-width: 600px; margin: 0 auto; padding: 0 15px; }
+.registration-widget-overlay-no-account, .registration-widget-overlay-have-account, .registration-widget-overlay-signin-from-modal { display: inline; cursor: pointer; text-decoration: underline; }
+.registration-widget-overlay-login { max-width: 590px; box-sizing: border-box; padding: 20px 45px; background: #eee; border-radius: 5px; box-shadow: 0 2px rgba(0, 0, 0, 0.25); }
+@media (max-width: 590px) { .registration-widget-overlay-login { padding: 0 15px; } }
+.registration-widget-overlay-login-header, .registration-widget-overlay-signup-header, .registration-widget-overlay-edit-profile-header, .registration-widget-overlay-reset-password-header, .registration-widget-overlay-modal-header, .registration-widget-overlay-la-header { padding: 15px 0; margin-bottom: 20px; border-bottom: 1px solid #9D9D9D; color: #4F646E; font-size: 18px; font-weight: bold; }
+.registration-widget-overlay-login-header-signup, .registration-widget-overlay-login-header-signin, .registration-widget-overlay-signup-header-signup, .registration-widget-overlay-signup-header-signin, .registration-widget-overlay-edit-profile-header-signup, .registration-widget-overlay-edit-profile-header-signin, .registration-widget-overlay-reset-password-header-signup, .registration-widget-overlay-reset-password-header-signin, .registration-widget-overlay-modal-header-signup, .registration-widget-overlay-modal-header-signin, .registration-widget-overlay-la-header-signup, .registration-widget-overlay-la-header-signin { color: #000; float: right; font-size: 12px; font-weight: normal; line-height: 32px; }
+@media (max-width: 530px) { .registration-widget-overlay-login-header-signup, .registration-widget-overlay-login-header-signin, .registration-widget-overlay-signup-header-signup, .registration-widget-overlay-signup-header-signin, .registration-widget-overlay-edit-profile-header-signup, .registration-widget-overlay-edit-profile-header-signin, .registration-widget-overlay-reset-password-header-signup, .registration-widget-overlay-reset-password-header-signin, .registration-widget-overlay-modal-header-signup, .registration-widget-overlay-modal-header-signin, .registration-widget-overlay-la-header-signup, .registration-widget-overlay-la-header-signin { margin-top: 10px; float: none; line-height: 16px; } }
+.registration-widget-overlay-login-form { display: inline-block; width: 58%; padding: 10px 0; border-right: 1px solid #9D9D9D; }
+@media (max-width: 530px) { .registration-widget-overlay-login-form { width: 100%; border-bottom: 1px solid #9D9D9D; border-right: none; padding-bottom: 40px; } }
+.registration-widget-overlay-edit-profile { width: 100%; }
+.registration-widget-overlay-edit-profile-form { display: inline-block; width: 56%; margin-bottom: 20px; border-right: 1px solid #9D9D9D; }
+@media (max-width: 530px) { .registration-widget-overlay-edit-profile-form { width: 100%; border-right: none; } }
+.registration-widget-overlay-edit-profile-password { margin: 40px 0 0 0; }
+.registration-widget-overlay-edit-profile-sidebar { display: inline-block; width: 40%; float: right; padding-left: 30px; box-sizing: border-box; font-size: 12px; font-weight: bold; vertical-align: top; }
+@media (max-width: 530px) { .registration-widget-overlay-edit-profile-sidebar { width: 100%; padding: 0 0 40px 0; margin-bottom: 40px; border-bottom: 1px solid #9D9D9D; float: none; } }
+.registration-widget-overlay-edit-profile-picture { display: block; width: 116px; height: 116px; margin: 10px 0 20px 0; }
+.registration-widget-overlay-edit-profile-upload-new { width: 116px; margin: 10px 0; color: #4F646E; cursor: pointer; text-align: center; text-decoration: underline; }
+.registration-widget-overlay-edit-profile-footer { padding-top: 20px; border-top: 1px solid #9D9D9D; text-align: right; }
+@media (max-width: 530px) { .registration-widget-overlay-edit-profile-footer .registration-widget-overlay-button { margin-bottom: 40px; } }
+.registration-widget-overlay-footer { margin-top: 15px; padding-top: 15px; border-top: 1px solid #9D9D9D; font-size: 10px; text-align: center; }
+@media (max-width: 530px) { .registration-widget-overlay-footer { margin-top: 0; padding-bottom: 40px; } }
+.registration-widget-overlay-tos-link { color: #4F646E; }
+.registration-widget-overlay-tos-link:hover { color: #8098a3; }
+.registration-widget-overlay-create-account { display: inline-block; width: 58%; padding: 10px 0; }
+.registration-widget-overlay-create-account-form { border-right: 1px solid #9D9D9D; }
+@media (max-width: 530px) { .registration-widget-overlay-create-account-form { border-right: none; } }
+@media (max-width: 530px) { .registration-widget-overlay-create-account { width: 100%; padding-bottom: 40px; display: block; border-bottom: 1px solid #9D9D9D; } }
+.registration-widget-overlay-email-updates { margin: 20px 0; font-size: 12px; font-weight: bold; }
+.registration-widget-overlay-or-divider { position: absolute; display: inline-block; height: 28px; width: 28px; margin-left: -18px; margin-top: 95px; border-radius: 50%; color: #fff; background: #000; float: left; font-size: 10px; line-height: 28px; text-align: center; vertical-align: top; z-index: 1010; }
+@media (max-width: 530px) { .registration-widget-overlay-or-divider { margin: -14px 0 0 -15px; }
+  .registration-widget-overlay-or-divider-wrapper { width: 100%; text-align: center; } }
+.registration-widget-overlay-social-wrapper { display: inline-block; width: 40%; vertical-align: top; }
+@media (max-width: 530px) { .registration-widget-overlay-social-wrapper { width: 100%; } }
+.registration-widget-overlay-social-login { display: inline-block; width: 100%; padding: 20px 0; font-size: 12px; font-weight: bold; text-align: center; vertical-align: top; }
+@media (max-width: 530px) { .registration-widget-overlay-social-login { width: 100%; display: block; padding: 40px 0; } }
+.registration-widget-overlay-input-container { margin-bottom: 20px; }
+.registration-widget-overlay-input-container .registration-widget-overlay-label { display: block; font-size: 12px; font-weight: bold; line-height: 1.5em; }
+.registration-widget-overlay-input-container .registration-widget-overlay-input { height: 35px; width: 100%; max-width: 250px; margin: 0; padding: 0 8px; box-sizing: border-box; border: 1px solid #ccc; }
+@media (max-width: 530px) { .registration-widget-overlay-input-container .registration-widget-overlay-input { max-width: 100%; } }
+.registration-widget-overlay-input-container-inline { display: inline-block; margin-bottom: 0; margin-right: 10px; }
+.registration-widget-overlay-input-container-inline .registration-widget-overlay-input { max-width: 100px; }
+.registration-widget-overlay-input-container-inline .registration-widget-overlay-icon { margin-left: 5px; font-size: 18px; }
+.registration-widget-overlay-thanks-message-wrapper { display: inline-block; width: 60%; }
+.registration-widget-overlay-thanks-message-heading { font-size: 24px; font-weight: bold; }
+.registration-widget-overlay-thanks-message-content { margin: 20px 0; font-size: 12px; }
+.registration-widget-overlay-prompt { width: 56%; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #9D9D9D; font-size: 12px; }
+@media (max-width: 590px) { .registration-widget-overlay-prompt { width: 100%; } }
+.registration-widget-overlay-button-link { display: inline; margin-left: 25px; cursor: pointer; font-size: 12px; line-height: 35px; text-decoration: underline; }
+.registration-widget-overlay-label { margin-bottom: 5px; }
+.registration-widget-overlay-icon { vertical-align: middle; }
+.registration-widget-overlay-icon-button { margin-left: 5px; font-size: 18px; }
+.registration-widget-overlay-icon-header { padding-right: 5px; color: #4F646E; font-size: 32px; }
+.registration-widget-overlay-icon-gender { padding-right: 5px; font-size: 20px; }
+.registration-widget-overlay-icon-overlay { margin-left: -15px; margin-right: 5px; color: #000; font-size: 15px; }
+.registration-widget-overlay-icon-thanks-message { padding: 20px 0 0 30px; color: #2ABB47; font-size: 100px; vertical-align: top; }
+.registration-widget-overlay-icon-email-success { margin-left: 1px; vertical-align: baseline; }
+.registration-widget-overlay #close-registration-overlay { margin-top: 20%; float: right; color: #4F646E; cursor: pointer; font-size: 28px; }
+@media (max-width: 530px) { .registration-widget-overlay #close-registration-overlay { margin-top: 10%; } }
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+.registration-widget-overlay-support-content { position: relative; overflow: hidden; transition: 0.5s all ease; }
+.registration-widget-overlay-support-content h3 { left: 0; margin-top: 0; position: relative; font-weight: normal; }
+.registration-widget-overlay-support-content label { position: relative; display: block; margin-bottom: 12px; color: #4F646E; font-size: 14px; font-weight: bold; }
+.registration-widget-overlay-support-content form { left: 0; position: relative; }
+.registration-widget-overlay-support-content select, .registration-widget-overlay-support-content input, .registration-widget-overlay-support-content textarea { display: block; margin-top: 4px; padding: 8px; box-sizing: border-box; font-family: Arial, sans-serif; }
+.registration-widget-overlay-support-content input, .registration-widget-overlay-support-content textarea { width: 100%; }
+.registration-widget-overlay-support-content button:disabled, .registration-widget-overlay-support-content input:disabled, .registration-widget-overlay-support-content textarea:disabled, .registration-widget-overlay-support-content select:disabled { opacity: 0.5; }
+.registration-widget-overlay-support-content #tdas-member-support-characters { display: inline-block; margin-top: 5px; width: 100%; font-size: 12px; text-align: right; }
+.registration-widget-overlay-support-content #tdas-member-support-characters.charactersLow { color: #ffaa00; }
+.registration-widget-overlay-support-content #tdas-member-support-characters.charactersOut { color: #f00; }
+.registration-widget-overlay-support-content #tdas-member-support-characters.charactersOut div { transform: scaleY(1); }
+.registration-widget-overlay-support-content #tdas-member-support-characters div { bottom: -40px; position: absolute; right: 0; border-radius: 30px; float: right; padding: 9px 12px 7px 32px; background: #f00; color: white; clear: both; transform: scaleY(0); transform-origin: top; transition: 0.3s all ease; }
+.registration-widget-overlay-support-content #tdas-member-support-characters div::before { position: absolute; left: 5px; top: 3px; content: '\f06a'; font-family: FontAwesome; font-size: 2em; }
+.registration-widget-overlay-support-content #tdas-member-support-characters div::after { position: absolute; right: 50px; top: -16px; color: #f00; content: '\f0d8'; font-family: FontAwesome; font-size: 2em; }
+.registration-widget-overlay-support-content #tdas-member-support-headline { font-size: 18px; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector { position: relative; z-index: 10; cursor: pointer; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector-toggle { position: relative; left: 5px; top: -2px; border-radius: 6px; display: inline-block; padding: 2px 5px; background: #4F646E; content: 'change'; color: #fff; font-size: 10px; transition: 0.3s all ease; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector-selected { border-radius: 5px; display: inline-block; margin: 0px -5px; padding: 3px 5px 2px 5px; font-weight: bold; transition: 0.3s all ease; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector-menu { border-radius: 5px; margin: 5px 0; position: absolute; background: rgba(79, 100, 110, 0.9); color: #fff; overflow: hidden; transform: scaleY(0); transform-origin: top; transition: 0.3s all ease; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector-menu div { padding: 10px 20px; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector-menu div:hover { background: #4F646E; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector.selector-active .tdas-member-support-inline-selector-toggle { margin-left: -45px; opacity: 0; transform: scaleX(0); }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector.selector-active .tdas-member-support-inline-selector-selected { background: #4F646E; font-weight: normal; color: #fff; margin-left: 0; }
+.registration-widget-overlay-support-content .tdas-member-support-inline-selector.selector-active .tdas-member-support-inline-selector-menu { transform: scaleY(1) !important; }
+.registration-widget-overlay-support-content .tdas-member-support-confirmation { left: 100%; position: absolute; top: 0; width: 100%; }
+.registration-widget-overlay-support-content.confirmation { height: 290px !important; text-align: center; transition: 0.5s all ease; }
+.registration-widget-overlay-support-content.confirmation p { font-size: 14px; }
+.registration-widget-overlay-support-content.confirmation h3, .registration-widget-overlay-support-content.confirmation form, .registration-widget-overlay-support-content.confirmation .tdas-member-support-confirmation { transition: 0.5s all ease; }
+.registration-widget-overlay-support-content.confirmation h3, .registration-widget-overlay-support-content.confirmation form { left: -100%; }
+.registration-widget-overlay-support-content.confirmation button { margin-top: 20px; }
+.registration-widget-overlay-support-content.confirmation .tdas-member-support-confirmation { left: 0; }
+.registration-widget-overlay-support-content.confirmation .fa-stack { margin-bottom: 20px; margin-top: 20px; font-size: 3em; color: #0b0; }
+.registration-widget-overlay-support-content.confirmation .fa-stack #cir1 { animation: cir1 2s 0.5s forwards alternate infinite; -webkit-animation: cir1 2s 0.5s forwards alternate infinite; }
+.registration-widget-overlay-support-content.confirmation .fa-stack #cir2 { animation: cir2 2s 1.5s infinite; -webkit-animation: cir2 2s 1.5s infinite; }
+.registration-widget-overlay-support-content.confirmation .fa-stack #check { animation: check 2s 0.5s forwards alternate infinite; -webkit-animation: check 2s 0.5s forwards alternate infinite; }
+
+@keyframes cir2 { 0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; } }
+@keyframes cir1 { 0% { transform: scale(0); color: transparent; }
+  50% { transform: scale(1); color: #0b0; }
+  100% { transform: scale(1); color: #0b0; } }
+@keyframes check { 0% { transform: scale(0) rotateY(0deg); }
+  50% { transform: scale(1) rotateY(360deg); color: #fff; }
+  100% { transform: scale(1) rotateY(360deg); color: #fff; } }
+@-webkit-keyframes cir2 { 0% { -webkit-transform: scale(1); opacity: 1; }
+  50% { -webkit-transform: scale(1.5); opacity: 0; }
+  100% { -webkit-transform: scale(1.5); opacity: 0; } }
+@-webkit-keyframes cir1 { 0% { -webkit-transform: scale(0); color: transparent; }
+  50% { -webkit-transform: scale(1); color: #0b0; }
+  100% { -webkit-transform: scale(1); color: #0b0; } }
+@-webkit-keyframes check { 0% { -webkit-transform: scale(0) rotateY(0deg); }
+  50% { -webkit-transform: scale(1) rotateY(360deg); color: #fff; }
+  100% { -webkit-transform: scale(1) rotateY(360deg); color: #fff; } }
+
+/*# sourceMappingURL=tdas-modals.css.map */

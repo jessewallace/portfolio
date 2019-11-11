@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Widget</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link rel="stylesheet" href="//s3.amazonaws.com/icomoon.io/74065/TDASRewardWidgetIcons/style.css?q6x51x">
+    <link rel="stylesheet" href="trivia.css"/>
+    <link rel="stylesheet" href="themeselector.css"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+
+<body class=" see-widget">
+    <div id="see-overlay" style="display: none; z-index: 2000006; top: 0%;">
+    <div class="see-wrapper"><span class="see-x fa fa-times" style="padding-top: 183px;"></span>
+
+        <div class="see-clearfix"></div>
+        <div id="see-overlay-modal" class="regui" style="z-index: 2000007;">
+            <div class="see-header">
+                <i class="fa fa-sign-in"></i> Login
+                <p>
+                    Don't have an account? <a class="see-register">Sign up now.</a>
+                </p>
+            </div>
+            <form class="see-form">
+                <div class="see-message"></div>
+                <div class="see-input-group">
+                    <label for="email">Email Address</label>
+                    <input class="see-input" type="text" name="email">
+                </div>
+                <div class="see-input-group">
+                    <label for="pwd">Password</label>
+                    <input class="see-input" type="password" name="pwd">
+                </div>
+                <div class="see-button see-submit">
+                    Log In
+                    <i class="fa fa-chevron-circle-right"></i>
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <a class="see-forgotpassword">Forgot Password?</a>
+                <input type="submit" style="display:none">
+            </form>
+            <div class="see-sidebar">
+                <div class="see-divider-wrapper">
+                    <div class="see-divider">OR</div>
+                </div>
+                <div class="see-buttons">
+                    Sign in with
+                    <div class="see-button see-facebook">Facebook <i class="fa fa-refresh fa-spin"></i></div>
+                    <div class="see-button see-google">Google + <i class="fa fa-refresh fa-spin"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="themes">
+    <div id="themeColors" class="theme__colors td-u-display-flex"></div>
+    <div id="themePatterns" class="theme__textures td-u-display-flex"></div>
+</div>
+    <div class="td-trivia td-trivia--blue">
+        <div class="td-u-display-flex td-u-flex-centered--v td-u-flex-column td-trivia-wrapper td-trivia-prompt js-prompt">
+    <div class="td-u-display-flex td-u-flex-column td-u-flex-centered">
+        <div class="td-trivia-logo td-trivia-logo--scaled">Trivia
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--1" src="img/qmark1.png" alt="question mark"/>
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--2" src="img/qmark2.png" alt="question mark"/>
+            <img class="td-trivia-logo__qmark td-trivia-logo__qmark--3" src="img/qmark3.png" alt="question mark"/>
+        </div>
+        <span class="td-trivia-prompt__label">Log in to continue and earn Points!</span>
+    </div>
+    <div class="td-u-display-flex td-u-flex--bottom td-u-flex-column td-u-flex-centered">
+        <div class="td-button td-button--large td-u-mb-10 td-trivia-prompt__button js-signInBtn"><span class="td-icon td-icon-clipboard"></span> Sign Up</div>
+        <div class="td-button td-button--large td-button--ghost td-u-mb-10 td-trivia-prompt__button js-signInBtn"><span class="td-icon td-icon-sign-in"></span> Log In</div>
+        <div class="td-is-clickable js-cancelPrompt">Cancel</div>
+    </div>
+</div>
+        <div class="td-trivia-header td-has-image td-u-display-flex td-u-flex-centered">
+    <div class="td-trivia-header__result"></div> 
+    <div class="td-trivia-header__bg" style="background-image: url(img/pattern-1.png)"></div>
+    <div class="td-trivia-question fadeIn">
+        <div class="td-trivia-question__count"><b>Question 2 out of 6</b></div>
+        <div class="td-trivia-question__question td-u-mb-10"><b>In the opening credits, what does the cash register say when Maggie is scanned?</b></div>
+        <img class="td-trivia-question__image" src="http://rack.1.mshcdn.com/media/ZgkyMDE0LzA4LzIxL2VhL21hZ2dpZXNpbXBzLmM5Njg2LnBuZwpwCXRodW1iCTEyMDB4OTYwMD4/d21219a4/a03/maggie-simpson-847.63.png" alt=""/>
+        
+        
+    </div>
+    <span class="td-ribbon" data-label="Trivia"></span>
+    <span class="td-trivia-share td-button td-button--ghost td-u-pos__tr"><b>Share Trivia</b></span>
+    <span class="td-pill td-u-pos__br td-trivia-points"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+
+        <div class="td-trivia-body td-trivia-slider td-u-display-flex td-width-2-1 js-triviaBody">
+            
+            <div class="td-trivia-answers td-grid td-grid--stacked  td-width-1-2">
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-correct">
+                    <span class="td-trivia-answer__text">NRA 4EVA</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">This item is not in the database</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">$39.99</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+                <div class="td-trivia-answer td-trivia-answer--text fadeInUp  td-grid__item js-is-incorrect ">
+                    <span class="td-trivia-answer__text">Please try to rescan this item</span>
+                    
+                    <span class="td-trivia-answer__title"></span>
+                </div>
+                
+            </div>
+            
+
+            <div class="td-trivia-stats td-width-1-2">
+                <div class="td-trivia-body__container td-trivia-slider td-u-display-flex td-width-2-1">
+
+                    
+                    <div class="td-trivia-results td-width-1-2">
+    <div class="td-u-group td-u-mb-25">
+        <div class="td-header-2 td-trivia-results__header"><b>Trivia Results</b></div>
+    </div>
+    <div class="td-u-display-flex td-u-flex-centered">
+        
+<div class="td-progress-circle  td-progress-circle--positive " data-label="Got it!">
+    <span class="td-progress-circle__box">
+        <b class="td-progress-circle__percent js-count" data-value="55"></b>
+        <svg class="td-progress-circle__svg td-progress-circle__svg--1" viewBox="-10 -10 220 220">
+            <g class="td-progress-circle__svg-group" fill="none" stroke-width="20" transform="translate(100,100)">
+                <path class="td-progress-circle__svg-path" d="M 0,-100 A 100,100 0 0,1 0, 100"/>
+                <path class="td-progress-circle__svg-path" d="M 0,100 A 100,100 0 0,1 0, -100">
+            </g>
+        </svg>
+        <svg class="td-progress-circle__svg td-progress-circle__svg--2" viewBox="-10 -10 220 220">
+            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="157.25"></path>
+        </svg>
+    </span>
+</div>
+
+        
+<div class="td-progress-circle  td-progress-circle--negative " data-label="Missed it!">
+    <span class="td-progress-circle__box">
+        <b class="td-progress-circle__percent js-count" data-value="45"></b>
+        <svg class="td-progress-circle__svg td-progress-circle__svg--1" viewBox="-10 -10 220 220">
+            <g class="td-progress-circle__svg-group" fill="none" stroke-width="20" transform="translate(100,100)">
+                <path class="td-progress-circle__svg-path" d="M 0,-100 A 100,100 0 0,1 0, 100"/>
+                <path class="td-progress-circle__svg-path" d="M 0,100 A 100,100 0 0,1 0, -100">
+            </g>
+        </svg>
+        <svg class="td-progress-circle__svg td-progress-circle__svg--2" viewBox="-10 -10 220 220">
+            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="157.25"></path>
+        </svg>
+    </span>
+</div>
+
+    </div>
+</div>
+                    
+
+                </div>
+                <div class="td-trivia-footer td-u-display-flex td-u-flex-centered">
+                    <div class="td-trivia-footer__button-container">
+                        <span class="td-button td-button--large td-trivia-footer__button td-has-count" data-amount-remaining="4" onclick="location.href = './question3.html'"><b>Next Question</b> <i class="td-icon td-icon-chevron-circle-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="script.js"></script>
+<script src="themeselector.js"></script>
+</html>

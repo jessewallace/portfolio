@@ -1,0 +1,32 @@
+@import "../../client/scss/customizer.scss";
+
+.save-customizations {
+	text-align:center;
+	margin:20px 0;
+	padding-top:20px;
+	border-top:1px solid #333;
+	.button {
+		width:75%;
+		display: inline-block;
+		margin-bottom: 10px;
+		padding:12px;
+		color:#0069AC;
+		background-color: transparent;
+		border:none;
+		font-size:1.125em;
+		border-radius:4px;
+		transition: 100ms ease all;
+		border:2px solid #0069AC;
+		&:hover {
+			background-color: #0069AC;
+			color:white;
+
+		}
+	}
+	a {
+		display: block;
+		color:#ddd;
+		font-size: .8em;
+		text-decoration: none;
+	}
+}

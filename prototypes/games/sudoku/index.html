@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Zen</title>
+    <link rel="stylesheet" type="text/css" href="fonts/flaticons_stroke/stroke.css">
+    <link href="css/animate+animo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/sudoku.css">
+</head>
+<body>
+    <div class="sudoku-wrapper" style="display:none">
+        <div class="sudoku-game">
+            <!-- Global Menu Icons -->
+            <div class="sudoku-navigation-icon sudoku-home" style="display:none;" title="Home"><i class="flaticon stroke house"></i></div>
+            <div class="sudoku-navigation-icon sudoku-instructions" style="display:none;" title="Instructions"><i class="flaticon stroke info-2"></i></div>
+            <div class="sudoku-navigation-icon sudoku-play-toggle" style="display:none;"><i class="flaticon stroke pause-2 pause-game" title="Pause Game"></i><i class="flaticon stroke play-3 resume-game" title="Resume Game" style="display:none;"></i></div>
+            <div class="sudoku-navigation-icon sudoku-sound-toggle" style="display:none;"><i class="flaticon stroke speaker-1 mute-audio" title="Mute Audio"></i><i class="flaticon stroke speaker-3 unmute-audio" title="Unmute Audio" style="display:none;"></i></div>
+
+            <!-- Home Screen -->
+            <div class="bamboo bamboo--left" style="display:none"></div>
+            <div class="bamboo bamboo--right" style="display:none"></div>
+            <div class="sudoku-zen-logo-background" style="display:none"></div>
+            <div class="lantern lantern--one" style="display:none"></div>
+            <div class="lantern lantern--two" style="display:none"></div>
+            <div class="lantern lantern--three" style="display:none"></div>
+            <div class="sudoku-zen-logo" style="display:none"></div>
+            <div class="sudoku-gametype-select-text" style="display:none">Please choose a game type</div>
+            <div class="sudoku-gametype-wrapper" style="display:none">
+                <div class="sudoku-gametype sudoku-gametype--express" title="Express">
+                    Express <span class="sudoku-board-size">(2x3)</span>
+                    <div class="sudoku-gametype-inner sudoku-gametype-inner--express"></div>
+                </div>
+                <div class="sudoku-gametype sudoku-gametype--normal" title="Normal">
+                    Classic <span class="sudoku-board-size">(3x3)</span>
+                    <div class="sudoku-gametype-inner sudoku-gametype-inner--normal"></div>
+                </div>
+                <div class="sudoku-gametype sudoku-gametype--selected sudoku-gametype--express-selected" style="display:none">
+                    <div class="deselect-gametype sudoku-deselect-express" title="Deselect Gametype" style="display:none;"><i class="flaticon stroke x-1"></i></div>
+                    <div class="sudoku-difficulty sudoku-difficulty--express zen" title="Zen (Easy)">
+                        <h4>Zen</h4>
+                        (Easy)
+                    </div>
+                    <div class="sudoku-difficulty sudoku-difficulty--express zen-wiz" title="Zen Wiz (Normal)">
+                        <h4>Zen Wiz</h4>
+                        (Normal)
+                    </div>
+                    <div class="sudoku-difficulty sudoku-difficulty--express zen-master" title="Zen Master (Hard)">
+                        <h4>Zen Master</h4>
+                        (Hard)
+                    </div>
+                </div>
+                <div class="sudoku-gametype sudoku-gametype--selected sudoku-gametype--normal-selected" style="display:none">
+                    <div class="deselect-gametype sudoku-deselect-normal" title="Deselect Gametype" style="display:none;"><i class="flaticon stroke x-1"></i></div>
+                    <div class="sudoku-difficulty sudoku-difficulty--normal zen" title="Zen (Easy)">
+                        <h4>Zen</h4>
+                        (Easy)
+                    </div>
+                    <div class="sudoku-difficulty sudoku-difficulty--normal zen-wiz" title="Zen Wiz (Normal)">
+                        <h4>Zen Wiz</h4>
+                        (Normal)
+                    </div>
+                    <div class="sudoku-difficulty sudoku-difficulty--normal zen-master" title="Zen Master (Hard)">
+                        <h4>Zen Master</h4>
+                        (Hard)
+                    </div>
+                </div>
+            </div>
+            <button class="sudoku-button sudoku-button--accent sudoku-start-game"style="display:none;">Ok, Start</button>
+
+            <!-- Sudoku Board -->
+            <div class="sudoku-board" style="display:none;"></div>
+            <div class="sudoku-board-symbol sudoku-board-symbol--left" style="display:none;"></div>
+            <div class="sudoku-board-symbol sudoku-board-symbol--right" style="display:none;"></div>
+
+            <!-- Game Controls -->
+            <div class="sudoku-number-buttons" style="display:none;"></div>
+            <div class="clearfix"></div>
+            <div class="sudoku-controls-divider" style="display:none;"></div>
+            <div class="sudoku-controls" style="display:none;">
+                <div class="sudoku-control sudoku-control--timer">
+                    <i class="flaticon stroke clock"></i> <div class="sudoku-timer"><span class="sudoku-minutes">00</span>:<span class="sudoku-seconds">00</span></div>
+                </div>
+                <div class="sudoku-control sudoku-control--icon"></div>
+                <div class="sudoku-control sudoku-control--hints">
+                    <i class="flaticon stroke lightbulb-3"></i>
+                    <div class="sudoku-hint sudoku-hint--hint-1"></div>
+                    <div class="sudoku-hint sudoku-hint--hint-2"></div>
+                    <div class="sudoku-hint sudoku-hint--hint-3"></div>
+                </div>
+                <div class="sudoku-control sudoku-control--icon"></div>
+                <div class="sudoku-control sudoku-control--notes-toggle toggle">
+                    <input class="toggle-checkbox" type="checkbox" name="notesToggle" id="notes-toggle" >
+                    <label class="toggle-container" for="notes-toggle">
+                        <span class="toggle-label"></span>
+                        <span class="toggle-handle"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="sudoku-time-penalty" style="display:none;">
+                <i class="flaticon stroke up-circle-2"></i> :<span class="sudoku-penalty-seconds">10</span> sec.
+                <div class="sudoku-arrow-down"></div>
+            </div>
+        </div>
+
+        <!-- Overlays -->
+        <div class="sudoku-overlay sudoku-overlay--instructions" style="display:none;">
+            <div class="close-sudoku-instructions"><i class="flaticon stroke x-1"></i></div>
+            <div class="sudoku-overlay-background sudoku-overlay-background--blue"></div>
+            <div class="sudoku-overlay-content">
+                <h1>How to play Sudoku Zen</h1>
+                <h3>The Basic Rules of Sudoku</h3>
+                <p>-- There is only one valid solution to each Sudoku puzzle. The only way the puzzle can be considered solved correctly is when all 81 boxes (36 boxes for Express) contain numbers and the other Sudoku rules have been followed.</p>
+                <p>-- When you start a game of Sudoku, some blocks will be pre-filled for you. You cannot change these numbers in the course of the game.</p>
+                <p>-- Each column must contain all of the numbers 1 through 9 (1 through 6 for Express) and no two numbers in the same column of a Sudoku puzzle can be the same.</p>
+                <p>-- Each row must contain all of the numbers 1 through 9 (1 through 6 for Express) and no two numbers in the same row of a Sudoku puzzle can be the same.</p>
+                <p>-- Each block must contain all of the numbers 1 through 9 (1 through 6 for Express) and no two numbers in the same block of a Sudoku puzzle can be the same.</p>
+            </div>
+        </div>
+
+        <div class="sudoku-overlay sudoku-overlay--quit" style="display:none;">
+            <div class="close-sudoku-quit"><i class="flaticon stroke x-1"></i></div>
+            <div class="sudoku-overlay-background sudoku-overlay-background--blue"></div>
+            <div class="sudoku-overlay-content">
+                <h2>Are you sure you want to quit?</h2>
+                <h4>[All of your progress will be lost]</h4>
+                <div class="sudoku-button-container">
+                    <button type="button" class="sudoku-button sudoku-button--cancel sudoku-cancel-quit">Cancel</button>
+                    <button type="button" class="sudoku-button sudoku-button--quit sudoku-quit-game">Yes, Quit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sudoku-overlay sudoku-overlay--complete" style="display:none;">
+            <div class="sudoku-overlay-background sudoku-overlay-background--purple" style="display:none;"></div>
+            <div class="bamboo bamboo--complete bamboo--left" style="display:none;"></div>
+            <div class="bamboo bamboo--complete bamboo--right" style="display:none;"></div>
+            <div class="sudoku-game-complete" style="display:none;">Complete!</div>
+            <div class="sudoku-game-stats">
+                <div class="sudoku-game-stats-logo" style="display:none;"></div>
+                <div class="sudoku-game-stats-title" style="display:none;">Namaste!</div>
+                <div class="sudoku-game-stats-time-played sudoku-game-stats-container" style="display:none;">
+                    <div class="sudoku-game-stats-icon"><i class="flaticon stroke clock"></i></div>
+                    <div class="sudoku-game-stats-stat">
+                        <span class="sudoku-game-stats-label">Time Played</span><br/>
+                        <span id="sudoku-time-played-minutes"></span>:<span id="sudoku-time-played-seconds"></span>
+                    </div>
+                </div>
+                <div class="sudoku-game-stats-divider sudoku-game-stats-divider--1" style="display:none;"></div>
+                <div class="sudoku-game-stats-errors-made sudoku-game-stats-container" style="display:none;">
+                    <div class="sudoku-game-stats-icon"><i class="flaticon stroke error"></i></div>
+                    <div class="sudoku-game-stats-stat">
+                        <span class="sudoku-game-stats-label">Errors Made</span><br/>
+                        <span id="sudoku-errors-made"></span>
+                    </div>
+                </div>
+                <div class="sudoku-game-stats-divider sudoku-game-stats-divider--2" style="display:none;"></div>
+                <div class="sudoku-game-stats-hints-used sudoku-game-stats-container" style="display:none;">
+                    <div class="sudoku-game-stats-icon"><i class="flaticon stroke lightbulb-3"></i></div>
+                    <div class="sudoku-game-stats-stat">
+                        <span class="sudoku-game-stats-label">Hints Used</span><br/>
+                        <span id="sudoku-hints-used"></span>/3
+                    </div>
+                </div>
+                <button class="sudoku-button sudoku-button--accent sudoku-play-again" style="display:none;">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sounds -->
+    <audio id="background-music" loop>
+      <source src="sounds/asian-lotus.wav" type="audio/wav">
+    </audio>
+    <audio id="level-complete">
+      <source src="sounds/oriental-level-complete-ding.wav" type="audio/wav">
+    </audio>
+    <audio id="whoosh">
+      <source src="sounds/short_whoosh5.wav" type="audio/wav">
+    </audio>
+    <audio id="whoosh-2">
+      <source src="sounds/short_whoosh2.wav" type="audio/wav">
+    </audio>
+    <audio id="pop-drip">
+      <source src="sounds/pop_drip.wav" type="audio/wav">
+    </audio>
+    <audio id="asian-magic">
+      <source src="sounds/asian-magic-notification.wav" type="audio/wav">
+    </audio>
+    <audio id="click-sound">
+      <source src="sounds/click3.wav" type="audio/wav">
+    </audio>
+    <audio id="switch-sound">
+      <source src="sounds/switch6.wav" type="audio/wav">
+    </audio>
+    <audio id="error-sound">
+      <source src="sounds/misc_menu_3.wav" type="audio/wav">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/animo.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/sudoku.js"></script>
+</body>
+</html>

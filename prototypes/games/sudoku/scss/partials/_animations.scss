@@ -1,0 +1,214 @@
+// *************************************
+//
+//   Animations
+//   For Zen Sudoku
+//
+// *************************************
+
+@-webkit-keyframes sway {
+    0%{-webkit-transform:rotate(-10deg);}
+    50%{-webkit-transform:rotate(-7deg);}
+    100%{-webkit-transform:rotate(-10deg);}
+}
+@keyframes sway {
+    0%{transform:rotate(-10deg);}
+    50%{transform:rotate(-7deg);}
+    100%{transform:rotate(-10deg);}
+}
+.animated.sway {
+    -webkit-animation-name: sway;
+    animation-name: sway;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+    transition-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes swayInverse {
+    0%{-webkit-transform:rotate(10deg);}
+    50%{-webkit-transform:rotate(7deg);}
+    100%{-webkit-transform:rotate(10deg);}
+}
+@keyframes swayInverse {
+    0%{transform:rotate(10deg);}
+    50%{transform:rotate(7deg);}
+    100%{transform:rotate(10deg);}
+}
+.animated.swayInverse {
+    -webkit-animation-name: swayInverse;
+    animation-name: swayInverse;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+    transition-timing-function: ease-in-out;
+}
+
+
+
+@-webkit-keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.animated.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}
+
+
+
+@-webkit-keyframes scaleInRotate {
+    0%{
+        -webkit-transform: rotate(0deg) scale(0.4);
+        opacity: 0;
+    }
+    100%{
+        -webkit-transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scaleInRotate {
+    0%{
+        transform: rotate(0deg) scale(0.4);
+        opacity: 0;
+        visibility: visible;
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+.animated.scaleInRotate {
+    -webkit-animation-name: scaleInRotate;
+    animation-name: scaleInRotate;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}
+
+
+@-webkit-keyframes scaleIn {
+    0%{
+        -webkit-transform: scale(0.4);
+        opacity: 0;
+        visibility: visible;
+    }
+    100%{
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scaleIn {
+    0%{
+        transform: scale(0.4);
+        opacity: 0;
+        visibility: visible;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.animated.scaleIn {
+    -webkit-animation-name: scaleIn;
+    animation-name: scaleIn;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}
+
+
+@-webkit-keyframes lanternSlideIn {
+  0% {
+    -webkit-transform: translateY(-500px);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(-10deg);
+    opacity: 1;
+  }
+}
+@keyframes lanternSlideIn {
+  0% {
+    transform: translateY(-500px);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+}
+.animated.lanternSlideIn {
+    -webkit-animation-name: lanternSlideIn;
+    animation-name: lanternSlideIn;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}
+
+@-webkit-keyframes lanternSlideInInverse {
+  0% {
+    -webkit-transform: translateY(-500px);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(10deg);
+    opacity: 1;
+  }
+}
+@keyframes lanternSlideInInverse {
+  0% {
+    transform: translateY(-500px);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateY(0) rotate(10deg);
+  }
+}
+.animated.lanternSlideInInverse {
+    -webkit-animation-name: lanternSlideInInverse;
+    animation-name: lanternSlideInInverse;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(500px);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(500px);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+.animated.slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
+
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}

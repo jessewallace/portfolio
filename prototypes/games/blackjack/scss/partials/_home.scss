@@ -1,0 +1,254 @@
+// Styles for the Blackjack Board
+html, body {
+    margin: 0;
+
+    background: #000;
+    font-family: 'Arial';
+}
+
+.triangle-right {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #ffc513;
+}
+
+.triangle-left {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid #ffc513;
+}
+
+.triangle-down {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #ffc513;
+}
+
+.triangle-up {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #000;
+}
+
+.board {
+    position: relative;
+
+    height: 600px;
+    width: 500px;
+
+    background-image: image-url('Board.jpg');
+    overflow: hidden;
+}
+
+
+// Home Logo
+.logo {
+    position: absolute;
+    top: 40px;
+
+    height: 189px;
+    width: 500px;
+
+    background-image: image-url('Home_Logo_BG.png');
+
+
+    .logo--ace {
+        position: absolute;
+        left: 150px;
+        top: 13px;
+
+        height: 167px;
+        width: 137px;
+
+        background-image: image-url('Logo_ACE.png');
+    }
+
+    .logo--ten {
+        position: absolute;
+        left: 200px;
+        top: 13px;
+
+        height: 167px;
+        width: 146px;
+
+        background-image: image-url('Logo_10.png');
+
+        @include animation-delay(0.35s);
+    }
+
+    .logo--blackjack {
+        position: absolute;
+        left: 90px;
+        top: 55px;
+
+        height: 91px;
+        width: 332px;
+
+        background-image: image-url('Logo_Blackjack.png');
+
+    }
+
+    .logo--express {
+        position: absolute;
+        left: 120px;
+        top: 83px;
+
+        height: 81px;
+        width: 240px;
+
+        background-image: image-url('Logo_Express_ON.png');
+        opacity: 0;
+
+
+        &.off {
+            background-image: image-url('Logo_Express_Off.png');
+            opacity: 1;
+
+            @include animation-delay(0.2s);
+        }
+    }
+}
+
+.gametype {
+    position: absolute;
+    left: 140px;
+    top: 275px;
+
+    box-sizing: border-box;
+    height: 250px;
+    width: 220px;
+    border: 1px solid #8e0811;
+    border-radius: 6px;
+    padding: 15px;
+
+    background-color: #66050a;
+    color: #fff;
+    font-family: 'Arial';
+    font-size: 18px;
+    font-weight: bold;
+
+
+    .gametype-title {
+        position: absolute;
+        left: 55px;
+
+        width: 100px;
+
+        text-align: center;
+
+    }
+
+    .gametype-chips {
+        position: absolute;
+        left: 16px;
+        top: 65px;
+
+        height: 121px;
+        width: 187px;
+
+        .gametype-chip--black {
+            position: absolute;
+            left: 36px;
+
+            height: 111px;
+            width: 111px;
+
+            background-image: image-url('Black_chip_intro.png');
+            color: #000;
+            font-family: 'Times New Roman';
+            font-size: 24px;
+            line-height: 105px;
+            text-align: center;
+
+            @include animation-delay(0.2s);
+        }
+
+        .gametype-chip--red {
+            position: absolute;
+            left: 0;
+            top: 18px;
+
+            height: 97px;
+            width: 100px;
+
+            background-image: image-url('Red_chip_intro.png');
+            color: #000;
+            font-family: 'Times New Roman';
+            font-size: 24px;
+            line-height: 93px;
+            text-align: center;
+
+        }
+
+        .gametype-chip--green {
+            position: absolute;
+            left: 92px;
+            top: 20px;
+
+            height: 97px;
+            width: 100px;
+
+            background-image: image-url('Green_chip_intro.png');
+            color: #000;
+            font-family: 'Times New Roman';
+            font-size: 24px;
+            line-height: 93px;
+            text-align: center;
+
+            @include animation-delay(0.1s);
+        }
+    }
+
+    .gametype-play {
+        position: absolute;
+        top: 160px;
+        left: 15px;
+
+        color: #fff;
+
+        @include button(#34980b, #2d810b, 190px, 45px);
+        @include animation-delay(0.3s);
+    }
+
+    .gametype-instructions {
+        position: absolute;
+        left: 46px;
+        top: 216px;
+
+        width: 125px;
+
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+
+        @include animation-delay(0.5s);
+
+        i {
+            padding-right: 5px;
+
+            font-size: 18px;
+            vertical-align: middle;
+        }
+    }
+}

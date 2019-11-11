@@ -1,0 +1,144 @@
+body.see-overlay-freeze {
+  overflow: hidden;
+}
+
+.clearfix {
+  content: " ";
+  display: table;
+}
+
+#see-overlay {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM48x0AApIBxGhvxSEAAAAASUVORK5CYII=") repeat transparent;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  overflow-y: auto;
+  display: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+  line-height: 1.42857;
+  font-size: 14px;
+  color: #333;
+}
+#see-overlay input, #see-overlay textarea {
+  font-weight: normal;
+  font-size: 14px;
+  color: #000;
+}
+#see-overlay p {
+  margin: 0 0 10px;
+}
+#see-overlay .see-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (max-width: 530px) {
+  #see-overlay .see-wrapper {
+    margin-top: 0;
+    padding-bottom: 40px;
+  }
+}
+#see-overlay .see-wrapper .see-x {
+  padding-top: 20%;
+  float: right;
+  color: #4F646E;
+  cursor: pointer;
+  font-size: 28px;
+}
+@media (max-width: 530px) {
+  #see-overlay .see-wrapper .see-x {
+    margin-top: 10%;
+  }
+}
+#see-overlay .see-clearfix {
+  clear: both;
+}
+
+#see-overlay-modal {
+  box-sizing: border-box;
+  max-width: 590px;
+  padding: 10px 45px 40px;
+  background: none repeat scroll 0 0 #eee;
+  border-radius: 5px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+@media (max-width: 590px) {
+  #see-overlay-modal {
+    padding: 5px 15px 10px 15px;
+  }
+}
+#see-overlay-modal h1, #see-overlay-modal h2, #see-overlay-modal h3, #see-overlay-modal h4, #see-overlay-modal p {
+  color: #4F646E;
+  line-height: 1em;
+}
+#see-overlay-modal h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+#see-overlay-modal h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+#see-overlay-modal p {
+  font-size: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+#see-overlay-modal .see-message {
+  padding: 10px;
+}
+#see-overlay-modal .see-message p {
+  font-size: 14px;
+  line-height: 16px;
+}
+#see-overlay-modal .see-button {
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  clear: both;
+  background: #4F646E;
+  border: 1px solid #4F646E;
+  color: #acbcc3;
+}
+#see-overlay-modal .see-button:hover {
+  background: #acbcc3;
+  color: #4F646E;
+  cursor: pointer;
+}
+#see-overlay-modal .see-button.see-cancel {
+  background: #acbcc3;
+  border: 1px solid #acbcc3;
+  color: #4F646E;
+}
+#see-overlay-modal .see-button.see-cancel:hover {
+  background: #4F646E;
+  color: #acbcc3;
+}
+#see-overlay-modal .see-button.see-right {
+  clear: none;
+  float: right;
+  margin: 0 0 0 15px;
+}
+#see-overlay-modal .see-button .fa {
+  font-size: 18px;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+#see-overlay-modal .see-button .fa-spin {
+  display: none;
+}
+#see-overlay-modal .see-button.see-loading .fa-chevron-circle-right {
+  display: none;
+}
+#see-overlay-modal .see-button.see-loading .fa-spin {
+  display: inline-block;
+}

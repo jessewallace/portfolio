@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campaign Widget Admin</title>
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/campaign.css">
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/list.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="app-container">
+    <div class="admin-container">
+        <div class="container u-display-flex u-display-flex--vcentered ">
+            <h1>Create New Campaign</h1>
+            
+        </div>
+
+        
+<div class="container-sectioned">
+    <ul id="breadCrumbs" class="zerolist u-display-flex breadcrumbs">
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-active">Setup</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Modules</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Design</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Syndication</a></li>
+        <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Publish</a></li>
+    </ul>
+</div>
+
+<div class="grid">
+    <div class="col-1-2" style="overflow: hidden">
+        <div class="u-display-flex sections" id="campaignSections">
+            <div id="setupSection" class="js-subSection section is-active"><div class="input-container widget-title">
+    <label class="is-required width-1-1">Campaign Title</label>
+    <input id="titleEntry" class="width-1-1" type="text" autofocus/>
+</div>
+<div class="input-container widget-description">
+    <label class="width-1-1">Campaign Description</label>
+    <textarea id="descpritionEntry" class="width-1-1" name="" cols="30" rows="6"></textarea>
+</div>
+
+<div class="grid">
+    <div class="input-container col-1-2">
+        <label class="is-required">Campaign Start Time</label>
+        <input class="js-datePicker width-4-5" type="text">
+    </div>
+
+    <div class="input-container col-1-2">
+        <label class="is-required">Campaign End Time</label>
+        <input class="js-datePicker width-4-5" type="text">
+    </div>
+</div>
+
+<label>Campaign Reward</label>
+<div class="input-container radio radio-inline">
+    <label><input class="js-radioReward" name="campaignReward" type="radio" checked> Points</label>
+    <label><input class="js-radioReward" name="campaignReward" id="contestEntry" type="radio"> Contest Entry</label>
+    <label><input class="js-radioReward" name="campaignReward" type="radio"> No Reward</label>
+</div>
+
+<div id="shortID" class="input-container" style="display: none">
+    <label class="is-required width-1-1 widget-input-title">Contest Short ID</label>
+    <input placeholder="Enter Short ID" type="text"/>
+</div>
+
+<h3>Call to action settings</h3>
+<label>Completion Page Call to Action <span class="ui-tooltip-icon fa fa-info-circle" title="After the user completes all the campaigns this button will direct them to your loyalty site or custom URL that you provide."></span></label>
+<div class="input-container radio radio-inline">
+    <label><input class="js-ctaButton" name="completionCTA" id="ctaLoyalty" type="radio" checked> Loyalty</label>
+    <label><input class="js-ctaButton" name="completionCTA" id="ctaCustom" type="radio"> Custom URL</label>
+    <label><input class="js-ctaButton" name="completionCTA" id="ctaNone" type="radio"> No Button</label>
+</div>
+
+<div id="ctaButton" class="input-container">
+    <label class="width-1-1 widget-input-title">Call to Action Button</label>
+    <input class="width-1-2" placeholder="Redeem Rewards" type="text"/>
+</div>
+
+<div id="ctaURL" class="input-container" style="display: none">
+    <label class="is-required width-1-1 widget-input-title">Call to Action URL</label>
+    <input class="width-3-4" placeholder="http://www.examplesite.com" type="text"/>
+</div>
+
+<label>Campaign Branding</label>
+<div class="input-container radio radio-inline">
+    <label><input name="campaignBrand" class="js-radio js-radio--image" type="radio" checked> Image</label>
+    <label><input name="campaignBrand" class="js-radio js-radio--text" type="radio"> Text</label>
+</div>
+<div id="brandLogo" class="input-container">
+    <div id="dropZoneLogo" class="js-dropZone dz-clickable upload upload--drop" data-message="Drag and Drop, or click to upload image">
+        <div class="upload__remove">
+            <i class="upload__remove-icon fa fa-trash-o fa-4x" data-target="logo"></i>
+        </div>
+    </div>
+</div>
+<div id="brandText" class="input-container" style="display: none">
+    <label class="is-required">Brand Name</label>
+    <input id="brandEntry" placeholder="Enter Brand's Name" class=" width-4-5" type="text">
+</div>
+
+            </div>
+            <div id="moduleSection" class="js-subSection section"><header class="u-display-flex u-display-flex--vcentered container">
+  <h2 class="nomargin">Modules</h2>
+  <div class="u-flex-right dropdown">
+    <button id="addButton" class="button-positive dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i> Add Modules</button>
+    <ul class="dropdown-menu dropdown-menu--modules">
+        <li><a class="js-addButton">Trivia</a></li>
+        <li><a class="js-addButton">Codeword</a></li>
+        <li><a class="js-addButton">Survey</a></li>
+        <li><a class="js-addButton">Coupon</a></li>
+        <li><a class="js-addButton">Video</a></li>
+        <li><a class="js-addButton">Featured Link</a></li>
+        <li><a class="js-addButton">Email Opt-In</a></li>
+        <li><a class="js-addButton">Lead Generator</a></li>
+    </ul>
+  </div>
+</header>
+<div id="modulesContainer" class="container is-empty" data-empty="Click the button above to add a module"></div>
+
+            </div>
+            <div id="designSection" class="js-subSection section"><header class="u-display-flex u-display-flex--vcentered container">
+  <h2 class="nomargin">Design</h2>
+  <div class="u-flex-right clearfix">
+      <div class="button-toggle">
+          <input class="hidden" name="buttonToggle" id="btn1" type="radio" checked />
+          <label class="button js-switchScreen" for="btn1">Module Screen</label>
+      </div>
+      <div class="button-toggle">
+          <input class="hidden" name="buttonToggle" id="btn2" type="radio"/>
+          <label class="button js-switchScreen js-switchScreen--start" for="btn2">Start Screen</label>
+      </div>
+  </div>
+</header>
+
+<div class="container container-sectioned">
+    <h3 class="is-contrasted">Colors</h3>
+    <div class="u-display-flex">
+        <div class="u-display-flex__item">
+            <label for="primaryColor">Primary Color</label>
+            <input id="primaryColor" value="#eee" class="js-miniColors" type="text" />
+        </div>
+        <div class="u-display-flex__item">
+            <label for="secondaryColor">Secondary Color</label>
+            <input id="secondaryColor" value="#000" class="js-miniColors" type="text" />
+        </div>
+        <div class="u-display-flex__item">
+            <label for="headerColor">Header Color</label>
+            <input id="headerColor" value="#fff" class="js-miniColors" type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="container container-sectioned">
+    <h3 class="is-contrasted">Background Image <small>(Optional)</small></h3>
+    <div id="dropZoneBg" class="js-dropZone dz-clickable upload upload--banner upload--drop" data-message="Drag and Drop, or click to upload image">
+        <div class="upload__remove">
+            <i class="upload__remove-icon fa fa-trash-o fa-4x" data-target="background"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container container-sectioned">
+    <h3 class="is-contrasted">Font Style</h3>
+    <div class="u-display-flex font-styles">
+        <div class="font-style font-style--a is-selected is-clickable" data-style="Montserrat">Font A</div>
+        <div class="font-style font-style--b is-clickable" data-style="Oswald">Font B</div>
+        <div class="font-style font-style--c is-clickable" data-style="Arvo">Font C</div>
+    </div>
+</div>
+<div class="input-container">
+    <h3 class="is-contrasted">Button Style</h3>
+    <div class="u-display-flex font-styles">
+        <button class="button-style is-selected button-style--a" data-style="Flat">Flat</button>
+        <button class="button-style button-style--b" data-style="Round">Rounded</button>
+        <button class="button-style button-style--c" data-style="Pill">Pill</button>
+    </div>
+</div>
+
+            </div>
+            <div id="syndSection" class="js-subSection section"><div class="syndication syndication--advanced">
+        <div class="">
+            <div class="toolbar nopadding">
+                <h3 class="floatleft">Available Items</h3>
+                <div class="toolbar-group floatright">
+                    <a id="collapseAll" href="#"><i class="fa fa-minus-square-o"></i> Collapse All</a>
+                    <a id="expandAll" href="#"><i class="fa fa-plus-square-o"></i> Expand All</a>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <input class="width-3-4" type="text" id="searchSites" placeholder="Search for items">
+                </div>
+                <div class="panel-content">
+                    <ul style="min-height: 175px"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="toolbar nopadding">
+                <h3 class="floatleft">Selected Items</h3>
+                <div class="toolbar-group floatright">
+                    <a id="deselectAll" href="#">Deselect All</a>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header selected-site-head" id="selectedSiteHeader">
+                    <h3 class="selected-site-header" id="headername"></h3>
+                    <span id="headerparent"></span>
+                </div>
+
+                <div class="panel-content">
+                    <ul class="zerolist fancytree-container" id="selectedItems" style="min-height: 175px"></ul>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+            </div>
+            <div id="publishSection" class="js-subSection section">
+
+            </div>
+        </div>
+        <div class="u-display-flex">
+            <button class="button-highlight js-buttonShift" data-button="Previous">Previous Step</button>
+            <button class="u-flex-right button-highlight js-buttonShift" data-button="Next">Next Step</button>
+        </div>
+    </div>
+    <div class="col-1-2">
+        <label>Live Preview</label>
+        <div id="livePreview" class="widget-preview" data-empty="Live Preview will generate when you add a title.">
+            <div id="previewContent" class="widget-preview__container widget-splash-container width-1-1"><div class="td-widget-container width-1-1">
+    <div class="td-widget-splash">
+        <div class="td-widget-splash__body">
+            <div class="td-widget-splash__body-bg" data-target="background"></div>
+            <div class="td-widget-splash__body-content">
+                <b id="campaignTitle" class="td-header-1 td-u-mb-25 td-u-center--text"></b>
+                <div id="campaignDescription" class="td-widget-p td-widget-p--medium td-u-mb-25"></div>
+                <div class="td-button td-button--large" onclick="location.href = './trivia.html'">Let's Get Started <span class="td-icon td-icon-chevron-right"></span></div>
+            </div>
+        </div>
+        <div class="td-widget-splash__footer">
+            <div class="td-widget-brand">
+                <span id="campaignBrand" class="td-widget-brand__text"></span>
+                <img id="campaignLogo" data-target="logo" src="" class="td-widget-brand__logo td-widget-splash__footer-logo">
+            </div>
+            <div class="td-widget-splash__footer-bg"></div>
+        </div>
+    </div>
+</div>
+
+            </div>
+            <div id="previewModule" class="widget-preview__container widget-module-container width-1-1" style="display: none">
+                <div class="td-widget-container">
+                    <div class="td-u-display-flex td-u-flex-centered td-widget-head">
+    <span class="td-u-center--v td-u-pos--a td-widget-head__control td-widget-head__control--left js-goBack" data-control="Back to List" onclick="location.href = './campaignlist.html'"><i class="td-icon td-icon-chevron-left td-widget-head__control-icon"></i></span>
+    <div class="td-widget-head__bg"></div>
+    <img class="td-widget-head__img" src="" alt="" data-target="logo"> 
+    <span class="td-u-center--v td-u-pos--a td-widget-head__control td-widget-head__control--right" data-control="Help"><i class="td-icon td-icon-question-circle td-widget-head__control-icon"></i></span>
+</div>
+
+                    <div class="td-widget-toolbar" data-current="" data-rewardAmount="" data-total="9600">
+    <span class="td-widget-toolbar__menu js-navMenu">
+        <span class="td-widget-toolbar__menu-icon td-icon td-icon-bars"></span>
+        <span id="campaignTotals"> out of 7</span> 
+    </span>
+    <div class="td-widget-progress">
+        <div class="td-widget-progress__amount"><span class="td-widget-progress__amount-current" data-units="pts">0</span> out of <span class="td-widget-progress__amount-actual" data-actual="9600">9600</span></div>
+        <div class="td-widget-progress__bar">
+            <span class="td-widget-progress__meter"></span>
+        </div>
+    </div>
+</div>
+
+                    <div id="widgetContainer" class="td-widget-content">
+                        <div class="js-module js-moduleTrivia" style="display: none">
+    <div class="td-widget-body td-u-display-flex td-u-flex-centered">
+        <div class="td-widget-overlay js-overlay">
+            <div class="td-widget-overlay__header"></div>
+        </div>
+        <div class="td-widget-body__bg" data-target="background"></div>
+        <div class="td-widget-body__content">
+            <div class="td-widget-trivia">
+                <b class="td-widget-trivia__count td-header-5">Question 1 out of 1</b>
+                <div class="td-header-2 td-u-center--text td-widget-trivia__question td-u-mb-10"><b data-mirror="Header" class="editable is-editable" placeholder="Question Will Appear Here"></b></div> 
+                <span class="td-button td-trivia-question__button" style="display:none">Find Answer Here</span>
+            </div>
+        </div>
+        <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+    </div>
+    <div class="td-widget-footer">
+        <div class="td-widget-answer td-u-display-flex td-u-flex-column">
+            <b class="td-widget-answer__label td-u-mb-10 td-trivia-form__label">Your Answer</b>
+            <div class="td-widget-input td-u-mb-15">
+                <input class="td-widget-input__field js-triviaInput" type="text" placeholder="Enter Answer Here" data-answer="" autofocus/>
+            </div>
+        </div>
+
+        <div class="td-widget-subfooter td-u-display-flex td-u-flex-centered">
+            <b class="td-widget-subfooter__link td-widget-link" onclick="location.href = './coupon.html'">Skip This</b>
+            <span class="td-button td-button--secondary td-button--large td-widget-subfooter__button js-formSubmit" data-next="coupon" onclick=""><b>Submit Answer</b></span>
+        </div>
+    </div>
+</div>
+                        <div class="js-module js-moduleCodeword" style="display: none">
+<div class="td-widget-body  td-u-display-flex td-u-flex-centered">
+
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-body__header td-header-2 td-header--accent"><b class="editable is-editable" placeholder="Module Title Appears Here" data-mirror="Header"></b></div>
+            <div class="td-widget-contentblock td-widget-contentblock--column">
+                <div class="td-widget-contentblock__item td-widget-p editable is-editable" data-mirror="Content" placeholder="Optional Description Appears Here"></div> 
+                <div class="td-widget-contentblock__item td-widget-img" style=""></div>
+            </div>
+    </div>
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+
+</div>
+<div class="td-widget-footer">
+
+    <div class="td-widget-answer td-u-display-flex td-u-flex-column">
+        <b class="td-widget-answer__label td-u-mb-10 td-trivia-form__label">Codeword</b>
+        <div class="td-widget-input td-u-mb-15">
+            <input class="td-widget-input__field js-triviaInput" type="text" placeholder="Enter Codeword Here" data-answer="Wings" autofocus/>
+        </div>
+    </div>
+
+    <div class="td-widget-subfooter td-u-display-flex td-u-flex-centered">
+        <b class="td-widget-subfooter__link td-widget-link" onclick="location.href = './video.html'">Skip This</b>
+        <span class="td-button td-button--secondary td-button--large td-widget-subfooter__button js-formSubmit" data-next="video"><b>Submit Answer</b></span>
+    </div>
+
+</div>
+</div>
+                        <div class="js-module js-moduleEmail" style="display: none">
+<div class="td-widget-body td-widget-body--shortest td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-body__header td-header-2 td-header--accent"><b class="editable is-editable" data-mirror="Header" placeholder="Module Title Appears Here"></b></div>
+        <div class="td-widget-contentblock">
+            <div class="td-widget-contentblock__item td-widget-p editable is-editable" data-mirror="Content" placeholder="Optional Description Appears Here"></div>
+        </div>
+    </div>
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+
+    <div class="td-widget-form td-u-mb-20 td-width-9-10">
+        <div class="td-widget-input__container">
+            <span class="td-widget-form__label td-is-required">First Name</span>
+            <input class="td-widget-form__input" type="text">
+        </div>
+        <div class="td-widget-input__container">
+            <span class="td-widget-form__label td-is-required">Last Name</span>
+            <input class="td-widget-form__input" type="text">
+        </div>
+        <div class="td-widget-input__container">
+            <span class="td-widget-form__label td-is-required">Email</span>
+            <input class="td-widget-form__input" type="phone">
+        </div>
+        <div class="td-widget-input__container">
+            <span class="td-widget-form__label td-is-required">Zip Code</span>
+            <input class="td-widget-form__input" type="zip">
+        </div>
+    </div>
+    <div class="td-widget-p td-u-mb-10 js-optIn"><input type="checkbox" checked> Yes, I would like to recieve news and updates</div> 
+    <div class="td-widget-form__footer td-u-display-flex td-u-flex-centered">
+        <b class="td-widget-subfooter__link td-widget-link" onclick="location.href = './codeword.html'">Skip This</b>
+        <span class="td-button td-widget-subfooter__button js-submitForm" data-next="codeword" onclick=""><b>Submit</b></span>
+    </div>
+
+</div>
+</div>
+                        <div class="js-module js-moduleVideo" style="display: none">
+<div class="td-widget-body td-widget-body--medium td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-body__header td-header-2 td-header--accent"><b class="editable is-editable" placeholder="Module Title Appears Here" data-mirror="Header"></b></div>  
+        <div class="td-widget-contentblock">
+            <div id="player" class="td-widget-contentblock__item"></div>
+        </div>
+    </div>
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+    <div class="td-u-center--text">
+        <div class="td-button td-button--long td-u-mb-10 td-is-disabled js-videoContinue" onclick="">Continue</div>
+        <span class="td-widget-link js-videoSkip" onclick="location.href = './featuredlink.html'">Skip This</span>
+    </div>
+</div>
+</div>
+                        <div class="js-module js-moduleFeatured" style="display: none">
+<div class="td-widget-body td-widget-body--medium td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-body__header td-header-2 td-header--accent"><b class="editable is-editable" data-mirror="Header" placeholder="Module Title Appears Here"></b></div>
+        <div class="td-widget-contentblock td-widget-contentblock--column">
+            <div class="td-widget-contentblock__item td-u-mb-10 td-widget-p editable is-editable" data-mirror="Content" placeholder="Optional Description Appears Here"></div>
+            <img class="td-widget-img td-widget-img--short" src="" alt=""> 
+        </div>
+    </div>
+
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+
+    <div class="td-u-center--text">
+        <div class="td-button td-button--long td-u-mb-10 js-buttonAction" onclick="window.open('http://buffalowildwingscitrusbowl.com/')">Visit Site</div>
+        <span class="td-widget-link js-skipLink" onclick="location.href = './completion.html'">Skip This</span>
+    </div>
+
+</div>
+</div>
+                        <div class="js-module js-moduleLead" style="display: none">
+<div class="td-widget-body td-widget-body--short td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-body__header td-header-2 td-header--accent"><b class="editable is-editable" data-mirror="Header" placeholder="Module Title Appears Here"></b></div>
+        <div class="td-widget-contentblock td-has-padding">
+            <div class="td-widget-contentblock__item td-widget-img td-widget-img--bg" style="display:none"></div>
+            <div class="td-widget-contentblock__item td-widget-p editable is-editable" data-mirror="Content" placeholder="Optional Description Appears Here"></div>
+        </div>
+    </div>
+
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+    <div class="td-width-9-10 td-widget-slider">
+        <div class="td-u-display-flex td-widget-slider__container td-width-2-1">
+            <div class="td-widget-lead__form td-width-1-2">
+                <div class="td-header-4"><b class="editable is-editable" data-mirror="altContent" placeholder="Would you like to learn more about this?"></b></div>  
+                <div class="td-widget-buttongroup td-width-9-10">
+                    <span class="td-button td-button--large js-leadButton">Yes</span>
+                    <span class="td-button td-button--large td-button--secondary" onclick="location.href = './email.html'">No</span>
+                </div>
+                <div class="td-widget-link" onclick="location.href = './email.html'">Skip This</div>
+            </div>
+            <div class="td-width-1-2">
+                <div class="td-header-3"><b>Thanks for your interest!</b></div>
+                <div class="td-widget-p td-u-mb-15">We just need a little more information</div>
+                <div class="td-widget-form td-u-mb-20">
+                    <div class="td-widget-input__container">
+                        <span class="td-widget-form__label td-is-required">First Name</span>
+                        <input class="td-widget-form__input" type="text">
+                    </div>
+                    <div class="td-widget-input__container">
+                        <span class="td-widget-form__label td-is-required">Last Name</span>
+                        <input class="td-widget-form__input" type="text">
+                    </div>
+                    <div class="td-widget-input__container">
+                        <span class="td-widget-form__label td-is-required">Phone Number</span>
+                        <input class="td-widget-form__input" type="phone">
+                    </div>
+                </div>
+                <div class="td-widget-form__footer td-u-display-flex td-u-flex-centered">
+                    <b class="td-widget-subfooter__link td-widget-link" onclick="location.href = './email.html'">Skip This</b>
+                    <span class="td-button td-widget-subfooter__button js-submitForm" data-next="email" onclick=""><b>Submit</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+                        <div class="js-module js-moduleCoupon" style="display: none">
+<div class="td-widget-body td-widget-body--medium td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-coupon">
+            <!-- This only shows when there is no coupon image present in the admin preview -->
+            <div class="coupon-placeholder u-display-flex td-u-display-flex td-u-flex-centered" data-placeholder="Coupon Image Goes Here"></div>
+            <!-- Ends coupons placeholder -->
+            <img class="td-widget-img td-widget-img--tall td-u-mb-15 td-widget-coupon__img" src="" alt="">
+            <div class="td-width-9-10 td-widget-slider">
+                <div class="td-u-display-flex td-widget-slider__container td-width-2-1">
+                    <div class="td-widget-buttongroup td-width-1-2">
+                        <span class="td-button td-u-hide-small js-print">Print Coupon</span>
+                        <span class="td-button js-email">Email Coupon</span>
+                    </div>
+                    <div class="td-widget-coupon__email td-width-1-2">
+                        <div class="td-u-display-flex td-u-flex-centered--h td-u-mb-10">
+                            <input class="td-widget-coupon__input" type="email" placeholder="Enter Email Address">
+                            <div class="td-button js-sendEmail">Send Coupon</div>
+                        </div>
+                        <span class="td-u-hide-small"><i class="td-icon td-icon-print"></i> Print</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+    <div class="td-u-mb-10 td-widget-p td-widget-p--small editable is-editable" data-mirror="Content" placeholder="Coupon Disclaimer Goes Here"></div>   
+    <div class="td-widget-link js-emailContinue" onclick="location.href = './lead.html'">Skip This</div>
+</div>
+</div>
+                        <div class="js-module js-moduleSurvey" style="display: none"><div class="td-widget-body td-widget-body--shortest td-u-display-flex td-u-flex-centered">
+    <div class="td-widget-overlay js-overlay">
+        <div class="td-widget-overlay__header"></div>
+    </div>
+    <div class="td-widget-body__bg" data-target="background"></div>
+    <div class="td-widget-body__content">
+        <div class="td-widget-trivia">
+            <b class="td-widget-trivia__count td-header-5">Question 1 of 2</b>
+            <div class="td-header-2 td-u-center--text td-widget-trivia__question td-u-mb-10"><b>Do you like to have fun everyday?</b></div>
+        </div>
+    </div>
+
+    <span class="td-pill td-pill--small td-u-pos__br"><i class="td-trivia-points__icn td-icon td-icon-database"></i> For 500pts</span>
+</div>
+<div class="td-widget-footer">
+    <div class="td-u-display-flex td-u-flex-space--a">
+        <div class="td-widget-circle td-widget-survey__choice td-widget-survey__choice--yn js-surveyChoice" data-choice="Yes"></div>
+        <div class="td-widget-circle td-widget-survey__choice td-widget-survey__choice--yn js-surveyChoice" data-choice="No"></div>
+    </div>
+
+    <div class="td-widget-subfooter td-u-display-flex td-u-flex-centered">
+        <b class="td-widget-subfooter__link td-widget-link" onclick="location.href = './coupon.html'">Skip This</b>
+        <span class="td-button td-button--secondary td-button--large td-widget-subfooter__button" data-next="coupon" onclick=""><b>Submit Answer</b></span>
+    </div>
+</div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="deleteDialog" title="Delete Module?" style="display:none;">
+    <p>Are you sure you would like to delete the selected module?</p>
+</div>
+<div id="first-time" style="display:none;">
+    <h2 class="center-text">Welcome to the Module Creator</h2>
+    <p class="center-text">Add a new module for your campaign is easy as 1-2-3. Simply follow the steps below to start crafting the perfect content for your campaign.</p>
+    <hr>
+    <div class="onboarding">
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--a" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img1.png')"></div>
+            <p>Add a new module by simply clicking the green "Add module" button. You can add up to 10 modules per campaign.</p>
+        </div>
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--b" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img2.png')"></div>
+            <p>Simply add your content to your newly inserted module by using the input fields. Each module can be reordered or deleted.</p>
+        </div>
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--c" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img3.png')"></div>
+            <p>All of your changes to each module can be seen in the live preview area on the right side.</p>
+        </div>
+    </div>
+</div>
+
+<div id="selectSurvey" title="Select Existing Survey" style="display:none;">
+    <ul class="zerolist survey-module__list">
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+    </ul>
+</div>
+
+
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="jquery.minicolors.min.js"></script>
+<script src="dropzone.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

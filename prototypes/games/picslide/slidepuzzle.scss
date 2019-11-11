@@ -1,0 +1,694 @@
+//@import "C:/Users/scott.cody/Documents/GitHub/amp-engagement/www/app/sass/partials/_variables.scss";
+//@import "C:/Users/scott.cody/Documents/GitHub/amp-engagement/www/app/sass/compass/css3/_border-radius.scss";
+
+$main: #df6d2a;
+
+$light:   lighten($main, 23);
+$x-light: lighten($main, 35);
+$dark:    darken($main, 13);
+$x-dark:  darken($main, 23);
+$bg:      linear-gradient(to bottom, darken(rgba($main,.9),20%), darken(rgba($main,.9),35%));
+$hint:    adjust_hue(lighten($main, 2), 185);
+
+$easy:    #64C623;
+$med:     #F1890C;
+$hard:    #F21D0B;
+$grey:    #656565;
+
+    .see-widget-slidepuzzle {
+        height: 565px;
+        width: 500px;
+        position: relative;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif;
+
+        div {
+            box-sizing: border-box;
+        }
+
+        p, h1, h2, h3, li {
+            font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif;
+        }
+
+        .see-status {
+            height: 20px;
+        }
+
+        .see-video-ad {
+            width: 500px;
+            height: 540px;
+            background: rgba(0,0,0,.4);
+        }
+
+        .see-board {
+            width: 500px;
+            height: 565px;
+            clear: both;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: #FFF;
+        }
+
+        .see-footer {
+            color: #FFFFFF;
+            display: none;
+            height: 65px;
+            width: 100%;
+            position: absolute;
+            // start off hidden
+            bottom: 0px;
+            display: none;
+            top: initial;
+            background: $main;
+
+          .see-newgame-wrapper {
+            position: relative;
+            float: left;
+            padding: 5px 20px;
+            margin: 10px 0px;
+            border-right: solid 1px darken($main,10%);
+
+            img {
+              margin-top: 4px;
+              cursor: pointer;
+            }
+          }
+
+          .see-howto-wrapper {
+            position: relative;
+            float: left;
+            padding: 5px 20px;
+            margin: 10px 0px;
+
+            img {
+              margin-top: 4px;
+              cursor: pointer;
+            }
+          }
+
+          .see-moves-wrapper {
+            position: relative;
+            float: right;
+            padding: 3px 13px 6px 13px;
+            background-color: $dark;
+            text-align: center;
+            font-size: 0.9em;
+
+            .see-moves-digit {
+              position: relative;
+              display: block;
+              float: left;
+              background-color: $x-dark;
+              width: 30px;
+              height: 34px;
+              text-align: center;
+              margin-left: 1px;
+              margin-top: 5px;
+              overflow: hidden;
+              line-height: 34px;
+
+              .see-moves-digit-1,
+              .see-moves-digit-2,
+              .see-moves-digit-3 {
+                position: relative;
+                top: 0px;
+                color: white;
+                font-size: 2em;
+                font-weight: bold;
+              }
+            }
+          }
+
+
+            button {
+                margin: 13px;
+                padding: 0px 10px 0px 40px;
+                border: 0;
+                width: initial;
+                height: inital;
+                float:left;
+                text-align: center;
+                line-height: 40px;
+                font-size: 15px;
+                display: block;
+                color: white;
+                font-weight: normal;
+                position: relative;
+                top: 0px;
+                cursor: pointer;
+                outline: none;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+                background-color: $dark;
+                border-radius: 6px;
+
+              &:hover{
+                background-color: $light;
+                color: white;
+              }
+
+              &:active{
+                background-color: $light;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+                color: white;
+              }
+            }
+
+            button.see-shuffle {
+              background-image: url('img/history-1.png');
+            }
+
+            button.see-help {
+              background-image: url('img/binoculars-1.png');
+              left: 0px;
+              border: none;
+            }
+
+            button.see-howto {
+                width: 166px;
+                left: 334px;
+            }
+        }
+
+        .see-piece {
+            position: absolute;
+            text-indent: 0px;
+            width: 100px;
+            height: 100px;
+            display: block;
+            line-height: 100px;
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+
+          .see-piece-hint {
+            display: none;
+          }
+        }
+
+        .see-piece-hole { display: none; }
+
+        .see-piece.see-first {
+            clear: both;
+        }
+
+        .see-modal {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 500px;
+            height: 565px;
+            background: $bg;
+
+            h3 {
+                color: $light;
+                font-size: 1.9em;
+                padding: 0;
+                margin: 0;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: 1.3em;
+                color: white;
+            }
+
+
+
+            .see-newgame {
+
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+              .see-logo {
+                position: relative;
+                left: 0px;
+                top: 0px;
+
+                margin: 20px auto;
+                width: 100%;
+
+                background: none;
+                color: white;
+                font-family: "Arial Rounded MT Bold";
+                font-size: 4.5em;
+                text-align: center;
+                text-shadow: -4px 4px rgba(0,0,0,.2);
+
+                .blue {
+                  color: $light;
+                }
+
+              }
+
+                .see-start-wrapper{
+                  position: relative;
+
+                  height: 300px;
+                  margin: 0px 20px;
+                  width: 460px;
+
+                  background: white;
+                  border-radius: 6px;
+                  box-shadow: -5px 5px rgba(0,0,0,.2);
+
+                  .see-start {
+                    position: relative;
+                    left: 20px;
+
+                    border-bottom: 1px solid $light;
+                    color: $light;
+                    font-size: 30px;
+                    height: 60px;
+
+                    line-height: 60px;
+                    position: absolute;
+                    text-align: center;
+                    top: 0px;
+                    width: 420px;
+                  }
+                  .see-button {
+                    background-position: center 18px;
+                    background-repeat: no-repeat;
+                    color: black;
+                    display: block;
+                    height: 200px;
+                    padding: 130px 18px 18px 18px;
+                    position: absolute;
+                    text-align: center;
+                    top: 80px;
+                    width: 143px;
+                    cursor: pointer;
+                    border-radius: 6px;
+
+                    .see-points-value {
+                      border-radius: 6px;
+                      display: block;
+                      margin: 10px auto;
+                      padding: 3px 0px;
+                      width: 85px;
+
+                      color: white;
+                      font-size: 1.1em;
+                    }
+
+                  }
+                  .see-button:hover, .see-button:active {
+                      background-color: $x-light;
+                      color: black;
+                  }
+
+                  .see-button.easy {
+                      left: 20px;
+                      background-image: url('http://10.1.4.108/app/public/images/puzzles/diff-easy.png');
+
+                    .see-points-value {
+                      background: $easy;
+                    }
+                  }
+                  .see-button.medium {
+                      left: 159px;
+                      background-image: url('http://10.1.4.108/app/public/images/puzzles/diff-med.png');
+
+                    .see-points-value {
+                      background: $med;
+                    }
+                  }
+                  .see-button.hard {
+                      left: 298px;
+                      background-image: url('http://10.1.4.108/app/public/images/puzzles/diff-hard.png');
+
+                    .see-points-value {
+                      background: $hard;
+                    }
+                  }
+                }
+            }
+
+            .see-complete {
+
+              .see-logo {
+                position: relative;
+                left: 0px;
+                top: 0px;
+                margin: 20px auto;
+                width: 65%;
+                background: none;
+                color: white;
+                font-family: "Arial Rounded MT Bold";
+                font-size: 3.5em;
+                text-align: center;
+                text-shadow: -4px 4px rgba(0, 0, 0, 0.2);
+                border-bottom: solid 1px $light;
+
+                .blue {
+                  color: $light;
+                }
+              }
+
+              .see-solved {
+                position: relative;
+                width: 100%;
+                top: 0px;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                color: white;
+                font-size: 3em;
+                font-weight: bold;
+
+                img {
+                  bottom: -5px;
+                  position: relative;
+                  margin-right: 11px;
+                }
+              }
+
+              .see-results {
+                background: $dark;
+                color: #FFFFFF;
+                font-size: 80px;
+                height: 150px;
+                left: 0px;
+                letter-spacing: initial;
+                line-height: initial;
+                position: relative;
+                text-align: center;
+                top: 0px;
+                width: 80%;
+                border-radius: 6px;
+                margin: 10px auto;
+                box-shadow: -5px 5px rgba(0,0,0,.2);
+                overflow:hidden;
+
+                .see-moves-wrapper {
+                  position: relative;
+                  float: left;
+                  padding: 8px 13px 7px 13px;
+                  text-align: center;
+                  font-size: .25em;
+                  width: 50%;
+                  height: 100%;
+                  border-right: solid 1px lighten($dark,10);
+
+                  .see-moves-digit {
+                    position: relative;
+                    display: block;
+                    float: left;
+                    background-color: $x-dark;
+                    width: 56px;
+                    height: 70px;
+                    text-align: center;
+                    margin-left: 1px;
+                    margin-top: 8px;
+                    overflow: hidden;
+
+                    .see-moves-digit-1,
+                    .see-moves-digit-2,
+                    .see-moves-digit-3 {
+                      position: relative;
+                      top: 0px;
+                      color: white;
+                      font-size: 2.7em;
+                      font-weight: bold;
+                      line-height: 70px;
+                    }
+                  }
+
+                  .see-completion-time {
+                    display: block;
+                    color: $light;
+                    font-size: 0.9em;
+                    margin-top: 8px;
+                    float: left;
+                    width: 100%;
+
+                  }
+                }
+
+                .see-results-level {
+                  position: relative;
+                  float: right;
+                  width: 50%;
+                  height: 100%;
+                  border-left: solid 1px $x-dark;
+                  font-size: .18em;
+
+                  .see-results-stars {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
+                    font-size: initial;
+                    top: 30px;
+
+                    span {
+                      margin: 0px 5px;
+                      background: url('img/star-2b.png');
+                      width: 42px;
+                      height: 40px;
+                      display: inline-block;
+                    }
+
+                    .filled {
+                      background: url('img/star-2.png');
+                    }
+                  }
+
+                  .see-results-text {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
+                    top: 40px;
+
+                    span {
+                      display: inline-block;
+                      color: #FEF900;
+                      text-transform: uppercase;
+                      font-size: 1.2em;
+                    }
+                  }
+                }
+              }
+
+              .see-options {
+
+                button {
+                  margin: 20px auto;
+                  padding: 15px 20px 15px 50px;
+                  border: 0;
+                  text-align: center;
+                  font-size: 1.3em;
+                  display: block;
+                  color: white;
+                  position: relative;
+                  cursor: pointer;
+                  background-repeat: no-repeat;
+                  background-position: 20px center;
+                  background-color: $dark;
+                  border-radius: 6px;
+                  box-shadow: -5px 5px rgba(0,0,0,.2);
+
+
+                  &:hover{
+                    color: white;
+                  }
+
+                  &:active{
+                    background-color: $light;
+                    background-repeat: no-repeat;
+                    background-position: 20px center;
+                    color: white;
+                  }
+                }
+
+                button.see-play-again {
+                  background-image: url('img/history-1.png');
+                  background-color: $easy;
+                }
+
+                button.see-choose-difficulty {
+                  background-image: url('img/window-1.png');
+                  background-color: $light;
+                }
+              }
+
+              .see-button.playagain {
+                    top: 440px;
+              }
+
+              .see-button.see-share {
+                    top: 390px;
+                    background: $x-light;
+                    .see-icon {
+                        color: #FFFFFF;
+                        font-family: 'FontAwesome';
+                        font-size: 25px;
+                        position: absolute;
+                        right: 25px;
+                        top: 0;
+                    }
+                    .see-icon:before {
+                        content: "\f082";
+                    }
+              }
+            }
+
+            .see-howto {
+                position: relative;
+                padding: 30px;
+                font-size: 1em;
+
+                span.see-close {
+                  position: relative;
+                  color: $light;
+                  font-size: 2em;
+                  font-family: 'FontAwesome';
+                  cursor: pointer;
+                  float: right;
+
+                }
+
+                .see-howto-wrapper {
+                  position: relative;
+                  padding: 20px;
+                  width: 100%;
+                  border: solid 1px $light;
+                  font-size: 0.8em;
+                  top: 60px;
+
+                  h3 {
+                    color: $light;
+                    font-weight: bold;
+                    padding-top: 0px;
+                    text-align: left;
+                    font-size: 3em;
+
+                  }
+
+                  p {
+                    color: white;
+                  }
+                }
+                span.see-close:before {
+                    content: "\f057";
+                }
+            }
+
+            .see-messagemodal {
+                text-align: center;
+                h3 {
+                    margin: 150px 0 10px;
+                    font-size: 3em;
+                    font-family: "Myriad Pro", Helvetica, Tahoma, "Nimbus Sans", Arial, sans-serif;
+                }
+                a {
+                    color: $x-light;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .see-login {
+            display: none;
+            position: absolute;
+            top: 575px;
+            left: 0;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            width: 500px;
+            color: $grey;
+            background: #D5F1FF;
+
+            a {
+                color: $x-light;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+
+    .see-widget-slidepuzzle.see-needtologin {
+        height: 625px;
+        .see-login {
+            display: block;
+        }
+    }
+
+    .see-widget-slidepuzzle.modal .piece {
+        -webkit-filter: blur(9px);
+        -moz-filter: blur(9px);
+        -o-filter: blur(9px);
+        -ms-filter: blur(9px);
+        filter: blur(9px);
+    }
+    .see-widget-slidepuzzle.see-solved .piece,
+    .see-widget-slidepuzzle.see-solved .board.help .piece {
+        text-indent: 200px;
+    }
+
+    // Account for different sizes
+    .see-widget-slidepuzzle.size-3 {
+        .see-board {
+            width: 498px;
+            height: 498px;
+            margin: 0px 1px 1px 0px;
+        }
+        .see-piece {
+            width: 166px;
+            height: 166px;
+            line-height: 166px;
+            font-size: 60px;
+        }
+    }
+
+    .see-widget-slidepuzzle.size-4 {
+        .see-piece {
+            width: 125px;
+            height: 125px;
+            line-height: 125px;
+            font-size: 50px;
+        }
+    }
+
+    .see-widget-slidepuzzle.size-5 {
+        .see-piece {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 40px;
+        }
+    }
+
+
+    .see-widget-slidepuzzle.see-help {
+        .see-piece .see-piece-hint {
+            background-color: rgba($hint, 0.9);
+            color: #fff;
+            border-radius: 50%;
+            font-size: .6em;
+            text-shadow: none;
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            line-height: 50px;
+          }
+
+
+        .see-footer button.see-help{
+          background-color: $hint;
+        }
+
+    }

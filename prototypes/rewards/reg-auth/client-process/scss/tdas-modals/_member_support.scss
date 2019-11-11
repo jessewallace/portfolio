@@ -1,0 +1,300 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+
+// -------------------------------------
+//   Member Support
+// -------------------------------------
+
+
+.registration-widget-overlay-support-content {
+    position: relative;
+
+    overflow: hidden;
+    transition: 0.5s all ease;
+
+    h3 {
+        left: 0;
+        margin-top: 0;
+        position: relative;
+
+        font-weight: normal;
+    }
+
+    label {
+        position: relative;
+        
+        display: block;
+        margin-bottom: 12px;
+
+        color: $primary-color;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    form {
+        left: 0;
+        position: relative;
+    }
+
+    select, input, textarea {
+        display: block;
+        margin-top: 4px;
+        padding: 8px;
+
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+
+    button:disabled, input:disabled, textarea:disabled, select:disabled {
+        opacity: 0.5;
+    }
+
+    #tdas-member-support-characters {
+        display: inline-block;
+        margin-top: 5px;
+        width: 100%;
+
+        font-size: 12px;
+        text-align: right;
+
+        &.charactersLow {
+            color: #ffaa00;
+        }
+
+        &.charactersOut {
+            color: #f00;
+
+            div {
+                transform: scaleY(1);
+            }
+        }
+
+        div {
+            bottom: -40px;
+            position: absolute;
+            right: 0;
+
+            border-radius: 30px;
+            float: right;
+            padding: 9px 12px 7px 32px;
+
+            background: #f00;
+            color: white;
+            clear: both;
+
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: 0.3s all ease;
+
+            &::before {
+                position: absolute;
+                left: 5px;
+                top: 3px;
+
+
+                content: '\f06a';
+                font-family: FontAwesome;
+                font-size: 2em;
+            }
+
+            &::after {
+                position: absolute;
+                right: 50px;
+                top: -16px;
+
+                color: #f00;
+                content: '\f0d8';
+                font-family: FontAwesome;
+                font-size: 2em;
+
+            }
+        }
+    }
+
+    #tdas-member-support-headline {
+        font-size: 18px;
+    }
+
+    .tdas-member-support-inline-selector {
+        position: relative;
+        z-index: 10;
+
+        cursor: pointer;
+        
+        &-toggle {
+            position: relative;
+            left: 5px;
+            top: -2px;
+
+            border-radius: 6px;
+            display: inline-block;
+            padding: 2px 5px;
+
+            background: $primary-color;
+            content: 'change';
+            color: #fff;
+            font-size: 10px;
+
+            transition: 0.3s all ease;
+        }
+
+        &-selected {
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0px -5px;
+            padding: 3px 5px 2px 5px;
+
+            font-weight: bold;
+
+            transition: 0.3s all ease;
+        }
+
+        &-menu {
+            border-radius: 5px;
+            margin: 5px 0;
+            position: absolute;
+
+            background: rgba($primary-color,0.9);
+            color: #fff;
+            overflow: hidden;
+
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: 0.3s all ease;
+
+            div {
+                padding: 10px 20px;
+
+                &:hover {
+                    background: $primary-color;
+                }
+            }
+        }
+
+        &.selector-active {
+            .tdas-member-support-inline-selector-toggle {
+                margin-left: -45px;
+
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .tdas-member-support-inline-selector-selected {
+                background: $primary-color;
+                font-weight: normal;
+                color: #fff;
+                margin-left: 0;
+            }
+
+            .tdas-member-support-inline-selector-menu {
+                transform: scaleY(1) !important;
+            }
+        }
+    }
+
+    .tdas-member-support-confirmation {
+        left: 100%;
+        position: absolute;
+        top: 0;
+
+        width: 100%
+    }
+
+    &.confirmation {
+        height: 290px !important;
+
+        text-align: center;
+        transition: 0.5s all ease;
+
+        p {
+            font-size: 14px;
+        }
+
+        h3, form, .tdas-member-support-confirmation {
+            transition: 0.5s all ease;
+        }
+
+        h3, form {
+            left: -100%;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+
+        .tdas-member-support-confirmation {
+            left: 0;
+        }
+
+       .fa-stack {
+           margin-bottom: 20px;
+           margin-top: 20px;
+           font-size: 3em;
+           color: #0b0;
+
+           #cir1 {
+               animation: cir1 2s 0.5s forwards alternate infinite;
+               -webkit-animation: cir1 2s 0.5s forwards alternate infinite;
+           }
+
+           #cir2 {
+               animation: cir2 2s 1.5s infinite;
+               -webkit-animation: cir2 2s 1.5s infinite;
+           }
+
+           #check {
+               animation: check 2s 0.5s forwards alternate infinite;
+               -webkit-animation: check 2s 0.5s forwards alternate infinite;
+           }
+        }
+    }
+}
+
+// ----- Animations ----- //
+
+@keyframes cir2 {
+    0%      { transform: scale(1); opacity: 1;}
+    50%     { transform: scale(1.5); opacity: 0; }
+    100%    { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes cir1 {
+    0%      { transform: scale(0); color: transparent ; }
+    50%    { transform: scale(1); color: #0b0;}
+    100%    { transform: scale(1); color: #0b0;}
+}
+
+@keyframes check {
+    0%      { transform: scale(0) rotateY(0deg); }
+    50%    { transform: scale(1) rotateY(360deg); color: #fff }
+    100%   { transform: scale(1) rotateY(360deg); color: #fff }
+}
+
+// ----- Animations (webkit) ----- //
+
+@-webkit-keyframes cir2 {
+    0%      { -webkit-transform: scale(1); opacity: 1;}
+    50%     { -webkit-transform: scale(1.5); opacity: 0; }
+    100%    { -webkit-transform: scale(1.5); opacity: 0; }
+}
+
+@-webkit-keyframes cir1 {
+    0%      { -webkit-transform: scale(0); color: transparent ; }
+    50%    { -webkit-transform: scale(1); color: #0b0;}
+    100%    { -webkit-transform: scale(1); color: #0b0;}
+}
+
+@-webkit-keyframes check {
+    0%      { -webkit-transform: scale(0) rotateY(0deg); }
+    50%    { -webkit-transform: scale(1) rotateY(360deg); color: #fff }
+    100%   { -webkit-transform: scale(1) rotateY(360deg); color: #fff }
+}

@@ -1,0 +1,32 @@
+
+@import "compass";
+@import "compass/css3";
+
+
+//----------------------------------*\
+// Triton Kitchen Sink Header
+//----------------------------------*/
+
+@import "../../../../../css/admin/CommonStyles/_kitchensinkheader.scss";
+
+
+// // Enhancement modules
+@import "../../../../../css/admin/CommonStyles/_toggleswitch.scss";
+
+
+// //----------------------------------*\
+// // PARTIALS
+// //----------------------------------*/
+
+@import "../../../../../css/admin/Applications/RewardsWidgets/partials/_rewardsite.scss";
+
+// //----------------------------------*\
+// // VENDOR
+// //----------------------------------*/
+@import "../../../../../css/admin/CommonStyles/vendor/_animate.scss";
+
+// //----------------------------------*\
+// // Triton Kitchen Sink Footer
+// //----------------------------------*/
+
+@import "../../../../../css/admin/CommonStyles/_kitchensinkfooter.scss";

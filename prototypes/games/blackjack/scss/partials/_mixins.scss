@@ -1,0 +1,48 @@
+@mixin animation-duration ($duration) {
+    animation-duration: $duration;
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+}
+
+@mixin animation-delay ($delay) {
+    animation-delay: $delay;
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+}
+
+@mixin blur($intensity) {
+    filter: blur($intensity);
+    -webkit-filter: blur($intensity);
+    -moz-filter: blur($intensity);
+}
+
+@mixin button($color1, $color2, $width, $height) {
+    border: 1px solid #000;
+    border-radius: 6px;
+    height: $height;
+    width: $width;
+
+    @include background-image(linear-gradient($color1, $color2));
+    @include box-shadow(-3px 3px rgba(0,0,0,0.15));
+    cursor: pointer;
+    font-family: 'Arial';
+    font-size: 24px;
+    font-weight: bold;
+    @include text-shadow(-3px 3px rgba(0,0,0,0.15));
+
+    &.bet-action-button[disabled] {
+        opacity: 0.4 !important;
+        cursor: not-allowed !important;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin transform($arguments) {
+  -ms-transform: $arguments;
+  -moz-transform: $arguments;
+  -webkit-transform: $arguments;
+  transform: $arguments;
+}

@@ -1,0 +1,143 @@
+.v1player-controls {
+    position: relative;
+
+    float: right;
+    height: 100%;
+    // width: 175px;
+
+    .v1p-vr {
+        height:20px;
+        width:2px;
+        background-color: $white;
+    }
+
+    .v1player-control {
+        position: relative;
+
+        float: right;
+        height: 100%;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        padding: 19px 10px;
+        color: $button-color;
+        font-size: 1.724em;
+        text-align: center;
+
+        cursor: pointer;
+
+        &:hover {
+            background: $highlight-color;
+            color: $button-hover;
+
+            text-shadow: 0px -2px 0px rgba(0, 0, 0, .2);
+        }
+
+        &.control-history:hover {
+            background: none;
+        }
+
+        &.active {
+            color: $button-hover;
+        }
+
+        .mobile-favorites-ctrl {
+            display: none;
+        }
+
+    }
+
+    .v1player-control-history {
+        position: relative;
+
+        height: 29px;
+        width: 29px;
+        margin-top: 24px;
+    }
+
+    .control-volume {
+        width: 50px;
+        padding-top: 22px;
+
+    }
+
+    .v1player-control-volume-slider {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        display: none;
+        width: 100%;
+        height: 190px;
+        background-color: $highlight-color;
+        background-position: 50%;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+
+        -webkit-user-select: none;
+        user-select: none;
+
+        #slider-vertical {
+            left: 21px;
+            top: 10px;
+
+            width: 9px;
+            height: 158px;
+            border-radius: 4px;
+            //background: url(img/vol-slider.png) no-repeat;
+            background: $button-color;
+
+            box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .8);
+
+        }
+
+        .ui-slider-handle {
+            left: -6px;
+
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            //background: url(img/vol-handle.png) no-repeat;
+            background: $button-hover;
+            
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+            outline: none;
+        }
+
+    }
+
+    .v1player-control-playstop {
+        font-size: 1.6em;
+        padding-top: 10px;
+
+        .fa-stack-1x {
+            font-size: .75em;
+        }
+
+        .fa-stop {
+            left: 0;
+            
+            transform: rotateY(90deg);
+            -webkit-transform: rotateY(90deg);
+
+            transition: .4s linear transform;
+            transition: .4s linear -webkit-transform;
+        }
+
+        .fa-play {
+            left: 2px;
+
+            transition: .4s .3s linear transform;
+            transition: .4s .3s linear -webkit-transform;
+        }
+    }
+
+    .button-pressed {
+        height: 101%;
+        border-left: solid 1px darken($highlight-color, 5);
+        border-right: solid 1px darken($highlight-color, 5);
+        background: $highlight-color;
+
+        div:first-child {
+            background-position: center bottom;
+        }
+    }
+}

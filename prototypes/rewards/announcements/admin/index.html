@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Announcements Admin</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.minicolors.css" />
+
+  </head>
+  <body style="background:url(https://admin.tritondigital.com/dashboard/CSS/images/bg.png); padding:50px 0 0 0;">
+
+	<!-- Main Content for Stand Alone -->
+	<!-- survey Admin -->
+	<div class="app-container nopadding">
+		<header class="app-header">
+            <h1 class="nomargin">Announcements Manager</h2>
+            <div class="button-container">
+                <button class="button">Cancel</button>
+                <button class="button button-positive">Save Updates</button>
+            </div>
+        </header>
+		<div class="flex-container">
+			<div class="sidebar center-text">
+				<div class="announcement-organizer">
+					<ul>
+						<li class="announcement-item selected" name="greenday">
+							<span class="item-title">Green Day announces new tour</span>
+							<div class="img-cover" style="background-image:url(img/greenday.jpg);"></div>
+	            			<div class="delete-announcement">
+			            		<i class="fa fa-times"></i>
+			            	</div>
+						</li>
+						<li class="announcement-item" name="offspring">
+							<span class="item-title">Win The Offspring's new CD!</span>
+							<div class="img-cover" style="background-image:url(img/offspring.jpg);"></div>
+	            			<div class="delete-announcement">
+			            		<i class="fa fa-times"></i>
+			            	</div>
+						</li>
+					</ul>
+				</div>
+				<button class="button-positive new-announcement"><i class="fa fa-plus"></i> new announcement</button>
+			</div>
+			<div class="main">
+				
+				<div class="announcement-customizer">
+
+					<div class="registration-widget-overlay-announcement-widget">
+				      <ul>
+
+				      	<li class="slide current" id="greenday">
+				          <div class="registration-widget-overlay-announcement-widget-header">
+				            <span class="announcement-title" contenteditable="true">Green Day announces new tour</span>
+				          </div>
+				          <div class="registration-widget-overlay-announcement-widget-content">
+				            <div class="announcement-image">
+				            	<div class="remove-image">Change...</div>
+				            	<img src="img/greenday.jpg" />
+				            </div>
+				            <div class="announcement-widget-right-side">
+				              <p contenteditable="true">Veteran punk rockers Green Day announced a new stateside tour for 2016, and they sure are hitting a lot of venues.  Seems things do continue to get better with age!</p>
+				              <div class="cta" contenteditable="true">Look for tickets</button>
+				            </div>
+				          </div>
+				        </li>
+
+				        <li class="slide" id="offspring">
+				          <div class="registration-widget-overlay-announcement-widget-header">
+				            <span class="announcement-title" contenteditable="true">Win the Offspring's new CD!</span>
+				          </div>
+				          <div class="registration-widget-overlay-announcement-widget-content">
+				            <div class="announcement-image">
+				            	<div class="remove-image">Change...</div>
+				            	<img src="img/offspring.jpg" />
+				            </div>
+				            <div class="announcement-widget-right-side">
+				              <p contenteditable="true">We have copies of "Days Go By" by The Offspring that we just can't hold on to. Be one of the first to grab this fired up released by Dexter and the gang.</p>
+				              <div class="cta" contenteditable="true">Enter contest</div>
+				            </div>
+				          </div>
+				        </li>	        
+
+				      </ul>
+				    </div>
+
+				</div>
+
+				<div class="announcement-options grid">
+					<div class="col-1-2">
+						<h3>Announcement settings</h3>
+						<div class="toolbar">
+							<label class="required">Active date</label>
+							<div class="input-append input-container toolbar-group">
+								<div class="prepend-to">
+									<span class="add-on">
+										<i class="fa fa-calendar"></i>
+									</span>
+									<input class="datepicker" type="text">
+								</div>
+							</div>
+							<div class="toolbar-group"><span>to</span></div>
+							<div class="input-append input-container toolbar-group">
+								<div class="prepend-to">
+									<span class="add-on">
+										<i class="fa fa-calendar"></i>
+									</span>
+									<input class="datepicker" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-1-2">
+						<h3>Call to action settings</h3>
+						<div class="input-container radio">
+							<label class="label-header">Link to URL on:</label>
+						    <label><input name="linkon" checked type="radio" value="button">Button only</label>
+						    <label><input name="linkon" type="radio" value="both">Button and Image</label>
+						    <label><input name="linkon" type="radio" value="none">No link</label>
+						</div>
+						<div class="input-container">
+						    <label>Link URL <i class="ui-tooltip-icon fa fa-info-circle" title="only valid urls and mailto links will be accepted"></i></label>
+						    <input class="full-width" placeholder="enter link address here" type="text" />
+						</div>
+						<div class="input-container">
+						    <label>Button color</label>
+						    <input class="minicolors" type="text" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>  
+	</div>
+
+	<!-- slide templates -->
+    <li class="slide template" style="display:none;">
+      <div class="registration-widget-overlay-announcement-widget-header">
+        <span class="announcement-title" contenteditable="true">Enter announcement title</span>
+      </div>
+      <div class="registration-widget-overlay-announcement-widget-content">
+        <div class="announcement-image empty">
+          <div class="image-empty">
+          	<i class="fa fa-cloud-upload"></i>
+          	<p class="nomargin">Drag & drop, or click to upload image</p>
+          </div>
+        </div>
+        <div class="announcement-widget-right-side">
+          <p contenteditable="true">Type here to enter copy for your announcement. Type here to enter copy for your announcement. Type here to enter copy for your announcement. Type here to enter copy for your announcement. Type here to enter copy for your announcement. </p>
+          <div class="cta" contenteditable="true">Call to Action</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="announcement-item template" style="display:none;">
+		<span class="item-title">Untitled announcement</span>
+		<div class="delete-announcement">
+    		<i class="fa fa-times"></i>
+    	</div>
+	</li>
+
+    <div id="delete-dialog" title="Delete announcement?" style="display:none;">
+        <p>Are you sure you would like to delete the selected announcement?</p>
+    </div>
+
+    <div id="first-time" style="display:none;">
+        <h2 class="center-text">Welcome to the new Announcements Manager</h2>
+        <p class="center-text">Using the new Announcements feature on your site, you can keep your members up to date on all of the exciting things happening, like new contests, upcoming promotions or other important news.</p>
+        <hr>
+        <div class="row">
+        	<div class="col-1-3">
+        		<img src="img/col1.jpg" />
+        		<p>Create new announcements on the left. You can reorder slides by dragging and dropping them.</p>
+        	</div>
+        	<div class="col-1-3">
+        		<img src="img/col2.jpg" />
+        		<p>Customize your announcements using the fully interactive preview on the right. All text can be adjusted to whatever you need.</p>
+        	</div>
+        	<div class="col-1-3">
+        		<img src="img/col3.jpg" />
+        		<p>Schedule and make any other additional tweaks.  Save your updates and you're done!</p>
+        	</div>
+        </div>
+    </div>
+
+
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.minicolors.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,94 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+
+    	# META VIEWPORT
+    	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace {FOLDERNAME} with your directory URL eg:
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /saas/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /saas/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /saas/theme/icons/folder-home.png ..
+	
+	AddIconByType (TXT,/saas/theme/icons/text.png) text/*
+	AddIconByType (IMG,/saas/theme/icons/image.png) image/*
+	AddIconByType (SND,/saas/theme/icons/audio.png) audio/*
+	AddIconByType (VID,/saas/theme/icons/video.png) video/*
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /saas/theme/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /saas/theme/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	AddIcon /saas/theme/icons/bin.png .bin .hex
+	AddIcon /saas/theme/icons/bmp.png .bmp
+	AddIcon /saas/theme/icons/c.png .c
+	AddIcon /saas/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /saas/theme/icons/cd.png .iso
+	AddIcon /saas/theme/icons/cpp.png .cpp
+	AddIcon /saas/theme/icons/css.png .css .sass .scss
+	AddIcon /saas/theme/icons/deb.png .deb
+	AddIcon /saas/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /saas/theme/icons/draw.png .svg .svgz
+	AddIcon /saas/theme/icons/eps.png .ai .eps
+	AddIcon /saas/theme/icons/exe.png .exe
+	AddIcon /saas/theme/icons/gif.png .gif
+	AddIcon /saas/theme/icons/h.png .h
+	AddIcon /saas/theme/icons/html.png .html .xhtml .shtml .htm .URL .url
+	AddIcon /saas/theme/icons/ico.png .ico
+	AddIcon /saas/theme/icons/java.png .jar
+	AddIcon /saas/theme/icons/jpg.png .jpg .jpeg .jpe
+	AddIcon /saas/theme/icons/js.png .js .json
+	AddIcon /saas/theme/icons/markdown.png .md
+	AddIcon /saas/theme/icons/package.png .pkg .dmg
+	AddIcon /saas/theme/icons/pdf.png .pdf
+	AddIcon /saas/theme/icons/php.png .php .phtml
+	AddIcon /saas/theme/icons/playlist.png .m3u .m3u8 .pls .pls8
+	AddIcon /saas/theme/icons/png.png .png
+	AddIcon /saas/theme/icons/ps.png .ps
+	AddIcon /saas/theme/icons/psd.png .psd
+	AddIcon /saas/theme/icons/py.png .py
+	AddIcon /saas/theme/icons/rar.png .rar
+	AddIcon /saas/theme/icons/rb.png .rb
+	AddIcon /saas/theme/icons/rpm.png .rpm
+	AddIcon /saas/theme/icons/rss.png .rss
+	AddIcon /saas/theme/icons/script.png .bat .cmd .sh
+	AddIcon /saas/theme/icons/sql.png .sql
+	AddIcon /saas/theme/icons/tiff.png .tiff .tif
+	AddIcon /saas/theme/icons/text.png .txt .nfo
+	AddIcon /saas/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /saas/theme/icons/xml.png .xml
+	AddIcon /saas/theme/icons/zip.png .zip
+	DefaultIcon /saas/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /saas/theme/header.html
+	ReadmeName /saas/theme/footer.html
+	IndexStyleSheet "/saas/theme/style.css"

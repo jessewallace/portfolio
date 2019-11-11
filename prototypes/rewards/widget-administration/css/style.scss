@@ -1,0 +1,38 @@
+
+@import "compass";
+@import "compass/css3";
+
+//----------------------------------*\
+// Triton Kitchen Sink Header
+//----------------------------------*/
+
+@import "../../../../../css/admin/CommonStyles/_kitchensinkheader.scss";
+
+
+// // Enhancement modules
+@import "modules/themes/_blue.scss";
+@import "modules/themes/_gray.scss";
+@import "modules/themes/_green.scss";
+@import "modules/themes/_orange.scss";
+@import "modules/themes/_purple.scss";
+@import "modules/themes/_red.scss";
+
+@import "../../../../../css/admin/CommonStyles/_adminwidget.scss";
+@import "../../../../../css/admin/CommonStyles/_toggleswitch.scss";
+@import "../../../../../css/admin/CommonStyles/_round-radio.scss";
+
+// //----------------------------------*\
+// // PARTIALS
+// //----------------------------------*/
+@import "../../../../../css/admin/Applications/RewardsWidgets/partials/_widget-admin.scss";
+
+// //----------------------------------*\
+// // VENDOR
+// //----------------------------------*/
+@import "../../../../../css/admin/CommonStyles/vendor/_animate.scss";
+
+// //----------------------------------*\
+// // Triton Kitchen Sink Footer
+// //----------------------------------*/
+
+@import "../../../../../css/admin/CommonStyles/_kitchensinkfooter.scss";

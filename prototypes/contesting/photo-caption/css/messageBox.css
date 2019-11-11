@@ -1,0 +1,33 @@
+
+.messageBox.success{
+    background: #CCFFCC;
+    border-color: #006600;
+    color: #006600;
+}
+.messageBox.error{   
+    background: #FFE8E8;
+    border-color: #990000;
+    color: #CC0000;
+}
+
+.messageBox ul li {
+    list-style: none outside none;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.messageBox {
+    background-image: none;
+    border-left: medium none;
+    border-right: medium none;
+    box-shadow: 0 0 38px 0 #111111;
+    display: block;
+    margin: 0;
+    padding: 13px 0;
+    position: fixed;
+    text-align: center;
+    top: 47%;
+    width: 100%;
+    z-index: 150;
+    font-style: italic;
+}

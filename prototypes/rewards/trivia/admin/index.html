@@ -1,0 +1,969 @@
+<!doctype html>
+<html class="no-js">
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+  <html dir="ltr" lang="en-US" class="no-js">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Trivia Creation Admin</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/ajaxToolboxStyles.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/admin.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/lightwindow.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/notificationBox.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+
+    <script src="js/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Main Content for Stand Alone -->
+    <!-- Trivia Admin -->
+    <div class="app-container">
+      <div id="triviaDashboard" class="dashboard-container">
+
+        <!-- Trivia Dashboard Header -->
+        <div id="createNewTrivia" class="container-sectioned no-padding">
+          <h1 class="pull-left">Trivia</h1>
+          <div id="triviaHeaderButtons" class="pull-right">
+            <div class="button-highlight">
+                Download report <i class="fa fa-caret-down"></i>
+                <ul class="button-menu">
+                    <li>All trivia items</li>
+                    <li>Station trivia only</li>
+                    <li>Triton trivia only</li>
+                </ul>
+            </div>
+            <button name="Create New Trivia" id="createTrivia-modal" class="button-positive">
+              <i class="fa fa-plus"></i>
+              Create New Trivia 
+            </button>
+
+            <!-- Trivia-type Modal -->
+            <div id="createTrivia-dialog" title="Create a New Trivia">
+              <div class="create-trivia-modal-container">
+
+                <!-- Trivia Type Text -->
+                <a class="create-button" href="trivia-creation_text.html">
+                  <i class="fa fa-font"></i>
+                  <p class="trivia-type center">Multiple Choice Text</p>
+                  <p class="description">This trivia type will only allow for text answers.</p>
+                </a>
+
+                <!-- Trivia Type Image -->
+                <a class="create-button" href="trivia-creation_image.html">
+                  <i class="fa fa-picture-o"></i>
+                  <p class="trivia-type center">Multiple Choice Image</p>
+                  <p class="description">This trivia type will allow only allow for image answers.</p>
+                </a>
+
+                <!-- Trivia Type One -->
+                <a class="create-button" href="trivia-questions-single-answer.html">
+                  
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="-172 158.5 1084 648" style="enable-background:new -172 158.5 1084 648;" xml:space="preserve">
+                    <style type="text/css">
+                      .st0{fill:#666666;}
+                      .st1{fill:none;stroke:#666666;stroke-width:22;stroke-miterlimit:10;}
+                      .st2{fill:none;stroke:#666666;stroke-width:40;stroke-miterlimit:10;}
+                    </style>
+                    <path class="st0" d="M669.3,382.6H89.7c-8,0-14.6-9.9-14.6-22.1l0,0c0-12.2,6.5-22.1,14.6-22.1h579.6c8,0,14.6,9.9,14.6,22.1l0,0
+                      C683.9,372.6,677.4,382.6,669.3,382.6z"/>
+                    <path class="st0" d="M627.8,470.6H131.2c-7.5,0-13.5-9.3-13.5-20.5v-3.3c0-11.3,6.1-20.5,13.5-20.5h496.7c7.5,0,13.5,9.3,13.5,20.5
+                      v3.3C641.4,461.3,635.3,470.6,627.8,470.6z"/>
+                    <rect x="163.5" y="560" class="st1" width="432" height="69.8"/>
+                    <path class="st2" d="M771.8,733.5H-12.9c-16.5,0-29.9-18.2-29.9-40.5V280.1c0-22.4,13.4-40.5,29.9-40.5h784.7
+                      c16.5,0,29.9,18.2,29.9,40.5V693C801.8,715.3,788.3,733.5,771.8,733.5z"/>
+                    </svg>
+
+                  <p class="trivia-type center">Single Answer</p><br />
+                  <p class="description">This trivia type will only allow for single text answers.</p>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- End Trivia Dashboard Header -->
+
+        <!-- Trivia Dashboard Trivia List -->
+        <div class="grid">
+          <div class="triviaListTable full-width">
+            <div id="trivia-dashboard">
+
+              <!-- Trivia List Header -->
+              <div class="toolbar nopadding">
+
+                <!-- Search Field -->
+                <div class="insert-into pull-left">
+                  <i class="fa fa-search"></i>
+                  <input class="search" type="text" placeholder="Search for Trivia" />
+                </div>
+                <!-- End Search Field -->
+
+                <!-- Filter Toggle -->
+                <div class="trivia-list-filter pull-right">
+
+                  <!-- Filter Toggle Switch -->
+                  <div class="toggle">
+                    <input id="toggle-triviaFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+                    <label class="toggle-container" for="toggle-triviaFilter">
+                      <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                      <span class="toggle-handle"></span>
+                    </label>
+                  </div>
+                  <!-- End Filter Toggle Switch -->
+
+                  <a href="#" class="filter-trivia">
+                    Filter Options
+                    <i class="fa fa-caret-down"></i>
+                  </a>
+
+                  <!-- Filter Section -->
+                  <form class="filters">
+                    <div class="filters-heading">
+                      <!-- Filter Toggle | THIS STILL NEEDS DESIGN-->
+                      <h3 class="filters-header nomargin">Filter Options</h3>
+                    </div>
+                    <h4 class="filter-heading">Trivia Types</h4>
+                    <div class="input-container checkbox">
+                      <label><input type="checkbox">Type Answers</label>
+                      <label><input type="checkbox">Photo Answers</label>
+                      <!-- <label><input type="checkbox">Type and Photo Choices</label> -->
+                    </div>
+                    <h4 class="filter-heading">Other Options</h4>
+                    <div class="input-container checkbox">
+                      <label><input type="checkbox">Syndicated Trivia</label>
+                    </div>
+                    <label>Trivia Status</label>
+                    <div class="trivia-status-filter input-container radio radio-inline">
+                      <label><input name="trivia-status-filter" type="radio">All</label>
+                      <label><input name="trivia-status-filter" type="radio">Active</label>
+                      <label><input name="trivia-status-filter" type="radio">Inactive</label>
+                    </div>
+
+                    <div class="button-container">
+                        <input class="button" type="reset" value="Reset Filters">
+                        <button type="button" class="button-highlight">Filter</button>
+                    </div>
+
+                  </form>
+                  <!-- End Filter Section -->
+                </div>
+                <!-- End Filter Toggle -->
+              </div>
+              <!-- End Trivia List Header -->
+
+              <div class="table trivia-table full-width">
+                <div class="table-header">
+                  
+                  <!-- Table Header -->
+                  
+                    <!-- Priority -->
+                    <span class="table-header-item trivia-priority th is-sortable">Priority <i class="fa fa-sort"></i></span>
+
+                    <!-- trivia Type -->
+                    <span class="table-header-item trivia-type th is-sortable">Trivia Type <i class="fa fa-sort"></i></span>
+
+                    <!-- Trivia Title -->
+                    <span class="table-header-item trivia-title th is-sortable">Trivia Title <i class="fa fa-sort"></i></span>
+
+                    <!-- Start Date -->
+                    <span class="table-header-item trivia-start th is-sortable">Start Date <i class="fa fa-sort"></i></span>
+
+                    <!-- End Date -->
+                    <span class="table-header-item trivia-end th is-sortable">End Date <i class="fa fa-sort"></i></span>
+
+                    <!-- View Report -->
+                    <!-- <span class="table-header-item trivia-report th"></span> -->
+                  
+                </div>
+                <!-- End Table Header -->
+
+                <div id="sortable">
+                  
+                  <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">1</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                        </div>
+
+                        <div class="option-buttons">
+                          <a href="#" class="edit-trivia animated fadeInUp">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <p>Edit Trivia</p>
+                          </a>
+                          <a href="#" class="copy-embed-code animated fadeInUp">
+                            <i class="fa fa-clipboard"></i>
+                            <p>Copy Embed Code</p>
+                          </a>
+                          <a href="#" class="delete-trivia animated fadeInUp">
+                            <i class="fa fa-trash-o"></i>
+                            <p>Delete Trivia</p>
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-targeted">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">2</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="22"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">3</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <img src="img/single_answer-icon-lv.svg" />
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="276"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                       
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">4</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="9399"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                   <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">5</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="622"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">6</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                        <img src="img/single_answer-icon-lv.svg" />
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="413"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">7</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-font"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i>
+                    </div>
+
+
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="420"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                   <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">8</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="114"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">9</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <img src="img/single_answer-icon-lv.svg" />
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="514"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="trivia-priority">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">10</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="trivia-type">
+                      <img src="img/single_answer-icon-lv.svg" />
+                    </div>
+
+                    <div class="trivia-title">
+                      <p>Trivia Title</p>
+                      <p class="trivia-id">BVMXXI</p>
+                    </div>
+
+                    <div class="trivia-start">
+                      <p>05/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-end">
+                      <p>06/08/2015</p>
+                      <p class="trivia-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="trivia-report">
+                      <!-- <p>Options</p> --><i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                    
+                    <div class="view-trivia-report">
+                      <div class="report">
+                        <div class="data-report">
+                        <!-- <i class="fa fa-line-chart animated fadeIn"></i> -->
+                          <div class="data-breakdown">
+                            <p>Total Completions</p>
+                            <div class="count" data-completions="554"></div>
+                            <i class="fa fa-users"></i>
+                          </div>
+    
+                          <div class="data-breakdown">
+                          <p>Gender Breakdown</p>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="fa fa-venus-mars"></i>
+                          </div>
+                        </div>
+
+                        <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                        
+                      </div>
+
+                      <div class="option-buttons">
+                        <a href="#" class="edit-trivia animated fadeInUp">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <p>Edit Trivia</p>
+                        </a>
+                        <a href="#" class="copy-embed-code animated fadeInUp">
+                          <i class="fa fa-clipboard"></i>
+                          <p>Copy Embed Code</p>
+                        </a>
+                        <a href="#" class="delete-trivia animated fadeInUp">
+                          <i class="fa fa-trash-o"></i>
+                          <p>Delete Trivia</p>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- End Trivia Admin -->
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+    <script>
+
+      function genderPie() {
+        var data = google.visualization.arrayToDataTable([
+          ['Gender', 'Total'],
+          ['Male',  200],
+          ['Female', 354]
+        ]);
+
+        var options = {
+          // title: 'Gender Breakdown',
+          is3D: true,
+          colors: ['#0069AC', '#ce5491'],
+          backgroundColor: 'transparent',
+          animation:{
+            duration: 1000,
+            easing: 'out',
+            'startup': true
+          },
+          chartArea: {left: 35, bottom: 0},
+          fontSize: 12
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('gender-pie-chart'));
+
+        chart.draw(data, options);
+      }
+
+      function initialize() {
+        $('.list-item').click(function() {
+          genderPie();
+        });
+      }
+
+      google.setOnLoadCallback(initialize);
+      google.load('visualization', '1', {packages:['corechart']});
+    </script>
+
+    <script src="js/scripts.js"></script>
+
+    <script>
+    (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+    (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+    l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXXXXX-XX');
+    ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>

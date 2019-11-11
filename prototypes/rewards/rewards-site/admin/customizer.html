@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" style="background-color: #5702a1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breakpoint" content="small" media="(max-width: 480px)">
+    <title>Rewards Site Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/widgets.css">
+    <link rel="stylesheet" href="css/rewardsui.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+</head>
+<body class="layout-constrained">
+    <div class="customizer is-closed">
+        <span class="customizer__close fa fa-paint-brush"></span>
+        <div class="customizer__wrapper" style="overflow: auto">
+            <h3 class="customizer__header customizer__header--layout">Site Layout</h3>
+            <div class="layouts">
+                <div class="layout layout--constrained is-selected">
+                    <span class="layout__label">Constrained</span>
+                </div>
+                <div class="layout layout--full">
+                    <span class="layout__label">Full</span>
+                </div>
+                <div class="layout layout--sidebar">
+                    <span class="layout__label">Sidebar</span>
+                </div>
+            </div>
+            <h3 class="customizer__header customizer__header--color">Site Color</h3>
+            <div id="themeColors" class="theme__colors td-u-display-flex">
+                <input id="primaryColor" value="#5702a1" class="js-miniColors" type="text" />
+            </div>
+            <h3 class="customizer__header customizer__header--logo">Upload Logo</h3> 
+            <div id="dropZoneBg" class="js-dropZone dz-clickable upload upload--banner upload--drop" data-message="Drag and Drop, or click to upload image">
+                <div class="upload__remove">
+                    <i class="upload__remove-icon fa fa-trash-o fa-4x" data-target="background"></i>
+                </div>
+            </div>
+            <h3 class="customizer__header customizer__header--font">Site Font</h3>
+            <div class="u-display-flex font-styles">
+                <div class="font-style font-style--b is-selected is-clickable" data-style="Oswald">Font B</div>
+                <div class="font-style font-style--a is-clickable" data-style="Montserrat">Font A</div>
+                <div class="font-style font-style--c is-clickable" data-style="Arvo">Font C</div>
+            </div>
+            <h3 class="customizer__header customizer__header--texture">Site Texture</h3>
+            <div id="themePatterns" class="theme__textures td-u-display-flex">
+            </div>
+            <div class="save-customizations">
+                <a class="button" href="javascript:window.open('','_self').close();">Apply changes</a>
+                <a href="#">Discard and go back</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="td-rewards-site" data-respond="start: 100px; end: 1400px; interval: 25px;">
+        <div class="td-rewards-bar js-rewardBar" style="background-color: #390169">
+            <div class="td-rewards-bar__icons">
+                <i class="fa fa-2x fa-headphones see-onair__icon see-onair-openmodal" data-see-type="onairUi" data-see-display="modal" id="see-widget-onairui"></i>
+                <div class="see-widget" data-see-type="announcementUi"></div>
+            </div>
+            <div class="see-widget" data-see-type="regUi"></div>
+            <div class="td-rewards-subnav js-subnav">
+                <i class="td-rewards-subnav__icn fa fa-bars fa-2x"></i>
+            </div>
+        </div>
+        <div class="td-rewards-site__container site-container">
+            <header class="td-rewards-header">
+                <a href="./index.html" class="u-text-c">
+                    <img class="td-rewards-header__logo site-logo" src="img/rickeySmiley_logo.png" alt="Rickey Smiley Logo">
+                </a>
+                <nav class="td-rewards-nav">
+                    <a class="js-navLinkText td-rewards-nav__link  is-selected " href="#"><i class="td-rewards-nav__link-icn fa fa-home"></i> Home</a>
+                    <a class="js-navLinkText td-rewards-nav__link td-rewards-nav__link--trivia " href="#"><i class="td-rewards-nav__link-icn fa fa-question-circle"></i> Trivia</a>
+                    <a class="js-navLinkText td-rewards-nav__link td-rewards-nav__link--poll " href="#"><i class="td-rewards-nav__link-icn fa fa-pie-chart"> </i>Poll</a>
+                    <a class="js-navLinkText td-rewards-nav__link td-rewards-nav__link--survey " href="#"><i class="td-rewards-nav__link-icn fa fa-check-square-o"> </i>Survey</a>
+                    <a class="js-navLinkText td-rewards-nav__link td-rewards-nav__link--games " href="#"><i class="td-rewards-nav__link-icn fa fa-gamepad"> </i> Games</a>
+                    <a class="js-navLinkText td-rewards-nav__link td-rewards-nav__link--campaigns " href="#"><i class="td-rewards-nav__link-icn fa fa-rocket"> </i> Campaigns</a>
+                </nav>
+            </header>
+
+            <main class="td-rewards-content-wrapper">
+                <div class="td-rewards-content-container">
+                    <section class="td-rewards-content-main">
+                        <div class="td-rewards-row">
+                            <div class="td-rewards-ad td-rewards-ad--top">
+                                <!-- Area for top ad tag area which will replace image -->
+                                <img src="img/leaderboard_nike.gif">
+                            </div>
+
+                        </div>
+                        <div class="td-rewards-row td-rewards-row--widgets" data-message="Loading Widget...">
+                        
+                            <!-- Area for main widgets -->
+                            <div class="td-rewards-widgets">
+                                
+                                <a href="#" data-name="Games" class="td-rewards-widget td-rewards-widget--games">
+                                    <i class="td-rewards-widget__icon fa fa-gamepad"></i>
+                                    <h1 class="td-rewards-widget__logo">games</h1>
+                                </a>
+
+                                <a href="#" data-name="Trivia" class="td-rewards-widget td-rewards-widget--trivia">
+                                    <i class="td-rewards-widget__icon fa fa-question-circle"></i>
+                                    <h1 class="td-rewards-widget__logo">trivia</h1>
+                                </a>
+
+                                <a href="#" data-name="Survey" class="td-rewards-widget td-rewards-widget--survey">
+                                    <i class="td-rewards-widget__icon fa fa-check-square-o"></i>
+                                    <h1 class="td-rewards-widget__logo">survey</h1>
+                                </a>
+
+                                <a href="#" data-name="Polls" class="td-rewards-widget td-rewards-widget--polls">
+                                    <i class="td-rewards-widget__icon fa fa-pie-chart"></i>
+                                    <h1 class="td-rewards-widget__logo">polls</h1>
+                                </a>
+
+                                <a href="#" data-name="Campaigns" class="td-rewards-widget td-rewards-widget--campaigns">
+                                    <i class="td-rewards-widget__icon fa fa-rocket"></i>
+                                    <h1 class="td-rewards-widget__logo">campaigns</h1>
+                                </a>
+
+                            </div>
+                        
+                        </div>
+                        <div class="td-rewards-row">
+                            <div class="td-rewards-ad td-rewards-ad--bottom">
+                                <!-- Area for bottom ad tag area which will replace image -->
+                                <img src="img/leaderboard_ripleys.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <aside class="td-rewards-content-sidebar">
+                        <div class="td-rewards-row">
+                            <div class="see-widget" data-see-type="onairUi" data-see-display="list"></div>
+                        </div>
+                        <div class="td-rewards-row">
+                            <div class="td-rewards-ad td-rewards-ad--side">
+                                <!-- Area for sidebar ad tag area which will replace image -->
+                                <img src="img/nike_halfpage_ad.png">
+                            </div> 
+                        </div>
+                    </aside>
+                </div>
+                <footer class="td-rewards-footer">
+                    <nav class="td-rewards-footer__links well">
+                        <a class="td-rewards-footer__link" href="">FAQ</a>
+                        <a class="td-rewards-footer__link" href="">Privacy</a>
+                        <a class="td-rewards-footer__link" href="">Help</a>
+                        <a class="td-rewards-footer__link" href="">Contact Us</a>
+                        <a class="td-rewards-footer__link" href="">Terms</a>
+                    </nav>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+<script type="text/javascript" src="http://see-p-elb-01.tritondigital.net/widget/see_1670/see.js"></script>
+
+<link rel="stylesheet" href="css/customizer.min.css">
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/jquery.minicolors.min.js"></script>
+<script src="js/dropzone.js"></script>
+<script src="js/customizer.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

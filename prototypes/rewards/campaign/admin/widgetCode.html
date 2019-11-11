@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Widget Code</title>
+    <link rel="stylesheet" href="//10.1.4.131/app/public/css/admin/see.css?_=1457634597">
+    <link rel="stylesheet" href="//10.1.4.131/app/public/css/admin/common.css?_=1457634597">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//10.1.4.131/app/public/css/admin/widgets.css">
+    <link rel="stylesheet" href="widgets.css">
+</head>
+<body>
+
+<div class="SEE-Admin page-container">
+<div class="SEE-Content app-container">
+<div id="user-messages"></div>
+<h1>Available Widgets</h1>
+<p>Using this wizard, you can activate widgets that you would like to use on your site, and get the necessary code in order to install them.</p>
+<div class="container-full SEE-widget-dashboard ng-scope step2" ng-controller="commonWidgetsView" id="commonWidgetsView">
+<div class="SEE-widget-dashboard-overlay">
+    <div class="SEE-widget-dashboard-overlay-container">
+        <div class="SEE-widget-dashboard-overlay-header">
+            <h2 class="ng-binding">Campaign List Widget</h2>
+            <a href="#" class="js-overlayClose SEE-widget-dashboard-overlay-close"><i class="fa fa-times"></i></a>
+        </div>
+        <img src="http://tdascreative.com/playground/james/images/campaignListWidgetLarge.jpg">
+    </div>
+</div>
+
+<div class="grid container-sectioned SEE-widget-dashboard-breadcrumbs">
+    <div class="col-3-4">
+			<span class="active" data-step="1">Choose which widget(s) you want to
+				use</span> <i class="fa fa-chevron-right"></i> <span data-step="2">Install
+				on your site</span>
+    </div>
+    <div class="col-1-4">
+        <button id="SEE-email-instructions" ng-click="openEmailDialog()">
+            <i class="fa fa-envelope"></i> Email These Instructions
+        </button>
+    </div>
+</div>
+
+<div class="container-sectioned SEE-widget-dashboard-container">
+<div class="grid SEE-widget-dashboard-slider">
+<div data-step="1" class="col-1-2 ng-scope" ng-controller="availableWidgetsView" id="availableWidgetsView">
+
+</div>
+
+<div data-step="2" class="col-1-2 ng-scope" ng-controller="widgetsCodeView" id="widgetsCodeView">
+<div class="container-sectioned" style="margin-bottom: 20px">
+    <h3>
+        <span class="SEE-widget-dashboard-number">1</span>First, add this
+        code before the &lt;/head&gt; of your site:
+    </h3>
+    <textarea rows="5" id="header-code">&lt;script type="text/javascript" src="http://10.1.4.131/widget/see_100/see.js"&gt;&lt;/script&gt;</textarea>
+    <button class="button-highlight SEE-widget-dashboard-code-copy-button" id="SEE-copy-header-code" data-clipboard-target="header-code" ng-click="copyToClipboard($event.target)">
+        <i class="fa fa-files-o"></i> Copy Code
+    </button>
+</div>
+<div class="container-full">
+<h3>
+    <span class="SEE-widget-dashboard-number">2</span>Then, add your
+    widget(s) HTML code to your site:
+</h3>
+<div class="container-full" id="SEE-widget-code container">
+<div class="panel SEE-widget-dashboard-code" data-widget="campaignlist" style="display: block;">
+    <div class="panel-header">
+        <h2 class="panel-title">Campaign List Widget</h2>
+    </div>
+    <div class="panel-body">
+        <div class="panel-content">
+            <div class="grid">
+                <div class="col-3-5 SEE-widget-dashboard-code-thumb">
+                    <div class="col-1-2">
+                        <a href="#" class="SEE-widget-dashboard-thumb-expand" title="Show full widget preview" ng-click="toggleOverlay($event)"><i class="fa fa-arrows-alt"></i></a> <img class="SEE-widget-dashboard-thumb" src="http://tdascreative.com/playground/james/images/campaignListWidget.jpg">
+                    </div>
+                    <div class="col-1-2">
+                        <span>Bacon ipsum dolor amet brisket leberkas sausage, andouille jowl capicola jerky tri-tip hamburger pork chop chicken fatback drumstick. </span>
+                    </div>
+                </div>
+                <div class="col-2-5 SEE-widget-dashboard-code-tips">
+                    <strong>Tips for implementation:</strong>
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-3-5 SEE-widget-dashboard-code-code">
+                    <strong>Add HTML code to your website</strong>
+                    <input type="hidden" class="SEE-widget-dashboard-code-text-template" value="<div class=&quot;see-widget&quot; data-see-type=&quot;regUi&quot;></div>">
+                    <textarea data-id="widget-code" id="regui_code" class="SEE-widget-dashboard-code-text" rows="5">&lt;div class="see-widget" data-see-type="campaignUi"&gt;&lt;/div&gt;</textarea>
+                    <button class="button-highlight SEE-widget-dashboard-code-copy-button" data-id="SEE-copy-widget-code" data-clipboard-target="regui_code" ng-click="copyToClipboard($event.target)">
+                        <i class="fa fa-files-o"></i> Copy Code
+                    </button>
+                </div>
+                <div class="col-2-5 SEE-widget-dashboard-code-attributes">
+                    <strong>Widget Theming:</strong>
+                    <div class="grid">
+                        <div class="col-4-5">
+                            <div class="grid">
+                                <div class="col-1-2">
+                                    <div class="input-container">
+                                        <label>Theme/Color</label>
+                                        <select name="" id="themeColor">
+                                            <option value="blue">Blue/Green</option>
+                                            <option value="green">Green/Gold</option>
+                                            <option value="orange">Orange/Yellow</option>
+                                            <option value="purple">Purple/Green</option>
+                                            <option value="red">Red/Gold</option>
+                                            <option value="gray">Gray/Red</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-1-2 nopadding">
+                                    <div class="input-container">
+                                        <label>Theme/Texture</label>
+                                        <select name="" id="themeTexture">
+                                            <option value="1">Scallop</option>
+                                            <option value="2">Burst</option>
+                                            <option value="3">Retro</option>
+                                            <option value="4">Edgy</option>
+                                            <option value="5">Modern</option>
+                                            <option value="6">Rough</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-1-5 nopadding">
+                            <label for="">Preview</label>
+                            <div id="themePreview" class="theme theme--blue">
+                                <div class="js-texture theme__texture" style="background-image: url('http://tdascreative.com/playground/james/trivia/img/pattern-1.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="SEE-widget-dashboard-button-container">
+    <button class="button-highlight floatright SEE-widget-dashboard-continue" ng-click="next()">
+        Continue <i class="fa fa-arrow-circle-right"></i>
+    </button>
+    <button class="button-highlight floatright SEE-widget-dashboard-back" ng-click="back()">
+        <i class="fa fa-arrow-circle-left"></i> Back
+    </button>
+</div>
+
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="getcode.js"></script>
+</body>
+</html>

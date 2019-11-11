@@ -1,0 +1,109 @@
+
+.v1player-favorites-contents {
+
+    .v1player-clear-all-wpr {
+        background-color: $highlight-hover;
+        // width: 100%;
+
+        // position: absolute;
+        // top: 25px;
+        // z-index: 1;
+
+        .v1player-clear-all {
+            display: inline-block;
+            margin-left: 270px;
+            padding-top:5px;
+            padding-bottom:5px;
+
+
+            &:hover,
+            i:hover {
+                color: $red;
+            }
+
+            &.clear-active {
+                color: $red;
+            }
+
+            i {
+                padding-left: 10px;
+            }
+        }
+
+        .v1player-clear-all-confirm {
+            text-align: center;
+            background-color: $black;
+            height: 450px;
+
+            display: none;
+
+            .fa-sort-asc {
+                font-size: 24px;
+                margin-top: -8px;
+                margin-left: 250px;
+                color:$black;
+            }
+
+            .v1player-confirm-text {
+                display: block;
+                font-family: 'Arial';
+                font-size: 19px;
+                line-height: 1.3;
+                padding-top: 100px;
+                margin-bottom: 20px;
+            }
+
+            .v1player-favorites-cancel-control {
+                text-decoration: underline;
+                margin-right: 20px;
+            }
+
+            .v1player-favorites-clear-control {
+                background-color: $red;
+                border-radius:5px;
+                padding:6px 36px;
+            }
+        }
+    }
+
+    .v1player-remove-confirm {
+        height:75px;
+        padding:25px 20px 0px 20px;
+        background-color: $red;
+        color:$l-black;
+        font-family: 'Arial';
+        text-align: center;
+
+
+        .v1player-remove-confirm-text {
+            width:60%;
+        }
+
+        .v1player-remove-confirm-control {
+            float:right;
+            width:40%;
+            margin-top:-20px;
+            font-size: 21px;
+            text-align: right;
+
+            span {
+                border-left:2px solid $l-black;
+                padding: 5px 0 5px 15px;
+                font-weight: bold;
+                
+                i {
+                    display: inline-block;
+                    padding-right: 15px;
+                    margin-top: -6px;
+                    font-size: inherit;
+
+                    &:hover {
+                        color: inherit;
+                    }
+
+                }
+            }
+
+        }
+    }
+}

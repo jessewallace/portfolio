@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,300);
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+/* Metadata Editor (meta.scss) */
+.clearfix:before, .langauge-selector:before, .translate-option-row:before, .clearfix:after, .langauge-selector:after, .translate-option-row:after { content: ""; display: table; }
+
+.clearfix:after, .langauge-selector:after, .translate-option-row:after { clear: both; }
+
+.clearfix, .langauge-selector, .translate-option-row { *zoom: 1; }
+
+/* Being Master CSS */
+.other-labels-container, .translate-item-panel, input, select, textarea { font-family: 'Titillium Web', Arial, sans-serif; color: black; font-size: 14px; }
+
+.other-labels-container { position: absolute; top: 0px; left: 0px; height: auto; width: 300px; background-color: #fafafa; border-color: white; border-width: 1px; border-style: solid; z-index: 10000; padding: 10px; -webkit-box-shadow: -1px 0px 10px 0px black; box-shadow: -1px 0px 10px 0px black; }
+
+.other-labels-container *, .translate-item-panel { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.panel-title { text-align: center; font-size: 1.2em; color: #555; border-bottom: 1px dotted #999; margin-bottom: 10px; padding-bottom: 5px; font-weight: bold; }
+
+.langauge-selector { display: table; }
+.langauge-selector .labeltitle { padding-right: 10px; display: table-cell; vertical-align: middle; }
+.langauge-selector select { padding: 2px; background: white; border: 1px solid #ccc; }
+
+.translate-br { display: block; height: 1px; border-bottom: 1px dotted #555; margin: 10px 0; }
+
+.translate-item-container { padding: 4px 22px 4px 4px; border: 1px dashed #f00; display: inline-block; margin: 0 8px 8px 0; position: relative; cursor: pointer; }
+
+.translate-item-container:hover, .translate-item-container.active { background: #fff3f3; }
+
+.translate-item-container label, .translate-item-container a, .translate-item-container h1, .translate-item-container h2, .translate-item-container p { cursor: pointer; margin: 0; }
+
+.translate-item-container .translate-edit { width: 20px; height: 20px; position: absolute; right: 0px; top: 4px; background: url(images/icon-edit.png) no-repeat; opacity: .1; }
+
+.translate-item-container:hover .translate-edit, .translate-item-container.active .translate-edit { opacity: 1; }
+
+.translate-item-panel { text-align: left; z-index: 99999; display: none; position: absolute; width: 250px; background: #eeeeee; border: 1px solid #ddd; right: -270px; top: -35px; padding: 15px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; cursor: default; }
+
+.translate-item-panel .langauge-selector { margin-bottom: 8px; }
+
+.translate-item-panel:after, .translate-item-panel:before { right: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+
+.translate-item-panel:after { border-color: rgba(238, 238, 238, 0); border-right-color: #eeeeee; border-width: 10px; top: 15%; margin-top: -10px; }
+
+.translate-item-panel:before { border-color: rgba(221, 221, 221, 0); border-right-color: #ddd; border-width: 11px; top: 15%; margin-top: -11px; }
+
+.translate-option-row { margin-bottom: 8px; border-bottom: 1px solid #eee; }
+.translate-option-row.translate-textlabel .labeltitle { display: inline; }
+.translate-option-row.translate-textlabel .labelvalue { display: inline; }
+.translate-option-row.translate-textarea textarea.text-value { width: 100%; }
+.translate-option-row.translate-textarea textarea.long-text-value { width: 100%; }
+.translate-option-row.translate-checkbox .labeltitle { display: inline; }
+.translate-option-row.translate-checkbox input { float: left; width: auto; }
+.translate-option-row.translate-actions { float: right; }
+
+.translate-button { border: none; border-radius: 2px; max-width: 100px; color: white; padding: 6px 14px; cursor: pointer; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; font-weight: normal; text-shadow: none; line-height: 18px; }
+
+.translate-button.cancel { background: #bfbfbf; }
+.translate-button.cancel:hover { background: #ababab; }
+
+.translate-button.update { background: #72c549; }
+.translate-button.update:hover { background: #60bb33; }

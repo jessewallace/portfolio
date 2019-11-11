@@ -1,0 +1,68 @@
+@charset "utf-8";
+/**********************************************************************************
+Lite CSS customization file. For more options, use our ADVANCED customization file 
+***********************************************************************************/
+
+/***** Background Colors *****/
+body {background-color:#DDD;} /* Full page background */
+#header {background-color:#999999;} /* Background color for Header */
+
+#navigation {background-color:#666666;} /* Navigation Menu bar background */
+#navigation ul li a:hover {background-color:#333333;} /* Navigation Menu bar background on hover  */
+
+#container-contentbg,#container-footer {background-color:#FFF;} /* Background color for content middle section */
+
+input.smalltext,textarea.largetext,select,input[type=file] {background-color:#CCCCCC;} /* Form field background */
+
+table.dates tr th {background-color:#999999;} /* Background color for date table headers - top row */
+table.dates tr td.first {background-color:#333333;} /* Background color for leftmost row header - bottom row */
+table.dates tr td {background-color:#666666;} /* Background color for regular date table cells */
+
+.gallery {background-color:#CCCCCC;} /* Gallery background */
+#gallery-header a:hover {background-color:#666666;} /* View Submissions/Search link background color on hover */
+#gallery-header a {background-color:#333333;} /* View Submissions/Search link background color */
+
+
+
+/***** Font Colors *****/
+body {color:#999999;} /* Default font color */
+a,a:link,a:active,a:visited {color:#00009f;} /* Link color */
+a:hover {color:#00003c;} /* Link hover color */
+h1.pagetitle,#gallery-header h1 {color:#000000;} /* Large heading color/styles */
+#header h1 {color:#FFFFFF;} /* Color for main contest title */
+
+#navigation ul li a {color:#FFFFFF;} /* Navigation Menu link color/styles */
+#navigation ul li a:hover {color:#FFFFFF;} /* Navigation Menu link hover color/styles  */
+
+input.smalltext,textarea.largetext,select,input[type=file] {color:#FFFFFF;} /* Font color for form fields  */
+
+table.dates tr th, table.dates tr td.first, table.dates tr td  {color:#FFFFFF;} /* Font color for date table */
+
+#gallery-header a {color:#FFFFFF;} /* View Submissions/Search font color link */
+#gallery-header a:hover {color:#FFFFFF;} /* View Submissions/Search link font color hover */
+
+
+
+/***** Button Colors *****/
+.di-uix-button, a.di-uix-button, #detailView .container-vote a.vote, body input[type="submit"], a.gallery-nav-back, a.gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm {
+  color:#FFFFFF;} /* Button Text Color */
+
+.di-uix-button, #detailView .container-vote a.vote, #container-content input.ui-button, body input[type="submit"], #container-content input.ui-button, .gallery-nav-back, .gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], #container-submit form input[type="submit"], #container-submit form input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm{
+  background-color:#666666;} /* Buttons background color - Normal State */
+
+.di-uix-button:hover, #detailView .container-vote a.vote:hover, #container-content input.ui-button:hover, body input[type="submit"]:hover, #container-submit input[type="button"]:hover, #container-content input.ui-button:hover, .gallery-nav-back:hover, .gallery-nav-more:hover, #detailView .container-vote a.vote:hover, #container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover {
+  background-color:#3a8cb2;} /* Buttons background color - Hover State */
+
+.di-uix-button.disabled,.di-uix-button:hover.disabled, .gallery-nav-back.disabled, .gallery-nav-back:hover.disabled, .gallery-nav-more.disabled, .gallery-nav-more:hover.disabled {
+  background-color:#d9dada;} /* Buttons background color - Disabled State */
+
+
+
+/***** Border Colors *****/
+#container-content {border-color:#EEEEEE;} /* Border seperating main content from footer */
+table.dates tr th,table.dates tr td {border-color:#CCCCCC;} /* Border/spacing for date table */
+
+.di-uix-button, #detailView .container-vote a.vote, #container-content input.ui-button, body input[type="submit"], #container-content input.ui-button, .gallery-nav-back, .gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], #container-submit form input[type="submit"], #container-submit form input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm{
+	border-color:#000000;} /* Buttons border color - Normal State */
+.di-uix-button:hover, #detailView .container-vote a.vote:hover, #container-content input.ui-button:hover, body input[type="submit"]:hover, #container-submit input[type="button"]:hover, #container-content input.ui-button:hover, .gallery-nav-back:hover, .gallery-nav-more:hover, #detailView .container-vote a.vote:hover, #container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover {
+	border-color:#000000;} /* Buttons border color - Hover State */

@@ -1,0 +1,236 @@
+<html>
+    <head>
+        <title>Blackjack Express</title>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="fonts/FlatIcons/flaticons_solid/Font/solid.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/animate+animo.css" />
+        <link rel="stylesheet" href="css/blackjack.css" />
+    </head>
+    <body>
+        <div class="board" style="display:none;">
+            <!-- Intro Screen -->
+            <div class="logo" style="display:none;">
+                <div class="logo--ace" style="display:none;"></div>
+                <div class="logo--ten" style="display:none;"></div>
+                <div class="logo--blackjack" style="display:none;"></div>
+                <div class="logo--express off" style="display:none;"></div>
+                <div class="logo--express" style="display:none;"></div>
+            </div>
+
+            <div class="gametype" style="display:none;">
+                <div class="gametype-title" style="display:none;">Traditional Blackjack</div>
+                <div class="gametype-chips">
+                    <div class="gametype-chip--red" style="display:none;">50</div>
+                    <div class="gametype-chip--green" style="display:none;">100</div>
+                    <div class="gametype-chip--black" style="display:none;">200</div>
+                </div>
+                <button type="button" class="gametype-play" style="display:none;">Deal Me In</button>
+                <div class="gametype-instructions" style="display:none;"><i class="flaticon solid info-2"></i> How to Play</div>
+            </div>
+
+            <!-- Playing Board -->
+            <div class="game-container" style="display:none;">
+                <div class="board-graphic" style="display:none;"></div>
+                <div class="board-icons" style="display:none;">
+                  <i class="flaticon solid house-2" id="home"></i>
+                  <i class="flaticon solid info-2" id="info"></i>
+                </div>
+                <i class="mute-audio flaticon solid speaker-1" style="display:none"></i>
+                <div class="game-controls">
+                  <button type="button" id="doubleDown" style="display:none;"><img src="img/DoubleDown.png" /></button>
+                  <button type="button" id="hit" style="display:none;"><img src="img/Hit.png" /></button>
+                  <button type="button" id="stand" style="display:none;"><img src="img/Stand.png" /></button>
+                  <button type="button" id="split" style="display:none;"><img src="img/Split.png" /></button>
+                </div>
+                <div class="dealer-area" style="display:none;">
+                  <div class="dealer-value" style="display:none;">
+                    <div class="dealer-value--inner">0</div>
+                    <div class="triangle-up"></div>
+                  </div>
+                </div>
+                <div class="pot" style="display:none;">
+                  <div class="pot--inner">$<span class="pot-amount">0</span></div>
+                  <div class="triangle-left"></div>
+                </div>
+                <i class="flaticon solid x-2" id="reset-chips" style="display:none;"></i>
+                <div class="place-your-bet" style="display:none;">Place your bet!</div>
+                <div class="chip chip--red" id="bet-chip-red" style="display:none;" value="50">50</div>
+                <div class="chip chip--green" id="bet-chip-green" style="display:none;" value="100">100</div>
+                <div class="chip chip--black" id="bet-chip-black" style="display:none;" value="200">200</div>
+                <div class="user-bank-bet" style="display:none;">
+                  <div class="user-bank-bet--inner"><i class="fa fa-money"></i> $<span class="user-bank-amount">0</span></div>
+                  <div class="triangle-right"></div>
+                </div>
+                <div class="user-bank-deal" style="display: none;">
+                  <div class="user-bank-deal--inner"><i class="fa fa-money"></i> $<span class="user-bank-amount">1000</span></div>
+                </div>
+                <div class="user-bank--chips">
+                  <div class="chip chip--black" id="user-bank-chip-black" style="display:none;">200</div>
+                  <div class="chip chip--green" id="user-bank-chip-green" style="display:none;">100</div>
+                  <div class="chip chip--red" id="user-bank-chip-red" style="display:none;">50</div>
+                </div>
+                <div class="player-area" style="display:none;">
+                  <button type="button" id="deal" class="bet-action-button" disabled style="display:none;">Deal</button>
+                  <button type="button" id="allIn" class="bet-action-button" style="display:none;">All In</button>
+                  <div class="player-cards" style="display: none;"></div>
+                  <div class="player-bet-initial" style="display:none;">
+                    <div class="player-bet-initial--inner">Bet: $<span class="bet-amount">0</span></div>
+                    <div class="triangle-down"></div>
+                  </div>
+                  <div class="player-value-initial" style="display:none;">
+                    <div class="player-value-initial--inner">0</div>
+                    <div class="triangle-down"></div>
+                  </div>
+                  <div class="player-cards-split" style="display: none;"></div>
+                  <div class="player-bet-split" style="display:none;">
+                    <div class="player-bet-split--inner">Bet: $<span class="split-bet-amount">0</span></div>
+                    <div class="triangle-down"></div>
+                  </div>
+                  <div class="player-value-split" style="display:none;">
+                    <div class="player-value-split--inner">0</div>
+                    <div class="triangle-down"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Overlays -->
+        <!-- Controls explanation overlay -->
+        <div class="controls-onboarding-overlay" style="display:none;">
+          <i class="flaticon solid x-2" id="close-onboarding-overlay"></i>
+          <div class="onboarding--hit" style="display:none;">
+            <h3>Hit:</h3>
+            <p>Draws another card to increase your number.</p>
+            <img class="onboarding-arrow--down" src="img/tutorial_arrow.png" />
+          </div>
+          <div class="onboarding--doubleDown" style="display:none;">
+            <img class="onboarding-arrow--left" src="img/tutorial_arrow.png" />
+            <div class="inline">
+              <h3>Double Bet + Hit:</h3>
+              <p>Doubles your bet and Hits.</p>
+            </div>
+          </div>
+          <div class="onboarding--stand" style="display:none;">
+            <img class="onboarding-arrow--left" src="img/tutorial_arrow.png" />
+            <div class="inline">
+              <h3>Stand:</h3>
+              <p>Stay with your current cards and the Dealer draws.</p>
+            </div>
+          </div>
+          <div class="onboarding--split" style="display:none;">
+            <img class="onboarding-arrow--left" id="split-arrow" src="img/tutorial_arrow.png" />
+            <div class="inline">
+              <h3>Split:</h3>
+              <p>Available when you've been dealt two of the same cards. Places each card on its own bet.</p>
+            </div>
+          </div>
+          <div class="onboarding--bank" style="display:none;">
+            <img class="onboarding-arrow--left" src="img/tutorial_arrow.png" />
+            <div class="inline">
+              <h3>Your Bank:</h3>
+              <p>Your available funds for betting.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructions Overlay -->
+        <div class="gametype-instructions-overlay" style="display:none;">
+            <i class="flaticon solid x-2" id="close-instructions-overlay"></i>
+            <div class="gametype-instructions-content" style="display:none;">
+                <h1>How to Play Blackjack</h1>
+                <br />
+                <p>Blackjack, also known as twenty-one, is the most widely played casino banking game in the world. Blackjack is a comparing card game between a player and dealer, meaning that players compete against the dealer but not against any other players. It is played with one or more decks of 52 cards.</p>
+                <p>The object of the game is to "beat the dealer", which can be done in a number of ways:
+                    <ul>
+                        <li>Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;</li>
+                        <li>Reach a final score higher than the dealer without exceeding 21; or</li>
+                        <li>Let the dealer draw additional cards until his or her hand exceeds 21.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Confirm Quit Overlay -->
+        <div class="confirm-quit-overlay" style="display: none;">
+            <i class="flaticon solid x-2" id="close-quit-overlay"></i>
+            <div class="confirm-quit-content" style="display: none;">
+                <p>Are you sure you want to quit?</p>
+                <p class="subtext">[All of your progress will be lost]</p>
+                <div class="confirm-quit-button-wrapper">
+                    <button type="button" id="cancel">Cancel</button>
+                    <button type="button" id="quit-game">Quit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete Overlay -->
+        <div class="game-complete-overlay" style="display:none;">
+          <div class="game-complete-logo" style="display:none"></div>
+          <div class="game-complete-title" style="display:none">Complete!</div>
+          <div class="game-complete-content" style="display:none">
+            <div class="game-complete-content--top">
+              <div class="game-complete-hands-played">
+                <p>Total Hands Played:</p>
+                <span class="hands-played-amount">0</span>
+                <img src="img/Complete_DECK.png" class="game-complete-deck"/>
+              </div>
+              <div class="game-complete-biggest-pot">
+                <p>Highest Chip<br />
+                Count Reached:</p>
+                <span class="chip-count-currency">$</span><span class="highest-chip-count">0</span>
+                <img src="img/Complete_CHIPS.png" class="game-complete-chips"/>
+              </div>
+            </div>
+            <div class="biggest-win">
+              <i class="flaticon solid checkmark-3"></i> Biggest Win
+              <br />
+              <span class="game-complete-currency">$</span><span class="biggest-win-amount">0</span>
+            </div>
+            <div class="biggest-loss">
+              <i class="flaticon solid x-3"></i> Biggest Loss
+              <br />
+              <span class="game-complete-currency">$</span><span class="biggest-loss-amount">0</span>
+            </div>
+          </div>
+          <div class="game-complete-tip" style="display:none"><i class="flaticon solid info-2"></i> Nice game. Next time try <span class="game-complete-accent">hitting</span> if you're under 13.</div>
+          <button type="button" id="play-again" style="display:none">Play Again!</button>
+        </div>
+
+        <!-- Sounds -->
+        <audio id="chip-stack-audio">
+          <source src="audio/chipsStack.wav" type="audio/wav">
+          <source src="audio/chipsStack.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="chip-slide-in-audio">
+        <source src="audio/pokerchipsslidein.wav" type="audio/wav">
+          <source src="audio/pokerchipsslidein.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="click-audio">
+          <source src="audio/click3.wav" type="audio/wav">
+          <source src="audio/click3.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="card-fan-audio">
+          <source src="audio/cardFan1.wav" type="audio/wav">
+          <source src="audio/cardFan1.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="card-slide-audio">
+          <source src="audio/cardSlide.wav" type="audio/wav">
+          <source src="audio/cardSlide.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="win-audio">
+          <source src="audio/positive.wav" type="audio/wav">
+          <source src="audio/positive.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="lose-audio">
+          <source src="audio/negative_v2.wav" type="audio/wav">
+          <source src="audio/negative_v2.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Scripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/animo.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

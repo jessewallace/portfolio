@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Widget</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link rel="stylesheet" href="trivia.css"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="themes">
+    <div id="themeColors" class="theme__colors td-u-display-flex"></div>
+    <div id="themePatterns" class="theme__textures td-u-display-flex"></div>
+</div>
+    <div class="td-trivia td-trivia--blue">
+        <div class="td-trivia-header td-u-display-flex td-u-flex-centered td-u-flex-column">
+            <div class="td-u-display-flex td-u-flex-column td-u-flex-centered td-trivia-summary">
+                <div class="animated td-animated bounceIn" data-delay="1000">
+                    <div class="td-header-1 td-u-mb-5">Sorry, there are no more trivia!</div>
+                    <div class="td-u-mb-25">Check back later when mored are added</div>
+                </div>
+                <span class="td-trivia-label td-trivia-label--accent animated td-animated fadeInUp" data-delay="1500">Your Results:</span>
+            </div>
+            <div class="td-trivia-header__bg" style="background-image: url(img/pattern-1.png);"></div>
+        </div>
+        <div class="td-trivia-body">
+            <div class="td-trivia-body__container" style="min-height: 260px">
+                <div class="td-trivia-final td-u-display-flex td-u-flex-column td-u-flex-centered">
+                    <div class="td-trivia-circle animated td-animated bounceIn" data-delay="2000">
+                        <b class="td-header-1" style="font-size: 42px">50%</b>
+                        <span>Answered Correct</span>
+                    </div>
+                    <div class="td-trivia-circle td-trivia-circle--small td-trivia-circle--positive animated td-animated bounceIn" data-delay="2200">
+                        <span>+ 4000pts</span>
+                        <span>Earned</span>
+                    </div>
+                </div>
+
+                <div class="td-u-display-flex td-u-flex-centered td-u-flex-column td-trivia-social">
+                    <span class="td-button td-button--facebook td-trivia-social__button"><i class="td-icon td-icon-facebook-official"></i> Share on Facebook</span>
+                    <span class="td-button td-button--twitter td-trivia-social__button"><i class="td-icon td-icon-twitter"></i> Post on Twitter</span>
+                </div>
+            </div>
+
+
+            <div class="td-trivia-footer td-u-display-flex td-u-flex-centered">
+                <span class="td-button td-button--large td-trivia-footer__button "  onclick="location.href = './index.html'"><b>Return to Trivia List</b> <i class="td-icon td-icon-chevron-circle-right"></i></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="script.js"></script>
+<script src="themeselector.js"></script>
+</html>

@@ -1,0 +1,19 @@
+@import "//fonts.googleapis.com/css?family=Arvo:400,700|Damion";
+.themes { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-justify-content: space-around; justify-content: space-around; padding: 10px; margin-bottom: 10px; background-color: #fff; }
+@media screen and (max-width: 480px) { .themes { display: none; } }
+
+.theme { position: relative; width: 75px; height: 50px; margin-right: 5px; overflow: hidden; background-color: #666; background-size: cover; border-radius: 5px; color: #fff; cursor: pointer; }
+.theme.is-selected:before { position: absolute; z-index: 2; top: 0; content: "\f058"; width: 100%; height: 100%; font-family: 'FontAwesome'; text-align: center; line-height: 50px; color: #6bab09; background-color: rgba(0, 105, 172, 0.75); -webkit-transform: scale(1.5); transform: scale(1.5); }
+.theme__color--blue { background-image: -webkit-linear-gradient(left, #068eff 33%, #dac42a 33%, #dac42a 67%, #03516e 67%, #03516e 100%); background-image: linear-gradient(to right, #068eff 33%, #dac42a 33%, #dac42a 67%, #03516e 67%, #03516e 100%); }
+.theme__color--gray { background-image: -webkit-linear-gradient(left, #373737 33%, #e8674a 33%, #e8674a 67%, #898787 67%, #898787 100%); background-image: linear-gradient(to right, #373737 33%, #e8674a 33%, #e8674a 67%, #898787 67%, #898787 100%); }
+.theme__color--purple { background-image: -webkit-linear-gradient(left, #8c1264 33%, #abdf0d 33%, #abdf0d 67%, #029aff 67%, #029aff 100%); background-image: linear-gradient(to right, #8c1264 33%, #abdf0d 33%, #abdf0d 67%, #029aff 67%, #029aff 100%); }
+.theme__color--green { background-image: -webkit-linear-gradient(left, #086135 33%, #0fcd44 33%, #0fcd44 67%, #dac42a 67%, #dac42a 100%); background-image: linear-gradient(to right, #086135 33%, #0fcd44 33%, #0fcd44 67%, #dac42a 67%, #dac42a 100%); }
+.theme__color--orange { background-image: -webkit-linear-gradient(left, #f47537 33%, #fff206 33%, #fff206 67%, #eaaf16 67%, #eaaf16 100%); background-image: linear-gradient(to right, #f47537 33%, #fff206 33%, #fff206 67%, #eaaf16 67%, #eaaf16 100%); }
+.theme__color--red { background-image: -webkit-linear-gradient(left, #8b120b 33%, #ee2e24 33%, #ee2e24 67%, #dac42a 67%, #dac42a 100%); background-image: linear-gradient(to right, #8b120b 33%, #ee2e24 33%, #ee2e24 67%, #dac42a 67%, #dac42a 100%); }
+.theme__texture { background-size: 150%; }
+.theme__texture--scallop { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-1.png"); }
+.theme__texture--burst { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-2.png"); }
+.theme__texture--retro { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-3.png"); }
+.theme__texture--edgy { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-4.png"); }
+.theme__texture--modern { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-5.png"); }
+.theme__texture--rough { background-image: url("http://tdascreative.com/playground/james/extracredit/img/pattern-6.png"); }

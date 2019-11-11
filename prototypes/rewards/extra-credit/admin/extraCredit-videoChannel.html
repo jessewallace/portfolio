@@ -1,0 +1,348 @@
+<!doctype html>
+<html class="no-js" ng-app="extraCredit">
+  <head>
+	<meta charset="utf-8">
+	<title>Video Channel Creation Admin</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+<!--     <link href="assets/css/style.min.css" rel="stylesheet">
+ -->    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/ajaxToolboxStyles.css" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/admin.css" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/lightwindow.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/notificationBox.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.prefixed.css" />
+
+	<script src="assets/components/modernizr.js"></script>
+
+
+  </head>
+  <body>
+  <script>
+      var b = document.documentElement;
+        b.setAttribute('data-useragent',  navigator.userAgent);
+        b.setAttribute('data-platform', navigator.platform );
+        b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+  </script>
+
+	<!-- Main Content for Stand Alone -->
+	<!-- Extra Credit Admin -->
+	<div class="app-container">
+	  <div id="extraCredit-admin" class="admin-container">
+
+		<!-- Extra Credit Creation Header -->
+		<div class="extraCredit-creationHeader">
+		  <h1>Create a New Video Channel</h1>
+		</div>
+
+		<!-- Extra Credit Creation Main Contact -->
+		<div class="grid">
+			<div class="col-1-2 extraCredit-leftside">
+
+				<!-- Breadcrumb Navigation -->
+				<div class="breadcrumbs container-sectioned">
+					<ul class="crumbs">
+						<li class="extraCredit-setupBreadcrumb"><a href="#" class="active">Setup</a></li>
+						<li class="extraCredit-optionsBreadcrumb"><a href="#">Options</a></li>
+						<li class="extraCredit-publishBreadcrumb"><a href="#">Publish</a></li>
+					</ul>
+				</div>
+
+				
+				<div class="extraCredit-creation">
+
+					<!-- Setup -->
+					<div class="extraCredit-setup">
+
+						<!-- Extra Credit Title -->
+						<div class="input-container extraCredit-title">
+							<label class="is-required extraCredit-inputTitle">Video Channel Title</label>
+					    <input class="full-width" type="text" />
+						</div>
+
+						<!-- Extra Credit Logo -->
+			    	<div class="input-container extraCredit-imageUploader-logo">
+					    <label>Upload a Sponsor/Logo Image</label>
+
+							<div class="extraCredit-imageUploaderButton">
+						    <button>Choose File <i class="fa fa-camera"></i><input type="file" id="extraCredit-image" /></button>
+						    <div class="extraCredit-uploadedImage"></div>
+					    </div>
+						</div>
+
+			    	
+
+						<!-- Extra Credit Code -->
+						<div class="input-container extraCredit-code">
+							<label class="is-required extraCredit-inputTitle">Video Channel Code</label>
+					    <textarea name="extraCredit-code"></textarea>
+						</div>
+
+						<!-- Extra Credit Date and Time -->
+						<div class="extraCredit-dateTime">
+							<div class="start-end">
+								<!-- Extra Credit Start Date -->
+								<div class="input-container col-1-2">
+								    <label class="extraCredit-inputTitle" for="#extraCredit-startTime">Video Channel Start Date</label>
+								    <div class="prepend-to">
+								    	<span><i class="fa fa-calendar"></i></span>
+								    	<input type="text" id="extraCredit-startTime">
+							    	</div>
+								</div>
+
+								<!-- Extra Credit End Date -->
+								<div class="input-container col-1-2">
+							    <label class="extraCredit-inputTitle" for="extraCredit-endTime">Video Channel End Date</label>
+							    <div class="prepend-to">
+							    	<span><i class="fa fa-calendar"></i></span>
+							    	<input type="text" id="extraCredit-endTime">
+						    	</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Extra Credit Featured Image -->
+			    	<div class="input-container extraCredit-imageUploader-featured">
+
+		    			<div class="round-input">
+					    	<input type="checkbox" value="10" id="setFeatured" name="featured" />
+								<label for="setFeatured">
+									<div class="input-label">Add to Featured Section</div>
+								</label>
+							</div>
+
+							<div class="extraCredit-imageUploaderButton">
+						    <button>Choose File <i class="fa fa-camera"></i><input type="file" id="extraCredit-image" /></button>
+						    <div class="extraCredit-uploadedImage"></div>
+					    </div>
+						</div>
+
+						
+						<div class="extraCredit-buttons button-container clearfix">
+							<a href="index.html"><button>Cancel</button></a>
+							<button class="extraCredit-optionsButton extraCredit-next button-highlight pull-right">Next <i class="fa fa-arrow-circle-right"></i></button>
+						</div>
+					</div>
+
+
+					<!-- Extra Credit Options -->
+					<div class="extraCredit-options">
+
+						<!-- Theme Colors -->
+						<div class="input-container poll-colors">
+							<label class="poll-input-title">Theme Colors</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="blue-theme round-input">
+						    	<input type="radio" value="10" id="blue-theme" name="colors" checked />
+									<label for="blue-theme">
+										<div class="input-label">Blue Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+
+								<div class="gray-theme round-input">
+						    	<input type="radio" value="10" id="gray-theme" name="colors">
+									<label for="gray-theme">
+										<div class="input-label">Gray Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="green-theme round-input">
+						    	<input type="radio" value="10" id="green-theme" name="colors">
+									<label for="green-theme">
+										<div class="input-label">Green Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="orange-theme round-input">
+						    	<input type="radio" value="10" id="orange-theme" name="colors">
+									<label for="orange-theme">
+										<div class="input-label">Orange Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+						    <div class="purple-theme round-input">
+						    	<input type="radio" value="10" id="purple-theme" name="colors">
+									<label for="purple-theme">
+										<div class="input-label">Purple Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+								<div class="red-theme round-input">
+						    	<input type="radio" value="10" id="red-theme" name="colors">
+									<label for="red-theme">
+										<div class="input-label">Red Theme</div>
+										<div class="color-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+						</div>
+
+						<!-- Theme Textures -->
+						<div class="input-container poll-textures">
+							<label class="poll-input-title">Theme Textures</label>
+
+							<div class="theme-option-inputs">
+
+								<div class="scallop round-input">
+						    	<input type="radio" value="10" id="scallop" name="textures" checked />
+									<label for="scallop">
+										<div class="input-label">Scallop</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+
+								<div class="burst round-input">
+						    	<input type="radio" value="10" id="burst" name="textures">
+									<label for="burst">
+										<div class="input-label">Burst</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="retro round-input">
+						    	<input type="radio" value="10" id="retro" name="textures">
+									<label for="retro">
+										<div class="input-label">Retro</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <div class="theme-option-inputs">
+
+								<div class="edgy round-input">
+						    	<input type="radio" value="10" id="edgy" name="textures">
+									<label for="edgy">
+										<div class="input-label">Edgy</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+						    <div class="modern round-input">
+						    	<input type="radio" value="10" id="modern" name="textures">
+									<label for="modern">
+										<div class="input-label">Modern</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+								<div class="rough round-input">
+						    	<input type="radio" value="10" id="rough" name="textures">
+									<label for="rough">
+										<div class="input-label">Rough</div>
+										<div class="texture-img"></div>
+									</label>
+								</div>
+
+					    </div>
+
+					    <!-- <label class="extraCredit-input-title">Other Options</label>
+              <div class="round-input stealth">
+					    	<input type="checkbox" id="stealth" name="stealth">
+								<label for="stealth">
+									<div class="input-label">Make this extraCredit stealth?</div>
+								</label>
+							</div> -->
+
+
+						</div>
+						
+						<!-- Extra Credit Creation Buttons -->
+						<div class="extraCredit-buttons clearfix">
+							<button class=" extraCredit-back gotoQuestion button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+
+							<button class="extraCredit-publishButton extraCredit-next button-highlight pull-right">Publish <i class="fa fa-cloud-upload"></i></button>
+						</div>
+					</div>
+
+
+					<!-- Extra Credit Publish -->
+					<div class="extraCredit-publish">
+
+						<!-- Extra Credit Published -->
+						<div class="published visible active">
+							<div class="published-message">
+								<i class="fa fa-check-circle"></i>
+								<p class="published-message-text">Great Job, your video channel is published! Your video channel has been added to you widget.  We have provided you an embed code below for you to put your video channel on any webpage you would like too.</p>
+							</div>
+							<div class="extraCredit-createAnother">
+								<a href="extraCredit-videoChannel.html" class="pull-right">Create another Video Channel<i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+						
+						<div class="extraCredit-buttons button-container clearfix">
+							<button class="extraCredit-back button-highlight pull-left"><i class="fa fa-arrow-circle-left"></i>Back</button>
+							<a href="index.html">
+								<button class="extraCredit-gotoDashboard button-highlight pull-right">Go to Dashboard <i class="fa fa-arrow-circle-right"></i></button>
+							</a>
+						</div>
+
+						
+					</div>
+
+
+
+				</div>
+			</div>
+
+			<!-- Live Preview | Right Side -->
+			<div class="col-1-2 live-preview">
+				<label>Live Preview</label>
+				<div class="live-preview-area">
+					<p class="generation-text">Live Preview will generate when you add a question and choices.</p>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<!-- End Trivia Admin -->
+
+
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+	<script src="assets/components/dropzone.js"></script>
+
+	<script type="text/javascript" src="https://admin.tritondigital.com/dashboard/Javascript/jquery.hoverIntent.js"></script>
+	
+	<script src="assets/js/scripts.min.js"></script>
+
+	<script>
+	(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+	(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+	l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXX-XX');
+	ga('send', 'pageview');
+	</script>
+
+  </body>
+</html>

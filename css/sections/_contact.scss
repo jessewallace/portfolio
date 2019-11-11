@@ -1,0 +1,140 @@
+.contact {
+	padding:100px 20px;
+	background: #5d8bb6;
+	position: fixed;
+	overflow: hidden;
+	bottom:0px;
+	height:100vh;
+	width: 100%;
+	z-index: -1;
+	color:white;
+	display: none;
+	.wrapper {
+		margin: 35px auto 0;
+		max-width: 1000px;
+		display: flex;
+		justify-content:space-between;
+		z-index: 1;
+		position: relative;
+		> * {
+			width: 48%;
+		}
+	}
+	.info {
+		.contact-method {
+			border:1px dashed white;
+			margin-bottom: 35px;
+			position: relative;
+			padding:15px 15px 25px;
+			text-align: center;
+			span {
+				font-weight: bold;
+				text-transform: uppercase;
+				background: white;
+				color: #5d8bb6;
+				padding:6px 15px;
+				left:50%;
+				top:-16px;
+				transform:translateX(-50%);
+				position: absolute;
+				z-index: 2;
+				i {
+					margin-left: 4px;
+					font-size: .85rem;
+				}
+			}
+			&.location {
+				padding:0px;
+				> span {
+					box-shadow: 0 10px 10px -3px rgba(0,0,0,.5);
+				}
+			}
+			p {}
+		}
+		a {
+			color:white;
+		}
+		#map {
+			width:100%;
+			height: 300px;
+			position: relative;
+			z-index: 1;
+			&:before {
+				content: '';
+				width:100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top:0;
+				left: 0;
+				background: transparent;
+				z-index: 2;
+			}
+		}
+	}
+	.form {
+		label {
+			color:white;
+			display: block;
+			margin-bottom: 5px;
+		}
+		input, textarea {
+			width:100%;
+			margin-bottom: 20px;
+			padding:15px;
+			border:1px solid #ccc;
+		}
+		.name {
+			display: flex;
+			justify-content:space-between;
+			> * {
+				width: 48%;
+			}
+		}
+		::-webkit-input-placeholder {color: #ccc;}
+		::-moz-placeholder {color: #ccc;}
+		:-ms-input-placeholder {color: #ccc;}
+		:-moz-placeholder {color: #ccc;}
+	}
+	button {
+		border:2px solid #ccc;
+		padding:15px 25px;
+		background: transparent;
+		border-radius: 50px;
+		color:#999;
+		font-weight: bold;
+		text-transform: uppercase;
+		transition:(all ease 150ms);
+		color:white;
+		&:hover {
+			color:#5d8bb6;
+			background: white;
+			border-color:white;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		padding:50px 20px;
+		position: static;
+		display: block;
+		height: auto;
+		h1 {font-size: 2.5rem;}
+		h2 {font-size: 1.25rem;}
+		.wrapper {
+			flex-flow:wrap;
+			> * {
+				width: 100%;
+				flex: 0 0 100%;
+			}
+			.info {
+				order:2;
+				.location {
+					display: none;
+				}
+			}
+			.form {
+				order:1;
+				margin-bottom: 40px;
+			}
+		}
+	}
+}

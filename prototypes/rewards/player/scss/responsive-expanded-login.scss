@@ -1,0 +1,145 @@
+@media screen and (max-width: 620px) {
+    
+    // Expanded Styles
+    div.v1player-mobile-expanded .v1player-mobile-login-wpr.expanded-login {
+        display: none;
+        position: absolute;
+        left:-288px;
+        z-index: 2005;
+        width:338px;
+        height: 100%;
+        margin-left:-20px;
+        background-color:$button-color;
+        font-family: 'Arial';
+        color:$white;
+
+        transition: left 300ms ease-in-out;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top:0px;
+            right:-40px;
+            width:40px;
+            height: 100%;
+            background-color:transparent;
+        }
+
+        &.is-opened { 
+            left: 0;
+        }
+
+        .v1player-mobile-ctrl-open-wpr {
+           position: relative;
+        
+        }
+
+        .v1player-mobile-profile-wpr {
+            display: none;
+        }
+
+        img {
+            @extend .pull-left;
+
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            height:64px;
+            width:64px;
+        }
+
+        .v1player-mobile-user-username {
+            @extend .pull-left;
+
+            display: inline-block;
+
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 17.68px;
+            margin-top: 30px;
+            margin-left: -14px;
+        }
+
+        .v1player-mobile-user-email {
+            @extend .pull-left;
+
+            font-size: 10px;
+            margin-left: 100px;
+            margin-top: -50px;
+
+            width:60%;
+
+        }
+
+        .v1player-mobile-ctrl-open {
+            float: right;
+
+            &:hover {
+                color: initial;
+            }
+
+            .fa-bars {
+                float:right;
+
+                position: absolute;
+                top:58px;
+                right:8px;
+                color: $black;
+
+                // &.expanded {
+                //     top:58px;
+                // }
+            }
+        }
+
+        .v1player-mobile-ctrl {
+            @extend .pull-left;
+
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            padding: 8px 24px;
+            margin-top: -15px;
+            margin-left: 8px;
+            background-color:black;
+
+            &:hover {
+                color: $button-color;
+            }
+
+            &.mobile-profile-ctrl {
+                margin-left: 60px; 
+            }
+
+            &.auth-ctrl {
+                margin-top: 25px;
+            }
+
+            &.mobile-login-ctrl {
+            	margin-left: 30px;
+            }
+
+            &.mobile-signup-ctrl {
+            	margin-left: 8px;
+            }
+        }
+
+        .v1player-mobile-auth-wpr {
+            padding:18px 50px;
+            text-align: center;
+
+            .v1player-mobile-auth-title {
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            .v1player-mobile-auth-subtitle {
+                display:inline-block;
+                font-size: 10px;
+                padding-top: 10px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url(//fonts.googleapis.com/css?family=Ubuntu+Condensed);
+/* CSS Document */
+
+/*============= RESET CSS =====================*/
+/* TOUCAN CSS RESET | v0.3 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;}
+p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu{margin-bottom:2em;}
+html{font-size:100%;}
+body{font-family:Arial, Helvetica, sans-serif;font-size:.875em;line-height:1.5;}
+h1{font-size:3em;line-height:1.1;margin-bottom:.238em;}
+h2{font-size:2em;line-height:1.15;margin-bottom:.357em;}
+h3{font-size:1.5em;line-height:1.2;margin-bottom:.476em;}
+h4,h5,h6{font-size:1em;margin-bottom:.715em;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;content:"";}
+code,kbd,pre,samp,tt{font-family:"andale mono",consolas,monaco,"lucida console","courier new",courier,monospace;line-height:1.3;}
+pre{white-space:pre-wrap;}
+abbr,acronym,dfn{border-bottom:1px dotted;cursor:help;font-style:normal;font-variant:normal;}
+var{font-style:normal;}
+center{text-align:center;}
+a:focus{outline:1px dotted;}
+img{border:0;}
+ul{list-style:disc outside none;}
+ol{list-style:decimal outside none;}
+li{margin-left:1.4em;}
+li ul,li ol{margin-bottom:0;}
+dd{margin-bottom:1em;}
+hr{border:0;border-bottom:1px solid;}
+big{font-size:1.25em;}
+small,sub,sup{font-size:.85em;}
+sub,sup{line-height:1;}
+sub{vertical-align:bottom;}
+sup{vertical-align:top;}
+del,s,strike{text-decoration:line-through;}
+ins{border-bottom:1px dotted;text-decoration:none;}
+bdo{border-bottom:1px dotted;}
+u{text-decoration:underline;}
+fieldset{padding:1em;}
+legend{font-weight:bold;padding:0 .25em;}
+input,textarea,select,button{font-family:inherit;font-size:1em;}
+input[type=button],input[type=file],input[type=image],input[type=reset],input[type=submit],button[type=button],button[type=reset],button[type=submit]{cursor:pointer;line-height:1;}
+input[type=text],input[type=password],textarea{padding:1px;}
+textarea{line-height:1.25;text-align:left;}
+table{border:0;border-collapse:collapse;border-spacing:0;line-height:1.3;}
+caption,th,td{text-align:left;vertical-align:top;}
+th,td{border:1px solid;padding:.5em 1em;}
+caption{padding-bottom:1em;}
+h1,h2,h3,h4,h5,h6,strong,b,dt,th{font-weight:bold;}
+em,i,blockquote,q,cite{font-style:italic;}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+/* Elastislide Style */
+.es-carousel-wrapper{
+	background: #101010;
+	padding:0px 37px;
+	position:relative;
+}
+.es-carousel{
+	overflow:hidden;
+	background:#FFF;
+	padding:20px 0;
+}
+.es-carousel ul{
+	display:none;
+}
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+}
+.es-carousel ul li a{
+	display:block;
+	border-style:solid;
+	border-color:#222;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+}
+.es-nav span{
+	position:absolute;
+	top:50%;
+	left:12px;
+	background:transparent url(../images/nav.png) no-repeat top left;
+	width:15px;
+	height:26px;
+	margin-top:-10px;
+	cursor:pointer;
+	opacity:0.8;
+}
+.es-nav span.es-nav-next{
+	right:12px;
+	left:auto;
+	background-position:top right;
+}
+.es-nav span:hover{
+	opacity:1.0;
+}
+
+/* ============== Layout CSS ================== */
+body {font-size: 0.875em; line-height: 1.5; font-family: Arial,Helvetica,sans-serif; }
+
+#container-bg {}
+#container-list {width:100%; clear:both;margin:0 auto; max-width:700px;  }
+#container-list .clear {clear:both;}
+
+#container-list-header { padding:0; }
+#container-list-header h1 { text-align:center; }
+#container-list-header img { width:100%; }
+
+#container-contestitems { padding:20px 35px; margin-top:15px; }
+
+#container-contestitems ul.contest-sorting { float:left; max-width:400px;}
+#container-contestitems ul.contest-sorting li { float:left; padding:10px 25px; text-align:center; }
+#container-contestitems ul.contest-sorting li.active { }
+#container-contestitems ul.contest-sorting li a { text-decoration:none; display:block; outline:none;}
+#container-contestitems ul.contest-sorting li.last  { border-right:none; }
+
+#container-contestitems .contest-search-container { float:right; }
+#container-contestitems .contest-search { padding:10px; font-size:12px; width:200px; }
+
+#container-contestitems ul { list-style:none; padding:0; margin:0; }
+#container-contestitems ul li { list-style:none; padding:8px 0; margin:0; }
+#container-contestitems div.contest-description-container {min-height:54px;}
+#container-contestitems div.contest-dates-container {}
+#container-contestitems p.contest-description { margin:0 10px 10px 0; font-size:12px; }
+#container-contestitems p.contest-dates { margin:10px 10px 0 0; float:left; }
+#container-contestitems ul li div.empty_contest {text-align:center; font-size:16px; padding:200px 0;}
+#container-contestitems ul li div.contest-item div.contest-enterbutton {margin-top:5px; float:right; width:180px;}
+#container-contestitems ul li div.contest-item div.contest-enterbutton button, #container-contestitems ul li div.contest-item div.contest-enterbutton button:active { width:100%; }
+
+#featured-contest-items {}
+#featured-contest-items h1 {padding:10px; margin-bottom:5px;}
+
+#container-contestitems ul li div.contest-contentcontainer{ }
+
+#container-contestitems ul li div.contest-item {position:relative;}
+#container-contestitems ul li div.contest-item div.contest-enterbutton button p {}
+
+#container-contestitems ul li div.contest-item {}
+#container-contestitems ul li div.contest-item div.contest-info {display:inline-block; width:450px;}
+#container-contestitems ul li div.container-header {}
+#container-contestitems ul li div.container-header h1 {position:relative;}
+
+#container-contestitems ul li div.contest-item div.contest-thumb-container { }
+#container-contestitems ul li div.contest-item div.contest-thumb-container img.contest-thumb {float:left; width:110px; height:110px; margin-right:10px;}
+
+/* ----- Updated Contest Enter Button Styles ---------- */
+.contest-contentcontainer a.contest-enterbutton { float: right; display: block; width: 120px; background: none repeat scroll 0% 0% rgb(147, 201, 109); border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius:4px; padding: 9px 19px; text-align: center; text-decoration: none; color: rgb(255, 255, 255); font-weight: bold; }
+.contest-item .contest-contentcontainer a:hover { background: #333; }
+
+#container-footer {margin:20px 0; padding:10px;}
+#container-footer p {text-align:center; padding:0; margin:0;}
+#container-footer a {}
+
+/* ===== Base Theme Styles ====== */
+
+/*********************************************************************
+**********************************************************************
+**********************************************************************
+       
+					   Hey, eager templater!!!
+				
+All of this stuff in this top section is structure/layout, and
+is highly recommended to not betouched unless you know what you
+are doing.  Changing the values can result in a broken layout.
+It is recommended you stick to the template PSD provided and cut 
+graphics out to the sizes provided for the most efficient and
+predictable results.  Just jump to the "Customization Time" area
+to get started!
+
+**********************************************************************
+**********************************************************************
+*********************************************************************/
+
+body {}
+
+/*============= Background ====================*/
+#container-bg {}
+#container-list {}
+#container-list .clear {}
+
+/*Header*/
+#container-list-header { } /* Header Background */
+#container-list-header h1 { } /* Header Text */
+
+/*============= Featured Carousel ====================*/
+#featured-contest-items {}
+#featured-contest-items h1 {} /* Featured Contest Text */ 
+.es-carousel-wrapper {} /* Background Color for Carousel Buttons */ 
+
+/*Container-Contest*/
+#container-contestitems { } /* Background Color of Contest Area */
+
+/*Container-Contest*/
+#container-contestitems ul.contest-sorting {} /* Sorting bar Background Color */
+#container-contestitems ul.contest-sorting li {border-top:none; border-bottom:none;} /* Border Divider Color */
+#container-contestitems ul.contest-sorting li a {} /* Link text color */
+
+/*============= Buttons ====================*/
+#container-contestitems ul {}
+#container-contestitems ul li {}
+#container-contestitems p.contest-description {} /* Contest Description Color */
+#container-contestitems p.contest-dates {} /* Contest Date Color */
+.contest-contentcontainer a.contest-enterbutton {} /* Button Hover State color */
+.contest-contentcontainer a.contest-enterbutton:hover {} /* Enter Button Text */
+
+/*============= Contest List Individual Contest  ====================*/
+#container-contestitems ul li div.contest-contentcontainer{}
+#container-contestitems ul li div.contest-item {} /* Background for contest container */
+#container-contestitems ul li div.container-header {} /* Header  */
+#container-contestitems ul li div.container-header h1 {} /* Header Text */
+#container-contestitems ul li div.contest-item div.contest-thumb-container { } /* Thumbnail Container */
+#container-contestitems ul li div.contest-item img.contest-thumb {} /* Thumbnail Background Color, Padding, and Border */
+#container-contestitems ul li div.empty_contest {color:#999; font-weight:bold; } /* Font Color for No Current, Upcoming, or Closed Contest */ 
+
+/*============= Footer ====================*/
+#container-footer {}
+#container-footer p {}
+#container-footer a {}
+
+/*********************************************************************
+**********************************************************************
+**********************************************************************
+       
+					   Customization Time!!!
+				
+				The vast majority of any changes
+				you'll do will be here.  Colors,
+				backgrounds, font styles, can be
+				changed from here.  Have fun! 
+
+**********************************************************************
+**********************************************************************
+*********************************************************************/
+
+body {background:#CCC;}
+
+/*============= Background ====================*/
+#container-bg {}
+#container-list {}
+#container-list .clear {}
+
+/*Header*/
+#container-list-header {  background:#333; } /* Header Background */
+#container-list-header h1 { color:#FFF;} /* Header Text */
+
+/*============= Featured Carousel ====================*/
+#featured-contest-items {}
+#featured-contest-items h1 {background:#999; color:#FFF; font-size:18px;} /* Featured Contest Text */ 
+.es-carousel-wrapper {background:#999;} /* Background Color for Carousel Buttons */ 
+
+/*Container-Contest*/
+#container-contestitems { background:#FFF; } /* Background Color of Contest Area */
+
+/*Container-Contest*/
+#container-contestitems ul.contest-sorting { background:#CCC; } /* Sorting bar Background Color */
+#container-contestitems ul.contest-sorting li {border:none; border-right:1px solid #999; border-left:1px solid #FFF;} /* Border Divider Color */
+#container-contestitems ul.contest-sorting li.active { background:#999999; } /* Navigation bar active state */
+#container-contestitems ul.contest-sorting li a {color:#666; font-weight:bold;} /* Link text color */
+#container-contestitems ul.contest-sorting li.active a {color:#FFF;}  /* Navigation bar active state text color */
+
+
+#container-contestitems ul {}
+#container-contestitems ul li {}
+#container-contestitems p.contest-description {color:#666;} /* Contest Description Color */
+#container-contestitems p.contest-dates {color:#666; font-weight:bold; font-size:14px; } /* Contest Date Color */
+#container-contestitems p.contest-dates span.contest-icon-clock {background:url(../images/clock-icon.png) no-repeat; vertical-align:middle; display:inline-block; width:16px; height:16px; margin-right:5px; } /* Contest Date Clock Icon */
+
+/*============= Buttons ====================*/	
+.contest-contentcontainer a.contest-enterbutton {background: #93c96d; color:;} /* Button Normal State color */   
+.contest-contentcontainer a.contest-enterbutton:hover {background: #333;} /* Button Hover State color */
+
+/*============= Contest List Individual Contest  ====================*/
+#container-contestitems ul li div.contest-contentcontainer{border:1px solid #ccc; border-top:none; padding:15px 10px;}
+#container-contestitems ul li div.contest-item {background:#FFF;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;} /* Background for contest container */
+#container-contestitems ul li div.container-header {background:#CCC; -webkit-border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; border-radius: 5px 5px 0 0; padding:5px;} /* Header  */
+#container-contestitems ul li div.container-header h1 {font-size:16px; padding:5px; position:relative; color: #555;} /* Header Text */
+#container-contestitems ul li div.contest-item div.contest-thumb-container { } /* Thumbnail Container */
+#container-contestitems ul li div.contest-item img.contest-thumb {background:#FFF; padding:10px; border:1px solid #CCC; } /* Thumbnail Background Color, Padding, and Border */
+
+/*============= Footer ====================*/
+#container-footer {font-style:italics; background:#999;}
+#container-footer p {color:#FFF;}
+#container-footer a {color:#FFF;}
+
+
+
+
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+	#container-contestitems ul li div.contest-item div.contest-info {width:auto; display:block;}
+	#container-contestitems {padding:10px;}
+	#container-contestitems ul li div.contest-item div.contest-enterbutton {float:none; width:auto;}
+	#container-contestitems p.contest-description {margin:0;}
+	#container-contestitems p.contest-dates {float:none;}
+	#container-contestitems ul li div.contest-item div.contest-thumb-container img.contest-thumb {height:85px; width:85px;}
+	#container-contestitems .contest-search-container { display:none; }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 480px) {
+#container-contestitems ul li div.contest-item div.container-three, #container-contestitems ul li div.contest-item div.container-three button, #container-contestitems ul li div.contest-item div.container-three button p {float:none; margin:0 auto; width:100%;}
+#container-contestitems ul li div.contest-item div.contest-info {width:auto; display:block;}
+#container-contestitems p.contest-dates {float:none; text-align:center;}
+#featured-contest-items {display:none;}
+#container-contestitems ul.contest-sorting {width:100%;}
+#container-contestitems ul.contest-sorting li {width:32%; padding:10px 0; text-align:center;}
+.contest-contentcontainer a.contest-enterbutton {float:none; width:auto; margin-top:45px;}
+}
+
+@media only screen and (min-width: 1px) and (max-width: 320px) {
+}
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+}
+
+/* ==== Inactive / Cancelled Contests Page ====== */
+body.inactive { background: #fff; }
+body.inactive #container { width:800px; height: 500px; margin: 20px auto 0 auto; background: url('../images/bg-sorry.png') no-repeat 50% top;}
+body.inactive  #msgBox { width: 544px; float:right; margin: 260px 0 0 0; padding-bottom: 44px; background: url('../images/msgBox-bot.png') no-repeat left bottom; overflow:hidden; }
+body.inactive  #msgBox .top { padding-top: 18px; background: url('../images/msgBox-top.png') no-repeat left top; }
+body.inactive  #msgBox .mid { background: url('../images/msgBox-mid.png') repeat-y left top;}
+body.inactive  #msgBox p { padding:0 32px; margin:0; font-family: "Century Gothic", Arial, sans-serif; font-size:20px; color:#666; text-align:center; }
+
+/*body {background:url(../images/listpage-bg.png) repeat;}
+#container {width:554px; height:348px; background:url(../images/listpage-container.png) no-repeat; font-family:Arial, Helvetica, sans-serif; color:#EFEFEF; padding:62px 51px; margin:0 auto;}
+#container.inactive {}
+#container.list {}
+#container img {margin:25px auto 0 auto; display:block;}
+#container h1 {color:#ccff99; text-align:center; margin:20px 0  40px 0;}
+#container p {font-size:20px; line-height:20px; text-align:center; margin:0; padding:0;}
+#container p a {color:#ccff99;}
+#container ul {border-top:1px solid #666; border-bottom:1px solid #999; list-style: none outside none; margin:0 auto 15px auto; padding: 0; width: 500px;}
+#container ul li {border-bottom:1px solid #666; border-top:1px solid #999;}
+#container ul li:first-child {}
+#container ul li:last-child {}
+#container ul li a {display:block; padding:8px 0; color:#EFEFEF;}
+#container ul li a:hover {background:#666; color:#FFC;}
+#container #nav {font-weight:bold; text-align:center;}
+#container #nav a {}
+#container #nav a:hover {color:#FFC; text-decoration:underline; cursor:pointer;}
+#container #nav a.back {}
+#container #nav a.more {}
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+body {background:#757575;}
+#container {width:auto; height:auto; background:none; padding:20px;}
+#container ul {width:100%;}
+}*/
+
+ 

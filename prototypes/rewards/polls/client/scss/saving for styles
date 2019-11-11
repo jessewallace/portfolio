@@ -1,0 +1,1083 @@
+/* ==========================================================================
+   Question Poll Header
+   ========================================================================== */
+
+   .td-polls-top-header {
+
+    .td-polls-share {
+        border:2px solid map_get($color, secondary);
+        color: map_get($color, secondary);
+    }
+
+    .td-polls-share:hover {
+        background-color:map_get($color, secondary);
+        color: darken( map_get($color, secondary), 50%);
+    }
+
+}
+
+.td-polls-top-header {
+    background-color: map_get($color, primary);
+}
+
+.td-polls-question-area {
+    .td-polls-image {
+        border:3px solid map_get($color, secondary);
+    }
+
+    .td-polls-text {
+      color: map_get($color, text);
+  }
+
+}
+
+
+
+
+/* ==========================================================================
+   Image Poll Header
+   ========================================================================== */
+
+   .td-polls-top-image-header {
+    background-color: map_get($color, primary);
+
+    .td-polls-text {
+      color: map_get($color, text);
+  }
+
+
+
+.td-polls-share {
+    border:2px solid map_get($color, secondary);
+    color: map_get($color, secondary);
+}
+
+.td-polls-share:hover {
+    background-color:map_get($color, secondary);
+    color: darken( map_get($color, secondary), 50%);
+}
+
+}
+
+
+/** Complete Stamp **/
+
+.td-polls-complete-stamp {
+    border:5px solid map_get($color, orange);
+    color: map_get($color, orange);
+
+    .icon-thumbs-up-1 {
+        color: map_get($color, orange);
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   Question Poll Results Area
+   ========================================================================== */
+
+
+   .td-polls-results-area {
+
+    .td-polls-header-text {
+        color:map_get($color, primary);
+    }
+
+    .td-polls-total-votes {
+        color: lighten( map_get($color, tertiary), 30%);
+
+        .icon-group-1 {
+            color:map_get($color, tertiary);
+        }
+
+    }
+}
+
+
+.td-polls-results  {
+
+
+    .td-polls-result-area {
+        border:2px solid lighten( map_get($color, secondary), 30% );
+
+        .td-polls-percentage {
+            color:darken( map_get($color, secondary), 50% );
+        }
+
+        .td-polls-question {
+            color:darken( map_get($color, results), 20% );
+        }
+
+        .td-polls-results-percentage-bar {
+            background-color: lighten( map_get($color, secondary), 30% );
+
+            .td-polls-results-percentage {
+                background-color: map_get($color, results);
+            }
+
+        }
+
+    }
+
+}
+
+
+.td-polls-results  {
+
+    .td-polls-user-selection:before {
+        color:lighten( map_get($color, orange), 5% );
+    }
+
+    .td-polls-results-winner:before {
+        color:lighten( map_get($color, orange), 5% );
+    }
+
+    .td-polls-results-winner {
+        border:2px solid map_get($color, tertiary);
+
+        .td-polls-percentage {
+            color:darken( map_get($color, tertiary), 30% );
+        }
+
+        .td-polls-question {
+            color:map_get($color, tertiary);
+        }
+
+        .td-polls-results-percentage-bar {
+            background-color: lighten( map_get($color, tertiary), 30% );
+
+            .td-polls-results-percentage {
+                background-color: map_get($color, tertiary);
+            }
+
+        }
+
+    }
+
+}
+
+
+
+/** image polls results selected **/
+
+.td-polls-image-results {
+
+    .td-polls-image-results-winner {
+
+        .td-polls-results-image-text {
+            color: map_get($color, tertiary);
+        }
+
+        .td-polls-results-percentage-bar {
+            background-color: lighten( map_get($color, tertiary), 30% );
+        }
+
+        .td-polls-results-percentage {
+            background-color: map_get($color, tertiary);
+        }
+
+        .td-polls-results-percentage-text {
+            color:darken( map_get($color, tertiary), 20% );
+        }
+        .td-polls-results-total-votes {
+            color:darken( map_get($color, tertiary), 20% );
+        }
+
+        .td-polls-results-image:before {
+            color:lighten( map_get($color, orange), 5%);
+        }
+
+    }
+
+    .td-polls-image-results-user-selection {
+        .td-polls-results-image:before {
+            color:lighten( map_get($color, orange), 5%);
+        }
+
+    }
+
+}
+
+
+
+
+/* ==========================================================================
+   Image Poll Results Area
+   ========================================================================== */
+
+   .td-polls-image-results {
+
+    .td-polls-results-image-text {
+        color:darken( map_get($color, results), 20% );
+    }
+
+    .td-polls-results-percentage-bar {
+        background-color: lighten( map_get($color, secondary), 30% );
+    }
+
+    .td-polls-results-percentage {
+        background-color: map_get($color, results);
+
+    }
+
+    .td-polls-results-percentage-text {
+        color:darken( map_get($color, results), 20% );
+    }
+    .td-polls-results-total-votes {
+        color:darken( map_get($color, results), 20% );
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   Question Poll Questions
+   ========================================================================== */
+
+
+   .td-polls-questions {
+
+    .td-polls-header-text {
+        color:map_get($color, primary);
+    }
+
+    .td-polls-question {
+        border:2px solid lighten( map_get($color, secondary), 20% );
+        color:darken( map_get($color, results), 20% );
+    }
+
+    .td-polls-question:hover {
+        border:2px solid lighten( map_get($color, orange), 20% );
+        background-color: lighten( map_get($color, orange), 20% );
+        color:darken( map_get($color, results), 20% );
+    }
+
+
+    .td-polls-questions-selected, .td-polls-questions-selected:hover {
+        border:2px dashed map_get($color, orange);
+        background-color: lighten( map_get($color, orange), 40% );
+        color:darken( map_get($color, orange), 8% );
+    }
+
+    .td-polls-questions-selected:before {
+        color: map_get($color, orange);
+    }
+
+}
+
+
+
+
+
+/* ==========================================================================
+   Image Poll Questions
+   ========================================================================== */
+
+
+   .td-polls-image-questions {
+
+    .td-polls-image-poll-bg {
+        background-color: map_get($color, primary);
+    }
+
+    .td-polls-header-text {
+        color:map_get($color, primary);
+    }
+
+    .td-polls-question {
+        background-color: map_get($color, primary);
+
+        .td-polls-image-text {
+            color:map_get($color, text);
+        }
+  }
+
+
+.td-polls-questions-selected, .td-polls-questions-selected:hover {
+    border:10px solid map_get($color, orange);
+    background-color: lighten( map_get($color, orange), 50% );
+    color:darken( map_get($color, orange), 8% );
+}
+
+.td-polls-questions-selected:before {
+    color: map_get($color, orange);
+}
+
+}
+
+
+
+
+
+/* ==========================================================================
+   Submit Button Area
+   ========================================================================== */
+
+
+   .td-submit-area {
+    background-color: lighten(map_get($color, tertiary), 28%);
+
+    .td-polls-submit-answer-button {
+        background-color: map_get($color, tertiary);
+    }
+
+    .td-polls-submit-answer-button:before {
+        color:map_get($color, text);
+    }
+
+    .td-polls-submit-answer-button:after {
+        color:map_get($color, text);
+    }
+}
+
+
+/* ==========================================================================
+   Next Button Area
+   ========================================================================== */
+
+   .td-polls-next-polls-area {
+    background-color: lighten(map_get($color, results), 38%);
+
+    .td-next-polls-button {
+        background-color: map_get($color, results);
+    }
+
+    .td-next-polls-button:before {
+        color:map_get($color, text);
+    }
+
+    .td-next-polls-button:after {
+        color:map_get($color, text);
+    }
+
+    .td-polls-next-numbers {
+        background-color: darken(map_get($color, primary), 8%);
+        color:lighten(map_get($color, primary), 11%);
+    }
+
+}
+
+
+/* ==========================================================================
+   Previous Polls Container
+   ========================================================================== */
+
+
+   .td-polls-previous-results-container {
+
+    .td-polls-previous-top-header {
+        background-color: map_get($color, primary);
+        color:map_get($color, text);
+
+        .td-polls-header-text {
+            color:map_get($color, text);
+        }
+
+    }
+
+    .td-polls-previous-polls-bg {
+      background-color: darken(map_get($color, primary), 14%);
+  }
+
+}
+
+.td-polls-previous-polls {
+
+    .td-polls-header-text {
+        color:map_get($color, text);
+    }
+
+}
+
+
+.td-polls-previous-block {
+    background-color: map_get($color, primary);
+
+    .td-polls-previous-text {
+        color:map_get($color, text);
+    }
+
+}
+
+.td-polls-previous-votes {
+    border-left: 1px solid map_get($color, text);
+    color:map_get($color, text);
+}
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+   @media only screen and (max-width: 40.063em) {
+
+    @each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+
+    .td-polls-complete-stamp {
+        margin-left:-40px;
+    }
+
+    .td-polls-question-area {
+        margin: 52px 0 0 0;
+
+        .td-polls-text {
+            font-size:19px;
+            line-height: auto;
+            font-weight:700;
+        }
+
+    }
+
+    .td-polls-results-area, .td-polls-questions {
+      padding: 2.5% 0px 0px 0px;
+  }
+
+}
+
+}
+}
+
+.hide-for-td-polls-small-only {
+    display:block;
+}
+
+
+
+@media only screen and (max-width: 420px) {
+
+    .td-polls-image-text, .td-polls-previous-top-header, .td-polls-header-text, .td-polls-previous-text, .td-polls-previous-votes  {
+            @include td-polls-textshadow-sidebar;
+        }
+
+
+    .td-polls-container, .td-polls-previous-results-container {
+        margin:0px !important;
+    }
+
+
+    .td-polls-image-questions {
+
+        .td-polls-questions-selected:before {
+          margin: 30% 26%;
+
+          font-size: 53px;
+      }
+
+  }
+
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+
+  .td-polls-image-questions {
+    padding: 2.5% 0px 25% 0px;
+
+    .td-polls-image-poll-bg {
+        background-color: map_get($color, primary);
+    }
+
+    .td-polls-header-text {
+        padding:0px 0 18px 0;
+
+        @include td-polls-font;
+        font-weight: 700;
+        color:map_get($color, primary);
+        font-size: 22px;
+    }
+
+    .td-polls-question {
+        height:210px;
+
+        text-align: left;
+    }
+}
+
+}
+}
+
+
+.hide-for-td-polls-small-only {
+    display:none;
+}
+
+.td-polls-next-polls-area {
+    /*margin:0 3.7% !important;*/
+    z-index: 10;
+
+    .td-next-polls-button:after {
+      margin: -6px 0px 0 0px;
+  }
+}
+
+.td-submit-area {
+    /*margin:0 3.7% !important;*/
+    .td-polls-submit-answer-button:after {
+        margin: -6px 0px 0 0px;
+    }
+}
+
+.td-polls-previous-polls-bg {
+    padding:0 0 20% 0;
+}
+
+.td-polls-previous-block {
+    padding:45px 30px;
+
+    .td-polls-previous-text {
+        font-size:17px;
+    }
+
+}
+
+.td-previous-results-fade-out, .td-polls-fade-out-white {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+
+    margin: 0 auto !important;
+    display:none;
+}
+
+.td-polls-fade-out-white {
+    z-index: 10;
+    bottom:84px;
+    position:fixed;
+    left:0px;
+    right:0px;
+
+    height: 50px;
+
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.74) 74%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(74%,rgba(255,255,255,0.74)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 74%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 74%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 74%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 74%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$td-polls-text-on-color',GradientType=0 ); /* IE6-9 */
+}
+
+.td-polls-complete-stamp {
+  right: -10px;
+  top: 110px;
+}
+
+.td-submit-area {
+    .td-polls-submit-answer-button:before  {
+        font-size: 15px;
+    }
+}
+
+.td-polls-next-polls-area {
+
+    .td-next-polls-button:before {
+        font-size:15px;
+    }
+    .td-polls-next-numbers {
+        padding: 9px 90% 7px 100%;
+
+        font-size: 20px;
+    }
+
+}
+
+.td-polls-questions {
+
+    .td-polls-header-text {
+        text-align: center;
+    }
+
+    padding:12px 0px 40% 0px;
+
+    .td-polls-question {
+        font-size:17px;
+    }
+
+    .td-polls-questions-selected, .td-polls-questions-selected:hover {
+        font-size:17px;
+    }
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+    .td-polls-questions-selected:before {
+      float: left;
+
+      margin: -10px -40px 0 -62px;
+      width: 53px;
+      overflow: hidden;
+      height: 54px;
+
+      color: map_get($color, orange);
+      font-family: "icomoon";
+      content: "\e600";
+      font-size: 42px;
+  }
+
+}
+}
+
+}
+
+.td-polls-question-area {
+    margin:52px 0 0 0;
+
+    .td-polls-text {
+        font-size:17px;
+        font-weight:700;
+        line-height: auto;
+    }
+
+}
+
+.td-submit-area {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+
+    padding: 20px 17px 20px 17px;
+}
+
+.td-polls-next-polls-area {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    padding: 20px 17px 20px 17px;
+}
+
+.td-polls-results-area {
+    padding: 16px 0px 40% 0px;
+}
+
+
+.td-polls-results  {
+
+    .td-polls-result-area {
+
+        .td-polls-question {
+            font-size:15px;
+        }
+
+    }
+
+    .td-polls-result-selected {
+
+        .td-polls-question {
+            font-size:15px;
+        }
+
+    }
+
+}
+
+
+
+@media only screen and (max-width: 320px) {
+
+    .td-polls-top-image-header {
+      padding-bottom:0px !important;
+      min-height: 65px;
+  }
+
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+
+  .td-submit-area, .td-polls-next-polls-area {
+      padding: 10px 0px 10px 17px;
+
+      .td-polls-share-icon:before {
+        display:block;
+        padding:4px 0 0 0;
+
+
+        content: "\e604";
+        font-size: 20px;
+        color: map_get($color, tertiary);
+        font-family: "icomoon", serif;
+        cursor:pointer;
+
+    }
+
+    .td-polls-submit-answer-button {
+        float:right;
+
+        padding:8px 0;
+        width:90%;
+    }
+
+    .td-next-polls-button {
+        padding:8px 0;
+    }
+
+    .td-polls-next-numbers {
+      padding: 5px 90% 5px 100%;
+  }
+
+
+  .td-polls-next-poll-button-small {
+    float: right !important;
+    width: 83%;
+    margin: 0 10px 0 0;
+}
+
+}
+
+}
+}
+
+
+/**header area**/
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+.td-polls-questions {
+  padding: 7px 0px 40% 0px;
+
+  .td-polls-header-text {
+      padding: 0px 0 6px 0;
+
+      font-size: 13px;
+  }
+
+  .td-polls-question {
+      margin: 0 0 5px 0;
+      padding: 7px 7px;
+
+      font-size: 13px;
+  }
+
+  .td-polls-questions-selected {
+    font-size:13px;
+    font-weight: bold;
+}
+
+.td-polls-questions-selected, .td-polls-questions-selected:hover {
+    padding:8px 13px 8px 39px;
+
+    font-size:13px;
+}
+
+.td-polls-questions-selected:before {
+    margin: -9px -40px 0 -46px;
+    width: 53px;
+    height: 45px;
+
+    font-size: 36px;
+    color: map_get($color, orange);
+}
+
+}
+
+}
+}
+
+.td-polls-question-area {
+    z-index: 9;
+
+    margin: 15px 0 0 0;
+
+    .td-polls-text {
+      font-size: 12px;
+      font-weight: 100;
+  }
+
+}
+
+
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+.td-polls-top-header {
+
+    .td-polls-header {
+        padding-top:12px;
+
+        .td-polls-header-ribbon {
+          display: block;
+          width: 120px;
+          margin: -26px 0 0 -49px;
+
+          font-size: 11px;
+      }
+
+
+    .td-polls-share-icon:before {
+        display:block;
+
+        content: "\e604";
+        font-size: 20px;
+        color: map_get($color, secondary);
+        font-family: "icomoon", serif;
+    }
+
+    .td-polls-share-icon:hover {
+        cursor: pointer;
+    }
+
+    .td-polls-share {
+        display:none;
+    }
+
+}
+
+}
+
+}
+}
+
+/**poll question **/
+@each $theme, $color in $themes {
+  .td-polls--#{$theme} {
+
+.td-polls-image-questions .td-polls-header-text {
+  padding: 0px 0 8px 0;
+
+  font-size: 13px !important;
+  text-align: center;
+}
+
+.td-polls-top-image-header {
+    padding-bottom: 12px;
+
+    .td-polls-header-ribbon {
+      display: block;
+      width: 120px;
+      margin: -26px 0 0 -64px;
+
+      font-size: 11px;
+  }
+
+
+
+.td-polls-share-icon:before {
+    display:block;
+
+    content: "\e604";
+    font-size: 20px;
+    color: map_get($color, secondary);
+    font-family: "icomoon", serif;
+}
+
+.td-polls-share-icon:hover {
+    cursor: pointer;
+}
+
+.td-polls-share {
+    display:none;
+}
+
+.td-polls-text {
+    top:-11px;
+
+    font-size: 13px;
+    font-weight:100;
+}
+
+.td-polls-header {
+    padding-top:12px;
+}
+
+}
+
+
+.td-polls-image-questions {
+  .td-polls-header-text {
+      padding: 0px 0 8px 0;
+
+      font-size: 16px;
+  }
+
+  .td-polls-question {
+      height: 110px;
+
+      text-align: left;
+
+      .td-polls-image-text {
+          font-size: 15px;
+          line-height: 17px;
+          font-weight: 100;
+      }
+
+  }
+
+  .td-polls-questions-selected:before {
+      margin: 10% 32%;
+
+      font-size: 38px;
+  }
+
+
+}
+
+.td-polls-fade-out-white {
+    display: none;
+}
+
+
+/** results area **/
+
+.td-polls-results {
+    .td-polls-user-selection:before {
+      margin: -8px -41px 0 -8px;
+      height: 45px;
+
+      font-size: 36px;
+  }
+}
+
+.td-polls-previous-polls {
+
+    .td-polls-header-text {
+      font-size: 15px;
+  }
+
+}
+
+
+.td-polls-previous-results-container {
+
+    .td-polls-previous-top-header {
+        font-size: 13px;
+
+        .td-polls-header-text {
+          font-size: 14px;
+      }
+
+  }
+
+}
+
+.td-polls-previous-votes {
+  font-size: 15px;
+}
+
+.td-polls-previous-block {
+  padding: 15px 20px;
+
+  .td-polls-previous-text {
+      font-size: 14px;
+  }
+
+}
+
+
+.td-polls-image-results {
+
+    .td-polls-results-total-votes {
+      font-size: 15px;
+
+      .td-polls-votes {
+          font-size: 12px;
+      }
+
+  }
+
+  .td-polls-large-12 {
+      padding-bottom: 4px;
+  }
+
+  .td-polls-results-small-results-area {
+    width: 66%;
+}
+
+.td-polls-results-image {
+  width: 140%;
+  height: 65px;
+}
+
+.td-polls-results-percentage-text {
+  font-size: 25px;
+}
+
+.td-polls-results-text-area {
+  padding: 0px 22px 10px 15px;
+}
+
+.td-polls-results-image-text {
+  padding: 0px 0 0px 11px;
+}
+
+}
+
+
+.td-polls-complete-stamp {
+  margin: -80px 0 0 0;
+}
+
+.td-polls-results-area {
+    padding:4px 0 8px 0;
+
+    .td-polls-total-votes {
+      font-size: 19px;
+
+      .icon-group-1 {
+          font-size: 18px;
+      }
+  }
+
+}
+
+.td-polls-results {
+
+    .td-polls-results-winner {
+      padding: 3px 0px;
+  }
+
+  .td-polls-result-area {
+      margin: 0 0 5px 0;
+      padding: 3px 0px;
+
+      .td-polls-question {
+        font-size:12px;
+    }
+
+    .td-polls-percentage {
+        font-size:140%;
+    }
+
+}
+
+}
+
+.td-polls-results-percentage-bar {
+    display:none;
+}
+
+.td-polls-results {
+
+    .td-polls-results-winner {
+        margin:0 0 5px 0;
+
+        .td-polls-question {
+          font-size: 13px;
+      }
+      .td-polls-percentage {
+        font-size:140%;
+    }
+}
+
+}
+
+}
+}
+
+
+}
+
+
+
+
+}

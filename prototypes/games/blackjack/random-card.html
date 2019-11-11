@@ -1,0 +1,187 @@
+<html style="background-color: #000; width: 100%; height: 100%; overflow: auto;">
+    <head>
+        <title>Blackjack Express</title>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="fonts/FlatIcons/flaticons_solid/Font/solid.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/animate+animo.css" />
+        <link rel="stylesheet" href="css/blackjack.css" />
+        <style>
+          .clearfix:after {
+              content: ".";
+              display: block;
+              clear: both;
+              visibility: hidden;
+              line-height: 0;
+              height: 0;
+          }
+        </style>
+    </head>
+    <body style="background-color: #000; width: 100%; height: 100%; overflow: auto;">
+        <div id="cards" style="width: 100%;"></div>
+        <div class = "clearfix"></div>
+        <button type="button" id="deal-card">Generate Random Card</button>
+
+        <!-- Scripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/animo.js"></script>
+        <script>
+          var cardCount = 1;
+
+          function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+          }
+
+          function cardValue(number) {
+            switch (number) {
+              case 1:
+                cardClass = "card-ace";
+                value = 'A';
+                numberValue = 11;
+                break;
+              case 2:
+                cardClass = "card-two";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 3:
+                cardClass = "card-three";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 4:
+                cardClass = "card-four";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 5:
+                cardClass = "card-five";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 6:
+                cardClass = "card-six";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 7:
+                cardClass = "card-seven";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 8:
+                cardClass = "card-eight";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 9:
+                cardClass = "card-nine";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 10:
+                cardClass = "card-ten";
+                value = number.toString();
+                numberValue = number;
+                break;
+              case 11:
+                cardClass = "card-jack";
+                value = 'J';
+                numberValue = 10;
+                break;
+              case 12:
+                cardClass = "card-queen";
+                value = 'Q';
+                numberValue = 10;
+                break;
+              case 13:
+                cardClass = "card-king";
+                value = 'K';
+                numberValue = 10;
+            }
+          }
+
+          function randomSuit() {
+            var num = Math.floor((Math.random() * 4) + 1);
+
+            switch(num) {
+              case 1:
+                suitIcon = '&clubs;';
+                cardSuit = 'club';
+                break;
+              case 2:
+                suitIcon = '&diams;';
+                cardSuit = 'diamond';
+                break;
+              case 3:
+                suitIcon = '&spades;';
+                cardSuit = 'spade';
+                break;
+              case 4:
+                suitIcon = '&hearts;';
+                cardSuit = 'heart';
+            }
+          }
+
+          function generateCardIcons(value, suit, suitIcon) {
+            switch(value) {
+              case 'A':
+                cardIcons = '<span class="suit middle_center">'+suitIcon+'</span>';
+                break;
+              case '2':
+                cardIcons = '<span class="suit top_center">'+suitIcon+'</span> <span class="suit bottom_center">'+suitIcon+'</span>';
+                break;
+              case '3':
+                cardIcons = '<span class="suit top_center">'+suitIcon+'</span> <span class="suit middle_center">'+suitIcon+'</span> <span class="suit bottom_center">'+suitIcon+'</span>';
+                break;
+              case '4':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span>';
+                break;
+              case '5':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_center">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span>';
+                break;
+              case '6':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_left">'+suitIcon+'</span> <span class="suit middle_right">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span>';
+                break;
+              case '7':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_left">'+suitIcon+'</span> <span class="suit middle_top">'+suitIcon+'</span> <span class="suit middle_right">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span>';
+                break;
+              case '8':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_left">'+suitIcon+'</span> <span class="suit middle_top">'+suitIcon+'</span> <span class="suit middle_right">'+suitIcon+'</span> <span class="suit middle_bottom">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span>';
+                break;
+              case '9':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_top_left">'+suitIcon+'</span> <span class="suit middle_center">'+suitIcon+'</span> <span class="suit middle_top_right">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span> <span class="suit middle_bottom_left">'+suitIcon+'</span> <span class="suit middle_bottom_right">'+suitIcon+'</span>';
+                break;
+              case '10':
+                cardIcons = '<span class="suit top_left">'+suitIcon+'</span> <span class="suit top_right">'+suitIcon+'</span> <span class="suit middle_top_left">'+suitIcon+'</span> <span class="suit middle_top_center">'+suitIcon+'</span> <span class="suit middle_top_right">'+suitIcon+'</span> <span class="suit bottom_left">'+suitIcon+'</span> <span class="suit bottom_right">'+suitIcon+'</span> <span class="suit middle_bottom_center">'+suitIcon+'</span> <span class="suit middle_bottom_left">'+suitIcon+'</span> <span class="suit middle_bottom_right">'+suitIcon+'</span>';
+                break;
+              case 'J':
+                cardIcons = '<span class="face middle_center"><img src="img/faces/face-jack-'+suit+'.png"></span>';
+                break;
+              case 'Q':
+                cardIcons = '<span class="face middle_center"><img src="img/faces/face-queen-'+suit+'.png"></span>';
+                break;
+              case 'K':
+                cardIcons = '<span class="face middle_center"><img src="img/faces/face-king-'+suit+'.png"></span>';
+            }
+          }
+
+          function dealRandomCard(player) {
+            var number = randomNumber(1, 13);
+            cardValue(number);
+            randomSuit();
+            generateCardIcons(value, cardSuit, suitIcon);
+
+            $('#cards').append(
+              '<div class = "card card--'+player+'" id="'+player+'-card-'+cardCount+'" value="'+numberValue+'"> <div class = "front"> <div class = "'+cardClass+' '+cardSuit+'"> <div class = "corner top"> <span class = "number">'+value+'</span> <span>'+suitIcon+'</span> </div>'+ cardIcons +'<div class = "corner bottom"> <span class = "number">'+value+'</span> <span>'+suitIcon+'</span> </div> </div> </div> </div>');
+
+            cardCount += 1;
+          }
+
+          // Random card generator
+          $('#deal-card').click(function() {
+            dealRandomCard('player');
+          });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polls :: Image Poll</title>
+
+  <!--polls grid-->
+  <link rel="stylesheet" href="css/polls-grid/polls-grid.css" />
+
+  <link rel="stylesheet" href="css/polls.css" />
+
+  <!--polls animation-->
+  <link rel="stylesheet" href="css/animate.css" />
+
+  <!--polls icons-->
+  <link rel="stylesheet" type="text/css" href="fonts/polls_icons/style.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script type="text/javascript" src="js/image-poll.js"></script>
+
+</head>
+<body>
+<!--begin theming class-->
+  <div class="td-polls-theme-area td-polls--blue">
+
+  <!--polls container-->
+  <div class="td-polls-container">
+
+    <!--poll header-->
+    <div class="td-polls-row">
+
+      <!--complete stamp-->
+      <div class="td-polls-row">
+        <div class="td-polls-large-10 td-polls-medium-10 td-polls-small-12 td-polls-medium-centered td-polls-large-centered td-polls-columns">
+          <div class="td-polls-complete-stamp">
+            <div class="td-polls-row"><span class="icon icon-thumbs-up-1"></span> </div>
+            <div class="td-polls-row">COMPLETE!</div>
+          </div>
+        </div>
+      </div>
+
+      <!--polls image header-->
+
+      <div class="td-polls-large-12 td-polls-columns td-polls-top-image-header">
+
+      <!--background image black and white-->
+      <div class="td-polls-inline-bg-img-image-poll">
+      <img src="img/pattern-2.jpg">
+      </div>
+
+        <div class="td-polls-row">
+          <div class="td-polls-header td-polls-large-12 td-polls-columns">
+
+            <div class="td-polls-header-ribbon td-polls-left">
+              POLL
+            </div>
+
+            <div class="td-polls-share td-polls-right">
+              Share Poll
+            </div>
+
+          </div>
+
+          <div class="td-polls-row">
+            <div class="td-polls-large-8 td-polls-medium-8 td-polls-small-9 td-polls-columns td-polls-large-centered td-polls-medium-centered td-polls-small-centered td-polls-text-center td-polls-text">
+              Who's your favorite Breaking Bad character?
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+
+    <!--image poll question area-->
+    <div class="td-polls-row td-polls-image-questions">
+
+      <div class="td-polls-large-12 td-polls-large-centered td-polls-columns">
+        <div class="td-polls-header-text">Select your answer:</div>
+      </div>
+
+      <!--image poll questions-->
+
+      <div class="td-polls-large-11 td-polls-medium-11 td-polls-small-11 td-polls-small-centered td-polls-medium-centered td-polls-large-centered td-polls-columns">
+
+        <div class="td-polls-row td-polls-large-collapse td-polls-medium-collapse td-polls-small-collapse">
+          <div class="td-polls-small-6 td-polls-medium-6 td-polls-large-6 td-polls-columns td-polls-image-poll-bg" id="image-1">
+            <div class="td-polls-question walter-img-bg">
+              <div class="td-polls-image-text">
+                Walter White
+              </div>
+
+            </div>
+          </div>
+
+          <div class="td-polls-small-6 td-polls-medium-6 td-polls-large-6 td-polls-columns td-polls-image-poll-bg" id="image-2">
+            <div class="td-polls-question gus-img-bg">
+              <div class="td-polls-image-text">
+                Gus Fring
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="td-polls-row td-polls-large-collapse td-polls-medium-collapse td-polls-small-collapse">
+
+          <div class="td-polls-small-6 td-polls-medium-6 td-polls-large-6 td-polls-columns td-polls-image-poll-bg" id="image-3">
+            <div class="td-polls-question mike-img-bg">
+              <div class="td-polls-image-text">
+                Mike Ehrmantraut
+              </div>
+
+            </div>
+          </div>
+
+          <div class="td-polls-small-6 td-polls-medium-6 td-polls-large-6 td-polls-columns td-polls-image-poll-bg" id="image-4">
+            <div class="td-polls-question jesse-img-bg">
+              <div class="td-polls-image-text">
+                Jesse Pinkman
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--bottom fade-->
+      <div class="td-polls-row">
+        <div class="td-polls-large-12 td-polls-columns td-polls-fade-out-white"></div>
+      </div>
+
+
+      <!--submit area-->
+      <div class="td-polls-row td-submit-area">
+
+        <div class="td-polls-share-icon td-polls-left"></div>
+
+        <div class="td-polls-large-6 td-polls-medium-6 td-polls-small-12 td-polls-large-centered td-polls-medium-centered td-polls-small-centered td-polls-columns">
+          <div class="td-polls-submit-answer-button td-polls-disabled"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!--image poll results area-->
+    <div class="td-polls-row td-polls-results-area">
+
+      <!--results-->
+      <div class="td-polls-large-12 td-polls-medium-12 td-polls-small-12 td-polls-columns">
+
+        <div class="td-polls-row td-polls-small-centered td-polls-text-center td-polls-medium-centered td-polls-large-centered">
+          <div class="td-polls-large-12 td-polls-large-centered td-polls-columns">
+            <div class="td-polls-inline-block">
+              <div class="td-polls-header-text hide-for-td-polls-small-only">Poll Results</div>
+            </div>
+
+            <div class="td-polls-total-votes">
+              <span class="icon icon-group-1"></span> 2,514
+              <div class="td-polls-total-votes-text">Total Votes</div>
+            </div>
+          </div>
+
+
+
+          <!--image poll result -->
+          <div class="td-polls-row td-polls-results td-polls-image-results">
+            <!--image result -->
+
+            <div class="td-polls-large-12 td-polls-columns td-polls-image-results-winner" id="result-1">
+
+              <div class="td-polls-small-3 td-polls-columns td-polls-no-right-padding">
+                <div class="td-polls-results-image walter-img-bg"></div>
+              </div>
+
+              <div class="td-polls-small-9 td-polls-columns td-polls-no-left-padding td-polls-results-small-results-area">
+
+                <div class="td-polls-results-image-text">Walter White</div>
+
+                <div class="td-polls-results-text-area">
+                  <div class="td-polls-results-percentage-text td-polls-left" td-polls-data-percentage="45"></div>
+
+                  <div class="td-polls-results-total-votes td-polls-right td-polls-text-center">
+                    <i class="icon icon-group-1"></i> <span class="td-polls-total-votes-vote" td-polls-data-percentage="1200"></span>
+                    <div class="td-polls-votes">Votes</div>
+                  </div>
+                </div>
+
+                <div class="td-polls-results-percentage-bar">
+                  <div class="td-polls-results-percentage td-polls-left" style="width:45%;">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!--image result -->
+            <div class="td-polls-large-12 td-polls-columns td-polls-image-results-user-selection" id="result-2">
+
+              <div class="td-polls-small-3 td-polls-columns td-polls-no-right-padding">
+                <div class="td-polls-results-image gus-img-bg"></div>
+              </div>
+
+              <div class="td-polls-small-9 td-polls-columns td-polls-no-left-padding td-polls-results-small-results-area">
+
+                <div class="td-polls-results-image-text">Gus Fring</div>
+
+                <div class="td-polls-results-text-area">
+                  <div class="td-polls-results-percentage-text td-polls-left" td-polls-data-percentage="25"></div>
+
+                  <div class="td-polls-results-total-votes td-polls-right td-polls-text-center">
+                    <i class="icon icon-group-1"></i> <span class="td-polls-total-votes-vote" td-polls-data-percentage="800"></span>
+                    <div class="td-polls-votes">Votes</div>
+                  </div>
+                </div>
+
+                <div class="td-polls-results-percentage-bar">
+                  <div class="td-polls-results-percentage td-polls-left" style="width:25%;">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!--image result -->
+            <div class="td-polls-large-12 td-polls-columns" id="result-3">
+
+              <div class="td-polls-small-3 td-polls-columns td-polls-no-right-padding">
+                <div class="td-polls-results-image mike-img-bg"></div>
+              </div>
+
+              <div class="td-polls-small-9 td-polls-columns td-polls-no-left-padding td-polls-results-small-results-area">
+
+                <div class="td-polls-results-image-text">Mike Ehrmantraut</div>
+
+                <div class="td-polls-results-text-area">
+                  <div class="td-polls-results-percentage-text td-polls-left" td-polls-data-percentage="10"></div>
+
+                  <div class="td-polls-results-total-votes td-polls-right td-polls-text-center">
+                    <i class="icon icon-group-1"></i> <span class="td-polls-total-votes-vote" td-polls-data-percentage="500"></span>
+                    <div class="td-polls-votes">Votes</div>
+                  </div>
+                </div>
+
+                <div class="td-polls-results-percentage-bar">
+                  <div class="td-polls-results-percentage td-polls-left" style="width:10%;">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!--image result -->
+            <div class="td-polls-large-12 td-polls-columns" id="result-4">
+
+              <div class="td-polls-small-3 td-polls-columns td-polls-no-right-padding">
+                <div class="td-polls-results-image jesse-img-bg"></div>
+              </div>
+
+              <div class="td-polls-small-9 td-polls-columns td-polls-no-left-padding td-polls-results-small-results-area">
+
+                <div class="td-polls-results-image-text">Jesse Pinkman</div>
+
+                <div class="td-polls-results-text-area">
+                  <div class="td-polls-results-percentage-text td-polls-left" td-polls-data-percentage="20"></div>
+
+                  <div class="td-polls-results-total-votes td-polls-right td-polls-text-center">
+                    <i class="icon icon-group-1"></i> <span class="td-polls-total-votes-vote" td-polls-data-percentage="350"></span>
+                    <div class="td-polls-votes">Votes</div>
+                  </div>
+                </div>
+
+                <div class="td-polls-results-percentage-bar">
+                  <div class="td-polls-results-percentage td-polls-left" style="width:20%;">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+      <!--bottom fade-->
+      <div class="td-polls-row">
+        <div class="td-polls-large-12 td-polls-columns td-polls-fade-out-white"></div>
+      </div>
+
+      <!--next poll area-->
+      <div class="td-polls-row td-polls-next-polls-area">
+
+        <div class="td-polls-share-icon td-polls-left"></div>
+
+        <div class="td-polls-large-6 td-polls-medium-6 td-polls-small-11 td-polls-columns td-polls-small-centered td-polls-large-centered td-polls-medium-centered td-polls-next-poll-button-small">
+
+          <div class="td-polls-row td-polls-large-collapse td-polls-medium-collapse td-polls-small-collapse">
+
+            <div class="td-polls-large-10 td-polls-medium-10 td-polls-small-10 td-polls-columns">
+              <div class="td-next-polls-button"></div>
+            </div>
+
+            <div class="td-polls-large-2 td-polls-medium-2 td-polls-small-2 td-polls-columns">
+              <a class="td-polls-next-numbers">24</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <!--previous poll results container-->
+  <div class="td-polls-previous-results-container">
+    <div class="td-polls-row">
+
+      <div class="td-polls-large-12 td-polls-columns td-polls-previous-top-header">
+
+        <div class="td-polls-text-center">
+          <div class="td-polls-header-text">NO MORE POLLS</div>
+          <div class="td-polls-check-back">Check back soon!</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="td-polls-row td-polls-previous-polls">
+
+    <!--background image black and white-->
+      <div class="td-polls-inline-bg-img-image-poll">
+      <img src="img/pattern-1.jpg">
+      </div>
+
+      <div class="td-polls-previous-polls-bg">
+
+        <div class="td-polls-large-12 td-polls-columns td-polls-text-center">
+          <div class="td-polls-header-text">View past poll results:</div>
+        </div>
+
+
+        <div class="td-polls-large-12 td-polls-columns">
+          <div class="td-polls-row">
+           <div class="td-polls-large-6 td-polls-medium-6 td-polls-columns" id="more-1">
+
+             <div class="td-polls-previous-block td-polls-underwood">
+
+              <div class="td-polls-row">
+                <div class="td-polls-large-8 td-polls-medium-8 td-polls-small-8 td-polls-columns td-polls-previous-text td-polls-text-center">
+                  What's your favorite Frank Underwood quote from House of Cards?
+                </div>
+
+                <div class="td-polls-large-4 td-polls-medium-4 td-polls-small-4 td-polls-columns td-polls-previous-votes td-polls-text-center">
+                  <i class="icon icon-group-1"></i> 1200
+                  <div class="td-polls-votes">Votes</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="td-polls-large-6 td-polls-medium-6 td-polls-columns" id="more-2">
+           <div class="td-polls-previous-block td-polls-breakingbad">
+
+            <div class="td-polls-row">
+              <div class="td-polls-large-8 td-polls-medium-8 td-polls-small-8 td-polls-columns td-polls-previous-text td-polls-text-center">
+                Who's your favorite Breaking Bad character?
+              </div>
+
+              <div class="td-polls-large-4 td-polls-medium-4 td-polls-small-4 td-polls-columns td-polls-previous-votes td-polls-text-center">
+                <i class="icon icon-group-1"></i> 1200
+                <div class="td-polls-votes">Votes</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="td-polls-row">
+
+        <div class="td-polls-large-6 td-polls-medium-6 td-polls-columns" id="more-3">
+
+         <div class="td-polls-previous-block">
+
+          <div class="td-polls-row">
+            <div class="td-polls-large-8 td-polls-medium-8 td-polls-small-8 td-polls-columns td-polls-previous-text td-polls-text-center">
+              What's your favorite death scene from Game of Thrones?
+            </div>
+
+            <div class="td-polls-large-4 td-polls-medium-4 td-polls-small-4 td-polls-columns td-polls-previous-votes td-polls-text-center">
+              <i class="icon icon-group-1"></i> 1200
+              <div class="td-polls-votes">Votes</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="td-polls-large-6 td-polls-medium-6 td-polls-columns" id="more-4">
+
+       <div class="td-polls-previous-block">
+
+        <div class="td-polls-row">
+          <div class="td-polls-large-8 td-polls-medium-8 td-polls-small-8 td-polls-columns td-polls-previous-text td-polls-text-center">
+            What's your favorite death scene from Game of Thrones?
+          </div>
+
+          <div class="td-polls-large-4 td-polls-medium-4 td-polls-small-4 td-polls-columns td-polls-previous-votes td-polls-text-center">
+            <i class="icon icon-group-1"></i> 1200
+            <div class="td-polls-votes">Votes</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="td-polls-row">
+  <div class="td-polls-large-12 td-polls-columns td-previous-results-fade-out"></div>
+</div>
+
+</div>
+
+
+</div>
+<!--end theming class-->
+
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campaign Widget Admin</title>
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/campaign.css">
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/list.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="app-container">
+    <div class="admin-container">
+        <div class="container u-display-flex u-display-flex--vcentered ">
+            <h1>Edit Campaign List</h1>
+            
+        </div>
+
+        
+<div class="grid">
+    <div class="col-1-2" style="overflow: hidden">
+        <div class="container-sectioned">
+            <ul id="breadCrumbs" class="zerolist u-display-flex breadcrumbs">
+                <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-active">Setup</a></li>
+                <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Design</a></li>
+                <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link">Publish</a></li>
+            </ul>
+        </div>
+        <div class="u-display-flex sections" id="campaignSections">
+            <div id="setupSection" class="js-subSection section is-active">
+
+            </div>
+            <div id="designSection" class="js-subSection section">
+
+            </div>
+            <div id="publishSection" class="js-subSection section">
+
+            </div>
+        </div>
+        <div class="u-display-flex">
+            <button class="button-highlight js-buttonShift" data-button="Previous">Previous Step</button>
+            <button class="u-flex-right button-highlight js-buttonShift" data-button="Next">Next Step</button>
+        </div>
+    </div>
+    <div class="col-1-2">
+        <label>Live Preview</label>
+        <div id="livePreview" class="widget-preview has-content" data-empty="Live Preview will generate when you add a title.">
+            <div id="previewContent" class="widget-preview__container widget-splash-container width-1-1"><div class="td-widget td-widget--list td-widget--campaign">
+    <div class="td-u-display-flex td-u-flex-centered td-widget-head  has-image ">
+        <div class="td-widget-head__bg"></div>
+            <span class="td-widget-head__header" data-label="Campaigns Brought to you by:">
+                <img class="td-widget-head__logo" src="" alt="Campaign Widget Logo">
+            </span>
+            <span class="td-u-center--v td-u-pos--a td-widget-head__control td-widget-head__control--right" data-control="Help"><i class="td-icon td-icon-question-circle td-widget-head__control-icon"></i></span>
+    </div>
+    <div class="td-widget__body">
+        <div class="td-u-display-flex td-u-mb-20">
+            <div class="td-list__filter td-list-dropdown">
+                <span>View:</span>
+                <select class="td-list-dropdown__select">
+                    <option>Entered In</option>
+                    <option>New</option>
+                </select>
+            </div>
+            <div class="td-u-flex--right td-search">
+                <input type="search" placeholder="Search" class="td-search__input">
+            </div>
+        </div>
+        <div class="td-blocks td-u-mb-20">
+
+
+            <div class="td-block item td-u-mb-5 td-u-display-flex td-u-flex-centered--v" onclick="location.href = './index.html'">
+                <div class="td-block__thumb td-u-display-flex td-u-flex-centered" style="background-color: #ffd102;  background-image: url(http://tdascreative.com/playground/james/bww/BWW_LogoPrimary.png) ">
+
+                </div>
+                <div class="td-block__info">
+                    <b class="td-block__title">How to Become the Ultimate Wingman</b>
+                    <i class="td-block__type">Ends: 10/10/2016 | 12:20 AM</i>
+
+                            <span class="td-pill td-u-display-flex td-u-flex-centered td-block__pill">
+                                 <i class="td-icon td-icon-database td-block__pill-icon"></i> 9600 pts
+                            </span>
+
+                </div>
+            </div>
+
+            <div class="td-block item td-u-mb-5 td-u-display-flex td-u-flex-centered--v" onclick="location.href = './index.html'">
+                <div class="td-block__thumb td-u-display-flex td-u-flex-centered" style="background-color: #0285ca;  background-image: url(https://assets.primesport.com/prod/images/Logos_NCAA-MENS-BASKETBALL.png) ">
+
+                </div>
+                <div class="td-block__info">
+                    <b class="td-block__title">Get Ready for the Madness</b>
+                    <i class="td-block__type">Ends: 10/10/2016 | 12:20 AM</i>
+                        <span class="td-pill td-u-display-flex td-u-flex-centered td-block__pill">
+                             <i class="td-icon td-icon-ticket td-block__pill-icon"></i> 10 entries
+                        </span>
+                </div>
+            </div>
+
+            <div class="td-block item td-u-mb-5 td-u-display-flex td-u-flex-centered--v" onclick="location.href = './index.html'">
+                <div class="td-block__thumb td-u-display-flex td-u-flex-centered" style="background-color: #ad080a;  background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/1024px-KFC_logo.svg.png) ">
+                </div>
+                <div class="td-block__info">
+                    <b class="td-block__title">Becoming the Real Colonel Sanders</b>
+                    <i class="td-block__type">Ends: 10/10/2016 | 12:20 AM</i>
+                    <span class="td-pill td-u-display-flex td-u-flex-centered td-block__pill">
+                         <i class="td-icon td-icon-database td-block__pill-icon"></i> 3000 pts
+                    </span>
+                </div>
+            </div>
+
+            <div class="td-block item td-u-mb-5 td-u-display-flex td-u-flex-centered--v" onclick="location.href = './index.html'">
+                <div class="td-block__thumb td-u-display-flex td-u-flex-centered" style="background-color: #2ebd59; ">
+                    <b>Spotify</b>
+                </div>
+                <div class="td-block__info">
+                    <b class="td-block__title">Your taste in music</b>
+                    <i class="td-block__type">Ends: 10/10/2016 | 12:20 AM</i>
+                </div>
+            </div>
+        </div>
+        <div class="td-list__pagination td-u-display-flex td-u-flex-centered">
+            <i class="td-pagination__button td-icon td-icon-chevron-left"></i>
+            <span class="td-pagination__indicator td-is-active"></span>
+            <span class="td-pagination__indicator"></span>
+            <i class="td-pagination__button td-icon td-icon-chevron-right"></i>
+        </div>
+
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div><div id="deleteDialog" title="Delete Module?" style="display:none;">
+    <p>Are you sure you would like to delete the selected module?</p>
+</div>
+<div id="first-time" style="display:none;">
+    <h2 class="center-text">Welcome to the Module Creator</h2>
+    <p class="center-text">Add a new module for your campaign is easy as 1-2-3. Simply follow the steps below to start crafting the perfect content for your campaign.</p>
+    <hr>
+    <div class="onboarding">
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--a" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img1.png')"></div>
+            <p>Add a new module by simply clicking the green "Add module" button. You can add up to 10 modules per campaign.</p>
+        </div>
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--b" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img2.png')"></div>
+            <p>Simply add your content to your newly inserted module by using the input fields. Each module can be reordered or deleted.</p>
+        </div>
+        <div class="onboarding__item">
+            <div class="onboarding__img onboarding__img--c" style="background-image: url('http://tdascreative.com/playground/james/campaign/images/onboarding_img3.png')"></div>
+            <p>All of your changes to each module can be seen in the live preview area on the right side.</p>
+        </div>
+    </div>
+</div>
+
+<div id="selectSurvey" title="Select Existing Survey" style="display:none;">
+    <ul class="zerolist survey-module__list">
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+        <li class="survey-module__item js-surveyItem">Buffalo Wild Wings Survey</li>
+        <li class="survey-module__item js-surveyItem">2016 Presidential Survey</li>
+        <li class="survey-module__item js-surveyItem">Favorite Automobile Maker</li>
+        <li class="survey-module__item js-surveyItem">Lays New Flavors Survey</li>
+        <li class="survey-module__item js-surveyItem">Amazon Headphone Review Survey</li>
+        <li class="survey-module__item js-surveyItem">Customer Service Survey</li>
+    </ul>
+</div>
+
+
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="jquery.minicolors.min.js"></script>
+<script src="dropzone.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

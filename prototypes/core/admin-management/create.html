@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Admin | Admin Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: url('http://www.tdascreative.com/uiguide/images/bg.png'); }
+    </style>
+</head>
+<body>
+<div id="userbar">
+    <div id="menucontainer">
+        <ul id="menu">
+            <li class="dropheader">
+                <a href="index.html">Admin Management</a>
+            </li>
+        </ul>
+    </div>
+</div>
+ 
+<div class="app-container">
+    <div class="admin-container">
+        <div class="container u-display-flex u-display-flex--vcentered ">
+            <h1><i class="is-clickable js-cancel fa fa-chevron-circle-left" data-cancel="index.html"></i> Create New Admin(s)</h1>
+            
+        </div>
+        <div class="js-statusMessage status-message error is-hidden"></div>
+        
+<div class="container-sectioned">
+    <ul id="breadCrumbs" class="zerolist u-display-flex breadcrumbs">
+    <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-active">Account Info</a></li>
+    <li class="breadcrumb js-breadcrumb"><a class="breadcrumb__link is-disabled" title="You must add an email and select an admin type and owner before proceeding">Select Org(s) and Assign Roles</a></li>
+</ul>
+
+</div>
+<div id="createdAdmins" class="is-hidden u-mb20 f13">
+    <b>Admin(s) Being Created:</b>
+    <div class="u-display-flex">
+        <ul id="createdAdminList" class="u-display-flex list list--overflow f12 has-overflow">
+            <span class="f12 js-showMore link link--show is-hidden">Show more</span>
+        </ul>
+
+    </div>
+</div>
+<div class="slider-container">
+    <div id="slider" class="slider slider--tall has-2-cols u-display-flex">
+        <div class="js-sliderSection slider__col is-active">
+            <div class="container">
+    <div id="adminOptions" class="input-container radio radio-inline">
+        <label class="is-clickable" for="singleUser"><input class="js-radioBtn" id="singleUser" type="radio" name="user" checked> Single User</label>
+        <label class="is-clickable" for="multipleUser"><input class="js-radioBtn" id="multipleUser" type="radio" name="user"> Multiple User(s)</label>
+    </div>
+</div>
+<div class="container">
+<div class="input-container">
+    <label for="" class="is-required">User Email</label>
+    <input type="text" class="js-tagit-email width-1-2">
+</div>
+<div id="singleUserInfo" class="container nomargin">
+    <div class="u-display-flex">
+        <div class="input-container width-1-4 u-pr10">
+            <label for="">First Name</label>
+            <input class="width-1-1" type="text">
+        </div>
+        <div class="input-container width-1-4 u-pl10">
+            <label for="">Last Name</label>
+            <input class="width-1-1" type="text">
+        </div>
+    </div>
+    <div class="input-container width-1-4">
+        <label for="">Time Zone</label>
+        <select class="js-chosen width-1-1" data-placeholder="Select Time Zone">
+            <option value=""></option>
+            <option value="AL">Alaska</option>
+            <option value="AT">Atlantic Time</option>
+            <option value="ACS">Australian Central</option>
+            <option value="AES">Australian Eastern</option>
+            <option value="AWS">Australian Western Standard</option>
+            <option value="CT">Central Time</option>
+            <option value="EET">Eastern European Time</option>
+            <option value="ET">Eastern Time</option>
+            <option value="HI">Hawaii</option>
+            <option value="MT">Mountain Time</option>
+            <option value="PT">Pacific Time</option>
+            <option value="PET">Peru Time</option>
+        </select>
+    </div>
+</div>
+<div id="selectAdmin" class="input-container width-1-4">
+    <label for="" class="is-required">Admin Type</label>
+    <select class="js-chosen js-chosen--required js-chosenAdmin width-1-1" data-placeholder="Select Admin Type">
+        <option value=""></option>
+        
+        <option value="1">Triton Super Admin</option>
+        <option value="2">Triton Admin</option>
+        <option value="3">Triton User</option>
+        <option value="4">Client Super Admin</option>
+        <option value="5">Client Admin</option>
+        <option value="6">Client User</option>
+        
+    </select>
+</div>
+<div id="selectOwner" class="input-container width-1-4">
+    <label for="" class="is-required">Owner</label>
+    <select class="js-chosen js-chosen--required js-chosenOwner width-1-1" data-placeholder="Select Owner" >
+        
+        <option></option>
+        <option value="249">21st Century Media</option>
+        <option value="49">AAA</option>
+        <option value="105">Access.1 Communications</option>
+        <option value="248">Air Capitol Media Group</option>
+        <option value="192">All Pro Broadcasting Inc.</option>
+        <option value="174">Aloha Station Trust</option>
+        <option value="176">Alpha Broadcasting</option>
+        <option value="271">Alpha Media LLC</option>
+        <option value="220">Amaturo Group of LA Ltd</option>
+        <option value="122">American General Media</option>
+        <option value="123">Anaheim Broadcasting Corp.</option>
+        <option value="243">Arkansas County Broadcasters Inc.</option>
+        <option value="197">Armada Media</option>
+        <option value="53">AZ Family</option>
+        <option value="113">Backyard Broadcasting PA LLC</option>
+        <option value="183">BC Productions Inc.</option>
+        <option value="6">Beasley Broadcasting</option>
+        <option value="11">Belo</option>
+        <option value="221">Berkshire Hathaway Inc</option>
+        <option value="261">Bicoastal Media LLC</option>
+        <option value="157">Big River Broadcasting Inc.</option>
+        <option value="34">Big Ten Network</option>
+        <option value="201">Birach Broadcasting Corporation</option>
+        <option value="54">Black Crow Broadcasting</option>
+        <option value="55">Bonneville</option>
+        <option value="152">Border Media Partners</option>
+        <option value="257">Bowers Broadcasting Corp.</option>
+        <option value="56">Braden Stations</option>
+        <option value="120">Brewer Broadcasting Corp.</option>
+        <option value="185">Bristol Bcstg Co. Inc.</option>
+        <option value="146">Broadcast Co. of the Americas</option>
+        <option value="134">Broadcast One</option>
+        <option value="119">Bryan Broadcasting</option>
+        <option value="270">Buck Owens Production Company Inc</option>
+        <option value="234">Buckley Broadcasting</option>
+        <option value="10">Burbach Broadcasting Co.</option>
+        <option value="268">Calvary Chapel of Costa Mesa</option>
+        <option value="57">Camrory Broadcasting Inc.</option>
+        <option value="255">Cape Cod Broadcasting</option>
+        <option value="121">Capitol Broadcasting</option>
+        <option value="231">Capps Broadcast Group</option>
+        <option value="2">CBS Radio</option>
+        <option value="71">CBS TV</option>
+        <option value="97">Chapin Enterprises LLC</option>
+        <option value="196">Chemung County Radio Inc.</option>
+        <option value="76">Cherry Creek Radio LLC</option>
+        <option value="5">Citadel</option>
+        <option value="58">City of San Ramon</option>
+        <option value="114">Coast Radio Inc</option>
+        <option value="173">Cogeco</option>
+        <option value="77">Combined Communications Inc.</option>
+        <option value="69">Comcast</option>
+        <option value="143">Comunicacion Xersa</option>
+        <option value="52">Connoisseur</option>
+        <option value="142">Content Factory</option>
+        <option value="199">Cornerstone University</option>
+        <option value="239">Corporacion Radial del Peru S.A.C.</option>
+        <option value="3">Corus Entertainment</option>
+        <option value="7">Cox</option>
+        <option value="198">Crawford County Convention &amp; Visitors Bureau</option>
+        <option value="8">Cumulus</option>
+        <option value="208">Cumulus Media DEMO</option>
+        <option value="187">Curtis Media Group</option>
+        <option value="9">Davidson</option>
+        <option value="203">Davis Media LLC</option>
+        <option value="126">Deer Creek Broadcasting</option>
+        <option value="276">Delmarva Broadcasting Company</option>
+        <option value="212">Delta Media Corporation</option>
+        <option value="78">demo account</option>
+        <option value="193">Desarrollo Radiofonico SA</option>
+        <option value="167">Dial Global</option>
+        <option value="23">Digity</option>
+        <option value="141">DIRECTV Sports Network</option>
+        <option value="165">dms Broadcasting</option>
+        <option value="222">Dockins Broadcast Group LLC</option>
+        <option value="79">Double O Radio</option>
+        <option value="158">Doud Media Group LLC</option>
+        <option value="80">Dowdy Broadcasting Inc.</option>
+        <option value="59">Educational Media Foundation Inc.</option>
+        <option value="137">EMF Broadcasting</option>
+        <option value="60">Emmis</option>
+        <option value="160">Empire Broadcasting System Inc.</option>
+        <option value="4">Entercom</option>
+        <option value="154">Entravision</option>
+        <option value="186">Extra Mile Media</option>
+        <option value="232">Fayetteville Publishing Company</option>
+        <option value="81">Federated Media</option>
+        <option value="206">Feuer/McCord Communications</option>
+        <option value="82">Fife Communications Co. LLC</option>
+        <option value="38">Fifth Ave</option>
+        <option value="83">First Natchez Radio Group</option>
+        <option value="236">Five Star Communications Inc.</option>
+        <option value="155">Flinn Broadcasting</option>
+        <option value="159">FM Idaho Co LLC</option>
+        <option value="277">Forever Media Inc</option>
+        <option value="72">Foster Communications</option>
+        <option value="13">Fox</option>
+        <option value="273">Frontier Radio Management Inc</option>
+        <option value="219">Full Power Radio Inc.</option>
+        <option value="94">Gannett Broadcasting</option>
+        <option value="129">GAP Broadcasting</option>
+        <option value="130">Gap West</option>
+        <option value="84">Golden Isles Broadcasting LLC</option>
+        <option value="215">Good Karma Broadcasting LLC</option>
+        <option value="181">Granite Broadcasting Corporation</option>
+        <option value="110">Gray Television</option>
+        <option value="250">Great South Wireless</option>
+        <option value="85">Grenax Broadcasting</option>
+        <option value="184">Gross Communications Corp</option>
+        <option value="175">Grupo ACIR</option>
+        <option value="163">Guyann Corp.</option>
+        <option value="205">Haliburton Broadcasting Group</option>
+        <option value="135">Hall Communications Inc.</option>
+        <option value="86">Haugo Broadcasting Inc.</option>
+        <option value="133">Hearn Broadcasting</option>
+        <option value="14">Hearst</option>
+        <option value="180">Herald-Tribune Media Group</option>
+        <option value="46">HGF</option>
+        <option value="245">Home Wizards Inc.</option>
+        <option value="115">Hubbard Broadcasting LLC</option>
+        <option value="1">iHeartMedia</option>
+        <option value="61">Illinois Lottery</option>
+        <option value="189">Intermart Broadcasting</option>
+        <option value="68">Jim Pattison Broadcast Group</option>
+        <option value="207">JMJ Broadcasting Co Inc.</option>
+        <option value="15">Journal Broadcasting</option>
+        <option value="95">JW Broadcasting LLC</option>
+        <option value="235">JWT</option>
+        <option value="16">Kendred</option>
+        <option value="259">Keymarket Communications LLC</option>
+        <option value="216">KSOP Inc.</option>
+        <option value="227">KXEO Inc.</option>
+        <option value="107">Lanser Broadcasting Corp.</option>
+        <option value="17">Larche</option>
+        <option value="179">Ledger Media Group</option>
+        <option value="218">Lee Family Broadcasting Inc.</option>
+        <option value="144">Leighton Enterprises Inc.</option>
+        <option value="18">LIN Television Network</option>
+        <option value="117">Lincoln Financial Media</option>
+        <option value="217">LKCM Radio Group</option>
+        <option value="112">LM Communications</option>
+        <option value="106">Locally Owned Radio</option>
+        <option value="96">Lockwood Broadcasting Inc.</option>
+        <option value="182">Long Island Speed Dating LLC</option>
+        <option value="118">Lotus Communications Corp</option>
+        <option value="98">Lower Cape Communications Inc.</option>
+        <option value="127">Magic Broadcasting</option>
+        <option value="162">Mapleton Communications</option>
+        <option value="36">Maritime</option>
+        <option value="252">Marlin Broadcasting LLC</option>
+        <option value="246">MarMac Communications</option>
+        <option value="275">Matrix Broadcasting LLC</option>
+        <option value="19">Maverick</option>
+        <option value="161">Max Broadcast Group Holdings</option>
+        <option value="20">Mayberry Broadcasting</option>
+        <option value="151">McClatchy Company</option>
+        <option value="214">McGavren Guild Media</option>
+        <option value="202">Media General</option>
+        <option value="178">Media Professionals Inc.</option>
+        <option value="21">Mel Wheeler</option>
+        <option value="136">Melissa Etheridge</option>
+        <option value="272">Meruelo Media Holdings LLC</option>
+        <option value="62">Midwest Communications Inc.</option>
+        <option value="111">Midwest Family Broadcasting</option>
+        <option value="124">Midwest TV Inc.</option>
+        <option value="260">Milwaukee Radio Alliance</option>
+        <option value="103">Monticello Media LLC</option>
+        <option value="226">Morgan Murphy Media</option>
+        <option value="12">Morris</option>
+        <option value="131">Mount Wilson FM Broadcasters</option>
+        <option value="87">Muzzy Broadcasting LLC</option>
+        <option value="128">Nassau Broadcasting</option>
+        <option value="267">Neuhoff Communications Inc</option>
+        <option value="88">New Northwest Broadcasters LLC</option>
+        <option value="22">New South</option>
+        <option value="89">Newcap Inc</option>
+        <option value="150">Niagara Radio Group</option>
+        <option value="229">Northern Broadcast Inc.</option>
+        <option value="24">Northern Broadcasting Inc.</option>
+        <option value="254">Northern Lights Broadcasting LLC</option>
+        <option value="70">Northern Native Broadcasting</option>
+        <option value="45">NRG</option>
+        <option value="74">Pacific Radio Group Inc.</option>
+        <option value="138">Palm Beach Broadcasting LLC</option>
+        <option value="25">Pamal Broadcasting</option>
+        <option value="266">Peach State Studio</option>
+        <option value="190">Pearson Broadcasting</option>
+        <option value="168">Pillar of Fire</option>
+        <option value="26">Platt River Radio</option>
+        <option value="164">Plymouth Rock Broadcasting Corp.</option>
+        <option value="73">Press Communications LLC</option>
+        <option value="101">Prettyman Broadcasting Co.</option>
+        <option value="64">Pritchard Broadcasting Co.</option>
+        <option value="263">Production team testing</option>
+        <option value="170">QA</option>
+        <option value="242">Quality Broadcasting Corporation</option>
+        <option value="204">R &amp; R Radio Corporation</option>
+        <option value="65">Radio CJVR Ltd.</option>
+        <option value="90">Radio K-T Inc.</option>
+        <option value="169">Radio One</option>
+        <option value="91">Radiostar Inc.</option>
+        <option value="27">Ramar Communications</option>
+        <option value="258">Red Zebra Broadcasting</option>
+        <option value="28">Redwood Empire</option>
+        <option value="29">Regent Communications</option>
+        <option value="125">Results Radio</option>
+        <option value="274">Rich Broadcasting LLC</option>
+        <option value="140">Riviera Broadcast Group LLC</option>
+        <option value="109">Royal Broadcasting Inc.</option>
+        <option value="51">Saga</option>
+        <option value="35">Salem Communications</option>
+        <option value="230">SammyTest</option>
+        <option value="48">Sand Mountain</option>
+        <option value="44">Schurz</option>
+        <option value="108">Scripps Networks</option>
+        <option value="172">Seize the Deal</option>
+        <option value="224">Seven Bridges Radio LLC</option>
+        <option value="47">Shamrock</option>
+        <option value="188">Sheila Callahan &amp; Friends Inc.</option>
+        <option value="156">Signal Media Inc.</option>
+        <option value="99">Sinclair</option>
+        <option value="171">SNE Broadcasting</option>
+        <option value="43">South Central</option>
+        <option value="247">Southern Media Interactive</option>
+        <option value="194">Spanish Peaks Broadcasting Inc.</option>
+        <option value="223">Spectrum Medya</option>
+        <option value="37">Standard Radio Inc.</option>
+        <option value="209">STARadio Corp.</option>
+        <option value="200">STD Townsquare Deals</option>
+        <option value="66">Summit City Radio Group</option>
+        <option value="240">Summit Media Inc.</option>
+        <option value="251">Summit Media LLC</option>
+        <option value="100">Sunburst Media Inc.</option>
+        <option value="30">Susquehanna</option>
+        <option value="132">Taos Communications</option>
+        <option value="262">Taughannock Media LLC</option>
+        <option value="244">TD University</option>
+        <option value="31">Tejas Broadcasting</option>
+        <option value="210">Tesh Media</option>
+        <option value="213">The Dispatch Printing Company</option>
+        <option value="195">The Montana Radio Company LLC</option>
+        <option value="238">The Zone Corporation</option>
+        <option value="32">Three Communications</option>
+        <option value="50">Three Eagles</option>
+        <option value="166">Townsquare Media</option>
+        <option value="92">Triad Broadcasting Company LLC</option>
+        <option value="67">Tribune</option>
+        <option value="211">Triton Digital</option>
+        <option value="63">Triton Loyalty</option>
+        <option value="233">Triton Sales</option>
+        <option value="237">Triton Support</option>
+        <option value="265">True North Radio Network</option>
+        <option value="139">Trumper Communications</option>
+        <option value="253">Tu Vision LLC</option>
+        <option value="149">Tyler Broadcasting Corp.</option>
+        <option value="256">USA Today</option>
+        <option value="191">Vero Beach Broadcasters LLC</option>
+        <option value="75">VerStandig Broadcasting</option>
+        <option value="145">Vista Radio</option>
+        <option value="33">Waitt</option>
+        <option value="177">Warner Brothers Television</option>
+        <option value="153">West Virginia Radio Corp.</option>
+        <option value="116">Westcoast Broadcasting Inc.</option>
+        <option value="264">Western South Dakota Broadcasting</option>
+        <option value="269">Westwood One</option>
+        <option value="228">Wheels Financial Group Inc.</option>
+        <option value="42">White Knight</option>
+        <option value="41">Wilks</option>
+        <option value="93">Williams Broadcasting LLC</option>
+        <option value="148">Withers Broadcasting Co.</option>
+        <option value="39">Woodward</option>
+        <option value="225">WRD Entertainment Inc.</option>
+        <option value="241">Young Broadcasting LLC</option>
+        <option value="102">Zimmer Radio Inc.</option>
+        
+    </select>
+</div>
+</div>
+        </div>
+        <div class="js-sliderSection slider__col">
+            <div id="emptyPermissionGroups" class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa fa-list-alt fa-5x"></i>
+    <b class="empty-state__header">Create your first Permission Group</b>
+    <p class="empty-state__tagline">Select a group of orgs or select a single org</p>
+    <button class="button-positive js-createGroup"><i class="fa fa-plus"></i> Create Group</button>
+</div>
+
+<div id="permissionGroups" class="u-is-visually-hidden">
+    <div class="panel panel--highlight">
+        <div class="js-panel is-clickable panel-header u-display-flex u-display-flex--vcentered">
+            <h2 class="panel-title" id="roleSelectionHeader">Atlanta (Cumulus), Sports</h2>
+            <div class="button-group u-flex-right js-editOrgGroup">
+                <button class="button button-small js-createGroup"><i class="fa fa-edit"></i> Edit Org(s)</button>
+                <button class="button-negative button-small js-deletePermission"><i class="fa fa-trash"></i> Delete</button>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel-content">
+                <div class="grid">
+                    <div class="col-3-5 has-vert-divider">
+                        <h3>Assign User Roles</h3>
+                        <div class="card card--contrast u-display-flex u-display-flex--vcentered">
+    <div class="card__title width-1-3">
+        <b class="card__title-header">Contesting</b>
+        <div class="card__icon card__icon--large">
+            <i class="fa fa-trophy"></i>
+        </div>
+    </div>
+    <div class="width-2-3">
+        <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+            <option value></option>
+            <option value="contest1">Create</option>
+            <option value="contest2">Edit</option>
+            <option value="contest3">View</option>
+            <option value="contest4">Approve</option>
+            <option value="contest5">All</option>
+        </select>
+    </div>
+</div>
+                        <div class="card card--contrast u-display-flex u-display-flex--vcentered">
+    <div class="card__title width-1-3">
+        <b class="card__title-header">Widgets</b>
+        <div class="card__icon card__icon--large">
+            <i class="fa fa-gears"></i>
+        </div>
+    </div>
+    <div class="width-2-3">
+        <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+            <option value></option>
+            <option value="contest1">Create</option>
+            <option value="contest2">Edit</option>
+            <option value="contest3">View</option>
+            <option value="contest4">Approve</option>
+            <option value="contest5">All</option>
+        </select>
+    </div>
+</div>
+                        <div class="card card--contrast u-display-flex u-display-flex--vcentered">
+    <div class="card__title width-1-3">
+        <b class="card__title-header">Admin Management</b>
+        <div class="card__icon card__icon--large">
+            <i class="fa fa-users"></i>
+        </div>
+    </div>
+    <div class="width-2-3">
+        <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+            <option value></option>
+            <option value="contest1">Create</option>
+            <option value="contest2">Edit</option>
+            <option value="contest3">View</option>
+            <option value="contest4">Approve</option>
+            <option value="contest5">All</option>
+        </select>
+    </div>
+</div>
+                        <div class="card card--contrast u-display-flex u-display-flex--vcentered">
+    <div class="card__title width-1-3">
+        <b class="card__title-header">Org Management</b>
+        <div class="card__icon card__icon--large">
+            <i class="fa fa-sitemap"></i>
+        </div>
+    </div>
+    <div class="width-2-3">
+        <select class="js-chosen js-chosen--roles width-1-1" data-placeholder="Click to select role(s)" multiple>
+            <option value></option>
+            <option value="contest1">Create</option>
+            <option value="contest2">Edit</option>
+            <option value="contest3">View</option>
+            <option value="contest4">Approve</option>
+            <option value="contest5">All</option>
+        </select>
+    </div>
+</div>
+                    </div>
+                    <div class="col-2-5">
+                        <h3>Org(s)</h3>
+                        <ul class="list list--bulleted list--sites">
+                            <li>CBS Radio - Atlanta</li>
+                            <li>CBSATLAN - CBS Atlanta Rewards</li>
+                            <li>CWAOK-FM - WAOK Rewards</li>
+                            <li>WUPA-TV - CW Atlanta Rewards</li>
+                            <li>WVEE-FM - V103 Loyal Listener Club</li>
+                            <li>WZGC-FM - 92.9 The Game</li>
+                            <li>CWAOK-FM - WAOK Rewards</li>
+                            <li>WUPA-TV - CW Atlanta Rewards</li>
+                            <li>WVEE-FM - V103 Loyal Listener Club</li>
+                            <li>WZGC-FM - 92.9 The Game</li>
+                        </ul>
+                        <div class="download">
+                            <a href="" class="download__link link link--download">Download Full List of Orgs (50)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="u-display-flex u-display-flex--centered u-flex-column module card card--create js-createGroup" style="height: 200px">
+        <i class="card--create__icon fa fa-plus fa-2x"></i>
+        <b class="card--create__header nomargin">Create a new group with different roles</b>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div class="u-display-flex">
+    <button class="button js-cancel" data-button="Cancel" data-cancel="index.html">Cancel</button>
+    <div class="u-flex-right">
+        <button class="button-highlight js-buttonShift is-hidden" data-button="Previous"><i class="fa fa-chevron-left"></i> Previous Step</button>
+        <button class="button-highlight js-buttonShift" data-button="Next" disabled>Next Step <i class="fa fa-chevron-right"></i></button>
+        <button class="button-positive is-hidden js-buttonShift" data-button="Save" onclick="location.href='index.html'" disabled>Save and Exit</button>
+    </div>
+</div>
+
+
+<div id="loadingIndicator" class="overlay overlay--absolute u-display-flex u-display-flex--centered is-hidden">
+    <div class="loader" data-loading-message="Saving and Creating user(s)"></div>
+</div>
+
+
+    </div>
+</div><div title="Assign Org(s)" id="createPermission" style="display: none">
+    <div class="slider-container">
+        <div id="sliderTags" class="slider has-2-cols u-display-flex">
+            <div id="sliderTagsCreator" class="slider__col is-active">
+                <div id="permissionContainer" class="input-container">
+                    <label for="">Add Org(s)</label>
+                    <select data-placeholder="Select a tag or single org" multiple class="js-chosen-dynamic width-1-1">
+                        <option value><!-- Empty option goes here. --></option>
+                        <option value="6 orgs">Atlanta</option>
+                        <option value="(CBS | CBS Radio - Chicago)">CBS Radio - Atlanta</option>
+                        <option value="(CBS | CBS Radio - Chicago)">CBSATLAN - CBS Atlanta Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WAOK-FM WAOK Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WUPA-TV CW Atlanta Rewards</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WVEE-FM - V103 Loyal Listener Club</option>
+                        <option value="(CBS | CBS Radio - Chicago)">WZGC-FM - 92.9 The Game</option>
+                    </select>
+                </div>
+                <div id="orgList" style="height: 250px">
+                    <div id="emptyStateOrgs" class="u-display-flex u-display-flex--centered u-flex-column empty-state empty-state--small empty-state--medium">
+                        <i class="fa fa-sitemap fa-3x"></i>
+                        <b class="empty-state__header">Currently there are no org(s) selected</b>
+                        <span class="empty-state__tagline nomargin">Use search box above to start selecting org(s)</span>
+                    </div>
+                    <div id="selectedOrgs" class="js-perfectScroll is-hidden" style="max-height: 270px; position: relative">
+
+                    </div>
+                </div>
+            </div>
+            <div id="sliderTagSites" class="slider__col">
+                <div class="container container-sectioned">
+                    <h2 class="nomargin"><i class="is-clickable js-goBack fa fa-chevron-circle-left"></i> Atlanta</h2>
+                </div>
+                <ul class="list list--bulleted">
+                    <li>CBS Radio - Atlanta</li>
+                    <li>CBSATLAN - CBS Atlanta Rewards</li>
+                    <li>WAOK-FM - WAOK Rewards</li>
+                    <li>WUPA-TV - CW Atlanta Rewards</li>
+                    <li>WVEE-FM - V103 Loyal Listener Club</li>
+                    <li>WZGC-FM - 92.9 The Game</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div title="Cancel Progress" id="cancelWorkDialog" style="display: none">
+    If you cancel all of your changes will be lost. Are you sure you want to cancel?
+</div>
+<div title="Delete Permission Group" id="deleteGroupDialog" style="display: none">
+    Are you sure you want to delete this permission group?
+</div>
+<div title="Change Account Type?" id="changeAccount" style="display: none">
+    Changing the account type will remove all created permission groups and remove all selected roles. Are you sure you want to change?
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<script src="perfect-scrollbar.jquery.js"></script>
+<script src="chosen.jquery.min.js"></script>
+<script src="tag-it.min.js"></script>
+<script src="create.js"></script>
+
+</body>
+</html>

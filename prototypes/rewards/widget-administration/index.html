@@ -1,0 +1,521 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Widget Administration</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//ajax.googleapis.com" rel="dns-prefetch">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-dropdown.css" />
+
+  </head>
+  <body style="background:url(https://admin.tritondigital.com/dashboard/CSS/images/bg.png); padding:50px 0 0 0;">
+
+	<!-- Main Content for Stand Alone -->
+	<!-- survey Admin -->
+	<div class="app-container nopadding">
+		<header class="app-header">
+            <h1 class="nomargin">Widget Administration</h2>
+        </header>
+		<div id="main" style="min-height:1000px;">
+
+			<div class="tabs">
+			    <ul>
+			        <li><a href="#tabs-1">Manage Widgets</a></li>
+			        <li><a href="#tabs-2">Theming</a></li>
+			        <li><a href="#tabs-3">Trivia Content</a></li>
+			        <li><a href="#tabs-4">Embed Codes</a></li>
+			    </ul>
+			    
+			    <div id="tabs-1">
+					<div class="pull-left">
+						<h2 class="nomargin">Manage Widgets</h2>
+						<p class="helper-text loffb">Activate/deactivate or rename your widgets</p>
+					</div>
+					<div class="button-container">
+               			<button class="button button-positive update-widgets disabled" disabled>Save changes</button>
+					</div>
+					<div class="grid">
+						<div class="col-1-2">
+							<ul class="widget-controls">
+								<li>
+									<div class="widget-name">
+										<span>Registration</span>
+										<i class="fa fa-lock ui-tooltip-icon"  title="The registration module embed code is required to be turned on and present on the page for any other modules to operate"></i>
+									</div>
+									<div class="toggle toggle--positive disabled">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle1" checked disabled="disabled" >
+									    <label class="toggle-container" for="toggle1">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Trivia</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Trivia</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle2" checked >
+									    <label class="toggle-container" for="toggle2">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Listen & Win</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Listen & Win</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle3" >
+									    <label class="toggle-container" for="toggle3">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Surveys</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Surveys</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle4" >
+									    <label class="toggle-container" for="toggle4">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Polls</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Polls</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle5" checked >
+									    <label class="toggle-container" for="toggle5">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Campaigns</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Campaigns</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle6" >
+									    <label class="toggle-container" for="toggle6">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Contest List</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Contest List</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle7" >
+									    <label class="toggle-container" for="toggle7">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<label class="sub">Games Center</label>
+										<span onfocus="document.execCommand('selectAll',false,null)">Games Center</span>
+										<i class="fa fa-pencil ui-tooltip-icon edit-module-name"></i>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle8" >
+									    <label class="toggle-container" for="toggle8">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<span>Announcements</span>
+									</div>
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle9" >
+									    <label class="toggle-container" for="toggle9">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+								<li>
+									<div class="widget-name">
+										<span>Login Bonus</span>
+									</div>									
+									<div class="toggle toggle--positive">
+									    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle10" >
+									    <label class="toggle-container" for="toggle10">
+									        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+									        <span class="toggle-handle"></span>
+									    </label>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+						<div class="col-1-8"></div>
+						<div class="col-1-2">
+							<div class="module contrast">
+								<strong>Deactivating a widget</strong> will prevent it from displaying or being accessed on your site.  It will also remove it from your engagement site, if you use one.
+							</div>
+							<div class="module contrast">
+								<strong>Renaming a widget</strong> will change the name on the list page and initial splash page where applicable.  It will also change in on your engagement site, if you use one.  The original module name is always above the custom name for reference.
+							</div>
+						</div>
+					</div>
+			    </div>
+			    
+			    <div id="tabs-2">
+			    	<div class="pull-left">
+						<h2 class="nomargin">Default Theme</h2>
+						<p class="helper-text loffb">Choose a default theme option for all of your widgets</p>
+					</div>
+					<div class="button-container">
+		                <button class="button button-positive update-theme disabled" disabled>Update theme</button>
+					</div>
+
+					<div class="grid">
+						
+						<div class="col-1-2">
+						
+						<div class="widget-options">
+							
+							<!-- Theme Colors -->
+							<div class="input-container widget-colors">
+								<label class="widget-input-title">Theme Colors</label>
+								<div class="theme-option-inputs">
+									<div class="blue-theme round-input">
+							    	<input type="radio" value="10" id="blue-theme" name="colors" checked />
+										<label for="blue-theme">
+											<div class="input-label">Blue Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+									<div class="gray-theme round-input">
+							    	<input type="radio" value="10" id="gray-theme" name="colors">
+										<label for="gray-theme">
+											<div class="input-label">Gray Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+									<div class="green-theme round-input">
+							    	<input type="radio" value="10" id="green-theme" name="colors">
+										<label for="green-theme">
+											<div class="input-label">Green Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+						   		</div>
+						    	<div class="theme-option-inputs">
+									<div class="orange-theme round-input">
+							    	<input type="radio" value="10" id="orange-theme" name="colors">
+										<label for="orange-theme">
+											<div class="input-label">Orange Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+							    	<div class="purple-theme round-input">
+							    	<input type="radio" value="10" id="purple-theme" name="colors">
+										<label for="purple-theme">
+											<div class="input-label">Purple Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+									<div class="red-theme round-input">
+							    	<input type="radio" value="10" id="red-theme" name="colors">
+										<label for="red-theme">
+											<div class="input-label">Red Theme</div>
+											<div class="color-img"></div>
+										</label>
+									</div>
+						   		</div>
+							</div>
+
+							<div class="input-container widget-textures">
+								<label class="widget-input-title">Theme Textures</label>
+								<div class="theme-option-inputs">
+									<div class="scallop round-input">
+							    	<input type="radio" value="10" id="scallop" name="textures" checked />
+										<label for="scallop">
+											<div class="input-label">Scallop</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+									<div class="burst round-input">
+							    	<input type="radio" value="10" id="burst" name="textures">
+										<label for="burst">
+											<div class="input-label">Burst</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+									<div class="retro round-input">
+							    	<input type="radio" value="10" id="retro" name="textures">
+										<label for="retro">
+											<div class="input-label">Retro</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+						   		</div>
+						   		<div class="theme-option-inputs">
+									<div class="edgy round-input">
+							    	<input type="radio" value="10" id="edgy" name="textures">
+										<label for="edgy">
+											<div class="input-label">Edgy</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+							    	<div class="modern round-input">
+							    	<input type="radio" value="10" id="modern" name="textures">
+										<label for="modern">
+											<div class="input-label">Modern</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+									<div class="rough round-input">
+							    	<input type="radio" value="10" id="rough" name="textures">
+										<label for="rough">
+											<div class="input-label">Rough</div>
+											<div class="texture-img"></div>
+										</label>
+									</div>
+						 	    </div>
+					    	</div>	
+					    </div>
+
+					    </div>
+					    <div class="col-1-2">
+					    	<label>Theme preview</label>
+					    	<div id="theme-preview" class="blue-theme" style="background-image:url(img/pattern-1.png);">
+					    		<h3>An example of your</h3>
+					    		<h1>Selected Theme</h1>
+					    		<button>A button</button>
+					    	</div>
+					    </div>
+
+				    </div>
+
+			    </div>
+			    
+			    <div id="tabs-3">
+			    	<div class="pull-left">
+						<h2 class="nomargin">Trivia Content Controls</h2>
+						<p class="helper-text loffb">Manage trivia categories and how your content displays</p>
+					</div>
+					<div class="button-container">
+		                <button class="button button-positive save-order disabled" disabled>Save order</button>
+					</div>
+					<div class="grid">
+						<div class="col-1-2">
+							<h3>Active categories</h3>
+							<ul class="trivia-categories sortable-list">
+								<li>80's and 90's music</li>
+								<li>Current Events</li>
+								<li>Entertainment</li>
+								<li>Food</li>
+								<li>Local</li>
+								<li>Pop Culture</li>
+								<li>Pop Music</li>
+								<li>Rock Music</li>
+								<li>Video Games</li>
+							</ul>
+						</div>
+						<div class="col-1-2">
+							<h3>Inactive categories</h3>
+							<ul class="trivia-categories sortable-list">
+								<li>Books</li>
+								<li>Country Music</li>
+								<li>Oldies</li>
+								<li>R&B Music</li>
+								<li>Religion</li>
+							</ul>
+						</div>
+					</div>
+			    </div>
+			    
+			    <div id="tabs-4">
+			    	<div class="pull-left">
+						<h2 class="nomargin">Widget Embed Codes</h2>
+						<p class="helper-text loffb">Header and widget embed codes</p>
+					</div>
+
+					<div class="button-container">
+		                <button class="button">Email these instructions</button>
+					</div>
+
+					<div class="grid">
+
+					<h4>Add this code before the &lt;/head&gt; of your site:</h4>
+
+					<div class="panel">
+					    <div class="panel-body contrast">
+					        <div class="panel-content">
+								<textarea rows="5" id="header-code" class="offb">&lt;script type="text/javascript" src="http://see-p-elb-01.tritondigital.net/widget/see_10704/see.js"&gt;&lt;/script&gt;</textarea>
+								<button class="button SEE-widget-dashboard-code-copy-button ng-isolate-scope" id="SEE-copy-header-code" data-clipboard-target="#header-code" ngclipboard="" ngclipboard-success="clipSuccess()" ngclipboard-error="clipError()">
+									<i class="fa fa-files-o"></i> Copy Code
+								</button>
+					        </div>
+					    </div>
+					</div>
+					
+					<h4>Add the following codes where you want the widgets to appear</h4>
+					<div class="widget-code-container">
+						<div class="panel">
+						    <div class="panel-header">
+						        <span class="panel-title">User Registration Widget</span>
+					        	<div class="pull-right">
+					        		<i class="fa fa-compress collapse-container"></i>
+					        	</div>
+						    </div>
+						    <div class="panel-body contrast">
+						        <div class="panel-content">
+									<div class="widget-preview">
+										<img class="SEE-widget-dashboard-thumb" src="//d13wm2ukh2f9bl.cloudfront.net/app/public/images/widgets/regui.jpg">
+									</div>
+									<div class="widget-code">
+										<textarea data-id="widget-code" id="regui_code" class="SEE-widget-dashboard-code-text" rows="5"><div class="see-widget" data-see-type="regUi" data-see-loginbonus="true"></div></textarea>
+										<button class="button offt SEE-widget-dashboard-code-copy-button ng-isolate-scope" id="SEE-copy-header-code" data-clipboard-target="#header-code" ngclipboard="" ngclipboard-success="clipSuccess()" ngclipboard-error="clipError()">
+									<i class="fa fa-files-o"></i> Copy Code
+								</button>
+									</div>
+									<div class="widget-modifiers">
+										<div class="input-container">
+											<label>Login bonus widget</label>
+											<select>
+												<option>Yes</option>
+												<option>No</option>
+											</select>
+										</div>
+									</div>
+						        </div>
+						    </div>
+						    <div class="panel-footer">
+						    	<span>Implementation notes: Widget displays 300px wide</span>
+						    </div>
+						</div>
+					</div>
+
+					<div class="widget-code-container">
+						<div class="panel">
+						    <div class="panel-header">
+						        <span class="panel-title">Trivia Widget</span>
+					        	<div class="pull-right">
+					        		<i class="fa fa-expand expand-container"></i>
+					        	</div>
+						    </div>
+						    <div class="panel-body contrast" style="display:none;">
+						        <div class="panel-content">
+									<div class="widget-preview">
+										<img class="SEE-widget-dashboard-thumb" src="https://d13wm2ukh2f9bl.cloudfront.net/app/public/images/widgets/trivia.jpg">
+									</div>
+									<div class="widget-code">
+										<textarea data-id="widget-code" id="regui_code" class="SEE-widget-dashboard-code-text" rows="5"><div class="see-widget" data-see-type="triviaUi" data-see-hideifempty="false"></div></textarea>
+										<button class="button offt SEE-widget-dashboard-code-copy-button ng-isolate-scope" id="SEE-copy-header-code" data-clipboard-target="#header-code" ngclipboard="" ngclipboard-success="clipSuccess()" ngclipboard-error="clipError()">
+									<i class="fa fa-files-o"></i> Copy Code
+								</button>
+									</div>
+									<div class="widget-modifiers">
+										<div class="input-container">
+											<label>Hide widget if no content?</label>
+											<div class="toggle toggle--positive">
+											    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle11" >
+											    <label class="toggle-container" for="toggle11">
+											        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+											        <span class="toggle-handle"></span>
+											    </label>
+											</div>
+										</div>
+									</div>
+						        </div>
+						    </div>
+						    <div class="panel-footer" style="display:none;">
+						    	<span>Implementation tips go here</span>
+						    </div>
+						</div>
+					</div>
+
+					<div class="widget-code-container">
+						<div class="panel">
+						    <div class="panel-header">
+						        <span class="panel-title">Polls Widget</span>
+					        	<div class="pull-right">
+					        		<i class="fa fa-expand expand-container"></i>
+					        	</div>
+						    </div>
+						    <div class="panel-body contrast" style="display:none;">
+						        <div class="panel-content">
+									<div class="widget-preview">
+										<img class="SEE-widget-dashboard-thumb" src="https://d13wm2ukh2f9bl.cloudfront.net/app/public/images/widgets/polls.jpg">
+									</div>
+									<div class="widget-code">
+										<textarea data-id="widget-code" id="regui_code" class="SEE-widget-dashboard-code-text" rows="5"><div class="see-widget" data-see-type="pollsUi" data-see-hideifempty="false"></div></textarea>
+										<button class="button offt SEE-widget-dashboard-code-copy-button ng-isolate-scope" id="SEE-copy-header-code" data-clipboard-target="#header-code" ngclipboard="" ngclipboard-success="clipSuccess()" ngclipboard-error="clipError()">
+									<i class="fa fa-files-o"></i> Copy Code
+								</button>
+									</div>
+									<div class="widget-modifiers">
+										<div class="input-container">
+											<label>Hide widget if no content?</label>
+											<div class="toggle toggle--positive">
+											    <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="toggle12" >
+											    <label class="toggle-container" for="toggle12">
+											        <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+											        <span class="toggle-handle"></span>
+											    </label>
+											</div>
+										</div>
+									</div>
+						        </div>
+						    </div>
+						    <div class="panel-footer" style="display:none;">
+						    	<span>Implementation tips go here</span>
+						    </div>
+						</div>
+					</div>
+
+					</div>
+
+			    </div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Onboarding Modal -->
+    <div id="first-time" style="display:none;">
+    </div>
+
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+  </body>
+</html>

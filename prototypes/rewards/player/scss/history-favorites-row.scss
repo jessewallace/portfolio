@@ -1,0 +1,110 @@
+
+.v1player-history-contents {
+    // position: absolute;
+    // top: 0;
+    // z-index: -1;
+
+    // overflow: auto;
+    // height: 100%;
+    // width: 100%;
+    // padding-top: 35px;
+}
+
+
+.v1player-history-row {
+    position: relative;
+
+    width: 100%;
+    padding: 15px 15px 15px 60px;
+    font-weight: bold;
+
+    // &:nth-child(n+6) {
+    //     display: none;
+    // }
+
+    img {
+        position: absolute;
+        top: 22px;
+        left: 20px;
+    }
+
+    span.v1player-history-album {
+        display: block;
+        font-size: 0.9em;
+        font-style: italic;
+        font-weight: normal;
+        opacity: 0.7;
+    }
+
+    span.v1player-history-artist {
+        display: block;
+        font-size: 0.9em;
+        font-weight: normal;
+
+        & ~ a i {
+            right:60px;
+        }
+    }
+
+    span.v1player-history-time {
+        position: absolute;
+        top: 27px;
+        right: 100px;
+
+        font-size: .8em;
+
+        i {
+            position: static;
+
+            display: block;
+            text-align: center;
+        }
+
+        & ~ a i {
+            right:60px;
+        }
+    }
+
+    span.v1player-history-favorites,
+    .v1player-favorites-control{
+        position: absolute;
+        top: 30px;
+        right: 25px;
+
+        font-size: .8em;
+
+        i {
+            position: static;
+
+            display: block;
+            text-align: center;
+
+            cursor:pointer;
+
+            &:hover,
+            &.active {
+                color: $button-color;
+            }
+        }
+    }
+
+    .v1player-history-bars,
+    .v1player-favorites-bars {
+        float:right;
+
+        color: $black;
+
+    }
+
+    i {
+        position: absolute;
+        top: 27px;
+        right: 20px;
+        
+        font-size: 1.7em;
+    }
+
+    &:nth-of-type(odd) {
+        background: $main-color;
+    }
+}

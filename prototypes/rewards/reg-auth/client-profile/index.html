@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Widget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/overlay.min.css">
+    <link rel="stylesheet" type="text/css" href="css/regui.min.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/tdas-modal-registration-widget.js"></script>
+
+</head>
+<body>
+    
+    <div class="container">
+        <a href="#">Open Reg/Auth</a>
+    </div>
+
+    <div id="see-overlay" style="display: block; z-index: 2000007; top: 0%;">
+        <div class="see-wrapper" style="position: relative; top:10%;">
+            <span class="see-x fa fa-times" style="padding-top: 0px;"></span>
+            <div class="see-clearfix"></div>
+            <div class="regui" id="see-overlay-modal" style="z-index: 2000008;">
+                <div class="profile-tab-area ui-tabs ui-widget ui-widget-content ui-corner-all">
+                    
+                    <!-- Nav tabs -->
+                    <ul class="see-reg-nav see-reg-nav-tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" id="profileTab" role="tablist">
+                        
+                        <li aria-controls="profile" class="ui-state-default ui-corner-top" role="tab" tabindex="0">
+                            <a aria-controls="profile" class="ui-tabs-anchor" data-toggle="tab" href="#profile" tabindex="-1">
+                                <i class="fa fa-user"></i> Profile
+                            </a>
+                        </li>
+
+                        <li aria-controls="email" class="ui-state-default ui-corner-top" role="tab" tabindex="-1">
+                            <a aria-controls="email" class="ui-tabs-anchor" data-toggle="tab" href="#email" tabindex="-1">
+                                <i class="fa fa-envelope"></i> Email
+                            </a>
+                        </li>
+
+                        <li aria-controls="email" class="active ui-state-default ui-corner-top" role="tab" tabindex="-1">
+                            <a aria-controls="email" class="ui-tabs-anchor" data-toggle="tab" href="#points" tabindex="-1">
+                                <i class="fa fa-database"></i> Points
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content" id="profileTabContent">
+
+                        <div class="tab-pane see-reg-tab-pane ui-tabs-panel ui-widget-content ui-corner-bottom" id="profile" role="tabpanel">
+                            
+                            <div class="see-sidebar see-right">
+                                <div class="see-buttons see-form no-border-right">
+                                    <p>Your profile picture</p><img class="see-profile" src="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg">
+                                    <p>Connect a social account</p>
+                                    <div class="see-button see-facebook">
+                                        Facebook <i class="fa fa-refresh fa-spin"></i>
+                                    </div>
+                                    <div class="see-button see-google see-off">
+                                        Google + <i class="fa fa-refresh fa-spin"></i>
+                                    </div><br>
+                                    <br>
+                                    <br>
+                                    <p>Change your password</p><br>
+                                    <div class="see-input-group">
+                                        <input autocomplete="off" class="see-input" name="password" onblur="this.value=!this.value?'enter new password':this.value;" onclick="this.value='';" onfocus="this.select()" placeholder="enter new password" type="password">
+                                    </div>
+                                    <div class="see-input-group">
+                                        <input class="see-input" name="passwordConfirm" onblur="this.value=!this.value?'confirm new password':this.value;" onclick="this.value='';" onfocus="this.select()" placeholder="confirm new password" type="password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="see-form see-profile-form">
+                                <div class="see-message"></div>
+                                <div class="see-fields">
+                                    <div class="see-input-group">
+                                        <label for="email">Email Address</label> <input autocomplete="off" class="see-input" name="email" type="text" value="meantine64@yahoo.com">
+                                    </div>
+                                    <div class="see-input-group">
+                                        <label for="displayName">Display Name</label> <input class="see-input" name="displayName" placeholder="" type="text" value="Christine Hill">
+                                    </div>
+                                    <div class="see-input-group see-date see-small">
+                                        <label for="dob">Date Of Birth</label> <input class="see-input" name="dob" placeholder="mm/dd/yyyy" type="text" value=""> <i class="fa fa-calendar"></i>
+                                        <div class="pika-single is-hidden is-bound" style="position: static; left: auto; top: auto;"></div>
+                                    </div>
+                                    <div class="see-input-group">
+                                        <label for="gender">Gender</label> <span class="see-button see-selected" data-gender="male"><i class="fa fa-male"></i> Male</span><span class="see-button" data-gender="female"><i class="fa fa-female"></i> Female</span> <input name="gender" type="hidden" value="male">
+                                    </div>
+                                    <div class="see-input-group see-small">
+                                        <label for="zip">Zip/Postal Code</label> <input class="see-input" name="zip" placeholder="" type="text" value="14203">
+                                    </div>
+                                    <div class="see-input-group see-small">
+                                        <label for="state">State</label>
+                                        <select class="see-input" name="state">
+                                            <option>
+                                            </option>
+                                            <option>
+                                                AL
+                                            </option>
+                                            <option>
+                                                AK
+                                            </option>
+                                            <option>
+                                                AZ
+                                            </option>
+                                            <option>
+                                                AR
+                                            </option>
+                                            <option>
+                                                CA
+                                            </option>
+                                            <option>
+                                                CO
+                                            </option>
+                                            <option>
+                                                CT
+                                            </option>
+                                            <option>
+                                                DE
+                                            </option>
+                                            <option>
+                                                DC
+                                            </option>
+                                            <option>
+                                                FL
+                                            </option>
+                                            <option>
+                                                GA
+                                            </option>
+                                            <option>
+                                                HI
+                                            </option>
+                                            <option>
+                                                ID
+                                            </option>
+                                            <option>
+                                                IL
+                                            </option>
+                                            <option>
+                                                IN
+                                            </option>
+                                            <option>
+                                                IA
+                                            </option>
+                                            <option>
+                                                KS
+                                            </option>
+                                            <option>
+                                                KY
+                                            </option>
+                                            <option>
+                                                LA
+                                            </option>
+                                            <option>
+                                                ME
+                                            </option>
+                                            <option>
+                                                MD
+                                            </option>
+                                            <option>
+                                                MA
+                                            </option>
+                                            <option>
+                                                MI
+                                            </option>
+                                            <option>
+                                                MN
+                                            </option>
+                                            <option>
+                                                MS
+                                            </option>
+                                            <option>
+                                                MO
+                                            </option>
+                                            <option>
+                                                MT
+                                            </option>
+                                            <option>
+                                                NE
+                                            </option>
+                                            <option>
+                                                NV
+                                            </option>
+                                            <option>
+                                                NH
+                                            </option>
+                                            <option>
+                                                NJ
+                                            </option>
+                                            <option>
+                                                NM
+                                            </option>
+                                            <option>
+                                                NY
+                                            </option>
+                                            <option>
+                                                NC
+                                            </option>
+                                            <option>
+                                                ND
+                                            </option>
+                                            <option>
+                                                OH
+                                            </option>
+                                            <option>
+                                                OK
+                                            </option>
+                                            <option>
+                                                OR
+                                            </option>
+                                            <option>
+                                                PA
+                                            </option>
+                                            <option>
+                                                RI
+                                            </option>
+                                            <option>
+                                                SC
+                                            </option>
+                                            <option>
+                                                SD
+                                            </option>
+                                            <option>
+                                                TN
+                                            </option>
+                                            <option>
+                                                TX
+                                            </option>
+                                            <option>
+                                                UT
+                                            </option>
+                                            <option>
+                                                VT
+                                            </option>
+                                            <option>
+                                                VA
+                                            </option>
+                                            <option>
+                                                WA
+                                            </option>
+                                            <option>
+                                                WV
+                                            </option>
+                                            <option>
+                                                WI
+                                            </option>
+                                            <option>
+                                                WY
+                                            </option>
+                                            <option>
+                                                FM
+                                            </option>
+                                            <option>
+                                                MH
+                                            </option>
+                                            <option>
+                                                PW
+                                            </option>
+                                            <option>
+                                                AA
+                                            </option>
+                                            <option>
+                                                AE
+                                            </option>
+                                            <option>
+                                                AP
+                                            </option>
+                                            <option>
+                                                CM
+                                            </option>
+                                            <option>
+                                                CZ
+                                            </option>
+                                            <option>
+                                                NB
+                                            </option>
+                                            <option>
+                                                PI
+                                            </option>
+                                            <option>
+                                                TT
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="clearfix see-footer">
+                                <div class="see-button see-submit see-right">Save Changes <i class="fa fa-refresh fa-spin"></i></div>
+                                <div class="see-button see-cancel see-right">Cancel</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane ui-tabs-panel ui-widget-content ui-corner-bottom" id="email" role="tabpanel">
+                            <form class="see-form see-email-form see-wide">
+                                <div class="see-message"></div>
+                                <div class="see-subscriptions">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Station updates</div>
+                                        <div class="panel-body">
+                                            <div class="checkbox">
+                                                <label><input class="see-user-subs" name="subscriptions" type="checkbox" value="5693"> Country 106.5 WYRK Updates and Information</label>
+                                                <p><label>Stay current on the latest Country 106.5 WYRK events, news, and contests.</label></p>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input class="see-user-subs" name="subscriptions" type="checkbox" value="7354"> Secret Contests and Offers</label>
+                                                <p><label>Periodically we run special contests and exclusive offers that you will only hear about through this email subscription.&nbsp; This is your inside chance to win everything from cash to trips to iPads and more…and because not everyone is smart enough to sign up, you will never have a better chance to win!</label></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label><input id="cbNoEmail" name="NoEmail" type="checkbox" value="true"> <span id="spOptOutText">Opt out of all emails</span></label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="clearfix see-footer">
+                                <div class="see-button see-submit see-right">Save Changes <i class="fa fa-refresh fa-spin"></i></div>
+                                <div class="see-button see-cancel see-right">Cancel</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane active ui-tabs-panel ui-widget-content ui-corner-bottom" id="points" role="tabpanel">
+                            
+                            <div class="points-container">
+
+                                <div class="points-aging">
+                                    <div class="points-current alert alert-info">Current Point Balance: <strong>15,500</strong></div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Month earned</th>
+                                                    <th>Points</th>
+                                                    <th>Expires on</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>January 2017</td>
+                                                    <td>500</td>
+                                                    <td>8/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>December 2016</td>
+                                                    <td>1500</td>
+                                                    <td>7/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>November 2016</td>
+                                                    <td>2500</td>
+                                                    <td>6/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>October 2016</td>
+                                                    <td>1500</td>
+                                                    <td>5/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>September 2016</td>
+                                                    <td>4500</td>
+                                                    <td>4/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>August 2016</td>
+                                                    <td>1500</td>
+                                                    <td>3/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>July 2016</td>
+                                                    <td>3500</td>
+                                                    <td>2/01/17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3"><a href="#" class="view-history">View points activity history</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="points-expired well well-sm">You had <strong class="warning">300 points</strong> expire on <strong>1/1/17</strong> <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="All the Points you earn will be valid for 6 months following the END of the month in which you earned them. So if you earned Points during any day in January, these Points would expire 6 months from January 31st. When you use your Points, the oldest Points are always spent first - first in, first out."></i></div>
+                                </div>
+
+                                <div class="points-history">
+
+                                    <div class="points-history-controls">
+                                        <a class="view-aging" href="#"><i class="fa fa-angle-left"></i> Back</a>
+                                        <span>Activity for January 2017</span>
+                                        <i class="fa fa-calendar datepicker"></i>
+                                    </div>
+                                    
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Instance</th>
+                                                <th>Points</th>
+                                                <th>Date Earned</th>
+                                            </tr>
+                                        </thead>        
+                                        <tbody>
+                                            <tr>
+                                                <td>Artist Poll</td>
+                                                <td>100</td>
+                                                <td>1/4/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Celebrity Trivia</td>
+                                                <td>100</td>
+                                                <td>1/3/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Listen & Win</td>
+                                                <td>100</td>
+                                                <td>1/3/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Station Trivia</td>
+                                                <td>100</td>
+                                                <td>1/3/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Listen & Win</td>
+                                                <td>100</td>
+                                                <td>1/2/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Station Trivia</td>
+                                                <td>100</td>
+                                                <td>1/2/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Celebrity Trivia</td>
+                                                <td>100</td>
+                                                <td>1/1/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Artist Poll</td>
+                                                <td>100</td>
+                                                <td>1/1/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Station Trivia</td>
+                                                <td>100</td>
+                                                <td>1/1/17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Celebrity Trivia</td>
+                                                <td>100</td>
+                                                <td>1/1/17</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <nav class="points-history-pagination">
+                                      <button class="btn btn-default"><i class="fa fa-angle-left"></i></button>
+                                      <button class="btn btn-default"><i class="fa fa-angle-right"></i></button>
+                                    </nav>
+                                
+                                </div>
+
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

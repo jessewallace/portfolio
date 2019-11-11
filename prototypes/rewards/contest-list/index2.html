@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+
+    <title>Contest Widget</title>
+    <link rel="stylesheet" href="css/contestwidget.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     <script src="js/themeswitch.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+          $("input.td-contest-search").on('focus blur', function( e ){
+            $("input.td-contest-search").toggleClass("td-contest-search-expand");
+        });
+
+
+      });
+    </script>
+
+</head>
+<body>
+
+ <div class="td-contest-theme-switcher">
+        <ul class="theme-color">
+        <li class="blue"></li>
+        <li class="green"></li>
+        <li class="orange"></li>
+        <li class="purple"></li>
+        <li class="red"></li>
+        <li class="gray"></li>
+        </ul>
+
+        <ul class="theme-texture">
+        <li class="texture--scallop"></li>
+        <li class="texture--burst"></li>
+        <li class="texture--retro"></li>
+        <li class="texture--edgy"></li>
+        <li class="texture--modern"></li>
+        <li class="texture--rough"></li>
+        </ul>
+    </div>
+
+    <div class="td-contest-widget td-contest--blue">
+
+
+        <div class="td-contest-header texture--scallop">
+            <h2 class="td-contest-title">Contests</h2>
+           <!--  <div class="td-top-contest-icons">
+                <i class="icon icon-maxicons1-star"></i>
+                <i class="icon icon-maxicons1-star"></i>
+                <i class="tdicon-trophy"></i>
+            </div> -->
+        </div>
+
+        <!--contest stacked-->
+        <div class="td-contest-stack">
+
+
+
+            <div class="td-contest-top-area-block">
+
+                <ul class="td-contest-filter-pills">
+                    <a href="/"><li class="active">Entered In</li></a>
+                    <a href="/"><li>New</li></a>
+                    <a href="/"><li>Closing Soon</li></a>
+                    <a href="/"><li>Not Entered In</li></a>
+                    <a href="/"><li>Closed</li></a>
+                </ul>
+                <div class="td-contest-dropdown">View: <select>
+                    <option>Entered In</option>
+                    <option>New</option>
+                    <option>Closing Soon</option>
+                    <option>Not Entered In</option>
+                    <option>Closed</option>
+                </select></div>
+
+                <div class="td-contest-search-area">
+                    <input type="text" name="search" value="Search" onfocus="(this.value == 'Search') && (this.value = '')"
+                    onblur="(this.value == '') && (this.value = 'Search')" class="td-contest-search">
+                </div>
+
+            </div>
+
+
+
+
+
+            <ul class="td-contest-lists-block">
+
+    <!--          <span class="see-gameslist-page-button" data-button="left"><i class="fa fa-chevron-left"></i></span>
+             <span class="see-gameslist-page-button" data-button="right" style="display: block;"><i class="fa fa-chevron-right"></i></span> -->
+
+
+
+                <li>
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        23
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <i class="tdicon-trophy"></i>
+                    </div>
+
+
+                </li>
+
+                <li>
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        20
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <i class="tdicon-media"></i>
+                    </div>
+
+
+                </li>
+
+                <li>
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        16
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <i class="tdicon-bracket"></i>
+                    </div>
+
+
+                </li>
+
+
+                <li>
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        9
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <i class="tdicon-caption1"></i>
+                    </div>
+
+
+                </li>
+
+
+                <li class="td-contest-details-entry-none">
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        23
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <i class="tdicon-tickets"></i>
+                    </div>
+
+
+                </li>
+
+
+
+             <li class="td-contest-details-entry-none">
+                 <div class="td-contest-details">
+                    <div class="td-contest-icon-area">
+                        <i class="icon icon-maxicons1-check"></i>
+                    </div>
+                    <p class="td-contest-details-text">
+                        23
+                    </p>
+
+                    <div class="td-contest-ends-date">
+                    ENDS:<br><span>10/10/2015 | 12:20 AM</span>
+                    </div>
+                </div>
+
+                <div class="td-contest-name">
+                    <p class="td-contest-name-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </div>
+
+
+                    <div class="td-contest-image">
+                        <img src="images/contest-1.jpg">
+                    </div>
+
+
+                </li>
+
+<span class="see-gameslist-paginator">
+         <span class="see-gameslist-page-button" data-button="left"><i class="fa fa-chevron-left"></i></span>
+
+<span class="see-gameslist-paginator-indicator active" data-page="1"></span><span class="see-gameslist-paginator-indicator" data-page="2"></span>
+
+<span class="see-gameslist-page-button" data-button="right"><i class="fa fa-chevron-right"></i></span>
+
+</span>
+
+
+            </ul>
+
+
+
+        </div>
+        <i class="tdicon-trophy bottom-icon"></i>
+    </div>
+
+
+</body>
+</html>

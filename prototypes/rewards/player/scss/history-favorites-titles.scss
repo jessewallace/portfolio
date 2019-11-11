@@ -1,0 +1,38 @@
+
+.v1player-history-title {
+    position: relative;
+    
+    float:left;
+    display: inline-block;
+    width: 50%;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color:$highlight-hover;
+    text-align: center;
+    color:$main-color;
+
+    cursor: pointer;
+
+    .fa:hover {
+        color:$white;
+    }
+
+    &.active {
+        background-color:$main-color;
+        color: $button-color;
+    }
+
+    .v1player-history-caret {
+        display: none;
+    }
+}
+
+.v1player-favorites-title {
+    @extend .v1player-history-title;
+
+    float:right;
+
+    .fa:hover {
+        color:inherit;
+    }
+}

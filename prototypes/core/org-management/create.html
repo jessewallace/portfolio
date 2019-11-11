@@ -1,0 +1,1680 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Org Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="perfect-scrollbar.jquery.js"></script>
+    <script src="chosen.jquery.min.js"></script>
+    <script src="tag-it.min.js"></script>
+    <script src="script.js"></script>
+    <script src="create.js"></script>
+</head>
+<body>
+<div class="container">
+    <section class="page-container">
+        <div class="app-container nopadding" style="overflow: hidden">
+            <header class="app-header u-display-flex u-display-flex--vcentered">
+                <div>
+                    <h2 id="siteHeader" class="nomargin app-header__name">Site Name Goes Here</h2>
+                    <span class="app-header__subname">Owner Name Goes Here</span>
+                </div>
+                <div class="button-container u-flex-right">
+                    <button class="button">Cancel</button>
+                    <button class="button button-positive">Save</button>
+                    <button class="button button-positive disabled">Publish</button>
+                </div>
+            </header>
+            <main class="app-body u-display-flex">
+                <aside class="sidebar width-1-4">
+                    <div class="sidebar__container js-navigation">
+                        <ul class="zerolist sidebar__list">
+                            <li class="sidebar__list-item js-basicLink has-label" data-label="General"><a class="sidebar__link is-selected js-sidebarLink">Basic</a></li>
+                            <li class="sidebar__list-item js-basicLink" ><a class="sidebar__link js-sidebarLink">Address</a></li>
+                            <li class="sidebar__list-item js-basicLink" ><a class="sidebar__link js-sidebarLink">Launch Information</a></li>
+                            <li class="sidebar__list-item has-subsection has-label" data-label="Products">
+                                <a class="sidebar__link has-toggle js-sidebarLink"><i class="sidebar__link-icn fa fa-gift"></i> Rewards
+                                    <div class="u-flex-right toggle toggle--positive">
+                                        <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="rewardsToggle">
+                                        <label class="toggle-container" for="rewardsToggle">
+                                            <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                                            <span class="toggle-handle"></span>
+                                        </label>
+                                    </div>
+                                </a>
+                                <ul class="zerolist sidebar__list sidebar__list--secondary">
+                                    <li class="sidebar__list-item js-secondaryItem"><a class="sidebar__link is-active js-sidebarLink">Basic</a></li>
+                                    <li class="sidebar__list-item js-secondaryItem"><a class="sidebar__link js-sidebarLink">Email</a></li>
+                                    <li class="sidebar__list-item js-secondaryItem"><a class="sidebar__link js-sidebarLink">Prize</a></li>
+                                    <li class="sidebar__list-item js-secondaryItem"><a class="sidebar__link js-sidebarLink">TSSO/SEE</a></li>
+                                    <li class="sidebar__list-item js-secondaryItem" id="pointsTab"><a class="sidebar__link js-sidebarLink">Points</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar__list-item">
+                                <a class="sidebar__link has-toggle js-sidebarLink"><i class="sidebar__link-icn fa fa-trophy"></i> Contesting
+                                    <div class="u-flex-right toggle toggle--positive">
+                                        <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="contestingToggle">
+                                        <label class="toggle-container" for="contestingToggle">
+                                            <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                                            <span class="toggle-handle"></span>
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sidebar__list-item">
+                                <a class="sidebar__link has-toggle js-sidebarLink"><i class="sidebar__link-icn fa fa-calendar-check-o"></i> Promotions Management
+                                    <div class="u-flex-right toggle toggle--positive">
+                                        <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="pmToggle">
+                                        <label class="toggle-container" for="pmToggle">
+                                            <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                                            <span class="toggle-handle"></span>
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sidebar__list-item">
+                                <a class="sidebar__link has-toggle js-sidebarLink"><i class="sidebar__link-icn fa fa-envelope"></i> Email
+                                    <div class="u-flex-right toggle toggle--positive">
+                                        <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="emailToggle">
+                                        <label class="toggle-container" for="emailToggle">
+                                            <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                                            <span class="toggle-handle"></span>
+                                        </label>
+                                    </div>
+                                </a>
+                                <ul class="zerolist sidebar__list sidebar__list--secondary">
+                                    <li class="sidebar__list-item js-secondaryItem"><a class="sidebar__link is-active js-sidebarLink">Basic</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar__list-item">
+                                <a class="sidebar__link has-toggle js-sidebarLink"><i class="sidebar__link-icn fa fa-line-chart"></i> Research
+                                    <div class="u-flex-right toggle toggle--positive">
+                                        <input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="researchToggle">
+                                        <label class="toggle-container" for="researchToggle">
+                                            <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                                            <span class="toggle-handle"></span>
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <section class="fields width-3-4">
+                    <section class="sections u-display-flex" id="generalSection">
+                        <section class="section is-active js-section">
+                            <div class="u-display-flex js-subSections" id="generalFields" style="transition: 500ms ease-in-out;">
+                                <div id="basicInfo" class="js-subSection section is-active container">
+                                    <h2>Basic Information</h2>
+                                    <div class="input-container">
+    <label class="is-required" for="">Site Name</label>
+    <input id="siteName" class="width-1-2" autofocus type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">URL</label>
+    <div class="prepend-to">
+        <span>www</span>
+        <input class="width-1-2" placeholder="URL of the homesite" type="text">
+    </div>
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Call Letters</label>
+    <div data-validation="" class="validation"><input class="js-callLetters" type="text"></div>
+</div>
+<div class="input-container u-display-flex">
+    <div class="input-container__col">
+        <label for="" class="is-required">Time Zone</label>
+        <select class="js-chosen" data-placeholder="Select Time Zone">
+            <option value=""></option>
+            <option value="AL">Alaska</option>
+            <option value="AT">Atlantic Time</option>
+            <option value="ACS">Australian Central</option>
+            <option value="AES">Australian Eastern</option>
+            <option value="AWS">Australian Western Standard</option>
+            <option value="CT">Central Time</option>
+            <option value="EET">Eastern European Time</option>
+            <option value="ET">Eastern Time</option>
+            <option value="HI">Hawaii</option>
+            <option value="MT">Mountain Time</option>
+            <option value="PT">Pacific Time</option>
+            <option value="PET">Peru Time</option>
+        </select>
+    </div>
+    <div class="input-container__col">
+        <label for="">Language</label>
+        <select class="js-chosen">
+            <option id="ls17" value="17" selected="">English</option>
+            <option id="ls47" value="47">Spanish</option>
+            <option id="ls112" value="112">Peruvian Spanish</option>
+            <option id="ls59" value="59">Turkish</option>
+            <option id="ls40" value="40">Brazilian Portuguese</option>
+        </select>
+    </div>
+</div>
+
+<div class="input-container">
+    <label for="">Allowable States</label>
+    <select class="js-chosen width-1-2" data-placeholder="Choose Allowed States for this site..." multiple>
+        <option value></option>
+        <option value="FL">FL</option>
+        <option value="GA">GA</option>
+        <option value="MA">MA</option>
+        <option value="MA">MA</option>
+        <option value="NC">NC</option>
+    </select>
+</div>
+<div class="input-container u-display-flex">
+    <div class="input-container__col">
+        <label class="is-required" for="">Broadcaster</label>
+        <select class="js-chosen" id="owner" data-placeholder="Select Broadcaster...">
+            <option></option>
+            <option value="249">21st Century Media</option>
+            <option value="49">AAA</option>
+            <option value="105">Access.1 Communications</option>
+            <option value="248">Air Capitol Media Group</option>
+            <option value="192">All Pro Broadcasting Inc.</option>
+            <option value="174">Aloha Station Trust</option>
+            <option value="176">Alpha Broadcasting</option>
+            <option value="271">Alpha Media LLC</option>
+            <option value="220">Amaturo Group of LA Ltd</option>
+            <option value="122">American General Media</option>
+            <option value="123">Anaheim Broadcasting Corp.</option>
+            <option value="243">Arkansas County Broadcasters Inc.</option>
+            <option value="197">Armada Media</option>
+            <option value="53">AZ Family</option>
+            <option value="113">Backyard Broadcasting PA LLC</option>
+            <option value="183">BC Productions Inc.</option>
+            <option value="6">Beasley Broadcasting</option>
+            <option value="11">Belo</option>
+            <option value="221">Berkshire Hathaway Inc</option>
+            <option value="261">Bicoastal Media LLC</option>
+            <option value="157">Big River Broadcasting Inc.</option>
+            <option value="34">Big Ten Network</option>
+            <option value="201">Birach Broadcasting Corporation</option>
+            <option value="54">Black Crow Broadcasting</option>
+            <option value="55">Bonneville</option>
+            <option value="152">Border Media Partners</option>
+            <option value="257">Bowers Broadcasting Corp.</option>
+            <option value="56">Braden Stations</option>
+            <option value="120">Brewer Broadcasting Corp.</option>
+            <option value="185">Bristol Bcstg Co. Inc.</option>
+            <option value="146">Broadcast Co. of the Americas</option>
+            <option value="134">Broadcast One</option>
+            <option value="119">Bryan Broadcasting</option>
+            <option value="270">Buck Owens Production Company Inc</option>
+            <option value="234">Buckley Broadcasting</option>
+            <option value="10">Burbach Broadcasting Co.</option>
+            <option value="268">Calvary Chapel of Costa Mesa</option>
+            <option value="57">Camrory Broadcasting Inc.</option>
+            <option value="255">Cape Cod Broadcasting</option>
+            <option value="121">Capitol Broadcasting</option>
+            <option value="231">Capps Broadcast Group</option>
+            <option value="2">CBS Radio</option>
+            <option value="71">CBS TV</option>
+            <option value="97">Chapin Enterprises LLC</option>
+            <option value="196">Chemung County Radio Inc.</option>
+            <option value="76">Cherry Creek Radio LLC</option>
+            <option value="5">Citadel</option>
+            <option value="58">City of San Ramon</option>
+            <option value="114">Coast Radio Inc</option>
+            <option value="173">Cogeco</option>
+            <option value="77">Combined Communications Inc.</option>
+            <option value="69">Comcast</option>
+            <option value="143">Comunicacion Xersa</option>
+            <option value="52">Connoisseur</option>
+            <option value="142">Content Factory</option>
+            <option value="199">Cornerstone University</option>
+            <option value="239">Corporacion Radial del Peru S.A.C.</option>
+            <option value="3">Corus Entertainment</option>
+            <option value="7">Cox</option>
+            <option value="198">Crawford County Convention &amp; Visitors Bureau</option>
+            <option value="8">Cumulus</option>
+            <option value="208">Cumulus Media DEMO</option>
+            <option value="187">Curtis Media Group</option>
+            <option value="9">Davidson</option>
+            <option value="203">Davis Media LLC</option>
+            <option value="126">Deer Creek Broadcasting</option>
+            <option value="276">Delmarva Broadcasting Company</option>
+            <option value="212">Delta Media Corporation</option>
+            <option value="78">demo account</option>
+            <option value="193">Desarrollo Radiofonico SA</option>
+            <option value="167">Dial Global</option>
+            <option value="23">Digity</option>
+            <option value="141">DIRECTV Sports Network</option>
+            <option value="165">dms Broadcasting</option>
+            <option value="222">Dockins Broadcast Group LLC</option>
+            <option value="79">Double O Radio</option>
+            <option value="158">Doud Media Group LLC</option>
+            <option value="80">Dowdy Broadcasting Inc.</option>
+            <option value="59">Educational Media Foundation Inc.</option>
+            <option value="137">EMF Broadcasting</option>
+            <option value="60">Emmis</option>
+            <option value="160">Empire Broadcasting System Inc.</option>
+            <option value="4">Entercom</option>
+            <option value="154">Entravision</option>
+            <option value="186">Extra Mile Media</option>
+            <option value="232">Fayetteville Publishing Company</option>
+            <option value="81">Federated Media</option>
+            <option value="206">Feuer/McCord Communications</option>
+            <option value="82">Fife Communications Co. LLC</option>
+            <option value="38">Fifth Ave</option>
+            <option value="83">First Natchez Radio Group</option>
+            <option value="236">Five Star Communications Inc.</option>
+            <option value="155">Flinn Broadcasting</option>
+            <option value="159">FM Idaho Co LLC</option>
+            <option value="277">Forever Media Inc</option>
+            <option value="72">Foster Communications</option>
+            <option value="13">Fox</option>
+            <option value="273">Frontier Radio Management Inc</option>
+            <option value="219">Full Power Radio Inc.</option>
+            <option value="94">Gannett Broadcasting</option>
+            <option value="129">GAP Broadcasting</option>
+            <option value="130">Gap West</option>
+            <option value="84">Golden Isles Broadcasting LLC</option>
+            <option value="215">Good Karma Broadcasting LLC</option>
+            <option value="181">Granite Broadcasting Corporation</option>
+            <option value="110">Gray Television</option>
+            <option value="250">Great South Wireless</option>
+            <option value="85">Grenax Broadcasting</option>
+            <option value="184">Gross Communications Corp</option>
+            <option value="175">Grupo ACIR</option>
+            <option value="163">Guyann Corp.</option>
+            <option value="205">Haliburton Broadcasting Group</option>
+            <option value="135">Hall Communications Inc.</option>
+            <option value="86">Haugo Broadcasting Inc.</option>
+            <option value="133">Hearn Broadcasting</option>
+            <option value="14">Hearst</option>
+            <option value="180">Herald-Tribune Media Group</option>
+            <option value="46">HGF</option>
+            <option value="245">Home Wizards Inc.</option>
+            <option value="115">Hubbard Broadcasting LLC</option>
+            <option value="1">iHeartMedia</option>
+            <option value="61">Illinois Lottery</option>
+            <option value="189">Intermart Broadcasting</option>
+            <option value="68">Jim Pattison Broadcast Group</option>
+            <option value="207">JMJ Broadcasting Co Inc.</option>
+            <option value="15">Journal Broadcasting</option>
+            <option value="95">JW Broadcasting LLC</option>
+            <option value="235">JWT</option>
+            <option value="16">Kendred</option>
+            <option value="259">Keymarket Communications LLC</option>
+            <option value="216">KSOP Inc.</option>
+            <option value="227">KXEO Inc.</option>
+            <option value="107">Lanser Broadcasting Corp.</option>
+            <option value="17">Larche</option>
+            <option value="179">Ledger Media Group</option>
+            <option value="218">Lee Family Broadcasting Inc.</option>
+            <option value="144">Leighton Enterprises Inc.</option>
+            <option value="18">LIN Television Network</option>
+            <option value="117">Lincoln Financial Media</option>
+            <option value="217">LKCM Radio Group</option>
+            <option value="112">LM Communications</option>
+            <option value="106">Locally Owned Radio</option>
+            <option value="96">Lockwood Broadcasting Inc.</option>
+            <option value="182">Long Island Speed Dating LLC</option>
+            <option value="118">Lotus Communications Corp</option>
+            <option value="98">Lower Cape Communications Inc.</option>
+            <option value="127">Magic Broadcasting</option>
+            <option value="162">Mapleton Communications</option>
+            <option value="36">Maritime</option>
+            <option value="252">Marlin Broadcasting LLC</option>
+            <option value="246">MarMac Communications</option>
+            <option value="275">Matrix Broadcasting LLC</option>
+            <option value="19">Maverick</option>
+            <option value="161">Max Broadcast Group Holdings</option>
+            <option value="20">Mayberry Broadcasting</option>
+            <option value="151">McClatchy Company</option>
+            <option value="214">McGavren Guild Media</option>
+            <option value="202">Media General</option>
+            <option value="178">Media Professionals Inc.</option>
+            <option value="21">Mel Wheeler</option>
+            <option value="136">Melissa Etheridge</option>
+            <option value="272">Meruelo Media Holdings LLC</option>
+            <option value="62">Midwest Communications Inc.</option>
+            <option value="111">Midwest Family Broadcasting</option>
+            <option value="124">Midwest TV Inc.</option>
+            <option value="260">Milwaukee Radio Alliance</option>
+            <option value="103">Monticello Media LLC</option>
+            <option value="226">Morgan Murphy Media</option>
+            <option value="12">Morris</option>
+            <option value="131">Mount Wilson FM Broadcasters</option>
+            <option value="87">Muzzy Broadcasting LLC</option>
+            <option value="128">Nassau Broadcasting</option>
+            <option value="267">Neuhoff Communications Inc</option>
+            <option value="88">New Northwest Broadcasters LLC</option>
+            <option value="22">New South</option>
+            <option value="89">Newcap Inc</option>
+            <option value="150">Niagara Radio Group</option>
+            <option value="229">Northern Broadcast Inc.</option>
+            <option value="24">Northern Broadcasting Inc.</option>
+            <option value="254">Northern Lights Broadcasting LLC</option>
+            <option value="70">Northern Native Broadcasting</option>
+            <option value="45">NRG</option>
+            <option value="74">Pacific Radio Group Inc.</option>
+            <option value="138">Palm Beach Broadcasting LLC</option>
+            <option value="25">Pamal Broadcasting</option>
+            <option value="266">Peach State Studio</option>
+            <option value="190">Pearson Broadcasting</option>
+            <option value="168">Pillar of Fire</option>
+            <option value="26">Platt River Radio</option>
+            <option value="164">Plymouth Rock Broadcasting Corp.</option>
+            <option value="73">Press Communications LLC</option>
+            <option value="101">Prettyman Broadcasting Co.</option>
+            <option value="64">Pritchard Broadcasting Co.</option>
+            <option value="263">Production team testing</option>
+            <option value="170">QA</option>
+            <option value="242">Quality Broadcasting Corporation</option>
+            <option value="204">R &amp; R Radio Corporation</option>
+            <option value="65">Radio CJVR Ltd.</option>
+            <option value="90">Radio K-T Inc.</option>
+            <option value="169">Radio One</option>
+            <option value="91">Radiostar Inc.</option>
+            <option value="27">Ramar Communications</option>
+            <option value="258">Red Zebra Broadcasting</option>
+            <option value="28">Redwood Empire</option>
+            <option value="29">Regent Communications</option>
+            <option value="125">Results Radio</option>
+            <option value="274">Rich Broadcasting LLC</option>
+            <option value="140">Riviera Broadcast Group LLC</option>
+            <option value="109">Royal Broadcasting Inc.</option>
+            <option value="51">Saga</option>
+            <option value="35">Salem Communications</option>
+            <option value="230">SammyTest</option>
+            <option value="48">Sand Mountain</option>
+            <option value="44">Schurz</option>
+            <option value="108">Scripps Networks</option>
+            <option value="172">Seize the Deal</option>
+            <option value="224">Seven Bridges Radio LLC</option>
+            <option value="47">Shamrock</option>
+            <option value="188">Sheila Callahan &amp; Friends Inc.</option>
+            <option value="156">Signal Media Inc.</option>
+            <option value="99">Sinclair</option>
+            <option value="171">SNE Broadcasting</option>
+            <option value="43">South Central</option>
+            <option value="247">Southern Media Interactive</option>
+            <option value="194">Spanish Peaks Broadcasting Inc.</option>
+            <option value="223">Spectrum Medya</option>
+            <option value="37">Standard Radio Inc.</option>
+            <option value="209">STARadio Corp.</option>
+            <option value="200">STD Townsquare Deals</option>
+            <option value="66">Summit City Radio Group</option>
+            <option value="240">Summit Media Inc.</option>
+            <option value="251">Summit Media LLC</option>
+            <option value="100">Sunburst Media Inc.</option>
+            <option value="30">Susquehanna</option>
+            <option value="132">Taos Communications</option>
+            <option value="262">Taughannock Media LLC</option>
+            <option value="244">TD University</option>
+            <option value="31">Tejas Broadcasting</option>
+            <option value="210">Tesh Media</option>
+            <option value="213">The Dispatch Printing Company</option>
+            <option value="195">The Montana Radio Company LLC</option>
+            <option value="238">The Zone Corporation</option>
+            <option value="32">Three Communications</option>
+            <option value="50">Three Eagles</option>
+            <option value="166">Townsquare Media</option>
+            <option value="92">Triad Broadcasting Company LLC</option>
+            <option value="67">Tribune</option>
+            <option value="211">Triton Digital</option>
+            <option value="63">Triton Loyalty</option>
+            <option value="233">Triton Sales</option>
+            <option value="237">Triton Support</option>
+            <option value="265">True North Radio Network</option>
+            <option value="139">Trumper Communications</option>
+            <option value="253">Tu Vision LLC</option>
+            <option value="149">Tyler Broadcasting Corp.</option>
+            <option value="256">USA Today</option>
+            <option value="191">Vero Beach Broadcasters LLC</option>
+            <option value="75">VerStandig Broadcasting</option>
+            <option value="145">Vista Radio</option>
+            <option value="33">Waitt</option>
+            <option value="177">Warner Brothers Television</option>
+            <option value="153">West Virginia Radio Corp.</option>
+            <option value="116">Westcoast Broadcasting Inc.</option>
+            <option value="264">Western South Dakota Broadcasting</option>
+            <option value="269">Westwood One</option>
+            <option value="228">Wheels Financial Group Inc.</option>
+            <option value="42">White Knight</option>
+            <option value="41">Wilks</option>
+            <option value="93">Williams Broadcasting LLC</option>
+            <option value="148">Withers Broadcasting Co.</option>
+            <option value="39">Woodward</option>
+            <option value="225">WRD Entertainment Inc.</option>
+            <option value="241">Young Broadcasting LLC</option>
+            <option value="102">Zimmer Radio Inc.</option>
+        </select>
+    </div>
+    <div class="input-container__col">
+        <label for="" class="is-required">Market</label>
+        <select class="js-chosen" data-placeholder="Select Market...">
+    <option value></option>
+    <option value="243">Abilene</option>
+    <option value="73">Akron</option>
+    <option value="266">Albany GA</option>
+    <option value="335">Albany NY</option>
+    <option value="61">Albany-Schenectady-Troy</option>
+    <option value="72">Albuquerque</option>
+    <option value="221">Alexandria</option>
+    <option value="69">Allentown-Bethlehem</option>
+    <option value="403">Alpena, MI</option>
+    <option value="264">Altoona</option>
+    <option value="192">Amarillo</option>
+    <option value="170">Anchorage</option>
+    <option value="150">Ann Arbor</option>
+    <option value="137">Appleton-Oshkosh</option>
+    <option value="161">Asheville</option>
+    <option value="297">Aspen</option>
+    <option value="386">Athens</option>
+    <option value="11">Atlanta</option>
+    <option value="142">Atlantic City-Cape May</option>
+    <option value="309">Attalla AL</option>
+    <option value="112">Augusta GA</option>
+    <option value="265">Augusta-Waterville ME</option>
+    <option value="43">Austin</option>
+    <option value="90">Bakersfield</option>
+    <option value="20">Baltimore</option>
+    <option value="217">Bangor</option>
+    <option value="83">Baton Rouge</option>
+    <option value="259">Battle Creek</option>
+    <option value="140">Beaumont-Port Arthur</option>
+    <option value="291">Beckley</option>
+    <option value="310">Belle Plaine IA</option>
+    <option value="402">Ben B</option>
+    <option value="401">Ben L</option>
+    <option value="201">Bend OR</option>
+    <option value="255">Billings</option>
+    <option value="155">Biloxi-Gulfport-Pascagoula</option>
+    <option value="181">Binghamton</option>
+    <option value="57">Birmingham</option>
+    <option value="281">Bismarck</option>
+    <option value="377">Blacksburg</option>
+    <option value="238">Bloomington</option>
+    <option value="279">Bluefield</option>
+    <option value="104">Boise</option>
+    <option value="8">Boston</option>
+    <option value="203">Bowling Green</option>
+    <option value="339">Bozeman</option>
+    <option value="398">Brad</option>
+    <option value="124">Bridgeport</option>
+    <option value="294">Brunswick</option>
+    <option value="239">Bryan-College Station</option>
+    <option value="50">Buffalo</option>
+    <option value="358">Burbank</option>
+    <option value="139">Burlington-Plattsburgh</option>
+    <option value="312">Calgary AB</option>
+    <option value="130">Canton</option>
+    <option value="188">Cape Cod</option>
+    <option value="387">Carmichael</option>
+    <option value="296">Casper</option>
+    <option value="351">Cayman Islands</option>
+    <option value="405">CBS Corp</option>
+    <option value="208">Cedar Rapids</option>
+    <option value="222">Champaign</option>
+    <option value="93">Charleston</option>
+    <option value="37">Charlotte</option>
+    <option value="229">Charlottesville</option>
+    <option value="311">Charlottetown PE</option>
+    <option value="109">Chattanooga</option>
+    <option value="355">Chesapeake</option>
+    <option value="290">Cheyenne</option>
+    <option value="3">Chicago</option>
+    <option value="194">Chico</option>
+    <option value="336">Chilliwack, BC</option>
+    <option value="26">Cincinnati</option>
+    <option value="359">Ciudad de México</option>
+    <option value="207">Clarksville-Hopkinsville</option>
+    <option value="25">Cleveland</option>
+    <option value="96">Colorado Springs</option>
+    <option value="88">Columbia</option>
+    <option value="36">Columbus</option>
+    <option value="268">Columbus-Starkville-West Point MS</option>
+    <option value="168">Concord (Lakes Region)</option>
+    <option value="283">Cookeville</option>
+    <option value="138">Corpus Christi</option>
+    <option value="362">Culiacán</option>
+    <option value="5">Dallas/Ft. Worth</option>
+    <option value="195">Danbury</option>
+    <option value="58">Dayton</option>
+    <option value="95">Daytona Beach</option>
+    <option value="7">DC</option>
+    <option value="278">Decatur</option>
+    <option value="22">Denver-Boulder</option>
+    <option value="89">Des Moines</option>
+    <option value="10">Detroit</option>
+    <option value="391">Digital Ivy</option>
+    <option value="189">Dothan</option>
+    <option value="235">Dubuque</option>
+    <option value="202">Duluth-Superior</option>
+    <option value="240">Eau Claire</option>
+    <option value="313">Edmonton AB</option>
+    <option value="76">El Paso</option>
+    <option value="269">Elkins-Buckhannon-Weston</option>
+    <option value="223">Elmira-Corning</option>
+    <option value="167">Erie</option>
+    <option value="149">Eugene-Springfield</option>
+    <option value="396">Eureka, CA</option>
+    <option value="162">Evansville</option>
+    <option value="218">Fargo-Moorhead</option>
+    <option value="376">Faribault/Owatonna</option>
+    <option value="373">Farmington</option>
+    <option value="136">Fayetteville (North West Arkansas)</option>
+    <option value="132">Fayetteville NC</option>
+    <option value="148">Flagstaff-Prescott</option>
+    <option value="129">Flint</option>
+    <option value="211">Florence SC</option>
+    <option value="254">Florence-Muscle Shoals AL</option>
+    <option value="404">Four Corners</option>
+    <option value="196">Frederick MD</option>
+    <option value="153">Fredericksburg</option>
+    <option value="68">Fresno</option>
+    <option value="125">Ft. Collins-Greeley</option>
+    <option value="70">Ft. Myers-Naples-Marco Island</option>
+    <option value="102">Ft. Pierce-Stuart-Vero Beach</option>
+    <option value="172">Ft. Smith</option>
+    <option value="226">Ft. Walton Beach</option>
+    <option value="108">Ft. Wayne</option>
+    <option value="86">Gainesville-Ocala</option>
+    <option value="287">Grand Forks</option>
+    <option value="262">Grand Island-Kearney</option>
+    <option value="258">Grand Junction CO</option>
+    <option value="66">Grand Rapids</option>
+    <option value="349">Grande Prairie</option>
+    <option value="371">Great Falls</option>
+    <option value="184">Green Bay</option>
+    <option value="42">Greensboro</option>
+    <option value="84">Greenville-New Bern-Jacksonville</option>
+    <option value="60">Greenville-Spartanburg</option>
+    <option value="368">Guadalajara</option>
+    <option value="166">Hagerstown-Chambersburg-Waynesboro</option>
+    <option value="299">Halifax NS</option>
+    <option value="314">Hamilton On</option>
+    <option value="257">Hamptons-Riverhead</option>
+    <option value="77">Harrisburg-Lebanon-Carlisle</option>
+    <option value="273">Harrisonburg VA</option>
+    <option value="49">Hartford</option>
+    <option value="399">Heather</option>
+    <option value="300">Hilo HI</option>
+    <option value="212">Hilton Head</option>
+    <option value="62">Honolulu</option>
+    <option value="286">Hot Springs</option>
+    <option value="301">Houma LA</option>
+    <option value="9">Houston</option>
+    <option value="388">Houston-Galveston</option>
+    <option value="159">Huntington-Ashland</option>
+    <option value="111">Huntsville</option>
+    <option value="345">Idaho Falls</option>
+    <option value="40">Indianapolis</option>
+    <option value="375">Istanbul</option>
+    <option value="280">Ithaca</option>
+    <option value="122">Jackson MS</option>
+    <option value="288">Jackson TN</option>
+    <option value="52">Jacksonville</option>
+    <option value="334">Jefferson City, MO</option>
+    <option value="98">Johnson City-Kingsport-Bristol</option>
+    <option value="289">Jonesboro</option>
+    <option value="233">Joplin</option>
+    <option value="302">Kahului HI</option>
+    <option value="185">Kalamazoo</option>
+    <option value="256">Kalispell-Flathead Valley</option>
+    <option value="29">Kansas City</option>
+    <option value="331">Kelowna, BC</option>
+    <option value="340">Kenosha</option>
+    <option value="157">Killeen-Temple</option>
+    <option value="342">Kingston</option>
+    <option value="71">Knoxville</option>
+    <option value="363">Kokomo</option>
+    <option value="227">La Crosse</option>
+    <option value="242">Lafayette IN</option>
+    <option value="106">Lafayette LA</option>
+    <option value="303">Lahaina HI</option>
+    <option value="228">Lake Charles</option>
+    <option value="99">Lakeland-Winter Haven</option>
+    <option value="115">Lancaster</option>
+    <option value="127">Lansing-East Lansing</option>
+    <option value="352">Laramie</option>
+    <option value="200">Laredo</option>
+    <option value="220">Las Cruces</option>
+    <option value="41">Las Vegas</option>
+    <option value="244">LaSalle-Peru</option>
+    <option value="224">Laurel-Hattiesburg</option>
+    <option value="282">Lawton</option>
+    <option value="180">Lebanon-Rutland-White River Junction VT</option>
+    <option value="326">Lethbridge AB</option>
+    <option value="277">Lewiston-Auburn</option>
+    <option value="107">Lexington-Fayette</option>
+    <option value="249">Lima</option>
+    <option value="173">Lincoln</option>
+    <option value="400">Lisa</option>
+    <option value="85">Little Rock</option>
+    <option value="360">Long Island</option>
+    <option value="2">Los Angeles</option>
+    <option value="55">Louisville</option>
+    <option value="182">Lubbock</option>
+    <option value="250">Lufkin-Nacogdoches</option>
+    <option value="156">Macon</option>
+    <option value="97">Madison</option>
+    <option value="187">Manchester</option>
+    <option value="271">Mankato-New Ulm-St. Peter</option>
+    <option value="237">Marion-Carbondale (Southern IL)</option>
+    <option value="292">Mason City</option>
+    <option value="63">McAllen-Brownsville-Harlingen</option>
+    <option value="395">McLean, VA</option>
+    <option value="205">Medford-Ashland</option>
+    <option value="315">Medicine Hat AB</option>
+    <option value="100">Melbourne-Titusville-Cocoa</option>
+    <option value="316">Melfort SK</option>
+    <option value="48">Memphis</option>
+    <option value="179">Merced</option>
+    <option value="295">Meridian</option>
+    <option value="12">Miami</option>
+    <option value="33">Middlesex-Somerset</option>
+    <option value="304">Middletown OH</option>
+    <option value="317">Midland ON</option>
+    <option value="32">Milwaukee</option>
+    <option value="16">Minneapolis/St. Paul</option>
+    <option value="346">Missoula</option>
+    <option value="91">Mobile</option>
+    <option value="110">Modesto</option>
+    <option value="318">Moncton NB</option>
+    <option value="51">Monmouth-Ocean</option>
+    <option value="253">Monroe</option>
+    <option value="75">Monterey-Salinas-Santa Cruz</option>
+    <option value="154">Montgomery</option>
+    <option value="263">Montpelier-Barre-St. Johnsbury</option>
+    <option value="328">Montreal</option>
+    <option value="175">Morgantown-Clarksburg-Fairmont</option>
+    <option value="113">Morristown</option>
+    <option value="392">Mt. Pleasant, MI</option>
+    <option value="210">Muncie-Marion</option>
+    <option value="231">Muskegon</option>
+    <option value="160">Myrtle Beach</option>
+    <option value="330">Nanaimo, BC</option>
+    <option value="44">Nashville</option>
+    <option value="18">Nassau-Suffolk</option>
+    <option value="305">Natchez MS</option>
+    <option value="347">National</option>
+    <option value="177">New Bedford-Fall River</option>
+    <option value="116">New Haven</option>
+    <option value="176">New London</option>
+    <option value="45">New Orleans</option>
+    <option value="1">New York</option>
+    <option value="141">Newburgh-Middletown</option>
+    <option value="357">Niagara Falls, ON</option>
+    <option value="38">Norfolk/Virginia Beach</option>
+    <option value="378">North Platte</option>
+    <option value="183">Odessa-Midland</option>
+    <option value="54">Oklahoma City</option>
+    <option value="215">Olean</option>
+    <option value="389">Omaha</option>
+    <option value="80">Omaha-Council Bluffs</option>
+    <option value="319">Orillia ON</option>
+    <option value="39">Orlando</option>
+    <option value="306">Oshkosh WI</option>
+    <option value="354">Owensboro</option>
+    <option value="119">Oxnard-Ventura</option>
+    <option value="350">Paducah-Cape Girardeau-Harrisburg</option>
+    <option value="135">Palm Springs CA</option>
+    <option value="344">Palmdale</option>
+    <option value="236">Panama City</option>
+    <option value="251">Parkersburg-Marietta</option>
+    <option value="128">Pensacola</option>
+    <option value="151">Peoria</option>
+    <option value="372">Perks</option>
+    <option value="6">Philadelphia</option>
+    <option value="15">Phoenix</option>
+    <option value="241">Pittsburgh</option>
+    <option value="307">Porterville CA</option>
+    <option value="393">Portland, ME</option>
+    <option value="24">Portland, OR</option>
+    <option value="118">Portsmouth-Dover-Rochester</option>
+    <option value="164">Poughkeepsie</option>
+    <option value="337">Presque Isle</option>
+    <option value="333">Prince Edward Island</option>
+    <option value="348">Prince George, BC</option>
+    <option value="35">Providence</option>
+    <option value="356">Puebla</option>
+    <option value="247">Pueblo</option>
+    <option value="13">Puerto Rico</option>
+    <option value="308">Pukalani HI</option>
+    <option value="384">QACurtis</option>
+    <option value="382">QAJeff</option>
+    <option value="381">QAJustin</option>
+    <option value="380">QALou</option>
+    <option value="385">QAMichael</option>
+    <option value="379">QASammy</option>
+    <option value="383">QASandhya</option>
+    <option value="145">Quad Cities (Davenport-Rock Island-Moline)</option>
+    <option value="369">Querétaro</option>
+    <option value="46">Raleigh/Durham</option>
+    <option value="274">Rapid City</option>
+    <option value="131">Reading</option>
+    <option value="329">Red Deer</option>
+    <option value="320">Redcliff AB</option>
+    <option value="225">Redding</option>
+    <option value="126">Reno</option>
+    <option value="56">Richmond</option>
+    <option value="28">Riverside-San Bernardino</option>
+    <option value="117">Roanoke-Lynchburg</option>
+    <option value="53">Rochester</option>
+    <option value="152">Rockford</option>
+    <option value="199">Rocky Mount-Wilson</option>
+    <option value="27">Sacramento</option>
+    <option value="134">Saginaw-Bay City-Midland</option>
+    <option value="321">Saint John NB</option>
+    <option value="216">Salina-Manhattan</option>
+    <option value="144">Salisbury-Ocean City</option>
+    <option value="34">Salt Lake City</option>
+    <option value="285">San Angelo</option>
+    <option value="31">San Antonio</option>
+    <option value="17">San Diego</option>
+    <option value="4">San Francisco</option>
+    <option value="30">San Jose</option>
+    <option value="171">San Luis Obispo</option>
+    <option value="390">San Marcos</option>
+    <option value="209">Santa Barbara</option>
+    <option value="234">Santa Fe</option>
+    <option value="204">Santa Maria-Lompoc</option>
+    <option value="120">Santa Rosa</option>
+    <option value="78">Sarasota-Bradenton</option>
+    <option value="158">Savannah</option>
+    <option value="14">Seattle-Tacoma</option>
+    <option value="284">Sebring</option>
+    <option value="275">Sheboygan</option>
+    <option value="353">Shelby</option>
+    <option value="133">Shreveport</option>
+    <option value="272">Sioux City</option>
+    <option value="178">South Bend</option>
+    <option value="94">Spokane</option>
+    <option value="101">Springfield MO</option>
+    <option value="82">Springfield, MA</option>
+    <option value="214">St. Cloud</option>
+    <option value="19">St. Louis</option>
+    <option value="147">Stamford-Norwalk</option>
+    <option value="252">State College</option>
+    <option value="87">Stockton</option>
+    <option value="332">Sudbury Ontario</option>
+    <option value="213">Sunbury-Selinsgrove-Lewisburg</option>
+    <option value="245">Sussex</option>
+    <option value="79">Syracuse</option>
+    <option value="165">Tallahassee</option>
+    <option value="21">Tampa-St. Pete</option>
+    <option value="341">Taos, NM</option>
+    <option value="366">Tennessee</option>
+    <option value="327">Terrace BC</option>
+    <option value="206">Terre Haute</option>
+    <option value="260">Texarkana</option>
+    <option value="293">The Florida Keys</option>
+    <option value="81">Toledo</option>
+    <option value="370">Toluca</option>
+    <option value="191">Topeka</option>
+    <option value="322">Toronto ON</option>
+    <option value="397">Tracy</option>
+    <option value="190">Traverse City-Petoskey</option>
+    <option value="143">Trenton</option>
+    <option value="193">Tri-Cities</option>
+    <option value="64">Tucson</option>
+    <option value="65">Tulsa</option>
+    <option value="186">Tupelo</option>
+    <option value="374">Turkey</option>
+    <option value="230">Tuscaloosa</option>
+    <option value="232">Twin Falls (Sun Valley)</option>
+    <option value="146">Tyler-Longview</option>
+    <option value="361">Urbandale</option>
+    <option value="163">Utica-Rome</option>
+    <option value="267">Valdosta</option>
+    <option value="323">Vancouver BC</option>
+    <option value="123">Victor Valley</option>
+    <option value="338">Victoria</option>
+    <option value="103">Visalia-Tulare-Hanford</option>
+    <option value="197">Waco</option>
+    <option value="365">Washington, DC</option>
+    <option value="324">Waterloo ON</option>
+    <option value="246">Waterloo-Cedar Falls</option>
+    <option value="276">Watertown NY</option>
+    <option value="169">Wausau-Stevens Point</option>
+    <option value="174">Wenatchee</option>
+    <option value="47">West Palm Beach</option>
+    <option value="59">Westchester</option>
+    <option value="248">Wheeling</option>
+    <option value="343">White Plains</option>
+    <option value="325">Whitecourt AB</option>
+    <option value="92">Wichita</option>
+    <option value="261">Wichita Falls TX</option>
+    <option value="67">Wilkes Barre-Scranton</option>
+    <option value="367">Williamsburg</option>
+    <option value="270">Williamsport</option>
+    <option value="74">Wilmington</option>
+    <option value="394">Wilmington, DE</option>
+    <option value="219">Winchester</option>
+    <option value="298">Woodstock Ill</option>
+    <option value="114">Worcester</option>
+    <option value="364">Worchester</option>
+    <option value="198">Yakima</option>
+    <option value="105">York PA</option>
+    <option value="121">Youngstown-Warren</option>
+    </select>
+    </div>
+</div>
+<div class="input-container u-display-flex">
+    <div class="input-container__col">
+        <label class="is-required" for="">Format</label>
+        <select class="js-chosen" data-placeholder="Select Format">
+            <option value></option>
+            <option id="sc18" value="18">80s</option>
+            <option id="sc9" value="9">AC</option>
+            <option id="sc5" value="5">Active Rock</option>
+            <option id="sc15" value="15">Adult Hits</option>
+            <option id="sc78" value="78">Adult Standards</option>
+            <option id="sc81" value="81">Adult Top 40</option>
+            <option id="sc2" value="2">Alternative</option>
+            <option id="sc42" value="42">CA AC</option>
+            <option id="sc43" value="43">CA Active Rock</option>
+            <option id="sc44" value="44">CA Adult Hits</option>
+            <option id="sc45" value="45">CA Alternative</option>
+            <option id="sc46" value="46">CA CHR</option>
+            <option id="sc47" value="47">CA Classic Hits</option>
+            <option id="sc48" value="48">CA Classic Rock</option>
+            <option id="sc49" value="49">CA Country</option>
+            <option id="sc50" value="50">CA Excluded</option>
+            <option id="sc51" value="51">CA Excluded - Get Prizes</option>
+            <option id="sc52" value="52">CA Hot AC</option>
+            <option id="sc58" value="58">CA News Radio</option>
+            <option id="sc53" value="53">CA Oldies</option>
+            <option id="sc54" value="54">CA Rock/AOR</option>
+            <option id="sc55" value="55">CA Soft AC</option>
+            <option id="sc56" value="56">CA Urban</option>
+            <option id="sc57" value="57">CA Urban AC</option>
+            <option id="sc23" value="23">CC AC</option>
+            <option id="sc39" value="39">CC Active Rock</option>
+            <option id="sc24" value="24">CC Adult Hits</option>
+            <option id="sc25" value="25">CC Alternative</option>
+            <option id="sc26" value="26">CC CHR</option>
+            <option id="sc27" value="27">CC Classic Hits</option>
+            <option id="sc28" value="28">CC Classic Rock</option>
+            <option id="sc29" value="29">CC Country</option>
+            <option id="sc37" value="37">CC Excluded</option>
+            <option id="sc38" value="38">CC Excluded-Gets Prizes O</option>
+            <option id="sc30" value="30">CC Hot AC</option>
+            <option id="sc59" value="59">CC News/Talk</option>
+            <option id="sc31" value="31">CC Oldies</option>
+            <option id="sc32" value="32">CC Rock/AOR</option>
+            <option id="sc33" value="33">CC Soft AC</option>
+            <option id="sc34" value="34">CC Top 40</option>
+            <option id="sc36" value="36">CC Urban</option>
+            <option id="sc35" value="35">CC Urban AC</option>
+            <option id="sc3" value="3">CHR</option>
+            <option id="sc63" value="63">Christian</option>
+            <option id="sc41" value="41">Classic Hits</option>
+            <option id="sc11" value="11">Classic Rock</option>
+            <option id="sc1" value="1">Country</option>
+            <option id="sc14" value="14">Excluded</option>
+            <option id="sc21" value="21">Excluded-Gets Prizes Only</option>
+            <option id="sc60" value="60">Hawaii - No Music</option>
+            <option id="sc22" value="22">Hispanic</option>
+            <option id="sc7" value="7">Hot AC</option>
+            <option id="sc64" value="64">Miscellaneous</option>
+            <option id="sc65" value="65">Miscellaneous No Prize Cl</option>
+            <option id="sc80" value="80">Modern Rock</option>
+            <option id="sc6" value="6">News Radio</option>
+            <option id="sc12" value="12">Oldies</option>
+            <option id="sc83" value="83">R&amp;B Oldies</option>
+            <option id="sc79" value="79">Rhythmic AC</option>
+            <option id="sc82" value="82">Rhythmic CHR</option>
+            <option id="sc13" value="13">Rock/AOR</option>
+            <option id="sc16" value="16">Smooth Jazz</option>
+            <option id="sc62" value="62">Soft AC</option>
+            <option id="sc86" value="86">Spanish AC</option>
+            <option id="sc85" value="85">Spanish Adult Hits</option>
+            <option id="sc84" value="84">Spanish CHR</option>
+            <option id="sc10" value="10">Sports</option>
+            <option id="sc8" value="8">Talk</option>
+            <option id="sc61" value="61">TV</option>
+            <option id="sc4" value="4">Urban</option>
+            <option id="sc17" value="17">Urban AC</option>
+            <option id="sc19" value="19">Words That Win</option>
+            <option id="sc20" value="20">X</option>
+            <option id="sc68" value="68">Z - AC</option>
+            <option id="sc69" value="69">Z - Adult Hits</option>
+            <option id="sc72" value="72">Z - CHR</option>
+            <option id="sc74" value="74">Z - Classic Hits</option>
+            <option id="sc71" value="71">Z - Classic Rock</option>
+            <option id="sc70" value="70">Z - Country</option>
+            <option id="sc77" value="77">Z - Oldies</option>
+            <option id="sc75" value="75">Z - Rock</option>
+            <option id="sc73" value="73">Z - Sports</option>
+            <option id="sc66" value="66">Z - Talk</option>
+            <option id="sc76" value="76">Z - Television</option>
+            <option id="sc67" value="67">Z - Urban</option>
+        </select>
+    </div>
+    <div class="input-container__col">
+        <label class="is-required" for="">Category</label>
+        <select class="js-chosen" data-placeholder="Select Category">
+            <option value></option>
+            <option id="sc8" value="8">Automotive</option>
+            <option id="sc27" value="27">Bands</option>
+            <option id="sc16" value="16">Beverages</option>
+            <option id="sc25" value="25">Business</option>
+            <option id="sc19" value="19">Charity</option>
+            <option id="sc28" value="28">City</option>
+            <option id="sc26" value="26">Clubs</option>
+            <option id="sc38" value="38">Directory</option>
+            <option id="sc20" value="20">Education</option>
+            <option id="sc45" value="45">Employment Services</option>
+            <option id="sc7" value="7">Entertainment</option>
+            <option id="sc32" value="32">Features</option>
+            <option id="sc14" value="14">Film Trailers</option>
+            <option id="sc18" value="18">Financial Services</option>
+            <option id="sc39" value="39">Food</option>
+            <option id="sc31" value="31">Games</option>
+            <option id="sc35" value="35">Health &amp; Beauty</option>
+            <option id="sc15" value="15">Health &amp; Fitness</option>
+            <option id="sc34" value="34">Holidays</option>
+            <option id="sc44" value="44">Home Improvement</option>
+            <option id="sc17" value="17">Insurance</option>
+            <option id="sc47" value="47">Law</option>
+            <option id="sc30" value="30">Lifestyles</option>
+            <option id="sc13" value="13">Media</option>
+            <option id="sc49" value="49">Medical</option>
+            <option id="sc24" value="24">Military &amp; Government</option>
+            <option id="sc36" value="36">Mortgage</option>
+            <option id="sc29" value="29">Movies</option>
+            <option id="sc1" value="1">Music</option>
+            <option id="sc3" value="3">Music Videos</option>
+            <option id="sc33" value="33">News</option>
+            <option id="sc40" value="40">Other</option>
+            <option id="sc4" value="4">Radio</option>
+            <option id="sc37" value="37">Real Estate</option>
+            <option id="sc50" value="50">Research</option>
+            <option id="sc46" value="46">Residential</option>
+            <option id="sc11" value="11">Restaurants</option>
+            <option id="sc10" value="10">Retail</option>
+            <option id="sc43" value="43">Shadow Site</option>
+            <option id="sc41" value="41">Sonoma County</option>
+            <option id="sc22" value="22">Sports</option>
+            <option id="sc9" value="9">Telecom</option>
+            <option id="sc42" value="42">Television</option>
+            <option id="sc21" value="21">Transportation</option>
+            <option id="sc12" value="12">Travel</option>
+            <option id="sc23" value="23">Utilities</option>
+            <option id="sc48" value="48">Warehouse</option>
+        </select>
+    </div>
+</div>
+
+
+<!--<div class="input-container">-->
+    <!--<label for="" class="is-required">Application Profile</label>-->
+    <!--<select class="js-chosen" data-placeholder="Select Application Profile">-->
+        <!--<option value=""></option>-->
+        <!--<option value="2">FanClub</option>-->
+        <!--<option value="1">StickyFish</option>-->
+        <!--<option disabled="" value="3">TribalDirect</option>-->
+    <!--</select>-->
+<!--</div>-->
+
+
+                                </div>
+                                <div id="addressInfo" class="js-subSection section container">
+                                    <h2>Address Information</h2>
+                                    <div class="input-container">
+    <label class="is-required" for="Address">Address</label>
+    <input id="Address" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label for="Address2">Address 2</label>
+    <input id="Address2" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="City">City</label>
+    <input id="City" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="State">State/Province</label>
+    <input id="State" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="Zip">Zip/Postal Code</label>
+    <input id="Zip" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Country</label>
+    <select class="js-chosen" data-placeholder="Choose a Country...">
+        <option value=""></option>
+        <option value="United States">United States</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Aland Islands">Aland Islands</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="American Samoa">American Samoa</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Anguilla">Anguilla</option>
+        <option value="Antarctica">Antarctica</option>
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Aruba">Aruba</option>
+        <option value="Australia">Australia</option>
+        <option value="Austria">Austria</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Bahamas">Bahamas</option>
+        <option value="Bahrain">Bahrain</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Barbados">Barbados</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Belize">Belize</option>
+        <option value="Benin">Benin</option>
+        <option value="Bermuda">Bermuda</option>
+        <option value="Bhutan">Bhutan</option>
+        <option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+        <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+        <option value="Botswana">Botswana</option>
+        <option value="Bouvet Island">Bouvet Island</option>
+        <option value="Brazil">Brazil</option>
+        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+        <option value="Brunei Darussalam">Brunei Darussalam</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Burkina Faso">Burkina Faso</option>
+        <option value="Burundi">Burundi</option>
+        <option value="Cambodia">Cambodia</option>
+        <option value="Cameroon">Cameroon</option>
+        <option value="Canada">Canada</option>
+        <option value="Cape Verde">Cape Verde</option>
+        <option value="Cayman Islands">Cayman Islands</option>
+        <option value="Central African Republic">Central African Republic</option>
+        <option value="Chad">Chad</option>
+        <option value="Chile">Chile</option>
+        <option value="China">China</option>
+        <option value="Christmas Island">Christmas Island</option>
+        <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Comoros">Comoros</option>
+        <option value="Congo">Congo</option>
+        <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+        <option value="Cook Islands">Cook Islands</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Cote D'ivoire">Cote D'ivoire</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Cuba">Cuba</option>
+        <option value="Curacao">Curacao</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Czech Republic">Czech Republic</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Djibouti">Djibouti</option>
+        <option value="Dominica">Dominica</option>
+        <option value="Dominican Republic">Dominican Republic</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Egypt">Egypt</option>
+        <option value="El Salvador">El Salvador</option>
+        <option value="Equatorial Guinea">Equatorial Guinea</option>
+        <option value="Eritrea">Eritrea</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Ethiopia">Ethiopia</option>
+        <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+        <option value="Faroe Islands">Faroe Islands</option>
+        <option value="Fiji">Fiji</option>
+        <option value="Finland">Finland</option>
+        <option value="France">France</option>
+        <option value="French Guiana">French Guiana</option>
+        <option value="French Polynesia">French Polynesia</option>
+        <option value="French Southern Territories">French Southern Territories</option>
+        <option value="Gabon">Gabon</option>
+        <option value="Gambia">Gambia</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Ghana">Ghana</option>
+        <option value="Gibraltar">Gibraltar</option>
+        <option value="Greece">Greece</option>
+        <option value="Greenland">Greenland</option>
+        <option value="Grenada">Grenada</option>
+        <option value="Guadeloupe">Guadeloupe</option>
+        <option value="Guam">Guam</option>
+        <option value="Guatemala">Guatemala</option>
+        <option value="Guernsey">Guernsey</option>
+        <option value="Guinea">Guinea</option>
+        <option value="Guinea-bissau">Guinea-bissau</option>
+        <option value="Guyana">Guyana</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+        <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+        <option value="Honduras">Honduras</option>
+        <option value="Hong Kong">Hong Kong</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Iceland">Iceland</option>
+        <option value="India">India</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+        <option value="Iraq">Iraq</option>
+        <option value="Ireland">Ireland</option>
+        <option value="Isle of Man">Isle of Man</option>
+        <option value="Israel">Israel</option>
+        <option value="Italy">Italy</option>
+        <option value="Jamaica">Jamaica</option>
+        <option value="Japan">Japan</option>
+        <option value="Jersey">Jersey</option>
+        <option value="Jordan">Jordan</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Kiribati">Kiribati</option>
+        <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+        <option value="Korea, Republic of">Korea, Republic of</option>
+        <option value="Kuwait">Kuwait</option>
+        <option value="Kyrgyzstan">Kyrgyzstan</option>
+        <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+        <option value="Latvia">Latvia</option>
+        <option value="Lebanon">Lebanon</option>
+        <option value="Lesotho">Lesotho</option>
+        <option value="Liberia">Liberia</option>
+        <option value="Libya">Libya</option>
+        <option value="Liechtenstein">Liechtenstein</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Luxembourg">Luxembourg</option>
+        <option value="Macao">Macao</option>
+        <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+        <option value="Madagascar">Madagascar</option>
+        <option value="Malawi">Malawi</option>
+        <option value="Malaysia">Malaysia</option>
+        <option value="Maldives">Maldives</option>
+        <option value="Mali">Mali</option>
+        <option value="Malta">Malta</option>
+        <option value="Marshall Islands">Marshall Islands</option>
+        <option value="Martinique">Martinique</option>
+        <option value="Mauritania">Mauritania</option>
+        <option value="Mauritius">Mauritius</option>
+        <option value="Mayotte">Mayotte</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+        <option value="Moldova, Republic of">Moldova, Republic of</option>
+        <option value="Monaco">Monaco</option>
+        <option value="Mongolia">Mongolia</option>
+        <option value="Montenegro">Montenegro</option>
+        <option value="Montserrat">Montserrat</option>
+        <option value="Morocco">Morocco</option>
+        <option value="Mozambique">Mozambique</option>
+        <option value="Myanmar">Myanmar</option>
+        <option value="Namibia">Namibia</option>
+        <option value="Nauru">Nauru</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Netherlands">Netherlands</option>
+        <option value="New Caledonia">New Caledonia</option>
+        <option value="New Zealand">New Zealand</option>
+        <option value="Nicaragua">Nicaragua</option>
+        <option value="Niger">Niger</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Niue">Niue</option>
+        <option value="Norfolk Island">Norfolk Island</option>
+        <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+        <option value="Norway">Norway</option>
+        <option value="Oman">Oman</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Palau">Palau</option>
+        <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+        <option value="Panama">Panama</option>
+        <option value="Papua New Guinea">Papua New Guinea</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Peru">Peru</option>
+        <option value="Philippines">Philippines</option>
+        <option value="Pitcairn">Pitcairn</option>
+        <option value="Poland">Poland</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Puerto Rico">Puerto Rico</option>
+        <option value="Qatar">Qatar</option>
+        <option value="Reunion">Reunion</option>
+        <option value="Romania">Romania</option>
+        <option value="Russian Federation">Russian Federation</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="Saint Barthelemy">Saint Barthelemy</option>
+        <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+        <option value="Saint Lucia">Saint Lucia</option>
+        <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+        <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+        <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+        <option value="Samoa">Samoa</option>
+        <option value="San Marino">San Marino</option>
+        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+        <option value="Senegal">Senegal</option>
+        <option value="Serbia">Serbia</option>
+        <option value="Seychelles">Seychelles</option>
+        <option value="Sierra Leone">Sierra Leone</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Solomon Islands">Solomon Islands</option>
+        <option value="Somalia">Somalia</option>
+        <option value="South Africa">South Africa</option>
+        <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+        <option value="South Sudan">South Sudan</option>
+        <option value="Spain">Spain</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+        <option value="Sudan">Sudan</option>
+        <option value="Suriname">Suriname</option>
+        <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+        <option value="Swaziland">Swaziland</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+        <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+        <option value="Tajikistan">Tajikistan</option>
+        <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Timor-leste">Timor-leste</option>
+        <option value="Togo">Togo</option>
+        <option value="Tokelau">Tokelau</option>
+        <option value="Tonga">Tonga</option>
+        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+        <option value="Tunisia">Tunisia</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Turkmenistan">Turkmenistan</option>
+        <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+        <option value="Tuvalu">Tuvalu</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United Arab Emirates">United Arab Emirates</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States">United States</option>
+        <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="Uzbekistan">Uzbekistan</option>
+        <option value="Vanuatu">Vanuatu</option>
+        <option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+        <option value="Viet Nam">Viet Nam</option>
+        <option value="Virgin Islands, British">Virgin Islands, British</option>
+        <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+        <option value="Wallis and Futuna">Wallis and Futuna</option>
+        <option value="Western Sahara">Western Sahara</option>
+        <option value="Yemen">Yemen</option>
+        <option value="Zambia">Zambia</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+    </select>
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Metro Area</label>
+    <input class="width-1-2" placeholder="[SiteCity, SiteStateAbbreviation]" type="text">
+</div>
+
+                                </div>
+                                <div id="emailInfo" class="js-subSection section container">
+                                    <h2>Launch Information</h2>
+                                    <div class="input-container">
+    <label class="is-required">Launch Date</label>
+    <input  class="width-1-5 js-datePicker" type="text">
+</div>
+<div class="input-container">
+    <label>Shutdown Date</label>
+    <input  class="width-1-5 js-datePicker" type="text">
+</div>
+<div class="input-container checkbox" >
+    <label><input type="checkbox"> Internal Demo/Dev</label>
+</div>
+
+
+                                </div>
+                            </div>
+                            <div class="action u-display-flex">
+                                <button class="js-button js-button--basic js-button--prev" style="display: none"><i class="fa fa-chevron-left"></i> Previous Section</button>
+                                <button class="button-highlight u-flex-right js-button js-button--basic js-button--next" >Next Section <i class="fa fa-chevron-right"></i></button>
+                            </div>
+                        </section>
+                        <section class="section js-section">
+                            <div class="section is-active container">
+                                <div class="u-display-flex u-display-flex--vcentered">
+                                    <h2>Rewards</h2>
+                                </div>
+                                <div class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa-gift fa fa-4x empty-state__icon"></i>
+    <div class="empty-state__header" data-product="Rewards">This site currently doesn't have Rewards configured</div>
+    <p>To add turn it on in the sidebar</p>
+</div>
+                                <div id="rewardsFields" class="u-is-invisible">
+                                    <div class="u-display-flex" id="rewardsSections" style="transition: 500ms ease-in-out;">
+                                        <div id="rewardsBasic" class="js-subSection section is-active container">
+                                            <h3>Basic</h3>
+<div class="input-container">
+    <label class="is-required" for="">Club Name</label>
+    <input id="clubName" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Login Domain</label>
+    <input id="siteName" class="width-1-2" autofocus type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Streaming URL</label>
+    <input id="streamingURL" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Skin Path</label>
+    <input type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">External Site Code</label>
+    <input type="text">
+</div>
+<div class="input-container">
+    <label class="is-required">Doc Group</label>
+    <select class="js-chosen" data-placeholder="Select Doc Group...">
+        <option value=""></option>
+        <option value="1">SF-Radio-US</option>
+        <option value="2">SF-Radio-CA</option>
+        <option value="3">SF-TV-US</option>
+        <option value="4">SF-TV-CA</option>
+        <option value="5">SF-WTW-US</option>
+        <option value="6">SF-WTW-CA</option>
+        <option value="9">CC-US</option>
+        <option value="10">CC-CA</option>
+        <option value="11">TD-US</option>
+        <option value="12">TD-CA</option>
+        <option value="13">SF-CBS</option>
+        <option value="14">SF-Corus</option>
+        <option value="15">Clear Channel LA</option>
+        <option value="16">SF-Radio-US-Contest</option>
+        <option value="17">SF-Radio-CA-Contest</option>
+        <option value="18">SF-TV-US-Contest</option>
+        <option value="19">SF-TV-CA-Contest</option>
+        <option value="20">SF-CBS-Contest</option>
+        <option value="21">SF-Corus-Contest</option>
+        <option value="22">FC-US</option>
+        <option value="23">Demo Site</option>
+        <option value="24">Belo</option>
+        <option value="25">SF-Michigan</option>
+        <option value="26">SF-DeleteThis</option>
+        <option value="27">SF-Spanish</option>
+        <option value="28">FC-Spanish</option>
+        <option value="29">SF-Clear Channel</option>
+        <option value="30">SF-Mexico</option>
+        <option value="31">SF-Peru</option>
+        <option value="32">SF-Salem</option>
+        <option value="33">FC-Salem</option>
+    </select>
+</div>
+
+<label>Enable NAP & MyPoints?</label>
+<div class="input-container radio radio-inline">
+    <label><input name="NAP" type="radio" checked> No NAP</label>
+    <label><input name="NAP" type="radio"> Variable</label>
+    <label><input name="NAP" type="radio"> Fixed</label>
+</div>
+
+<div class="input-container checkbox">
+    <label><input type="checkbox"> Default Time Zone for all Registrants?</label>
+</div>
+<div class="input-container checkbox">
+    <label><input type="checkbox"> Purge Deadwood?</label>
+</div>
+
+
+
+
+<!--<div class="input-container">-->
+<!--<label for="" class="is-required">Application Profile</label>-->
+<!--<select class="js-chosen" data-placeholder="Select Application Profile">-->
+<!--<option value=""></option>-->
+<!--<option value="2">FanClub</option>-->
+<!--<option value="1">StickyFish</option>-->
+<!--<option disabled="" value="3">TribalDirect</option>-->
+<!--</select>-->
+<!--</div>-->
+
+
+                                        </div>
+                                        <div id="rewardsEmail" class="js-subSection section container">
+                                            <h3>Email</h3>
+<div class="input-container">
+    <label class="is-required" for="">Email Notification</label>
+    <input id="emailNotification" class="js-tagit width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label for="">Station Support Email</label>
+    <input id="stationSupport" class="js-tagit width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label for="">Status Email</label>
+    <input id="stationSupport" class="js-tagit width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Mass Email "From" Name</label>
+    <input placeholder="[Station Slogan]" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Mass Email "From" Address</label>
+    <input placeholder="[Station Slogan]" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Mass Email "Reply-To" Name</label>
+    <input placeholder="[no-reply]" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required" for="">Mass Email "Reply-To" Address</label>
+    <input placeholder="[no-reply@listenernetwork.com]" class="width-1-2" type="text">
+</div>
+<div class="input-container">
+    <label for="">Can Spam Statement</label>
+    <textarea name="" id="" rows="10" class="width-1-2"></textarea>
+</div>
+<div class="input-container checkbox">
+    <label><input type="checkbox" id="welcomeCheck"> Send Welcome Email</label>
+</div>
+<div style="display: none" id="welcomeEmail">
+    <div class="input-container">
+        <label>Subject Override</label>
+        <input class="width-1-2" type="text">
+    </div>
+    <div class="input-container">
+        <label for="">Message Override</label>
+        <textarea name="" rows="10" class="width-1-2"></textarea>
+    </div>
+    <div class="input-container">
+        <label for="">HTML Message Override</label>
+        <textarea name="" rows="10" class="width-1-2"></textarea>
+    </div>
+</div>
+
+
+                                        </div>
+                                        <div id="rewardsPrize" class="js-subSection section container">
+                                            <h3>Prize</h3>
+<label>Prize Closet</label>
+<div class="input-container checkbox checkbox-inline">
+    <label><input name="prizeCloset" type="checkbox"> N/A</label>
+    <label><input name="prizeCloset" type="checkbox"> 1</label>
+    <label><input name="prizeCloset" type="checkbox"> 2</label>
+    <label><input name="prizeCloset" type="checkbox"> 3</label>
+    <label><input name="prizeCloset" type="checkbox"> 4</label>
+    <label><input name="prizeCloset" type="checkbox"> 5</label>
+    <label><input name="prizeCloset" type="checkbox"> 6</label>
+    <label><input name="prizeCloset" type="checkbox"> 7</label>
+    <label><input name="prizeCloset" type="checkbox"> 8</label>
+</div>
+<div class="input-container">
+    <label for="" class="is-required">Pickup Notice</label>
+    <textarea id="pickupNotice" class="width-3-4" name="" cols="30" rows="13"></textarea>
+</div>
+<div class="input-container">
+    <label for="" class="is-required">Local Ship Policy</label>
+    <textarea id="shipPolicy" class="width-3-4" name="" cols="30" rows="10"></textarea>
+</div>
+<div class="input-container">
+    <label for="" class="is-required">PMG Ship Policy</label>
+    <textarea id="pmgShip" class="width-3-4 u-mb10" name="" cols="30" rows="10"></textarea>
+    <label><input type="checkbox">Overwirte Default PMG Ship Policy</label>
+</div>
+
+
+
+                                        </div>
+                                        <div id="rewardsTSSO" class="js-subSection section container">
+                                            <h3>TSSO</h3>
+<div class="input-container">
+    <label>TSSO Affiliate ID</label>
+    <input class="width-1-4" type="text">
+</div>
+<div class="input-container">
+    <label>TSSO API Key</label>
+    <input class="width-1-4" type="text">
+</div>
+<!--<div class="input-container input-container&#45;&#45;inline">-->
+    <!--<div class="toggle toggle&#45;&#45;positive">-->
+        <!--<input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="seeCheckbox">-->
+        <!--<label class="toggle-container" for="seeCheckbox">-->
+            <!--<span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>-->
+            <!--<span class="toggle-handle"></span>-->
+        <!--</label>-->
+    <!--</div>-->
+    <!--<label for="">Enable SEE</label>-->
+<!--</div>-->
+<div class="input-container checkbox" >
+    <label for="seeCheckbox"><input id="seeCheckbox" type="checkbox"> Enable SEE</label>
+</div>
+<div class="input-container" id="seeTenantID" style="display: none">
+    <label>Tenant ID</label>
+    <input class="width-1-2" type="text" readonly>
+</div>
+<!--<div class="input-container input-container&#45;&#45;inline">-->
+    <!--<div class="toggle toggle&#45;&#45;positive">-->
+        <!--<input class="toggle-checkbox" type="checkbox" name="toggleswitch" id="seeProfile">-->
+        <!--<label class="toggle-container" for="seeProfile">-->
+            <!--<span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>-->
+            <!--<span class="toggle-handle"></span>-->
+        <!--</label>-->
+    <!--</div>-->
+    <!--<label for="">Enable SEE-Profile</label>-->
+<!--</div>-->
+<div class="input-container checkbox">
+    <label><input type="checkbox"> Enable SEE-Profile</label>
+</div>
+
+
+
+                                        </div>
+                                        <div id="rewardsPoints" class="js-subSection section container">
+                                            <h3>Points</h3>
+<div class="input-container">
+    <label class="is-required">JamWay Percent</label>
+    <input class="width-1-4" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required">JamWay Max Points</label>
+    <input class="width-1-4" type="text">
+</div>
+<div class="input-container">
+    <label class="is-required">Months when Points Expire</label>
+    <input class="width-1-8" value="0" type="number">
+</div>
+<label><input type="checkbox"> Hook Vendor</label>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="action u-display-flex">
+                                        <button class="js-button js-button--rewards js-button--prev" style="display: none"><i class="fa fa-chevron-left"></i> Previous Section</button>
+                                        <button class="button-highlight u-flex-right js-button--rewards js-button js-button--next" >Next Section <i class="fa fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section js-section">
+                            <div class="section is-active container">
+                                <div class="u-display-flex u-display-flex--vcentered">
+                                    <h2>Contesting</h2>
+                                </div>
+                                <div class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa-trophy fa fa-4x empty-state__icon"></i>
+    <div class="empty-state__header" data-product="Contesting">This site currently doesn't have Contesting configured</div>
+    <p>To add turn it on in the sidebar</p>
+</div>
+                            </div>
+                        </section>
+                        <section class="section js-section">
+                            <div class="section is-active container">
+                                <div class="u-display-flex u-display-flex--vcentered">
+                                    <h2>Promotions Management</h2>
+
+                                </div>
+                                <div class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa-calendar-check-o fa fa-4x empty-state__icon"></i>
+    <div class="empty-state__header" data-product="Promotions Management ">This site currently doesn't have Promotions Management  configured</div>
+    <p>To add turn it on in the sidebar</p>
+</div>
+                            </div>
+                        </section>
+                        <section class="section js-section">
+                            <div class="section is-active container">
+                                <div class="u-display-flex u-display-flex--vcentered">
+                                    <h2>Email</h2>
+                                </div>
+                                <div class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa-envelope fa fa-4x empty-state__icon"></i>
+    <div class="empty-state__header" data-product="Email">This site currently doesn't have Email configured</div>
+    <p>To add turn it on in the sidebar</p>
+</div>
+                                <div id="emailFields" class="u-is-invisible">
+                                    <div class="u-display-flex" id="emailSections" style="transition: 500ms ease-in-out;">
+                                        <div id="emailBasic" class="js-subSection section is-active container">
+                                            <div class="u-display-flex u-display-flex--centered u-flex-column empty-state empty-state--dark">
+                                                <i class="td-icon td-icon--highlight td-icon-paper-plane fa-5x"></i>
+                                                <div class="empty-state__header" style="margin-bottom: 10px;" data-product="Email">This site currently doesn't have configured</div>
+                                                <button class="button button-highlight js-changeEmail">Change Provider</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section js-section">
+                            <div class="section is-active container">
+                                <div class="u-display-flex u-display-flex--vcentered">
+                                    <h2>Research</h2>
+                                </div>
+                                <div class="u-display-flex u-display-flex--centered u-flex-column empty-state">
+    <i class="fa-line-chart fa fa-4x empty-state__icon"></i>
+    <div class="empty-state__header" data-product="Research">This site currently doesn't have Research configured</div>
+    <p>To add turn it on in the sidebar</p>
+</div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </main>
+        </div>
+        <div id="selectType" title="Select Type" style="display:none;">
+            <div class="u-display-flex u-display-flex--hcentered">
+                <div class="create-button js-createButton" data-option="Rewards" id="rewardsButton">
+                    <i class="create-button__icon td-icon td-icon-coins"></i>
+                    <b class="create-button__title">Rewards</b>
+                    <span class="create-button__desc">Points based loyalty program</span>
+                </div>
+                <div class="create-button js-createButton" data-option="Club" id="clubButton">
+                    <i class="create-button__icon td-icon td-icon-group"></i>
+                    <b class="create-button__title">Club</b>
+                    <span class="create-button__desc">Non-points loyalty program</span>
+                </div>
+            </div>
+        </div>
+        <div id="selectEmail" title="Select Type" style="display:none;">
+            <div class="u-display-flex u-display-flex--hcentered">
+                <div class="create-button js-createButton" data-option="Tribal Direct">
+                    <i class="create-button__icon td-icon td-icon-envelope"></i>
+                    <b class="create-button__title">TD1</b>
+                    <span class="create-button__desc">Tribal Direct</span>
+                </div>
+                <div class="create-button js-createButton" data-option="Silver Pop">
+                    <i class="create-button__icon td-icon td-icon-paper-plane"></i>
+                    <b class="create-button__title">TD2</b>
+                    <span class="create-button__desc">Silver Pop</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

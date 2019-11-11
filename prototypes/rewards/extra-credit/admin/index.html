@@ -1,0 +1,526 @@
+<!doctype html>
+<html class="no-js">
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+  <html dir="ltr" lang="en-US" class="no-js">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Extra Credit Widget Admin</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/ajaxToolboxStyles.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/admin.css" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/lightwindow.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://admin.tritondigital.com/dashboard/CSS/notificationBox.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.prefixed.css" />
+
+    <script src="assets/components/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Main Content for Stand Alone -->
+    <!-- Extra Credit Widget Admin -->
+    <div class="app-container">
+      <div id="extraCredit-Dashboard" class="dashboard-container">
+
+        <!-- Extra Credit Widget Dashboard Header -->
+        <div id="createNew-extraCredit" class="container-sectioned no-padding">
+          <h1 class="pull-left">Extra Credit Widget</h1>
+          <div id="headerButtons-extraCredit" class="pull-right">
+            <a href="extraCredit-videoChannel.html">
+              <button name="Create New Video Channel" id="createNew-videoChannel" class="button-positive">
+                <i class="fa fa-plus"></i>
+                Create New Video Channel 
+              </button>
+            </a>
+
+          </div>
+        </div>
+        <!-- End Extra Credit Widget Dashboard Header -->
+
+        <!-- Extra Credit Widget Dashboard | Extra Credit Widget List -->
+        <div class="grid">
+          <div class="extraCredit-listTable full-width">
+            <div id="extraCredit-list">
+
+              <!-- Extra Credit Widget List Header -->
+              <div class="toolbar nopadding">
+
+                <!-- Search Field -->
+                <div class="insert-into pull-left">
+                  <i class="fa fa-search"></i>
+                  <input class="search" type="text" placeholder="Search" />
+                </div>
+                <!-- End Search Field -->
+                
+
+                <!--  Extra Credit 'Type' Dropdown  -->
+                <div class="toolbar-group extraCredit-typeSelectBox">
+                  <select>
+                    <option>Video Channel</option>
+                  </select>
+                </div>
+
+              </div>
+              <!-- End Extra Credit Widget List Header -->
+
+              <div class="table extraCredit-table full-width">
+                <div class="table-header">
+                  
+                  <!-- Table Header -->
+                  
+                    <!-- Order -->
+                    <span class="table-header-item extraCredit-order th is-sortable">Order</span>
+
+                    <!-- Title -->
+                    <span class="table-header-item extraCredit-title th is-sortable">Video Channel Title <i class="fa fa-sort"></i></span>
+
+                    <!-- Start Date -->
+                    <span class="table-header-item extraCredit-start th is-sortable">Start Date <i class="fa fa-sort"></i></span>
+
+                    <!-- End Date -->
+                    <span class="table-header-item extraCredit-end th is-sortable">End Date <i class="fa fa-sort"></i></span>
+
+                    <!-- End Date -->
+                    <span class="table-header-item extraCredit-dashOptions th is-sortable">Options</span>
+                  
+                </div>
+                <!-- End Table Header -->
+
+                <div id="sortable">
+                  
+                  <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">1</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-targeted">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">2</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">3</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">4</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+
+                   <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">5</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+                    
+                  </div>
+
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">6</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+                    
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">7</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+
+                   <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">8</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+
+                  <div class="list-item ui-state-default is-syndicated">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">9</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+
+                  <div class="list-item ui-state-default">
+                    
+                    <div class="extraCredit-order">
+                      <i class="fa fa-bars"></i>
+                      <p class="list-order-number">10</p>
+                      <input type="text" />
+                    </div>
+
+                    <div class="extraCredit-title">
+                      <p>Video Channel Title</p>
+                      <!-- <p class="extraCredit-id">BVMXXI</p> -->
+                    </div>
+
+                    <div class="extraCredit-start">
+                      <p>05/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-end">
+                      <p>06/08/2015</p>
+                      <p class="extraCredit-time">13:13 PM EDT</p>
+                    </div>
+
+                    <div class="extraCredit-dashOptions">
+                      <div>
+                        <i class="fa fa-binoculars"></i>
+                        <p>Preview</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <p>Edit</p>
+                      </div>
+                      <div>
+                        <i class="fa fa-trash"></i>
+                        <p>Delete</p>
+                      </div>                      
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- End Extra Credit Widget Admin -->
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script>
+
+    <script src="assets/js/scripts.min.js"></script>
+
+
+  </body>
+</html>

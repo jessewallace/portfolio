@@ -1,0 +1,38 @@
+.v1player-song-info {
+    position: relative;
+    z-index: 2000 !important;
+
+    float: left;
+    height: 100%;
+    width: 315px;
+    padding: 16px 0 0 72px;
+    color: white;
+    line-height: 1.2em;
+
+    .v1player-album-art {
+        position: absolute;
+        top: 5px;
+        left: 0;
+
+        width: 60px;
+        height: 60px;
+    }
+
+    .v1player-track {
+        display: block;
+
+        font-weight: bold;
+
+        a,
+        .mobile-favorites-ctrl {
+            display: none;
+        }
+    }
+
+    .v1player-artist {
+        display: block;
+        
+        font-size: 0.85em;
+        font-style: italic;
+    }
+}

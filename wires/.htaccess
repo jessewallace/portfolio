@@ -1,0 +1,94 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+
+    	# META VIEWPORT
+    	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace {FOLDERNAME} with your directory URL eg:
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /wires/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /wires/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /wires/theme/icons/folder-home.png ..
+	
+	AddIconByType (TXT,/wires/theme/icons/text.png) text/*
+	AddIconByType (IMG,/wires/theme/icons/image.png) image/*
+	AddIconByType (SND,/wires/theme/icons/audio.png) audio/*
+	AddIconByType (VID,/wires/theme/icons/video.png) video/*
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /wires/theme/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /wires/theme/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	AddIcon /wires/theme/icons/bin.png .bin .hex
+	AddIcon /wires/theme/icons/bmp.png .bmp
+	AddIcon /wires/theme/icons/c.png .c
+	AddIcon /wires/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /wires/theme/icons/cd.png .iso
+	AddIcon /wires/theme/icons/cpp.png .cpp
+	AddIcon /wires/theme/icons/css.png .css .sass .scss
+	AddIcon /wires/theme/icons/deb.png .deb
+	AddIcon /wires/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /wires/theme/icons/draw.png .svg .svgz
+	AddIcon /wires/theme/icons/eps.png .ai .eps
+	AddIcon /wires/theme/icons/exe.png .exe
+	AddIcon /wires/theme/icons/gif.png .gif
+	AddIcon /wires/theme/icons/h.png .h
+	AddIcon /wires/theme/icons/html.png .html .xhtml .shtml .htm .URL .url
+	AddIcon /wires/theme/icons/ico.png .ico
+	AddIcon /wires/theme/icons/java.png .jar
+	AddIcon /wires/theme/icons/jpg.png .jpg .jpeg .jpe
+	AddIcon /wires/theme/icons/js.png .js .json
+	AddIcon /wires/theme/icons/markdown.png .md
+	AddIcon /wires/theme/icons/package.png .pkg .dmg
+	AddIcon /wires/theme/icons/pdf.png .pdf
+	AddIcon /wires/theme/icons/php.png .php .phtml
+	AddIcon /wires/theme/icons/playlist.png .m3u .m3u8 .pls .pls8
+	AddIcon /wires/theme/icons/png.png .png
+	AddIcon /wires/theme/icons/ps.png .ps
+	AddIcon /wires/theme/icons/psd.png .psd
+	AddIcon /wires/theme/icons/py.png .py
+	AddIcon /wires/theme/icons/rar.png .rar
+	AddIcon /wires/theme/icons/rb.png .rb
+	AddIcon /wires/theme/icons/rpm.png .rpm
+	AddIcon /wires/theme/icons/rss.png .rss
+	AddIcon /wires/theme/icons/script.png .bat .cmd .sh
+	AddIcon /wires/theme/icons/sql.png .sql
+	AddIcon /wires/theme/icons/tiff.png .tiff .tif
+	AddIcon /wires/theme/icons/text.png .txt .nfo
+	AddIcon /wires/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /wires/theme/icons/xml.png .xml
+	AddIcon /wires/theme/icons/zip.png .zip
+	DefaultIcon /wires/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /wires/theme/header.html
+	ReadmeName /wires/theme/footer.html
+	IndexStyleSheet "/wires/theme/style.css"

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CORE Reg-Auth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="script-dist.js"></script>
+    <link rel="stylesheet" href="css/reg.css">
+  </head>
+  <body>
+    <h1><span class="js-greeting">Welcome, Guest!</span></h1><a class="js-openModal" href="#" style="margin-left: 5px; padding-left: 5px; border-left: 1px solid;">Sign Up or Log In</a>
+    <div class="overlay u-display-flex u-display-flex--centered">
+      <div class="modal"><span class="modal__close fa fa-times js-closeModal"></span>
+        <div class="modal__content">
+          <div class="js-logInSection">
+            <div class="container is-sectioned u-display-flex u-display-flex--vcentered">
+              <div class="modal__header u-display-flex u-display-flex--vcentered"><i class="modal__header-icon fa fa-sign-in"></i>Login</div>
+              <p class="u-display-flex--right u-f12">Don't have an account?<a class="modal__link js-signUp" href="#" style="margin-left: 5px;">Sign up now</a></p>
+            </div>
+            <!-- Social Signin Buttons-->
+            <div class="container is-sectioned has-text u-display-flex u-display-flex--centered" data-text="or">
+              <button class="modal__button modal__button--facebook">Sign in with Facebook</button>
+              <button class="modal__button modal__button--google">Sign in with Google</button>
+            </div>
+            <form class="form" name="loginform">
+              <div class="message message--negative is-hidden js-message">
+                <p class="js-messageText"></p>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="email">Email Address</label>
+                <input class="form__input has-maxwidth js-emailAddress" type="email" name="email" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="password">Password</label>
+                <input class="form__input has-maxwidth" type="password" name="password" required>
+              </div>
+            </form>
+            <div class="u-display-flex u-display-flex--vcentered">
+              <button class="modal__button js-logIn" type="submit">Log In<i class="modal__button-icon fa fa-chevron-circle-right"></i><i class="modal__button-icon fa fa-refresh fa-spin js-loadingIcon is-hidden"></i></button><a class="u-f12 modal__link" href="#">Forgot Password?</a>
+            </div>
+          </div>
+          <!-- Update Password Section-->
+          <div class="js-updateSection is-hidden">
+            <div class="container is-sectioned u-display-flex u-display-flex--vcentered">
+              <div class="modal__header u-display-flex u-display-flex--vcentered"><i class="modal__header-icon fa fa-user-plus"></i>Update Password</div>
+            </div>
+            <div class="container is-sectioned has-text u-display-flex u-display-flex--centered">
+              <p>We have updated our sites so that you can now log into any <b>{ authgroup }</b> site using the same account! As part of this process, please update your password below, making sure your password is at least 8 characters.</p>
+            </div>
+            <form class="form js-updateForm" name="updatepassform">
+              <div class="form__group">
+                <label class="form__label" for="password">Enter New Password</label>
+                <input class="form__input has-maxwidth js-newPass" type="password" name="password" required><em class="u-f11"><i class="fa fa-check form__input-icon is-positive is-hidden"></i><i class="fa fa-times form__input-icon is-negative is-hidden"></i>Password must be at least 8 characters long</em>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="confirmpassword">Confirm New Password</label>
+                <input class="form__input has-maxwidth js-confirmPass" type="password" name="confirmpassword" required>
+              </div>
+            </form>
+            <div class="u-display-flex u-display-flex--centered u-display-flex--column modal__empty is-hidden"><i class="fa fa-3x fa-check is-positive"></i>
+              <h1>Password Updated Successfully!</h1><em class="u-f11"><i class="fa fa-spinner fa-spin modal__icn"></i>Please wait as we log you in.</em>
+            </div>
+            <div class="u-display-flex u-display-flex--vcentered">
+              <button class="modal__button js-updatePass" type="submit">Update Password<i class="modal__button-icon fa fa-chevron-circle-right"></i><i class="modal__button-icon fa fa-refresh fa-spin js-loadingIcon is-hidden"></i></button>
+            </div>
+          </div>
+          <!-- End Update Password Section-->
+          <!-- Merge Flow Section-->
+          <div class="is-hidden js-mergeSection">
+            <div class="container is-sectioned u-display-flex u-display-flex--vcentered">
+              <div class="modal__header u-display-flex u-display-flex--vcentered"><i class="modal__header-icon fa fa-compress"></i>Merge Accounts</div>
+            </div>
+            <div class="container is-sectioned has-text u-display-flex u-display-flex--centered">
+              <p>You currently have <b>{ x amount }</b> accounts on <b>{ AuthGroup }</b> sites using this email. Please look over the information below to verify that we have the most up to date information. After the merge all associated accounts will use this info. You can change all information below, excluding email, at anytime.</p>
+            </div>
+            <div class="u-display-flex">
+              <div class="column has-divider w-3-5 u-display-order-second">
+                <form class="form" name="updatepassform">
+                  <div class="form__group">
+                    <label class="form__label js-newPass" for="email">Email Address</label>
+                    <input class="form__input has-maxwidth is-disabled js-mergeEmail" type="email" name="email" value="mike@email.com" required disabled>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label js-newPass" for="firstName">First Name</label>
+                    <input class="form__input has-maxwidth" type="text" name="firstName" value="Mike" required>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label js-newPass" for="lastName">Last Name</label>
+                    <input class="form__input has-maxwidth" type="text" name="lastName" value="Jordan" required>
+                  </div>
+                  <div class="u-display-flex">
+                    <div class="form__group">
+                      <label class="form__label">Date of Birth</label><span class="u-display-flex u-display-flex--vcentered nowrap">
+                        <input class="form__input is-small" type="text" name="dob" placeholder="mm/dd/yyyy" value="03/09/1985"><i class="fa fa-calendar pika-icon"></i></span>
+                    </div>
+                    <div class="form__group">
+                      <label class="form__label" for="zip">Zip/Postal Code</label>
+                      <input class="form__input is-small" type="text" name="zip" value="30144" required>
+                    </div>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="gender">Gender</label>
+                    <div class="u-display-flex nowrap"><span class="modal__button modal__button--positive u-nomargin is-selected"><i class="modal__button-icon fa fa-male"></i>Male</span><span class="modal__button modal__button--positive u-nomargin"><i class="modal__button-icon fa fa-female"></i>Female</span></div>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label is-disabled">
+                      <input type="checkbox" name="subscribe" checked disabled><b>Recieve email updates and news from us</b>
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div class="column w-2-5 u-display-order-first">
+                <div class="form__group">
+                  <label class="form__label">Account Sites to be merged (3)
+                    <ul class="list list--bulleted">
+                      <li class="list__item">www.102jamz.com</li>
+                      <li class="list__item">www.975Jamz.com</li>
+                      <li class="list__item">www.rocknation.com</li>
+                    </ul>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="u-display-flex u-display-flex--vcentered">
+              <button class="modal__button js-mergeAccounts" type="submit">Merge Accounts<i class="modal__button-icon fa fa-compress"></i><i class="modal__button-icon fa fa-refresh fa-spin js-loadingIcon is-hidden"></i></button>
+            </div>
+          </div>
+          <!-- End Merge Flow-->
+          <!-- Registration Section-->
+          <div class="js-regSection is-hidden">
+            <div class="container is-sectioned u-display-flex u-display-flex--vcentered">
+              <div class="modal__header u-display-flex u-display-flex--vcentered"><i class="modal__header-icon fa fa-user-plus"></i>Create Account</div>
+              <p class="u-display-flex--right u-f12">Already have an account?<a class="modal__link js-signIn" href="#" style="margin-left: 5px;">Sign in</a></p>
+            </div>
+            <div class="container is-sectioned has-text u-display-flex u-display-flex--centered" data-text="or">
+              <button class="modal__button modal__button--facebook">Sign in with Facebook</button>
+              <button class="modal__button modal__button--google">Sign in with Google</button>
+            </div>
+            <form class="form" name="regForm">
+              <div class="message is-hidden js-message">
+                <p class="js-messageText"></p>
+              </div>
+              <div class="form__group">
+                <label class="form__label js-newPass" for="email">Email Address</label>
+                <input class="form__input has-maxwidth js-regEmail" type="email" name="email" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="password">Enter New Password</label>
+                <input class="form__input has-maxwidth" type="password" name="password" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="confirmpassword">Confirm New Password</label>
+                <input class="form__input has-maxwidth" type="password" name="confirmpassword" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label js-newPass" for="firstName">First Name</label>
+                <input class="form__input has-maxwidth js-regName" type="text" name="firstName" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label js-newPass" for="lastName">Last Name</label>
+                <input class="form__input has-maxwidth" type="text" name="lastName" required>
+              </div>
+              <div class="u-display-flex">
+                <div class="form__group">
+                  <label class="form__label">Date of Birth</label><span class="u-display-flex u-display-flex--vcentered nowrap">
+                    <input class="form__input is-small datepicker" type="text" name="dob" placeholder="mm/dd/yyyy"><i class="fa fa-calendar pika-icon"></i></span>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="zip">Zip/Postal Code</label>
+                  <input class="form__input is-small" type="text" name="zip" required>
+                </div>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="gender">Gender</label>
+                <div class="u-display-flex nowrap"><span class="modal__button modal__button--positive u-nomargin"><i class="modal__button-icon fa fa-male"></i>Male</span><span class="modal__button modal__button--positive u-nomargin"><i class="modal__button-icon fa fa-female"></i>Female</span></div>
+              </div>
+              <div class="form__group">
+                <label class="form__label">
+                  <input type="checkbox" name="subscribe" checked><b>Recieve email updates and news from us</b>
+                </label>
+              </div>
+            </form>
+            <div class="u-display-flex u-display-flex--vcentered">
+              <button class="modal__button js-register" type="submit">Register<i class="modal__button-icon fa fa-chevron-circle-right"></i><i class="modal__button-icon fa fa-refresh fa-spin js-loadingIcon is-hidden"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

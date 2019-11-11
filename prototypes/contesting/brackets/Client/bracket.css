@@ -1,0 +1,202 @@
+@charset "utf-8";
+.centerme { margin: 0 auto; }
+
+.hiddenz { display: none; }
+
+.showenz { display: inline; }
+
+.pull-right, #di-bracket .column2, #di-bracket .column2 ul, #di-bracket .matches a .match-info, #di-bracket .correct-team .match-info, #di-bracket .tie-breaker { float: right; }
+
+.pull-left, #di-bracket .bracket-rounds li, #di-bracket .rounds, #di-bracket .round1, #di-bracket .round2, #di-bracket .round3, #di-bracket .round4, #di-bracket .column1 { float: left; }
+
+.clearfix, #di-bracket .bracket-rounds, #di-bracket .region, .tabs { *zoom: 1; content: "."; display: block !important; }
+.clearfix:after, #di-bracket .bracket-rounds:after, #di-bracket .region:after, .tabs:after { content: ""; display: table; clear: both; }
+
+.block-item, .tabs li a { display: block; }
+
+.inline-block, .leaderboard .table-item1, .leaderboard .table-item2, .leaderboard .table-item3, .leaderboard .table-item4 { display: inline-block; }
+
+#di-bracket { width: 650px; margin: 0 auto; font-family: arial, helvetica, sans-serif; zoom: 1; }
+#di-bracket * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#di-bracket ul { list-style-type: none; margin: 0; padding: 0; }
+#di-bracket li { margin: 0; }
+#di-bracket .bracket-rounds { -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; background-color: #f7f7f7; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF7F7F7', endColorstr='#FFE7E7E7'); background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U3ZTdlNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #e7e7e7)); background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -moz-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -o-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); padding: 5px 0; border: 1px solid #CCC; color: #666; }
+#di-bracket .bracket-rounds li { color: 999; margin: 0 14px; text-align: center; font-size: 11px; }
+#di-bracket .bracket-rounds li span { display: block; }
+#di-bracket .is-top, #di-bracket .is-bottom { position: relative; }
+#di-bracket .brackets { position: absolute; z-index: -1; border: 1px solid #AAA; height: 48px; width: 98px; }
+#di-bracket .bracket1, #di-bracket .bracket8, #di-bracket .bracket9, #di-bracket .bracket10, #di-bracket .bracket11 { top: 36px; }
+#di-bracket .bracket2, #di-bracket .bracket9 { top: 140px; }
+#di-bracket .bracket3, #di-bracket .bracket10 { top: 244px; }
+#di-bracket .bracket4, #di-bracket .bracket11 { top: 348px; }
+#di-bracket .bracket8, #di-bracket .bracket9, #di-bracket .bracket10, #di-bracket .bracket11 { right: 0; }
+#di-bracket .bracket5, #di-bracket .bracket6, #di-bracket .bracket13, #di-bracket .bracket12 { top: 60px; height: 105px; width: 87px; right: 123px; }
+#di-bracket .bracket6, #di-bracket .bracket13 { top: 268px; }
+#di-bracket .bracket12, #di-bracket .bracket13 { left: 123px; }
+#di-bracket .bracket7, #di-bracket .bracket14 { top: 111px; height: 203px; right: 0; }
+#di-bracket .bracket14 { left: 0; }
+#di-bracket .rounds, #di-bracket .round1, #di-bracket .round2, #di-bracket .round3, #di-bracket .round4 { position: relative; z-index: 1; width: 87px; padding: 0; }
+#di-bracket .round2 li { margin: 39px 0 62px; }
+#di-bracket .round2 .is-top { top: -15px; }
+#di-bracket .round2 .is-bottom { bottom: -15px; top: 0; }
+#di-bracket .round3 li { margin: 90px 0 160px; }
+#di-bracket .round4 { margin-left: -60px; margin-right: 0; }
+#di-bracket .round4 li { margin: 190px 0 0; }
+#di-bracket .column1 { position: relative; }
+#di-bracket .column1 .brackets { border-width: 1px 1px 1px 0px; }
+#di-bracket .column1 .rounds, #di-bracket .column1 .round1, #di-bracket .column1 .round2, #di-bracket .column1 .round3, #di-bracket .column1 .round4 { margin-right: 10px; }
+#di-bracket .column1 .round4 { margin-right: 0; }
+#di-bracket .column2 { position: relative; }
+#di-bracket .column2 .brackets { border-width: 1px 0px 1px 1px; right: 0; }
+#di-bracket .column2 .rounds, #di-bracket .column2 .round1, #di-bracket .column2 .round2, #di-bracket .column2 .round3, #di-bracket .column2 .round4 { margin-left: 10px; }
+#di-bracket .column2 .round4 { margin-left: 0; margin-right: -60px; }
+#di-bracket .top-pick { position: relative; top: -15px; }
+#di-bracket .bottom-pick { position: relative; bottom: -15px; }
+#di-bracket .matches { position: relative; white-space: nowrap; margin: 0 0 5px; height: 42px; font-size: 10px; }
+#di-bracket .matches.odd { margin: 15px 0 5px; }
+#di-bracket .matches a { background-color: #f7f7f7; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF7F7F7', endColorstr='#FFE7E7E7'); background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U3ZTdlNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #e7e7e7)); background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -moz-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: -o-linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); background-image: linear-gradient(top, #f7f7f7 0%, #e7e7e7 100%); -webkit-transition: all 220ms; -moz-transition: all 220ms; -o-transition: all 220ms; transition: all 220ms; position: relative; z-index: 5; display: block; height: 20px; line-height: 20px; text-decoration: none; color: black; white-space: normal; border: 1px solid #AAA; }
+#di-bracket .matches a:hover { background: #AAA; border-color: #CCC; }
+#di-bracket .matches a.winner { color: green; }
+#di-bracket .matches a.loser { color: red; text-decoration: line-through; }
+#di-bracket .matches a.won-match { font-weight: bold; }
+#di-bracket .matches a .rank { display: inline-block; min-width: 15px; text-align: center; margin-right: 3px; background: #8b4004; color: white; text-shadow: none; }
+#di-bracket .matches a .match-info { margin-right: 3px; }
+#di-bracket .correct-team { position: absolute; width: 100%; padding: 3px 0; color: #333; white-space: normal; }
+#di-bracket .correct-team.top { top: -16px; }
+#di-bracket .correct-team.bottom { top: 41px; }
+#di-bracket .correct-team .match-info { margin-right: 3px; }
+#di-bracket .correct-team .rank { display: inline-block; min-width: 15px; text-align: center; }
+#di-bracket #final4 { margin: 0 auto; width: 442px; padding: 10px 0 0; }
+#di-bracket .bracket-champ { text-align: center; margin-top: -30px; }
+#di-bracket .bracket-champ .champ-name { min-height: 30px; display: block; font-size: 20px; }
+#di-bracket .final-round { margin: 10px auto 0; width: 442px; padding: 10px; background: rgba(211, 211, 211, 0.5); border: 1px solid #999; border-radius: 3px; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
+#di-bracket .final-round li { display: inline-block; }
+#di-bracket .semi-final { width: 125px; }
+#di-bracket .championship { width: 162px; height: 52px; }
+#di-bracket .championship a { height: auto; line-height: 25px; }
+#di-bracket .tie-breaker { text-align: center; font-size: 12px; margin: 2px; width: 50px; }
+#di-bracket .di-uix-button { display: inline; text-transform: capitalize; font-size: 12px; height: 25px; cursor: pointer; }
+#di-bracket.read-only .matches a:hover { background: none; cursor: default; }
+#di-bracket.bracket_32 .round1, #di-bracket.bracket_32 .bracket1, #di-bracket.bracket_32 .bracket8, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket2, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket3, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket4, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket8, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11, #di-bracket.bracket_32 .bracket9, #di-bracket.bracket_32 .bracket10, #di-bracket.bracket_32 .bracket11 { display: none; }
+
+.tabs { list-style: none; margin: 15px 0 10px; padding: 0; text-align: right; }
+.tabs li { margin: 0 10px 0 0; float: left; font-size: 12px; }
+.tabs li a { -webkit-transition: all 200ms; -moz-transition: all 200ms; -o-transition: all 200ms; transition: all 200ms; text-decoration: none; padding: 3px; background: #EEE; border-radius: 3px; min-width: 90px; text-align: center; color: #666; }
+.tabs li a.active, .tabs li a.active:hover { background: green; color: white; }
+.tabs li a:hover { color: #FFF; background: #666; }
+
+.leaderboard { list-style-type: none; width: 100%; margin-bottom: 0; }
+.leaderboard li { margin: 0; }
+.leaderboard .table-header { line-height: 35px; background: #666; color: #FFF; }
+.leaderboard .table-row a { -webkit-transition: all 200ms; -moz-transition: all 200ms; -o-transition: all 200ms; transition: all 200ms; line-height: 40px; display: block; text-decoration: none; background: #EEE; border-top: 2px solid #FFF; color: #666; font-size: 14px; }
+.leaderboard .table-row a:hover { background: #AAA; color: #000; border-color: transparent; }
+.leaderboard .table-row a.active { font-weight: bold; background: #FCFCD5; color: #363600; }
+.leaderboard .table-item1 { min-width: 23%; text-align: center; }
+.leaderboard .table-item2 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 23%; max-width: 125px; }
+.leaderboard .table-item3 { min-width: 23%; text-align: center; }
+.leaderboard .table-item4 { min-width: 23%; text-align: center; }
+
+@media only screen and (min-width: 1px) and (max-width: 650px) { .di-bracketwrapper { overflow: scroll; }
+  #di-bracket { zoom: 1.5; }
+  .leaderboard .table-item4 { display: none; }
+  .leaderboard .table-row a { line-height: 60px; } }
+/**********************************************************************************
+Lite CSS customization file. For more options, use our ADVANCED customization file 
+***********************************************************************************/
+/***** Background Colors *****/
+body { background-color: #DDD; }
+
+/* Full page background */
+#header { background-color: #999999; }
+
+/* Background color for Header */
+#navigation { background-color: #666666; }
+
+/* Navigation Menu bar background */
+#navigation ul li a:hover { background-color: #333333; }
+
+/* Navigation Menu bar background on hover  */
+#container-contentbg, #container-footer { background-color: #FFF; }
+
+/* Background color for content middle section */
+input.smalltext, textarea.largetext, select, input[type=file] { background-color: #CCCCCC; }
+
+/* Form field background */
+table.dates tr th { background-color: #999999; }
+
+/* Background color for date table headers - top row */
+table.dates tr td.first { background-color: #333333; }
+
+/* Background color for leftmost row header - bottom row */
+table.dates tr td { background-color: #666666; }
+
+/* Background color for regular date table cells */
+.gallery { background-color: #CCCCCC; }
+
+/* Gallery background */
+#gallery-header a:hover { background-color: #666666; }
+
+/* View Submissions/Search link background color on hover */
+#gallery-header a { background-color: #333333; }
+
+/* View Submissions/Search link background color */
+/***** Font Colors *****/
+body { color: #999999; }
+
+/* Default font color */
+a, a:link, a:active, a:visited { color: #00009f; }
+
+/* Link color */
+a:hover { color: #00003c; }
+
+/* Link hover color */
+h1.pagetitle, #gallery-header h1 { color: #000000; }
+
+/* Large heading color/styles */
+#header h1 { color: #FFFFFF; }
+
+/* Color for main contest title */
+#navigation ul li a { color: #FFFFFF; }
+
+/* Navigation Menu link color/styles */
+#navigation ul li a:hover { color: #FFFFFF; }
+
+/* Navigation Menu link hover color/styles  */
+input.smalltext, textarea.largetext, select, input[type=file] { color: #FFFFFF; }
+
+/* Font color for form fields  */
+table.dates tr th, table.dates tr td.first, table.dates tr td { color: #FFFFFF; }
+
+/* Font color for date table */
+#gallery-header a { color: #FFFFFF; }
+
+/* View Submissions/Search font color link */
+#gallery-header a:hover { color: #FFFFFF; }
+
+/* View Submissions/Search link font color hover */
+/***** Button Colors *****/
+.di-uix-button, a.di-uix-button, #detailView .container-vote a.vote, body input[type="submit"], a.gallery-nav-back, a.gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm { color: #FFFFFF; }
+
+/* Button Text Color */
+.di-uix-button, #detailView .container-vote a.vote, #container-content input.ui-button, body input[type="submit"], #container-content input.ui-button, .gallery-nav-back, .gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], #container-submit form input[type="submit"], #container-submit form input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm { background-color: #666666; }
+
+/* Buttons background color - Normal State */
+.di-uix-button:hover, #detailView .container-vote a.vote:hover, #container-content input.ui-button:hover, body input[type="submit"]:hover, #container-submit input[type="button"]:hover, #container-content input.ui-button:hover, .gallery-nav-back:hover, .gallery-nav-more:hover, #detailView .container-vote a.vote:hover, #container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover { background-color: #3a8cb2; }
+
+/* Buttons background color - Hover State */
+.di-uix-button.disabled, .di-uix-button:hover.disabled, .gallery-nav-back.disabled, .gallery-nav-back:hover.disabled, .gallery-nav-more.disabled, .gallery-nav-more:hover.disabled { background-color: #d9dada; }
+
+/* Buttons background color - Disabled State */
+/***** Border Colors *****/
+#container-content { border-color: #EEEEEE; }
+
+/* Border seperating main content from footer */
+table.dates tr th, table.dates tr td { border-color: #CCCCCC; }
+
+/* Border/spacing for date table */
+.di-uix-button, #detailView .container-vote a.vote, #container-content input.ui-button, body input[type="submit"], #container-content input.ui-button, .gallery-nav-back, .gallery-nav-more, #detailView .container-vote a.vote, #container-registration form input[type="submit"], #container-signin form input[type="submit"], #container-submit input[type="button"], #container-submit form input[type="submit"], #container-submit form input[type="button"], a.iossubmit, #container-signin input[type="button"], button.displayRegistrationForm { border-color: #000000; }
+
+/* Buttons border color - Normal State */
+.di-uix-button:hover, #detailView .container-vote a.vote:hover, #container-content input.ui-button:hover, body input[type="submit"]:hover, #container-submit input[type="button"]:hover, #container-content input.ui-button:hover, .gallery-nav-back:hover, .gallery-nav-more:hover, #detailView .container-vote a.vote:hover, #container-registration form input[type=submit]:hover, #container-signin form input[type=submit]:hover, #container-submit form input[type=submit]:hover, a.iossubmit:hover, #container-signin input[type="button"]:hover, button.displayRegistrationForm:hover { border-color: #000000; }
+
+/* Buttons border color - Hover State */

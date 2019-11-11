@@ -1,0 +1,180 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+
+
+// -------------------------------------
+//   Buttons
+// -------------------------------------
+
+.registration-widget-overlay {
+    &-button {
+        padding: 10px 20px;
+
+        font-size: 12px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-button-group {
+        margin-top: 20px;
+
+        .registration-widget-overlay-label {
+            display: block;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .registration-widget-overlay-button {
+            width: 100px;
+            margin: 0 0 0 -5px;
+            padding: 10px;
+
+            border: none;
+
+            background: #fff;
+            color: #666;
+            font-weight: bold;
+
+            &:hover {
+                color: $success-color;
+            }
+
+            &-selected {
+                background: $success-color;
+                color: #fff;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &:first-of-type {
+                margin: 0;
+            }
+        }
+    }
+
+    &-button-submit {
+        background: $primary-color;
+        border: 1px solid $primary-color;
+        color: $primary-color-light;
+
+        &:hover {
+            background: $primary-color-light;
+            color: $primary-color;
+        }
+    }
+
+    &-button-social {
+        height: 40px;
+        width: 150px;
+
+        margin-top: 20px;
+        border: none;
+        box-sizing: border-box;
+
+        color: #fff;
+
+        @media (max-width: 530px) {
+            display: block;
+            width: 230px;
+            height: 50px;
+            margin: 20px auto 0;
+        }
+    }
+
+    &-button-facebook {
+        background: #3C5A95;
+
+        &:hover {
+            background: darken(#3C5A95, 10%);
+        }
+    }
+
+    &-button-google {
+        background: #DC4C3F;
+
+        &:hover {
+            background: darken(#DC4C3F, 10%);
+        }
+    }
+
+    &-button-facebook-inverse {
+        margin: 15px 0 0;
+
+        background: transparent;
+        border: 1px solid #3C5A95;
+        color: #3C5A95;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid darken(#3C5A95, 10%);
+            color: darken(#3C5A95, 10%);
+        }
+
+        &-connected {
+            border: none;
+            background: #3C5A95;
+            color: #fff;
+
+            &:hover {
+                background: darken(#3C5A95, 10%);
+                border: none;
+                color: #fff;
+            }
+        }
+    }
+
+    &-button-google-inverse {
+        margin: 15px 0 0;
+
+        background: transparent;
+        border: 1px solid #DC4C3F;
+        color: #DC4C3F;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid darken(#DC4C3F, 10%);
+            color: darken(#DC4C3F, 10%);
+        }
+
+        &-connected {
+            border: none;
+            background: #DC4C3F;
+            color: #fff;
+
+            &:hover {
+                background: darken(#DC4C3F, 10%);
+                border: none;
+                color: #fff;
+            }
+        }
+    }
+
+    &-button-fwd {
+        float: right;
+
+        &::after {
+            font-family: FontAwesome;
+            content: '  \f054';
+        }
+    }
+
+    &-button-back {
+        float: left;
+
+        &::before {
+            font-family: FontAwesome;
+            content: '\f053  ';
+        }
+    }
+
+}

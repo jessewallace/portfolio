@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campaign Widget Admin</title>
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/campaign.css">
+    <link rel="stylesheet" href="http://tdascreative.com/playground/james/campaign/list.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="app-container">
+    <div class="admin-container">
+        <div class="container u-display-flex u-display-flex--vcentered container-sectioned ">
+            <h1>Campaign</h1>
+            
+<div class="u-flex-right">
+    <button class="button-positive" onclick="location.href='./create.html'"><i class="fa fa-plus"></i> Create New Campaign</button>
+</div>
+
+        </div>
+
+        
+<div class="toolbar nopadding">
+
+    <!-- Search Field -->
+    <div class="insert-into pull-left">
+        <i class="fa fa-search"></i>
+        <input class="search" type="text" placeholder="Search for survey" />
+    </div>
+    <!-- End Search Field -->
+
+    <!-- Filter Toggle -->
+    <div class="instance-list-filter pull-right u-display-flex u-display-flex--centered">
+
+        <!-- Filter Toggle Switch -->
+        <div class="toggle">
+            <input id="toggle-surveyFilter" class="toggle-checkbox" type="checkbox" name="toggleswitch" unchecked />
+            <label class="toggle-container" for="toggle-surveyFilter">
+                <span class="toggle-label" data-toggle-on="On" data-toggle-off="Off"></span>
+                <span class="toggle-handle"></span>
+            </label>
+        </div>
+        <!-- End Filter Toggle Switch -->
+
+        <a href="#" class="filter-instance filter-survey ">
+            Filter Options
+            <i class="fa fa-caret-down"></i>
+        </a>
+
+        <!-- Filter Section -->
+        <form class="filters">
+            <div class="filters-heading">
+                <!-- Filter Toggle | THIS STILL NEEDS DESIGN-->
+                <h3 class="filters-header nomargin">Filter Options</h3>
+            </div>
+            <h4 class="filter-heading">Campaign Types</h4>
+            <div class="input-container checkbox">
+                <label><input type="checkbox">Syndicated Campaign</label>
+            </div>
+            <label>Campaign Status</label>
+            <div class="instance-status-filter survey-status-filter  input-container radio radio-inline">
+                <label><input name="campaign-status-filter" type="radio">All</label>
+                <label><input name="campaign-status-filter" type="radio">Active</label>
+                <label><input name="campaign-status-filter" type="radio">Inactive</label>
+            </div>
+
+            <div class="button-container">
+                <input class="button" type="reset" value="Reset Filters">
+                <button type="button" class="button-highlight">Filter</button>
+            </div>
+        </form>
+        <!-- End Filter Section -->
+    </div>
+    <!-- End Filter Toggle -->
+</div>
+
+<div class="table instance-table instance-table--campaign full-width">
+    <div class="table-header">
+        <span class="table-header-item instance-priority th is-sortable">Priority <i class="fa fa-sort"></i></span>
+        <span class="table-header-item instance-title th is-sortable">Campaign Title <i class="fa fa-sort"></i></span>
+        <span class="table-header-item instance-start th is-sortable">Start Date <i class="fa fa-sort"></i></span>
+        <span class="table-header-item instance-end th is-sortable">End Date <i class="fa fa-sort"></i></span>
+    </div>
+    <div id="sortable" class="list">
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">1</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 1</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">2</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 2</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">3</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 3</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">4</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 4</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">5</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 5</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">6</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 6</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">7</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 7</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">8</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 8</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">9</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 9</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-row instance list-item ui-state-default is-syndicated is-stealth">
+
+            <div class="table-row-item instance-priority">
+                <i class="instance-priority-icon fa fa-bars"></i>
+                <span class="list-order-number">10</span>
+            </div>
+
+            <div class="table-row-item instance-title ">
+                <b>Campaign Title 10</b>
+                <span class="instance-id survey-id">BVMXXI</span>
+            </div>
+
+            <div class="table-row-item instance-start">
+                <b class="instance-date">05/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-end">
+                <b class="instance-date">06/08/2015</b>
+                <span class="instance-time">13:13 PM EDT</span>
+            </div>
+
+            <div class="table-row-item instance-report survey-report">
+                <i class="instance-report-icon fa fa-arrow-circle-down"></i>
+            </div>
+
+
+            <div class="instance-details view-instance-report full-width">
+                <div class="instance-details-report report">
+                    <div class="data-report u-display-flex">
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Total Completions</span>
+                            <div class="data-breakdown-count count" data-completions="554">0</div>
+                            <span class="data-breakdown-partial-count animated fadeIn"><b>24</b> Partial Completions</span>
+                            <i class="data-breakdown-icon fa fa-users"></i>
+                        </div>
+
+                        <div class="data-breakdown">
+                            <span class="data-breakdown-label">Gender Breakdown</span>
+                            <div id="gender-pie-chart" style="width: 350px;"></div>
+                            <i class="data-breakdown-icon fa fa-venus-mars"></i>
+                        </div>
+                    </div>
+                    <button class="button-highlight pull-right">Download Full Report <i class="fa fa-download"></i></button>
+                </div>
+
+                <div class="instance-details-options option-buttons">
+                    <a href="#" class="instance-details-option edit-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-pencil-square-o"></i>
+                        <span class="instance-details-option-label">Edit Campaign</span>
+                    </a>
+                    <a href="#" class="instance-details-option copy-embed-code animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-clipboard"></i>
+                        <span class="instance-details-option-label">Copy Embed Code</span>
+                    </a>
+                    <a href="#" class="instance-details-option delete-instance animated fadeInUp">
+                        <i class="instance-details-option-icon fa fa-trash-o"></i>
+                        <span class="instance-details-option-label">Delete Campaign</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="jquery.minicolors.min.js"></script>
+<script src="dropzone.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

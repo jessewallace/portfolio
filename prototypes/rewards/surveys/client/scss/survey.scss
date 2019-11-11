@@ -1,0 +1,2798 @@
+// Imports
+@import "utilities/animationorder";
+@import "utilities/mixins";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  margin:0;
+  padding:0;
+  font-family:arial;
+}
+
+.td-survey-inline-block {
+  display: inline-block;
+}
+
+
+/* ==========================================================================
+   survey Themes
+   ========================================================================== */
+
+   /* default to gray theme if no class is uesed */
+
+   $td-survey-primary-color: #898787; /*gray*/
+   $td-survey-secondary-color: #E8674A; /*brighter gray*/
+   $td-survey-tertiary-color: #E8674A; /*gray blue*/
+   $td-survey-text-on-color: #ffffff; /*white*/
+
+   $td-survey-yes-green-dark: #13883C;
+   $td-survey-yes-green-light: #19D05A;
+
+   $td-survey-results-primary-color:  #373737; /*gray*/
+   $td-survey-results-orange: #E55433; /*red*/
+
+   .texture--scallop { background-image: url("../img/pattern-1.png") !important; }
+.texture--burst { background-image: url("../img/pattern-2.png") !important; }
+.texture--retro { background-image: url("../img/pattern-3.png") !important; }
+.texture--edgy { background-image: url("../img/pattern-4.png") !important; }
+.texture--modern { background-image: url("../img/pattern-5.png") !important; }
+.texture--rough { background-image: url("../img/pattern-6.png") !important; }
+
+   .td-survey-header {
+     .td-survey-header-ribbon {
+      background-color: $td-survey-secondary-color;
+      color: darken($td-survey-secondary-color, 30% );
+    }
+  }
+
+  $themes: (
+    blue: (primary: #03516e, secondary: #068eff, tertiary: #dac42a, text: #ffffff, results: #166AA6, orange: #DAC42A),
+    green: (primary: #086135, secondary: #0fcd44, tertiary: #dac42a, text: #ffffff, results: #00B547, orange: #DAC42A),
+    orange: (primary: #CE541B, secondary: #fff206, tertiary: #eaaf16, text: #ffffff, results: #F47537, orange: #FFC42A),
+    purple: (primary: #8c1264, secondary: #abdf0d, tertiary: #029AFF, text: #ffffff, results: #17a640, orange: #fa9607),
+    red: (primary: #8b120b, secondary: #ee2e24, tertiary: #dac42a, text: #ffffff, results: #A31A1A, orange: #FFCB00),
+    gray: (primary: #373737, secondary:#e8674a, tertiary: #898787, text: #ffffff, results: #A31A1A, orange: #FFCB00)
+    );
+
+
+  @each $theme, $color in $themes {
+
+    .td-survey--#{$theme} {
+
+    /* ==========================================================================
+   Survey Start Screen
+   ========================================================================== */
+
+
+   .td-survey-question-area-images {
+
+      .td-survey-question {
+        background-color: darken(map_get($color, primary), 12%);
+
+
+        .td-survey-points {
+          background-color: none;
+          color:lighten(map_get($color, primary), 100%);
+        }
+
+        .td-survey-title {
+          color: lighten(map_get($color, primary), 90%);
+        }
+
+        .td-survey-questions {
+          color: lighten(map_get($color, primary), 90%);
+          span {
+            /*background-color: lighten(map_get($color, primary), 90%);*/
+
+            background-color: darken(map_get($color, orange), 4%);
+            color:map_get($color, primary);
+          }
+
+        }
+      }
+    }
+
+
+
+
+
+    .td-survey-question-area-images {
+
+      .td-survey-question:hover {
+        cursor:pointer;
+        background-color: darken(map_get($color, primary), 60%);
+
+        img {
+
+
+transform: scale(1.4);
+
+        }
+
+        .td-survey-points {
+          background-color: saturate(map_get($color, orange), 25%);
+          color: map_get($color, primary);
+          border:none;
+
+          .fa {
+            color: map_get($color, primary);
+          }
+        }
+
+        .td-survey-questions {
+          span {
+            background-color: saturate(map_get($color, orange), 25%);
+          }
+
+        }
+      }
+    }
+
+
+   .td-survey-start-screen {
+    background-color: map_get($color, primary);
+
+    .td-survey-select-text {
+      color:lighten( map_get($color, tertiary), 0% );
+    }
+
+    .td-survey-select-text:before {
+      border-top:1px solid lighten( map_get($color, tertiary), 10% );
+    }
+
+    .td-survey-select-text:after {
+      border-top:1px solid lighten( map_get($color, tertiary), 10% );
+    }
+
+
+
+
+  }
+
+  .td-survey-previous-results-container {
+
+      .td-survey-point-area {
+        .td-survey-points {
+          background-color: saturate(map_get($color, orange), 25%);
+          color:map_get($color, primary);
+        }
+
+      .fa-check-circle {
+        color:lighten( map_get($color, primary), 70% );
+      }
+
+    .td-survey-top-text {
+      color:lighten( map_get($color, primary), 95% );
+    }
+
+    .td-survey-text {
+      color:lighten( map_get($color, primary), 40% );
+    }
+
+      }
+
+      .td-survey-select-text {
+      color: map_get($color, tertiary);
+    }
+
+    .td-survey-select-text:before {
+      border-top:1px solid lighten( map_get($color, tertiary), 10% );
+    }
+
+    .td-survey-select-text:after {
+      border-top:1px solid lighten( map_get($color, tertiary), 10% );
+    }
+
+
+    }
+
+
+
+
+  .td-survey-top-text {
+      border-bottom: 1px solid saturate(map_get($color, secondary), 25%);
+      color:saturate(map_get($color, secondary), 25%);
+    }
+
+
+    .td-survey-timeline {
+      background-color:darken(map_get($color, secondary), 34%);
+
+
+        .td-survey-timeline-questions {
+background-color:saturate(map_get($color, secondary), 25%);
+        }
+
+      .td-survey-timeline-numbers {
+        background-color: saturate(map_get($color, secondary), 25%);
+        color:darken(map_get($color, secondary), 40%);
+      }
+
+}
+
+
+
+/* ==========================================================================
+   Question Poll Header
+   ========================================================================== */
+
+   .td-survey-header {
+     .td-survey-header-ribbon {
+      background-color: map_get($color, secondary);
+      color: darken(map_get($color, secondary), 30% );
+    }
+  }
+
+  .td-survey-top-header {
+
+    background-color: map_get($color, primary);
+
+    .td-survey-share {
+      border:2px solid map_get($color, secondary);
+      color: map_get($color, secondary);
+    }
+
+    .td-survey-share:hover {
+      background-color:map_get($color, secondary);
+      color: darken( map_get($color, secondary), 50%);
+    }
+
+  }
+
+
+  .td-survey-question-area {
+
+
+    .td-survey-text {
+      color: map_get($color, text);
+    }
+
+  }
+
+
+/* ==========================================================================
+   Image Poll Header
+   ========================================================================== */
+
+   .td-survey-top-image-header {
+    background-color: map_get($color, primary);
+
+    .td-survey-text {
+      color: map_get($color, text);
+    }
+
+
+
+    .td-survey-share {
+      border:2px solid map_get($color, secondary);
+      color: map_get($color, secondary);
+    }
+
+    .td-survey-share:hover {
+      background-color:map_get($color, secondary);
+      color: darken( map_get($color, secondary), 50%);
+    }
+
+  }
+
+
+  .td-survey-complete-stamp {
+    border:5px solid map_get($color, orange);
+    color: map_get($color, orange);
+
+    .icon-thumbs-up-1 {
+      color: map_get($color, orange);
+    }
+  }
+
+
+
+/* ==========================================================================
+   Question Poll Results Area
+   ========================================================================== */
+
+
+   .td-survey-results-area {
+
+    .td-survey-header-text {
+      color:map_get($color, primary);
+    }
+
+    .td-survey-total-votes {
+      color: lighten( map_get($color, tertiary), 30%);
+
+      .icon-group-1 {
+        color:map_get($color, tertiary);
+      }
+
+    }
+  }
+
+
+  .td-survey-results  {
+
+
+    .td-survey-result-area {
+      border:2px solid lighten( map_get($color, secondary), 30% );
+
+      .td-survey-percentage {
+        color:darken( map_get($color, secondary), 50% );
+      }
+
+      .td-survey-question {
+        color:darken( map_get($color, results), 20% );
+      }
+
+      .td-survey-results-percentage-bar {
+        background-color: lighten( map_get($color, secondary), 30% );
+
+        .td-survey-results-percentage {
+          background-color: map_get($color, results);
+        }
+
+      }
+
+    }
+
+  }
+
+
+  .td-survey-results  {
+
+    .td-survey-user-selection:before {
+      color:lighten( map_get($color, orange), 5% );
+    }
+
+    .td-survey-results-winner:before {
+      color:lighten( map_get($color, orange), 5% );
+    }
+
+    .td-survey-results-winner {
+      border:2px solid map_get($color, tertiary);
+
+      .td-survey-percentage {
+        color:darken( map_get($color, tertiary), 30% );
+      }
+
+      .td-survey-question {
+        color:map_get($color, tertiary);
+      }
+
+      .td-survey-results-percentage-bar {
+        background-color: lighten( map_get($color, tertiary), 30% );
+
+        .td-survey-results-percentage {
+          background-color: map_get($color, tertiary);
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+  .td-survey-image-results {
+
+    .td-survey-image-results-winner {
+
+      .td-survey-results-image-text {
+        color: map_get($color, tertiary);
+      }
+
+      .td-survey-results-percentage-bar {
+        background-color: lighten( map_get($color, tertiary), 30% );
+      }
+
+      .td-survey-results-percentage {
+        background-color: map_get($color, tertiary);
+      }
+
+      .td-survey-results-percentage-text {
+        color:darken( map_get($color, tertiary), 20% );
+      }
+      .td-survey-results-total-votes {
+        color:darken( map_get($color, tertiary), 20% );
+      }
+
+      .td-survey-results-image:before {
+        color:lighten( map_get($color, orange), 5%);
+      }
+
+    }
+
+    .td-survey-image-results-user-selection {
+      .td-survey-results-image:before {
+        color:lighten( map_get($color, orange), 5%);
+      }
+
+    }
+
+  }
+
+
+/* ==========================================================================
+   Image Poll Results Area
+   ========================================================================== */
+
+   .td-survey-image-results {
+
+    .td-survey-results-image-text {
+      color:darken( map_get($color, results), 20% );
+    }
+
+    .td-survey-results-percentage-bar {
+      background-color: lighten( map_get($color, secondary), 30% );
+    }
+
+    .td-survey-results-percentage {
+      background-color: map_get($color, results);
+
+    }
+
+    .td-survey-results-percentage-text {
+      color:darken( map_get($color, results), 20% );
+    }
+    .td-survey-results-total-votes {
+      color:darken( map_get($color, results), 20% );
+    }
+  }
+
+
+/* ==========================================================================
+   Question Poll Questions
+   ========================================================================== */
+
+
+   .td-survey-questions {
+
+    .td-survey-header-text {
+      color:map_get($color, primary);
+      text-align: center;
+    }
+
+    .td-survey-question {
+      color:desaturate( map_get($color, primary), 100% );
+    }
+
+    .td-survey-question:hover {/*
+      background-color: lighten( map_get($color, orange), 20% );
+      color:darken( map_get($color, results), 20% );*/
+    }
+
+
+    .td-survey-questions-selected, .td-survey-questions-selected:hover {
+      /*background-color: lighten( map_get($color, orange), 40% );
+      color:darken( map_get($color, orange), 8% );*/
+      color:$td-survey-yes-green-dark;
+    }
+
+
+  }
+
+
+
+/* ==========================================================================
+   Image Poll Questions
+   ========================================================================== */
+
+
+   .td-survey-image-questions {
+
+    .td-survey-header-text {
+      color:map_get($color, primary);
+    }
+
+    .td-survey-question {
+      background-color: map_get($color, primary);
+
+      .td-survey-image-text {
+        color:map_get($color, text);
+      }
+    }
+
+
+    .td-survey-questions-selected, .td-survey-questions-selected:hover {
+      border:10px solid map_get($color, orange);
+      background-color: lighten( map_get($color, orange), 50% );
+      color:darken( map_get($color, orange), 8% );
+    }
+
+
+
+  }
+
+
+
+
+
+/* ==========================================================================
+   Submit Button Area
+   ========================================================================== */
+
+
+   .td-submit-area {
+    background-color: #D8D8D8; /*lighten(map_get($color, primary), 28%)*/
+
+    .td-survey-submit-answer-button {
+      background-color: map_get($color, primary);
+    }
+
+    .td-survey-submit-answer-button:before {
+      color:map_get($color, text);
+    }
+
+    .td-survey-submit-answer-button:after {
+      color:map_get($color, secondary);
+    }
+  }
+
+
+
+/* ==========================================================================
+   Next Button Area
+   ========================================================================== */
+
+   .td-survey-next-survey-area {
+    background-color: lighten(map_get($color, results), 38%);
+
+    .td-next-survey-button {
+      background-color: map_get($color, results);
+    }
+
+    .td-next-survey-button:before {
+      color:map_get($color, text);
+    }
+
+    .td-next-survey-button:after {
+      color:map_get($color, text);
+    }
+
+    .td-survey-next-numbers {
+      background-color: darken(map_get($color, primary), 8%);
+      color:lighten(map_get($color, primary), 11%);
+    }
+
+  }
+
+
+
+/* ==========================================================================
+   Previous survey Container
+   ========================================================================== */
+
+   .td-survey-previous-results-container {
+
+    .td-survey-submit-answer-button {
+      @include td-survey-button;
+
+      background-color: $td-survey-tertiary-color;
+      -webkit-animation-delay: .20s;
+      animation-delay: .20s;
+    }
+
+    .td-survey-submit-answer-button:before {
+      margin:0 0 0 -18px;
+
+      content:"TAKE A RANDOM SURVEY";
+      @include td-survey-font;
+      font-weight: 700;
+      color:$td-survey-text-on-color;
+      font-size:13px;
+    }
+
+    .td-survey-submit-answer-button:after {
+      position: absolute;
+
+      padding: 0 0 0 9px;
+      overflow: hidden;
+      margin: -3px 0px 0 0px;
+
+      content: "\f021";
+      font-family: "fontawesome";
+      font-size: 21px;
+      color:$td-survey-text-on-color;
+    }
+
+    .td-survey-submit-answer-button {
+      background-color: map_get($color, primary);
+    }
+
+    .td-survey-submit-answer-button:before {
+      color:map_get($color, text);
+    }
+
+    .td-survey-submit-answer-button:after {
+      color:map_get($color, secondary);
+    }
+
+    .td-survey-previous-top-header {
+      background-color: map_get($color, primary);
+      color:map_get($color, text);
+
+      .td-survey-header-text {
+        color:map_get($color, text);
+      }
+
+    }
+
+    .td-survey-previous-survey-bg {
+      background-color: darken(map_get($color, primary), 14%);
+    }
+
+  }
+
+  .td-survey-previous-survey {
+
+    .td-survey-header-text {
+      color:map_get($color, text);
+    }
+
+  }
+
+
+  .td-survey-previous-block {
+    background-color: map_get($color, primary);
+
+    .td-survey-previous-text {
+      color:map_get($color, text);
+    }
+
+  }
+
+  .td-survey-previous-votes {
+    border-left: 1px solid map_get($color, text);
+    color:map_get($color, text);
+  }
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+
+   @media only screen and (max-width: 420px) {
+
+
+    .td-survey-image-questions {
+
+      .td-survey-header-text {
+        color:map_get($color, primary);
+      }
+
+    }
+
+  }
+
+  @media only screen and (max-width: 320px) {
+
+    .td-submit-area, .td-survey-next-survey-area {
+
+      .td-survey-share-icon:before {
+        color: map_get($color, tertiary);
+      }
+
+    }
+
+    .td-survey-top-header {
+
+      .td-survey-header {
+
+        .td-survey-share-icon:before {
+          color: map_get($color, secondary);
+        }
+
+      }
+
+    }
+
+
+
+    .td-survey-share-icon:before {
+      color: map_get($color, secondary);
+    }
+
+
+
+  }
+
+
+
+
+}
+}
+
+/* ==========================================================================
+   END survey Themes
+   ========================================================================== */
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   THEME SWITCHER
+   ========================================================================== */
+
+
+.td-contest-theme-switcher {
+  display:flex;
+  background-color: white;
+  padding:20px 0px;
+  text-align: center;
+  border-bottom:1px solid #ccc;
+
+  ul.theme-color, ul.theme-texture {
+    width:50%;
+    margin:0px;
+    padding:0px;
+    li {
+      list-style: none;
+      display: inline-block;
+      margin:0px 10px 0 0;
+      padding:0px;
+      width:60px;
+      height:30px;
+      background-color: #BBB;
+      border-radius:15px;
+          position: relative;
+    text-align: center;
+    }
+
+    li:hover {
+      cursor:pointer;
+    }
+
+
+    .selected:after {
+      content:'\f00c';
+      font-size: 20px;
+      font-weight: bold;
+      color:white;
+      font-family: 'fontawesome';
+      text-align:center;
+      padding:0px;
+      margin:0px;
+          position: absolute;
+    right: 34%;
+    top: 9%;
+    }
+
+    .blue {
+      background-image:linear-gradient(to right, #2b9bc5 50%, #75df35 50%);
+    }
+
+    .green {
+      background-image:linear-gradient(to right, #0fcd44 50%, #dac42a 50%);
+    }
+
+    .orange {
+      background-image:linear-gradient(to right, #f47537 50%, #fff206 50%);
+    }
+
+    .purple {
+      background-image:linear-gradient(to right, #8c1264 50%, #abdf0d 50%);
+    }
+    .red {
+      background-image:linear-gradient(to right, #ee2e24 50%, #dac42a 50%);
+    }
+    .gray {
+      background-image:linear-gradient(to right, #373737 50%, #e8674a 50%);
+    }
+  }
+}
+
+
+
+
+
+
+
+#start-screen {
+  }
+
+  #radio-screen, #yes-no-screen, #results-screen, #text-single-screen, #text-multi-screen, #profile-screen {
+    display:none;
+
+  }
+
+
+
+
+
+/* ==========================================================================
+   Survey Question and YES NO screens
+   ========================================================================== */
+
+   .fa-question-circle {
+      position:absolute;
+      right:18px;
+      top:15px;
+      color:white;
+      font-size:20px !important;
+      z-index: 10000;
+    }
+
+    .fa-question-circle:hover {
+      opacity:.5;
+      cursor:pointer;
+    }
+
+
+   .td-survey-start-screen {
+    position: relative;
+    padding: 0 0 40px 0;
+    margin: 15px;
+    overflow:hidden;
+    max-width:738px;
+    height:auto;
+    background-image: url('../img/SurveyBG.png');
+    background-size:100%;
+
+
+
+
+    .td-survey-logo {
+      margin:11% auto 0 auto;
+      img {
+        display:block;
+        margin:auto;
+        max-width:100%;
+      }
+    }
+
+
+  }
+
+
+
+  .td-survey-select-text {
+      text-align: center;
+      padding:30px 0 0 0;
+      font-weight: bold;
+    }
+
+    .td-survey-select-text:before {
+      content:"";
+      padding:5px 0 0 0;
+      margin:0 10px 0 0;
+      width:15%;
+      display:inline-block;
+    }
+
+    .td-survey-select-text:after {
+      content:"";
+      width:15%;
+      display:inline-block;
+      padding:5px 0 0 0;
+      margin:0 0 0 10px;
+    }
+
+
+.td-survey-question-scroll {
+/*  height:600px;
+  overflow-y: auto;*/
+  margin:20px 0 0 0;
+}
+
+
+      .td-survey-question-area-images {
+
+      .td-survey-question {
+        height: 160px;
+        padding:14px 15px;
+        overflow: hidden;
+        margin:0 0 30px 0;
+
+        img {
+          z-index: 0;
+          min-width: 120%;
+          margin: -10% -10%;
+          opacity: .28;
+          max-width:100%;
+
+          transition: all .2s ease-in-out;
+
+        }
+
+        .td-survey-points {
+          border-radius:15px;
+          padding:4px 15px;
+          font-size:13px;
+          text-align: center;
+          clear:both;
+          z-index:10;
+          border:1px solid #ffffff;
+
+          position: absolute;
+          top: 9px;
+          right: 27px;
+
+          .fa {
+            padding:0 6px 0 0;
+          }
+        }
+
+        .td-survey-title {
+          @include td-survey-font;
+          text-align: center;
+          padding:20px 0px 0px 0px;
+          font-weight: 700;
+          @include ellipsis;
+          -webkit-line-clamp: 2;
+
+          width: 76%;
+          position: absolute;
+          top: 38px;
+          left: 10%;
+
+        }
+
+        .td-survey-questions {
+          position: absolute;
+          bottom:23%;
+          left:0px;
+          right:0px;
+          text-align: center;
+          font-size:15px;
+          span {
+            font-weight: bold;
+            border-radius: 20px;
+            padding:3px 7px;
+            margin:0 6px 0 0;
+            font-size:16px;
+          }
+
+        }
+      }
+    }
+
+  .td-survey-container {
+    position: relative;
+    padding: 0;
+    margin: 15px;
+    overflow:hidden;
+    max-width:738px;
+
+    cursor: auto;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background: #fff;
+    color: #222222;
+    line-height: 1.5;
+    border:1px solid #cccccc;
+
+
+.fa-question-circle {
+      position:absolute;
+      right:18px;
+      top:15px;
+      color:white;
+      font-size:20px;
+    }
+
+    .fa-question-circle:hover {
+      opacity:.5;
+      cursor:pointer;
+    }
+
+    .td-survey-inline-bg-img-question-survey {
+
+      img {
+            min-width: 100%;
+    position: absolute;
+    opacity: .15;
+    min-height: 140%;
+      }
+    }
+
+
+ /*   .td-survey-inline-bg-img-image-survey {
+
+      img {
+        width:120%;
+        position:absolute;
+        margin:0 0 0 -40px;
+
+        opacity:.25;
+      }
+    }*/
+
+  }
+
+/* ==========================================================================
+   Question Poll Header
+   ========================================================================== */
+
+   .td-survey-top-header {
+
+    .td-survey-share {
+      border:2px solid $td-survey-secondary-color;
+      border-radius:1000px;
+      padding:4px 14px;
+      margin: -8px 0 0 0;
+
+      color: $td-survey-secondary-color;
+      font-size:15px;
+      font-weight:bold;
+    }
+
+    .td-survey-share:hover {
+      background-color:$td-survey-secondary-color;
+      color: darken( $td-survey-secondary-color, 50%);
+      cursor: pointer;
+    }
+
+    .td-survey-top-bg-image {
+      margin: 0 0 -214px 0;
+      min-height: 223px;
+      background-image:url("../../img/underwood.jpg");
+
+      background-repeat: no-repeat;
+      background-position: 45% 20%;
+      background-size: cover;
+      @include td-survey-desaturate;
+      opacity:.2;
+    }
+
+  }
+
+
+  .td-survey-timeline {
+    width:100%;
+    height:7px;
+
+        .td-survey-timeline-questions {
+    height:7px;
+    float:left;
+
+       -webkit-animation: loadbar 1.15s;
+        }
+
+
+
+      .td-survey-timeline-numbers {
+        border-radius: 13px;
+        padding:3px 12px;
+        font-size:13px;
+        width:70px;
+        text-align: center;
+        float:left;
+        margin:-10px 0 0 -15px;
+        z-index:100;
+        position: relative;
+        font-weight: bold;
+      }
+
+}
+
+  .td-survey-top-header {
+    overflow:hidden;
+
+    padding:0 0 40px 0;
+
+    background-color: $td-survey-primary-color;
+
+    .td-survey-header {
+      position: absolute;
+      z-index: 10;
+
+      padding-top:20px;
+      width:100%;
+
+      .td-survey-header-ribbon {
+        @include td-survey-top-ribbon;
+        margin: -31px 0 0 -52px;
+        padding:38px 0px 5px 12px;
+      }
+
+    }
+
+  }
+
+  .td-survey-question-area {
+    z-index: 10;
+    left: 0;
+    right: 0;
+
+    margin:32px 0 0 0 !important;
+
+    .td-survey-top-text {
+      font-family: "Arvo";
+      text-align: center;
+      padding: 0 0 10px 0;
+      margin: 0 0 18px 0;
+      font-size:19px;
+      font-weight: 700;
+    }
+
+    .td-survey-image {
+      /*max-width:130px;
+      height:120px;*/
+
+          max-width: 100%;
+    height: 136px;
+
+      overflow: hidden;
+      margin:0px -12px 0 0;
+
+      img {
+        height:110%;
+        width:auto;
+      }
+
+    }
+
+
+    .td-survey-text {
+      color: $td-survey-text-on-color;
+      font-size: 16px;
+      font-weight:normal;/*
+      @include ellipsis;
+      -webkit-line-clamp: 5;*/
+      margin:10px 0;
+    }
+
+  }
+
+
+/* ==========================================================================
+   Image Poll Header
+   ========================================================================== */
+
+   .td-survey-top-image-header {
+    overflow:hidden;
+    padding-bottom:30px;
+
+    background-color: $td-survey-primary-color;
+    /*background-image:url("../../img/t-pattern3-BG-BW.png");*/
+
+    .td-survey-header-ribbon {
+      margin:-31px 0 0 -67px;
+    }
+
+    .td-survey-text {
+      font-family: "Arvo";
+      color: $td-survey-text-on-color;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    /**image poll**/
+    .td-survey-image-poll-top-bg-image {
+      height:auto;
+
+      background-repeat: repeat;
+    }
+
+    .td-survey-header {
+      z-index: 10;
+
+      padding-top:20px;
+      width:100%;
+
+    }
+
+    .td-survey-header-ribbon {
+      @include td-survey-top-ribbon;
+    }
+
+    .td-survey-share {
+      border:2px solid $td-survey-secondary-color;
+      padding:4px 14px;
+      border-radius:1000px;
+      margin: -8px 0 0 0;
+
+      color: $td-survey-secondary-color;
+      font-size:15px;
+      font-weight:bold;
+    }
+
+    .td-survey-share:hover {
+      background-color:$td-survey-secondary-color;
+      color: darken( $td-survey-secondary-color, 50%);
+      cursor: pointer;
+    }
+
+    .td-survey-top-bg-image {
+      height:225px;
+      margin:0 -20px;
+
+      background-image:url("../../img/underwood.jpg");
+      opacity:.2;
+      background-repeat: no-repeat;
+      background-position: 45% 20%;
+      background-size: cover;
+      @include td-survey-desaturate;
+    }
+
+  }
+
+
+  /** Complete Stamp **/
+
+  .td-survey-complete-stamp {
+    z-index: 100;
+
+    width:120px;
+    height:120px;
+    border-radius:1000px;
+    border:5px solid $td-survey-results-orange;
+    padding: 20px 0px 0px 0px;
+    margin:40px 0 0 0;
+    display:none;
+
+    color: $td-survey-results-orange;
+    position: absolute;
+    text-align: center;
+    @include td-survey-font;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 24px;
+
+    -webkit-animation: stampIn 500ms;
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-53deg);
+    -o-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+    animation: stampIn 500ms;
+    transform: rotate(-35deg);
+
+    .icon-thumbs-up-1 {
+      color: $td-survey-results-orange;
+      font-size: 38px;
+    }
+  }
+
+/* ==========================================================================
+   Question Poll Results Area
+   ========================================================================== */
+
+   .td-survey-results-area {
+    display:none;
+    padding: 20px 0px 0px 0px;
+
+    .td-survey-header-text {
+      padding:10px 0 18px 0;
+
+      @include td-survey-font;
+      font-weight: 700;
+      color:$td-survey-primary-color;
+      font-size: 22px;
+    }
+
+    .td-survey-total-votes {
+      display: inline-block;
+
+      color: lighten( $td-survey-tertiary-color, 30%);
+      font-weight:bold;
+      font-size:29px;
+
+      .icon-group-1 {
+        padding:0 8px 0 10px;
+        display: inline-block;
+
+        color:$td-survey-tertiary-color;
+
+        font-size:28px;
+      }
+
+      .td-survey-total-votes-text {
+        display: inline-block;
+
+        font-size: 16px;
+        line-height: 37px;
+      }
+    }
+  }
+
+
+  .td-survey-results  {
+
+
+    .td-survey-result-area {
+      border:2px solid lighten( $td-survey-secondary-color, 30% );
+      margin:0 0 10px 0;
+      padding:13px 0px;
+      overflow: hidden;
+      width:100%;
+
+
+      .td-survey-percentage {
+        padding:0 10px 0 10px;
+
+        font-size:180%;
+        @include td-survey-font;
+        font-weight: 400;
+        color:darken( $td-survey-secondary-color, 50% );
+      }
+
+      .td-survey-question {
+        padding:0 6% 0 0;
+
+        text-align: left;
+        font-size:17px;
+        color:darken( $td-survey-results-primary-color, 20% );
+
+      }
+
+      .td-survey-results-percentage-bar {
+        height:30px;
+        width:100%;
+        margin:10px 0 -13px 0;
+
+        background-color: lighten( $td-survey-secondary-color, 30% );
+
+        .td-survey-results-percentage {
+          height:30px;
+
+          background-color: $td-survey-results-primary-color;
+          @include td-survey-loadbar;
+        }
+
+      }
+
+    }
+
+  }
+
+
+  .td-survey-results  {
+
+    .td-survey-user-selection:before {
+      float: left;
+
+      content: "\e600";
+      margin: -12px -41px 0 -14px;
+      overflow: hidden;
+      height: 65px;
+
+      font-size: 49px;
+      color:lighten( $td-survey-results-orange, 5% );
+      font-family: "icomoon", serif;
+      -webkit-animation: bounceInLeft 900ms;
+      animation: bounceInLeft 900ms;
+    }
+
+    .td-survey-results-winner:before {
+      color:lighten( $td-survey-results-orange, 5% );
+    }
+
+
+    .td-survey-results-winner {
+      border:2px solid $td-survey-tertiary-color;
+      margin:0 0 10px 0;
+      padding:13px 0px;
+      overflow: hidden;
+      width:100%;
+
+      .td-survey-percentage {
+        padding:0 10px 0 10px;
+
+        font-size:180%;
+        @include td-survey-font;
+        font-weight: 700;
+        color:darken( $td-survey-tertiary-color, 30% );
+      }
+
+      .td-survey-question {
+        padding:0 6% 0 0;
+
+        text-align: left;
+        font-size:17px;
+        color:$td-survey-tertiary-color;
+        font-weight: bold;
+      }
+
+      .td-survey-results-percentage-bar {
+        height:30px;
+        width:100%;
+        margin:10px 0 -13px 0;
+
+        background-color: lighten( $td-survey-tertiary-color, 30% );
+
+        .td-survey-results-percentage {
+          height:30px;
+
+          background-color: $td-survey-tertiary-color;
+          @include td-survey-loadbar;
+        }
+
+      }
+
+    }
+
+  }
+
+  .td-survey-no-left-padding {
+    padding-left:0px !important;
+  }
+
+  .td-survey-no-right-padding {
+    padding-right:0px !important;
+  }
+
+  /** image survey results selected **/
+  .td-survey-image-results {
+
+    .td-survey-image-results-winner {
+
+      .td-survey-results-image-text {
+        color: $td-survey-tertiary-color;
+        font-weight: bold;
+      }
+
+      .td-survey-results-percentage-bar {
+        background-color: lighten( $td-survey-tertiary-color, 30% );
+      }
+
+      .td-survey-results-percentage {
+        background-color: $td-survey-tertiary-color;
+        @include td-survey-loadbar;
+      }
+
+      .td-survey-results-percentage-text {
+        color:darken( $td-survey-tertiary-color, 20% );
+        font-weight: 700;
+      }
+      .td-survey-results-total-votes {
+        color:darken( $td-survey-tertiary-color, 20% );
+      }
+
+      .td-survey-results-image:before {
+        float: left;
+
+        margin: 10% 0  0 -9px;
+        overflow: hidden;
+
+        content: "\e600";
+        font-family: "icomoon", serif;
+        font-size: 38px;
+        color:lighten( $td-survey-results-orange, 5%);
+        -webkit-animation: bounceInLeft 900ms;
+        animation: bounceInLeft 900ms;
+      }
+
+    }
+
+    .td-survey-image-results-user-selection {
+      .td-survey-results-image:before {
+        margin: 3px 0  0 -9px;
+        overflow: hidden;
+        float: left;
+
+        font-family: "icomoon", serif;
+        content: "\e600";
+        font-size: 38px;
+        color:lighten( $td-survey-results-orange, 5%);
+        -webkit-animation: bounceInLeft 900ms;
+        animation: bounceInLeft 900ms;
+      }
+
+    }
+
+  }
+
+
+/* ==========================================================================
+   Image Poll Results Area
+   ========================================================================== */
+
+   .td-survey-image-results {
+
+    .td-survey-large-12 {
+      padding-bottom: 10px;
+    }
+
+    .td-survey-results-image {
+      width: 100%;
+      height: 85px;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .td-survey-results-image-text {
+      padding:4px 0 4px 11px;
+
+      font-size:18px;
+      color:darken( $td-survey-results-primary-color, 20% );
+      text-align: left;
+    }
+
+    .td-survey-results-percentage-bar {
+      height:50px;
+      width:100%;
+      margin:-20px 0 0 0;
+
+      background-color: lighten( $td-survey-secondary-color, 30% );
+    }
+
+
+    .td-survey-results-text-area {
+      z-index: 10;
+      position: inherit;
+
+      padding:10px 22px 10px 15px;
+    }
+
+    .td-survey-results-percentage {
+      position: absolute;
+      height:50px;
+
+      background-color: $td-survey-results-primary-color;
+      @include td-survey-loadbar;
+    }
+
+    .td-survey-results-percentage-text {
+      @include td-survey-font;
+      font-size:35px;
+      color:darken( $td-survey-results-primary-color, 20% );
+      line-height: 30px;
+    }
+    .td-survey-results-total-votes {
+      color:darken( $td-survey-results-primary-color, 20% );
+      font-size:17px;
+      @include td-survey-font;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 16px;
+
+      .td-survey-votes {
+        width:100% !important;
+
+        @include td-survey-font;
+        font-size:14px;
+        font-weight: 100;
+        font-style: normal;
+      }
+    }
+  }
+
+
+/* ==========================================================================
+   Question Poll Questions
+   ========================================================================== */
+
+.previous {
+      color:darken( $td-survey-results-primary-color, 0%);
+      font-weight: bold;
+      padding:12px 0 0 10px;
+    }
+
+   .td-survey-questions {
+    padding: 2.5% 0px 0px 0px;
+
+    .td-survey-question-yes-no {
+      width:100%;
+      border-radius: 350px;
+      box-shadow:inset 0 0 0 2px lighten( $td-survey-results-primary-color, 60% );
+      text-align: center;
+      @include td-survey-font;
+      font-size:60px;
+      font-weight: 700;
+      color:lighten( $td-survey-results-primary-color, 60% );
+      margin:35px auto 60px auto;
+      padding:50% 0;
+      line-height:0;
+      height: 0px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .td-survey-question-yes-no:hover {
+      cursor: pointer;
+      opacity:.95;
+      box-shadow: inset 0 0 0 2px $td-survey-yes-green-dark;
+      background-color: $td-survey-yes-green-light;
+      color:lighten($td-survey-yes-green-dark, 45%);
+    }
+
+    .td-survey-question-selected-yes-no, .td-survey-question-selected-yes-no:hover {
+        &:before {
+          border: 10px solid $td-survey-yes-green-dark;
+          content: "";
+          display: block;
+          position: absolute;
+          top:0px;
+          left: 0px;
+          width:100%;
+          height: 100%;
+          border-radius:50%;
+        }
+        background-color: $td-survey-yes-green-light;
+        color:$td-survey-yes-green-dark;
+        border:none;
+    }
+
+    .td-survey-question-selected-yes-no:hover {
+     opacity:1;
+    }
+
+
+    .td-survey-header-text {
+      padding:0px 0 18px 0;
+
+      font-weight: 700;
+      color:$td-survey-primary-color;
+      font-size: 18px;
+    }
+
+    .td-survey-question {
+      padding:0 0 14% 0;
+
+      text-align: left;
+      font-size:16px;
+      color:darken( $td-survey-results-primary-color, 20% );
+      /*width:50%;*/
+      align-items:center;
+
+      .td-survey-question-text {
+        width:84%;
+            margin: 1.9% 0 0 0;
+      }
+
+      .td-survey-radio-button {
+        width:36px;
+        height:36px;
+        border:6px solid #cccccc;
+        background-color: white;
+        border-radius:50px;
+
+      }
+
+      .td-survey-radio-button-selected {
+        border:6px solid $td-survey-yes-green-dark;
+          background-color:$td-survey-yes-green-light;
+      }
+
+      .td-survey-radio {
+        margin:0 15px 0 0;
+        width:10%;
+      }
+
+      .td-survey-profile {
+        margin-top: 3px;
+      }
+
+      .td-survey-profile-field {
+        width: 66%;
+        color: red;
+
+        // AR-2120 Fixes issue for input fields on smaller screens
+        .lt450 & {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        input, select {
+          color: darken($td-survey-results-primary-color, 0%);
+          width: 200px;
+          height: 30px;
+        }
+
+        label {
+          display: block;
+          font-size: 14px;
+          color: #393939;
+        }
+
+        input[type="checkbox"] {
+          width:auto;
+          vertical-align: middle;
+          position: relative;
+          top:-1px;
+        }
+
+      }
+
+    }
+
+    .td-survey-question:hover {
+      /*background-color: lighten( $td-survey-results-orange, 20% );*/
+      cursor: pointer;
+      color:lighten( $td-survey-results-primary-color, 20% );
+    }
+
+
+    .td-survey-questions-selected, .td-survey-questions-selected:hover {
+      position:relative;
+/*
+      border:2px dashed $td-survey-results-orange;*/
+      /*overflow: hidden;*/
+      /*padding:18px 13px 18px 54px;*/
+
+      text-align: left;
+      font-size:16px;
+      /*background-color: lighten( $td-survey-results-orange, 40% );
+      color:darken( $td-survey-results-orange, 8% );*/
+      font-weight: normal;
+
+      .td-survey-profile {
+        color:#393939;
+      }
+
+    }
+
+    /*.td-survey-questions-selected:before {
+      position:absolute;
+      top:50%;
+
+      margin: -10% -40px 0 -62px;
+      width: 53px;
+      overflow: hidden;
+      float: left;
+      height: 65px;
+
+      font-family: "icomoon", serif;
+      content: "\e600";
+      font-size: 45px;
+      color: $td-survey-results-orange;
+    }
+*/
+  }
+
+    .td-profile-questions {
+      margin-top:20px;
+    }
+
+
+
+
+/* ==========================================================================
+   Image Poll Questions
+   ========================================================================== */
+
+   .td-survey-image-questions {
+    padding: 2.5% 0px 0px 0px;
+
+    .td-survey-image-survey-bg {
+      background-color: $td-survey-primary-color;
+    }
+
+    .td-survey-header-text {
+      padding:0px 0 18px 0;
+
+      @include td-survey-font;
+      font-weight: 700;
+      color:$td-survey-primary-color;
+      font-size: 22px;
+    }
+
+    .td-survey-question {
+      background-color: $td-survey-primary-color;
+
+
+      height: 280px;
+      overflow: hidden;
+      text-align: left;
+      background-size: cover;
+
+      .td-survey-image-text {
+        position: absolute;
+        bottom:12%;
+        left:8%;
+
+        font-size:18px;
+        @include td-survey-textshadow;
+        font-weight: bold;
+        color:$td-survey-text-on-color;
+      }
+
+      .td-survey-image {
+        width: 100%;
+        max-height: 170px;
+
+        img {
+          width: 143%;
+          margin: -10% 0 0 -20%;
+        }
+
+      }
+    }
+
+    .td-survey-question-not-selected {
+      opacity:.5;
+    }
+
+    .td-survey-question:hover {
+      cursor: pointer;
+      opacity:.4;
+    }
+
+    .td-survey-questions-selected, .td-survey-questions-selected:hover {
+      border:10px solid $td-survey-results-orange;
+      overflow: hidden;
+
+      background-color: lighten( $td-survey-results-orange, 50% );
+      color:darken( $td-survey-results-orange, 8% );
+      opacity: 1;
+      text-align: left;
+      font-size:20px;
+      font-weight: bold;
+    }
+
+  }
+
+
+/* ==========================================================================
+   Text Entry Question
+   ========================================================================== */
+
+  @mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+      @content;
+    }
+  }
+
+  @mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+      @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+      @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+      @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+      @content;
+    }
+  }
+
+   #text-single-screen, #text-multi-screen {
+     .td-survey-question-location {
+        display: flex;
+        align-items:center;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content:center;
+        min-height: 200px;
+        margin-bottom: 20px;
+        input, textarea {
+          width:575px;
+          max-width: 90%;
+          margin: 0 auto;
+          display: block;
+          padding: 15px;
+          font-size: 18px;
+          @include placeholder {
+            color: #ccc;
+            font-style: italic;
+          }
+        }
+        textarea {
+          width:100%;
+          max-width: 100%;
+          border:none;
+          border-top:1px solid #ddd;          
+          border-bottom:1px solid #ddd;
+          resize: none;
+        }
+        .charCount {
+          float:right;
+          padding:10px 10px 0 0;
+          font-size: 14px;
+          font-style: italic;
+          color:#aaa;
+        }
+     }
+    .td-survey-header-text {
+        width:575px;
+        margin: 0 auto;
+        max-width: 90%;
+        text-align: left;
+     }
+   }
+   #text-multi-screen .td-survey-header-text {
+      text-align:center;
+   }
+
+
+
+/* ==========================================================================
+   Submit Button Area
+   ========================================================================== */
+
+   .td-submit-area {
+    margin:20px 0 0 0 !important;
+    padding:15px 0 15px 0;
+
+    background-color: lighten($td-survey-tertiary-color, 28%);
+
+    .td-survey-submit-answer-button {
+      @include td-survey-button;
+      width:100%;
+
+      background-color: $td-survey-tertiary-color;
+      -webkit-animation-delay: .20s;
+      animation-delay: .20s;
+    }
+
+    .td-survey-submit-answer-button:before {
+      margin:0 0 0 -18px;
+
+      content:"FINISH SURVEY";
+      @include td-survey-font;
+      font-weight: 700;
+      color:$td-survey-text-on-color;
+      font-size:13px;
+    }
+
+    .td-survey-submit-answer-button:after {
+      position: absolute;
+
+      padding: 0 0 0 9px;
+      overflow: hidden;
+      margin: -3px 0px 0 0px;
+
+      content: "\e602";
+      font-family: "icomoon", serif;
+      font-size: 21px;
+      color:$td-survey-text-on-color;
+    }
+  }
+
+/* ==========================================================================
+   Next Button Area
+   ========================================================================== */
+
+   .td-survey-next-survey-area {
+    padding:15px 0 15px 0;
+    margin:20px 0 0 0 !important;
+
+    background-color: lighten($td-survey-results-primary-color, 38%);
+
+    .td-next-survey-button {
+      z-index: 10;
+      position: inherit;
+      width:100%;
+
+      background-color: $td-survey-results-primary-color;
+      @include td-survey-button;
+    }
+
+    .td-next-survey-button:before {
+      margin:0 0 0 -18px;
+
+      content:"NEXT POLL";
+      @include td-survey-font;
+      font-weight: 700;
+      color:$td-survey-text-on-color;
+      font-size:20px;
+    }
+
+    .td-next-survey-button:after {
+      position: absolute;
+
+      padding: 0 0 0 9px;
+      overflow: hidden;
+      margin: -3px 0px 0 0px;
+
+      font-family: "icomoon", serif;
+      content: "\e602";
+      font-size: 25px;
+      color:$td-survey-text-on-color;
+    }
+
+    .td-survey-next-numbers {
+      z-index: 1;
+
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      margin: 0px 0 0 -43%;
+      padding: 6px 80% 7px 100%;
+      float: right;
+      width: 100%;
+      border-radius: 1000px;
+
+      background-color: darken($td-survey-primary-color, 8%);
+      color:lighten($td-survey-primary-color, 11%);
+      font-size: 26px;
+      @include td-survey-font;
+      font-weight: 100;
+      cursor: default;
+
+      :after {
+        display:none;
+      }
+
+      :before {
+        display:none;
+      }
+    }
+
+  }
+
+/* ==========================================================================
+   Previous survey Container
+   ========================================================================== */
+
+   .td-survey-previous-results-container {
+    position: relative;
+
+    /*display:none;*/
+    padding: 0;
+    /*margin: 15px;*/
+    max-width:738px;
+    overflow: hidden;
+
+    background: #fff;
+    color: #222222;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    cursor: auto;
+
+    .td-survey-point-area {
+
+      .fa-check-circle {
+        position: absolute;
+        font-size:140px;
+        top:-65%;
+            left:38%;
+            bottom:0px;
+            z-index:0;
+            opacity:.20;
+      }
+
+    .td-survey-top-text {
+      color:red;
+      border-bottom:none;
+      padding:0px;
+      margin:0px;
+          position: relative;
+          z-index: 10;
+          font-family:Arial;
+          font-size:18px;
+    }
+
+    .td-survey-text {
+      text-align: center;
+      margin:0px;
+      padding:0px;
+      position: relative;
+      z-index: 10;
+      font-family: "Arvo";
+      font-size:24px;
+      font-weight: 700;
+    }
+
+    .td-survey-points {
+          border-radius:15px;
+          padding:4px 15px;
+          font-size:13px;
+          text-align: center;
+          clear:both;
+          z-index:10;
+    width: 120px;
+    margin: 12px auto 0 auto;
+        position: relative;
+        z-index: 10;
+
+          .fa {
+            padding:0 6px 0 0;
+          }
+        }
+
+      }
+
+/*
+
+    .td-survey-previous-top-header {
+      padding:15px 0;
+
+      background-color: $td-survey-primary-color;
+      color:$td-survey-text-on-color;
+      font-size:18px;
+      @include td-survey-textshadow;
+
+
+      .td-survey-check-back {
+        display:inline-block;
+      }
+
+      .td-survey-header-text {
+        display:inline-block;
+
+        @include td-survey-font;
+        color:$td-survey-text-on-color;
+        font-weight: 700;
+        font-size: 22px;
+      }
+
+    }
+
+    .td-survey-previous-survey-bg {
+      display:inline-block;
+
+      background-color: darken($td-survey-primary-color, 14%);
+
+    }
+
+    .td-survey-inline-bg-img-image-poll {
+      img {
+        height:100%;
+        position:absolute;
+        @include td-survey-desaturate;
+        opacity:.04;
+      }
+    }
+*/
+
+  }
+
+
+
+  .td-survey-previous-block:hover {
+    opacity:.80;
+    cursor: pointer;
+  }
+
+
+  .td-survey-previous-votes {
+    display: inline-block;
+    border-left: 1px solid $td-survey-text-on-color;
+    padding: 15px 0;
+
+    font-size: 18px;
+    @include td-survey-textshadow;
+    color:$td-survey-text-on-color;
+    font-style: italic;
+
+    .td-survey-votes {
+      font-size:12px;
+      font-style: normal;
+    }
+
+    .icon-group-1 {
+      display:inline-block;
+
+      font-size:16px;
+    }
+  }
+
+  .td-survey-disabled {
+    opacity:.2;
+  }
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+// start large media query
+
+@media only screen and (max-width: 40.063em) {
+
+  .td-survey-submit-answer-button:before {
+      font-size: 13px !important;
+      margin: 0px !important;
+      font-weight: 400;
+  }
+  .td-survey-submit-answer-button:after {
+      display: none;
+  }
+  .td-survey-select-text {
+      padding: 20px 0 0 0;
+  }
+  .td-survey-select-text:before {
+      display: none !important;
+  }
+  .td-survey-select-text:after {
+      display: none !important;
+  }
+  .td-survey-top-header {
+      padding: 0 0 20px 0 !important;
+  }
+  .td-survey-question-area-images {
+      .td-survey-question {
+          margin: 0px 0 15px 0;
+          img {
+              min-width: 140% !important;
+              max-width: auto !important;
+              min-height: 140%;
+          }
+      }
+  }
+  .td-survey-complete-stamp {
+      margin-left: -40px;
+  }
+  .td-survey-question-area {
+      margin: 52px 0 0 0;
+      .td-survey-text {
+          font-size: 14px;
+          line-height: auto;
+      }
+  }
+  .td-survey-results-area,
+  .td-survey-questions {
+      padding: 2.5% 0px 0px 0px;
+  }
+  .td-survey-question-location {
+      min-height: 400px;
+  }
+  .td-survey-image-questions {
+      .td-survey-question {
+          height: 220px;
+      }
+  }
+  .hide-for-td-survey-small-only {
+    display: block;
+  }
+} 
+
+
+// start 420 media query
+
+@media only screen and (max-width: 420px) {
+   .td-survey-container {
+       border: none !important;
+   }
+   .td-submit-area {
+       padding: 8px 0px 8px 0px !important;
+       display: none;
+       .previous {
+           padding: 12px 0 0 5px;
+           font-size: 12px;
+       }
+       .td-survey-submit-answer-button {
+           padding: 6px 0 !important;
+       }
+   }
+   .td-survey-question-area {
+       .td-survey-top-text {
+           padding: 0 10% 10px 10% !important;
+       }
+       .td-survey-image {
+           max-width: 100px !important;
+           height: 100px !important;
+           overflow: hidden;
+           margin: 0px -12px 0 0 !important;
+       }
+       .td-survey-text {
+           padding: 0px !important;
+           margin: 0px 0px 0px 0 !important;
+           font-size: 17px !important;
+       }
+   }
+   .td-survey-question-area-images {
+       .td-survey-question {
+           .td-survey-questions {
+               bottom: 15% !important;
+           }
+       }
+   }
+   .td-survey-questions {
+       .td-survey-question {
+           .td-survey-question-text {
+               width: 78%;
+           }
+       }
+   }
+   /*
+    .td-survey-image-text, .td-survey-previous-top-header, .td-survey-header-text, .td-survey-previous-text, .td-survey-previous-votes  {
+      @include td-survey-textshadow-sidebar;
+    }*/
+   
+   .td-survey-container,
+   .td-survey-previous-results-container {
+       margin: 0px !important;
+   }
+   .td-survey-image-questions {
+       .td-survey-questions-selected:before {
+           margin: 19% 33%;
+           font-size: 38px;
+       }
+       .td-survey-question {
+           height: 160px;
+       }
+   }
+   .td-survey-image-questions {
+       padding: 2.5% 0px 25% 0px;
+       .td-survey-header-text {
+           padding: 0px 0 18px 0;
+           @include td-survey-font;
+           font-weight: 700;
+           color: $td-survey-primary-color;
+           font-size: 22px;
+       }
+       .td-survey-question {
+           /*  height:210px;
+
+      text-align: left;*/
+           
+           height: 130px;
+           text-align: left;
+       }
+   }
+   .hide-for-td-survey-small-only {
+       display: none;
+   }
+   .td-survey-next-survey-area {
+       /*margin:0 3.7% !important;*/
+       
+       z-index: 10;
+       .td-next-survey-button:after {
+           margin: -6px 0px 0 0px;
+       }
+   }
+   .td-submit-area {
+       /*margin:0 3.7% !important;*/
+       
+       .td-survey-submit-answer-button:after {
+           margin: -6px 0px 0 0px;
+       }
+   }
+   .td-survey-previous-survey-bg {
+       padding: 0 0 20% 0;
+   }
+   .td-survey-previous-block {
+       padding: 45px 30px;
+       .td-survey-previous-text {
+           font-size: 17px;
+       }
+   }
+   .td-previous-results-fade-out,
+   .td-survey-fade-out-white {
+       position: fixed;
+       bottom: 0px;
+       left: 0px;
+       right: 0px;
+       margin: 0 auto !important;
+       display: none;
+   }
+   .td-survey-fade-out-white {
+       z-index: 10;
+       bottom: 84px;
+       position: fixed;
+       left: 0px;
+       right: 0px;
+       height: 50px;
+       background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.74) 74%, rgba(255, 255, 255, 1) 100%);
+       /* FF3.6+ */
+       
+       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(74%, rgba(255, 255, 255, 0.74)), color-stop(100%, rgba(255, 255, 255, 1)));
+       /* Chrome,Safari4+ */
+       
+       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.74) 74%, rgba(255, 255, 255, 1) 100%);
+       /* Chrome10+,Safari5.1+ */
+       
+       background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.74) 74%, rgba(255, 255, 255, 1) 100%);
+       /* Opera 11.10+ */
+       
+       background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.74) 74%, rgba(255, 255, 255, 1) 100%);
+       /* IE10+ */
+       
+       background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.74) 74%, rgba(255, 255, 255, 1) 100%);
+       /* W3C */
+       
+       filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$td-survey-text-on-color', GradientType=0);
+       /* IE6-9 */
+   }
+   .td-survey-complete-stamp {
+       right: -10px;
+       top: 110px;
+   }
+   .td-submit-area {
+       .td-survey-submit-answer-button:before {
+           font-size: 15px;
+       }
+   }
+   .td-survey-next-survey-area {
+       .td-next-survey-button:before {
+           font-size: 15px;
+       }
+       .td-survey-next-numbers {
+           padding: 9px 90% 7px 100%;
+           font-size: 20px;
+       }
+   }
+   .td-survey-questions {
+       .td-survey-header-text {
+           text-align: center;
+       }
+       .td-survey-question {
+           font-size: 17px;
+       }
+       .td-survey-questions-selected,
+       .td-survey-questions-selected:hover {
+           font-size: 17px;
+       }
+       /*    .td-survey-questions-selected:before {
+      float: left;
+      position: absolute;
+      top: 50%;
+
+      margin: -10% -40px 0 -62px;
+      width: 53px;
+      overflow: hidden;
+      height: 54px;
+
+      color: $td-survey-results-orange;
+      font-family: "icomoon";
+      content: "\e600";
+      font-size: 42px;
+    }*/
+   }
+   .td-survey-question-area {
+       margin: 52px 0 0 0;
+       .td-survey-text {
+           font-size: 14px;
+           line-height: auto;
+           padding: 0 0 0 20px;
+       }
+   }
+   .td-submit-area {
+       position: fixed;
+       bottom: 0px;
+       left: 0;
+       right: 0;
+       padding: 20px 17px 20px 17px;
+   }
+   .td-survey-next-survey-area {
+       position: fixed;
+       bottom: 0px;
+       left: 0;
+       right: 0;
+       z-index: 10;
+       padding: 20px 17px 20px 17px;
+   }
+   .td-survey-results-area {
+       padding: 16px 0px 40% 0px;
+   }
+   .td-survey-results {
+       .td-survey-result-area {
+           .td-survey-question {
+               font-size: 15px;
+           }
+       }
+       .td-survey-result-selected {
+           .td-survey-question {
+               font-size: 15px;
+           }
+       }
+   }
+}
+ 
+
+// start 320 media query
+@media only screen and (max-width: 320px) {
+    .td-survey-top-header {
+        padding: 0 0 13px 0;
+    }
+    .td-survey-top-image-header {
+        padding-bottom: 0px !important;
+        min-height: 65px;
+    }
+    .td-submit-area,
+    .td-survey-next-survey-area {
+        padding: 10px 0px 10px 17px;
+        .td-survey-share-icon:before {
+            display: block;
+            padding: 4px 0 0 0;
+            content: "\e604";
+            font-size: 20px;
+            color: $td-survey-tertiary-color;
+            font-family: "icomoon", serif;
+            cursor: pointer;
+        }
+        .td-survey-submit-answer-button {
+            float: right;
+            padding: 8px 0;
+            width: 90%;
+        }
+        .td-next-survey-button {
+            padding: 8px 0;
+        }
+        .td-survey-next-numbers {
+            padding: 5px 90% 5px 100%;
+        }
+        .td-survey-next-poll-button-small {
+            float: right !important;
+            width: 83%;
+            margin: 0 10px 0 0;
+        }
+    }
+    /**header area**/
+    
+    .td-survey-questions {
+        .td-survey-header-text {
+            padding: 0px 0 6px 0;
+            font-size: 13px;
+        }
+        .td-survey-question {
+            margin: 0 0 5px 0;
+            padding: 7px 7px;
+            font-size: 13px;
+        }
+        .td-survey-questions-selected {
+            font-size: 13px;
+            font-weight: normal;
+        }
+        .td-survey-questions-selected,
+        .td-survey-questions-selected:hover {
+            /*      padding:8px 13px 8px 39px;*/
+            
+            font-size: 13px;
+        }
+        /*    .td-survey-questions-selected:before {
+        position:absolute;
+        top:49%;
+
+        margin: -10% -40px 0 -46px;
+        width: 53px;
+        height: 45px;
+
+        font-size: 31px;
+        color: $td-survey-results-orange;
+      }*/
+    }
+    .td-survey-question-area {
+        z-index: 9;
+        margin: 15px 0 0 0;
+        .td-survey-text {
+            font-size: 12px;
+            font-weight: 100;
+        }
+    }
+    .td-survey-top-header {
+        .td-survey-header {
+            padding-top: 12px;
+            .td-survey-header-ribbon {
+                display: block;
+                width: 120px;
+                margin: -26px 0 0 -49px;
+                font-size: 11px;
+            }
+            .td-survey-share-icon:before {
+                display: block;
+                content: "\e604";
+                font-size: 20px;
+                color: $td-survey-secondary-color;
+                font-family: "icomoon", serif;
+            }
+            .td-survey-share-icon:hover {
+                cursor: pointer;
+            }
+            .td-survey-share {
+                display: none;
+            }
+        }
+    }
+    /**poll question **/
+    
+    .td-survey-image-questions .td-survey-header-text {
+        padding: 0px 0 8px 0;
+        font-size: 13px !important;
+        text-align: center;
+    }
+    .td-survey-top-image-header {
+        padding-bottom: 12px;
+        .td-survey-header-ribbon {
+            display: block;
+            width: 120px;
+            margin: -26px 0 0 -64px;
+            font-size: 11px;
+        }
+        .td-survey-share-icon:before {
+            display: block;
+            content: "\e604";
+            font-size: 20px;
+            color: $td-survey-secondary-color;
+            font-family: "icomoon", serif;
+        }
+        .td-survey-share-icon:hover {
+            cursor: pointer;
+        }
+        .td-survey-share {
+            display: none;
+        }
+        .td-survey-text {
+            top: -11px;
+            font-size: 13px;
+            font-weight: 100;
+        }
+        .td-survey-header {
+            padding-top: 12px;
+        }
+    }
+    .td-survey-image-questions {
+        .td-survey-header-text {
+            padding: 0px 0 8px 0;
+            font-size: 16px;
+        }
+        .td-survey-question {
+            height: 110px;
+            text-align: left;
+            .td-survey-image-text {
+                font-size: 15px;
+                line-height: 17px;
+                font-weight: 100;
+            }
+        }
+        .td-survey-questions-selected:before {
+            margin: 10% 32%;
+            font-size: 38px;
+        }
+    }
+    .td-survey-fade-out-white {
+        display: none;
+    }
+    /** results area **/
+    
+    .td-survey-results {
+        .td-survey-user-selection:before {
+            margin: -8px -41px 0 -8px;
+            height: 45px;
+            font-size: 36px;
+        }
+    }
+    .td-survey-previous-survey {
+        .td-survey-header-text {
+            font-size: 15px;
+        }
+    }
+    .td-survey-previous-results-container {
+        .td-survey-previous-top-header {
+            font-size: 13px;
+            .td-survey-header-text {
+                font-size: 14px;
+            }
+        }
+    }
+    .td-survey-previous-votes {
+        font-size: 15px;
+    }
+    .td-survey-previous-block {
+        padding: 15px 20px;
+        .td-survey-previous-text {
+            font-size: 14px;
+        }
+    }
+    .td-survey-image-results {
+        .td-survey-results-total-votes {
+            font-size: 15px;
+            .td-survey-votes {
+                font-size: 12px;
+            }
+        }
+        .td-survey-large-12 {
+            padding-bottom: 4px;
+        }
+        .td-survey-results-small-results-area {
+            width: 66%;
+        }
+        .td-survey-results-image {
+            width: 140%;
+            height: 65px;
+        }
+        .td-survey-results-percentage-text {
+            font-size: 25px;
+        }
+        .td-survey-results-text-area {
+            padding: 0px 22px 10px 15px;
+        }
+        .td-survey-results-image-text {
+            padding: 0px 0 0px 11px;
+        }
+    }
+    .td-survey-complete-stamp {
+        margin: -80px 0 0 0;
+    }
+    .td-survey-results-area {
+        padding: 4px 0 8px 0;
+        .td-survey-total-votes {
+            font-size: 19px;
+            .icon-group-1 {
+                font-size: 18px;
+            }
+        }
+    }
+    .td-survey-results {
+        .td-survey-results-winner {
+            padding: 3px 0px;
+        }
+        .td-survey-result-area {
+            margin: 0 0 5px 0;
+            padding: 3px 0px;
+            .td-survey-question {
+                font-size: 12px;
+            }
+            .td-survey-percentage {
+                font-size: 140%;
+            }
+        }
+    }
+    .td-survey-results-percentage-bar {
+        display: none;
+    }
+    .td-survey-results {
+        .td-survey-results-winner {
+            margin: 0 0 5px 0;
+            .td-survey-question {
+                font-size: 13px;
+            }
+            .td-survey-percentage {
+                font-size: 140%;
+            }
+        }
+    }
+}
+
+.td-survey-theme-area {
+  &.lt500 {
+    .td-survey-column, .td-survey-columns {
+    }
+    .td-survey-questions .td-survey-question .td-survey-question-text {
+      width:80%;
+      line-height:1.2em;
+      margin: 0 0 6% 0;
+      float:left !important;
+    }
+    .td-survey-questions .td-survey-question .td-survey-radio-button {
+      width:28px;
+      height: 28px;
+    }
+    .td-submit-area {
+      .td-survey-large-4 {
+        width:33%;
+      }
+      .td-survey-large-7 {
+        width:50%;
+      }
+    }
+  }
+}
+
+.td-survey-theme-area {
+  &.lt300 {
+    .td-submit-area {
+      .td-survey-large-4 {
+        width:25%;
+        .previous {
+          font-size:10px;
+        }
+      }
+      .td-survey-large-7 {
+        width:70%;
+        .td-survey-submit-answer-button {
+          padding:6px 0;
+          &:after {
+            display:none;
+          }
+          &:before {
+            padding-left:13px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,250 @@
+/* =============================================================== */
+/* Do not edit the CSS files directly. Changed will be overridden! */
+/* =============================================================== */
+/* === TOGGLE SWITCH CONTROL ===  */
+select.ui-toggle-switch { display: none; }
+
+.ui-toggle-switch, .ui-toggle-switch .ui-slider, .ui-toggle-switch label { display: inline-block; *display: inline; zoom: 1; }
+
+.ui-toggle-switch label { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; margin: 0 8px 0 5px; border: 0; background: none; font-size: 10px; font-weight: bold; text-transform: uppercase; cursor: pointer; }
+.ui-toggle-switch label:first-child { margin-left: 0; margin-right: 0; }
+.ui-toggle-switch label.ui-state-active { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; border: 0; background: none; }
+.ui-toggle-switch .ui-slider { margin: 0 12px; border-radius: 10px; }
+
+.ui-slider-horizontal .ui-slider-range-max { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; right: -10px; border-radius: 10px; background: #65ac09; }
+
+.ui-slider { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; position: relative; z-index: 1; text-align: left; background: #d7d7d7; }
+.ui-slider .ui-slider-handle { box-shadow: none; position: absolute; z-index: 2; border: none; width: 23px; height: 23px; cursor: pointer; background: url(../images/togglebtn.png) 0px -7px no-repeat; outline: none; }
+
+@-webkit-keyframes sway { 0% { -webkit-transform: rotate(-10deg); }
+  50% { -webkit-transform: rotate(-7deg); }
+  100% { -webkit-transform: rotate(-10deg); } }
+@keyframes sway { 0% { -webkit-transform: rotate(-10deg); transform: rotate(-10deg); }
+  50% { -webkit-transform: rotate(-7deg); transform: rotate(-7deg); }
+  100% { -webkit-transform: rotate(-10deg); transform: rotate(-10deg); } }
+.animated.sway { -webkit-animation-name: sway; animation-name: sway; -webkit-transform-origin: top; transform-origin: top; -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */ transition-timing-function: ease-in-out; }
+
+@-webkit-keyframes swayInverse { 0% { -webkit-transform: rotate(10deg); }
+  50% { -webkit-transform: rotate(7deg); }
+  100% { -webkit-transform: rotate(10deg); } }
+@keyframes swayInverse { 0% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+  50% { -webkit-transform: rotate(7deg); transform: rotate(7deg); }
+  100% { -webkit-transform: rotate(10deg); transform: rotate(10deg); } }
+.animated.swayInverse { -webkit-animation-name: swayInverse; animation-name: swayInverse; -webkit-transform-origin: top; transform-origin: top; -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */ transition-timing-function: ease-in-out; }
+
+@-webkit-keyframes fadeIn { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+@keyframes fadeIn { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+.animated.fadeIn { -webkit-animation-name: fadeIn; animation-name: fadeIn; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; }
+
+@-webkit-keyframes scaleInRotate { 0% { -webkit-transform: rotate(0deg) scale(0.4); opacity: 0; }
+  100% { -webkit-transform: rotate(360deg) scale(1); opacity: 1; } }
+@keyframes scaleInRotate { 0% { -webkit-transform: rotate(0deg) scale(0.4); transform: rotate(0deg) scale(0.4); opacity: 0; visibility: visible; }
+  100% { -webkit-transform: rotate(360deg) scale(1); transform: rotate(360deg) scale(1); opacity: 1; } }
+.animated.scaleInRotate { -webkit-animation-name: scaleInRotate; animation-name: scaleInRotate; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; }
+
+@-webkit-keyframes scaleIn { 0% { -webkit-transform: scale(0.4); opacity: 0; visibility: visible; }
+  100% { -webkit-transform: scale(1); opacity: 1; } }
+@keyframes scaleIn { 0% { -webkit-transform: scale(0.4); transform: scale(0.4); opacity: 0; visibility: visible; }
+  100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; } }
+.animated.scaleIn { -webkit-animation-name: scaleIn; animation-name: scaleIn; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; }
+
+@-webkit-keyframes lanternSlideIn { 0% { -webkit-transform: translateY(-500px); visibility: visible; opacity: 0; }
+  100% { -webkit-transform: translateY(0) rotate(-10deg); opacity: 1; } }
+@keyframes lanternSlideIn { 0% { -webkit-transform: translateY(-500px); transform: translateY(-500px); visibility: visible; }
+  100% { -webkit-transform: translateY(0) rotate(-10deg); transform: translateY(0) rotate(-10deg); } }
+.animated.lanternSlideIn { -webkit-animation-name: lanternSlideIn; animation-name: lanternSlideIn; -webkit-transform-origin: top; transform-origin: top; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; }
+
+@-webkit-keyframes lanternSlideInInverse { 0% { -webkit-transform: translateY(-500px); visibility: visible; opacity: 0; }
+  100% { -webkit-transform: translateY(0) rotate(10deg); opacity: 1; } }
+@keyframes lanternSlideInInverse { 0% { -webkit-transform: translateY(-500px); transform: translateY(-500px); visibility: visible; }
+  100% { -webkit-transform: translateY(0) rotate(10deg); transform: translateY(0) rotate(10deg); } }
+.animated.lanternSlideInInverse { -webkit-animation-name: lanternSlideInInverse; animation-name: lanternSlideInInverse; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; -webkit-transform-origin: top; transform-origin: top; }
+
+@-webkit-keyframes slideInUp { 0% { -webkit-transform: translateY(500px); visibility: visible; }
+  100% { -webkit-transform: translateY(0); } }
+@keyframes slideInUp { 0% { -webkit-transform: translateY(500px); transform: translateY(500px); visibility: visible; }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+.animated.slideInUp { -webkit-animation-name: slideInUp; animation-name: slideInUp; -webkit-transition-timing-function: ease-out; /* Safari and Chrome */ transition-timing-function: ease-out; }
+
+@font-face { font-family: 'BreeSerif'; src: url("../fonts/BreeSerif-Regular.eot"); src: url("../fonts/BreeSerif-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/BreeSerif-Regular.woff") format("woff"), url("../fonts/BreeSerif-Regular.ttf") format("truetype"), url("../fonts/BreeSerif-Regular.svg#BreeSerif-Regular") format("svg"); font-weight: normal; font-style: normal; }
+.toggle { position: relative; width: 70px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+.toggle-checkbox { display: none; }
+.toggle-checkbox:checked + .toggle-container .toggle-label { margin-left: -100%; }
+.toggle-checkbox:checked + .toggle-container .toggle-handle { left: 10px; background: #5A1439; }
+.toggle-checkbox:checked + .toggle-container .toggle-handle:before { color: #AE346D; }
+.toggle-container { display: block; overflow: hidden; border: 2px solid transparent; border-radius: 20px; text-align: right; cursor: pointer; }
+.toggle-label:before, .toggle-label:after { float: left; width: 50%; height: 30px; padding: 0; box-sizing: border-box; line-height: 30px; color: white; font-size: 9px; font-family: Trebuchet, Arial, sans-serif; font-weight: bold; font-family: 'Flaticons Stroke'; speak: none; font-size: 15px; font-style: normal; font-weight: normal; line-height: 30px; -webkit-font-smoothing: antialiased; }
+.toggle-label { width: 200%; display: block; margin-left: 0; -webkit-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; box-sizing: border-box; }
+.toggle-label:before { content: '\e48f'; padding-left: 12px; background-color: #0E4138; text-align: left; }
+.toggle-label:after { content: '\e48f'; padding-right: 12px; background-color: #AE346D; }
+.toggle-handle { position: absolute; top: 0; bottom: 0; left: 40px; height: 20px; width: 20px; margin: auto; border-radius: 50%; background: #3CA9AE; -webkit-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
+.toggle-handle:before { position: absolute; top: 4px; left: 3px; font-family: 'Flaticons Stroke'; speak: none; font-size: 13px; font-style: normal; font-weight: normal; color: #0E4138; line-height: 1; -webkit-font-smoothing: antialiased; content: "\e53d"; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
+.toggle--medium { width: 80px; }
+.toggle--medium .toggle-handle { right: 50px; }
+.toggle--large { width: 95px; }
+.toggle--large .toggle-handle { right: 65px; }
+
+body { background: black; color: #fff; font-family: 'BreeSerif'; }
+
+button { outline: none; }
+
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+
+.sudoku-wrapper { width: 500px; height: 550px; position: relative; margin: 0 auto; background: #3CA9AE; overflow: hidden; -webkit-animation: fadeIn 0.5s ease-in-out; animation: fadeIn 0.5s ease-in-out; }
+
+.sudoku-navigation-icon, .sudoku-options-toggle, .sudoku-more-options { position: absolute; font-size: 20px; z-index: 500; }
+.sudoku-navigation-icon i, .sudoku-options-toggle i, .sudoku-more-options i { cursor: pointer; }
+
+.sudoku-home { top: 15px; left: 13px; }
+
+.sudoku-instructions { top: 15px; right: 16px; }
+
+.sudoku-sound-toggle { left: 13px; top: 85px; }
+
+.sudoku-play-toggle { left: 13px; top: 50px; }
+
+.sudoku-button { height: 50px; width: 150px; border: none; border-radius: 6px; box-shadow: 0px 6px 0px #a4752a; color: #fff; cursor: pointer; font-size: 22px; font-family: 'BreeSerif'; text-decoration: none; -webkit-transition: all .1s ease; transition: all .1s ease; }
+.sudoku-button:disabled { cursor: not-allowed; opacity: 0.4; }
+.sudoku-button:active { box-shadow: 0px 3px 0px #a4752a; }
+.sudoku-button--accent { background-color: #DDA326; }
+.sudoku-button--cancel { display: inline-block; background-color: #8E8E8E; box-shadow: 0px 6px 0px #686868; vertical-align: middle; }
+.sudoku-button--cancel:active { margin-top: 3px !important; box-shadow: 0px 3px 0px #686868; }
+.sudoku-button--quit { display: inline-block; background-color: #E1574C; box-shadow: 0px 6px 0px #c02c20; vertical-align: middle; }
+.sudoku-button--quit:active { margin-top: 3px !important; box-shadow: 0px 3px 0px #c02c20; }
+.sudoku-button-container { line-height: 50px; }
+.sudoku-button.sudoku-start-game { position: absolute; bottom: 25px; left: 50%; margin-left: -75px; }
+.sudoku-button.sudoku-start-game:active { bottom: 22px; }
+.sudoku-button.sudoku-play-again { display: inline-block; margin-top: 50px; }
+.sudoku-button.sudoku-play-again:active { margin-top: 53px; }
+.sudoku-button--number { display: inline-block; width: 43px; height: 43px; margin: 0 3.5px; background-color: #137373; box-shadow: 0px 6px 0px #0e4138; font-size: 30px; vertical-align: middle; }
+.sudoku-button--number:disabled { cursor: auto; }
+.sudoku-button--number:active { margin-top: 3px; box-shadow: 0px 3px 0px #0e4138; }
+.sudoku-button--number-note { background-color: #AE346D; box-shadow: 0px 6px 0px #5a1439; }
+.sudoku-button--number-note:active { box-shadow: 0px 3px 0px #5a1439; }
+.sudoku-button--number-place { background-color: #DDA326; box-shadow: 0px 6px 0px #a4752a; }
+.sudoku-button--number-place:active { box-shadow: 0px 3px 0px #a4752a; }
+
+.bamboo { position: absolute; background-size: contain; }
+.bamboo--left { height: 464px; width: 222px; bottom: -52px; left: -62px; background-image: url(../images/bamboo_large_blue.png); }
+.bamboo--right { height: 369px; width: 149px; bottom: -55px; right: -15px; background-image: url(../images/bamboo_small_blue.png); }
+.bamboo--complete { height: 248px; width: 218px; background-image: url(../images/bamboo_purple_small.png); }
+.bamboo--complete.bamboo--left { left: 0; bottom: -135px; }
+.bamboo--complete.bamboo--right { right: -65px; bottom: -80px; }
+
+.sudoku-overlay-content { padding: 60px 75px; }
+
+.sudoku-overlay-background { width: 224px; height: 224px; margin: -122px 0 0 -112px; position: absolute; top: 50%; left: 50%; z-index: -1; }
+.sudoku-overlay-background--blue { background-image: url(../images/blue_symbol_bg.png); }
+.sudoku-overlay-background--purple { background-image: url(../images/purple_symbol_bg.png); }
+
+.sudoku-overlay { width: 500px; height: 550px; position: absolute; top: 0; left: 0; background: rgba(46, 160, 160, 0.85); box-sizing: border-box; font-size: 14px; font-family: sans-serif; z-index: 999; }
+.sudoku-overlay--quit { padding-top: 135px; text-align: center; }
+.sudoku-overlay--quit .sudoku-button { margin: 0 10px; }
+.sudoku-overlay--complete { background: rgba(174, 52, 109, 0.85); text-align: center; }
+.sudoku-overlay h1 { margin-bottom: 10px; margin-top: 0; color: #0E4138; font-size: 1.9em; font-family: 'BreeSerif'; }
+.sudoku-overlay h2 { margin-bottom: 10px; margin-top: 0; color: #0E4138; font-size: 1.6em; font-family: 'BreeSerif'; }
+.sudoku-overlay h3 { margin-top: 10px; margin-bottom: 10px; }
+.sudoku-overlay h4 { margin-top: 0; margin-bottom: 30px; font-size: 1.2em; font-weight: normal; }
+.sudoku-overlay .close-sudoku-instructions, .sudoku-overlay .close-sudoku-quit { position: absolute; top: 15px; right: 15px; cursor: pointer; font-size: 36px; }
+.sudoku-overlay .sudoku-game-complete { position: relative; top: 50%; margin: -45px 0 0 0; font-family: 'BreeSerif'; font-size: 3.3em; vertical-align: middle; }
+.sudoku-overlay .sudoku-game-stats { display: inline-block; width: 256px; margin-top: 31px; text-align: center; }
+.sudoku-overlay .sudoku-game-stats-logo { display: inline-block; height: 60px; width: 256px; background: url(../images/sudoku_logo_white.png); }
+.sudoku-overlay .sudoku-game-stats-title { margin: 10px 0 30px; color: #DDA326; font-family: 'BreeSerif'; font-size: 2em; }
+.sudoku-overlay .sudoku-game-stats-divider { display: inline-block; height: 12px; width: 224px; margin: 5px 0; background: url(../images/bamboo_seperator_purple.png); }
+.sudoku-overlay .sudoku-game-stats-container { display: inline-block; width: 224px; padding-left: 35px; text-align: left; }
+.sudoku-overlay .sudoku-game-stats-icon { display: inline-block; width: 40px; color: #5A1439; font-size: 28px; vertical-align: middle; }
+.sudoku-overlay .sudoku-game-stats-stat { display: inline-block; margin-left: 15px; font-size: 20px; text-align: left; vertical-align: middle; }
+.sudoku-overlay .sudoku-game-stats-label { color: #3CA9AE; font-family: 'BreeSerif'; font-size: 17px; }
+
+.sudoku-zen-logo { height: 78px; width: 298px; position: absolute; top: 125px; left: 50%; margin-left: -149px; background-image: url(../images/sudoku_logo.png); background-size: contain; }
+.sudoku-zen-logo-background { height: 178px; width: 174px; margin: 65px auto 0; background-image: url(../images/blue_symbol_bg_small.png); background-size: contain; }
+
+.lantern { height: 226px; width: 160px; position: absolute; background-image: url(../images/lantern.png); background-size: contain; }
+.lantern--one { height: 175px; width: 124px; top: -62px; left: -35px; }
+.lantern--two { height: 175px; width: 124px; top: -50px; right: 33px; }
+.lantern--three { height: 215px; width: 152px; top: -63px; right: -45px; }
+
+.sudoku-gametype-select-text { width: 100%; position: absolute; top: 205px; font-size: 17px; text-align: center; }
+
+.sudoku-gametype { display: inline-block; width: 159px; height: 201px; margin: 5px 8px; padding: 12px 10px; box-sizing: border-box; cursor: pointer; }
+.sudoku-gametype-wrapper { position: absolute; width: 100%; text-align: center; z-index: 500; }
+.sudoku-gametype--express { background-image: url(../images/sudoku_express_select_area.png); }
+.sudoku-gametype--normal { background-image: url(../images/sudoku_normal_select_area.png); }
+.sudoku-gametype--express-selected { width: 181px; height: 221px; padding: 23px 8px 19px 18px; position: absolute; top: -9px; right: 65px; background-image: url(../images/sudoku_express_select.png); cursor: default; }
+.sudoku-gametype--normal-selected { width: 181px; height: 221px; padding: 23px 18px 19px 8px; position: absolute; top: -9px; right: 240px; background-image: url(../images/sudoku_normal_select.png); cursor: default; }
+
+.deselect-gametype { height: 32px; position: absolute; top: 6px; color: #42C0BF; cursor: pointer; font-size: 32px; overflow: hidden; }
+.deselect-gametype.sudoku-deselect-express { right: 6px; }
+.deselect-gametype.sudoku-deselect-normal { left: 6px; }
+
+.sudoku-difficulty { margin: 8px 20px; padding: 9px; border-radius: 8px; color: #AE346D; cursor: pointer; font-size: 14px; line-height: 15px; }
+.sudoku-difficulty:hover, .sudoku-difficulty.selected { background-color: #AE346D; color: #fff; }
+.sudoku-difficulty:hover h4, .sudoku-difficulty.selected h4 { color: #E774AD; }
+.sudoku-difficulty h4 { margin: 0; color: #5A1439; font-size: 17px; }
+
+.sudoku-gametype-inner--express { width: 79px; height: 88px; margin-top: 42px; margin-left: 30px; background-image: url(../images/sudoku_board_express.png); }
+.sudoku-gametype-inner--normal { width: 90px; height: 91px; margin-top: 41.5px; margin-left: 24.5px; background-image: url(../images/sudoku_board_normal.png); }
+
+.sudoku-board-size { background: #0E4138; color: #3CA9AE; padding: 1px 2px 3px; margin-left: 5px; }
+
+.sudoku-board { width: 406px; margin: 15px auto 0; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.sudoku-board-symbol { width: 60px; height: 111px; position: absolute; top: 175px; background-image: url(../images/board_symbol_left_and_right.png); z-index: 0; }
+.sudoku-board-symbol--left { left: -15px; }
+.sudoku-board-symbol--right { right: -15px; }
+
+.sudoku-tile { display: inline-block; position: relative; margin: 1.5px; background: #fff; border-radius: 8px; box-sizing: border-box; color: #447981; cursor: pointer; vertical-align: top; overflow: hidden; }
+.sudoku-tile--normal { width: 42px; height: 42px; padding-top: 4px; font-size: 30px; line-height: 30px; text-align: center; }
+.sudoku-tile--normal.sudoku-tile--targeted, .sudoku-tile--normal.sudoku-tile--targeted-note { padding-top: 6px; }
+.sudoku-tile--normal.sudoku-tile-value { line-height: 30px; }
+.sudoku-tile--express { width: 64px; height: 64px; padding-top: 6px; font-size: 45px; line-height: 45px; text-align: center; }
+.sudoku-tile--express.sudoku-tile--targeted, .sudoku-tile--express.sudoku-tile--targeted-note { padding-top: 9.5px; }
+.sudoku-tile--express.sudoku-tile-value { line-height: 45px; }
+.sudoku-tile--targeted { vertical-align: middle; }
+.sudoku-tile--targeted:not(.sudoku-tile--selected):after { font-family: 'Flaticons Stroke'; speak: none; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; content: '\e5a0'; }
+.sudoku-tile--targeted-note { color: #5A1439; vertical-align: middle; }
+.sudoku-tile--targeted-note:not(.sudoku-tile--selected-note):after { font-family: 'Flaticons Stroke'; speak: none; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; content: '\e5a0'; }
+.sudoku-tile--selected { border: 3px solid #AE346D; }
+.sudoku-tile--selected.sudoku-tile--normal { padding-top: 1px; }
+.sudoku-tile--selected.sudoku-tile--express { padding-top: 2px; }
+.sudoku-tile--selected-note { border: 3px solid #137373; }
+.sudoku-tile--selected-note.sudoku-tile--normal { padding-top: 1px; }
+.sudoku-tile--selected-note.sudoku-tile--express { padding-top: 2px; }
+.sudoku-tile--accent { background: #AEE1D8; }
+.sudoku-tile--crosshair { background: #C3DFC6; }
+.sudoku-tile--crosshair-note { background: #C996B5; }
+.sudoku-tile--highlight, .sudoku-tile--highlight.sudoku-tile--crosshair, .sudoku-tile--highlight.sudoku-tile--crosshair-note { background: #DDA326; }
+.sudoku-tile--error, .sudoku-tile--error.sudoku-tile--crosshair, .sudoku-tile--error.sudoku-tile--crosshair-note { background: #E1574C; }
+.sudoku-tile--error .sudoku-tile-clear-number, .sudoku-tile--error.sudoku-tile--crosshair .sudoku-tile-clear-number, .sudoku-tile--error.sudoku-tile--crosshair-note .sudoku-tile-clear-number { color: #952219; }
+
+.sudoku-tile-clear-number { position: absolute; top: -3px; right: -3px; color: #E1574C; font-size: 18px; line-height: 18px; }
+
+.sudoku-controls-divider { width: 452px; height: 13px; margin: 6px auto 6px; background-image: url(../images/bamboo_seperator_blue.png); }
+.sudoku-controls-divider--note-mode { background-image: url(../images/bamboo_seperator_purple.png); }
+
+.sudoku-number-buttons { height: 43px; margin: 10px 0; line-height: 43px; text-align: center; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.sudoku-controls { text-align: center; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.sudoku-control { display: inline-block; vertical-align: middle; }
+.sudoku-control--icon { width: 33px; height: 24px; margin: 0 20px; background-image: url(../images/board_control_symbol.png); }
+.sudoku-control--timer { color: #0E4138; font-size: 21px; font-weight: bold; }
+.sudoku-control--timer i { margin-right: 3px; vertical-align: middle; }
+.sudoku-control--hints { width: 120px; height: 30px; padding: 0 15px; background-color: #0E4138; border-radius: 20px; box-sizing: border-box; cursor: pointer; line-height: 33px; }
+
+.sudoku-hint { display: inline-block; width: 15px; height: 15px; margin-left: 3px; background: #3CA9AE; border-radius: 50%; -webkit-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
+.sudoku-hint--hint-1 { margin-left: 8px; }
+.sudoku-hint--used { background: #166759; }
+
+.sudoku-timer { display: inline-block; width: 51px; }
+
+.sudoku-time-penalty { padding: 4px 6px 3px; position: absolute; bottom: 44px; left: 52px; background-color: #E1574C; border-radius: 20px; font-family: sans-serif; font-size: 13px; }
+.sudoku-time-penalty i { color: #952219; font-size: 15px; vertical-align: middle; }
+.sudoku-time-penalty .sudoku-arrow-down { position: absolute; left: 50%; margin-top: 2px; margin-left: -7px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid #E1574C; }
+
+.sudoku-notes { line-height: 12px; text-align: left; }
+
+.sudoku-note { display: inline-block; padding: 1px 0 1px 6.5px; margin-top: -1.25px; color: #BA2F6A; font-size: 10px; line-height: 10px; vertical-align: top; }
+.sudoku-tile--selected .sudoku-note, .sudoku-tile--selected-note .sudoku-note { padding: 1px 0 1px 5px; }

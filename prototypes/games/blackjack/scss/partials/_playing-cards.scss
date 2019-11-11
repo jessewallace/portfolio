@@ -1,0 +1,225 @@
+.card {
+  background-image: image-url('Card_back.png');
+  background-repeat: no-repeat;
+  background-size: 90px 123px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #000000;
+  font-size: 18pt;
+  position: absolute;
+  width:  90px;
+  height: 123px;
+
+  .heart, .diamond {
+    color: #df0000;
+  }
+
+  &.card--player {
+    top: -630px;
+    left: 145px;
+  }
+
+  &.card--dealer {
+    top: -130px;
+    left: 145px;
+
+    &#dealer-card-1 {
+      .front {
+        display: none;
+      }
+    }
+  }
+}
+.front {
+  position: absolute;
+
+  width: 85px;
+  height: 118px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+  margin-top: 1px;
+
+  background-color: #fff;
+  border-radius: 3px;
+  color: #000000;
+}
+
+.front--dim {
+  position: absolute;
+
+  width: 86px;
+  height: 120px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  margin-top: 0;
+
+  background-color: #000;
+  border-radius: 4px;
+  color: #000000;
+  opacity: 0.7;
+}
+
+.face img {
+  position: absolute;
+  left: 13px;
+  top: 13px;
+
+  width: 59px;
+  height: 92px;
+}
+
+// Card grid
+$suit-size: 1.25;
+
+.corner {
+  position: absolute;
+
+  line-height: 0.7em;
+  // overflow: hidden;
+  text-align: center;
+
+  span {
+    display: block;
+
+    font-size: 0.61em;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .number {
+    height: 0.4em;
+
+    font-size: 0.5em;
+    line-height: 0.4em;
+  }
+
+  &.top {
+    left: 2px;
+    top: 6px;
+  }
+
+  &.bottom {
+    bottom: 6px;
+    right: 2px;
+
+    @include transform(rotate(180deg));
+  }
+}
+
+.card-ace span.suit.middle_center {
+  left: 0.21em;
+  top: 0.14em;
+
+  font-size: 3em;
+}
+
+.suit {
+  position: absolute;
+  width: 0.75em; // suitem(50);
+
+  font-size: ($suit-size) + em;
+  font-weight: normal; // bold
+  // height: ($suit-size + 0.5) + em; // suitem(60);
+  line-height: ($suit-size) + em; // suitem(60);
+  // overflow: hidden;
+  text-align: center;
+
+  &.top_center {
+    left: 1.05em;
+    top: 0.1em;
+  }
+
+  &.top_left {
+    left: 0.4em;
+    top: 0.1em;
+  }
+
+  &.top_right {
+    right: 0.4em;
+    top: 0.1em;
+  }
+
+  &.middle_center {
+    left: 1.05em;
+    top: 1.3em;
+  }
+
+  &.middle_top {
+    left: 1.05em;
+    top: 0.75em;
+  }
+
+  &.middle_bottom {
+    left: 1.05em;
+    bottom: 0.75em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.middle_left {
+    left: 0.4em;
+    top: 1.3em;
+  }
+
+  &.middle_right {
+    right: 0.4em;
+    top: 1.3em;
+  }
+
+  &.middle_top_center {
+    left: 1.05em;
+    top: 0.5em;
+  }
+
+  &.middle_top_left {
+    left: 0.4em;
+    top: 0.9em;
+  }
+
+  &.middle_top_right {
+    right: 0.4em;
+    top: 0.9em;
+  }
+
+  &.middle_bottom_left {
+    left: 0.4em;
+    bottom: 0.9em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.middle_bottom_right {
+    right: 0.4em;
+    bottom: 0.9em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.middle_bottom_center {
+    left: 1.05em;
+    bottom: 0.5em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.bottom_center {
+    left: 1.05em;
+    bottom: 0.1em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.bottom_left {
+    left: 0.4em;
+    bottom: 0.1em;
+
+    @include transform(rotate(180deg));
+  }
+
+  &.bottom_right {
+    right: 0.4em;
+    bottom: 0.1em;
+
+    @include transform(rotate(180deg));
+  }
+}

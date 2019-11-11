@@ -1,0 +1,141 @@
+@media screen and (max-width: 620px) {
+	
+    // Collapsed Styles
+    .collapsed-login {
+        position: absolute;
+        left:-238px;
+        z-index: 2005;
+
+        display: block;
+        width:288px;
+        height: 100%;
+        margin-left:-20px;
+        font-family: 'Arial';
+        color:$white;
+        background-color:$button-color;
+
+        transition: left 300ms ease-in-out;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top:0px;
+            right:-60px;
+            width:60px;
+            height: 100%;
+            background-color:transparent;
+        }
+
+        &.is-opened { 
+            left: 0;
+        }
+
+
+        .v1player-mobile-profile-wpr {
+            display: none;
+        }
+
+        .v1player-mobile-ctrl-open-wpr {
+           position: relative; 
+        }
+
+        img {
+            @extend .pull-left;
+
+            height:50px;
+            width:50px;
+            margin:8px 10px 0px 20px; 
+        }
+
+        .v1player-mobile-user-username {
+            @extend .pull-left;
+
+            display: block;
+
+            margin:18px 0 0;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 17.68px;
+        }
+
+        .v1player-mobile-user-email {
+            display: block;
+
+            margin:20px 0 0;
+            font-size: 10px;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width:30%;
+        }
+
+        .collapsed-bar-ctrl {
+            float:right;
+
+            &:hover {
+                color: initial;
+            }
+
+            .fa-bars {
+                position: absolute;
+                top:26px;
+                right:8px;
+
+                color: $black;
+
+            }
+        }
+
+        .v1player-mobile-ctrl {
+            @extend .pull-left;
+
+            display: inline-block;
+            padding: 8px 10px;
+            margin:-15px 0 0 8px;
+
+            font-size: 14px;
+            text-align: center;
+            background-color:black;
+
+            &:hover {
+                color: $button-color;
+            }
+
+            &.mobile-ctrl-closed {
+                float:right;
+                padding:4px 8px;
+                margin:-55px 0px 0 8px;
+
+                i {
+                    font-size: 1.5em;
+                }
+
+                &.mobile-logout-ctrl {
+                    margin-right: 32px;
+                }
+
+                &.mobile-profile-ctrl {
+                    margin-right: 70px;
+                    margin-left: 60px; 
+                }
+            }
+            
+
+
+            &.auth-ctrl {
+                margin-top: -8px;
+            }
+        }
+
+        .collapsed-mobile-auth-wpr {
+            padding:25px 50px;
+            text-align: center;
+
+            i {
+                padding-right: 5px;
+            }
+        }
+    }
+
+}

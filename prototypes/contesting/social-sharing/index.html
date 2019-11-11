@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Sweepstakes</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Play our sweepstake for a chance to win!" />
+        <meta name="keywords" content="Sweeps, Sweepstakes, Enter to Win, Win, Prize" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- fix for IE9 rendering-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/layout.min.css" useProxy="true" />
+        <link id="theme-style" useProxy="true" rel="stylesheet" type="text/css" media="screen" href="css/style.css" /> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.tagit.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/tagit.ui-zendesk.css" media="screen" />
+
+    </head>
+    <body class="home english contest-sweeps" id="photo">
+        <div class="ad--top"></div>
+        <div id="container-bg">
+            <div class="clearfix" id="container-contest">
+                <div id="container-header">
+                    <div id="header">
+                        <h1><a href="/BXXRCR">Jesse&#39;s Test Contest</a></h1>
+                    </div>
+                    <div class="sweeps" id="navigation"></div>
+                </div>
+                <div id="container-contentbg">
+                    <div id="container-content">
+                        <div class="sweeps">
+                            <div class="pagetitle-container clearfix">
+                                <script src="//s7.addthis.com/js/250/addthis_widget.js#username=tritonloyalty" type="text/javascript">
+                                </script>
+                                <div class="submission-controls clearfix" id="socialShareControlParentContainer">
+                                    <div class="container-social">
+                                        <button type="button" class="di-uix-button share-button">Share <i class="fa fa-share"></i><i class="fa fa-times"></i></button>
+                                        <div tabindex="0" class="share-popup" style="display:none;">
+                                            <div class="share-networks">
+                                                <ul class="social-controls addThis">
+                                                    <li>
+                                                        <div class="addthis_toolbox">
+                                                            <a class="prompt-facebook-share" id="fbicon">
+                                                                <i class="fa fa-facebook-official"></i>
+                                                            </a>
+                                                            <a class="addthis_button_twitter">
+                                                                <i class="fa fa-twitter"></i>
+                                                            </a>
+                                                            <a id="email-popup-trigger" class="email" href='#share-email-popup' target="_top">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="share-url">
+                                                <label>Share a link</label>
+                                                <div class="share-copy-url">
+                                                    <a href="#" data-clipboard-target="#share-url"><i class="fa fa-link"></i> <span>Copy</span></a>
+                                                </div>
+                                                <input id="share-url" type="text" readonly="readonly" value="http://digitalivy.com/BXXRCR">
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                    </div>
+                                </div>
+                                <h1 class="pagetitle sweeps">Enter to Win</h1>
+                            </div>
+                            <div class="contentblock clear"></div>
+                            <div class="contentblock"></div>
+                            <div class="message" id="validation_summary" style="display: none;">
+                                <span id="summary_title"></span>
+                                <div id="error_list"></div>
+                            </div>
+                            <div class="contest-ends-block">
+                                <i>Contest Ends: 1/29/2016 10:41 AM ET</i>
+                            </div>
+                            <div class="contentblock clear">
+                                <h3 class="center"></h3>
+                            </div>
+                            <form action="/BXXRCR/Sweepstakes/Landing" id="authForm" method="post" name="authForm">
+                                <div id="container-signin">
+                                    <div class="inputcontainer twocol clearfix" id="divSignin">
+                                        <div class="inputcontainer colone">
+                                            <label>Email Address</label>
+                                            <input class="smalltext required email" id="userEmail" name="userEmail" type="text" value="">
+                                            <input class="submit di-uix-button" id="submitEmail" name="submitEmail" type="submit" value="Enter to Win!">
+                                        </div>
+                                        <div id="loginorlabel">
+                                            Or
+                                        </div>
+                                        <div class="inputcontainer coltwo clearfix" id="socialconnect" style="border:none;">
+                                            <div id="sociallogin">
+                                                <button type="button" class="facebook-auth-btn"><i class="fa fa-facebook-official"></i> Sign in with Facebook</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inputcontainer" id="passwordForm">
+                                        <div class="inputcontainer">
+                                            <label>Password</label> <input class="smalltext" id="userPassword" name="password" type="password" value=""><br>
+                                            <a class="forgotpass" href="#" id="forgotPassword">Forgot Password?</a>
+                                        </div>
+                                        <div class="inputcontainer">
+                                            <input class="submit di-uix-button" id="submitPassword" name="submitPassword" type="submit" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="container-footer">
+                    <p id="fancy-p-container"></p>
+                    <div>
+                        Jesse&#39;s Test Contest
+                    </div>
+                    <a class="fb-fancybox" href="#popup-terms" id="fancyterms">Terms of Service</a> | <a class="fb-fancybox" href="#popup-privacy" id="fancyprivacy">Privacy Policy</a> |
+                    <a class="fb-fancybox" href="#popup-rules" id="fancyrules">Official Contest Rules</a> | <a href="/BXXRCR/Common/ContactUs?override_socialsite_disable=True">Contact Us</a>
+                </div><!-- For Fancybox Contest Rules Display -->
+            </div>
+        </div>
+        <div class="ad--bottom"></div>
+
+        <div style="display:none;">
+            <div id="share-email-popup" class="share-email-popup">
+                <div class="share-email-top">
+                    Email this contest to a friend
+                </div>
+                <div class="share-email-fields">
+                    <label>Your details</label>
+                    <input type="email" placeholder="your email address">
+                    <input type="text" placeholder="your name">
+                    <textarea placeholder="short message (optional)"></textarea>
+                    <label>Send to (up to 5 different addresses)</label>
+                    <input id="email-addresses" type="text" placeholder="seperate emails with a space or comma">
+                </div>
+                <div class="share-email-footer">
+                    <input type="submit" value="send emails">
+                </div>
+            </div>
+        </div>
+
+        <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+        <script src="js/tag-it.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+    </body>
+</html>

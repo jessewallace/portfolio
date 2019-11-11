@@ -1,0 +1,294 @@
+
+
+
+* {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+a{display: block;}
+ol, ul {padding: 0; list-style: none;}
+ol li a {margin: 0 auto;}
+ol {position: relative;}
+
+.col {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+.wrapper {
+    position: relative;
+
+    width:750px;
+    margin:0 auto;
+
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+.cell {
+    position: relative;
+
+    a {
+
+    }
+}
+
+%brk {
+    position: absolute;
+    border:1px solid #CCC;
+    width:100px;
+    border-left:0;
+}
+%bracket {
+    border: 1px solid;
+    content: "";
+    width: 100% + 10%;
+    position: absolute;
+    z-index: -1;
+    border-left: 0;
+
+}
+
+$container-width:700px;
+
+// $number = number of brackets to be created
+@mixin bracket($number, $team, $multiplier, $cell-height, $bracket:0, $count:1) {
+    @while $bracket < $number  {
+        .brk#{$team}-#{$count} {
+            @extend %brk;
+            top:(($cell-height * .5) + ($cell-height * $bracket ))* $multiplier;
+            height:$cell-height * $multiplier;
+        }
+        $count:$count+1;
+        $bracket:$bracket + 2;
+    }
+}
+@mixin cells($names, $cell-height:30px, $i:1, $j:600px) {
+    @while $names >= 1 {
+        .col#{$i} .cell {
+            height: $cell-height * $names
+        }
+        @if  $i >= 5{
+            .col#{$i} .cell:nth-child(2n+1):after {
+                @extend %bracket;
+                height: ($cell-height * $names) / 2;
+                top: ($cell-height * $names) / 2;
+                border-bottom: 0;
+
+            }
+            .col#{$i} .cell:nth-child(2n+2):before {
+                @extend %bracket;
+                height: ($cell-height * $names) / 2;
+                top: 0px;
+                border-top: 0;
+            }
+        }
+        @else if $i < 5 {
+            .col#{$i} .cell:nth-child(2n+2):after {
+                @extend %bracket;
+                height: ($cell-height * $names) / 2;
+                top: ($cell-height * $names) / 2;
+                border-bottom: 0;
+            }
+            .col#{$i} .cell:nth-child(2n+1):before {
+                @extend %bracket;
+                height: ($cell-height * $names) / 2;
+                top: 0;
+                border-top: 0;
+
+            }
+        }
+        .two-column .col#{$i}  {
+            .left {left:$j}
+            .right{right:$j}
+        }
+        $j:$j - 100px;
+        $i:$i+1;
+        $names: $names / 2
+    }
+}
+@mixin createBracket($numberOfTeams:128,$cell-height:30px, $cell-color:#EEEEEE) {
+    .wrapper {max-height: $cell-height * $numberOfTeams;}
+    .two-column {
+        height:($cell-height * $numberOfTeams) / 1.75;
+        .cell {width: 80px;}
+        & .center {
+            margin: auto;
+            width: 100px;
+            height: $cell-height / 2;
+            top:0;
+            right: 0;
+            left:0;
+            bottom: 0;
+            position: absolute;
+            .cell {height: $cell-height / 2; width: 100px;}
+        }
+    }
+    %brk {
+        position: absolute;
+        border:1px solid #CCC;
+        height:$cell-height;
+        border-left:0;
+        width: 100% + 10%;
+        display: none;
+    }
+    .cell a {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+
+        height: $cell-height / 2;
+        width: 100%;
+        line-height:$cell-height / 2;
+        margin: auto;
+        padding:0 5px;
+        border:1px solid;
+        border-radius:2px;
+
+        background: $cell-color;
+        font-size: 10px;
+        text-align:center;
+        text-decoration:none;
+        color:#FFF;
+
+        &:hover {
+            background:darken(green, 10%);
+        }
+
+    }
+    @include cells($numberOfTeams, $cell-height);
+    @if $numberOfTeams == 128 {
+        .cell {width: floor($container-width/8);}
+        @include bracket(32, 128, 1, $cell-height); // Creates 16 lines
+        @include bracket(16, 64, 2, $cell-height); // Creates 8 lines
+        @include bracket(8, 32, 4, $cell-height); // Creates 4 lines
+        @include bracket(4, 16, 8, $cell-height); // Creates 2 Lines
+        @include bracket(2, 8, 16, $cell-height); // Creates 1 line
+        @include bracket(1, 4, 32, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 64, $cell-height); // Creates 1 line
+    }
+    @else if $numberOfTeams == 64 {
+        .cell{width: floor($container-width/7);}
+        @include bracket(16, 64, 1, $cell-height); // Creates 8 lines
+        @include bracket(8, 32, 2, $cell-height); // Creates 4 lines
+        @include bracket(4, 16, 4, $cell-height); // Creates 2 Lines
+        @include bracket(2, 8, 8, $cell-height); // Creates 1 line
+        @include bracket(1, 4, 16, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 32, $cell-height); // Creates 1 line
+        .col8{display: none;}
+    }
+    @else if $numberOfTeams == 32 {
+        .cell {width: floor($container-width/6);}
+        @include bracket(8, 32, 1, $cell-height); // Creates 4 lines
+        @include bracket(4, 16, 2, $cell-height); // Creates 2 Lines
+        @include bracket(2, 8, 4, $cell-height); // Creates 1 line
+        @include bracket(1, 4, 8, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 16, $cell-height); // Creates 1 line
+        .col8, .col7 {display: none;}
+    }
+    @else if $numberOfTeams == 16 {
+        .cell {width: floor($container-width/5);}
+        @include bracket(8, 16, 1, $cell-height); // Creates 2 Lines
+        @include bracket(4, 8, 2, $cell-height); // Creates 1 line
+        @include bracket(2, 4, 4, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 8, $cell-height); // Creates 1 line
+        .col8, .col7, .col6 {display: none;}
+    }
+    @else if $numberOfTeams == 8 {
+        .cell {width: floor($container-width/4);}
+        @include bracket(4, 8, 1, $cell-height); // Creates 1 line
+        @include bracket(2, 4, 2, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 4, $cell-height); // Creates 1 line
+        .col8, .col7, .col6, .col5 {display: none;}
+    }
+    @else if $numberOfTeams == 4 {
+        .cell {width: floor($container-width/3);}
+        @include bracket(2, 4, 1, $cell-height); // Creates 1 line
+        @include bracket(1, 2, 2, $cell-height); // Creates 1 line
+        .col8, .col7, .col6, .col5, .col4 {display: none;}
+    }
+}
+
+@include createBracket(4, 40px, tomato);
+
+
+.two-column .right .cell:before, .two-column .right .cell:after {
+    right: 0;
+    border-right: 0;
+    border-left: 1px solid;
+}
+.col1 .cell:nth-child(2n+1):before {display: none;}
+
+.two-column {
+    [class^="brk"] {display: none;}
+    .right [class^="brk"]{border-right:0; border-left:1px solid #CCC; right:5px;}
+    .col1 .right [class^="brk"]{right:0px;}
+}
+
+
+.two-column {
+    //transition:all 500ms;
+}
+.two-column .right {
+    position: absolute;
+    right:0;
+}
+.two-column .bottom {
+    bottom: 0;
+    position: absolute;
+}
+.two-column .left {
+    left: 0;
+    position: absolute;
+}
+.two-column .bottom {
+    bottom: 0;
+    position: absolute;
+}
+.two-column .co62 .left {
+    left: 100px;
+    position: absolute;
+}
+.two-column .co62 .right {
+    right: 100px;
+    position: absolute;
+}
+.two-column .co53 .left {
+    left: 200px;
+    position: absolute;
+}
+.two-column .co53 .right {
+    right: 200px;
+    position: absolute;
+}
+
+.two-column .co35 .left {
+    left: 0;
+    position: absolute;
+}
+.two-column .co35 .right {
+    right: 0;
+    position: absolute;
+}
+.two-column .co26 .left {
+    position: absolute;
+}
+.two-column .co26 .right {
+    position: absolute;
+}
+
+.two-column .center li {
+
+
+}

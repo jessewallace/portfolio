@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Widget</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/74065/TDASRewardWidgetIcons/style.css?rgk814">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="trivia.css"/>
+    <style>
+        #themePatterns {
+            display: none;
+        }
+
+         body, html {
+             margin: 0;
+             padding: 0;
+             background-color: #999;
+         }
+    </style>
+</head>
+<body class="see-widget">
+    <div id="see-overlay" style="display: none; z-index: 2000006; top: 0%;">
+    <div class="see-wrapper"><span class="see-x fa fa-times" style="padding-top: 183px;"></span>
+
+        <div class="see-clearfix"></div>
+        <div id="see-overlay-modal" class="regui" style="z-index: 2000007;">
+            <div class="see-header">
+                <i class="fa fa-sign-in"></i> Login
+                <p>
+                    Don't have an account? <a class="see-register">Sign up now.</a>
+                </p>
+            </div>
+            <form class="see-form">
+                <div class="see-message"></div>
+                <div class="see-input-group">
+                    <label for="email">Email Address</label>
+                    <input class="see-input" type="text" name="email">
+                </div>
+                <div class="see-input-group">
+                    <label for="pwd">Password</label>
+                    <input class="see-input" type="password" name="pwd">
+                </div>
+                <div class="see-button see-submit">
+                    Log In
+                    <i class="fa fa-chevron-circle-right"></i>
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <a class="see-forgotpassword">Forgot Password?</a>
+                <input type="submit" style="display:none">
+            </form>
+            <div class="see-sidebar">
+                <div class="see-divider-wrapper">
+                    <div class="see-divider">OR</div>
+                </div>
+                <div class="see-buttons">
+                    Sign in with
+                    <div class="see-button see-facebook">Facebook <i class="fa fa-refresh fa-spin"></i></div>
+                    <div class="see-button see-google">Google + <i class="fa fa-refresh fa-spin"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="themes">
+    <div id="themeColors" class="theme__colors td-u-display-flex"></div>
+    <div id="themePatterns" class="theme__textures td-u-display-flex"></div>
+</div>
+    <div class="td-trivia td-trivia--blue">
+        <div class="td-u-display-flex td-u-flex-centered td-u-flex-column td-trivia-splash">
+            <div class="td-trivia-logo td-trivia-logo--small animated bounceIn">Trivia
+                <img class="td-trivia-logo__qmark td-trivia-logo__qmark--1 animated fadeIn" src="http://tdascreative.com/playground/projects/rewards/trivia/client/img/qmark1.png" alt="question mark"/>
+                <img class="td-trivia-logo__qmark td-trivia-logo__qmark--2 animated fadeIn" src="http://tdascreative.com/playground/projects/rewards/trivia/client/img/qmark2.png" alt="question mark"/>
+                <img class="td-trivia-logo__qmark td-trivia-logo__qmark--3 animated fadeIn" src="http://tdascreative.com/playground/projects/rewards/trivia/client/img/qmark3.png" alt="question mark"/>
+            </div>
+            <div class="animated fadeIn td-animated td-u-display-flex td-u-flex-centered td-u-flex-column" data-delay="1500" style="display: none">
+                <div class="td-trivia-tagline td-u-mb-20">What knowledge does your brain hold?</div>
+                <div class="td-trivia-splash__button td-button td-button--large td-u-mb-20 js-playTrivia" onclick="location.href = './question1.html'"><b>Play</b></div>
+                <div class="js-logIn td-is-clickable"><span class="fa fa-sign-in"></span> Sign Up or Log In</div>
+            </div>
+            <div class="td-u-display-flex td-u-flex-centered td-u-flex-column td-width-9-10 js-triviaCategory">
+                <div class="td-trivia-tagline td-u-mb-20 animated fadeIn">Choose Category to Begin</div>
+                <div class="js-categories td-trivia-categories td-grid td-u-mb-10">
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-boombox"></span> 80's Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-cassette"></span> 90's Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-book1"></span> Books</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-guitar"></span> Country Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-mind"></span> General</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-masks"></span> Entertainment</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-food"></span> Food</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-map-pointer"></span> Local</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-jukebox"></span> Oldies</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-microphone"></span> Pop Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-disc1"></span> R&B Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-religion"></span> Religion</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-rock"></span> Rock Music</div>
+                    
+                    <div class="js-pickCategory td-trivia-category td-grid__item td-u-mb-10 animated fadeInUp" onclick="location.href = './question1.html'"><span class="td-trivia-category__icn td-icon td-icon-games"></span> Video Games</div>
+                    
+                </div>
+                <div class="js-viewMore td-trivia-link td-trivia-link--light td-u-center--text td-width-1-1 td-animated animated fadeInUp" data-delay="2500">View More Categories</div>
+            </div>
+            <div style="display: none" class="td-u-display-flex td-u-flex-centered td-u-flex-column td-width-9-10 js-triviaDifficulty" style="display: none">
+                <div class="td-trivia-tagline td-u-mb-20">Select level of difficulty</div>
+                <div class="td-trivia-difficulty td-grid td-width-4-5">
+                    
+                    <div class="td-button td-grid__item td-u-mb-25 td-width-1-1 td-u-pad-15 animated fadeInUp" onclick="location.href = './question1.html'">Easy</div>
+                    
+                    <div class="td-button td-grid__item td-u-mb-25 td-width-1-1 td-u-pad-15 animated fadeInUp" onclick="location.href = './question1.html'">Medium</div>
+                    
+                    <div class="td-button td-grid__item td-u-mb-25 td-width-1-1 td-u-pad-15 animated fadeInUp" onclick="location.href = './question1.html'">Hard</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="perfect-scrollbar.jquery.js"></script>
+<script src="script.js"></script>
+<script src="themeselector.js"></script>
+</html>

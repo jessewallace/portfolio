@@ -1,0 +1,12 @@
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+.theme-container { position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; color: #fff; -webkit-transition: top 200ms ease-in-out; transition: top 200ms ease-in-out; }
+.theme-container.is-closed { top: -25px; }
+
+.theme-toggle { position: absolute; right: 20px; padding: 5px 10px; border-radius: 0 0 5px 5px; background-color: #000; cursor: pointer; }
+.theme-toggle:before { content: "\f00d"; }
+.is-closed .theme-toggle:before { content: "\f1fc"; }
+
+.themes { display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-content: center; align-content: center; border-bottom: 1px solid #000; font-size: 12px; background-color: #333; background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)); background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)); }
+.themes .theme { color: #fff; -webkit-flex-grow: 1; flex-grow: 1; text-align: center; text-decoration: none; border-right: 1px solid rgba(0, 0, 0, 0.3); }
+.themes .theme:hover, .themes .theme.is-selected { background-color: #0069ac; }
+.themes .theme:before { content: attr(rel); line-height: 25px; }

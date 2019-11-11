@@ -1,0 +1,14 @@
+{
+  "name": "Standard",
+  "version": "0.1.0",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-compass": "latest",
+    "gulp-filter": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest"
+  }
+}

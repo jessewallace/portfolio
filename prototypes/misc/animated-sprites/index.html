@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Animated Sprites</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animated-sprites.css" />
+    <link rel="stylesheet" href="css/testpage.css" />
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.snippet.min.js"></script>
+
+    <script>
+        $(function(){
+//            $('.animated-sprite').click(function(){
+//                $(this).toggleClass('paused');
+//            })
+
+            $('pre.code-snippet').snippet("html",{style:"rand01", menu:false,showNum:false});
+
+            var paused = true;
+            $('#play-pause').click(function(){
+                if(paused) {
+                    $('.animated-sprite').removeClass('paused');
+                    $('#play-pause').html('Pause Animations <i class="fa fa-pause"></i>');
+                    paused = false;
+                } else {
+                    $('.animated-sprite').addClass('paused');
+                    $('#play-pause').html('Play Animatons <i class="fa fa-play"></i>');
+                    paused = true;
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="container-controls">
+        <a id="play-pause" href="#">Play Animations <i class="fa fa-play"></i></a>
+    </div>
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="check"></span>
+        <div class="container-row-text">
+            <h2>Confirmation Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="check"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="error"></span>
+        <div class="container-row-text">
+            <h2>Error Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="error"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="info"></span>
+        <div class="container-row-text">
+            <h2>Information Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="info"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="warning"></span>
+        <div class="container-row-text">
+            <h2>Warning Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="warning"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="question"></span>
+        <div class="container-row-text">
+            <h2>Question Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="question"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <span class="animated-sprite paused" data-type="loading"></span>
+        <div class="container-row-text">
+            <h2>Loading Animation</h2>
+            <pre class="code-snippet">&lt;span class="animated-sprite" data-type="loading"&gt;&lt;/span&gt;</pre>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

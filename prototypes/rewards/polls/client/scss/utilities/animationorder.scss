@@ -1,0 +1,125 @@
+// Animation order
+
+/**animation for results bar**/
+@-webkit-keyframes loadbar {
+
+    0% {
+        width: 0%;
+    }
+
+    @keyframes loadbar {
+
+        0% {
+            width: 0%;
+        }
+
+    }
+
+}
+
+
+@keyframes loadbar {
+
+    0% {
+        width: 0%;
+    }
+
+    @keyframes loadbar {
+
+        0% {
+            width: 0%;
+        }
+
+    }
+
+}
+
+/** ids for animation order **/
+#image-1 {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+#image-2 {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#image-3 {
+    -webkit-animation-delay: .65s;
+    animation-delay: .65s;
+}
+#image-4 {
+    -webkit-animation-delay: .95s;
+    animation-delay: .95s;
+}
+
+
+#result-1 {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+#result-2 {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#result-3 {
+    -webkit-animation-delay: .65s;
+    animation-delay: .65s;
+}
+#result-4 {
+    -webkit-animation-delay: .95s;
+    animation-delay: .95s;
+}
+
+
+#q-1 {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+#q-2 {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#q-3 {
+    -webkit-animation-delay: .65s;
+    animation-delay: .65s;
+}
+#q-4 {
+    -webkit-animation-delay: .95s;
+    animation-delay: .95s;
+}
+
+
+#q-result-1 {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+#q-result-2 {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#q-result-3 {
+    -webkit-animation-delay: .65s;
+    animation-delay: .65s;
+}
+#q-result-4 {
+    -webkit-animation-delay: .95s;
+    animation-delay: .95s;
+}
+
+
+#more-1 {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+#more-2 {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#more-3 {
+    -webkit-animation-delay: .65s;
+    animation-delay: .65s;
+}
+#more-4 {
+    -webkit-animation-delay: .95s;
+    animation-delay: .95s;
+}
